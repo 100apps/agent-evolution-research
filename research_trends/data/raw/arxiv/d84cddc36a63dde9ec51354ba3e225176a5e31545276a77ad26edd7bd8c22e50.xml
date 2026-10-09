@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Qrjfm0XZq1bVd7CaCaGKY6Q1s8U</id>
+  <title>arXiv Query: search_query=submittedDate:"202005010000 TO 202005312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:28:48Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202005010000+TO+202005312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15168</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2005.13331v2</id>
+    <title>Memory Assessment of Versatile Video Coding</title>
+    <updated>2020-06-01T11:29:52Z</updated>
+    <link href="https://arxiv.org/abs/2005.13331v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2005.13331v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents a memory assessment of the next-generation Versatile Video Coding (VVC). The memory analyses are performed adopting as a baseline the state-of-the-art High-Efficiency Video Coding (HEVC). The goal is to offer insights and observations of how critical the memory requirements of VVC are aggravated, compared to HEVC. The adopted methodology consists of two sets of experiments: (1) an overall memory profiling and (2) an inter-prediction specific memory analysis. The results obtained in the memory profiling show that VVC access up to 13.4x more memory than HEVC. Moreover, the inter-prediction module remains (as in HEVC) the most resource-intensive operation in the encoder: 60%-90% of the memory requirements. The inter-prediction specific analysis demonstrates that VVC requires up to 5.3x more memory accesses than HEVC. Furthermore, our analysis indicates that up to 23% of such growth is due to VVC novel-CU sizes (larger than 64x64).</summary>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-05-27T12:52:07Z</published>
+    <arxiv:primary_category term="cs.MM"/>
+    <author>
+      <name>Arthur Cerveira</name>
+    </author>
+    <author>
+      <name>Luciano Agostini</name>
+    </author>
+    <author>
+      <name>Bruno Zatt</name>
+    </author>
+    <author>
+      <name>Felipe Sampaio</name>
+    </author>
+  </entry>
+</feed>

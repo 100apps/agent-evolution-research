@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/kTsmQTxvrjA8WtXJKABpS+Ee1t4</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202208010000 TO 202208312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:24Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202208010000+TO+202208312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5653</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2208.14092v1</id>
+    <title>Super-model ecosystem: A domain-adaptation perspective</title>
+    <updated>2022-08-30T09:09:43Z</updated>
+    <link href="https://arxiv.org/abs/2208.14092v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2208.14092v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper attempts to establish the theoretical foundation for the emerging super-model paradigm via domain adaptation, where one first trains a very large-scale model, {\it i.e.}, super model (or foundation model in some other papers), on a large amount of data and then adapts it to various specific domains. Super-model paradigms help reduce computational and data cost and carbon emission, which is critical to AI industry, especially enormous small and medium-sized enterprises. We model the super-model paradigm as a two-stage diffusion process: (1) in the pre-training stage, the model parameter diffuses from random initials and converges to a steady distribution; and (2) in the fine-tuning stage, the model parameter is transported to another steady distribution. Both training stages can be mathematically modeled by the Uhlenbeck-Ornstein process which converges to two Maxwell-Boltzmann distributions, respectively, each of which characterizes the corresponding convergent model. An $\mathcal O(1/\sqrt{N})$ generalization bound is then established via PAC-Bayesian framework. The theory finds that the generalization error of the fine-tuning stage is dominant in domain adaptation. In addition, our theory suggests that the generalization is determined by a new measure that characterizes the domain discrepancy between the source domain and target domain, based on the covariance matrices and the shift of the converged local minimum.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-08-30T09:09:43Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Fengxiang He</name>
+    </author>
+    <author>
+      <name>Dacheng Tao</name>
+    </author>
+  </entry>
+</feed>

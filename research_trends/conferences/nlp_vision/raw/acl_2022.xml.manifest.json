@@ -1,0 +1,9 @@
+{
+  "filename": "acl_2022.xml",
+  "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2022.acl.xml",
+  "fetched_at_utc": "2026-10-09T03:40:29.869494+00:00",
+  "http_status": 200,
+  "final_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2022.acl.xml",
+  "bytes": 1546321,
+  "sha256": "a972702e7b6e3efe52c014f52c3bb5c20c40e3ae91062c1bc1201c55593420c3"
+}

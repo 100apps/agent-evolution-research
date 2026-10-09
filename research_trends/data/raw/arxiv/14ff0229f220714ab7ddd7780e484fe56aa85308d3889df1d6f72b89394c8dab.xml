@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/41ouPVE8WWRrsvQucjE2ybXo2gU</id>
+  <title>arXiv Query: search_query=submittedDate:"202406010000 TO 202406302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:02Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202406010000+TO+202406302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>20717</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2407.00192v2</id>
+    <title>Analog version of Hausdorff--Young's theorem for quadratic Fourier transforms and boundedness of oscillatory integral operator</title>
+    <updated>2024-08-28T16:14:36Z</updated>
+    <link href="https://arxiv.org/abs/2407.00192v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.00192v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The purpose of this paper is twofold. The first aim is based on Riesz--Thorin's interpolation theorem, we prove new Hausdorff--Young type inequalities for the Quadratic Fourier transforms in (Ann. Funct. Anal. 2014;5(1):10--23) and linear canonical transforms in (Mediterr. J. Math. 2018;15,13), which were introduced by Castro et al. The second aim is to investigate the boundedness of the oscillatory integral operator with polynomial phases, which is also presented in the last section of the article.</summary>
+    <category term="math.CA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.FA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-28T19:04:09Z</published>
+    <arxiv:comment>7 pages</arxiv:comment>
+    <arxiv:primary_category term="math.CA"/>
+    <author>
+      <name>Trinh Tuan</name>
+    </author>
+    <author>
+      <name>Lai Tien Minh</name>
+    </author>
+  </entry>
+</feed>

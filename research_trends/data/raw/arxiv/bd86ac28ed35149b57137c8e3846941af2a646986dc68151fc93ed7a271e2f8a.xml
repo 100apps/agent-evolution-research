@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api//UurDroGKIrUwFoHcd+fucOxWuM</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202411010000 TO 202411302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:58Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202411010000+TO+202411302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>9502</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2411.05750v1</id>
+    <title>On Differentially Private String Distances</title>
+    <updated>2024-11-08T18:10:07Z</updated>
+    <link href="https://arxiv.org/abs/2411.05750v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.05750v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Given a database of bit strings $A_1,\ldots,A_m\in \{0,1\}^n$, a fundamental data structure task is to estimate the distances between a given query $B\in \{0,1\}^n$ with all the strings in the database. In addition, one might further want to ensure the integrity of the database by releasing these distance statistics in a secure manner. In this work, we propose differentially private (DP) data structures for this type of tasks, with a focus on Hamming and edit distance. On top of the strong privacy guarantees, our data structures are also time- and space-efficient. In particular, our data structure is $ε$-DP against any sequence of queries of arbitrary length, and for any query $B$ such that the maximum distance to any string in the database is at most $k$, we output $m$ distance estimates. Moreover,
+  - For Hamming distance, our data structure answers any query in $\widetilde O(mk+n)$ time and each estimate deviates from the true distance by at most $\widetilde O(k/e^{ε/\log k})$;
+  - For edit distance, our data structure answers any query in $\widetilde O(mk^2+n)$ time and each estimate deviates from the true distance by at most $\widetilde O(k/e^{ε/(\log k \log n)})$.
+  For moderate $k$, both data structures support sublinear query operations. We obtain these results via a novel adaptation of the randomized response technique as a bit flipping procedure, applied to the sketched strings.</summary>
+    <category term="cs.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-08T18:10:07Z</published>
+    <arxiv:primary_category term="cs.DS"/>
+    <author>
+      <name>Jerry Yao-Chieh Hu</name>
+    </author>
+    <author>
+      <name>Erzhi Liu</name>
+    </author>
+    <author>
+      <name>Han Liu</name>
+    </author>
+    <author>
+      <name>Zhao Song</name>
+    </author>
+    <author>
+      <name>Lichen Zhang</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Zc2Q3Y46S3dGj/YBIXln6hzojHg</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202112010000 TO 202112312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:00Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202112010000+TO+202112312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5749</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2112.03912v1</id>
+    <title>RID-Noise: Towards Robust Inverse Design under Noisy Environments</title>
+    <updated>2021-12-07T06:32:27Z</updated>
+    <link href="https://arxiv.org/abs/2112.03912v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2112.03912v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>From an engineering perspective, a design should not only perform well in an ideal condition, but should also resist noises. Such a design methodology, namely robust design, has been widely implemented in the industry for product quality control. However, classic robust design requires a lot of evaluations for a single design target, while the results of these evaluations could not be reused for a new target. To achieve a data-efficient robust design, we propose Robust Inverse Design under Noise (RID-Noise), which can utilize existing noisy data to train a conditional invertible neural network (cINN). Specifically, we estimate the robustness of a design parameter by its predictability, measured by the prediction error of a forward neural network. We also define a sample-wise weight, which can be used in the maximum weighted likelihood estimation of an inverse model based on a cINN. With the visual results from experiments, we clearly justify how RID-Noise works by learning the distribution and robustness from data. Further experiments on several real-world benchmark tasks with noises confirm that our method is more effective than other state-of-the-art inverse design methods. Code and supplementary is publicly available at https://github.com/ThyrixYang/rid-noise-aaai22</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-12-07T06:32:27Z</published>
+    <arxiv:comment>AAAI'22</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jia-Qi Yang</name>
+    </author>
+    <author>
+      <name>Ke-Bin Fan</name>
+    </author>
+    <author>
+      <name>Hao Ma</name>
+    </author>
+    <author>
+      <name>De-Chuan Zhan</name>
+    </author>
+  </entry>
+</feed>

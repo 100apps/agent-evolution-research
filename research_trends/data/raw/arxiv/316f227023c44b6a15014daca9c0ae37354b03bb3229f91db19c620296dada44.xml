@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Ghl/4KvzQDccm11j98Wl/bFRpoA</id>
+  <title>arXiv Query: search_query=submittedDate:"202509010000 TO 202509302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:39:39Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202509010000+TO+202509302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>26158</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2509.26181v2</id>
+    <title>Explaining novel senses using definition generation with open language models</title>
+    <updated>2025-10-01T10:03:53Z</updated>
+    <link href="https://arxiv.org/abs/2509.26181v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.26181v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We apply definition generators based on open-weights large language models to the task of creating explanations of novel senses, taking target word usages as an input. To this end, we employ the datasets from the AXOLOTL'24 shared task on explainable semantic change modeling, which features Finnish, Russian and German languages. We fine-tune and provide publicly the open-source models performing higher than the best submissions of the aforementioned shared task, which employed closed proprietary LLMs. In addition, we find that encoder-decoder definition generators perform on par with their decoder-only counterparts.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-30T12:40:36Z</published>
+    <arxiv:comment>EMNLP 2025 Findings</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Mariia Fedorova</name>
+    </author>
+    <author>
+      <name>Andrey Kutuzov</name>
+    </author>
+    <author>
+      <name>Francesco Periti</name>
+    </author>
+    <author>
+      <name>Yves Scherrer</name>
+    </author>
+  </entry>
+</feed>

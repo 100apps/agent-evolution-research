@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QLvhheggIlTr8XRKo+M1sV0g3kA</id>
+  <title>arXiv Query: search_query=submittedDate:"202101010000 TO 202101312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:01Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202101010000+TO+202101312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>13183</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2101.01288v2</id>
+    <title>Diffusion Approximations for Self-excited Systems with Applications to General Branching Processes</title>
+    <updated>2024-01-30T12:07:41Z</updated>
+    <link href="https://arxiv.org/abs/2101.01288v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2101.01288v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this work, several convergence results are established for nearly critical self-excited systems in which event arrivals are described by multivariate marked Hawkes point processes. Under some mild high-frequency assumptions, the rescaled density process behaves asymptotically like a multi-type continuous-state branching process with immigration, which is the unique solution to a multi-dimensional stochastic differential equation with dynamical mechanism similar to that of multivariate Hawkes processes. To illustrate the strength of these limit results, we further establish diffusion approximations for multi-type Crump-Mode-Jagers branching processes counted with various characteristics by linking them to marked Hawkes shot noise processes. In particular, an interesting phenomenon in queueing theory, well-known as state space collapse, is observed in the behavior of the population structure at a large time scale. This phenomenon reveals that the rescaled complex biological system can be recovered from its population process by a lifting map.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-01-05T00:03:09Z</published>
+    <arxiv:comment>64 pages</arxiv:comment>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Wei Xu</name>
+    </author>
+  </entry>
+</feed>

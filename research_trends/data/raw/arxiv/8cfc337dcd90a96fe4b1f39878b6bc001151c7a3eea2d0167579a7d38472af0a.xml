@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/73nSJX5o9G0pepzdCFuKcq/c+Wo</id>
+  <title>arXiv Query: search_query=( (cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) ) AND ( ( (ti:"large language model" OR abs:"large language model") OR (ti:"language model" OR abs:"language model") OR (ti:"LLM" OR abs:"LLM") OR (ti:"LLMs" OR abs:"LLMs") OR (ti:"language agent" OR abs:"language agent") OR (ti:"foundation model" OR abs:"foundation model") ) AND ( (ti:"language agent" OR abs:"language agent") OR (ti:"LLM agent" OR abs:"LLM agent") OR (ti:"LLM agents" OR abs:"LLM agents") OR (ti:"agentic" OR abs:"agentic") OR (ti:"multi-agent" OR abs:"multi-agent") OR (ti:"multiagent" OR abs:"multiagent") OR (ti:"tool use" OR abs:"tool use") OR (ti:"tool-use" OR abs:"tool-use") ) ) AND submittedDate:"202401010000 TO 202401312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:44:02Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+((((ti:%22large+language+model%22+OR+abs:%22large+language+model%22)+OR+((ti:%22language+model%22+OR+abs:%22language+model%22)+OR+((ti:%22LLM%22+OR+abs:%22LLM%22)+OR+((ti:%22LLMs%22+OR+abs:%22LLMs%22)+OR+((ti:%22language+agent%22+OR+abs:%22language+agent%22)+OR+(ti:%22foundation+model%22+OR+abs:%22foundation+model%22))))))+AND+((ti:%22language+agent%22+OR+abs:%22language+agent%22)+OR+((ti:%22LLM+agent%22+OR+abs:%22LLM+agent%22)+OR+((ti:%22LLM+agents%22+OR+abs:%22LLM+agents%22)+OR+((ti:%22agentic%22+OR+abs:%22agentic%22)+OR+((ti:%22multi-agent%22+OR+abs:%22multi-agent%22)+OR+((ti:%22multiagent%22+OR+abs:%22multiagent%22)+OR+((ti:%22tool+use%22+OR+abs:%22tool+use%22)+OR+(ti:%22tool-use%22+OR+abs:%22tool-use%22)))))))))+AND+submittedDate:%22202401010000+TO+202401312359%22)&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>112</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.05459v2</id>
+    <title>Personal LLM Agents: Insights and Survey about the Capability, Efficiency and Security</title>
+    <updated>2024-05-08T06:16:23Z</updated>
+    <link href="https://arxiv.org/abs/2401.05459v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.05459v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Since the advent of personal computing devices, intelligent personal assistants (IPAs) have been one of the key technologies that researchers and engineers have focused on, aiming to help users efficiently obtain information and execute tasks, and provide users with more intelligent, convenient, and rich interaction experiences. With the development of smartphones and IoT, computing and sensing devices have become ubiquitous, greatly expanding the boundaries of IPAs. However, due to the lack of capabilities such as user intent understanding, task planning, tool using, and personal data management etc., existing IPAs still have limited practicality and scalability. Recently, the emergence of foundation models, represented by large language models (LLMs), brings new opportunities for the development of IPAs. With the powerful semantic understanding and reasoning capabilities, LLM can enable intelligent agents to solve complex problems autonomously. In this paper, we focus on Personal LLM Agents, which are LLM-based agents that are deeply integrated with personal data and personal devices and used for personal assistance. We envision that Personal LLM Agents will become a major software paradigm for end-users in the upcoming era. To realize this vision, we take the first step to discuss several important questions about Personal LLM Agents, including their architecture, capability, efficiency and security. We start by summarizing the key components and design choices in the architecture of Personal LLM Agents, followed by an in-depth analysis of the opinions collected from domain experts. Next, we discuss several key challenges to achieve intelligent, efficient and secure Personal LLM Agents, followed by a comprehensive survey of representative solutions to address these challenges.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-10T09:25:45Z</published>
+    <arxiv:comment>https://github.com/MobileLLM/Personal_LLM_Agents_Survey</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Yuanchun Li</name>
+    </author>
+    <author>
+      <name>Hao Wen</name>
+    </author>
+    <author>
+      <name>Weijun Wang</name>
+    </author>
+    <author>
+      <name>Xiangyu Li</name>
+    </author>
+    <author>
+      <name>Yizhen Yuan</name>
+    </author>
+    <author>
+      <name>Guohong Liu</name>
+    </author>
+    <author>
+      <name>Jiacheng Liu</name>
+    </author>
+    <author>
+      <name>Wenxing Xu</name>
+    </author>
+    <author>
+      <name>Xiang Wang</name>
+    </author>
+    <author>
+      <name>Yi Sun</name>
+    </author>
+    <author>
+      <name>Rui Kong</name>
+    </author>
+    <author>
+      <name>Yile Wang</name>
+    </author>
+    <author>
+      <name>Hanfei Geng</name>
+    </author>
+    <author>
+      <name>Jian Luan</name>
+    </author>
+    <author>
+      <name>Xuefeng Jin</name>
+    </author>
+    <author>
+      <name>Zilong Ye</name>
+    </author>
+    <author>
+      <name>Guanjing Xiong</name>
+    </author>
+    <author>
+      <name>Fan Zhang</name>
+    </author>
+    <author>
+      <name>Xiang Li</name>
+    </author>
+    <author>
+      <name>Mengwei Xu</name>
+    </author>
+    <author>
+      <name>Zhijun Li</name>
+    </author>
+    <author>
+      <name>Peng Li</name>
+    </author>
+    <author>
+      <name>Yang Liu</name>
+    </author>
+    <author>
+      <name>Ya-Qin Zhang</name>
+    </author>
+    <author>
+      <name>Yunxin Liu</name>
+    </author>
+  </entry>
+</feed>

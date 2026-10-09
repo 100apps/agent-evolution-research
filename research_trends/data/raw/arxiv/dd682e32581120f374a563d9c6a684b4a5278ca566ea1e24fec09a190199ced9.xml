@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/h+PdTxIGKb/GFAJ0YgF+6aT7c5c</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202310010000 TO 202310312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202310010000+TO+202310312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>7198</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2310.16035v1</id>
+    <title>What's Left? Concept Grounding with Logic-Enhanced Foundation Models</title>
+    <updated>2023-10-24T17:50:20Z</updated>
+    <link href="https://arxiv.org/abs/2310.16035v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2310.16035v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent works such as VisProg and ViperGPT have smartly composed foundation models for visual reasoning-using large language models (LLMs) to produce programs that can be executed by pre-trained vision-language models. However, they operate in limited domains, such as 2D images, not fully exploiting the generalization of language: abstract concepts like "left" can also be grounded in 3D, temporal, and action data, as in moving to your left. This limited generalization stems from these inference-only methods' inability to learn or adapt pre-trained models to a new domain. We propose the Logic-Enhanced Foundation Model (LEFT), a unified framework that learns to ground and reason with concepts across domains with a differentiable, domain-independent, first-order logic-based program executor. LEFT has an LLM interpreter that outputs a program represented in a general, logic-based reasoning language, which is shared across all domains and tasks. LEFT's executor then executes the program with trainable domain-specific grounding modules. We show that LEFT flexibly learns concepts in four domains: 2D images, 3D scenes, human motions, and robotic manipulation. It exhibits strong reasoning ability in a wide variety of tasks, including those that are complex and not seen during training, and can be easily applied to new domains.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-24T17:50:20Z</published>
+    <arxiv:comment>NeurIPS 2023. First two authors contributed equally. Project page: https://web.stanford.edu/~joycj/projects/left_neurips_2023</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Joy Hsu</name>
+    </author>
+    <author>
+      <name>Jiayuan Mao</name>
+    </author>
+    <author>
+      <name>Joshua B. Tenenbaum</name>
+    </author>
+    <author>
+      <name>Jiajun Wu</name>
+    </author>
+  </entry>
+</feed>

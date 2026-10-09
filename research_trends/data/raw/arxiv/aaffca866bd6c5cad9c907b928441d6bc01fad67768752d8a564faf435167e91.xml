@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/iRASffq4tVD9lOZqaBOY9c5+NlY</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202502010000 TO 202502282359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:29Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202502010000+TO+202502282359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>11579</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2502.10581v2</id>
+    <title>Do We Need to Verify Step by Step? Rethinking Process Supervision from a Theoretical Perspective</title>
+    <updated>2025-03-26T22:45:31Z</updated>
+    <link href="https://arxiv.org/abs/2502.10581v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.10581v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language models have evolved, it has become crucial to distinguish between process supervision and outcome supervision -- two key reinforcement learning approaches to complex reasoning tasks. While process supervision offers intuitive advantages for long-term credit assignment, the precise relationship between these paradigms has remained an open question. Conventional wisdom suggests that outcome supervision is fundamentally more challenging due to the trajectory-level coverage problem, leading to significant investment in collecting fine-grained process supervision data.
+  In this paper, we take steps towards resolving this debate. Our main theorem shows that, under standard data coverage assumptions, reinforcement learning through outcome supervision is no more statistically difficult than through process supervision, up to polynomial factors in horizon. At the core of this result lies the novel Change of Trajectory Measure Lemma -- a technical tool that bridges return-based trajectory measure and step-level distribution shift. Furthermore, for settings with access to a verifier or a rollout capability, we prove that any policy's advantage function can serve as an optimal process reward model, providing a direct connection between outcome and process supervision. These findings suggest that the empirically observed performance gap -- if any -- between outcome and process supervision likely stems from algorithmic limitations rather than inherent statistical difficulties, potentially transforming how we approach data collection and algorithm design for reinforcement learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-14T22:21:56Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zeyu Jia</name>
+    </author>
+    <author>
+      <name>Alexander Rakhlin</name>
+    </author>
+    <author>
+      <name>Tengyang Xie</name>
+    </author>
+  </entry>
+</feed>

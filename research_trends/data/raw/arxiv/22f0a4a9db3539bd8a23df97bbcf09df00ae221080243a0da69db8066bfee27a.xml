@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/H/63IdRHdwWEpWJW85RAINzooYQ</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202205010000 TO 202205312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:56Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202205010000+TO+202205312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4812</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2205.02357v5</id>
+    <title>Hybrid Transformer with Multi-level Fusion for Multimodal Knowledge Graph Completion</title>
+    <updated>2023-09-18T16:37:55Z</updated>
+    <link href="https://arxiv.org/abs/2205.02357v5" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2205.02357v5" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal Knowledge Graphs (MKGs), which organize visual-text factual knowledge, have recently been successfully applied to tasks such as information retrieval, question answering, and recommendation system. Since most MKGs are far from complete, extensive knowledge graph completion studies have been proposed focusing on the multimodal entity, relation extraction and link prediction. However, different tasks and modalities require changes to the model architecture, and not all images/objects are relevant to text input, which hinders the applicability to diverse real-world scenarios. In this paper, we propose a hybrid transformer with multi-level fusion to address those issues. Specifically, we leverage a hybrid transformer architecture with unified input-output for diverse multimodal knowledge graph completion tasks. Moreover, we propose multi-level fusion, which integrates visual and text representation via coarse-grained prefix-guided interaction and fine-grained correlation-aware fusion modules. We conduct extensive experiments to validate that our MKGformer can obtain SOTA performance on four datasets of multimodal link prediction, multimodal RE, and multimodal NER. Code is available in https://github.com/zjunlp/MKGformer.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-05-04T23:40:04Z</published>
+    <arxiv:comment>Accepted by SIGIR 2022. Fix a severe bug</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiang Chen</name>
+    </author>
+    <author>
+      <name>Ningyu Zhang</name>
+    </author>
+    <author>
+      <name>Lei Li</name>
+    </author>
+    <author>
+      <name>Shumin Deng</name>
+    </author>
+    <author>
+      <name>Chuanqi Tan</name>
+    </author>
+    <author>
+      <name>Changliang Xu</name>
+    </author>
+    <author>
+      <name>Fei Huang</name>
+    </author>
+    <author>
+      <name>Luo Si</name>
+    </author>
+    <author>
+      <name>Huajun Chen</name>
+    </author>
+    <arxiv:doi>10.1145/3477495.3531992</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3477495.3531992" title="doi"/>
+  </entry>
+</feed>

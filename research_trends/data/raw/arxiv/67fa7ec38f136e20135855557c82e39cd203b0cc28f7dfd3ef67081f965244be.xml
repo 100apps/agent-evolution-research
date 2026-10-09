@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QMgE1NCqs59twmoeDihaRgotk2k</id>
+  <title>arXiv Query: search_query=submittedDate:"202404010000 TO 202404302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:36:41Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202404010000+TO+202404302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>19303</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2404.16545v1</id>
+    <title>Lessons from ATLAS and CMS measurements of Higgs boson decays to second generation fermions</title>
+    <updated>2024-04-25T12:02:37Z</updated>
+    <link href="https://arxiv.org/abs/2404.16545v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2404.16545v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>There is now experimental evidence for Higgs boson decay into a pair of muons, and significant constraints on the Higgs boson decay into a charm quark-antiquark pair. The data on Higgs boson decays into second generation fermions probes various extensions of the Standard Model. We analyze the implications for the Standard Model effective field theory (SMEFT), without and with minimal flavor violation (MFV), for two Higgs doublet models (2HDM) with natural flavor conservation (NFC), for models with vector-like fermions, and for specific models that predict significant modifications of the Yukawa couplings to the light generations.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-04-25T12:02:37Z</published>
+    <arxiv:comment>19 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-ph"/>
+    <author>
+      <name>Yosef Nir</name>
+    </author>
+    <author>
+      <name>Purvaash Panduranghan Udhayashankar</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/kAg/Su26p04YowTwSFWUS+cKQKU</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202511010000 TO 202511302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:04Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202511010000+TO+202511302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>12258</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2511.05480v1</id>
+    <title>On Flow Matching KL Divergence</title>
+    <updated>2025-11-07T18:47:46Z</updated>
+    <link href="https://arxiv.org/abs/2511.05480v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.05480v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We derive a deterministic, non-asymptotic upper bound on the Kullback-Leibler (KL) divergence of the flow-matching distribution approximation. In particular, if the $L_2$ flow-matching loss is bounded by $ε^2 &gt; 0$, then the KL divergence between the true data distribution and the estimated distribution is bounded by $A_1 ε+ A_2 ε^2$. Here, the constants $A_1$ and $A_2$ depend only on the regularities of the data and velocity fields. Consequently, this bound implies statistical convergence rates of Flow Matching Transformers under the Total Variation (TV) distance. We show that, flow matching achieves nearly minimax-optimal efficiency in estimating smooth distributions. Our results make the statistical efficiency of flow matching comparable to that of diffusion models under the TV distance. Numerical studies on synthetic and learned velocities corroborate our theory.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-07T18:47:46Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Maojiang Su</name>
+    </author>
+    <author>
+      <name>Jerry Yao-Chieh Hu</name>
+    </author>
+    <author>
+      <name>Sophia Pi</name>
+    </author>
+    <author>
+      <name>Han Liu</name>
+    </author>
+  </entry>
+</feed>

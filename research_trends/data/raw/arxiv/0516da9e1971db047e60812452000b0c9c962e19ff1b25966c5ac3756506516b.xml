@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/wX/Lsz3OpxJ8kEHWF+iHY10Bxdg</id>
+  <title>arXiv Query: search_query=submittedDate:"202210010000 TO 202210312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:42Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202210010000+TO+202210312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>17654</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2210.04169v1</id>
+    <title>A State Feedback Controller for Mitigation of Continuous-Time Networked SIS Epidemics</title>
+    <updated>2022-10-09T05:15:49Z</updated>
+    <link href="https://arxiv.org/abs/2210.04169v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2210.04169v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The paper considers continuous-time networked susceptible-infected-susceptible (SIS) diseases spreading over a population. Each agent represents a sub-population and has its own healing rate and infection rate; the state of the agent at a time instant denotes what fraction of the said sub-population is infected with the disease at the said time instant. By taking account of the changes in behaviors of the agents in response to the infection rates in real-time, our goal is to devise a feedback strategy such that the infection level for each agent strictly stays below a pre-specified value. Furthermore, we are also interested in ensuring that the closed-loop system converges either to the disease-free equilibrium or, when it exists, to the endemic equilibrium. The upshot of devising such a strategy is that it allows health administration officials to ensure that there is sufficient capacity in the healthcare system to treat the most severe cases. We demonstrate the effectiveness of our controller via numerical examples.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-10-09T05:15:49Z</published>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Yuan Wang</name>
+    </author>
+    <author>
+      <name>Sebin Gracy</name>
+    </author>
+    <author>
+      <name>César A. Uribe</name>
+    </author>
+    <author>
+      <name>Hideaki Ishii</name>
+    </author>
+    <author>
+      <name>Karl Henrik Johansson</name>
+    </author>
+  </entry>
+</feed>

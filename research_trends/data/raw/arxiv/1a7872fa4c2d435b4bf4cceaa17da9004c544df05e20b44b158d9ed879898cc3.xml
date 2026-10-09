@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/36dkn2zWSMK3Im+S/B6PpiFP8L4</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202101010000 TO 202101312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202101010000+TO+202101312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>2985</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2101.11453v2</id>
+    <title>Meta Adversarial Training against Universal Patches</title>
+    <updated>2021-06-22T14:07:54Z</updated>
+    <link href="https://arxiv.org/abs/2101.11453v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2101.11453v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently demonstrated physical-world adversarial attacks have exposed vulnerabilities in perception systems that pose severe risks for safety-critical applications such as autonomous driving. These attacks place adversarial artifacts in the physical world that indirectly cause the addition of a universal patch to inputs of a model that can fool it in a variety of contexts. Adversarial training is the most effective defense against image-dependent adversarial attacks. However, tailoring adversarial training to universal patches is computationally expensive since the optimal universal patch depends on the model weights which change during training. We propose meta adversarial training (MAT), a novel combination of adversarial training with meta-learning, which overcomes this challenge by meta-learning universal patches along with model training. MAT requires little extra computation while continuously adapting a large set of patches to the current model. MAT considerably increases robustness against universal patch attacks on image classification and traffic-light detection.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-01-27T14:36:23Z</published>
+    <arxiv:comment>Accepted by the ICML 2021 workshop on "A Blessing in Disguise: The Prospects and Perils of Adversarial Machine Learning"</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jan Hendrik Metzen</name>
+    </author>
+    <author>
+      <name>Nicole Finnie</name>
+    </author>
+    <author>
+      <name>Robin Hutmacher</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/zWeNUNSN6FKqWIUnFzx4wRywkeE</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202605010000 TO 202605312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:41:10Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202605010000+TO+202605312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>19319</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2605.29387v1</id>
+    <title>On the Optimizer Dependence of Neural Scaling Laws</title>
+    <updated>2026-05-28T05:41:36Z</updated>
+    <link href="https://arxiv.org/abs/2605.29387v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.29387v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The scaling exponent $α$ in neural scaling laws $L(N) \propto N^{-α}$ is commonly treated as a fixed constant set by architecture and data. We present evidence that $α$ depends systematically on the optimizer. In controlled random-feature regression experiments -- the canonical theoretical framework for neural scaling -- we measure $α$ across five optimizer variants and six spectral conditions. Preconditioned optimizers consistently yield steeper scaling (larger $α$), with the $α$-shift increasing across most of the tested spectral range, peaking near $s = 1.5$, and remaining large at $s = 2.0$. At $s \approx 1.0$ (characteristic of natural language), the full natural gradient achieves $α\approx 0.31$ versus $α\approx 0.12$ for gradient descent -- a $2.6\times$ larger fitted exponent that, within the random-feature model, compounds with each model-size doubling. Whether and how this exponent shift transfers to large-scale LLM training -- where recent evidence suggests the advantage may attenuate with scale -- remains an important open question. Our results imply that scaling-law forecasts should account for optimizer choice, and we provide a spectral diagnostic predicting when advanced optimizers will pay off.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-28T05:41:36Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Vansh Ramani</name>
+    </author>
+    <author>
+      <name>Shourya Vir Jain</name>
+    </author>
+  </entry>
+</feed>

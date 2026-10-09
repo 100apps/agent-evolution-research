@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Bcb2mLa/Sy4AckiEH/GAWT3JMHE</id>
+  <title>arXiv Query: search_query=submittedDate:"202306010000 TO 202306302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:06Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202306010000+TO+202306302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>17714</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2307.06394v1</id>
+    <title>Slant helices and Darboux helices in Myller Configuration</title>
+    <updated>2023-06-14T08:33:27Z</updated>
+    <link href="https://arxiv.org/abs/2307.06394v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.06394v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we study slant helix (or $\overset{\_}ξ_{2}$-helix) and Darboux helix in Myller configuration $M$. We show that a curve in $M$ is a slant helix if and only if it is a Darboux helix. We give the alternative frame of a curve in $M$. Furthermore, we obtain the differential equations characterizing the curves in $M$ by means of both Frenet type frame and alternative frame.</summary>
+    <category term="math.GM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-06-14T08:33:27Z</published>
+    <arxiv:comment>arXiv admin note: text overlap with arXiv:2305.07548</arxiv:comment>
+    <arxiv:primary_category term="math.GM"/>
+    <author>
+      <name>Akın Alkan</name>
+    </author>
+    <author>
+      <name>Mehmet Önder</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/TiyCw/uwuQyNvxBgwUigMIyaV+0</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202204010000 TO 202204302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:42Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202204010000+TO+202204302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6069</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2204.03528v2</id>
+    <title>Visualizing Deep Neural Networks with Topographic Activation Maps</title>
+    <updated>2023-06-14T12:49:16Z</updated>
+    <link href="https://arxiv.org/abs/2204.03528v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2204.03528v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine Learning with Deep Neural Networks (DNNs) has become a successful tool in solving tasks across various fields of application. However, the complexity of DNNs makes it difficult to understand how they solve their learned task. To improve the explainability of DNNs, we adapt methods from neuroscience that analyze complex and opaque systems. Here, we draw inspiration from how neuroscience uses topographic maps to visualize brain activity. To also visualize activations of neurons in DNNs as topographic maps, we research techniques to layout the neurons in a two-dimensional space such that neurons of similar activity are in the vicinity of each other. In this work, we introduce and compare methods to obtain a topographic layout of neurons in a DNN layer. Moreover, we demonstrate how to use topographic activation maps to identify errors or encoded biases and to visualize training processes. Our novel visualization technique improves the transparency of DNN-based decision-making systems and is interpretable without expert knowledge in Machine Learning.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-04-07T15:56:44Z</published>
+    <arxiv:comment>Accepted at the second International Conference on Hybrid Human-Artificial Intelligence (HHAI) 2023</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Valerie Krug</name>
+    </author>
+    <author>
+      <name>Raihan Kabir Ratul</name>
+    </author>
+    <author>
+      <name>Christopher Olson</name>
+    </author>
+    <author>
+      <name>Sebastian Stober</name>
+    </author>
+  </entry>
+</feed>

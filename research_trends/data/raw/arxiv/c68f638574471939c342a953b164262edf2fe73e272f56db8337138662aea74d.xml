@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CzYzwA6tqKXb7tGw2kyrOBMKSUw</id>
+  <title>arXiv Query: search_query=submittedDate:"202102010000 TO 202102282359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:12Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202102010000+TO+202102282359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>13820</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2102.11920v2</id>
+    <title>Dynamic Games among Teams with Delayed Intra-Team Information Sharing</title>
+    <updated>2021-04-02T14:40:25Z</updated>
+    <link href="https://arxiv.org/abs/2102.11920v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2102.11920v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We analyze a class of stochastic dynamic games among teams with asymmetric information, where members of a team share their observations internally with a delay of $d$. Each team is associated with a controlled Markov Chain, whose dynamics are coupled through the players' actions. These games exhibit challenges in both theory and practice due to the presence of signaling and the increasing domain of information over time. We develop a general approach to characterize a subset of Nash Equilibria where the agents can use a compressed version of their information, instead of the full information, to choose their actions. We identify two subclasses of strategies: Sufficient Private Information Based (SPIB) strategies, which only compress private information, and Compressed Information Based (CIB) strategies, which compress both common and private information. We show that while SPIB-strategy-based equilibria always exist, the same is not true for CIB-strategy-based equilibria. We develop a backward inductive sequential procedure, whose solution (if it exists) provides a CIB strategy-based equilibrium. We identify some instances where we can guarantee the existence of a solution to the above procedure. Our results highlight the tension among compression of information, existence of (compression based) equilibria, and backward inductive sequential computation of such equilibria in stochastic dynamic games with asymmetric information.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-02-23T20:06:56Z</published>
+    <arxiv:comment>30 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Dengwang Tang</name>
+    </author>
+    <author>
+      <name>Hamidreza Tavafoghi</name>
+    </author>
+    <author>
+      <name>Vijay Subramanian</name>
+    </author>
+    <author>
+      <name>Ashutosh Nayyar</name>
+    </author>
+    <author>
+      <name>Demosthenis Teneketzis</name>
+    </author>
+    <arxiv:doi>10.1007/s13235-022-00424-4</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s13235-022-00424-4" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,8 @@
+﻿year,calendar_months_observed,status,all_arxiv_submissions,cs_plus_stat_ml_submissions,core_ai_5_submissions,core_ai_5_share_all_pct,core_ai_5_share_cs_plus_stat_ml_pct,foundation_model_umbrella_candidate_hits,foundation_model_umbrella_share_core5_pct,foundation_pretraining_candidate_hits,foundation_pretraining_share_core5_pct,infrastructure_candidate_hits,infrastructure_share_core5_pct,llm_agents_broad_related_candidate_hits,llm_agents_broad_related_share_core5_pct,llm_agents_narrow_candidate_hits,llm_agents_narrow_share_core5_pct,posttraining_candidate_hits,posttraining_share_core5_pct
+2020,12,ok,178273,66418,43699,24.512405,65.793911,,,,,,,,,,,,
+2021,12,ok,181595,72094,48299,26.597098,66.994479,,,,,,,,,,,,
+2022,12,ok,185983,76860,53342,28.681116,69.401509,,,,,,,,,,,,
+2023,12,ok,209218,94157,66910,31.980996,71.062162,,,,,,,,,,,,
+2024,12,ok,243688,118903,86667,35.564739,72.888825,,,,,,,,,,,,
+2025,12,ok,284159,144659,106859,37.605355,73.869583,,,,,,,,,,,,
+2026,9,partial_or_missing,,,,,,,,,,,,,,,,,

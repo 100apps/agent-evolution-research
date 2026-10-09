@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/tQd/uPlAGmY0wHcs8JH2jDoOnGI</id>
+  <title>arXiv Query: search_query=submittedDate:"202608010000 TO 202608312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:41:44Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202608010000+TO+202608312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>31576</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.20206v1</id>
+    <title>A Computationally Efficient Likelihood Approximation for Target Tracking in Time-Varying Multipath Channels</title>
+    <updated>2026-08-20T16:04:22Z</updated>
+    <link href="https://arxiv.org/abs/2608.20206v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.20206v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Active sonar target tracking in shallow-water environments is challenging when weak target echoes are embedded in a time-varying background containing structured multipath components. Conventional detect-before-track methods rely on thresholded detections, which may discard weak target evidence or generate false tracks from multipath-induced detections. At low signal-to-noise ratios, track-before-detect filtering can improve tracking performance by exploiting weak target information directly from raw sensor measurements, but directly accounting for the time-varying background leads to a joint target--background inference problem, which is computationally demanding. To address this, this paper develops a physics-motivated and computationally efficient approximation of the raw sensor measurement likelihood for Bernoulli track-before-detect filtering. The multipath components in the background are modeled in the raw sensor measurement domain and recursively tracked using an extended Kalman filter. By neglecting the posterior dependence between the target and background state, the predicted background statistics are used to construct approximate target-present and target-absent likelihoods for the Bernoulli filter. Evaluations using measurements generated from the statistical model and BELLHOP show improved target-confirmation and localization performance over constant-false-alarm-rate-based tracking. These results indicate that explicitly accounting for the background through a computationally tractable approximate likelihood can exploit weak target information without requiring full joint target--background inference.</summary>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-20T16:04:22Z</published>
+    <arxiv:primary_category term="eess.SP"/>
+    <author>
+      <name>Ashwani Koul</name>
+    </author>
+    <author>
+      <name>Gustaf Hendeby</name>
+    </author>
+    <author>
+      <name>Isaac Skog</name>
+    </author>
+  </entry>
+</feed>

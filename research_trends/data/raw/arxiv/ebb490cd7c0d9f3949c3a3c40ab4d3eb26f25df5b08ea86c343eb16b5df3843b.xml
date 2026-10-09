@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/9QKnQxLbQ1fG4xkHg/lOnroQHos</id>
+  <title>arXiv Query: search_query=submittedDate:"202107010000 TO 202107312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:04Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202107010000+TO+202107312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15022</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2107.07995v2</id>
+    <title>Hausdorff dimension of union of lines that cover a curve</title>
+    <updated>2024-01-26T16:42:47Z</updated>
+    <link href="https://arxiv.org/abs/2107.07995v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.07995v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We construct a continuously differentiable curve in the plane that can be covered by a collection of lines such that every line intersects the curve at a single point and the union of the lines has Hausdorff dimension 1. We show that for twice differentiable curves this is impossible. In that case, the union of the lines must have Hausdorff dimension 2. If we use only tangent lines then the differentiability of the curve already implies that the union of the lines must have Hausdorff dimension 2, unless the curve is a line. We also construct a continuous curve, which is in fact the graph of a strictly convex function, such that the union of (one sided) tangent lines has Hausdorff dimension 1.</summary>
+    <category term="math.MG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.CA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-16T16:25:53Z</published>
+    <arxiv:comment>Some minor mathematical errors were corrected. (We could not correct these in the version published in the journal.)</arxiv:comment>
+    <arxiv:primary_category term="math.MG"/>
+    <arxiv:journal_ref>Pure and Applied Functional Analysis Volume 8, Number 6, 1651-1659, 2023</arxiv:journal_ref>
+    <author>
+      <name>Tamás Keleti</name>
+    </author>
+    <author>
+      <name>James Cumberbatch</name>
+    </author>
+    <author>
+      <name>Jialin Zhang</name>
+    </author>
+  </entry>
+</feed>

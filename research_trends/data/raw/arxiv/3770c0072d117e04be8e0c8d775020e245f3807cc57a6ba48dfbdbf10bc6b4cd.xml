@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/YQl8NV3qaiauFsImNm99fKKtb/4</id>
+  <title>arXiv Query: search_query=submittedDate:"202607010000 TO 202607312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:41:32Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202607010000+TO+202607312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>30030</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2607.01094v1</id>
+    <title>A Model-based Testing Technique for Amazon Lex Task-based Chatbots</title>
+    <updated>2026-07-01T15:48:43Z</updated>
+    <link href="https://arxiv.org/abs/2607.01094v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.01094v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Task-based chatbots are nowadays widely adopted software systems, usually integrated into real-world applications and communication channels, designed to assist users in completing tasks through conversational interfaces. Like any other software, even chatbots are prone to bugs. Despite their increasing pervasiveness in everyday activities, existing techniques for assessing their quality still exhibit several limitations, such as the simplicity of generated test scenarios and oracle weaknesses.
+  In this paper, we present LexTester, an automated model-based testing technique for Amazon Lex chatbots. The technique explores the conversational space of the chatbot under test to generate a Dialog Graph of all possible interactions, from which an executable test suite is generated according to different coverage strategies. LexTester was evaluated against the state-of-the-practice chatbot testing tool Botium on five Amazon Lex chatbots, consistently outperforming it in all subjects, generating more tests with nearly double complexity, achieving overall 83-95% coverage of conversational elements, and improving fault detection effectiveness by up to four times at comparable time costs.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-01T15:48:43Z</published>
+    <arxiv:comment>16 pages, 5 figures, 19th International Conference on the Quality of Information and Communications Technology (QUATIC) 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Diego Clerissi</name>
+    </author>
+    <author>
+      <name>Alessandro Vasina</name>
+    </author>
+    <author>
+      <name>Leonardo Mariani</name>
+    </author>
+  </entry>
+</feed>

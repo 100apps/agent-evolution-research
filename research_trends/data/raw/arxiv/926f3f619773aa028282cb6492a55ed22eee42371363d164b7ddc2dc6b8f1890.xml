@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/D5bN25bd2N2jmpG5W20vsUZmDTc</id>
+  <title>arXiv Query: search_query=submittedDate:"202205010000 TO 202205312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202205010000+TO+202205312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15860</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2207.00582v2</id>
+    <title>High peak-to-background-ratio solitons in a coherently-driven active fiber cavity</title>
+    <updated>2023-06-13T12:46:51Z</updated>
+    <link href="https://arxiv.org/abs/2207.00582v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.00582v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We demonstrate that the peak-to-background ratio of driven solitons can be greatly improved by harnessing the cavity detuning. We use a driven fiber laser pumped below the lasing threshold to increase the finesse and excite solitons in a very wide region of detunings. When driving a 50 m long fiber cavity close to the anti-resonance condition, we excite sub-800 fs solitons with a peak-to-background ratio over 30000. The experimental results are in good agreement with simple theoretical models describing the soliton peak power and the background power.</summary>
+    <category term="physics.optics" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-05-19T17:59:45Z</published>
+    <arxiv:primary_category term="physics.optics"/>
+    <author>
+      <name>Nicolas Englebert</name>
+    </author>
+    <author>
+      <name>Carlos Mas Arabí</name>
+    </author>
+    <author>
+      <name>Simon-Pierre Gorza</name>
+    </author>
+    <author>
+      <name>François Leo</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fPqPKhB5ZetgQ/Z5ppNkSCAxum8</id>
+  <title>arXiv Query: search_query=submittedDate:"202209010000 TO 202209302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202209010000+TO+202209302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15603</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2209.02708v2</id>
+    <title>A grounded perspective on New Early Dark Energy using ACT, SPT, and BICEP/Keck</title>
+    <updated>2023-02-24T15:47:32Z</updated>
+    <link href="https://arxiv.org/abs/2209.02708v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2209.02708v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We examine further the ability of the New Early Dark Energy model (NEDE) to resolve the current tension between the Cosmic Microwave Background (CMB) and local measurements of $H_0$ and the consequences for inflation. We perform new Bayesian analyses, including the current datasets from the ground-based CMB telescopes Atacama Cosmology Telescope (ACT), the South Pole Telescope (SPT), and the BICEP/Keck telescopes, employing an updated likelihood for the local measurements coming from the S$H_0$ES collaboration. Using the S$H_0$ES prior on $H_0$, the combined analysis with Baryonic Acoustic Oscillations (BAO), Pantheon, Planck and ACT improves the best-fit by $Δχ^2 = -15.9$ with respect to $Λ$CDM, favors a non-zero fractional contribution of NEDE, $f_{\rm NEDE} &gt; 0$, by $4.8σ$, and gives a best-fit value for the Hubble constant of $H_0 = 72.09$ km/s/Mpc (mean $71.48_{-0.81}^{+0.79}$ with $68\%$ C.L.). A similar analysis using SPT instead of ACT yields consistent results with a $Δχ^2 = - 23.1$ over $Λ$CDM, a preference for non-zero $f_{\rm NEDE}$ of $4.7σ$ and a best-fit value of $H_0=71.77$ km/s/Mpc (mean $71.43_{-0.84}^{+0.84}$ with $68\%$ C.L.). We also provide the constraints on the inflation parameters $r$ and $n_s$ coming from NEDE, including the BICEP/Keck 2018 data, and show that the allowed upper value on the tensor-scalar ratio is consistent with the $Λ$CDM bound, but, as also originally found, with a more blue scalar spectrum implying that the simplest curvaton model is now favored over the Starobinsky inflation model.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-09-06T18:00:00Z</published>
+    <arxiv:comment>32 pages, 10 figures, 14 tables, Journal version -- updated all figures and text with minor changes, conclusions unchanged</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>JCAP 02 (2023) 041</arxiv:journal_ref>
+    <author>
+      <name>Juan S. Cruz</name>
+    </author>
+    <author>
+      <name>Florian Niedermann</name>
+    </author>
+    <author>
+      <name>Martin S. Sloth</name>
+    </author>
+    <arxiv:doi>10.1088/1475-7516/2023/02/041</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1088/1475-7516/2023/02/041" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/2JaXIx06WbqosL2jvcUR1hvNoeE</id>
+  <title>arXiv Query: search_query=submittedDate:"202601010000 TO 202601312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:22Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202601010000+TO+202601312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>24135</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2601.11045v1</id>
+    <title>Convolutions Need Registers Too: HVS-Inspired Dynamic Attention for Video Quality Assessment</title>
+    <updated>2026-01-16T07:25:16Z</updated>
+    <link href="https://arxiv.org/abs/2601.11045v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.11045v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>No-reference video quality assessment (NR-VQA) estimates perceptual quality without a reference video, which is often challenging. While recent techniques leverage saliency or transformer attention, they merely address global context of the video signal by using static maps as auxiliary inputs rather than embedding context fundamentally within feature extraction of the video sequence. We present Dynamic Attention with Global Registers for Video Quality Assessment (DAGR-VQA), the first framework integrating register-token directly into a convolutional backbone for spatio-temporal, dynamic saliency prediction. By embedding learnable register tokens as global context carriers, our model enables dynamic, HVS-inspired attention, producing temporally adaptive saliency maps that track salient regions over time without explicit motion estimation. Our model integrates dynamic saliency maps with RGB inputs, capturing spatial data and analyzing it through a temporal transformer to deliver a perceptually consistent video quality assessment. Comprehensive tests conducted on the LSVQ, KonVid-1k, LIVE-VQC, and YouTube-UGC datasets show that the performance is highly competitive, surpassing the majority of top baselines. Research on ablation studies demonstrates that the integration of register tokens promotes the development of stable and temporally consistent attention mechanisms. Achieving an efficiency of 387.7 FPS at 1080p, DAGR-VQA demonstrates computational performance suitable for real-time applications like multimedia streaming systems.</summary>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-16T07:25:16Z</published>
+    <arxiv:comment>Accepted at ACM MMSys 2026. 12 pages, 8 figures. No supplementary material</arxiv:comment>
+    <arxiv:primary_category term="eess.IV"/>
+    <author>
+      <name>Mayesha Maliha R. Mithila</name>
+    </author>
+    <author>
+      <name>Mylene C. Q. Farias</name>
+    </author>
+  </entry>
+</feed>

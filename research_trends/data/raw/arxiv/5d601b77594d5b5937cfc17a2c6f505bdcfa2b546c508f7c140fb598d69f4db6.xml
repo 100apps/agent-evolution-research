@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Cuq0CeAEyJgBwmuaHWxVDhgLntk</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202005010000 TO 202005312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:28:55Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202005010000+TO+202005312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>3397</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2005.00670v1</id>
+    <title>Stochastic Neighbor Embedding of Multimodal Relational Data for Image-Text Simultaneous Visualization</title>
+    <updated>2020-05-02T00:39:29Z</updated>
+    <link href="https://arxiv.org/abs/2005.00670v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2005.00670v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multimodal relational data analysis has become of increasing importance in recent years, for exploring across different domains of data, such as images and their text tags obtained from social networking services (e.g., Flickr). A variety of data analysis methods have been developed for visualization; to give an example, t-Stochastic Neighbor Embedding (t-SNE) computes low-dimensional feature vectors so that their similarities keep those of the observed data vectors. However, t-SNE is designed only for a single domain of data but not for multimodal data; this paper aims at visualizing multimodal relational data consisting of data vectors in multiple domains with relations across these vectors. By extending t-SNE, we herein propose Multimodal Relational Stochastic Neighbor Embedding (MR-SNE), that (1) first computes augmented relations, where we observe the relations across domains and compute those within each of domains via the observed data vectors, and (2) jointly embeds the augmented relations to a low-dimensional space. Through visualization of Flickr and Animal with Attributes 2 datasets, proposed MR-SNE is compared with other graph embedding-based approaches; MR-SNE demonstrates the promising performance.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-05-02T00:39:29Z</published>
+    <arxiv:comment>20 pages, 23 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Morihiro Mizutani</name>
+    </author>
+    <author>
+      <name>Akifumi Okuno</name>
+    </author>
+    <author>
+      <name>Geewook Kim</name>
+    </author>
+    <author>
+      <name>Hidetoshi Shimodaira</name>
+    </author>
+  </entry>
+</feed>

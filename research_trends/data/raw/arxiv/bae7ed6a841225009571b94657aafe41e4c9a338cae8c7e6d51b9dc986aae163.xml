@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/0xZCJTasvRQV3gSXe6piStV5xug</id>
+  <title>arXiv Query: search_query=submittedDate:"202408010000 TO 202408312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:23Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202408010000+TO+202408312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>17788</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2408.15484v1</id>
+    <title>NAS-BNN: Neural Architecture Search for Binary Neural Networks</title>
+    <updated>2024-08-28T02:17:58Z</updated>
+    <link href="https://arxiv.org/abs/2408.15484v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2408.15484v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Binary Neural Networks (BNNs) have gained extensive attention for their superior inferencing efficiency and compression ratio compared to traditional full-precision networks. However, due to the unique characteristics of BNNs, designing a powerful binary architecture is challenging and often requires significant manpower. A promising solution is to utilize Neural Architecture Search (NAS) to assist in designing BNNs, but current NAS methods for BNNs are relatively straightforward and leave a performance gap between the searched models and manually designed ones. To address this gap, we propose a novel neural architecture search scheme for binary neural networks, named NAS-BNN. We first carefully design a search space based on the unique characteristics of BNNs. Then, we present three training strategies, which significantly enhance the training of supernet and boost the performance of all subnets. Our discovered binary model family outperforms previous BNNs for a wide range of operations (OPs) from 20M to 200M. For instance, we achieve 68.20% top-1 accuracy on ImageNet with only 57M OPs. In addition, we validate the transferability of these searched BNNs on the object detection task, and our binary detectors with the searched BNNs achieve a novel state-of-the-art result, e.g., 31.6% mAP with 370M OPs, on MS COCO dataset. The source code and models will be released at https://github.com/VDIGPKU/NAS-BNN.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-08-28T02:17:58Z</published>
+    <arxiv:comment>23 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Zhihao Lin</name>
+    </author>
+    <author>
+      <name>Yongtao Wang</name>
+    </author>
+    <author>
+      <name>Jinhe Zhang</name>
+    </author>
+    <author>
+      <name>Xiaojie Chu</name>
+    </author>
+    <author>
+      <name>Haibin Ling</name>
+    </author>
+  </entry>
+</feed>

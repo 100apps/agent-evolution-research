@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/81SZ1W3upfqRN3vM2rmFHYfHA+c</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202012010000 TO 202012312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:58Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202012010000+TO+202012312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>3971</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2012.02788v1</id>
+    <title>Neural Dynamic Policies for End-to-End Sensorimotor Learning</title>
+    <updated>2020-12-04T18:59:32Z</updated>
+    <link href="https://arxiv.org/abs/2012.02788v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2012.02788v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The current dominant paradigm in sensorimotor control, whether imitation or reinforcement learning, is to train policies directly in raw action spaces such as torque, joint angle, or end-effector position. This forces the agent to make decisions individually at each timestep in training, and hence, limits the scalability to continuous, high-dimensional, and long-horizon tasks. In contrast, research in classical robotics has, for a long time, exploited dynamical systems as a policy representation to learn robot behaviors via demonstrations. These techniques, however, lack the flexibility and generalizability provided by deep learning or reinforcement learning and have remained under-explored in such settings. In this work, we begin to close this gap and embed the structure of a dynamical system into deep neural network-based policies by reparameterizing action spaces via second-order differential equations. We propose Neural Dynamic Policies (NDPs) that make predictions in trajectory distribution space as opposed to prior policy learning methods where actions represent the raw control space. The embedded structure allows end-to-end policy learning for both reinforcement and imitation learning setups. We show that NDPs outperform the prior state-of-the-art in terms of either efficiency or performance across several robotic control tasks for both imitation and reinforcement learning setups. Project video and code are available at https://shikharbahl.github.io/neural-dynamic-policies/</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-12-04T18:59:32Z</published>
+    <arxiv:comment>NeurIPS 2020 (Spotlight). Code and videos at https://shikharbahl.github.io/neural-dynamic-policies/</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shikhar Bahl</name>
+    </author>
+    <author>
+      <name>Mustafa Mukadam</name>
+    </author>
+    <author>
+      <name>Abhinav Gupta</name>
+    </author>
+    <author>
+      <name>Deepak Pathak</name>
+    </author>
+  </entry>
+</feed>

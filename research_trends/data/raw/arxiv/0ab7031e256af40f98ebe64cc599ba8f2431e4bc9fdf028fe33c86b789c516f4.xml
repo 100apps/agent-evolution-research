@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/6ekdqDWfixF3lPGGTIAcODUJUWA</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202202010000 TO 202202282359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:25Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202202010000+TO+202202282359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>3926</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2202.00486v1</id>
+    <title>Towards a Theoretical Understanding of Word and Relation Representation</title>
+    <updated>2022-02-01T15:34:58Z</updated>
+    <link href="https://arxiv.org/abs/2202.00486v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2202.00486v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Representing words by vectors, or embeddings, enables computational reasoning and is foundational to automating natural language tasks. For example, if word embeddings of similar words contain similar values, word similarity can be readily assessed, whereas judging that from their spelling is often impossible (e.g. cat /feline) and to predetermine and store similarities between all words is prohibitively time-consuming, memory intensive and subjective. We focus on word embeddings learned from text corpora and knowledge graphs. Several well-known algorithms learn word embeddings from text on an unsupervised basis by learning to predict those words that occur around each word, e.g. word2vec and GloVe. Parameters of such word embeddings are known to reflect word co-occurrence statistics, but how they capture semantic meaning has been unclear. Knowledge graph representation models learn representations both of entities (words, people, places, etc.) and relations between them, typically by training a model to predict known facts in a supervised manner. Despite steady improvements in fact prediction accuracy, little is understood of the latent structure that enables this.
+  The limited understanding of how latent semantic structure is encoded in the geometry of word embeddings and knowledge graph representations makes a principled means of improving their performance, reliability or interpretability unclear. To address this:
+  1. we theoretically justify the empirical observation that particular geometric relationships between word embeddings learned by algorithms such as word2vec and GloVe correspond to semantic relations between words; and
+  2. we extend this correspondence between semantics and geometry to the entities and relations of knowledge graphs, providing a model for the latent structure of knowledge graph representation linked to that of word embeddings.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-02-01T15:34:58Z</published>
+    <arxiv:comment>PhD thesis</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Carl Allen</name>
+    </author>
+  </entry>
+</feed>

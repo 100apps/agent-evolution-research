@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/RvwkhEG9dTJAd9TRaRfmMyp+UNc</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202010010000 TO 202010312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:33Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202010010000+TO+202010312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>7107</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2010.04554v1</id>
+    <title>Meta Graph Attention on Heterogeneous Graph with Node-Edge Co-evolution</title>
+    <updated>2020-10-09T13:19:39Z</updated>
+    <link href="https://arxiv.org/abs/2010.04554v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2010.04554v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Graph neural networks have become an important tool for modeling structured data. In many real-world systems, intricate hidden information may exist, e.g., heterogeneity in nodes/edges, static node/edge attributes, and spatiotemporal node/edge features. However, most existing methods only take part of the information into consideration. In this paper, we present the Co-evolved Meta Graph Neural Network (CoMGNN), which applies meta graph attention to heterogeneous graphs with co-evolution of node and edge states. We further propose a spatiotemporal adaption of CoMGNN (ST-CoMGNN) for modeling spatiotemporal patterns on nodes and edges. We conduct experiments on two large-scale real-world datasets. Experimental results show that our models significantly outperform the state-of-the-art methods, demonstrating the effectiveness of encoding diverse information from different aspects.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-10-09T13:19:39Z</published>
+    <arxiv:comment>11pages, 4figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yucheng Lin</name>
+    </author>
+    <author>
+      <name>Huiting Hong</name>
+    </author>
+    <author>
+      <name>Xiaoqing Yang</name>
+    </author>
+    <author>
+      <name>Xiaodi Yang</name>
+    </author>
+    <author>
+      <name>Pinghua Gong</name>
+    </author>
+    <author>
+      <name>Jieping Ye</name>
+    </author>
+  </entry>
+</feed>

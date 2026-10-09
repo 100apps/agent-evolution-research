@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/j/RiVXmc8yHl6UzOAow4GrOvo18</id>
+  <title>arXiv Query: search_query=submittedDate:"202304010000 TO 202304302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202304010000+TO+202304302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15367</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2304.01622v2</id>
+    <title>An interpretability framework for Similar case matching</title>
+    <updated>2023-08-16T11:58:38Z</updated>
+    <link href="https://arxiv.org/abs/2304.01622v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2304.01622v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Similar Case Matching (SCM) plays a pivotal role in the legal system by facilitating the efficient identification of similar cases for legal professionals. While previous research has primarily concentrated on enhancing the performance of SCM models, the aspect of interpretability has been neglected. To bridge the gap, this study proposes an integrated pipeline framework for interpretable SCM. The framework comprises four modules: judicial feature sentence identification, case matching, feature sentence alignment, and conflict resolution. In contrast to current SCM methods, our framework first extracts feature sentences within a legal case that contain essential information. Then it conducts case matching based on these extracted features. Subsequently, our framework aligns the corresponding sentences in two legal cases to provide evidence of similarity. In instances where the results of case matching and feature sentence alignment exhibit conflicts, the conflict resolution module resolves these inconsistencies. The experimental results show the effectiveness of our proposed framework, establishing a new benchmark for interpretable SCM.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-04-04T08:25:12Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Nankai Lin</name>
+    </author>
+    <author>
+      <name>Haonan Liu</name>
+    </author>
+    <author>
+      <name>Jiajun Fang</name>
+    </author>
+    <author>
+      <name>Dong Zhou</name>
+    </author>
+    <author>
+      <name>Aimin Yang</name>
+    </author>
+  </entry>
+</feed>

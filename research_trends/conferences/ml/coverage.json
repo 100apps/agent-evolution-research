@@ -1,0 +1,284 @@
+[
+  {
+    "venue": "ICML",
+    "year": 2020,
+    "raw_records": 1084,
+    "main_unique": 1084,
+    "excluded_position": 0,
+    "source_files": [
+      "icml_2020.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "ICML",
+    "year": 2021,
+    "raw_records": 1183,
+    "main_unique": 1183,
+    "excluded_position": 0,
+    "source_files": [
+      "icml_2021.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "ICML",
+    "year": 2022,
+    "raw_records": 1233,
+    "main_unique": 1233,
+    "excluded_position": 0,
+    "source_files": [
+      "icml_2022.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "ICML",
+    "year": 2023,
+    "raw_records": 1828,
+    "main_unique": 1828,
+    "excluded_position": 0,
+    "source_files": [
+      "icml_2023.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "ICML",
+    "year": 2024,
+    "raw_records": 2610,
+    "main_unique": 2535,
+    "excluded_position": 75,
+    "source_files": [
+      "icml_2024.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "ICML",
+    "year": 2025,
+    "raw_records": 3330,
+    "main_unique": 3257,
+    "excluded_position": 73,
+    "source_files": [
+      "icml_2025.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "ICML",
+    "year": 2026,
+    "raw_records": 6552,
+    "main_unique": 6340,
+    "excluded_position": 212,
+    "source_files": [
+      "icml_2026.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "position tracks excluded by official program titles and published Position: prefix"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2020,
+    "raw_records": 1898,
+    "main_unique": 1898,
+    "excluded_tracks": {
+      "main": 1898
+    },
+    "source_files": [
+      "neurips_2020.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "official proceedings list-item classes used to exclude non-main tracks"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2021,
+    "raw_records": 2334,
+    "main_unique": 2334,
+    "excluded_tracks": {
+      "main": 2334
+    },
+    "source_files": [
+      "neurips_2021.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "official proceedings list-item classes used to exclude non-main tracks"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2022,
+    "raw_records": 2834,
+    "main_unique": 2671,
+    "excluded_tracks": {
+      "conference": 2671,
+      "datasets_and_benchmarks": 163
+    },
+    "source_files": [
+      "neurips_2022.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "official proceedings list-item classes used to exclude non-main tracks"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2023,
+    "raw_records": 3540,
+    "main_unique": 3218,
+    "excluded_tracks": {
+      "conference": 3218,
+      "datasets_and_benchmarks": 322
+    },
+    "source_files": [
+      "neurips_2023.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "official proceedings list-item classes used to exclude non-main tracks"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2024,
+    "raw_records": 4493,
+    "main_unique": 4034,
+    "excluded_tracks": {
+      "conference": 4034,
+      "datasets_and_benchmarks_track": 459
+    },
+    "source_files": [
+      "neurips_2024.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "official proceedings list-item classes used to exclude non-main tracks"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2025,
+    "raw_records": 5823,
+    "main_unique": 5286,
+    "excluded_tracks": {
+      "conference": 5286,
+      "datasets_and_benchmarks_track": 497,
+      "position_paper_track": 40
+    },
+    "source_files": [
+      "neurips_2025.html"
+    ],
+    "source_type": "published_proceedings",
+    "warning": "official proceedings list-item classes used to exclude non-main tracks"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2020,
+    "raw_records": 687,
+    "main_unique": 687,
+    "source_files": [
+      "iclr_2020.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official virtual catalogue; abstract completeness must be checked"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2021,
+    "raw_records": 913,
+    "poster_rows": 860,
+    "main_poster_rows": 860,
+    "main_unique": 860,
+    "duplicate_main_events": 0,
+    "source_files": [
+      "iclr_2021.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official accepted main-program catalogue, not initial decisions"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2022,
+    "raw_records": 1150,
+    "poster_rows": 1095,
+    "main_poster_rows": 1095,
+    "main_unique": 1095,
+    "duplicate_main_events": 0,
+    "source_files": [
+      "iclr_2022.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official accepted main-program catalogue, not initial decisions"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2023,
+    "raw_records": 1832,
+    "poster_rows": 1584,
+    "main_poster_rows": 1574,
+    "main_unique": 1574,
+    "duplicate_main_events": 0,
+    "source_files": [
+      "iclr_2023.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official accepted main-program catalogue, not initial decisions"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2024,
+    "raw_records": 2382,
+    "poster_rows": 2296,
+    "main_poster_rows": 2260,
+    "main_unique": 2260,
+    "duplicate_main_events": 0,
+    "source_files": [
+      "iclr_2024.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official accepted main-program catalogue, not initial decisions"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2025,
+    "raw_records": 4040,
+    "poster_rows": 3827,
+    "main_poster_rows": 3705,
+    "main_unique": 3705,
+    "duplicate_main_events": 0,
+    "source_files": [
+      "iclr_2025.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official accepted main-program catalogue, not initial decisions"
+  },
+  {
+    "venue": "ICLR",
+    "year": 2026,
+    "raw_records": 5691,
+    "poster_rows": 5468,
+    "main_poster_rows": 5353,
+    "main_unique": 5353,
+    "duplicate_main_events": 0,
+    "source_files": [
+      "iclr_2026.json"
+    ],
+    "source_type": "accepted_main_program",
+    "warning": "official accepted main-program catalogue, not initial decisions"
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2026,
+    "raw_records": 9241,
+    "poster_rows": 9066,
+    "main_poster_rows": 7980,
+    "main_unique": 5522,
+    "duplicate_main_events": 2458,
+    "source_files": [
+      "neurips_2026_program.json"
+    ],
+    "source_type": "provisional_program_incomplete",
+    "warning": "2026 NeurIPS program not final; do not compare as complete edition"
+  }
+]

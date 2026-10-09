@@ -1,0 +1,35 @@
+{
+  "version": "shared-title-v2-2026-10-09",
+  "status": "exploratory_lexical_proxy_not_semantic_labels",
+  "normalization": "Unicode NFKC; lowercase; punctuation and hyphens become spaces; collapse whitespace",
+  "unit": "official main-proceedings or accepted-main-program paper title",
+  "multilabel": true,
+  "method_tags": {
+    "explicit_language_foundation": "\\b(?:large language models?|llms?|foundation models?|large multimodal models?|large vision language models?|vision language models?|vlms?|mllms?|lvlms?|chatgpt|gpt(?:\\s*\\d+)?|llama(?:\\s*\\d+)?)\\b",
+    "historical_pretrained_cues": "\\b(?:bert|roberta|t5|xlnet|electra|elmo|ulmfit|albert|bart|deberta|pretrained language models?|pre trained language models?)\\b",
+    "pretraining_selfsupervision": "\\b(?:pretrain\\w*|pre train\\w*|self supervis\\w*|contrastive learning|masked language|masked image)\\b",
+    "posttraining_adaptation": "\\b(?:post train\\w*|fine tun\\w*|finetun\\w*|instruction tun\\w*|preference optimi[sz]\\w*|rlhf|rlaif|rlvr|dpo|grpo|supervised fine tun\\w*|lora)\\b",
+    "agents_tools_broad": "\\b(?:agents?|agentic|multiagent|multi agent|tool use|tool using|tool augmented|tool calling|function calling|tool learning)\\b",
+    "inference_systems_compute": "\\b(?:model serving|inference serving|distributed training|gpu scheduling|ai accelerator|kv cache|quantiz\\w*|quanti[sz]ation|model parallel\\w*|tensor parallel\\w*|training systems?|inference systems?)\\b",
+    "evaluation_safety": "\\b(?:evaluat\\w*|benchmarks?|safety|safe|fairness|privacy|robust\\w*|adversarial|jailbreak\\w*|hallucinat\\w*|trustworth\\w*|red team\\w*)\\b",
+    "optimization_theory": "\\b(?:optimi[sz]\\w*|convergence|generali[sz]ation|regret|sample complexity|theor\\w*|provabl\\w*|bounds?|minimax|convex\\w*|gradient\\w*|bandits?)\\b",
+    "classical_statistics": "\\b(?:bayesian|gaussian processes?|kernels?|random forests?|decision trees?|support vector|boosting|clustering|linear regression|principal component|matrix factorization|sparse recovery|compressed sensing|mcmc|monte carlo|nonparametric|causal|statistical inference)\\b"
+  },
+  "task_tags": {
+    "search_retrieval": "\\b(?:search engines?|web search|information retrieval|retriev\\w*|rag|ranking|document ranking)\\b",
+    "recommendation": "\\b(?:recommend\\w*|recommender\\w*|collaborative filtering)\\b",
+    "marketing_advertising": "\\b(?:marketing|advertis\\w*|ad targeting|ad click\\w*|click through rate|sponsored search)\\b",
+    "software_code": "\\b(?:software engineering|software develop\\w*|code generat\\w*|program synthesis|program repair|debugg\\w*|code completion|repository level|source code)\\b",
+    "nlp_language_tasks": "\\b(?:machine translation|translat\\w*|parsing|syntax|sentiment|question answering|summari[sz]\\w*|dialogue|coreference|named entity|information extraction)\\b",
+    "vision_perception": "\\b(?:computer vision|object detection|segment\\w*|image classification|visual recognition|image recognition|3d reconstruction|point clouds?|optical flow|depth estimation|gaussian splatting)\\b",
+    "robotics_control": "\\b(?:robot\\w*|embodied|autonomous driving|navigation|manipulat\\w*|grasp\\w*|control policies?)\\b"
+  },
+  "derived_tag": {
+    "explicit_lm_agent_title_candidate": "explicit_language_foundation AND agents_tools_broad"
+  },
+  "warnings": [
+    "Title words miss implicit methods; broad terms such as agent and optimization can refer to older work.",
+    "No title rule proves tool/environment action-observation-feedback loops or researcher movement.",
+    "Labels overlap within and across axes; percentage shares must not be summed."
+  ]
+}

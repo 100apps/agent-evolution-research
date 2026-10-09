@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api//nnGx6TTZbagVU4hc/me1vx+NNU</id>
+  <title>arXiv Query: search_query=submittedDate:"202206010000 TO 202206302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:00Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202206010000+TO+202206302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15482</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2207.00584v1</id>
+    <title>Distribution-based Sketching of Single-Cell Samples</title>
+    <updated>2022-06-30T19:43:06Z</updated>
+    <link href="https://arxiv.org/abs/2207.00584v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.00584v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern high-throughput single-cell immune profiling technologies, such as flow and mass cytometry and single-cell RNA sequencing can readily measure the expression of a large number of protein or gene features across the millions of cells in a multi-patient cohort. While bioinformatics approaches can be used to link immune cell heterogeneity to external variables of interest, such as, clinical outcome or experimental label, they often struggle to accommodate such a large number of profiled cells. To ease this computational burden, a limited number of cells are typically \emph{sketched} or subsampled from each patient. However, existing sketching approaches fail to adequately subsample rare cells from rare cell-populations, or fail to preserve the true frequencies of particular immune cell-types. Here, we propose a novel sketching approach based on Kernel Herding that selects a limited subsample of all cells while preserving the underlying frequencies of immune cell-types. We tested our approach on three flow and mass cytometry datasets and on one single-cell RNA sequencing dataset and demonstrate that the sketched cells (1) more accurately represent the overall cellular landscape and (2) facilitate increased performance in downstream analysis tasks, such as classifying patients according to their clinical outcome. An implementation of sketching with Kernel Herding is publicly available at \url{https://github.com/vishalathreya/Set-Summarization}.</summary>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-06-30T19:43:06Z</published>
+    <arxiv:comment>Accepted by ACM-BCB 2022</arxiv:comment>
+    <arxiv:primary_category term="q-bio.QM"/>
+    <author>
+      <name>Vishal Athreya Baskaran</name>
+    </author>
+    <author>
+      <name>Jolene Ranek</name>
+    </author>
+    <author>
+      <name>Siyuan Shan</name>
+    </author>
+    <author>
+      <name>Natalie Stanley</name>
+    </author>
+    <author>
+      <name>Junier B. Oliva</name>
+    </author>
+    <arxiv:doi>10.1145/3535508.3545539</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3535508.3545539" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/0r1RrktcjHfaisMMtFzoZCB+urY</id>
+  <title>arXiv Query: search_query=submittedDate:"202302010000 TO 202302282359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:24Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202302010000+TO+202302282359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14853</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2303.06216v1</id>
+    <title>Moral intuitions behind deepfake-related discussions in Reddit communities</title>
+    <updated>2023-02-27T07:39:05Z</updated>
+    <link href="https://arxiv.org/abs/2303.06216v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2303.06216v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deepfakes are AI-synthesized content that are becoming popular on many social media platforms, meaning the use of deepfakes is increasing in society, regardless of its societal implications. Its implications are harmful if the moral intuitions behind deepfakes are problematic; thus, it is important to explore how the moral intuitions behind deepfakes unfold in communities at scale. However, understanding perceived moral viewpoints unfolding in digital contexts is challenging, due to the complexities in conversations. In this research, we demonstrate how Moral Foundations Theory (MFT) can be used as a lens through which to operationalize moral viewpoints in discussions about deepfakes on Reddit communities. Using the extended Moral Foundations Dictionary (eMFD), we measured the strengths of moral intuition (moral loading) behind 101,869 Reddit posts. We present the discussions that unfolded on Reddit in 2018 to 2022 wherein intuitions behind some posts were found to be morally questionable to society. Our results may help platforms detect and take action against immoral activities related to deepfakes.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-02-27T07:39:05Z</published>
+    <arxiv:comment>This is more related to CSCW, societal implications. Manuscript to be submitted to SM+S Journal (Sage Group)</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Dilrukshi Gamage</name>
+    </author>
+    <author>
+      <name>Hariharan Ravinthran</name>
+    </author>
+    <author>
+      <name>Kazutoshi Sasahara</name>
+    </author>
+  </entry>
+</feed>

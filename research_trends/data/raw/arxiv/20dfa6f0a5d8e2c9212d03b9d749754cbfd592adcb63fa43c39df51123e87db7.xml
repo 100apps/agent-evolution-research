@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/b3pMIaWQFXRugsE+AvxSyzMbKX4</id>
+  <title>arXiv Query: search_query=submittedDate:"202501010000 TO 202501312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202501010000+TO+202501312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>18932</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2501.16906v1</id>
+    <title>Medical Physics Dataset Article: a database of FLASH Murine In-Vivo Studies</title>
+    <updated>2025-01-28T12:48:43Z</updated>
+    <link href="https://arxiv.org/abs/2501.16906v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.16906v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The FLASH effect refers to a lower normal tissue damage for an equivalent tumour response, potentially widening the therapeutic window for radiotherapy. Although this effect has been demonstrated in various experiments using different types of particles and irradiation parameters, the underlying mechanism is not yet clearly understood. Uncertainties surround the conducted experiments, the explored parameter space, and the variability of reported results. To gain a better overview, we created a dataset that includes in-vivo FLASH experiments. This dataset documents all machine and biological dosimetric parameters, and for determined endpoints, it includes the outcome of the experiment. Our goal is to increase awareness of the results and their variability and provide a useful research and analysis tool for the community. The database contains peer-reviewed papers published until March 2024 on the FLASH in-vivo (murine) experiments. From each paper, previously defined parameters have been manually extracted and/or recalculated to ensure compatibility within the database entries. We provide two types of datasets: a user-friendly web-based Notion database and spreadsheets on a Zenodo repository. The database contains all the reviewed papers with extracted information in text or numeric form. Users can duplicate the database or view, search, filter, and reorganise online entries. The spreadsheets contain the data for the most analysed endpoints, allowing a comparative analysis. The study has two main applications. The web-based database will allow for a user-friendly search of information and meta-data of all published FLASH murine data. This will facilitate future research efforts to better understand the FLASH effect. The spreadsheets are a simple and useful tool for the community to conduct statistical analysis and determine the parameters associated with the FLASH effect.</summary>
+    <category term="physics.med-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-28T12:48:43Z</published>
+    <arxiv:comment>Medical Physics dataset article, 3 figures and 2 tables</arxiv:comment>
+    <arxiv:primary_category term="physics.med-ph"/>
+    <author>
+      <name>Mathilde Toschini</name>
+    </author>
+    <author>
+      <name>Isabella Colizzi</name>
+    </author>
+    <author>
+      <name>Antony John Lomax</name>
+    </author>
+    <author>
+      <name>Serena Psoroulas</name>
+    </author>
+  </entry>
+</feed>

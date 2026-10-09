@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fjN0um5ZR9uFZezaSS6yfJC5WvE</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202101010000 TO 202101312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:05Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202101010000+TO+202101312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4763</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2101.03996v1</id>
+    <title>Individual Mobility Prediction: An Interpretable Activity-based Hidden Markov Approach</title>
+    <updated>2021-01-11T16:11:27Z</updated>
+    <link href="https://arxiv.org/abs/2101.03996v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2101.03996v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Individual mobility is driven by demand for activities with diverse spatiotemporal patterns, but existing methods for mobility prediction often overlook the underlying activity patterns. To address this issue, this study develops an activity-based modeling framework for individual mobility prediction. Specifically, an input-output hidden Markov model (IOHMM) framework is proposed to simultaneously predict the (continuous) time and (discrete) location of an individual's next trip using transit smart card data. The prediction task can be transformed into predicting the hidden activity duration and end location. Based on a case study of Hong Kong's metro system, we show that the proposed model can achieve similar prediction performance as the state-of-the-art long short-term memory (LSTM) model. Unlike LSTM, the proposed IOHMM model can also be used to analyze hidden activity patterns, which provides meaningful behavioral interpretation for why an individual makes a certain trip. Therefore, the activity-based prediction framework offers a way to preserve the predictive power of advanced machine learning methods while enhancing our ability to generate insightful behavioral explanations, which is useful for enhancing situational awareness in user-centric transportation applications such as personalized traveler information.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-01-11T16:11:27Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Baichuan Mo</name>
+    </author>
+    <author>
+      <name>Zhan Zhao</name>
+    </author>
+    <author>
+      <name>Haris N. Koutsopoulos</name>
+    </author>
+    <author>
+      <name>Jinhua Zhao</name>
+    </author>
+  </entry>
+</feed>

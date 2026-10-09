@@ -1,0 +1,9 @@
+{
+  "filename": "iclr_2025.json",
+  "source_url": "https://iclr.cc/static/virtual/data/iclr-2025-orals-posters.json",
+  "fetched_at_utc": "2026-10-09T03:42:28.259185+00:00",
+  "http_status": 200,
+  "final_url": "https://iclr.cc/static/virtual/data/iclr-2025-orals-posters.json",
+  "bytes": 16535673,
+  "sha256": "ebd6fa23d9ca54628eb715885756bf7e5addf72db134648dc683251678f86a70"
+}

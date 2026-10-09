@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/N7m+dmA/MBx0nPKReNPaG7R7Ec8</id>
+  <title>arXiv Query: search_query=submittedDate:"202503010000 TO 202503312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202503010000+TO+202503312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>24386</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2503.21329v1</id>
+    <title>When is a Bottom-Up Deterministic Tree Translation Top-Down Deterministic?</title>
+    <updated>2025-03-27T10:10:30Z</updated>
+    <link href="https://arxiv.org/abs/2503.21329v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.21329v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider two natural subclasses of deterministic top-down tree-to-tree transducers, namely, linear and uniform-copying transducers. For both classes we show that it is decidable whether the translation of a transducer with look-ahead can be realized by a transducer from the same class without look-ahead. The transducers constructed in this way, may still make use of inspection, i.e., have an additional tree automaton restricting the domain. We provide a second procedure which decides whether inspection can be removed. The procedure relies on a precise abstract interpretation of inspection requirements and a dedicated earliest normal form for linear as well as uniform-copying transducers which can be constructed in polynomial time. As a consequence, equivalence of these transducers can be decided in polynomial time. Applying these results to deterministic bottom-up tree transducers, we obtain that it is decidable whether or not their translations can be realized by deterministic linear or uniform-copying top-down transducers without look-ahead (but with inspection) -- or without both look-ahead and inspection. Look-ahead removal has been known to be a notoriously difficult problem. To the best of our knowledge, this paper is the first to present look-ahead removal for natural and known subclasses of top-down tree transducers.</summary>
+    <category term="cs.FL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-27T10:10:30Z</published>
+    <arxiv:primary_category term="cs.FL"/>
+    <author>
+      <name>Sebastian Maneth</name>
+    </author>
+    <author>
+      <name>Helmut Seidl</name>
+    </author>
+  </entry>
+</feed>

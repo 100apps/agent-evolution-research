@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/UvMVzb044B9megbYDMA5gpXLrh4</id>
+  <title>arXiv Query: search_query=submittedDate:"202109010000 TO 202109302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:25Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202109010000+TO+202109302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15310</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2109.13729v1</id>
+    <title>A ChPT estimate of the strong-isospin-breaking contribution to the anomalous magnetic moment of the muon</title>
+    <updated>2021-09-28T13:46:13Z</updated>
+    <link href="https://arxiv.org/abs/2109.13729v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2109.13729v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>First-principles lattice determinations of the Standard Model expectation for the leading order hadronic vacuum polarization contribution to the anomalous magnetic moment of the muon have become sufficiently precise that further improvement requires including strong and electromagnetic isospin-breaking effects. We provide a continuum estimate of the strong isospin-breaking contribution, $a_μ^{SIB}$, using $SU(3)$ chiral perturbation theory. The result is shown to be dominated by resonance-region contributions encoded in a single low-energy constant whose value is known from flavor-breaking hadronic $τ$ decay sum rules. Implications of the form of the result for lattice determinations of $a_μ^{SIB}$ are also discussed.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-lat" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-09-28T13:46:13Z</published>
+    <arxiv:comment>20 pages, three figures</arxiv:comment>
+    <arxiv:primary_category term="hep-ph"/>
+    <author>
+      <name>Christopher L. James</name>
+    </author>
+    <author>
+      <name>Randy Lewis</name>
+    </author>
+    <author>
+      <name>Kim Maltman</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.105.053010</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.105.053010" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/FLmd44IYRzLvyULF5/tFU2chdIw</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202402010000 TO 202402292359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:36:23Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202402010000+TO+202402292359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>9816</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2402.18995v1</id>
+    <title>Negative-Binomial Randomized Gamma Markov Processes for Heterogeneous Overdispersed Count Time Series</title>
+    <updated>2024-02-29T09:46:47Z</updated>
+    <link href="https://arxiv.org/abs/2402.18995v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2402.18995v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modeling count-valued time series has been receiving increasing attention since count time series naturally arise in physical and social domains. Poisson gamma dynamical systems (PGDSs) are newly-developed methods, which can well capture the expressive latent transition structure and bursty dynamics behind count sequences. In particular, PGDSs demonstrate superior performance in terms of data imputation and prediction, compared with canonical linear dynamical system (LDS) based methods. Despite these advantages, PGDS cannot capture the heterogeneous overdispersed behaviours of the underlying dynamic processes. To mitigate this defect, we propose a negative-binomial-randomized gamma Markov process, which not only significantly improves the predictive performance of the proposed dynamical system, but also facilitates the fast convergence of the inference algorithm. Moreover, we develop methods to estimate both factor-structured and graph-structured transition dynamics, which enable us to infer more explainable latent structure, compared with PGDSs. Finally, we demonstrate the explainable latent structure learned by the proposed method, and show its superior performance in imputing missing data and forecasting future observations, compared with the related models.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-02-29T09:46:47Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Rui Huang</name>
+    </author>
+    <author>
+      <name>Sikun Yang</name>
+    </author>
+    <author>
+      <name>Heinz Koeppl</name>
+    </author>
+  </entry>
+</feed>

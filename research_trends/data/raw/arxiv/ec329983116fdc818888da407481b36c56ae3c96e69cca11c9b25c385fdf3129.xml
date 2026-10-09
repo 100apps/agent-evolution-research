@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QgulMiSA8VKiJ1p5XJbggdQVOKc</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202002010000 TO 202002292359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:27:34Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202002010000+TO+202002292359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5020</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2002.04301v3</id>
+    <title>Network Pruning via Annealing and Direct Sparsity Control</title>
+    <updated>2020-07-27T02:48:56Z</updated>
+    <link href="https://arxiv.org/abs/2002.04301v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2002.04301v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Artificial neural networks (ANNs) especially deep convolutional networks are very popular these days and have been proved to successfully offer quite reliable solutions to many vision problems. However, the use of deep neural networks is widely impeded by their intensive computational and memory cost. In this paper, we propose a novel efficient network pruning method that is suitable for both non-structured and structured channel-level pruning. Our proposed method tightens a sparsity constraint by gradually removing network parameters or filter channels based on a criterion and a schedule. The attractive fact that the network size keeps dropping throughout the iterations makes it suitable for the pruning of any untrained or pre-trained network. Because our method uses a $L_0$ constraint instead of the $L_1$ penalty, it does not introduce any bias in the training parameters or filter channels. Furthermore, the $L_0$ constraint makes it easy to directly specify the desired sparsity level during the network pruning process. Finally, experimental validation on extensive synthetic and real vision datasets show that the proposed method obtains better or competitive performance compared to other states of art network pruning methods.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-02-11T10:51:12Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yangzi Guo</name>
+    </author>
+    <author>
+      <name>Yiyuan She</name>
+    </author>
+    <author>
+      <name>Adrian Barbu</name>
+    </author>
+  </entry>
+</feed>

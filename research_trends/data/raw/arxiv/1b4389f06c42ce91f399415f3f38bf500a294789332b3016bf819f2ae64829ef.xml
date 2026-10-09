@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/fNfsZ+Hu75ApLCUMM5YScMe4PMs</id>
+  <title>arXiv Query: search_query=submittedDate:"202510010000 TO 202510312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:39:50Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202510010000+TO+202510312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>27477</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2510.00731v1</id>
+    <title>Controlling the spread of deception-based cyber-threats on time-varying networks</title>
+    <updated>2025-10-01T10:14:57Z</updated>
+    <link href="https://arxiv.org/abs/2510.00731v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.00731v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the efficacy of strategies aimed at controlling the spread of deception-based cyber-threats unfolding on online social networks. We model directed and temporal interactions between users using a family of activity-driven networks featuring tunable homophily levels among gullibility classes. We simulate the spreading of cyber-threats using classic Susceptible-Infected-Susceptible (SIS) models. We explore and quantify the effectiveness of four control strategies. Akin to vaccination campaigns with a limited budget, each strategy selects a fraction of nodes with the aim to increase their awareness and provide protection from cyber-threats. The first strategy picks nodes randomly. The second assumes global knowledge of the system selecting nodes based on their activity. The third picks nodes via egocentric sampling. The fourth selects nodes based on the outcome of standard security awareness tests, customarily used by institutions to probe, estimate, and raise the awareness of their workforce. We quantify the impact of each strategy by deriving analytically how they affect the spreading threshold. Analytical expressions are validated via large-scale numerical simulations. Interestingly, we find that targeted strategies, focusing on key features of the population such as the activity, are extremely effective. Egocentric sampling strategies, though not as effective, emerge as clear second best despite not assuming any knowledge about the system. Interestingly, we find that networks characterized by highly homophilic interactions linked to gullibility might expand the range of transmissibility parameters that allows for macroscopic outbreaks. At the same time, they reduce the reach of these spreading events. Hence, rather isolated patches of the network formed by highly gullible individuals might provide fertile grounds for the propagation and survival of cyber-threats.</summary>
+    <category term="physics.soc-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-01T10:14:57Z</published>
+    <arxiv:primary_category term="physics.soc-ph"/>
+    <author>
+      <name>Nicolò Gozzi</name>
+    </author>
+    <author>
+      <name>Nicola Perra</name>
+    </author>
+  </entry>
+</feed>

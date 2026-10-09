@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ciU6xvtxDnlCj4WiRQsAFpgQ5V8</id>
+  <title>arXiv Query: search_query=( (cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) ) AND ( ( (ti:"foundation model" OR abs:"foundation model") OR (ti:"foundation models" OR abs:"foundation models") OR (ti:"large language model" OR abs:"large language model") OR (ti:"large language models" OR abs:"large language models") OR (ti:"large multimodal model" OR abs:"large multimodal model") OR (ti:"vision foundation model" OR abs:"vision foundation model") ) ) AND submittedDate:"202301010000 TO 202301312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:43:20Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+(((ti:%22foundation+model%22+OR+abs:%22foundation+model%22)+OR+((ti:%22foundation+models%22+OR+abs:%22foundation+models%22)+OR+((ti:%22large+language+model%22+OR+abs:%22large+language+model%22)+OR+((ti:%22large+language+models%22+OR+abs:%22large+language+models%22)+OR+((ti:%22large+multimodal+model%22+OR+abs:%22large+multimodal+model%22)+OR+(ti:%22vision+foundation+model%22+OR+abs:%22vision+foundation+model%22))))))+AND+submittedDate:%22202301010000+TO+202301312359%22)&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>84</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2302.00093v3</id>
+    <title>Large Language Models Can Be Easily Distracted by Irrelevant Context</title>
+    <updated>2023-06-06T08:36:20Z</updated>
+    <link href="https://arxiv.org/abs/2302.00093v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2302.00093v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models have achieved impressive performance on various natural language processing tasks. However, so far they have been evaluated primarily on benchmarks where all information in the input context is relevant for solving the task. In this work, we investigate the distractibility of large language models, i.e., how the model problem-solving accuracy can be influenced by irrelevant context. In particular, we introduce Grade-School Math with Irrelevant Context (GSM-IC), an arithmetic reasoning dataset with irrelevant information in the problem description. We use this benchmark to measure the distractibility of cutting-edge prompting techniques for large language models, and find that the model performance is dramatically decreased when irrelevant information is included. We also identify several approaches for mitigating this deficiency, such as decoding with self-consistency and adding to the prompt an instruction that tells the language model to ignore the irrelevant information.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-31T20:48:57Z</published>
+    <arxiv:comment>Published in ICML 2023</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Freda Shi</name>
+    </author>
+    <author>
+      <name>Xinyun Chen</name>
+    </author>
+    <author>
+      <name>Kanishka Misra</name>
+    </author>
+    <author>
+      <name>Nathan Scales</name>
+    </author>
+    <author>
+      <name>David Dohan</name>
+    </author>
+    <author>
+      <name>Ed Chi</name>
+    </author>
+    <author>
+      <name>Nathanael Schärli</name>
+    </author>
+    <author>
+      <name>Denny Zhou</name>
+    </author>
+  </entry>
+</feed>

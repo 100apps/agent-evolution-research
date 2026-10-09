@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Fzvy+3X5c/NmIjegXG26Ey7zMQo</id>
+  <title>arXiv Query: search_query=submittedDate:"202004010000 TO 202004302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:28:37Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202004010000+TO+202004302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15076</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2006.00054v1</id>
+    <title>Single-source, solvent-free, room temperature deposition of black $γ$-CsSnI$_3$ films</title>
+    <updated>2020-04-29T11:13:30Z</updated>
+    <link href="https://arxiv.org/abs/2006.00054v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2006.00054v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The presence of a non-optically active polymorph (yellow-phase) competing with the optically active polymorph (black $γ$-phase) at room temperature in CsSnI3 and the susceptibility of Sn to oxidation, represent two of the biggest obstacles for the exploitation of CsSnI3 in optoelectronic devices. Here room-temperature single-source in vacuum deposition of smooth black $γ$ - CsSnI3 thin films is reported. This has been done by fabricating a solid target by completely solvent-free mixing of CsI and SnI2 powders and isostatic pressing. By controlled laser ablation of the solid target on an arbitrary substrate at room temperature, the formation of CsSnI3 thin films with optimal optical properties is demonstrated. The films present a band gap of 1.32 eV, a sharp absorption edge and near-infrared photoluminescence emission. These properties and X-ray diffraction of the thin films confirmed the formation of the orthorhombic (B-$γ$) perovskite phase. The thermal stability of the phase was ensured by applying in situ an Al2O$_3$ capping layer. This work demonstrates the potential of pulsed laser deposition as a volatility-insensitive single-source growth technique of halide perovskites and represents a critical step forward in the development and future scalability of inorganic lead-free halide perovskites.</summary>
+    <category term="physics.app-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-29T11:13:30Z</published>
+    <arxiv:comment>Accepted by Advanced Materials Interfaces, 16 pages, 4 figures, and supplement</arxiv:comment>
+    <arxiv:primary_category term="physics.app-ph"/>
+    <arxiv:journal_ref>Adv. Mater. Interfaces (2020), 2000162</arxiv:journal_ref>
+    <author>
+      <name>Vivien M. Kiyek</name>
+    </author>
+    <author>
+      <name>Yorick A. Birkhölzer</name>
+    </author>
+    <author>
+      <name>Yury Smirnov</name>
+    </author>
+    <author>
+      <name>Martin Ledinsky</name>
+    </author>
+    <author>
+      <name>Zdenek Remes</name>
+    </author>
+    <author>
+      <name>Jamo Momand</name>
+    </author>
+    <author>
+      <name>Bart J. Kooi</name>
+    </author>
+    <author>
+      <name>Gertjan Koster</name>
+    </author>
+    <author>
+      <name>Guus Rijnders</name>
+    </author>
+    <author>
+      <name>Monica Morales-Masis</name>
+    </author>
+    <arxiv:doi>10.1002/admi.202000162</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1002/admi.202000162" title="doi"/>
+  </entry>
+</feed>

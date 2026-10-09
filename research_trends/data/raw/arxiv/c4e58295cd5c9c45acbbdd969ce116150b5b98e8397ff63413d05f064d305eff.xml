@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/pU219wqm8XTEm0cNkACUPjM35eY</id>
+  <title>arXiv Query: search_query=submittedDate:"202409010000 TO 202409302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:33Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202409010000+TO+202409302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>20448</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2409.04440v1</id>
+    <title>Synergy and Synchrony in Couple Dances</title>
+    <updated>2024-09-06T17:59:01Z</updated>
+    <link href="https://arxiv.org/abs/2409.04440v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2409.04440v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper asks to what extent social interaction influences one's behavior. We study this in the setting of two dancers dancing as a couple. We first consider a baseline in which we predict a dancer's future moves conditioned only on their past motion without regard to their partner. We then investigate the advantage of taking social information into account by conditioning also on the motion of their dancing partner. We focus our analysis on Swing, a dance genre with tight physical coupling for which we present an in-the-wild video dataset. We demonstrate that single-person future motion prediction in this context is challenging. Instead, we observe that prediction greatly benefits from considering the interaction partners' behavior, resulting in surprisingly compelling couple dance synthesis results (see supp. video). Our contributions are a demonstration of the advantages of socially conditioned future motion prediction and an in-the-wild, couple dance video dataset to enable future research in this direction. Video results are available on the project website: https://von31.github.io/synNsync</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-09-06T17:59:01Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Vongani Maluleke</name>
+    </author>
+    <author>
+      <name>Lea Müller</name>
+    </author>
+    <author>
+      <name>Jathushan Rajasegaran</name>
+    </author>
+    <author>
+      <name>Georgios Pavlakos</name>
+    </author>
+    <author>
+      <name>Shiry Ginosar</name>
+    </author>
+    <author>
+      <name>Angjoo Kanazawa</name>
+    </author>
+    <author>
+      <name>Jitendra Malik</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/EsrCtluHfOpCXREf8QZr69QLVu0</id>
+  <title>arXiv Query: search_query=submittedDate:"202603010000 TO 202603312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:43Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202603010000+TO+202603312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>29578</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.25816v1</id>
+    <title>Time-Varying Reach-Avoid Control Certificates for Stochastic Systems</title>
+    <updated>2026-03-26T18:26:48Z</updated>
+    <link href="https://arxiv.org/abs/2603.25816v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.25816v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reach-avoid analysis is fundamental to reasoning about the safety and goal-reaching behavior of dynamical systems, and serves as a foundation for specifying and verifying more complex control objectives. This paper introduces a reach-avoid certificate framework for discrete-time, continuous-space stochastic systems over both finite- and infinite-horizon settings. We propose two formulations: time-varying and time-invariant certificates. We also show how these certificates can be synthesized using sum-of-squares (SOS) optimization, providing a convex formulation for verifying a given controller. Furthermore, we present an SOS-based method for the joint synthesis of an optimal feedback controller and its corresponding reach-avoid certificate, enabling the maximization of the probability of reaching the target set while avoiding unsafe regions. Case studies and benchmark results demonstrate the efficacy of the proposed framework in certifying and controlling stochastic systems with continuous state and action spaces.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.FA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-26T18:26:48Z</published>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Rayan Mazouz</name>
+    </author>
+    <author>
+      <name>Luca Laurenti</name>
+    </author>
+    <author>
+      <name>Morteza Lahijanian</name>
+    </author>
+  </entry>
+</feed>

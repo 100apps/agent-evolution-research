@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/AXHZ7mBbLLZr6y/6TN8D/LQ27BA</id>
+  <title>arXiv Query: search_query=submittedDate:"202012010000 TO 202012312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:51Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202012010000+TO+202012312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15716</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2012.11449v1</id>
+    <title>Decay properties of the $d^*(2380)$ hexaquark multiplet</title>
+    <updated>2020-12-21T16:13:40Z</updated>
+    <link href="https://arxiv.org/abs/2012.11449v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2012.11449v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The recently discovered $d^*(2380)$ hexaquark is expected to be the lightest member of an extended SU(3) antidecuplet of hexaquark states. The experimental search for the other heavier and strange partners of the $d^*(2380)$ in the antidecuplet is a challenging task. Evaluating the most appropriate methodologies necessitates some understanding of the underlying properties of the decuplet states such as mass, width and decay branches. In this paper we provide estimates of these key properties for all decuplet states, extrapolating from information and insights garnered for the $d^*(2380)$. The predictions form a basis for the design of future discovery experiments.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="nucl-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-12-21T16:13:40Z</published>
+    <arxiv:primary_category term="hep-ph"/>
+    <author>
+      <name>M. Bashkanov</name>
+    </author>
+    <author>
+      <name>G. Clash</name>
+    </author>
+    <author>
+      <name>M. Mocanu</name>
+    </author>
+    <author>
+      <name>M. Nicol</name>
+    </author>
+    <author>
+      <name>D. P. Watts</name>
+    </author>
+  </entry>
+</feed>

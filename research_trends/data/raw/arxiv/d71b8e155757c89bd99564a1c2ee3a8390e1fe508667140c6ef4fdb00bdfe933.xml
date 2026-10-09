@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api//ptcViwrOZAg0IMw1nlpPPLNnmo</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202004010000 TO 202004302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:28:41Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202004010000+TO+202004302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5589</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2004.13799v1</id>
+    <title>Minority Reports Defense: Defending Against Adversarial Patches</title>
+    <updated>2020-04-28T20:11:18Z</updated>
+    <link href="https://arxiv.org/abs/2004.13799v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.13799v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Deep learning image classification is vulnerable to adversarial attack, even if the attacker changes just a small patch of the image. We propose a defense against patch attacks based on partially occluding the image around each candidate patch location, so that a few occlusions each completely hide the patch. We demonstrate on CIFAR-10, Fashion MNIST, and MNIST that our defense provides certified security against patch attacks of a certain size.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-28T20:11:18Z</published>
+    <arxiv:comment>9 pages, 5 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Michael McCoyd</name>
+    </author>
+    <author>
+      <name>Won Park</name>
+    </author>
+    <author>
+      <name>Steven Chen</name>
+    </author>
+    <author>
+      <name>Neil Shah</name>
+    </author>
+    <author>
+      <name>Ryan Roggenkemper</name>
+    </author>
+    <author>
+      <name>Minjune Hwang</name>
+    </author>
+    <author>
+      <name>Jason Xinyu Liu</name>
+    </author>
+    <author>
+      <name>David Wagner</name>
+    </author>
+  </entry>
+</feed>

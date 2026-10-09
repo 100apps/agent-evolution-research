@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/4RbXIFz2/dTnbNx2nR1bOWVVFzk</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202206010000 TO 202206302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202206010000+TO+202206302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4711</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2206.15316v3</id>
+    <title>Anomaly Detection in Echocardiograms with Dynamic Variational Trajectory Models</title>
+    <updated>2023-10-24T08:26:50Z</updated>
+    <link href="https://arxiv.org/abs/2206.15316v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2206.15316v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a novel anomaly detection method for echocardiogram videos. The introduced method takes advantage of the periodic nature of the heart cycle to learn three variants of a variational latent trajectory model (TVAE). While the first two variants (TVAE-C and TVAE-R) model strict periodic movements of the heart, the third (TVAE-S) is more general and allows shifts in the spatial representation throughout the video. All models are trained on the healthy samples of a novel in-house dataset of infant echocardiogram videos consisting of multiple chamber views to learn a normative prior of the healthy population. During inference, maximum a posteriori (MAP) based anomaly detection is performed to detect out-of-distribution samples in our dataset. The proposed method reliably identifies severe congenital heart defects, such as Ebstein's Anomaly or Shone-complex. Moreover, it achieves superior performance over MAP-based anomaly detection with standard variational autoencoders when detecting pulmonary hypertension and right ventricular dilation. Finally, we demonstrate that the proposed method enables interpretable explanations of its output through heatmaps highlighting the regions corresponding to anomalous heart structures.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-06-30T14:42:18Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>Proceedings of the 7th Machine Learning for Healthcare Conference, PMLR 182:425-458, 2022</arxiv:journal_ref>
+    <author>
+      <name>Alain Ryser</name>
+    </author>
+    <author>
+      <name>Laura Manduchi</name>
+    </author>
+    <author>
+      <name>Fabian Laumer</name>
+    </author>
+    <author>
+      <name>Holger Michel</name>
+    </author>
+    <author>
+      <name>Sven Wellmann</name>
+    </author>
+    <author>
+      <name>Julia E. Vogt</name>
+    </author>
+  </entry>
+</feed>

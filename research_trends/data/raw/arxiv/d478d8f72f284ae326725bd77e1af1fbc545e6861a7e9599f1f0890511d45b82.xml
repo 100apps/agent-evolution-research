@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/TfU1qo8/FcK5avv8UEKxMXjpY/w</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202512010000 TO 202512312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202512010000+TO+202512312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>10913</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2512.16872v1</id>
+    <title>On the Universal Representation Property of Spiking Neural Networks</title>
+    <updated>2025-12-18T18:41:51Z</updated>
+    <link href="https://arxiv.org/abs/2512.16872v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.16872v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Inspired by biology, spiking neural networks (SNNs) process information via discrete spikes over time, offering an energy-efficient alternative to the classical computing paradigm and classical artificial neural networks (ANNs). In this work, we analyze the representational power of SNNs by viewing them as sequence-to-sequence processors of spikes, i.e., systems that transform a stream of input spikes into a stream of output spikes. We establish the universal representation property for a natural class of spike train functions. Our results are fully quantitative, constructive, and near-optimal in the number of required weights and neurons. The analysis reveals that SNNs are particularly well-suited to represent functions with few inputs, low temporal complexity, or compositions of such functions. The latter is of particular interest, as it indicates that deep SNNs can efficiently capture composite functions via a modular design. As an application of our results, we discuss spike train classification. Overall, these results contribute to a rigorous foundation for understanding the capabilities and limitations of spike-based neuromorphic systems.</summary>
+    <category term="cs.NE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-18T18:41:51Z</published>
+    <arxiv:comment>54 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.NE"/>
+    <author>
+      <name>Shayan Hundrieser</name>
+    </author>
+    <author>
+      <name>Philipp Tuchel</name>
+    </author>
+    <author>
+      <name>Insung Kong</name>
+    </author>
+    <author>
+      <name>Johannes Schmidt-Hieber</name>
+    </author>
+  </entry>
+</feed>

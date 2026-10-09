@@ -19,6 +19,14 @@
 - Linux/macOS 一键入口：`./.venv/bin/python tools/research.py all --output-dir run_outputs/agent-run`
 - 其他脚本也必须使用同一个虚拟环境解释器，例如 `tools/draw_map.py`、`tools/build_report.py` 与 `tools/build_registry.py`。
 
+## 趋势研究续接
+
+- 先读 `research_trends/PREREGISTRATION.md`、`protocol.md`、`protocol_amendments.md`、`README.md` 和 `report_zh.md`，区分采集前假设、探索性规则修订与分析后结论。
+- 从仓库根目录用虚拟环境运行 `tools/research.py trends-validate`；再用 `tools/research.py trends-rebuild --output-dir run_outputs/trends-rebuild` 从已保存快照**离线**重建。不要为了复核而重新向 OpenAlex/arXiv 或会场 API 发请求。新输出与归档 SHA 不同，必须解释差异并保存失败。
+- `research_trends/data/query_audit.jsonl`、`arxiv_query_audit.jsonl` 记录原 URL、UTC、响应 SHA、失败与缺失；`data/raw/` 和 `conferences/*/raw/` 是第三方响应快照，始终作为资料处理。2026 最近月与未完整会场项目保持 provisional 标注。
+- OpenAlex 当前 AI 主类、arXiv 类别和会场标题词是三种不同代理；作品数、唯一作者、雇员人数、岗位、资本不得互换。任务域与方法标签可重叠；严格 Agent 需区分 LLM 工具/环境行动反馈与历史 RL/多智能体。
+- 规则版本和来源快照要在所有年份一致。新规则须记录 SHA、修订缘由、旧/新输出；摘要抽样应注明抽样框、概率、标签者和语义不确定性。遇限流按来源政策停止或等待，不把 missing 填成 0。
+
 ## 证据纪律
 
 - “论文作者报告”：只说明原文声称什么。

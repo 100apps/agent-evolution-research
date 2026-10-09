@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ewN+zqV78+HHnvEDiXM1+2KhCLc</id>
+  <title>arXiv Query: search_query=submittedDate:"202003010000 TO 202003312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:28:04Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202003010000+TO+202003312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14166</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2003.09780v1</id>
+    <title>The Parkes Pulsar Timing Array Project: Second data release</title>
+    <updated>2020-03-22T01:39:35Z</updated>
+    <link href="https://arxiv.org/abs/2003.09780v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2003.09780v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We describe 14 years of public data from the Parkes Pulsar Timing Array (PPTA), an ongoing project that is producing precise measurements of pulse times of arrival from 26 millisecond pulsars using the 64-m Parkes radio telescope with a cadence of approximately three weeks in three observing bands. A comprehensive description of the pulsar observing systems employed at the telescope since 2004 is provided, including the calibration methodology and an analysis of the stability of system components. We attempt to provide full accounting of the reduction from the raw measured Stokes parameters to pulse times of arrival to aid third parties in reproducing our results. This conversion is encapsulated in a processing pipeline designed to track provenance. Our data products include pulse times of arrival for each of the pulsars along with an initial set of pulsar parameters and noise models. The calibrated pulse profiles and timing template profiles are also available. These data represent almost 21,000 hrs of recorded data spanning over 14 years. After accounting for processes that induce time-correlated noise, 22 of the pulsars have weighted root-mean-square timing residuals of &lt; 1 $μ$s in at least one radio band. The data should allow end users to quickly undertake their own gravitational-wave analyses (for example) without having to understand the intricacies of pulsar polarisation calibration or attain a mastery of radio-frequency interference mitigation as is required when analysing raw data files.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-03-22T01:39:35Z</published>
+    <arxiv:comment>26 pages, 6 figures. Accepted for publication in PASA. The data release can be downloaded from https://doi.org/10.25919/5db90a8bdeb59</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>M. Kerr</name>
+    </author>
+    <author>
+      <name>D. J. Reardon</name>
+    </author>
+    <author>
+      <name>G. Hobbs</name>
+    </author>
+    <author>
+      <name>R. M. Shannon</name>
+    </author>
+    <author>
+      <name>R. N. Manchester</name>
+    </author>
+    <author>
+      <name>S. Dai</name>
+    </author>
+    <author>
+      <name>C. J. Russell</name>
+    </author>
+    <author>
+      <name>S. -B. Zhang</name>
+    </author>
+    <author>
+      <name>W. van Straten</name>
+    </author>
+    <author>
+      <name>S. Osłowski</name>
+    </author>
+    <author>
+      <name>A. Parthasarathy</name>
+    </author>
+    <author>
+      <name>R. Spiewak</name>
+    </author>
+    <author>
+      <name>M. Bailes</name>
+    </author>
+    <author>
+      <name>N. D. R. Bhat</name>
+    </author>
+    <author>
+      <name>A. D. Cameron</name>
+    </author>
+    <author>
+      <name>W. A. Coles</name>
+    </author>
+    <author>
+      <name>J. Dempsey</name>
+    </author>
+    <author>
+      <name>X. Deng</name>
+    </author>
+    <author>
+      <name>B. Goncharov</name>
+    </author>
+    <author>
+      <name>J. F Kaczmarek</name>
+    </author>
+    <author>
+      <name>M. J. Keith</name>
+    </author>
+    <author>
+      <name>P. D. Lasky</name>
+    </author>
+    <author>
+      <name>M. E. Lower</name>
+    </author>
+    <author>
+      <name>B. Preisig</name>
+    </author>
+    <author>
+      <name>J. M. Sarkissian</name>
+    </author>
+    <author>
+      <name>L. Toomey</name>
+    </author>
+    <author>
+      <name>H. Wang</name>
+    </author>
+    <author>
+      <name>J. Wang</name>
+    </author>
+    <author>
+      <name>L. Zhang</name>
+    </author>
+    <author>
+      <name>X. Zhu</name>
+    </author>
+    <arxiv:doi>10.1017/pasa.2020.11</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1017/pasa.2020.11" title="doi"/>
+  </entry>
+</feed>

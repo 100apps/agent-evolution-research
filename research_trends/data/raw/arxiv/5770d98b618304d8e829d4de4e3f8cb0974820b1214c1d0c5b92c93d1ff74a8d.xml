@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CvAnd6Fwo/0HrWf2X6Dd4FYMBR8</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202603010000 TO 202603312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:47Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202603010000+TO+202603312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15583</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2603.11909v2</id>
+    <title>Deep Generative Transformers for Probabilistic Time Series and Spatiotemporal Forecasting</title>
+    <updated>2026-06-20T14:26:41Z</updated>
+    <link href="https://arxiv.org/abs/2603.11909v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.11909v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Reliable uncertainty quantification is paramount for forecasting multivariate time series and spatiotemporal data. While Transformer architectures excel at sequence modeling, current probabilistic approaches typically rely on restrictive parametric likelihoods or quantile-based objectives, thereby limiting their ability to capture complex joint distributions in correlated time series. To overcome these limitations, we propose \textit{Enformer} and its spatiotemporal extension, \textit{GEnformer}. These models synthesize the expressive power of Transformers with engression, a stochastic learning paradigm for modeling conditional distributions. By injecting stochastic noise and optimizing a strictly proper scoring objective, our frameworks directly learn conditional predictive distributions without imposing parametric assumptions. This design ensures the generation of coherent multivariate trajectories while maintaining the Transformer's efficacy in modeling long-range dependencies and cross-series interactions. The probabilistic capability of Enformer is achieved with an asymptotic overhead of only a constant factor over a deterministic Transformer with an identical configuration. We extensively evaluate our frameworks on prominent multivariate benchmarks for temporal dynamics and real-world epidemic datasets for spatiotemporal dynamics. Empirical results demonstrate that both frameworks yield calibrated probabilistic forecasts and consistently outperform state-of-the-art baselines.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-12T13:25:21Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Rajdeep Pathak</name>
+    </author>
+    <author>
+      <name>Rahul Goswami</name>
+    </author>
+    <author>
+      <name>Madhurima Panja</name>
+    </author>
+    <author>
+      <name>Palash Ghosh</name>
+    </author>
+    <author>
+      <name>Tanujit Chakraborty</name>
+    </author>
+  </entry>
+</feed>

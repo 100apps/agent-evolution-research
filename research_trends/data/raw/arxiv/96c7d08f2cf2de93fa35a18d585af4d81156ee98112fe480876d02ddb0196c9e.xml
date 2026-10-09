@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/gfuLCjLfUKwVHSVJigNpdMeHUng</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202510010000 TO 202510312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:39:53Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202510010000+TO+202510312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14357</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2510.09937v1</id>
+    <title>Structured Cooperative Multi-Agent Reinforcement Learning: a Bayesian Network Perspective</title>
+    <updated>2025-10-11T00:29:55Z</updated>
+    <link href="https://arxiv.org/abs/2510.09937v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.09937v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The empirical success of multi-agent reinforcement learning (MARL) has motivated the search for more efficient and scalable algorithms for large scale multi-agent systems. However, existing state-of-the-art algorithms do not fully exploit inter-agent coupling information to develop MARL algorithms. In this paper, we propose a systematic approach to leverage structures in the inter-agent couplings for efficient model-free reinforcement learning. We model the cooperative MARL problem via a Bayesian network and characterize the subset of agents, termed as the value dependency set, whose information is required by each agent to estimate its local action value function exactly. Moreover, we propose a partially decentralized training decentralized execution (P-DTDE) paradigm based on the value dependency set. We theoretically establish that the total variance of our P-DTDE policy gradient estimator is less than the centralized training decentralized execution (CTDE) policy gradient estimator. We derive a multi-agent policy gradient theorem based on the P-DTDE scheme and develop a scalable actor-critic algorithm. We demonstrate the efficiency and scalability of the proposed algorithm on multi-warehouse resource allocation and multi-zone temperature control examples. For dense value dependency sets, we propose an approximation scheme based on truncation of the Bayesian network and empirically show that it achieves a faster convergence than the exact value dependence set for applications with a large number of agents.</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-11T00:29:55Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Shahbaz P Qadri Syed</name>
+    </author>
+    <author>
+      <name>He Bai</name>
+    </author>
+  </entry>
+</feed>

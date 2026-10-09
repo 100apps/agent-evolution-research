@@ -1,0 +1,9 @@
+{
+  "filename": "iclr_2022.json",
+  "source_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+  "fetched_at_utc": "2026-10-09T03:42:26.379273+00:00",
+  "http_status": 200,
+  "final_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+  "bytes": 5810241,
+  "sha256": "73222fe34d4c1f629033bd9f0fde4dc6211c37c18d61729704a8035956014e7f"
+}

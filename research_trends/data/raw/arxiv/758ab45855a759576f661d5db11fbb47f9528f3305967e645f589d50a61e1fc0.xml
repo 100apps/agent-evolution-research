@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/gUjaViq5tPFHmpdn4P0yRtUDQLQ</id>
+  <title>arXiv Query: search_query=submittedDate:"202307010000 TO 202307312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:17Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202307010000+TO+202307312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>17087</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2311.10713v1</id>
+    <title>Diversifying an Index</title>
+    <updated>2023-07-16T07:17:18Z</updated>
+    <link href="https://arxiv.org/abs/2311.10713v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.10713v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In July 2023, Nasdaq announced a `Special Rebalance' of the Nasdaq-100 index to reduce the index weights of its large constituents. A rebalance as suggested currently by Nasdaq index methodology may have several undesirable effects. These effects can be avoided by a different, but simple rebalancing strategy. Such rebalancing is easily computable and guarantees (a) that the maximum overall index weight does not increase through the rebalancing and (b) that the order of index weights is preserved.</summary>
+    <category term="q-fin.PM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-16T07:17:18Z</published>
+    <arxiv:primary_category term="q-fin.PM"/>
+    <author>
+      <name>Johannes Ruf</name>
+    </author>
+  </entry>
+</feed>

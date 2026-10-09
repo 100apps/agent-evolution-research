@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Angp/3164zGCEoNoQsvvBqcy03w</id>
+  <title>arXiv Query: search_query=( (cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) ) AND ( ( (ti:"large language model" OR abs:"large language model") OR (ti:"language model" OR abs:"language model") OR (ti:"LLM" OR abs:"LLM") OR (ti:"LLMs" OR abs:"LLMs") OR (ti:"language agent" OR abs:"language agent") OR (ti:"foundation model" OR abs:"foundation model") ) AND ( (ti:"post-training" OR abs:"post-training") OR (ti:"posttraining" OR abs:"posttraining") OR (ti:"instruction tuning" OR abs:"instruction tuning") OR (ti:"instruction-tuning" OR abs:"instruction-tuning") OR (ti:"preference optimization" OR abs:"preference optimization") OR (ti:"reinforcement learning from human feedback" OR abs:"reinforcement learning from human feedback") OR (ti:"RLHF" OR abs:"RLHF") OR (ti:"DPO" OR abs:"DPO") OR (ti:"reinforcement learning with verifiable rewards" OR abs:"reinforcement learning with verifiable rewards") OR (ti:"RLVR" OR abs:"RLVR") OR (ti:"reinforcement learning from AI feedback" OR abs:"reinforcement learning from AI feedback") OR (ti:"RLAIF" OR abs:"RLAIF") OR (ti:"group relative policy optimization" OR abs:"group relative policy optimization") OR (ti:"GRPO" OR abs:"GRPO") OR (ti:"supervised fine-tuning" OR abs:"supervised fine-tuning") OR (ti:"supervised fine tuning" OR abs:"supervised fine tuning") OR (ti:"SFT" OR abs:"SFT") ) ) AND submittedDate:"202301010000 TO 202301312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:43:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+((((ti:%22large+language+model%22+OR+abs:%22large+language+model%22)+OR+((ti:%22language+model%22+OR+abs:%22language+model%22)+OR+((ti:%22LLM%22+OR+abs:%22LLM%22)+OR+((ti:%22LLMs%22+OR+abs:%22LLMs%22)+OR+((ti:%22language+agent%22+OR+abs:%22language+agent%22)+OR+(ti:%22foundation+model%22+OR+abs:%22foundation+model%22))))))+AND+((ti:%22post-training%22+OR+abs:%22post-training%22)+OR+((ti:%22posttraining%22+OR+abs:%22posttraining%22)+OR+((ti:%22instruction+tuning%22+OR+abs:%22instruction+tuning%22)+OR+((ti:%22instruction-tuning%22+OR+abs:%22instruction-tuning%22)+OR+((ti:%22preference+optimization%22+OR+abs:%22preference+optimization%22)+OR+((ti:%22reinforcement+learning+from+human+feedback%22+OR+abs:%22reinforcement+learning+from+human+feedback%22)+OR+((ti:%22RLHF%22+OR+abs:%22RLHF%22)+OR+((ti:%22DPO%22+OR+abs:%22DPO%22)+OR+((ti:%22reinforcement+learning+with+verifiable+rewards%22+OR+abs:%22reinforcement+learning+with+verifiable+rewards%22)+OR+((ti:%22RLVR%22+OR+abs:%22RLVR%22)+OR+((ti:%22reinforcement+learning+from+AI+feedback%22+OR+abs:%22reinforcement+learning+from+AI+feedback%22)+OR+((ti:%22RLAIF%22+OR+abs:%22RLAIF%22)+OR+((ti:%22group+relative+policy+optimization%22+OR+abs:%22group+relative+policy+optimization%22)+OR+((ti:%22GRPO%22+OR+abs:%22GRPO%22)+OR+((ti:%22supervised+fine-tuning%22+OR+abs:%22supervised+fine-tuning%22)+OR+((ti:%22supervised+fine+tuning%22+OR+abs:%22supervised+fine+tuning%22)+OR+(ti:%22SFT%22+OR+abs:%22SFT%22))))))))))))))))))+AND+submittedDate:%22202301010000+TO+202301312359%22)&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2301.13848v1</id>
+    <title>Benchmarking Large Language Models for News Summarization</title>
+    <updated>2023-01-31T18:46:19Z</updated>
+    <link href="https://arxiv.org/abs/2301.13848v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2301.13848v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) have shown promise for automatic summarization but the reasons behind their successes are poorly understood. By conducting a human evaluation on ten LLMs across different pretraining methods, prompts, and model scales, we make two important observations. First, we find instruction tuning, and not model size, is the key to the LLM's zero-shot summarization capability. Second, existing studies have been limited by low-quality references, leading to underestimates of human performance and lower few-shot and finetuning performance. To better evaluate LLMs, we perform human evaluation over high-quality summaries we collect from freelance writers. Despite major stylistic differences such as the amount of paraphrasing, we find that LMM summaries are judged to be on par with human written summaries.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-31T18:46:19Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Tianyi Zhang</name>
+    </author>
+    <author>
+      <name>Faisal Ladhak</name>
+    </author>
+    <author>
+      <name>Esin Durmus</name>
+    </author>
+    <author>
+      <name>Percy Liang</name>
+    </author>
+    <author>
+      <name>Kathleen McKeown</name>
+    </author>
+    <author>
+      <name>Tatsunori B. Hashimoto</name>
+    </author>
+  </entry>
+</feed>

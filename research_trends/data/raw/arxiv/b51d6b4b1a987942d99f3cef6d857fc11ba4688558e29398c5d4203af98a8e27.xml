@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/SIi6fTsxu8M7lYIdthe7fACgd0A</id>
+  <title>arXiv Query: search_query=submittedDate:"202405010000 TO 202405312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:36:51Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202405010000+TO+202405312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>21126</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2405.14056v2</id>
+    <title>Form factors, spectral and Källén-Lehmann representation in nonlocal quantum gravity</title>
+    <updated>2024-08-28T08:07:13Z</updated>
+    <link href="https://arxiv.org/abs/2405.14056v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.14056v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We discuss the conical region of convergence of exponential and asymptotically polynomial form factors and their integral representations. Then, we calculate the spectral representation of the propagator of nonlocal theories with entire form factors, in particular, of the above type. The spectral density is positive-definite and exhibits the same spectrum as the local theory. We also find that the piece of the propagator corresponding to the time-ordered two-point correlation function admits a generalization of the Källén-Lehmann representation with a standard momentum dependence and a spectral density differing from the local one only in the presence of interactions. These results are in agreement with what already known about the free theory after a field redefinition and about perturbative unitarity of the interacting theory. The spectral and Källén-Lehmann representations have the same standard local limit, which is recovered smoothly when sending the fundamental length scale $\ell_*$ in the form factor to zero.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-22T22:57:06Z</published>
+    <arxiv:comment>1+31 pages, 1 figure. v2: definition of nonlocal operators and local limit clarified</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <arxiv:journal_ref>JHEP 08 (2024) 204</arxiv:journal_ref>
+    <author>
+      <name>Fabio Briscese</name>
+    </author>
+    <author>
+      <name>Gianluca Calcagni</name>
+    </author>
+    <author>
+      <name>Leonardo Modesto</name>
+    </author>
+    <author>
+      <name>Giuseppe Nardelli</name>
+    </author>
+    <arxiv:doi>10.1007/JHEP08(2024)204</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/JHEP08(2024)204" title="doi"/>
+  </entry>
+</feed>

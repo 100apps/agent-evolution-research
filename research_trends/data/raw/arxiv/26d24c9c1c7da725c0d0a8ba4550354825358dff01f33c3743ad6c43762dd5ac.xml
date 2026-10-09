@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Ny866zyQbTe0Q0VL7GDdQAF71PE</id>
+  <title>arXiv Query: search_query=submittedDate:"202112010000 TO 202112312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:57Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202112010000+TO+202112312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15493</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2112.01939v4</id>
+    <title>Fast Projected Newton-like Method for Precision Matrix Estimation under Total Positivity</title>
+    <updated>2023-10-23T02:55:33Z</updated>
+    <link href="https://arxiv.org/abs/2112.01939v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2112.01939v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the problem of estimating precision matrices in Gaussian distributions that are multivariate totally positive of order two ($\mathrm{MTP}_2$). The precision matrix in such a distribution is an M-matrix. This problem can be formulated as a sign-constrained log-determinant program. Current algorithms are designed using the block coordinate descent method or the proximal point algorithm, which becomes computationally challenging in high-dimensional cases due to the requirement to solve numerous nonnegative quadratic programs or large-scale linear systems. To address this issue, we propose a novel algorithm based on the two-metric projection method, incorporating a carefully designed search direction and variable partitioning scheme. Our algorithm substantially reduces computational complexity, and its theoretical convergence is established. Experimental results on synthetic and real-world datasets demonstrate that our proposed algorithm provides a significant improvement in computational efficiency compared to the state-of-the-art methods.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-12-03T14:39:10Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jian-Feng Cai</name>
+    </author>
+    <author>
+      <name>José Vinícius de M. Cardoso</name>
+    </author>
+    <author>
+      <name>Daniel P. Palomar</name>
+    </author>
+    <author>
+      <name>Jiaxi Ying</name>
+    </author>
+  </entry>
+</feed>

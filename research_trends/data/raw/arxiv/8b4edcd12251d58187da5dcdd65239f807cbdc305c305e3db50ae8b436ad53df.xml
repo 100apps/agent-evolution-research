@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/zJKQSfhbVM5i04ZCJDD5cLG+fIo</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202604010000 TO 202604302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:59Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202604010000+TO+202604302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14860</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.14240v1</id>
+    <title>Interpretable and Explainable Surrogate Modeling for Simulations: A State-of-the-Art Survey and Perspectives on Explainable AI for Decision-Making</title>
+    <updated>2026-04-15T03:25:10Z</updated>
+    <link href="https://arxiv.org/abs/2604.14240v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.14240v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The simulation of complex systems increasingly relies on sophisticated but fundamentally opaque computational black-box simulators. Surrogate models play a central role in reducing the computational cost of complex systems simulations across a wide range of scientific and engineering domains. Notwithstanding, they inevitably inherit and often exacerbate this black-box nature, obscuring how input variables drive physical responses. Conversely, Explainable Artificial Intelligence (XAI) offers powerful tools to unpack these models. Yet, XAI methods struggle with engineering-specific constraints, such as highly correlated inputs, dynamical systems, and rigorous reliability requirements. Consequently, surrogate modeling and XAI have largely evolved as distinct fields of research, despite their strong complementarity. To reconnect these approaches, this state-of-the-art survey provides a structured perspective that maps existing XAI techniques onto the various stages of surrogate modeling workflows for design and exploration. To ground this synthesis, we draw upon illustrative applications across both equation-based simulations and agent-based modeling. We survey a broad spectrum of techniques, highlighting their strengths for revealing interactions and supporting human comprehension. Finally, we identify pressing open challenges, including the explainability of dynamical systems and the handling of mixed-variable systems, and propose a research agenda to make explainability a core, embedded element of simulation-driven workflows from model construction through decision-making. By transforming opaque emulators into explainable tools, this agenda empowers practitioners to move beyond accelerating simulations to extracting actionable insights from complex system behaviors.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-15T03:25:10Z</published>
+    <arxiv:comment>Accepted for publication in Archives of Computational Methods in Engineering, 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Pramudita Satria Palar</name>
+    </author>
+    <author>
+      <name>Paul Saves</name>
+    </author>
+    <author>
+      <name>Muhammad Daffa Robani</name>
+    </author>
+    <author>
+      <name>Nicolas Verstaevel</name>
+    </author>
+    <author>
+      <name>Moncef Garouani</name>
+    </author>
+    <author>
+      <name>Julien Aligon</name>
+    </author>
+    <author>
+      <name>Koji Shimoyama</name>
+    </author>
+    <author>
+      <name>Joseph Morlier</name>
+    </author>
+    <author>
+      <name>Benoit Gaudou</name>
+    </author>
+    <arxiv:doi>10.1007/s11831-026-10600-z</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/s11831-026-10600-z" title="doi"/>
+  </entry>
+</feed>

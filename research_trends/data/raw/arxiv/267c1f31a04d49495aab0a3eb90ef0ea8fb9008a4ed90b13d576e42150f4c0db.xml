@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ZgiSlGaTHIRVgD4tpgkF58fCTvs</id>
+  <title>arXiv Query: search_query=submittedDate:"202605010000 TO 202605312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:41:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202605010000+TO+202605312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>33051</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2605.30525v1</id>
+    <title>From Waves to Graphs: A Ray-Tracing-Inspired Neural Radio Propagation Model</title>
+    <updated>2026-05-28T19:59:45Z</updated>
+    <link href="https://arxiv.org/abs/2605.30525v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.30525v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Artificial intelligence-driven radio propagation models provide agile and robust solutions for mobile network operators in their effort to ensure the optimal performance of the wireless ecosystem and support its efficient expansion. In this paper, we introduce GRAPHWAVE, a neural graph-driven propagation solver hinging on the governing principles of ray tracing. The proposed model leverages a digitized version of the propagation environment to build a point cloud and extract an equivalent graph representation of the radio environment. By applying neural message passing over the equivalent graph, it allows the model to accurately infer radio-related quantities, e.g., received signal strength, in a three-dimensional environment. We showcase the use of GRAPHWAVE as a radio environment digital twin and we demonstrate that the model can learn from synthetic and real-world data while achieving low inference times.</summary>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-28T19:59:45Z</published>
+    <arxiv:comment>7 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.NI"/>
+    <author>
+      <name>Paul Almasan</name>
+    </author>
+    <author>
+      <name>Stefanos Bakirtzis</name>
+    </author>
+    <author>
+      <name>José Suárez-Varela</name>
+    </author>
+    <author>
+      <name>Andra Lutu</name>
+    </author>
+    <arxiv:doi>10.5281/zenodo.19604269</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5281/zenodo.19604269" title="doi"/>
+  </entry>
+</feed>

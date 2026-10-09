@@ -1,0 +1,38 @@
+﻿venue,year,track,volume_title,records,included_main
+ACL,2020,main,Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics,778,True
+ACL,2020,demos,Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: System Demonstrations,43,False
+ACL,2020,srw,Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: Student Research Workshop,42,False
+ACL,2020,tutorials,Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics: Tutorial Abstracts,8,False
+ACL,2021,long,Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers),571,True
+ACL,2021,short,Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers),139,True
+ACL,2021,srw,Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: Student Research Workshop,36,False
+ACL,2021,demo,Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations,43,False
+ACL,2021,tutorials,Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: Tutorial Abstracts,6,False
+ACL,2022,long,Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),603,True
+ACL,2022,short,Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers),97,True
+ACL,2022,srw,Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: Student Research Workshop,39,False
+ACL,2022,demo,Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: System Demonstrations,27,False
+ACL,2022,tutorials,Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics: Tutorial Abstracts,8,False
+ACL,2023,long,Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),911,True
+ACL,2023,short,Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers),164,True
+ACL,2023,demo,Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations),58,False
+ACL,2023,srw,Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop),34,False
+ACL,2023,industry,Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 5: Industry Track),76,False
+ACL,2023,tutorials,Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 6: Tutorial Abstracts),6,False
+ACL,2024,long,Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),864,True
+ACL,2024,short,Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers),76,True
+ACL,2024,demos,Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations),38,False
+ACL,2024,srw,Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop),46,False
+ACL,2024,tutorials,Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 5: Tutorial Abstracts),6,False
+ACL,2025,long,Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),1602,True
+ACL,2025,short,Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers),97,True
+ACL,2025,demo,Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations),64,False
+ACL,2025,srw,Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop),86,False
+ACL,2025,tutorials,Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 5: Tutorial Abstracts),8,False
+ACL,2025,industry,Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track),109,False
+ACL,2026,long,Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers),2222,True
+ACL,2026,short,Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers),74,True
+ACL,2026,demo,Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations),85,False
+ACL,2026,srw,Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop),109,False
+ACL,2026,tutorials,Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 5: Tutorial Abstracts),6,False
+ACL,2026,industry,Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track),154,False

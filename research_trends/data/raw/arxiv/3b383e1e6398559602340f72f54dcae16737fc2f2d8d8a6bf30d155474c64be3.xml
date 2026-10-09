@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/9H95aVWVXxh9HqaVI+y7EEY7J8c</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202311010000 TO 202311302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:55Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202311010000+TO+202311302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6240</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2311.15722v1</id>
+    <title>GLIME: General, Stable and Local LIME Explanation</title>
+    <updated>2023-11-27T11:17:20Z</updated>
+    <link href="https://arxiv.org/abs/2311.15722v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2311.15722v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As black-box machine learning models grow in complexity and find applications in high-stakes scenarios, it is imperative to provide explanations for their predictions. Although Local Interpretable Model-agnostic Explanations (LIME) [22] is a widely adpoted method for understanding model behaviors, it is unstable with respect to random seeds [35,24,3] and exhibits low local fidelity (i.e., how well the explanation approximates the model's local behaviors) [21,16]. Our study shows that this instability problem stems from small sample weights, leading to the dominance of regularization and slow convergence. Additionally, LIME's sampling neighborhood is non-local and biased towards the reference, resulting in poor local fidelity and sensitivity to reference choice. To tackle these challenges, we introduce GLIME, an enhanced framework extending LIME and unifying several prior methods. Within the GLIME framework, we derive an equivalent formulation of LIME that achieves significantly faster convergence and improved stability. By employing a local and unbiased sampling distribution, GLIME generates explanations with higher local fidelity compared to LIME. GLIME explanations are independent of reference choice. Moreover, GLIME offers users the flexibility to choose a sampling distribution based on their specific scenarios.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-27T11:17:20Z</published>
+    <arxiv:comment>Accepted by NeurIPS 2023 as a Spotlight paper</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zeren Tan</name>
+    </author>
+    <author>
+      <name>Yang Tian</name>
+    </author>
+    <author>
+      <name>Jian Li</name>
+    </author>
+  </entry>
+</feed>

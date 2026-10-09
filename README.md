@@ -2,6 +2,8 @@
 
 > **[在线阅读完整报告](https://100apps.github.io/agent-evolution-research/)** — 39 篇论文全景、证据审计、实验记录与可继续研究入口。
 
+> **[AI 科研活动趋势](https://100apps.github.io/agent-evolution-research/research-trends/)** — 2020-01—2026-09 的来源分离月线、会场年份标题分析及 [可复核过程](research_trends/README.md)。统计单位是来源覆盖的作品，不是全球研究者人数。
+
 本仓库整理 B 站合集“Agent自动优化（Agent进化）[论文]”的 41 个视频条目，保存并校验 38 份核心论文 PDF 与 1 份补充论文 SkVM，给出逐篇中文分析、主题全景图、三项真实运行记录和可接续研究入口。
 
 ![Agent 自进化 39 篇论文全景图](assets/Agent_自进化论文全景图.png)
@@ -29,6 +31,7 @@
 | `assets/Agent_自进化论文全景图.png` | 3600×3320 全景图 |
 | `research_notes/` | 8 份按主题组织的中文独立核验笔记 |
 | `experiments/` | ACRouter 工件回放与两个合成机制实验 |
+| `research_trends/` | AI 与相邻方向趋势的协议、查询审计、原始响应、分类代码、数据表、局限和报告 |
 | `reports/index.html` | 可离线打开的完整 HTML 报告 |
 | `tools/` | 索引、主题图、实验、报告与完整性校验入口 |
 | `templates/` | 新增论文、发现与实验记录模板 |
@@ -62,6 +65,15 @@ python3 -m venv .venv
 
 该命令不会覆盖已提交实验记录；它把新运行结果写入指定目录。验证和三个实验本身只使用 Python 标准库；报告/全景图构建使用 `requirements.txt`。
 
+趋势研究的**离线**校验和从已保存快照重建图表：
+
+```powershell
+.\.venv\Scripts\python.exe tools\research.py trends-validate
+.\.venv\Scripts\python.exe tools\research.py trends-rebuild --output-dir run_outputs\trends-rebuild
+```
+
+Linux/macOS 使用 `./.venv/bin/python` 替换解释器。重建无需 API key、网络或付费服务；详见 [研究目录说明](research_trends/README.md)。
+
 可选的真实浏览器验收使用 `requirements-qa.txt`，并用同一个虚拟环境解释器运行 `tools/visual_qa.py`；脚本默认调用本机 Edge，不下载浏览器。
 
 ## 如何继续研究
@@ -79,5 +91,5 @@ python3 -m venv .venv
 
 PDF、论文正文、上游数据和提取文本的权利归各自作者、出版社或来源方；保留文件是为了可验证研究与复现。它们不因进入本仓库而获得本项目许可证。本仓库没有为全部内容选择统一开源许可证，也没有把第三方资料声明为自有作品。使用者应遵守各来源页面和所在地法律。
 
-本仓库不包含凭据、token、浏览器配置、安装环境、缓存或交付 ZIP；`tmp/` 与 `run_outputs/` 不提交。
+本仓库不包含凭据、token、浏览器配置、安装环境或交付 ZIP；`tmp/` 与 `run_outputs/` 不提交。趋势研究另保留**公开来源的查询响应快照**及时间、URL、SHA-256，供复核当时的分类与计数；这些第三方内容的使用仍受各原来源权利和条款约束。
 

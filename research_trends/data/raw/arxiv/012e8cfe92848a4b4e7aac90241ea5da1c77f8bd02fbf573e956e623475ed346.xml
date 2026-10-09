@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ioAsBXXAaTmn8WMmWWwsBiQCido</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202109010000 TO 202109302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:29Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202109010000+TO+202109302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6252</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2109.05675v4</id>
+    <title>Online Unsupervised Learning of Visual Representations and Categories</title>
+    <updated>2022-05-28T15:06:13Z</updated>
+    <link href="https://arxiv.org/abs/2109.05675v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2109.05675v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Real world learning scenarios involve a nonstationary distribution of classes with sequential dependencies among the samples, in contrast to the standard machine learning formulation of drawing samples independently from a fixed, typically uniform distribution. Furthermore, real world interactions demand learning on-the-fly from few or no class labels. In this work, we propose an unsupervised model that simultaneously performs online visual representation learning and few-shot learning of new categories without relying on any class labels. Our model is a prototype-based memory network with a control component that determines when to form a new class prototype. We formulate it as an online mixture model, where components are created with only a single new example, and assignments do not have to be balanced, which permits an approximation to natural imbalanced distributions from uncurated raw data. Learning includes a contrastive loss that encourages different views of the same image to be assigned to the same prototype. The result is a mechanism that forms categorical representations of objects in nonstationary environments. Experiments show that our method can learn from an online stream of visual input data and its learned representations are significantly better at category recognition compared to state-of-the-art self-supervised learning methods.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-09-13T02:38:23Z</published>
+    <arxiv:comment>Technical report, 32 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Mengye Ren</name>
+    </author>
+    <author>
+      <name>Tyler R. Scott</name>
+    </author>
+    <author>
+      <name>Michael L. Iuzzolino</name>
+    </author>
+    <author>
+      <name>Michael C. Mozer</name>
+    </author>
+    <author>
+      <name>Richard Zemel</name>
+    </author>
+  </entry>
+</feed>

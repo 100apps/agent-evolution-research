@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/QZArt1pU9SZVUKcViierXXkoL4I</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202106010000 TO 202106302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:57Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202106010000+TO+202106302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>7086</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2106.00797v3</id>
+    <title>QLSD: Quantised Langevin stochastic dynamics for Bayesian federated learning</title>
+    <updated>2022-05-31T12:45:10Z</updated>
+    <link href="https://arxiv.org/abs/2106.00797v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2106.00797v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The objective of Federated Learning (FL) is to perform statistical inference for data which are decentralised and stored locally on networked clients. FL raises many constraints which include privacy and data ownership, communication overhead, statistical heterogeneity, and partial client participation. In this paper, we address these problems in the framework of the Bayesian paradigm. To this end, we propose a novel federated Markov Chain Monte Carlo algorithm, referred to as Quantised Langevin Stochastic Dynamics which may be seen as an extension to the FL setting of Stochastic Gradient Langevin Dynamics, which handles the communication bottleneck using gradient compression. To improve performance, we then introduce variance reduction techniques, which lead to two improved versions coined \texttt{QLSD}$^{\star}$ and \texttt{QLSD}$^{++}$. We give both non-asymptotic and asymptotic convergence guarantees for the proposed algorithms. We illustrate their performances using various Bayesian Federated Learning benchmarks.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-06-01T21:08:54Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Maxime Vono</name>
+    </author>
+    <author>
+      <name>Vincent Plassier</name>
+    </author>
+    <author>
+      <name>Alain Durmus</name>
+    </author>
+    <author>
+      <name>Aymeric Dieuleveut</name>
+    </author>
+    <author>
+      <name>Eric Moulines</name>
+    </author>
+  </entry>
+</feed>

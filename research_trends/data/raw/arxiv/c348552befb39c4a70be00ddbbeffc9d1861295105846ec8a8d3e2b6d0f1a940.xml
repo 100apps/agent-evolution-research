@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/zwOhfe8JnrDSoaqjJxpLH3Nl9kc</id>
+  <title>arXiv Query: search_query=submittedDate:"202412010000 TO 202412312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:05Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202412010000+TO+202412312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>21335</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2412.04462v1</id>
+    <title>4Real-Video: Learning Generalizable Photo-Realistic 4D Video Diffusion</title>
+    <updated>2024-12-05T18:59:41Z</updated>
+    <link href="https://arxiv.org/abs/2412.04462v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.04462v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose 4Real-Video, a novel framework for generating 4D videos, organized as a grid of video frames with both time and viewpoint axes. In this grid, each row contains frames sharing the same timestep, while each column contains frames from the same viewpoint. We propose a novel two-stream architecture. One stream performs viewpoint updates on columns, and the other stream performs temporal updates on rows. After each diffusion transformer layer, a synchronization layer exchanges information between the two token streams. We propose two implementations of the synchronization layer, using either hard or soft synchronization. This feedforward architecture improves upon previous work in three ways: higher inference speed, enhanced visual quality (measured by FVD, CLIP, and VideoScore), and improved temporal and viewpoint consistency (measured by VideoScore and Dust3R-Confidence).</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-05T18:59:41Z</published>
+    <arxiv:comment>Project page: https://snap-research.github.io/4Real-Video/</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Chaoyang Wang</name>
+    </author>
+    <author>
+      <name>Peiye Zhuang</name>
+    </author>
+    <author>
+      <name>Tuan Duc Ngo</name>
+    </author>
+    <author>
+      <name>Willi Menapace</name>
+    </author>
+    <author>
+      <name>Aliaksandr Siarohin</name>
+    </author>
+    <author>
+      <name>Michael Vasilkovsky</name>
+    </author>
+    <author>
+      <name>Ivan Skorokhodov</name>
+    </author>
+    <author>
+      <name>Sergey Tulyakov</name>
+    </author>
+    <author>
+      <name>Peter Wonka</name>
+    </author>
+    <author>
+      <name>Hsin-Ying Lee</name>
+    </author>
+  </entry>
+</feed>

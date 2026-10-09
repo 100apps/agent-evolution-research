@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/tD/Xeg6DMTKTY9Ar9Ft6F16cFEE</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202409010000 TO 202409302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:37Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202409010000+TO+202409302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>9877</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2409.04320v1</id>
+    <title>Faster Sampling from Log-Concave Densities over Polytopes via Efficient Linear Solvers</title>
+    <updated>2024-09-06T14:49:43Z</updated>
+    <link href="https://arxiv.org/abs/2409.04320v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2409.04320v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We consider the problem of sampling from a log-concave distribution $π(θ) \propto e^{-f(θ)}$ constrained to a polytope $K:=\{θ\in \mathbb{R}^d: Aθ\leq b\}$, where $A\in \mathbb{R}^{m\times d}$ and $b \in \mathbb{R}^m$.The fastest-known algorithm \cite{mangoubi2022faster} for the setting when $f$ is $O(1)$-Lipschitz or $O(1)$-smooth runs in roughly $O(md \times md^{ω-1})$ arithmetic operations, where the $md^{ω-1}$ term arises because each Markov chain step requires computing a matrix inversion and determinant (here $ω\approx 2.37$ is the matrix multiplication constant). We present a nearly-optimal implementation of this Markov chain with per-step complexity which is roughly the number of non-zero entries of $A$ while the number of Markov chain steps remains the same. The key technical ingredients are 1) to show that the matrices that arise in this Dikin walk change slowly, 2) to deploy efficient linear solvers that can leverage this slow change to speed up matrix inversion by using information computed in previous steps, and 3) to speed up the computation of the determinantal term in the Metropolis filter step via a randomized Taylor series-based estimator.</summary>
+    <category term="cs.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-09-06T14:49:43Z</published>
+    <arxiv:comment>The conference version of this paper appears in ICLR 2024</arxiv:comment>
+    <arxiv:primary_category term="cs.DS"/>
+    <author>
+      <name>Oren Mangoubi</name>
+    </author>
+    <author>
+      <name>Nisheeth K. Vishnoi</name>
+    </author>
+  </entry>
+</feed>

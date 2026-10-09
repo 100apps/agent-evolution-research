@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Gv+2F8DeggLs7R3lIGoBVea93fg</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202211010000 TO 202211302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:56Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202211010000+TO+202211302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>7171</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2211.13116v2</id>
+    <title>Fed-TDA: Federated Tabular Data Augmentation on Non-IID Data</title>
+    <updated>2023-01-12T09:24:05Z</updated>
+    <link href="https://arxiv.org/abs/2211.13116v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2211.13116v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Non-independent and identically distributed (non-IID) data is a key challenge in federated learning (FL), which usually hampers the optimization convergence and the performance of FL. Existing data augmentation methods based on federated generative models or raw data sharing strategies for solving the non-IID problem still suffer from low performance, privacy protection concerns, and high communication overhead in decentralized tabular data. To tackle these challenges, we propose a federated tabular data augmentation method, named Fed-TDA. The core idea of Fed-TDA is to synthesize tabular data for data augmentation using some simple statistics (e.g., distributions of each column and global covariance). Specifically, we propose the multimodal distribution transformation and inverse cumulative distribution mapping respectively synthesize continuous and discrete columns in tabular data from a noise according to the pre-learned statistics. Furthermore, we theoretically analyze that our Fed-TDA not only preserves data privacy but also maintains the distribution of the original data and the correlation between columns. Through extensive experiments on five real-world tabular datasets, we demonstrate the superiority of Fed-TDA over the state-of-the-art in test performance and communication efficiency.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-11-22T02:17:15Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shaoming Duan</name>
+    </author>
+    <author>
+      <name>Chuanyi Liu</name>
+    </author>
+    <author>
+      <name>Peiyi Han</name>
+    </author>
+    <author>
+      <name>Tianyu He</name>
+    </author>
+    <author>
+      <name>Yifeng Xu</name>
+    </author>
+    <author>
+      <name>Qiyuan Deng</name>
+    </author>
+  </entry>
+</feed>

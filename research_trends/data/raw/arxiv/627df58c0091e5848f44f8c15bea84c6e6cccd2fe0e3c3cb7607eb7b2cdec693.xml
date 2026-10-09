@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/GdTD/Gc6sANd84UsMrYu1aSLfCA</id>
+  <title>arXiv Query: search_query=submittedDate:"202007010000 TO 202007312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:09Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202007010000+TO+202007312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>16251</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2008.01670v1</id>
+    <title>Multi-stream RNN for Merchant Transaction Prediction</title>
+    <updated>2020-07-25T01:20:48Z</updated>
+    <link href="https://arxiv.org/abs/2008.01670v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2008.01670v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recently, digital payment systems have significantly changed people's lifestyles. New challenges have surfaced in monitoring and guaranteeing the integrity of payment processing systems. One important task is to predict the future transaction statistics of each merchant. These predictions can thus be used to steer other tasks, ranging from fraud detection to recommendation. This problem is challenging as we need to predict not only multivariate time series but also multi-steps into the future. In this work, we propose a multi-stream RNN model for multi-step merchant transaction predictions tailored to these requirements. The proposed multi-stream RNN summarizes transaction data in different granularity and makes predictions for multiple steps in the future. Our extensive experimental results have demonstrated that the proposed model is capable of outperforming existing state-of-the-art methods.</summary>
+    <category term="q-fin.ST" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-07-25T01:20:48Z</published>
+    <arxiv:comment>Accepted by KDD 2020 Workshop on Machine Learning in Finance</arxiv:comment>
+    <arxiv:primary_category term="q-fin.ST"/>
+    <author>
+      <name>Zhongfang Zhuang</name>
+    </author>
+    <author>
+      <name>Chin-Chia Michael Yeh</name>
+    </author>
+    <author>
+      <name>Liang Wang</name>
+    </author>
+    <author>
+      <name>Wei Zhang</name>
+    </author>
+    <author>
+      <name>Junpeng Wang</name>
+    </author>
+  </entry>
+</feed>

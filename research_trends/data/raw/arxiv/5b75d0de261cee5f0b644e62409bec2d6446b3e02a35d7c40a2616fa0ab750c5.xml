@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/8ZZXcQ9fl2JkDAw2kb6zcf3G9Ic</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202410010000 TO 202410312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:47Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202410010000+TO+202410312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>12636</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2410.00373v1</id>
+    <title>Robust Traffic Forecasting against Spatial Shift over Years</title>
+    <updated>2024-10-01T03:49:29Z</updated>
+    <link href="https://arxiv.org/abs/2410.00373v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.00373v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advancements in Spatiotemporal Graph Neural Networks (ST-GNNs) and Transformers have demonstrated promising potential for traffic forecasting by effectively capturing both temporal and spatial correlations. The generalization ability of spatiotemporal models has received considerable attention in recent scholarly discourse. However, no substantive datasets specifically addressing traffic out-of-distribution (OOD) scenarios have been proposed. Existing ST-OOD methods are either constrained to testing on extant data or necessitate manual modifications to the dataset. Consequently, the generalization capacity of current spatiotemporal models in OOD scenarios remains largely underexplored. In this paper, we investigate state-of-the-art models using newly proposed traffic OOD benchmarks and, surprisingly, find that these models experience a significant decline in performance. Through meticulous analysis, we attribute this decline to the models' inability to adapt to previously unobserved spatial relationships. To address this challenge, we propose a novel Mixture of Experts (MoE) framework, which learns a set of graph generators (i.e., graphons) during training and adaptively combines them to generate new graphs based on novel environmental conditions to handle spatial distribution shifts during testing. We further extend this concept to the Transformer architecture, achieving substantial improvements. Our method is both parsimonious and efficacious, and can be seamlessly integrated into any spatiotemporal model, outperforming current state-of-the-art approaches in addressing spatial dynamics.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-01T03:49:29Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Hongjun Wang</name>
+    </author>
+    <author>
+      <name>Jiyuan Chen</name>
+    </author>
+    <author>
+      <name>Tong Pan</name>
+    </author>
+    <author>
+      <name>Zheng Dong</name>
+    </author>
+    <author>
+      <name>Lingyu Zhang</name>
+    </author>
+    <author>
+      <name>Renhe Jiang</name>
+    </author>
+    <author>
+      <name>Xuan Song</name>
+    </author>
+  </entry>
+</feed>

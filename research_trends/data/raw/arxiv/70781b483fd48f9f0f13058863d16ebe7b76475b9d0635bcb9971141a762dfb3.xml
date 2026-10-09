@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/xIYHL6Pk0I2lWNFJEpz7ExT6Xug</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202607010000 TO 202607312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:41:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202607010000+TO+202607312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14587</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2607.03112v1</id>
+    <title>Dimension Reduction for Curves: Simplified and Generalized</title>
+    <updated>2026-07-03T08:48:35Z</updated>
+    <link href="https://arxiv.org/abs/2607.03112v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.03112v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We revisit random projections for reducing the dimension of high-dimensional polygonal curves. Drawing from the toolbox of randomized linear algebra, we give a considerably simplified proof of the known $O(\varepsilon^{-2}\log(nm))$ bound on the target dimension of a random projection that preserves the continuous Fréchet distance of polygonal curves up to a factor $(1\pm\varepsilon)$. Our proof is based on the concept of sparse oblivious subspace embeddings. While previous techniques were limited to the case of the Fréchet distance, our techniques are fairly general and extend to all possible distance measures that involve the maximum, a sum or an integral over Euclidean distances between pairs of points on both input curves. We define a generalized dissimilarity measure for curves that includes several popular measures such as Fréchet, $q$-DTW, Hausdorff, etc. as special cases and show that the same dimension reduction technique works for this generalized dissimilarity measure. Finally, we apply the same framework for dimension reduction to piecewise linear surfaces, after extending the distance measure suitably to such surfaces.</summary>
+    <category term="cs.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-03T08:48:35Z</published>
+    <arxiv:comment>ESA 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.DS"/>
+    <author>
+      <name>Matthijs Ebbens</name>
+    </author>
+    <author>
+      <name>Jie Lu</name>
+    </author>
+    <author>
+      <name>Alexander Munteanu</name>
+    </author>
+  </entry>
+</feed>

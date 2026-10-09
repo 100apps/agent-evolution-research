@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Ra6ZE3d6L9KRD+5cjYTLfesf908</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202107010000 TO 202107312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202107010000+TO+202107312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5743</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2107.10450v3</id>
+    <title>Learning Sparse Fixed-Structure Gaussian Bayesian Networks</title>
+    <updated>2022-10-18T10:44:01Z</updated>
+    <link href="https://arxiv.org/abs/2107.10450v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2107.10450v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gaussian Bayesian networks (a.k.a. linear Gaussian structural equation models) are widely used to model causal interactions among continuous variables. In this work, we study the problem of learning a fixed-structure Gaussian Bayesian network up to a bounded error in total variation distance. We analyze the commonly used node-wise least squares regression (LeastSquares) and prove that it has a near-optimal sample complexity. We also study a couple of new algorithms for the problem:
+  - BatchAvgLeastSquares takes the average of several batches of least squares solutions at each node, so that one can interpolate between the batch size and the number of batches. We show that BatchAvgLeastSquares also has near-optimal sample complexity.
+  - CauchyEst takes the median of solutions to several batches of linear systems at each node. We show that the algorithm specialized to polytrees, CauchyEstTree, has near-optimal sample complexity.
+  Experimentally, we show that for uncontaminated, realizable data, the LeastSquares algorithm performs best, but in the presence of contamination or DAG misspecification, CauchyEst/CauchyEstTree and BatchAvgLeastSquares respectively perform better.</summary>
+    <category term="cs.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.ST" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-07-22T04:17:46Z</published>
+    <arxiv:comment>30 pages, 11 figures, acknowledgement added</arxiv:comment>
+    <arxiv:primary_category term="cs.DS"/>
+    <author>
+      <name>Arnab Bhattacharyya</name>
+    </author>
+    <author>
+      <name>Davin Choo</name>
+    </author>
+    <author>
+      <name>Rishikesh Gajjala</name>
+    </author>
+    <author>
+      <name>Sutanu Gayen</name>
+    </author>
+    <author>
+      <name>Yuhao Wang</name>
+    </author>
+  </entry>
+</feed>

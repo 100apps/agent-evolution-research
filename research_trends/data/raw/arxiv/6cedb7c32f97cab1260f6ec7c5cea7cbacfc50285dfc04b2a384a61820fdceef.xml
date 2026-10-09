@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/+Q5ppcTh4buQ07UC1Gp63Lm7aKM</id>
+  <title>arXiv Query: search_query=submittedDate:"202010010000 TO 202010312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:30Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202010010000+TO+202010312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>16709</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2012.12081v1</id>
+    <title>The effect of nudging personal and injunctive norms on the trade-off between objective equality and efficiency</title>
+    <updated>2020-10-02T13:21:53Z</updated>
+    <link href="https://arxiv.org/abs/2012.12081v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2012.12081v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We report three pre-registered studies (total N=1,799) exploring the effect of nudging personal and injunctive norms in decisions that involve a trade-off between objective equality and efficiency. The first two studies provide evidence that: (i) nudging the personal norm has a similar effect to nudging the injunctive norm; (ii) when both norms are nudged towards the same direction, there is no additive effect; (iii) when the personal norm and the injunctive norm are nudged towards opposite directions, some people tend to follow the personal norm, while others tend to follow the injunctive norm. Study 3 tests whether these two classes of people, those who tend to follow the injunctive norm and those who tend to follow the personal norm, map onto the two sub-dimensions of Aquino and Reed's moral identity scale. We find partial evidence of this hypothesis: people higher in the symbolisation dimension are weakly more likely to follow the injunctive norm; however, we do not find any evidence that people higher in the internalisation dimension are more likely to follow the personal norm.</summary>
+    <category term="physics.soc-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.PE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-10-02T13:21:53Z</published>
+    <arxiv:primary_category term="physics.soc-ph"/>
+    <author>
+      <name>Steven J Human</name>
+    </author>
+    <author>
+      <name>Valerio Capraro</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/MY1+2XAMTqa8lufl79My9/bPh5s</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202305010000 TO 202305312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:59Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202305010000+TO+202305312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>9910</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2305.09659v2</id>
+    <title>Double Pessimism is Provably Efficient for Distributionally Robust Offline Reinforcement Learning: Generic Algorithm and Robust Partial Coverage</title>
+    <updated>2023-08-22T14:23:10Z</updated>
+    <link href="https://arxiv.org/abs/2305.09659v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2305.09659v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we study distributionally robust offline reinforcement learning (robust offline RL), which seeks to find an optimal policy purely from an offline dataset that can perform well in perturbed environments. In specific, we propose a generic algorithm framework called Doubly Pessimistic Model-based Policy Optimization ($P^2MPO$), which features a novel combination of a flexible model estimation subroutine and a doubly pessimistic policy optimization step. Notably, the double pessimism principle is crucial to overcome the distributional shifts incurred by (i) the mismatch between the behavior policy and the target policies; and (ii) the perturbation of the nominal model. Under certain accuracy conditions on the model estimation subroutine, we prove that $P^2MPO$ is sample-efficient with robust partial coverage data, which only requires the offline data to have good coverage of the distributions induced by the optimal robust policy and the perturbed models around the nominal model.
+  By tailoring specific model estimation subroutines for concrete examples of RMDPs, including tabular RMDPs, factored RMDPs, kernel and neural RMDPs, we prove that $P^2MPO$ enjoys a $\tilde{\mathcal{O}}(n^{-1/2})$ convergence rate, where $n$ is the dataset size. We highlight that all these examples, except tabular RMDPs, are first identified and proven tractable by this work. Furthermore, we continue our study of robust offline RL in the robust Markov games (RMGs). By extending the double pessimism principle identified for single-agent RMDPs, we propose another algorithm framework that can efficiently find the robust Nash equilibria among players using only robust unilateral (partial) coverage data. To our best knowledge, this work proposes the first general learning principle -- double pessimism -- for robust offline RL and shows that it is provably efficient with general function approximation.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-05-16T17:58:05Z</published>
+    <arxiv:comment>V2 adds results on robust offline Markov games</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Jose Blanchet</name>
+    </author>
+    <author>
+      <name>Miao Lu</name>
+    </author>
+    <author>
+      <name>Tong Zhang</name>
+    </author>
+    <author>
+      <name>Han Zhong</name>
+    </author>
+  </entry>
+</feed>

@@ -1,4 +1,3 @@
-# Preserve research artifacts byte-for-byte across clones; hashes are evidence.
-* -text
-*.pdf binary
-*.png binary
+# Raw source snapshots, query audits, and generated tables have published SHA-256
+# values. Preserve their exact bytes on Windows and Unix checkouts.
+research_trends/** -text

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/PuC+G3o6myxEGTItQ01CdL01kYY</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202103010000 TO 202103312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:26Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202103010000+TO+202103312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6628</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2103.10897v3</id>
+    <title>Bilinear Classes: A Structural Framework for Provable Generalization in RL</title>
+    <updated>2021-07-11T22:29:02Z</updated>
+    <link href="https://arxiv.org/abs/2103.10897v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2103.10897v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This work introduces Bilinear Classes, a new structural framework, which permit generalization in reinforcement learning in a wide variety of settings through the use of function approximation. The framework incorporates nearly all existing models in which a polynomial sample complexity is achievable, and, notably, also includes new models, such as the Linear $Q^*/V^*$ model in which both the optimal $Q$-function and the optimal $V$-function are linear in some known feature space. Our main result provides an RL algorithm which has polynomial sample complexity for Bilinear Classes; notably, this sample complexity is stated in terms of a reduction to the generalization error of an underlying supervised learning sub-problem. These bounds nearly match the best known sample complexity bounds for existing models. Furthermore, this framework also extends to the infinite dimensional (RKHS) setting: for the the Linear $Q^*/V^*$ model, linear MDPs, and linear mixture MDPs, we provide sample complexities that have no explicit dependence on the explicit feature dimension (which could be infinite), but instead depends only on information theoretic quantities.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-03-19T16:34:20Z</published>
+    <arxiv:comment>Expanded extension section to include generalized linear bellman complete and changed related work</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Simon S. Du</name>
+    </author>
+    <author>
+      <name>Sham M. Kakade</name>
+    </author>
+    <author>
+      <name>Jason D. Lee</name>
+    </author>
+    <author>
+      <name>Shachar Lovett</name>
+    </author>
+    <author>
+      <name>Gaurav Mahajan</name>
+    </author>
+    <author>
+      <name>Wen Sun</name>
+    </author>
+    <author>
+      <name>Ruosong Wang</name>
+    </author>
+  </entry>
+</feed>

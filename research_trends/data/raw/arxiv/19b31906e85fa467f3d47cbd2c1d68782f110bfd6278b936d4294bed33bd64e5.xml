@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/qK8mRNbuRTnwXtwq9F619w5a3H4</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202212010000 TO 202212312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:06Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202212010000+TO+202212312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5724</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2212.03558v1</id>
+    <title>Low-Resource End-to-end Sanskrit TTS using Tacotron2, WaveGlow and Transfer Learning</title>
+    <updated>2022-12-07T10:15:34Z</updated>
+    <link href="https://arxiv.org/abs/2212.03558v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2212.03558v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>End-to-end text-to-speech (TTS) systems have been developed for European languages like English and Spanish with state-of-the-art speech quality, prosody, and naturalness. However, development of end-to-end TTS for Indian languages is lagging behind in terms of quality. The challenges involved in such a task are: 1) scarcity of quality training data; 2) low efficiency during training and inference; 3) slow convergence in the case of large vocabulary size. In our work reported in this paper, we have investigated the use of fine-tuning the English-pretrained Tacotron2 model with limited Sanskrit data to synthesize natural sounding speech in Sanskrit in low resource settings. Our experiments show encouraging results, achieving an overall MOS of 3.38 from 37 evaluators with good Sanskrit spoken knowledge. This is really a very good result, considering the fact that the speech data we have used is of duration 2.5 hours only.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.AS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-07T10:15:34Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Ankur Debnath</name>
+    </author>
+    <author>
+      <name>Shridevi S Patil</name>
+    </author>
+    <author>
+      <name>Gangotri Nadiger</name>
+    </author>
+    <author>
+      <name>Ramakrishnan Angarai Ganesan</name>
+    </author>
+  </entry>
+</feed>

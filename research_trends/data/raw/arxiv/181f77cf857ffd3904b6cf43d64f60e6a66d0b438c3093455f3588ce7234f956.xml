@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/a5qGKyWfaBAUpD8gkQYHhX8rZDM</id>
+  <title>arXiv Query: search_query=submittedDate:"202401010000 TO 202401312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:36:09Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202401010000+TO+202401312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>17623</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2403.18826v1</id>
+    <title>SAM-dPCR: Real-Time and High-throughput Absolute Quantification of Biological Samples Using Zero-Shot Segment Anything Model</title>
+    <updated>2024-01-22T12:15:47Z</updated>
+    <link href="https://arxiv.org/abs/2403.18826v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.18826v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Digital PCR (dPCR) has revolutionized nucleic acid diagnostics by enabling absolute quantification of rare mutations and target sequences. However, current detection methodologies face challenges, as flow cytometers are costly and complex, while fluorescence imaging methods, relying on software or manual counting, are time-consuming and prone to errors. To address these limitations, we present SAM-dPCR, a novel self-supervised learning-based pipeline that enables real-time and high-throughput absolute quantification of biological samples. Leveraging the zero-shot SAM model, SAM-dPCR efficiently analyzes diverse microreactors with over 97.7% accuracy within a rapid processing time of 3.16 seconds. By utilizing commonly available lab fluorescence microscopes, SAM-dPCR facilitates the quantification of sample concentrations. The accuracy of SAM-dPCR is validated by the strong linear relationship observed between known and inferred sample concentrations. Additionally, SAM-dPCR demonstrates versatility through comprehensive verification using various samples and reactor morphologies. This accessible, cost-effective tool transcends the limitations of traditional detection methods or fully supervised AI models, marking the first application of SAM in nucleic acid detection or molecular diagnostics. By eliminating the need for annotated training data, SAM-dPCR holds great application potential for nucleic acid quantification in resource-limited settings.</summary>
+    <category term="q-bio.QM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.IV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-22T12:15:47Z</published>
+    <arxiv:comment>23 pages, 6 figures</arxiv:comment>
+    <arxiv:primary_category term="q-bio.QM"/>
+    <author>
+      <name>Yuanyuan Wei</name>
+    </author>
+    <author>
+      <name>Shanhang Luo</name>
+    </author>
+    <author>
+      <name>Changran Xu</name>
+    </author>
+    <author>
+      <name>Yingqi Fu</name>
+    </author>
+    <author>
+      <name>Qingyue Dong</name>
+    </author>
+    <author>
+      <name>Yi Zhang</name>
+    </author>
+    <author>
+      <name>Fuyang Qu</name>
+    </author>
+    <author>
+      <name>Guangyao Cheng</name>
+    </author>
+    <author>
+      <name>Yi-Ping Ho</name>
+    </author>
+    <author>
+      <name>Ho-Pui Ho</name>
+    </author>
+    <author>
+      <name>Wu Yuan</name>
+    </author>
+  </entry>
+</feed>

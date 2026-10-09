@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/95FXjdui0Jyp0r9k0Hpqqwpmy8M</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202209010000 TO 202209302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:35Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202209010000+TO+202209302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6256</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2209.01092v1</id>
+    <title>Inference and dynamic decision-making for deteriorating systems with probabilistic dependencies through Bayesian networks and deep reinforcement learning</title>
+    <updated>2022-09-02T14:45:40Z</updated>
+    <link href="https://arxiv.org/abs/2209.01092v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2209.01092v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In the context of modern environmental and societal concerns, there is an increasing demand for methods able to identify management strategies for civil engineering systems, minimizing structural failure risks while optimally planning inspection and maintenance (I&amp;M) processes. Most available methods simplify the I&amp;M decision problem to the component level due to the computational complexity associated with global optimization methodologies under joint system-level state descriptions. In this paper, we propose an efficient algorithmic framework for inference and decision-making under uncertainty for engineering systems exposed to deteriorating environments, providing optimal management strategies directly at the system level. In our approach, the decision problem is formulated as a factored partially observable Markov decision process, whose dynamics are encoded in Bayesian network conditional structures. The methodology can handle environments under equal or general, unequal deterioration correlations among components, through Gaussian hierarchical structures and dynamic Bayesian networks. In terms of policy optimization, we adopt a deep decentralized multi-agent actor-critic (DDMAC) reinforcement learning approach, in which the policies are approximated by actor neural networks guided by a critic network. By including deterioration dependence in the simulated environment, and by formulating the cost model at the system level, DDMAC policies intrinsically consider the underlying system-effects. This is demonstrated through numerical experiments conducted for both a 9-out-of-10 system and a steel frame under fatigue deterioration. Results demonstrate that DDMAC policies offer substantial benefits when compared to state-of-the-art heuristic approaches. The inherent consideration of system-effects by DDMAC strategies is also interpreted based on the learned policies.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-09-02T14:45:40Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>Reliability Engineering &amp; System Safety (2023), 235, 109144</arxiv:journal_ref>
+    <author>
+      <name>Pablo G. Morato</name>
+    </author>
+    <author>
+      <name>Charalampos P. Andriotis</name>
+    </author>
+    <author>
+      <name>Konstantinos G. Papakonstantinou</name>
+    </author>
+    <author>
+      <name>Philippe Rigo</name>
+    </author>
+    <arxiv:doi>10.1016/j.ress.2023.109144</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.ress.2023.109144" title="doi"/>
+  </entry>
+</feed>

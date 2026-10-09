@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/f1ON/q5sPa7MfLsqp+rQqProEkA</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202104010000 TO 202104302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202104010000+TO+202104302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4231</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2104.07921v2</id>
+    <title>VGNMN: Video-grounded Neural Module Network to Video-Grounded Language Tasks</title>
+    <updated>2022-06-12T14:13:09Z</updated>
+    <link href="https://arxiv.org/abs/2104.07921v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2104.07921v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Neural module networks (NMN) have achieved success in image-grounded tasks such as Visual Question Answering (VQA) on synthetic images. However, very limited work on NMN has been studied in the video-grounded dialogue tasks. These tasks extend the complexity of traditional visual tasks with the additional visual temporal variance and language cross-turn dependencies. Motivated by recent NMN approaches on image-grounded tasks, we introduce Video-grounded Neural Module Network (VGNMN) to model the information retrieval process in video-grounded language tasks as a pipeline of neural modules. VGNMN first decomposes all language components in dialogues to explicitly resolve any entity references and detect corresponding action-based inputs from the question. The detected entities and actions are used as parameters to instantiate neural module networks and extract visual cues from the video. Our experiments show that VGNMN can achieve promising performance on a challenging video-grounded dialogue benchmark as well as a video QA benchmark.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-04-16T06:47:41Z</published>
+    <arxiv:comment>Accepted at NAACL 2022 (Oral)</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Hung Le</name>
+    </author>
+    <author>
+      <name>Nancy F. Chen</name>
+    </author>
+    <author>
+      <name>Steven C. H. Hoi</name>
+    </author>
+  </entry>
+</feed>

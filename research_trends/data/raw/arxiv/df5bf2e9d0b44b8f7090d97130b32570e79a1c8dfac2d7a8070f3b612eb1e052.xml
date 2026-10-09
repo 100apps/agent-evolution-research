@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/xuHM2yAfuG3GrrH+/G0cHHQeMPY</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202408010000 TO 202408312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:26Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202408010000+TO+202408312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>8497</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2408.16751v1</id>
+    <title>A Gradient Analysis Framework for Rewarding Good and Penalizing Bad Examples in Language Models</title>
+    <updated>2024-08-29T17:46:18Z</updated>
+    <link href="https://arxiv.org/abs/2408.16751v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2408.16751v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Beyond maximum likelihood estimation (MLE), the standard objective of a language model (LM) that optimizes good examples probabilities, many studies have explored ways that also penalize bad examples for enhancing the quality of output distribution, including unlikelihood training, exponential maximizing average treatment effect (ExMATE), and direct preference optimization (DPO). To systematically compare these methods and further provide a unified recipe for LM optimization, in this paper, we present a unique angle of gradient analysis of loss functions that simultaneously reward good examples and penalize bad ones in LMs. Through both mathematical results and experiments on CausalDialogue and Anthropic HH-RLHF datasets, we identify distinct functional characteristics among these methods. We find that ExMATE serves as a superior surrogate for MLE, and that combining DPO with ExMATE instead of MLE further enhances both the statistical (5-7%) and generative (+18% win rate) performance.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-08-29T17:46:18Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yi-Lin Tuan</name>
+    </author>
+    <author>
+      <name>William Yang Wang</name>
+    </author>
+  </entry>
+</feed>

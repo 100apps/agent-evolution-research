@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/oRJ0ZKVrrXqpmhz/Ey3L9UOTmRg</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202501010000 TO 202501312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202501010000+TO+202501312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>8860</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2501.15189v1</id>
+    <title>Extracting Forward Invariant Sets from Neural Network-Based Control Barrier Functions</title>
+    <updated>2025-01-25T12:01:56Z</updated>
+    <link href="https://arxiv.org/abs/2501.15189v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.15189v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Training Neural Networks (NNs) to serve as Barrier Functions (BFs) is a popular way to improve the safety of autonomous dynamical systems. Despite significant practical success, these methods are not generally guaranteed to produce true BFs in a provable sense, which undermines their intended use as safety certificates. In this paper, we consider the problem of formally certifying a learned NN as a BF with respect to state avoidance for an autonomous system: viz. computing a region of the state space on which the candidate NN is provably a BF. In particular, we propose a sound algorithm that efficiently produces such a certificate set for a shallow NN. Our algorithm combines two novel approaches: it first uses NN reachability tools to identify a subset of states for which the output of the NN does not increase along system trajectories; then, it uses a novel enumeration algorithm for hyperplane arrangements to find the intersection of the NN's zero-sub-level set with the first set of states. In this way, our algorithm soundly finds a subset of states on which the NN is certified as a BF. We further demonstrate the effectiveness of our algorithm at certifying for real-world NNs as BFs in two case studies. We complemented these with scalability experiments that demonstrate the efficiency of our algorithm.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-25T12:01:56Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Goli Vaisi</name>
+    </author>
+    <author>
+      <name>James Ferlez</name>
+    </author>
+    <author>
+      <name>Yasser Shoukry</name>
+    </author>
+  </entry>
+</feed>

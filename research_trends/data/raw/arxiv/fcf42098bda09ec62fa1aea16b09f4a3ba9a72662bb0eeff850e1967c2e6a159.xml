@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ipe/q3p9+LaiiZpchXHX0IuGUck</id>
+  <title>arXiv Query: search_query=submittedDate:"202506010000 TO 202506302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:39:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202506010000+TO+202506302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>23512</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2506.21610v3</id>
+    <title>Quantum Theory of Optical Spin Texture in Chiral Tellurium Lattice</title>
+    <updated>2025-09-30T21:38:51Z</updated>
+    <link href="https://arxiv.org/abs/2506.21610v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.21610v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The absence of inversion symmetry in chiral tellurium (Te) creates exotic spin textures within its electron waves. However, understanding textured optical waves within Te remains a challenge due to the semi-classical limitations of long-wavelength approximation. To unveil these textured optical waves, we develop a spin-resolved deep-microscopic optical bandstructure for Te analogous to its electronic counterpart. We demonstrate that the degeneracies in this optical bandstructure is lifted by the twisted lattice of Te, which induces optical gyrotropy. Our theory shows excellent agreement with experimental optical gyrotropy measurements. At the lattice level, we reveal that the chirality of Te manifests as deep-microscopic optical spin texture within the optical wave. Our framework uncovers the finite-momentum origin of optical activity and provides a microscopic basis for light-matter interactions in chiral crystalline materials.</summary>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="quant-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-20T18:26:55Z</published>
+    <arxiv:primary_category term="cond-mat.mes-hall"/>
+    <author>
+      <name>Pronoy Das</name>
+    </author>
+    <author>
+      <name>Sathwik Bharadwaj</name>
+    </author>
+    <author>
+      <name>Jungho Mun</name>
+    </author>
+    <author>
+      <name>Xueji Wang</name>
+    </author>
+    <author>
+      <name>Junsuk Rho</name>
+    </author>
+    <author>
+      <name>Zubin Jacob</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/K3apo95TLVvtdcI7q+V/YtCt2Cw</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202506010000 TO 202506302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:39:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202506010000+TO+202506302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>9399</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2507.02929v1</id>
+    <title>OBSER: Object-Based Sub-Environment Recognition for Zero-Shot Environmental Inference</title>
+    <updated>2025-06-26T05:57:06Z</updated>
+    <link href="https://arxiv.org/abs/2507.02929v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.02929v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present the Object-Based Sub-Environment Recognition (OBSER) framework, a novel Bayesian framework that infers three fundamental relationships between sub-environments and their constituent objects. In the OBSER framework, metric and self-supervised learning models estimate the object distributions of sub-environments on the latent space to compute these measures. Both theoretically and empirically, we validate the proposed framework by introducing the ($ε,δ$) statistically separable (EDS) function which indicates the alignment of the representation. Our framework reliably performs inference in open-world and photorealistic environments and outperforms scene-based methods in chained retrieval tasks. The OBSER framework enables zero-shot recognition of environments to achieve autonomous environment understanding.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-26T05:57:06Z</published>
+    <arxiv:comment>This manuscript was initially submitted to ICCV 2025 and is now made available as a preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Won-Seok Choi</name>
+    </author>
+    <author>
+      <name>Dong-Sig Han</name>
+    </author>
+    <author>
+      <name>Suhyung Choi</name>
+    </author>
+    <author>
+      <name>Hyeonseo Yang</name>
+    </author>
+    <author>
+      <name>Byoung-Tak Zhang</name>
+    </author>
+  </entry>
+</feed>

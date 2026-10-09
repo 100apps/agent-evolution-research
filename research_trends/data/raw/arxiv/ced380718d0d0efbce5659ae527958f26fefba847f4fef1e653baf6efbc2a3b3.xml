@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/8xzu1p+jmibJ7JDHW31Fes8Xejc</id>
+  <title>arXiv Query: search_query=submittedDate:"202407010000 TO 202407312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:37:12Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202407010000+TO+202407312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>20666</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2407.08062v2</id>
+    <title>The Game of Band or Bump</title>
+    <updated>2024-08-27T19:38:26Z</updated>
+    <link href="https://arxiv.org/abs/2407.08062v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2407.08062v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this report we generalize the game of Book or Band described in Levin (2024) to an arbitrary playing deck with $m$ ranks and $s$ cards in each rank, for a total of $t=ms$ cards. Two events (a band or a bump) are defined in terms of given non-negative integers $0\le l\le u \le s$, not necessarily with $l+u=s$. We derive expressions for the joint stopping time distribution and outcome band or bump in terms of rectangular event probabilities for central multiple hyper-geometric random variables.</summary>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-07-10T21:52:29Z</published>
+    <arxiv:comment>Update contains a new table of results and minor corrections to the original version</arxiv:comment>
+    <arxiv:primary_category term="math.PR"/>
+    <author>
+      <name>Bruce Levin</name>
+    </author>
+  </entry>
+</feed>

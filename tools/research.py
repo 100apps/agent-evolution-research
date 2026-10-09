@@ -255,10 +255,21 @@ def main() -> None:
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("validate")
     sub.add_parser("test")
+    sub.add_parser("trends-validate")
+    trends_rebuild = sub.add_parser("trends-rebuild")
+    trends_rebuild.add_argument("--output-dir", type=Path, required=True)
     for name in ("experiment", "build", "all"):
         command = sub.add_parser(name)
         command.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
+
+    if args.command in {"trends-validate", "trends-rebuild"}:
+        command = [sys.executable, str(ROOT / "research_trends" / "reproduce.py")]
+        command.append("validate" if args.command == "trends-validate" else "rebuild")
+        if args.command == "trends-rebuild":
+            command.extend(("--output-dir", str(safe_output(args.output_dir))))
+        process = subprocess.run(command, cwd=ROOT)
+        raise SystemExit(process.returncode)
 
     if args.command == "validate":
         print(json.dumps(validate_repository(), ensure_ascii=False, indent=2))

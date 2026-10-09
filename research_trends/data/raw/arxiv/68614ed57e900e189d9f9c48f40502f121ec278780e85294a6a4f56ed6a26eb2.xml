@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/23Qke20zKtI4jcOvQn1/CIUNJa0</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202504010000 TO 202504302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:50Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202504010000+TO+202504302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>10608</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2504.09096v1</id>
+    <title>High dimensional online calibration in polynomial time</title>
+    <updated>2025-04-12T06:28:05Z</updated>
+    <link href="https://arxiv.org/abs/2504.09096v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.09096v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In online (sequential) calibration, a forecaster predicts probability distributions over a finite outcome space $[d]$ over a sequence of $T$ days, with the goal of being calibrated. While asymptotically calibrated strategies are known to exist, they suffer from the curse of dimensionality: the best known algorithms require $\exp(d)$ days to achieve non-trivial calibration.
+  In this work, we present the first asymptotically calibrated strategy that guarantees non-trivial calibration after a polynomial number of rounds. Specifically, for any desired accuracy $ε&gt; 0$, our forecaster becomes $ε$-calibrated after $T = d^{O(1/ε^2)}$ days. We complement this result with a lower bound, proving that at least $T = d^{Ω(\log(1/ε))}$ rounds are necessary to achieve $ε$-calibration. Our results resolve the open questions posed by [Abernethy-Mannor'11, Hazan-Kakade'12].
+  Our algorithm is inspired by recent breakthroughs in swap regret minimization [Peng-Rubinstein'24, Dagan et al.'24]. Despite its strong theoretical guarantees, the approach is remarkably simple and intuitive: it randomly selects among a set of sub-forecasters, each of which predicts the empirical outcome frequency over recent time windows.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.DS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-12T06:28:05Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Binghui Peng</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/F0czdheDiHGzpKnUzj9/1HDi7SM</id>
+  <title>arXiv Query: search_query=submittedDate:"202310010000 TO 202310312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:38Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202310010000+TO+202310312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>20371</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.13670v1</id>
+    <title>"The Roller Conduction Effect" from the A-share Data Evidence</title>
+    <updated>2023-10-16T00:57:53Z</updated>
+    <link href="https://arxiv.org/abs/2401.13670v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.13670v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In the post-epidemic era, consumption recovery has obvious time and space transmission laws, and there are different valuation criteria for consumption segments. Using the A-share data of the consumption recovery stage from January to April 2022, this paper quantitatively compares the rotation effect between different consumption sectors when the valuation returns to the reasonable range. According to the new classification of "sensory-based consumption", it interprets the internal logic of digital consumption as A consumption upgrade tool and a higher valuation target, and expounds the "the roller conduction effect". The law of consumption recovery and valuation return period is explained from the perspective of time and space conduction. The study found that in the early stage of consumption recovery, the recovery of consumer confidence was slow. In this period, A-shares were mainly dominated by the stock capital game, and there was an obvious plate rotation law in the game. Being familiar with this law has strong significance, which not only helps policy makers to adjust the direction of policy guidance, but also helps financial investors to make better investment strategies. The disadvantage of this paper is that it has not yet studied the roller conduction effect of the global financial market, and more rigorous mathematical models are still needed to support the definition of stock funds, which is also the main direction of the author's future research.</summary>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-10-16T00:57:53Z</published>
+    <arxiv:comment>11 pages</arxiv:comment>
+    <arxiv:primary_category term="econ.GN"/>
+    <author>
+      <name>Wenbo Lyu</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/EozzY+Q3HhKT7QOzRGeIAbDOAXM</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202304010000 TO 202304302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202304010000+TO+202304302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6759</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2304.00199v4</id>
+    <title>Applications of No-Collision Transportation Maps in Manifold Learning</title>
+    <updated>2024-02-16T20:45:09Z</updated>
+    <link href="https://arxiv.org/abs/2304.00199v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2304.00199v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this work, we investigate applications of no-collision transportation maps introduced in [Nurbekyan et. al., 2020] in manifold learning for image data. Recently, there has been a surge in applying transportation-based distances and features for data representing motion-like or deformation-like phenomena. Indeed, comparing intensities at fixed locations often does not reveal the data structure. No-collision maps and distances developed in [Nurbekyan et. al., 2020] are sensitive to geometric features similar to optimal transportation (OT) maps but much cheaper to compute due to the absence of optimization. In this work, we prove that no-collision distances provide an isometry between translations (respectively dilations) of a single probability measure and the translation (respectively dilation) vectors equipped with a Euclidean distance. Furthermore, we prove that no-collision transportation maps, as well as OT and linearized OT maps, do not in general provide an isometry for rotations. The numerical experiments confirm our theoretical findings and show that no-collision distances achieve similar or better performance on several manifold learning tasks compared to other OT and Euclidean-based methods at a fraction of a computational cost.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-04-01T02:05:17Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Elisa Negrini</name>
+    </author>
+    <author>
+      <name>Levon Nurbekyan</name>
+    </author>
+  </entry>
+</feed>

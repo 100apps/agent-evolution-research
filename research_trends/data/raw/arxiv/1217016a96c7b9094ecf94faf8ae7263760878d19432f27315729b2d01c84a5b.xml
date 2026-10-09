@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ifhUaAwLrx6u/L33Op6YrciTnUM</id>
+  <title>arXiv Query: search_query=submittedDate:"202202010000 TO 202202282359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202202010000+TO+202202282359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14026</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2202.07439v3</id>
+    <title>Inclusive Study Group Formation At Scale</title>
+    <updated>2023-02-16T09:25:22Z</updated>
+    <link href="https://arxiv.org/abs/2202.07439v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2202.07439v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Underrepresented students face many significant challenges in their education. In particular, they often have a harder time than their peers from majority groups in building long-term high-quality study groups. This challenge is exacerbated in remote-learning scenarios, where students are unable to meet face-to-face and must rely on pre-existing networks for social support.
+  We present a scalable system that removes structural obstacles faced by underrepresented students and supports all students in building inclusive and flexible study groups. One of our main goals is to make the traditionally informal and unstructured process of finding study groups for homework more equitable by providing a uniform but lightweight structure. We aim to provide students from underrepresented groups an experience that is similar in quality to that of students from majority groups. Our process is unique in that it allows students the opportunity to request group reassignments during the semester if they wish. Unlike other collaboration tools our system is not mandatory and does not use peer-evaluation.
+  We trialed our approach in a 1000+ student introductory Engineering and Computer Science course that was conducted entirely online during the COVID-19 pandemic. We find that students from underrepresented backgrounds were more likely to ask for group-matching support compared to students from majority groups. At the same time, underrepresented students that we matched into study groups had group experiences that were comparable to students we matched from majority groups. B-range students in high-comfort and high-quality groups had improved learning outcomes.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-02-12T06:38:55Z</published>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Sumer Kohli</name>
+    </author>
+    <author>
+      <name>Neelesh Ramachandran</name>
+    </author>
+    <author>
+      <name>Ana Tudor</name>
+    </author>
+    <author>
+      <name>Gloria Tumushabe</name>
+    </author>
+    <author>
+      <name>Olivia Hsu</name>
+    </author>
+    <author>
+      <name>Gireeja Ranade</name>
+    </author>
+    <arxiv:doi>10.1145/3545945.3569885</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3545945.3569885" title="doi"/>
+  </entry>
+</feed>

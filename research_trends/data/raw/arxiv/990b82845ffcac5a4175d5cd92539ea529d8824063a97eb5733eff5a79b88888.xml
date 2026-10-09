@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/EE26i9b5B7vpUEagaYEJ6UZ5JAg</id>
+  <title>arXiv Query: search_query=submittedDate:"202011010000 TO 202011302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202011010000+TO+202011302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>14968</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2012.12872v1</id>
+    <title>Energy efficient spark plasma sintering: Breaking the threshold of large dimension tooling energy consumption</title>
+    <updated>2020-11-21T11:02:20Z</updated>
+    <link href="https://arxiv.org/abs/2012.12872v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2012.12872v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An energy efficient spark plasma sintering method enabling the densification of large size samples assisted by very low electric current levels is developed. In this method, the electric current is concentrated in the graphite foils around the sample. High energy dissipation is then achieved in this area enabling the heating and full densification of large (alumina) parts ({Ø} 40 mm) at relatively low currents (800 A). The electrothermal mechanical simulation reveals that the electric current needed to heat the large samples is 70 % lower in the energy efficient configuration compared to the traditional configuration. The presence of thermal and densification gradients is also revealed for the larger size samples. Potential solutions for this problem are discussed. The experiments confirm the possibility of full densification (96-99 %) of large alumina samples. This approach allows using small (and low cost) SPS devices (generally limited to 10-15 mm samples) for large size samples (40-50 mm). The developed technique enables also an optimized energy consumption by large scale SPS systems.</summary>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-11-21T11:02:20Z</published>
+    <arxiv:primary_category term="cond-mat.mtrl-sci"/>
+    <arxiv:journal_ref>Journal of the American Ceramic Society, Wiley, 2018</arxiv:journal_ref>
+    <author>
+      <name>Charles Manière</name>
+      <arxiv:affiliation>SDSU</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Geuntak Lee</name>
+      <arxiv:affiliation>SDSU</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Joanna Mckittrick</name>
+      <arxiv:affiliation>UCSD</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Eugene A. Olevsky</name>
+      <arxiv:affiliation>SDSU</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1111/jace.16046</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1111/jace.16046" title="doi"/>
+  </entry>
+</feed>

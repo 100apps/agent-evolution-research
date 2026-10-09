@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/NJPstwJ6/uLRkbDeKkcEX5W5Hg0</id>
+  <title>arXiv Query: search_query=( (cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) ) AND ( ( (ti:"pretraining" OR abs:"pretraining") OR (ti:"pre-training" OR abs:"pre-training") OR (ti:"pretrain" OR abs:"pretrain") ) AND ( (ti:"foundation model" OR abs:"foundation model") OR (ti:"large language model" OR abs:"large language model") OR (ti:"language model" OR abs:"language model") OR (ti:"vision-language model" OR abs:"vision-language model") OR (ti:"multimodal model" OR abs:"multimodal model") ) AND ( (ti:"training data" OR abs:"training data") OR (ti:"training objective" OR abs:"training objective") OR (ti:"data mixture" OR abs:"data mixture") OR (ti:"data curation" OR abs:"data curation") OR (ti:"scaling" OR abs:"scaling") OR (ti:"scaling laws" OR abs:"scaling laws") OR (ti:"compute-optimal" OR abs:"compute-optimal") OR (ti:"pretraining corpus" OR abs:"pretraining corpus") OR (ti:"pre-training corpus" OR abs:"pre-training corpus") ) ) AND submittedDate:"202401010000 TO 202401312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:44:55Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+((((ti:%22pretraining%22+OR+abs:%22pretraining%22)+OR+((ti:%22pre-training%22+OR+abs:%22pre-training%22)+OR+(ti:%22pretrain%22+OR+abs:%22pretrain%22)))+AND+(((ti:%22foundation+model%22+OR+abs:%22foundation+model%22)+OR+((ti:%22large+language+model%22+OR+abs:%22large+language+model%22)+OR+((ti:%22language+model%22+OR+abs:%22language+model%22)+OR+((ti:%22vision-language+model%22+OR+abs:%22vision-language+model%22)+OR+(ti:%22multimodal+model%22+OR+abs:%22multimodal+model%22)))))+AND+((ti:%22training+data%22+OR+abs:%22training+data%22)+OR+((ti:%22training+objective%22+OR+abs:%22training+objective%22)+OR+((ti:%22data+mixture%22+OR+abs:%22data+mixture%22)+OR+((ti:%22data+curation%22+OR+abs:%22data+curation%22)+OR+((ti:%22scaling%22+OR+abs:%22scaling%22)+OR+((ti:%22scaling+laws%22+OR+abs:%22scaling+laws%22)+OR+((ti:%22compute-optimal%22+OR+abs:%22compute-optimal%22)+OR+((ti:%22pretraining+corpus%22+OR+abs:%22pretraining+corpus%22)+OR+(ti:%22pre-training+corpus%22+OR+abs:%22pre-training+corpus%22)))))))))))+AND+submittedDate:%22202401010000+TO+202401312359%22)&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>79</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2402.00159v2</id>
+    <title>Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research</title>
+    <updated>2024-06-06T18:46:40Z</updated>
+    <link href="https://arxiv.org/abs/2402.00159v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2402.00159v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Information about pretraining corpora used to train the current best-performing language models is seldom discussed: commercial models rarely detail their data, and even open models are often released without accompanying training data or recipes to reproduce them. As a result, it is challenging to conduct and advance scientific research on language modeling, such as understanding how training data impacts model capabilities and limitations. To facilitate scientific research on language model pretraining, we curate and release Dolma, a three-trillion-token English corpus, built from a diverse mixture of web content, scientific papers, code, public-domain books, social media, and encyclopedic materials. We extensively document Dolma, including its design principles, details about its construction, and a summary of its contents. We present analyses and experimental results on intermediate states of Dolma to share what we have learned about important data curation practices. Finally, we open-source our data curation toolkit to enable reproduction of our work as well as support further research in large-scale data curation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-31T20:29:50Z</published>
+    <arxiv:comment>Accepted at ACL 2024; Dataset: https://hf.co/datasets/allenai/dolma; Code: https://github.com/allenai/dolma</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Luca Soldaini</name>
+    </author>
+    <author>
+      <name>Rodney Kinney</name>
+    </author>
+    <author>
+      <name>Akshita Bhagia</name>
+    </author>
+    <author>
+      <name>Dustin Schwenk</name>
+    </author>
+    <author>
+      <name>David Atkinson</name>
+    </author>
+    <author>
+      <name>Russell Authur</name>
+    </author>
+    <author>
+      <name>Ben Bogin</name>
+    </author>
+    <author>
+      <name>Khyathi Chandu</name>
+    </author>
+    <author>
+      <name>Jennifer Dumas</name>
+    </author>
+    <author>
+      <name>Yanai Elazar</name>
+    </author>
+    <author>
+      <name>Valentin Hofmann</name>
+    </author>
+    <author>
+      <name>Ananya Harsh Jha</name>
+    </author>
+    <author>
+      <name>Sachin Kumar</name>
+    </author>
+    <author>
+      <name>Li Lucy</name>
+    </author>
+    <author>
+      <name>Xinxi Lyu</name>
+    </author>
+    <author>
+      <name>Nathan Lambert</name>
+    </author>
+    <author>
+      <name>Ian Magnusson</name>
+    </author>
+    <author>
+      <name>Jacob Morrison</name>
+    </author>
+    <author>
+      <name>Niklas Muennighoff</name>
+    </author>
+    <author>
+      <name>Aakanksha Naik</name>
+    </author>
+    <author>
+      <name>Crystal Nam</name>
+    </author>
+    <author>
+      <name>Matthew E. Peters</name>
+    </author>
+    <author>
+      <name>Abhilasha Ravichander</name>
+    </author>
+    <author>
+      <name>Kyle Richardson</name>
+    </author>
+    <author>
+      <name>Zejiang Shen</name>
+    </author>
+    <author>
+      <name>Emma Strubell</name>
+    </author>
+    <author>
+      <name>Nishant Subramani</name>
+    </author>
+    <author>
+      <name>Oyvind Tafjord</name>
+    </author>
+    <author>
+      <name>Pete Walsh</name>
+    </author>
+    <author>
+      <name>Luke Zettlemoyer</name>
+    </author>
+    <author>
+      <name>Noah A. Smith</name>
+    </author>
+    <author>
+      <name>Hannaneh Hajishirzi</name>
+    </author>
+    <author>
+      <name>Iz Beltagy</name>
+    </author>
+    <author>
+      <name>Dirk Groeneveld</name>
+    </author>
+    <author>
+      <name>Jesse Dodge</name>
+    </author>
+    <author>
+      <name>Kyle Lo</name>
+    </author>
+  </entry>
+</feed>

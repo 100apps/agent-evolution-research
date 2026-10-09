@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/89vCn93PB6v6jB/T+EvmmYtEXcE</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202412010000 TO 202412312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202412010000+TO+202412312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>10285</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2412.05534v1</id>
+    <title>Memory-enhanced Invariant Prompt Learning for Urban Flow Prediction under Distribution Shifts</title>
+    <updated>2024-12-07T04:35:07Z</updated>
+    <link href="https://arxiv.org/abs/2412.05534v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.05534v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Urban flow prediction is a classic spatial-temporal forecasting task that estimates the amount of future traffic flow for a given location. Though models represented by Spatial-Temporal Graph Neural Networks (STGNNs) have established themselves as capable predictors, they tend to suffer from distribution shifts that are common with the urban flow data due to the dynamics and unpredictability of spatial-temporal events. Unfortunately, in spatial-temporal applications, the dynamic environments can hardly be quantified via a fixed number of parameters, whereas learning time- and location-specific environments can quickly become computationally prohibitive. In this paper, we propose a novel framework named Memory-enhanced Invariant Prompt learning (MIP) for urban flow prediction under constant distribution shifts. Specifically, MIP is equipped with a learnable memory bank that is trained to memorize the causal features within the spatial-temporal graph. By querying a trainable memory bank that stores the causal features, we adaptively extract invariant and variant prompts (i.e., patterns) for a given location at every time step. Then, instead of intervening the raw data based on simulated environments, we directly perform intervention on variant prompts across space and time. With the intervened variant prompts in place, we use invariant learning to minimize the variance of predictions, so as to ensure that the predictions are only made with invariant features. With extensive comparative experiments on two public urban flow datasets, we thoroughly demonstrate the robustness of MIP against OOD data.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-12-07T04:35:07Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Haiyang Jiang</name>
+    </author>
+    <author>
+      <name>Tong Chen</name>
+    </author>
+    <author>
+      <name>Wentao Zhang</name>
+    </author>
+    <author>
+      <name>Nguyen Quoc Viet Hung</name>
+    </author>
+    <author>
+      <name>Yuan Yuan</name>
+    </author>
+    <author>
+      <name>Yong Li</name>
+    </author>
+    <author>
+      <name>Lizhen Cui</name>
+    </author>
+  </entry>
+</feed>

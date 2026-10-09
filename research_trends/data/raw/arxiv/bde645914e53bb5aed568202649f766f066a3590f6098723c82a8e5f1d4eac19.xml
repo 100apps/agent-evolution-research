@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/m7c7qQ8Ov3E6RXUbBbSVSz+GA2s</id>
+  <title>arXiv Query: search_query=submittedDate:"202108010000 TO 202108312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202108010000+TO+202108312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>13760</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2108.05093v2</id>
+    <title>Study of the cumulative number distribution of charged particles produced in carbon-carbon interactions at 4.2 A GeV/c</title>
+    <updated>2021-11-23T12:52:58Z</updated>
+    <link href="https://arxiv.org/abs/2108.05093v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2108.05093v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The behavior of the cumulative number distribution for the charged particles produced in the carbon carbon interactions at 4.2 A GeV/c along with particles with maximum values of the cumulative number in an event too, has been studied.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-08-11T08:31:21Z</published>
+    <arxiv:comment>we want to add some more work in this paper and then we will submit it</arxiv:comment>
+    <arxiv:primary_category term="hep-ph"/>
+    <author>
+      <name>Z Wazir</name>
+    </author>
+    <author>
+      <name>S M Aslam</name>
+    </author>
+    <author>
+      <name>M K Suleymanov</name>
+    </author>
+    <author>
+      <name>M Waqas</name>
+    </author>
+    <author>
+      <name>G. X. Peng</name>
+    </author>
+    <author>
+      <name> Li-lili</name>
+    </author>
+    <author>
+      <name>M Ajaz</name>
+    </author>
+    <author>
+      <name>A Gilani</name>
+    </author>
+  </entry>
+</feed>

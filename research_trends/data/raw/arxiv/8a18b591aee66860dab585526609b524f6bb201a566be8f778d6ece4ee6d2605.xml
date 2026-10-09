@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/qLyUsWKLPRfh3oB8A98EkXPTM48</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202207010000 TO 202207312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202207010000+TO+202207312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6167</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2207.03227v2</id>
+    <title>Challenges and Pitfalls of Bayesian Unlearning</title>
+    <updated>2022-09-13T11:49:24Z</updated>
+    <link href="https://arxiv.org/abs/2207.03227v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2207.03227v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Machine unlearning refers to the task of removing a subset of training data, thereby removing its contributions to a trained model. Approximate unlearning are one class of methods for this task which avoid the need to retrain the model from scratch on the retained data. Bayes' rule can be used to cast approximate unlearning as an inference problem where the objective is to obtain the updated posterior by dividing out the likelihood of deleted data. However this has its own set of challenges as one often doesn't have access to the exact posterior of the model parameters. In this work we examine the use of the Laplace approximation and Variational Inference to obtain the updated posterior. With a neural network trained for a regression task as the guiding example, we draw insights on the applicability of Bayesian unlearning in practical scenarios.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-07-07T11:24:50Z</published>
+    <arxiv:comment>5 pages, 3 figures, Updatable ML (UpML) Workshop, International Conference on Machine Learning (ICML) 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Ambrish Rawat</name>
+    </author>
+    <author>
+      <name>James Requeima</name>
+    </author>
+    <author>
+      <name>Wessel Bruinsma</name>
+    </author>
+    <author>
+      <name>Richard Turner</name>
+    </author>
+  </entry>
+</feed>

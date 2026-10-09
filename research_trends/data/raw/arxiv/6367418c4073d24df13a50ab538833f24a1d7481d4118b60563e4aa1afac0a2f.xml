@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/u1u5Xxx0uxdaQiwBc/WBC7RvSsU</id>
+  <title>arXiv Query: search_query=submittedDate:"202203010000 TO 202203312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:28Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202203010000+TO+202203312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>17210</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2208.01639v1</id>
+    <title>Sharpening Your Tools: Updating bulk_extractor for the 2020s</title>
+    <updated>2022-03-31T17:45:46Z</updated>
+    <link href="https://arxiv.org/abs/2208.01639v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2208.01639v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bulk_extractor is a high-performance digital forensics tool written in C++. Between 2018 and 2022 we updated the program from C++98 to C++17, performed a complete code refactoring, and adopted a unit test framework. The new version typically runs with 75\% more throughput than the previous version, which we attribute to improved multithreading. We provide lessons and recommendations for other digital forensics tool maintainers.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-03-31T17:45:46Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Simson Garfinkel</name>
+    </author>
+    <author>
+      <name>Jonathan Stewart</name>
+    </author>
+  </entry>
+</feed>

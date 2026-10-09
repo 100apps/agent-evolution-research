@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/imVOyFNoDA6GcMrF55uV2FchW6Q</id>
+  <title>arXiv Query: search_query=submittedDate:"202111010000 TO 202111302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:31:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202111010000+TO+202111302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15237</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2111.08993v2</id>
+    <title>Expanding K-theoretic Schur Q-functions</title>
+    <updated>2023-01-07T06:05:05Z</updated>
+    <link href="https://arxiv.org/abs/2111.08993v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2111.08993v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We derive several identities involving Ikeda and Naruse's $K$-theoretic Schur $P$- and $Q$-functions. Our main result is a formula conjectured by Lewis and the second author which expands each $K$-theoretic Schur $Q$-function in terms of $K$-theoretic Schur $P$-functions. This formula extends to some more general identities relating the skew and dual versions of both power series. We also prove a shifted version of Yeliussizov's skew Cauchy identity for symmetric Grothendieck polynomials. Finally, we discuss some conjectural formulas for the dual $K$-theoretic Schur $P$- and $Q$-functions of Nakagawa and Naruse. We show that one such formula would imply a basis property expected of the $K$-theoretic Schur $Q$-functions.</summary>
+    <category term="math.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-11-17T09:30:26Z</published>
+    <arxiv:comment>33 pages; v2: some corrections, added exposition, and minor reorganization</arxiv:comment>
+    <arxiv:primary_category term="math.CO"/>
+    <arxiv:journal_ref>Algebraic Combinatorics, Volume 6 (2023) no. 6, 1419-1445</arxiv:journal_ref>
+    <author>
+      <name>Yu-Cheng Chiu</name>
+    </author>
+    <author>
+      <name>Eric Marberg</name>
+    </author>
+    <arxiv:doi>10.5802/alco.312</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5802/alco.312" title="doi"/>
+  </entry>
+</feed>

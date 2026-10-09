@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CEW2UhHg3rFT5IZsVQctYAmTue8</id>
+  <title>arXiv Query: search_query=submittedDate:"202308010000 TO 202308312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:27Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202308010000+TO+202308312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>16895</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.06671v1</id>
+    <title>Learning Joint Space Reference Manifold for Reliable Physical Assistance</title>
+    <updated>2023-08-15T19:35:15Z</updated>
+    <link href="https://arxiv.org/abs/2401.06671v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.06671v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents a study on the use of the Talos humanoid robot for performing assistive sit-to-stand or stand-to-sit tasks. In such tasks, the human exerts a large amount of force (100--200 N) within a very short time (2--8 s), posing significant challenges in terms of human unpredictability and robot stability control. To address these challenges, we propose an approach for finding a spatial reference for the robot, which allows the robot to move according to the force exerted by the human and control its stability during the task. Specifically, we focus on the problem of finding a 1D manifold for the robot, while assuming a simple controller to guide its movement on this manifold. To achieve this, we use a functional representation to parameterize the manifold and solve an optimization problem that takes into account the robot's stability and the unpredictability of human behavior. We demonstrate the effectiveness of our approach through simulations and experiments with the Talos robot, showing robustness and adaptability.</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-08-15T19:35:15Z</published>
+    <arxiv:comment>Video can be accessed via: https://www.youtube.com/watch?v=GQAad6GFPlE&amp;list=LL&amp;index=1; Accepted for IROS 2023</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Amirreza Razmjoo</name>
+    </author>
+    <author>
+      <name>Tilen Brecelj</name>
+    </author>
+    <author>
+      <name>Kristina Savevska</name>
+    </author>
+    <author>
+      <name>Aleš Ude</name>
+    </author>
+    <author>
+      <name>Tadej Petrič</name>
+    </author>
+    <author>
+      <name>Sylvain Calinon</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,9 @@
+{
+  "filename": "neurips_2026_program.json",
+  "source_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+  "fetched_at_utc": "2026-10-09T03:42:33.683827+00:00",
+  "http_status": 200,
+  "final_url": "https://neurips.cc/static/virtual/data/neurips-2026-orals-posters.json",
+  "bytes": 19301002,
+  "sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21"
+}

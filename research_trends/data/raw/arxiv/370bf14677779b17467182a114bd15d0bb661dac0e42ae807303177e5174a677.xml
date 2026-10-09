@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/t35scTdNDAr2lXfheppDXHRbWdE</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202405010000 TO 202405312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:36:55Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202405010000+TO+202405312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>10405</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2405.13785v2</id>
+    <title>Efficient Two-Stage Gaussian Process Regression Via Automatic Kernel Search and Subsampling</title>
+    <updated>2024-09-19T13:44:26Z</updated>
+    <link href="https://arxiv.org/abs/2405.13785v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2405.13785v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gaussian Process Regression (GPR) is widely used in statistics and machine learning for prediction tasks requiring uncertainty measures. Its efficacy depends on the appropriate specification of the mean function, covariance kernel function, and associated hyperparameters. Severe misspecifications can lead to inaccurate results and problematic consequences, especially in safety-critical applications. However, a systematic approach to handle these misspecifications is lacking in the literature. In this work, we propose a general framework to address these issues. Firstly, we introduce a flexible two-stage GPR framework that separates mean prediction and uncertainty quantification (UQ) to prevent mean misspecification, which can introduce bias into the model. Secondly, kernel function misspecification is addressed through a novel automatic kernel search algorithm, supported by theoretical analysis, that selects the optimal kernel from a candidate set. Additionally, we propose a subsampling-based warm-start strategy for hyperparameter initialization to improve efficiency and avoid hyperparameter misspecification. With much lower computational cost, our subsampling-based strategy can yield competitive or better performance than training exclusively on the full dataset. Combining all these components, we recommend two GPR methods-exact and scalable-designed to match available computational resources and specific UQ requirements. Extensive evaluation on real-world datasets, including UCI benchmarks and a safety-critical medical case study, demonstrates the robustness and precision of our methods.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.PR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-05-22T16:11:29Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Shifan Zhao</name>
+      <arxiv:affiliation>Carl</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jiaying Lu</name>
+      <arxiv:affiliation>Carl</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Ji Yang</name>
+      <arxiv:affiliation>Carl</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Edmond Chow</name>
+    </author>
+    <author>
+      <name>Yuanzhe Xi</name>
+    </author>
+  </entry>
+</feed>

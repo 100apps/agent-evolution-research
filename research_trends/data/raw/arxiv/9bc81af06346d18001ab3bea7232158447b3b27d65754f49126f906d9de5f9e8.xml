@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/yhIae1/2xQDyx/OumcRPMsdy3r0</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202307010000 TO 202307312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:20Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202307010000+TO+202307312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>7291</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2307.07014v1</id>
+    <title>Leveraging Factored Action Spaces for Off-Policy Evaluation</title>
+    <updated>2023-07-13T18:34:14Z</updated>
+    <link href="https://arxiv.org/abs/2307.07014v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.07014v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Off-policy evaluation (OPE) aims to estimate the benefit of following a counterfactual sequence of actions, given data collected from executed sequences. However, existing OPE estimators often exhibit high bias and high variance in problems involving large, combinatorial action spaces. We investigate how to mitigate this issue using factored action spaces i.e. expressing each action as a combination of independent sub-actions from smaller action spaces. This approach facilitates a finer-grained analysis of how actions differ in their effects. In this work, we propose a new family of "decomposed" importance sampling (IS) estimators based on factored action spaces. Given certain assumptions on the underlying problem structure, we prove that the decomposed IS estimators have less variance than their original non-decomposed versions, while preserving the property of zero bias. Through simulations, we empirically verify our theoretical results, probing the validity of various assumptions. Provided with a technique that can derive the action space factorisation for a given problem, our work shows that OPE can be improved "for free" by utilising this inherent problem structure.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-13T18:34:14Z</published>
+    <arxiv:comment>Main paper: 8 pages, 7 figures. Appendix: 30 pages, 17 figures. Accepted at ICML 2023 Workshop on Counterfactuals in Minds and Machines, Honolulu, Hawaii, USA. Camera ready version</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aaman Rebello</name>
+      <arxiv:affiliation>Department of Engineering, Imperial College London</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Shengpu Tang</name>
+      <arxiv:affiliation>Division of Computer Science &amp; Engineering, University of Michigan</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jenna Wiens</name>
+      <arxiv:affiliation>Division of Computer Science &amp; Engineering, University of Michigan</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Sonali Parbhoo</name>
+      <arxiv:affiliation>Department of Engineering, Imperial College London</arxiv:affiliation>
+    </author>
+  </entry>
+</feed>

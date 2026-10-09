@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/OsJA2H9XeBS+nBr8PpysUy/VPEU</id>
+  <title>arXiv Query: search_query=submittedDate:"202311010000 TO 202311302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:35:48Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202311010000+TO+202311302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>18897</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.06134v1</id>
+    <title>Synergy or Rivalry? Glimpses of Regional Modernization and Public Service Equalization: A Case Study from China</title>
+    <updated>2023-11-21T05:58:17Z</updated>
+    <link href="https://arxiv.org/abs/2401.06134v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.06134v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>For most developing countries, increasing the equalization of basic public services is widely recognized as an effective channel to improve people's sense of contentment. However, for many emerging economies like China, the equalization level of basic public services may often be neglected in the trade-off between the speed and quality of development. Taking the Yangtze River Delta region of China as an example, this paper first adopts the coupling coordination degree model to explore current status of basic public services in this region, and then uses Moran's I index to study the overall equalization level of development there. Moreover, this paper uses the Theil index to analyze the main reasons for the spatial differences in the level of public services, followed by the AF method to accurately identify the exact weaknesses of the 40 counties of 10 cities with the weakest level of basic public service development. Based on this, this paper provides targeted optimization initiatives and continues to explore the factors affecting the growth of the level of public service equalization through the convergence model, verifying the convergence trend of the degree of public service equalization, and ultimately providing practical policy recommendations for promoting the equalization of basic public services.</summary>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-11-21T05:58:17Z</published>
+    <arxiv:primary_category term="econ.GN"/>
+    <author>
+      <name>Shengwen Shi</name>
+      <arxiv:affiliation>School of Economics, Shanghai University of Finance and Economics, Shanghai, China</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jian'an Zhang</name>
+      <arxiv:affiliation>School of Economics, Shanghai University of Finance and Economics, Shanghai, China</arxiv:affiliation>
+    </author>
+  </entry>
+</feed>

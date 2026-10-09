@@ -30,6 +30,8 @@ jobs:
           cache: pip
       - name: Install locked build dependencies
         run: python -m pip install -r requirements.txt
+      - name: Validate captured trend evidence
+        run: python tools/research.py trends-validate
       - name: Build public-safe report
         run: python tools/build_public_site.py --repo . --staging .pages-build
       - name: Enforce Pages artifact allowlist
@@ -37,8 +39,9 @@ jobs:
         run: |
           set -euo pipefail
           test -f .pages-build/dist/index.html
+          test -f .pages-build/dist/research-trends/index.html
           test -f .pages-build/dist/.nojekyll
-          test "$(find .pages-build/dist -type f | sort | tr '\n' ' ')" = ".pages-build/dist/.nojekyll .pages-build/dist/index.html "
+          test "$(find .pages-build/dist -type f | sort | tr '\n' ' ')" = ".pages-build/dist/.nojekyll .pages-build/dist/index.html .pages-build/dist/research-trends/index.html "
           ! find .pages-build/dist -type f \( -iname '*.pdf' -o -iname '*.log' -o -iname '*.json' -o -iname '*.csv' -o -iname '*.md' \) | grep -q .
           python - <<'PY'
           import json
@@ -49,6 +52,9 @@ jobs:
           assert manifest['embedded_panorama_images'] == 1
           assert manifest['remaining_relative_links'] == []
           assert manifest['privacy_hits'] == []
+          assert manifest['trend_privacy_hits'] == []
+          assert manifest['trend_index_bytes'] > 10000
+          assert manifest['dist_files'] == ['dist/.nojekyll', 'dist/index.html', 'dist/research-trends/index.html']
           PY
       - name: Configure Pages
         uses: actions/configure-pages@v5

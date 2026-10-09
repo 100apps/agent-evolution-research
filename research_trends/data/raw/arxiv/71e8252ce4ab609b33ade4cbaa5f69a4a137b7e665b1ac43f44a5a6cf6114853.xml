@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Kq9T7Ngy1iCTEGmc6rmk0Sgn1+s</id>
+  <title>arXiv Query: search_query=(cat:cs.* OR cat:stat.ML) AND submittedDate:"202203010000 TO 202203312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:32Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.*+OR+cat:stat.ML)+AND+submittedDate:%22202203010000+TO+202203312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>7230</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2203.01900v2</id>
+    <title>Sparse Bayesian Optimization</title>
+    <updated>2023-03-03T08:43:23Z</updated>
+    <link href="https://arxiv.org/abs/2203.01900v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2203.01900v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Bayesian optimization (BO) is a powerful approach to sample-efficient optimization of black-box objective functions. However, the application of BO to areas such as recommendation systems often requires taking the interpretability and simplicity of the configurations into consideration, a setting that has not been previously studied in the BO literature. To make BO useful for this setting, we present several regularization-based approaches that allow us to discover sparse and more interpretable configurations. We propose a novel differentiable relaxation based on homotopy continuation that makes it possible to target sparsity by working directly with $L_0$ regularization. We identify failure modes for regularized BO and develop a hyperparameter-free method, sparsity exploring Bayesian optimization (SEBO) that seeks to simultaneously maximize a target objective and sparsity. SEBO and methods based on fixed regularization are evaluated on synthetic and real-world problems, and we show that we are able to efficiently optimize for sparsity.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.OC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-03-03T18:25:33Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Sulin Liu</name>
+    </author>
+    <author>
+      <name>Qing Feng</name>
+    </author>
+    <author>
+      <name>David Eriksson</name>
+    </author>
+    <author>
+      <name>Benjamin Letham</name>
+    </author>
+    <author>
+      <name>Eytan Bakshy</name>
+    </author>
+  </entry>
+</feed>

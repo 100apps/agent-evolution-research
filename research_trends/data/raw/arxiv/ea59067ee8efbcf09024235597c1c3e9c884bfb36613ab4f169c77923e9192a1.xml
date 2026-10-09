@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ODF/b+vSnGmDEbnJfSBJx7Xik1s</id>
+  <title>arXiv Query: search_query=submittedDate:"202303010000 TO 202303312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:34Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202303010000+TO+202303312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>18325</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2303.00676v3</id>
+    <title>Ulrich Bundles on some threefold scrolls over $\mathbb{F}_e$</title>
+    <updated>2023-11-07T07:34:02Z</updated>
+    <link href="https://arxiv.org/abs/2303.00676v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2303.00676v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We investigate the existence of Ulrich vector bundles on suitable $3$-fold scrolls $X_e$ over Hirzebruch surfaces $\mathbb{F}_e$, for any integer $e \geqslant 0$, which arise as tautological embeddings of projectivization of very-ample vector bundles on $\mathbb{F}_e$ that are uniform in the sense of Brosius and Aprodu--Brinzanescu.
+  We explicitely describe components of moduli spaces of rank $r \geqslant 1$ vector bundles which are Ulrich with respect to the tautological polarization on $X_e$ and whose general point is a slope-stable, indecomposable vector bundle. We moreover determine the dimension of such components, proving also that they are generically smooth. As a direct consequence of these facts, we also compute the Ulrich complexity of any such $X_e$ and give an effective proof of the fact that these $X_e$'s turn out to be geometrically Ulrich wild.
+  At last, the machinery developed for $3$--fold scrolls $X_e$ allows us to deduce Ulrichness results on rank $r \geqslant 1$ vector bundles on $\mathbb{F}_e$, for any $e \geqslant 0$, with respect to a naturally associated (very ample) polarization.</summary>
+    <category term="math.AG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-03-01T17:17:31Z</published>
+    <arxiv:comment>41 pages, to appear in Advances in Mathematics. The authors would like to deeply thank the anonymous referee for his/her enthusiastic report, full of encouragement and with important advices to improve the presentation</arxiv:comment>
+    <arxiv:primary_category term="math.AG"/>
+    <author>
+      <name>Maria Lucia Fania</name>
+    </author>
+    <author>
+      <name>Flaminio Flamini</name>
+    </author>
+  </entry>
+</feed>

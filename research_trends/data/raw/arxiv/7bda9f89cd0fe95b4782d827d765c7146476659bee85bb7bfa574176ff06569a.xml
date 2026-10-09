@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/VNEurOEBwa9CnZmM4ZkFszitnEQ</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202212010000 TO 202212312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:10Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202212010000+TO+202212312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4054</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2212.06817v2</id>
+    <title>RT-1: Robotics Transformer for Real-World Control at Scale</title>
+    <updated>2023-08-11T17:45:27Z</updated>
+    <link href="https://arxiv.org/abs/2212.06817v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2212.06817v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>By transferring knowledge from large, diverse, task-agnostic datasets, modern machine learning models can solve specific downstream tasks either zero-shot or with small task-specific datasets to a high level of performance. While this capability has been demonstrated in other fields such as computer vision, natural language processing or speech recognition, it remains to be shown in robotics, where the generalization capabilities of the models are particularly critical due to the difficulty of collecting real-world robotic data. We argue that one of the keys to the success of such general robotic models lies with open-ended task-agnostic training, combined with high-capacity architectures that can absorb all of the diverse, robotic data. In this paper, we present a model class, dubbed Robotics Transformer, that exhibits promising scalable model properties. We verify our conclusions in a study of different model classes and their ability to generalize as a function of the data size, model size, and data diversity based on a large-scale data collection on real robots performing real-world tasks. The project's website and videos can be found at robotics-transformer1.github.io</summary>
+    <category term="cs.RO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-13T18:55:15Z</published>
+    <arxiv:comment>See website at robotics-transformer1.github.io</arxiv:comment>
+    <arxiv:primary_category term="cs.RO"/>
+    <author>
+      <name>Anthony Brohan</name>
+    </author>
+    <author>
+      <name>Noah Brown</name>
+    </author>
+    <author>
+      <name>Justice Carbajal</name>
+    </author>
+    <author>
+      <name>Yevgen Chebotar</name>
+    </author>
+    <author>
+      <name>Joseph Dabis</name>
+    </author>
+    <author>
+      <name>Chelsea Finn</name>
+    </author>
+    <author>
+      <name>Keerthana Gopalakrishnan</name>
+    </author>
+    <author>
+      <name>Karol Hausman</name>
+    </author>
+    <author>
+      <name>Alex Herzog</name>
+    </author>
+    <author>
+      <name>Jasmine Hsu</name>
+    </author>
+    <author>
+      <name>Julian Ibarz</name>
+    </author>
+    <author>
+      <name>Brian Ichter</name>
+    </author>
+    <author>
+      <name>Alex Irpan</name>
+    </author>
+    <author>
+      <name>Tomas Jackson</name>
+    </author>
+    <author>
+      <name>Sally Jesmonth</name>
+    </author>
+    <author>
+      <name>Nikhil J Joshi</name>
+    </author>
+    <author>
+      <name>Ryan Julian</name>
+    </author>
+    <author>
+      <name>Dmitry Kalashnikov</name>
+    </author>
+    <author>
+      <name>Yuheng Kuang</name>
+    </author>
+    <author>
+      <name>Isabel Leal</name>
+    </author>
+    <author>
+      <name>Kuang-Huei Lee</name>
+    </author>
+    <author>
+      <name>Sergey Levine</name>
+    </author>
+    <author>
+      <name>Yao Lu</name>
+    </author>
+    <author>
+      <name>Utsav Malla</name>
+    </author>
+    <author>
+      <name>Deeksha Manjunath</name>
+    </author>
+    <author>
+      <name>Igor Mordatch</name>
+    </author>
+    <author>
+      <name>Ofir Nachum</name>
+    </author>
+    <author>
+      <name>Carolina Parada</name>
+    </author>
+    <author>
+      <name>Jodilyn Peralta</name>
+    </author>
+    <author>
+      <name>Emily Perez</name>
+    </author>
+    <author>
+      <name>Karl Pertsch</name>
+    </author>
+    <author>
+      <name>Jornell Quiambao</name>
+    </author>
+    <author>
+      <name>Kanishka Rao</name>
+    </author>
+    <author>
+      <name>Michael Ryoo</name>
+    </author>
+    <author>
+      <name>Grecia Salazar</name>
+    </author>
+    <author>
+      <name>Pannag Sanketi</name>
+    </author>
+    <author>
+      <name>Kevin Sayed</name>
+    </author>
+    <author>
+      <name>Jaspiar Singh</name>
+    </author>
+    <author>
+      <name>Sumedh Sontakke</name>
+    </author>
+    <author>
+      <name>Austin Stone</name>
+    </author>
+    <author>
+      <name>Clayton Tan</name>
+    </author>
+    <author>
+      <name>Huong Tran</name>
+    </author>
+    <author>
+      <name>Vincent Vanhoucke</name>
+    </author>
+    <author>
+      <name>Steve Vega</name>
+    </author>
+    <author>
+      <name>Quan Vuong</name>
+    </author>
+    <author>
+      <name>Fei Xia</name>
+    </author>
+    <author>
+      <name>Ted Xiao</name>
+    </author>
+    <author>
+      <name>Peng Xu</name>
+    </author>
+    <author>
+      <name>Sichun Xu</name>
+    </author>
+    <author>
+      <name>Tianhe Yu</name>
+    </author>
+    <author>
+      <name>Brianna Zitkovich</name>
+    </author>
+  </entry>
+</feed>

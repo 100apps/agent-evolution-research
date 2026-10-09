@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/qwLuyfYh2uViZV/nKj0hFVeZwp8</id>
+  <title>arXiv Query: search_query=( (cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) ) AND ( ( (ti:"foundation model" OR abs:"foundation model") OR (ti:"foundation models" OR abs:"foundation models") OR (ti:"large language model" OR abs:"large language model") OR (ti:"large language models" OR abs:"large language models") OR (ti:"large multimodal model" OR abs:"large multimodal model") OR (ti:"vision foundation model" OR abs:"vision foundation model") ) ) AND submittedDate:"202401010000 TO 202401312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:44:09Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+(((ti:%22foundation+model%22+OR+abs:%22foundation+model%22)+OR+((ti:%22foundation+models%22+OR+abs:%22foundation+models%22)+OR+((ti:%22large+language+model%22+OR+abs:%22large+language+model%22)+OR+((ti:%22large+language+models%22+OR+abs:%22large+language+models%22)+OR+((ti:%22large+multimodal+model%22+OR+abs:%22large+multimodal+model%22)+OR+(ti:%22vision+foundation+model%22+OR+abs:%22vision+foundation+model%22))))))+AND+submittedDate:%22202401010000+TO+202401312359%22)&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>894</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.12215v1</id>
+    <title>Less Could Be Better: Parameter-efficient Fine-tuning Advances Medical Vision Foundation Models</title>
+    <updated>2024-01-22T18:59:07Z</updated>
+    <link href="https://arxiv.org/abs/2401.12215v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.12215v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Parameter-efficient fine-tuning (PEFT) that was initially developed for exploiting pre-trained large language models has recently emerged as an effective approach to perform transfer learning on computer vision tasks. However, the effectiveness of PEFT on medical vision foundation models is still unclear and remains to be explored. As a proof of concept, we conducted a detailed empirical study on applying PEFT to chest radiography foundation models. Specifically, we delved into LoRA, a representative PEFT method, and compared it against full-parameter fine-tuning (FFT) on two self-supervised radiography foundation models across three well-established chest radiograph datasets. Our results showed that LoRA outperformed FFT in 13 out of 18 transfer learning tasks by at most 2.9% using fewer than 1% tunable parameters. Combining LoRA with foundation models, we set up new state-of-the-art on a range of data-efficient learning tasks, such as an AUROC score of 80.6% using 1% labeled data on NIH ChestX-ray14. We hope this study can evoke more attention from the community in the use of PEFT for transfer learning on medical imaging tasks. Code and models are available at https://github.com/RL4M/MED-PEFT.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-22T18:59:07Z</published>
+    <arxiv:comment>Technical report</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Chenyu Lian</name>
+    </author>
+    <author>
+      <name>Hong-Yu Zhou</name>
+    </author>
+    <author>
+      <name>Yizhou Yu</name>
+    </author>
+    <author>
+      <name>Liansheng Wang</name>
+    </author>
+  </entry>
+</feed>

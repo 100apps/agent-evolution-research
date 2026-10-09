@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/3ZBbeNbcXr+IgMNCTHwFQTsZyUs</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202501010000 TO 202501312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:38:22Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202501010000+TO+202501312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6230</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2501.04299v1</id>
+    <title>Circuit Complexity Bounds for Visual Autoregressive Model</title>
+    <updated>2025-01-08T06:07:33Z</updated>
+    <link href="https://arxiv.org/abs/2501.04299v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2501.04299v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Understanding the expressive ability of a specific model is essential for grasping its capacity limitations. Recently, several studies have established circuit complexity bounds for Transformer architecture. Besides, the Visual AutoRegressive (VAR) model has risen to be a prominent method in the field of image generation, outperforming previous techniques, such as Diffusion Transformers, in generating high-quality images. We investigate the circuit complexity of the VAR model and establish a bound in this study. Our primary result demonstrates that the VAR model is equivalent to a simulation by a uniform $\mathsf{TC}^0$ threshold circuit with hidden dimension $d \leq O(n)$ and $\mathrm{poly}(n)$ precision. This is the first study to rigorously highlight the limitations in the expressive power of VAR models despite their impressive performance. We believe our findings will offer valuable insights into the inherent constraints of these models and guide the development of more efficient and expressive architectures in the future.</summary>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-01-08T06:07:33Z</published>
+    <arxiv:primary_category term="stat.ML"/>
+    <author>
+      <name>Yekun Ke</name>
+    </author>
+    <author>
+      <name>Xiaoyu Li</name>
+    </author>
+    <author>
+      <name>Yingyu Liang</name>
+    </author>
+    <author>
+      <name>Zhenmei Shi</name>
+    </author>
+    <author>
+      <name>Zhao Song</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/745oNqX9mJe/5Ghvw3VO1m/dGfo</id>
+  <title>arXiv Query: search_query=submittedDate:"202604010000 TO 202604302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:56Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202604010000+TO+202604302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>28202</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2604.25181v1</id>
+    <title>Shearlet Neural Operators for Anisotropic-Shock-Dominated and Multi-scale parametric partial differential equations</title>
+    <updated>2026-04-28T03:38:32Z</updated>
+    <link href="https://arxiv.org/abs/2604.25181v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.25181v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Neural operators have emerged as powerful data-driven surrogates for learning solution operators of parametric partial differential equations (PDEs). However, widely used Fourier Neural Operators (FNOs) rely on global Fourier representations, which can be inefficient for resolving anisotropic structures, sharp gradients, and spatially localized discontinuities that arise in shock-dominated and multiscale regimes. To address these limitations, we introduce the Shearlet Neural Operator (SNO), a neural operator architecture that replaces the Fourier transform with a shearlet-based representation. Shearlets offer directional, multiscale, and spatially localized atoms with near-optimal sparse approximation of anisotropic features, providing an inductive bias aligned with PDE solutions containing edges, fronts, and shocks. SNO learns in the shearlet domain and reconstructs predictions via the inverse transform, retaining efficient spectral computation while improving locality and directional selectivity. Across seven benchmark PDE families, including strongly anisotropic advection, anisotropic diffusion, and nonlinear conservation laws with straight, curved, interacting, spiral, and polygonal shock structures, SNO consistently improves predictive accuracy and feature fidelity over FNO baselines, with the largest gains observed in anisotropic and discontinuity-dominated settings.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-28T03:38:32Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Fabio Pereira dos Santos</name>
+    </author>
+    <author>
+      <name>Julio de Castro Vargas Fernandes</name>
+    </author>
+    <author>
+      <name>Adriano Mauricio de Almeida Cortes</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/r6h9l4cpF2cY47dw3qIXcnmUz24</id>
+  <title>arXiv Query: search_query=submittedDate:"202212010000 TO 202212312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202212010000+TO+202212312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>15043</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2304.01348v1</id>
+    <title>Methods for Estimating Neural Information</title>
+    <updated>2022-12-20T12:13:48Z</updated>
+    <link href="https://arxiv.org/abs/2304.01348v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2304.01348v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Estimating the Shannon information associated with individual neurons is a non-trivial problem. Three key methods used to estimate the mutual information between neuron inputs and outputs are described, and a list of further readings is provided.</summary>
+    <category term="q-bio.NC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-12-20T12:13:48Z</published>
+    <arxiv:comment>7 pages, 2 figures</arxiv:comment>
+    <arxiv:primary_category term="q-bio.NC"/>
+    <author>
+      <name>James V Stone</name>
+    </author>
+  </entry>
+</feed>

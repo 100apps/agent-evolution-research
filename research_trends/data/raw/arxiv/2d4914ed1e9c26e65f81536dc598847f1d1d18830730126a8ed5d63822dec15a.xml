@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/C8XnJfErhhEtil3W89H2AT/pXQk</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202210010000 TO 202210312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:33:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202210010000+TO+202210312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>6061</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2210.01191v1</id>
+    <title>Extending Compositional Attention Networks for Social Reasoning in Videos</title>
+    <updated>2022-10-03T19:03:01Z</updated>
+    <link href="https://arxiv.org/abs/2210.01191v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2210.01191v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We propose a novel deep architecture for the task of reasoning about social interactions in videos. We leverage the multi-step reasoning capabilities of Compositional Attention Networks (MAC), and propose a multimodal extension (MAC-X). MAC-X is based on a recurrent cell that performs iterative mid-level fusion of input modalities (visual, auditory, text) over multiple reasoning steps, by use of a temporal attention mechanism. We then combine MAC-X with LSTMs for temporal input processing in an end-to-end architecture. Our ablation studies show that the proposed MAC-X architecture can effectively leverage multimodal input cues using mid-level fusion mechanisms. We apply MAC-X to the task of Social Video Question Answering in the Social IQ dataset and obtain a 2.5% absolute improvement in terms of binary accuracy over the current state-of-the-art.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-10-03T19:03:01Z</published>
+    <arxiv:primary_category term="cs.CV"/>
+    <arxiv:journal_ref>Proc. Interspeech 2022, 1116-1120</arxiv:journal_ref>
+    <author>
+      <name>Christina Sartzetaki</name>
+    </author>
+    <author>
+      <name>Georgios Paraskevopoulos</name>
+    </author>
+    <author>
+      <name>Alexandros Potamianos</name>
+    </author>
+    <arxiv:doi>10.21437/Interspeech.2022-10858</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.21437/Interspeech.2022-10858" title="doi"/>
+  </entry>
+</feed>

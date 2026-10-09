@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/oWIKIM/sepLPk8i1NbBXdlWEbJo</id>
+  <title>arXiv Query: search_query=submittedDate:"202609010000 TO 202609302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:26:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202609010000+TO+202609302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>39102</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2609.00872v1</id>
+    <title>Sharp Mixed Spectral Barron Regularity of Coulombic Many-Electron Wave Functions</title>
+    <updated>2026-09-01T08:05:47Z</updated>
+    <link href="https://arxiv.org/abs/2609.00872v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2609.00872v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We establish sharp mixed spectral Barron regularity for eigenfunctions of molecular Coulomb Hamiltonians. The mixed norm is a Fourier $L^1$ norm with one isotropic weight and coordinate-product weights, and therefore detects regularity invisible to the isotropic Barron scale. For a nonempty set $I$ of electron indices on which the wave function is antisymmetric, we derive an explicit admissible region for the isotropic order $s$ and the coordinate orders $α,β$. This region is optimal as a uniform statement over the class of clamped-nuclei Coulomb Hamiltonians. For fixed-spin components with two occupied spin blocks, it reduces to $s+α+β&lt;1$; in the fully spin-polarized class it reduces to $s+α&lt;1$. In particular, if $\mathcal I_σ$ denotes the family of occupied same-spin blocks determined by $σ$, then every fixed-spin spatial component $ψ_σ$ satisfies, for every $0\leqα&lt;1$, \[ \left(\sum_{I\in\mathcal I_σ}\prod_{i\in I}\langleξ_i\rangle^α\right)\widehat{ψ_σ}\in L^1(\mathbb{R}^{3N}). \] For a fully spin-polarized state, $\mathcal I_σ=\{\{1,\ldots,N\}\}$.</summary>
+    <category term="math.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.NA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-09-01T08:05:47Z</published>
+    <arxiv:comment>22 pages; no figures</arxiv:comment>
+    <arxiv:primary_category term="math.AP"/>
+    <author>
+      <name>Pingbing Ming</name>
+    </author>
+    <author>
+      <name>Hao Yu</name>
+    </author>
+  </entry>
+</feed>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/YJsEHR27ytj8B6iKNT1RCLz1hdg</id>
+  <title>arXiv Query: search_query=submittedDate:"202201010000 TO 202201312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202201010000+TO+202201312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>13537</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2201.07896v1</id>
+    <title>Generative Models for Periodicity Detection in Noisy Signals</title>
+    <updated>2022-01-19T22:35:12Z</updated>
+    <link href="https://arxiv.org/abs/2201.07896v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2201.07896v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a new periodicity detection algorithm for binary time series of event onsets, the Gaussian Mixture Periodicity Detection Algorithm (GMPDA). The algorithm approaches the periodicity detection problem to infer the parameters of a generative model. We specified two models - the Clock and Random Walk - which describe two different periodic phenomena and provide a generative framework. The algorithm achieved strong results on test cases for single and multiple periodicity detection and varying noise levels. The performance of GMPDA was also evaluated on real data, recorded leg movements during sleep, where GMPDA was able to identify the expected periodicities despite high noise levels. The paper's key contributions are two new models for generating periodic event behavior and the GMPDA algorithm for multiple periodicity detection, which is highly accurate under noise.</summary>
+    <category term="stat.ME" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.AP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-01-19T22:35:12Z</published>
+    <arxiv:primary_category term="stat.ME"/>
+    <author>
+      <name>Ezekiel Barnett</name>
+    </author>
+    <author>
+      <name>Olga Kaiser</name>
+    </author>
+    <author>
+      <name>Jonathan Masci</name>
+    </author>
+    <author>
+      <name>Ernst Wit</name>
+    </author>
+    <author>
+      <name>Stephany Fulda</name>
+    </author>
+  </entry>
+</feed>

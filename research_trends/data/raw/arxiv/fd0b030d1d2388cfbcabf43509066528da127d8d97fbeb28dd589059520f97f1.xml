@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/X5Rhbwy3PNaycL7MFcEn8f2QjUM</id>
+  <title>arXiv Query: search_query=submittedDate:"202008010000 TO 202008312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:29:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202008010000+TO+202008312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>13776</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2008.02675v2</id>
+    <title>Electrochemical oxidation of CO on Cu single crystals under alkaline conditions</title>
+    <updated>2020-10-06T07:24:21Z</updated>
+    <link href="https://arxiv.org/abs/2008.02675v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2008.02675v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We perform a joint experimental-theoretical study of the electrochemical oxidation of CO on copper (Cu) under alkaline conditions. Using cyclic voltammetry on Cu single crystal surfaces, we demonstrate that both Cu terraces and steps show CO oxidation activity at potentials just slightly positive (0.03-0.14 V) of the thermodynamic equilibrium potential. The overpotentials are 0.23-0.12 V lower than that of gold (approx. 0.26 V), which up until now has been considered to be the most active catalyst for this process. Our theoretical calculations suggest that Cu's activity arises from the advantageous combination of simultaneous *OH adsorption under CO oxidation potentials and surmountable *CO-*OH coupling barriers. Experimentally observed onset potentials are in agreement with the computed onsets of *OH adsorption. We furthermore show that the onsets of *OH adsorption on steps are more affected by *CO-*OH interactions than on terraces due to a stronger competitive adsorption. Overall, Cu(100) shows the lowest overpotential (0.03 V) of the facets considered.</summary>
+    <category term="physics.chem-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-08-06T14:05:09Z</published>
+    <arxiv:comment>16 pages, 3 figures plus supplementary information</arxiv:comment>
+    <arxiv:primary_category term="physics.chem-ph"/>
+    <author>
+      <name>Aarti Tiwari</name>
+    </author>
+    <author>
+      <name>Hendrik H. Heenen</name>
+    </author>
+    <author>
+      <name>Anton Simon Bjørnlund</name>
+    </author>
+    <author>
+      <name>Degenhart Hochfilzer</name>
+    </author>
+    <author>
+      <name>Karen Chan</name>
+    </author>
+    <author>
+      <name>Sebastian Horch</name>
+    </author>
+    <arxiv:doi>10.1021/acsenergylett.0c01751</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acsenergylett.0c01751" title="doi"/>
+  </entry>
+</feed>

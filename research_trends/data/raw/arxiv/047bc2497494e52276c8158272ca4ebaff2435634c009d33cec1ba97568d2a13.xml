@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/6TFJ0IOSir8hEqc/r9+Llz4GOPk</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202103010000 TO 202103312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:30:29Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202103010000+TO+202103312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4255</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2103.06450v3</id>
+    <title>Full Page Handwriting Recognition via Image to Sequence Extraction</title>
+    <updated>2022-06-26T21:01:23Z</updated>
+    <link href="https://arxiv.org/abs/2103.06450v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2103.06450v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a Neural Network based Handwritten Text Recognition (HTR) model architecture that can be trained to recognize full pages of handwritten or printed text without image segmentation. Being based on Image to Sequence architecture, it can extract text present in an image and then sequence it correctly without imposing any constraints regarding orientation, layout and size of text and non-text. Further, it can also be trained to generate auxiliary markup related to formatting, layout and content. We use character level vocabulary, thereby enabling language and terminology of any subject. The model achieves a new state-of-art in paragraph level recognition on the IAM dataset. When evaluated on scans of real world handwritten free form test answers - beset with curved and slanted lines, drawings, tables, math, chemistry and other symbols - it performs better than all commercially available HTR cloud APIs. It is deployed in production as part of a commercial web application.</summary>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-03-11T04:37:29Z</published>
+    <arxiv:comment>Appeared in ICDAR 2021</arxiv:comment>
+    <arxiv:primary_category term="cs.CV"/>
+    <author>
+      <name>Sumeet S. Singh</name>
+    </author>
+    <author>
+      <name>Sergey Karayev</name>
+    </author>
+    <arxiv:doi>10.1007/978-3-030-86334-0_4</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/978-3-030-86334-0_4" title="doi"/>
+  </entry>
+</feed>

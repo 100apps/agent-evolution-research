@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/19DQFeD4H2a8V5LHUj9oTb0xBPo</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202204010000 TO 202204302359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202204010000+TO+202204302359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>4157</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2204.02028v2</id>
+    <title>A Generative Deep Learning Approach to Stochastic Downscaling of Precipitation Forecasts</title>
+    <updated>2022-07-28T11:53:17Z</updated>
+    <link href="https://arxiv.org/abs/2204.02028v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2204.02028v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Despite continuous improvements, precipitation forecasts are still not as accurate and reliable as those of other meteorological variables. A major contributing factor to this is that several key processes affecting precipitation distribution and intensity occur below the resolved scale of global weather models. Generative adversarial networks (GANs) have been demonstrated by the computer vision community to be successful at super-resolution problems, i.e., learning to add fine-scale structure to coarse images. Leinonen et al. (2020) previously applied a GAN to produce ensembles of reconstructed high-resolution atmospheric fields, given coarsened input data. In this paper, we demonstrate this approach can be extended to the more challenging problem of increasing the accuracy and resolution of comparatively low-resolution input from a weather forecasting model, using high-resolution radar measurements as a "ground truth". The neural network must learn to add resolution and structure whilst accounting for non-negligible forecast error. We show that GANs and VAE-GANs can match the statistical properties of state-of-the-art pointwise post-processing methods whilst creating high-resolution, spatially coherent precipitation maps. Our model compares favourably to the best existing downscaling methods in both pixel-wise and pooled CRPS scores, power spectrum information and rank histograms (used to assess calibration). We test our models and show that they perform in a range of scenarios, including heavy rainfall.</summary>
+    <category term="physics.ao-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-04-05T07:19:42Z</published>
+    <arxiv:comment>Revised version 28/7/22</arxiv:comment>
+    <arxiv:primary_category term="physics.ao-ph"/>
+    <author>
+      <name>Lucy Harris</name>
+    </author>
+    <author>
+      <name>Andrew T. T. McRae</name>
+    </author>
+    <author>
+      <name>Matthew Chantry</name>
+    </author>
+    <author>
+      <name>Peter D. Dueben</name>
+    </author>
+    <author>
+      <name>Tim N. Palmer</name>
+    </author>
+    <arxiv:doi>10.1029/2022MS003120</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1029/2022MS003120" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/bgVO1OEvJndGcuBaxfwxfIT3PVk</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202303010000 TO 202303312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:44Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202303010000+TO+202303312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>5795</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2303.06296v2</id>
+    <title>Stabilizing Transformer Training by Preventing Attention Entropy Collapse</title>
+    <updated>2023-07-25T17:42:37Z</updated>
+    <link href="https://arxiv.org/abs/2303.06296v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2303.06296v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Training stability is of great importance to Transformers. In this work, we investigate the training dynamics of Transformers by examining the evolution of the attention layers. In particular, we track the attention entropy for each attention head during the course of training, which is a proxy for model sharpness. We identify a common pattern across different architectures and tasks, where low attention entropy is accompanied by high training instability, which can take the form of oscillating loss or divergence. We denote the pathologically low attention entropy, corresponding to highly concentrated attention scores, as $\textit{entropy collapse}$. As a remedy, we propose $σ$Reparam, a simple and efficient solution where we reparametrize all linear layers with spectral normalization and an additional learned scalar. We demonstrate that $σ$Reparam successfully prevents entropy collapse in the attention layers, promoting more stable training. Additionally, we prove a tight lower bound of the attention entropy, which decreases exponentially fast with the spectral norm of the attention logits, providing additional motivation for our approach. We conduct experiments with $σ$Reparam on image classification, image self-supervised learning, machine translation, speech recognition, and language modeling tasks. We show that $σ$Reparam provides stability and robustness with respect to the choice of hyperparameters, going so far as enabling training (a) a Vision Transformer {to competitive performance} without warmup, weight decay, layer normalization or adaptive optimizers; (b) deep architectures in machine translation and (c) speech recognition to competitive performance without warmup and adaptive optimizers. Code is available at \url{https://github.com/apple/ml-sigma-reparam}.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CV" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-03-11T03:30:47Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <arxiv:journal_ref>In International Conference on Machine Learning (pp. 40770-40803). PMLR. 2023</arxiv:journal_ref>
+    <author>
+      <name>Shuangfei Zhai</name>
+    </author>
+    <author>
+      <name>Tatiana Likhomanenko</name>
+    </author>
+    <author>
+      <name>Etai Littwin</name>
+    </author>
+    <author>
+      <name>Dan Busbridge</name>
+    </author>
+    <author>
+      <name>Jason Ramapuram</name>
+    </author>
+    <author>
+      <name>Yizhe Zhang</name>
+    </author>
+    <author>
+      <name>Jiatao Gu</name>
+    </author>
+    <author>
+      <name>Josh Susskind</name>
+    </author>
+  </entry>
+</feed>

@@ -15,6 +15,8 @@ from bs4 import BeautifulSoup
 
 
 REPOSITORY_URL = "https://github.com/100apps/agent-evolution-research"
+SITE_URL = "https://100apps.github.io/agent-evolution-research/"
+TREND_URL = SITE_URL + "research-trends/"
 PANORAMA_PATH = "assets/Agent_自进化论文全景图.png"
 FORBIDDEN_PUBLIC_PATTERNS = {
     "Windows user path": re.compile(r"[A-Za-z]:[\\/]+Users[\\/]", re.IGNORECASE),
@@ -128,9 +130,9 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
 <div class="wrap public-notice public-boundary" role="note">
   <strong>公开在线版。</strong>
   论文入口指向作者、arXiv、OpenReview、PMLR、ACL 等公开原文；本站不托管论文 PDF、全文提取、原始数据或实验日志。
-  研究代码和归档链接直接指向公开 GitHub 仓库。
+  研究代码和归档链接直接指向公开 GitHub 仓库。<a href="{TREND_URL}">查看 AI 科研活动趋势</a>。
 </div>
-""",
+""".replace("{TREND_URL}", TREND_URL),
             "html.parser",
         )
         nav.insert_after(notice_fragment.div)
@@ -195,7 +197,7 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
       <div class="panel"><h3>研究归档</h3><p>代码、结构化数据、全文提取与真实运行日志不复制进 Pages 产物；相关链接直接指向公开研究仓库。</p><div class="links"><a data-access="repository" target="_blank" rel="noopener noreferrer" href="{REPOSITORY_URL}">公开研究仓库</a></div></div>
       <div class="panel"><h3>证据等级</h3><p>完整论文结果复现 0；缩小规模方法复现 0；发布工件离线重放 1；合成机制示例 2。其余内容为论文作者报告、来源核验或待执行计划。</p></div>
     </div>
-    <p class="small">公开构建只允许发布 <code>index.html</code> 与 Pages 标记文件；全景图以 data URI 内嵌。构建检查会拒绝 PDF、原始日志、研究笔记、元数据、绝对本地路径及凭据样式内容。</p>
+    <p class="small">公开构建只允许发布原报告首页、独立趋势面板与 Pages 标记文件；全景图以 data URI 内嵌。构建检查会拒绝 PDF、原始日志、研究笔记、元数据、绝对本地路径及凭据样式内容。</p>
   </div>
 </section>
 """,
@@ -241,6 +243,25 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
     output_html.write_text(html, encoding="utf-8", newline="\n")
     (dist / ".nojekyll").write_text("", encoding="utf-8")
 
+    trend_source = repo / "research_trends" / "reports" / "dashboard.html"
+    if not trend_source.is_file():
+        raise SystemExit("trend dashboard is missing")
+    trend_html = trend_source.read_text(encoding="utf-8")
+    if trend_html.count("<main><h1>") != 1 or "不是研究人员人数" not in trend_html:
+        raise SystemExit("trend dashboard layout or evidence boundary changed")
+    trend_links = (
+        f'<nav aria-label="研究导航"><a href="{SITE_URL}">39 篇 Agent 进化论文报告</a>'
+        f' · <a href="{REPOSITORY_URL}/tree/main/research_trends">复核数据与研究过程</a></nav>'
+    )
+    trend_html = trend_html.replace("<main><h1>", "<main>" + trend_links + "<h1>", 1)
+    trend_privacy_hits = [name for name, pattern in FORBIDDEN_PUBLIC_PATTERNS.items()
+                          if pattern.search(trend_html)]
+    if trend_privacy_hits:
+        raise SystemExit(f"trend dashboard contains forbidden local data: {trend_privacy_hits}")
+    trend_output = dist / "research-trends" / "index.html"
+    trend_output.parent.mkdir(parents=True, exist_ok=True)
+    trend_output.write_text(trend_html, encoding="utf-8", newline="\n")
+
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_report": "reports/index.html",
@@ -253,9 +274,12 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
         "unique_verified_paper_sources": len(set(source_urls)),
         "remaining_relative_links": relative_links,
         "privacy_hits": privacy_hits,
-        "dist_files": ["dist/.nojekyll", "dist/index.html"],
+        "dist_files": ["dist/.nojekyll", "dist/index.html", "dist/research-trends/index.html"],
         "index_bytes": output_html.stat().st_size,
         "index_sha256": sha256(output_html),
+        "trend_index_bytes": trend_output.stat().st_size,
+        "trend_index_sha256": sha256(trend_output),
+        "trend_privacy_hits": trend_privacy_hits,
     }
     (staging / "build_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"

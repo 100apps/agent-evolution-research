@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/H7mF67khiAmeGRt+EkgcFYYpra0</id>
+  <title>arXiv Query: search_query=submittedDate:"202403010000 TO 202403312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:36:30Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202403010000+TO+202403312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>20806</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2403.03497v1</id>
+    <title>Adaptive coordination promotes collective cooperation in repeated social dilemmas</title>
+    <updated>2024-03-06T06:58:14Z</updated>
+    <link href="https://arxiv.org/abs/2403.03497v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2403.03497v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Direct reciprocity based on the repeated prisoner's dilemma has been intensively studied. Most theoretical investigations have concentrated on memory-$1$ strategies, a class of elementary strategies just reacting to the previous-round outcomes. Though the properties of "All-or-None" strategies ($AoN_K$) have been discovered, simulations just confirmed the good performance of $AoN_K$ of very short memory lengths. It remains unclear how $AoN_K$ strategies would fare when players have access to longer rounds of history information. We construct a theoretical model to investigate the performance of the class of $AoN_K$ strategies of varying memory length $K$. We rigorously derive the payoffs and show that $AoN_K$ strategies of intermediate memory length $K$ are most prevalent, while strategies of larger memory lengths are less competent. Larger memory lengths make it hard for $AoN_K$ strategies to coordinate, and thus inhibiting their mutual reciprocity. We then propose the adaptive coordination strategy combining tolerance and $AoN_K$' coordination rule. This strategy behaves like $AoN_K$ strategy when coordination is not sufficient, and tolerates opponents' occasional deviations by still cooperating when coordination is sufficient. We found that the adaptive coordination strategy wins over other classic memory-$1$ strategies in various typical competition environments, and stabilizes the population at high levels of cooperation, suggesting the effectiveness of high level adaptability in resolving social dilemmas. Our work may offer a theoretical framework for exploring complex strategies using history information, which are different from traditional memory-$n$ strategies.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-03-06T06:58:14Z</published>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Feipeng Zhang</name>
+    </author>
+    <author>
+      <name>Te Wu</name>
+    </author>
+    <author>
+      <name>Long Wang</name>
+    </author>
+  </entry>
+</feed>

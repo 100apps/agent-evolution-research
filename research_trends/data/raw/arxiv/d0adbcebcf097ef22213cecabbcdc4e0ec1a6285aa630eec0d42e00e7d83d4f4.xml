@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/HXQq+OAqKEdW6xudGNFToFcB0Cw</id>
+  <title>arXiv Query: search_query=(cat:cs.AI OR cat:cs.LG OR cat:stat.ML OR cat:cs.CL OR cat:cs.CV) AND submittedDate:"202201010000 TO 202201312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:32:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=(cat:cs.AI+OR+(cat:cs.LG+OR+(cat:stat.ML+OR+(cat:cs.CL+OR+cat:cs.CV))))+AND+submittedDate:%22202201010000+TO+202201312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>3293</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2201.03533v2</id>
+    <title>SCROLLS: Standardized CompaRison Over Long Language Sequences</title>
+    <updated>2022-10-11T21:30:28Z</updated>
+    <link href="https://arxiv.org/abs/2201.03533v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2201.03533v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>NLP benchmarks have largely focused on short texts, such as sentences and paragraphs, even though long texts comprise a considerable amount of natural language in the wild. We introduce SCROLLS, a suite of tasks that require reasoning over long texts. We examine existing long-text datasets, and handpick ones where the text is naturally long, while prioritizing tasks that involve synthesizing information across the input. SCROLLS contains summarization, question answering, and natural language inference tasks, covering multiple domains, including literature, science, business, and entertainment. Initial baselines, including Longformer Encoder-Decoder, indicate that there is ample room for improvement on SCROLLS. We make all datasets available in a unified text-to-text format and host a live leaderboard to facilitate research on model architecture and pretraining methods.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="stat.ML" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-01-10T18:47:15Z</published>
+    <arxiv:comment>EMNLP 2022</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Uri Shaham</name>
+    </author>
+    <author>
+      <name>Elad Segal</name>
+    </author>
+    <author>
+      <name>Maor Ivgi</name>
+    </author>
+    <author>
+      <name>Avia Efrat</name>
+    </author>
+    <author>
+      <name>Ori Yoran</name>
+    </author>
+    <author>
+      <name>Adi Haviv</name>
+    </author>
+    <author>
+      <name>Ankit Gupta</name>
+    </author>
+    <author>
+      <name>Wenhan Xiong</name>
+    </author>
+    <author>
+      <name>Mor Geva</name>
+    </author>
+    <author>
+      <name>Jonathan Berant</name>
+    </author>
+    <author>
+      <name>Omer Levy</name>
+    </author>
+  </entry>
+</feed>

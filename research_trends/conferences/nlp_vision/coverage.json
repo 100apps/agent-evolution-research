@@ -1,0 +1,220 @@
+[
+  {
+    "venue": "ACL",
+    "year": 2020,
+    "records": 778,
+    "abstracts_present": 778,
+    "retracted": 2,
+    "tracks": {
+      "main": 778
+    },
+    "source_files": [
+      "acl_2020.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2020,
+    "records": 1466,
+    "raw_entries": 1466,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 1466
+    },
+    "source_files": [
+      "cvpr_2020_day16.html",
+      "cvpr_2020_day17.html",
+      "cvpr_2020_day18.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  },
+  {
+    "venue": "ACL",
+    "year": 2021,
+    "records": 710,
+    "abstracts_present": 710,
+    "retracted": 2,
+    "tracks": {
+      "long": 571,
+      "short": 139
+    },
+    "source_files": [
+      "acl_2021.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2021,
+    "records": 1660,
+    "raw_entries": 1660,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 1660
+    },
+    "source_files": [
+      "cvpr_2021.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  },
+  {
+    "venue": "ACL",
+    "year": 2022,
+    "records": 700,
+    "abstracts_present": 700,
+    "retracted": 0,
+    "tracks": {
+      "long": 603,
+      "short": 97
+    },
+    "source_files": [
+      "acl_2022.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2022,
+    "records": 2074,
+    "raw_entries": 2074,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 2074
+    },
+    "source_files": [
+      "cvpr_2022.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  },
+  {
+    "venue": "ACL",
+    "year": 2023,
+    "records": 1075,
+    "abstracts_present": 1075,
+    "retracted": 0,
+    "tracks": {
+      "long": 911,
+      "short": 164
+    },
+    "source_files": [
+      "acl_2023.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2023,
+    "records": 2353,
+    "raw_entries": 2353,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 2353
+    },
+    "source_files": [
+      "cvpr_2023.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  },
+  {
+    "venue": "ACL",
+    "year": 2024,
+    "records": 940,
+    "abstracts_present": 939,
+    "retracted": 0,
+    "tracks": {
+      "long": 864,
+      "short": 76
+    },
+    "source_files": [
+      "acl_2024.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2024,
+    "records": 2716,
+    "raw_entries": 2716,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 2716
+    },
+    "source_files": [
+      "cvpr_2024.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  },
+  {
+    "venue": "ACL",
+    "year": 2025,
+    "records": 1699,
+    "abstracts_present": 1699,
+    "retracted": 0,
+    "tracks": {
+      "long": 1602,
+      "short": 97
+    },
+    "source_files": [
+      "acl_2025.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2025,
+    "records": 2871,
+    "raw_entries": 2871,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 2871
+    },
+    "source_files": [
+      "cvpr_2025.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  },
+  {
+    "venue": "ACL",
+    "year": 2026,
+    "records": 2296,
+    "abstracts_present": 2295,
+    "retracted": 0,
+    "tracks": {
+      "long": 2222,
+      "short": 74
+    },
+    "source_files": [
+      "acl_2026.xml"
+    ],
+    "complete_for_source": true,
+    "scope": "official main/long/short XML volumes; excludes Findings/workshops/demos"
+  },
+  {
+    "venue": "CVPR",
+    "year": 2026,
+    "records": 4042,
+    "raw_entries": 4042,
+    "abstracts_present": 0,
+    "tracks": {
+      "main": 4042
+    },
+    "source_files": [
+      "cvpr_2026.html"
+    ],
+    "complete_for_source": true,
+    "scope": "official CVF main index; 2020 union of three days; workshops excluded"
+  }
+]

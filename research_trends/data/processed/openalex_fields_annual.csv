@@ -1,0 +1,163 @@
+﻿year,field_id,field_name,works
+2020,11,Agricultural and Biological Sciences,342204
+2020,12,Arts and Humanities,533230
+2020,13,"Biochemistry, Genetics and Molecular Biology",296946
+2020,14,"Business, Management and Accounting",290907
+2020,15,Chemical Engineering,19573
+2020,16,Chemistry,108012
+2020,17,Computer Science,470938
+2020,18,Decision Sciences,90682
+2020,19,Earth and Planetary Sciences,99351
+2020,20,"Economics, Econometrics and Finance",180505
+2020,21,Energy,55056
+2020,22,Engineering,937576
+2020,23,Environmental Science,298448
+2020,24,Immunology and Microbiology,55463
+2020,25,Materials Science,220213
+2020,26,Mathematics,144925
+2020,27,Medicine,1372063
+2020,28,Neuroscience,87192
+2020,29,Nursing,37750
+2020,30,"Pharmacology, Toxicology and Pharmaceutics",37082
+2020,31,Physics and Astronomy,189458
+2020,32,Psychology,255620
+2020,33,Social Sciences,1198704
+2020,34,Veterinary,14766
+2020,35,Dentistry,47290
+2020,36,Health Professions,171518
+2020,unknown,unknown,142102
+2021,11,Agricultural and Biological Sciences,329998
+2021,12,Arts and Humanities,463590
+2021,13,"Biochemistry, Genetics and Molecular Biology",292026
+2021,14,"Business, Management and Accounting",269483
+2021,15,Chemical Engineering,18618
+2021,16,Chemistry,99637
+2021,17,Computer Science,474166
+2021,18,Decision Sciences,86548
+2021,19,Earth and Planetary Sciences,98929
+2021,20,"Economics, Econometrics and Finance",162242
+2021,21,Energy,56187
+2021,22,Engineering,907125
+2021,23,Environmental Science,297447
+2021,24,Immunology and Microbiology,53112
+2021,25,Materials Science,192538
+2021,26,Mathematics,140356
+2021,27,Medicine,1347601
+2021,28,Neuroscience,86572
+2021,29,Nursing,34528
+2021,30,"Pharmacology, Toxicology and Pharmaceutics",38964
+2021,31,Physics and Astronomy,179763
+2021,32,Psychology,245356
+2021,33,Social Sciences,1098885
+2021,34,Veterinary,14352
+2021,35,Dentistry,47040
+2021,36,Health Professions,156822
+2021,unknown,unknown,114528
+2022,11,Agricultural and Biological Sciences,312679
+2022,12,Arts and Humanities,386357
+2022,13,"Biochemistry, Genetics and Molecular Biology",281729
+2022,14,"Business, Management and Accounting",247711
+2022,15,Chemical Engineering,18746
+2022,16,Chemistry,95460
+2022,17,Computer Science,485532
+2022,18,Decision Sciences,83864
+2022,19,Earth and Planetary Sciences,89730
+2022,20,"Economics, Econometrics and Finance",141876
+2022,21,Energy,60705
+2022,22,Engineering,896558
+2022,23,Environmental Science,290857
+2022,24,Immunology and Microbiology,52812
+2022,25,Materials Science,192635
+2022,26,Mathematics,129373
+2022,27,Medicine,1266769
+2022,28,Neuroscience,81772
+2022,29,Nursing,30708
+2022,30,"Pharmacology, Toxicology and Pharmaceutics",40575
+2022,31,Physics and Astronomy,161124
+2022,32,Psychology,224544
+2022,33,Social Sciences,944281
+2022,34,Veterinary,13394
+2022,35,Dentistry,43422
+2022,36,Health Professions,144096
+2022,unknown,unknown,160371
+2023,11,Agricultural and Biological Sciences,328286
+2023,12,Arts and Humanities,411491
+2023,13,"Biochemistry, Genetics and Molecular Biology",274699
+2023,14,"Business, Management and Accounting",283266
+2023,15,Chemical Engineering,20190
+2023,16,Chemistry,97251
+2023,17,Computer Science,554866
+2023,18,Decision Sciences,91162
+2023,19,Earth and Planetary Sciences,90078
+2023,20,"Economics, Econometrics and Finance",150984
+2023,21,Energy,66475
+2023,22,Engineering,983991
+2023,23,Environmental Science,308643
+2023,24,Immunology and Microbiology,54655
+2023,25,Materials Science,202909
+2023,26,Mathematics,129063
+2023,27,Medicine,1282289
+2023,28,Neuroscience,86209
+2023,29,Nursing,32423
+2023,30,"Pharmacology, Toxicology and Pharmaceutics",40312
+2023,31,Physics and Astronomy,178231
+2023,32,Psychology,237606
+2023,33,Social Sciences,1030676
+2023,34,Veterinary,14068
+2023,35,Dentistry,43945
+2023,36,Health Professions,156774
+2023,unknown,unknown,163224
+2024,11,Agricultural and Biological Sciences,363699
+2024,12,Arts and Humanities,434049
+2024,13,"Biochemistry, Genetics and Molecular Biology",295091
+2024,14,"Business, Management and Accounting",318545
+2024,15,Chemical Engineering,21312
+2024,16,Chemistry,100551
+2024,17,Computer Science,650170
+2024,18,Decision Sciences,100903
+2024,19,Earth and Planetary Sciences,94229
+2024,20,"Economics, Econometrics and Finance",163175
+2024,21,Energy,74684
+2024,22,Engineering,1087072
+2024,23,Environmental Science,348544
+2024,24,Immunology and Microbiology,57423
+2024,25,Materials Science,218450
+2024,26,Mathematics,134817
+2024,27,Medicine,1379025
+2024,28,Neuroscience,92584
+2024,29,Nursing,35117
+2024,30,"Pharmacology, Toxicology and Pharmaceutics",42645
+2024,31,Physics and Astronomy,191258
+2024,32,Psychology,259520
+2024,33,Social Sciences,1122181
+2024,34,Veterinary,14936
+2024,35,Dentistry,49879
+2024,36,Health Professions,176809
+2024,unknown,unknown,129013
+2025,11,Agricultural and Biological Sciences,418816
+2025,12,Arts and Humanities,566733
+2025,13,"Biochemistry, Genetics and Molecular Biology",319156
+2025,14,"Business, Management and Accounting",375651
+2025,15,Chemical Engineering,22739
+2025,16,Chemistry,103248
+2025,17,Computer Science,785104
+2025,18,Decision Sciences,119945
+2025,19,Earth and Planetary Sciences,104304
+2025,20,"Economics, Econometrics and Finance",190411
+2025,21,Energy,80372
+2025,22,Engineering,1182685
+2025,23,Environmental Science,387667
+2025,24,Immunology and Microbiology,64571
+2025,25,Materials Science,227357
+2025,26,Mathematics,147152
+2025,27,Medicine,1547717
+2025,28,Neuroscience,110121
+2025,29,Nursing,39882
+2025,30,"Pharmacology, Toxicology and Pharmaceutics",44471
+2025,31,Physics and Astronomy,225056
+2025,32,Psychology,320682
+2025,33,Social Sciences,1356100
+2025,34,Veterinary,17011
+2025,35,Dentistry,57494
+2025,36,Health Professions,205588
+2025,unknown,unknown,103340

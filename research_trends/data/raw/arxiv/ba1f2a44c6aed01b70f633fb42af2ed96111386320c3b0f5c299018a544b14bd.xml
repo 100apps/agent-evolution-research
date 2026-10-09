@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/hCPbKyEagQz6mZCC/wachlpDYAA</id>
+  <title>arXiv Query: search_query=submittedDate:"202512010000 TO 202512312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:40:11Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202512010000+TO+202512312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>24160</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2512.24562v2</id>
+    <title>HaluNet: Learning Hallucination Risk from Internal Signals in LLM Question Answering</title>
+    <updated>2026-05-28T03:47:02Z</updated>
+    <link href="https://arxiv.org/abs/2512.24562v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.24562v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) achieve strong question answering (QA) performance but can produce fluent answers unsupported by available evidence. Existing hallucination detectors often rely on external verification, repeated sampling, or test-time judge calls, which can be costly for real-time QA. We propose \textbf{HaluNet}, a lightweight hallucination risk estimator that uses internal signals from one model generation. HaluNet jointly models token likelihood, predictive entropy, and hidden-state information, allowing probabilistic, distributional, and semantic evidence to inform an answer-level risk score. It is trained with LLM-as-a-Judge labels as scalable weak supervision and evaluated with independent human and multi-judge assessments. Experiments on SQuAD, TriviaQA, and Natural Questions show that HaluNet improves answer-level risk ranking across in-domain and out-of-domain settings. On a 300-example human evaluation, HaluNet achieves 0.874 AUROC and 0.869 AUPRC; its top 20\% highest-risk answers contain 96.5\% errors, yielding a 2.06$\times$ lift over the base error rate.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-31T02:03:10Z</published>
+    <arxiv:comment>16 pages, 12 tables, and 11 figures. This version includes a major revision of the manuscript and updates the author list with the consent of all involved authors</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Chaodong Tong</name>
+    </author>
+    <author>
+      <name>Qi Zhang</name>
+    </author>
+    <author>
+      <name>Zhuojun Jiang</name>
+    </author>
+    <author>
+      <name>Lei Jiang</name>
+    </author>
+    <author>
+      <name>Yanbing Liu</name>
+    </author>
+  </entry>
+</feed>

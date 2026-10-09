@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ac4m8ObV00PeNKCXwC5myX3NOJw</id>
+  <title>arXiv Query: search_query=submittedDate:"202301010000 TO 202301312359"&amp;id_list=&amp;start=0&amp;max_results=1</title>
+  <updated>2026-10-09T03:34:13Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=submittedDate:%22202301010000+TO+202301312359%22&amp;start=0&amp;max_results=1&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>13708</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2304.01356v1</id>
+    <title>Elliptic cross sections in blood flow regulation</title>
+    <updated>2023-01-19T21:57:51Z</updated>
+    <link href="https://arxiv.org/abs/2304.01356v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2304.01356v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Arterial deformations arise in blood flow when surrounding tissue invades the space available for a blood vessel to maintain its circular cross section, the most immediate effects being a reduction in blood flow and redistribution of shear stress. Here we consider deformations from circular to elliptic cross sections. Solution of this problem in steady flow is fairly straightforward. The focus in the present paper is on pulsatile flow where the change from circular to elliptic cross sections is associated with a transition in the character of the equations governing the flow from Bessel to Mathieu equations. The study of this problem has been hampered in the past because of difficulties involved in the solution of the governing equations. In the present study we describe methods we have used to overcome some of these difficulties and present a comprehensive set of results based on these methods. In particular, vessel deformation is examined under two different conditions relevant to blood flow regulation: (i) keeping cross sectional area constant and (ii) keeping cross sectional circumference constant. The results provide an important context for the mechanism of neurovascular control of blood flow under the pathological conditions of vessel deformation.</summary>
+    <category term="q-bio.TO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.NA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-01-19T21:57:51Z</published>
+    <arxiv:comment>31 pages, 17 figures</arxiv:comment>
+    <arxiv:primary_category term="q-bio.TO"/>
+    <author>
+      <name>Chris Brimacombe</name>
+    </author>
+    <author>
+      <name>Robert M. Corless</name>
+    </author>
+    <author>
+      <name>Mair Zamir</name>
+    </author>
+  </entry>
+</feed>
