@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "rows": 89530,
+  "columns": 48,
+  "counts": {
+    "rows": 89530,
+    "candidate": 7656,
+    "cited": 10451
+  },
+  "master_sha256": "fa3803790cd36697143e708e8c1fe413c04c17b30bfd8549d17b62ac3b2344e7",
+  "browse_sha256": "2a8b64b901dec3da025d0db3ccf6937ef5a29eb3a2729c2691549374acacd7b3",
+  "gzip_sha256": "48763af834d8d0ea5b785515f2618cc7bee71c85ec51f5e08dc2dfe1723e7f79",
+  "errors": []
+}

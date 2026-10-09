@@ -5,6 +5,7 @@
 ## 下载与浏览
 
 - [交互 Explorer](https://100apps.github.io/agent-evolution-research/research-trends/explorer/)：按五层、二三级、会议、年份、国家与候选状态筛选，查看原始证据和分页记录；可导出经过 Excel 公式转义的筛选 CSV。
+- 推荐下载 [精简浏览 CSV（97,896,409 字节）](https://github.com/100apps/agent-evolution-research/releases/download/trends-catalog-2026-10-09/browse_papers.csv) 或 [gzip 版（15,011,822 字节）](https://github.com/100apps/agent-evolution-research/releases/download/trends-catalog-2026-10-09/browse_papers.csv.gz)。它保留全部 89,530 个 ID、48 列关键检索/证据/缺失状态、逐篇真实会议年份配对与原审计记录指针；可用 `export_browse_csv.py` 从原主表流式重建，并以 `validate_browse_csv.py` 逐行比对。CSV 单元格已做 Excel 公式前缀防护；`data/browse_receipt.json` 固定源主表和两个输出 SHA-256。
 - 完整 **原始 CSV** 在 GitHub Release `trends-catalog-2026-10-09`；仓库保存逐字节相同内容的 `data/master_papers.csv.gz` 与 `data/master_receipt.json`。原始 CSV 不能直接用 Excel 全量打开；适合数据库或流式脚本。
 - `papers_index.jsonl.gz` 是轻量浏览视图，完整字段和作者—机构关系在主 CSV；`index_manifest.json` 有行数、列位置和 SHA-256。
 
@@ -22,6 +23,8 @@
 
 引用值来自 [OpenAlex 官方 DOI 批量查询](https://help.openalex.org/how-to/api-recipes/) 的 106 次匿名免费请求，每批至多 100 个 DOI。全部请求、时间、响应头额度、原始 JSON 和 SHA-256 存于 `citation_cache/`。最后一次响应余 176 免费额度。每行引用数保留 provider、观察时间、精确 DOI 依据与可解析到审计文件的请求哈希。**高引用不是论文质量证明**；数据库覆盖、领域与发表年份不同，近期论文有引文滞后。没有公开可核验评审分数时不填分数，也不自动判断“水文”。
 
+独立验收器 `validate_master_csv.py` 还会逐条把有值引用观测的 DOI、OpenAlex work ID、`cited_by_count` 和请求 SHA 与冻结的原始响应重新核对；负例测试通过交换两篇论文的 observation，确认仅有正确哈希与数值仍不足以冒充正确论文关联。精简 CSV 自身 SHA-256 为 `2a8b64b901dec3da025d0db3ccf6937ef5a29eb3a2729c2691549374acacd7b3`，gzip 为 `48763af834d8d0ea5b785515f2618cc7bee71c85ec51f5e08dc2dfe1723e7f79`，源主表仍为 `fa3803790cd36697143e708e8c1fe413c04c17b30bfd8549d17b62ac3b2344e7`。
+
 五个一级层名与顺序来自 [NVIDIA 的五层表述](https://blogs.nvidia.com/blog/ai-5-layer-cake/)；17 个二级、59 个三级节点与标题规则由本项目提出，不是 NVIDIA 的官方分类。`taxonomy.json`、`title_rules.json`、`data/title_assignments.csv`、规则/字段说明与修订记录可逐条复核。多标签可以重叠；同层各分类计数不可相加。能源、芯片等层在十会议样本中稀疏，不能把空格当行业零活动。
 
 ## 离线验证和重建
@@ -33,6 +36,8 @@ $py = '.\.venv\Scripts\python.exe'
 & $py research_trends\catalog\validate_master_csv.py --master run_outputs\catalog\master_papers.csv --coverage-manifest research_trends\catalog\data\source_coverage_manifest.csv --citation-audit research_trends\catalog\citation_cache\query_audit.jsonl
 & $py research_trends\catalog\metadata\verify_outputs.py research_trends\catalog\metadata_snapshot
 & $py -m unittest discover -s research_trends\catalog -p 'test_schema_validation.py' -v
+& $py -m unittest discover -s research_trends\catalog -p 'test_citation_integrity.py' -v
+& $py research_trends\catalog\validate_browse_csv.py --master run_outputs\catalog\master_papers.csv --browse run_outputs\catalog\browse_papers.csv --gzip research_trends\catalog\data\browse_papers.csv.gz
 ```
 
 先用标准库 `gzip` 将 `data/master_papers.csv.gz` 解到新的 `run_outputs/catalog/master_papers.csv`，再运行上面的逐行验收。重建流程见 `rebuild.py`：从保存的三份题录及原始快照重新提取作者与元数据、按同一冻结标题规则分类、从已存 OpenAlex 响应精确 DOI 连接、压缩影响字段并重建 Explorer 索引。它不会联网或修改归档输入；完整输出 SHA 必须与 `data/master_receipt.json`、`index_manifest.json` 匹配。若缓存/快照不同则保留差异，不覆写已发布哈希。

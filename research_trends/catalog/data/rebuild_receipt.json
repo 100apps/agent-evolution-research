@@ -25,8 +25,8 @@
     "matches": true
   },
   "explorer_index": {
-    "expected": "51cecc154f6dbb011ff4d725b78dca5c60fc8012ddc513f6d3eb8665a926572a",
-    "actual": "51cecc154f6dbb011ff4d725b78dca5c60fc8012ddc513f6d3eb8665a926572a",
+    "expected": "dd3a35b3847f08928acfbb4e886915b4ed78f98e32189089c899d2157bf7dee5",
+    "actual": "dd3a35b3847f08928acfbb4e886915b4ed78f98e32189089c899d2157bf7dee5",
     "matches": true
   }
 }

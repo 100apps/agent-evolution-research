@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Real Edge desktop/mobile smoke test of the built static Explorer."""
 from __future__ import annotations
-import argparse,functools,http.server,json,threading
+import argparse,csv,functools,http.server,json,threading
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -46,7 +46,32 @@ def main():
      page.wait_for_function("document.querySelector('#loadStatus')?.textContent?.includes('筛选完成') && new URL(location.href).searchParams.get('country')==='CN'",timeout=30000)
      country_summary=page.locator('#summary').inner_text()
      page.locator('#country').select_option('')
+     page.wait_for_function("old => new URL(location.href).searchParams.get('country')===null && document.querySelector('#summary')?.innerText !== old",arg=country_summary,timeout=30000)
      results['country_filter_summary']=country_summary
+     with page.expect_download() as download_event:
+      page.locator('#export').click()
+     export_path=out/'filtered_2024_excel_safe.csv'
+     download_event.value.save_as(export_path)
+     with export_path.open(encoding='utf-8-sig',newline='') as exported:
+      reader=csv.DictReader(exported)
+      required={'work_uid','paper_uid','citation_count','citation_provider','citation_as_of',
+                'citation_status','doi_reported','doi_status','authors_status',
+                'country_coverage_status','classification_label_status','review_status','audit_ref'}
+      if not required.issubset(reader.fieldnames or []):
+       raise AssertionError('filtered export lacks evidence or missingness fields')
+      export_rows=0;seen=set()
+      for record in reader:
+       export_rows+=1
+       if record['conference_year']!='2024' or not record['work_uid'] or record['work_uid'] in seen:
+        raise AssertionError('filtered export year or work ID mismatch')
+       seen.add(record['work_uid'])
+       if record['audit_ref']!='master_papers.csv#paper_id='+record['work_uid']:
+        raise AssertionError('filtered export audit reference mismatch')
+       if record['citation_count'] and (not record['citation_provider'] or not record['citation_as_of']
+                                        or record['citation_status']!='reported_exact_doi' or not record['doi_reported']):
+        raise AssertionError('filtered export citation lacks exact DOI source metadata')
+      if not export_rows:raise AssertionError('filtered export has no records')
+     results['filtered_export_rows']=export_rows
     results[label]={'default_rows':84008,'page_rows':50,'document_overflow':False}
     page.close()
    browser.close()

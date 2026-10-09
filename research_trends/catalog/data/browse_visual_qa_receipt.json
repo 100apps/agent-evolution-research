@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "url": "http://127.0.0.1:23334/research-trends/explorer/",
+  "results": {
+    "country_filter_summary": "8\n当前来源记录\n8\n暂定不同作品 ID\n1\n当前页",
+    "filtered_export_rows": 13386,
+    "desktop": {
+      "default_rows": 84008,
+      "page_rows": 50,
+      "document_overflow": false
+    },
+    "mobile": {
+      "default_rows": 84008,
+      "page_rows": 50,
+      "document_overflow": false
+    }
+  },
+  "page_errors": []
+}

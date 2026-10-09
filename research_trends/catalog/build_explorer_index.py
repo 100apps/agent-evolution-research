@@ -23,6 +23,8 @@ INDEX_FIELDS = (
     "country_coverage_status", "authors_raw", "metadata_audit_version",
     "citation_count", "citation_status", "view_count", "view_status",
     "publication_age_days", "artifact_status", "retraction_status",
+    "citation_provider", "citation_as_of", "doi_status", "authors_status",
+    "classification_label_status", "review_status", "track", "audit_ref",
 )
 
 
@@ -35,6 +37,12 @@ def transform(row: dict[str, str]) -> dict[str, str]:
     impact = json.loads(row["impact_metrics_json"])
     states = impact["collection_status"]
     integrity = impact["integrity_events"]
+    proof = json.loads(row["field_provenance_json"])
+    metadata = json.loads(row["metadata_field_status_json"])
+    doi_status = (proof.get("doi") or {}).get("status") or "missing"
+    if not row["doi"] and doi_status != "missing":
+        doi_status = "reported_but_not_verified_for_export"
+    names_status = "unstructured_source_text" if not authors and row["authors_raw"] else metadata["authors"]
     return {
         "paper_uid": array("occurrence_ids_json")[0],
         "work_uid": row["paper_id"],
@@ -63,6 +71,12 @@ def transform(row: dict[str, str]) -> dict[str, str]:
         "publication_age_days": row["publication_age_days"],
         "artifact_status": states["artifacts"]["status"],
         "retraction_status": integrity[0]["assertion"] if integrity else "not_checked",
+        "citation_provider": row["citation_provider"],
+        "citation_as_of": row["citation_as_of"],
+        "doi_status": doi_status, "authors_status": names_status,
+        "classification_label_status": row["classification_label_status"],
+        "review_status": row["review_status"], "track": occurrence["track"],
+        "audit_ref": "master_papers.csv#paper_id=" + row["paper_id"],
     }
 
 

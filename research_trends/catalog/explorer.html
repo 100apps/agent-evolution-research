@@ -19,7 +19,7 @@ details.more{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}d
 <header><div class="wrap"><div class="eyebrow">Evidence first · CSV Explorer</div><h1>十会议论文分类浏览器</h1><p>按 AI 五层、二三级主题、来源和年份浏览论文级记录。五层名称取自 <a href="https://blogs.nvidia.com/blog/ai-5-layer-cake/" target="_blank" rel="noopener noreferrer">NVIDIA 原文</a>；二三级是本研究扩展。分类可重叠，标题命中是词汇证据，不能当全文语义判断。</p><a href="../">返回月度趋势面板</a></div></header>
 <main class="wrap">
 <div class="notice">样本是十个会议的 89,530 条来源记录，不是全球论文普查；arXiv 和 OpenAlex 月度总数未混入逐篇底表。标题规则仅给出待复核候选，未命中不表示非 AI。NeurIPS 2026 会前暂定记录默认排除。只有 172 条记录含明确论文机构国家；筛选结果不可解释为全球国家分布。</div>
-<div class="toolbar"><span id="loadStatus" class="status" role="status">正在读取索引…</span><button id="clear" type="button">清除筛选</button><button id="share" type="button">复制筛选链接</button><button id="export" type="button" class="primary" disabled>导出筛选结果（Excel 安全 CSV）</button><a id="fullCsv" class="button" href="https://github.com/100apps/agent-evolution-research/releases/tag/trends-catalog-2026-10-09" target="_blank" rel="noopener noreferrer">下载完整大 CSV</a></div>
+<div class="toolbar"><span id="loadStatus" class="status" role="status">正在读取索引…</span><button id="clear" type="button">清除筛选</button><button id="share" type="button">复制筛选链接</button><button id="export" type="button" class="primary" disabled>导出筛选结果（Excel 安全 CSV）</button><a id="browseCsv" class="button" href="https://github.com/100apps/agent-evolution-research/releases/download/trends-catalog-2026-10-09/browse_papers.csv" target="_blank" rel="noopener noreferrer">精简浏览 CSV（98 MB）</a><a class="button" href="https://github.com/100apps/agent-evolution-research/releases/download/trends-catalog-2026-10-09/browse_papers.csv.gz" target="_blank" rel="noopener noreferrer">精简压缩版（15 MB）</a><a id="fullCsv" class="button" href="https://github.com/100apps/agent-evolution-research/releases/download/trends-catalog-2026-10-09/master_papers.csv" target="_blank" rel="noopener noreferrer">完整审计 CSV（942 MB）</a></div>
 <div class="grid">
 <aside class="filters" aria-label="筛选条件"><h2>筛选</h2>
   <div class="field"><label for="query">标题、作者、机构或 ID 搜索</label><input id="query" type="search" autocomplete="off" placeholder="输入关键词，可用空格组合"></div>
@@ -34,7 +34,7 @@ details.more{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}d
 </aside>
 <section class="results"><h2>论文记录</h2><div id="summary" class="summary" aria-live="polite"></div><div class="table-wrap"><table><thead><tr id="tableHead"></tr></thead><tbody id="tableBody"></tbody></table></div><div class="pager"><button id="prev" type="button" disabled>上一页</button><span id="pageInfo">—</span><button id="next" type="button" disabled>下一页</button></div>
 <details class="more"><summary>来源 × 年份 × 一级分类交叉统计</summary><p class="hint">单位是当前筛选下的会议来源记录。多标签跨分类重叠；同格每篇只计一次。国家缺失不按零计。</p><div id="cross" class="cross"></div></details>
-<p class="small">单篇详情展示原始来源 ID、分类规则和证据。论文链接仅允许 http(s)；完整 CSV 保留更多溯源字段。CSV 导出会对 Excel 公式开头的文本加前缀，原始数据下载另供程序读取。</p>
+<p class="small">单篇详情展示原始来源 ID、分类规则和证据。论文链接仅允许 http(s)；精简 CSV 保留同一 paper_id、关键状态和证据引用，完整审计 CSV 保留丰富作者—机构关系及原始 provenance。两种浏览导出都对 Excel 公式开头的文本加安全前缀。</p>
 </section></div>
 </main>
 <dialog id="detail"><h2>论文详情</h2><div id="detailBody"></div><p><button id="closeDetail" type="button">关闭</button></p></dialog>

@@ -107,7 +107,7 @@ function summary() {
     years.set(year, (years.get(year) || 0) + 1);
     status.set(state, (status.get(state) || 0) + 1);
     const layers = splitIds(field(row, "category_ids")).filter(id => l1.has(id));
-    if (!layers.length) layers.push("未分类／范围外");
+    if (!layers.length) layers.push("证据不足／未分配");
     for (const layer of new Set(layers)) {
       const key = `${venue}\t${year}\t${layer}`;
       cross.set(key, (cross.get(key) || 0) + 1);
@@ -121,9 +121,13 @@ function summary() {
 }
 
 function exportCsv() {
-  const names = ["paper_uid", "venue", "conference_year", "title", "paper_url", "authors",
-    "paper_affiliations", "affiliation_countries", "category_paths", "classification_status",
-    "classification_evidence", "source_record_id"];
+  const names = ["work_uid", "paper_uid", "title", "paper_url", "venue", "conference_year", "track",
+    "authors", "authors_raw", "authors_status", "paper_affiliations", "profile_institutions_unverified",
+    "affiliation_countries", "country_coverage_status", "category_ids", "category_paths",
+    "classification_status", "classification_label_status", "review_status", "classification_evidence",
+    "citation_count", "citation_provider", "citation_as_of", "citation_status", "doi_reported",
+    "doi_status", "dedup_status", "view_count", "view_status", "artifact_status",
+    "source_record_id", "audit_ref"];
   const lines = [names.map(safeCell).join(",")];
   for (const index of filtered) lines.push(names.map(name => safeCell(field(records[index], name))).join(","));
   postMessage({type: "export", csv: "\ufeff" + lines.join("\r\n") + "\r\n", rows: filtered.length});
