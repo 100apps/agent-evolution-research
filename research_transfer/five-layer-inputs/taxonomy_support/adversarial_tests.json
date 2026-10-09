@@ -1,0 +1,483 @@
+{
+  "test_suite_version": "ai-cake-boundaries-v1",
+  "taxonomy_version": "ai-cake-research-v1.0.0-proposed",
+  "note_zh": "手工设计的合成判别测试，非真实论文，也不是准确率验证集。required 是最低必要标签；额外标签须独立证据。",
+  "tests": [
+    {
+      "test_id": "B01",
+      "name": "energy_based_not_energy",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "An Energy-Based Model for Image Synthesis",
+      "abstract": "We introduce a new energy-based probabilistic image model and a learning objective for image synthesis.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.01.03",
+          "M.02.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "E"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "概率 energy 不是电力；一般模型训练也不自动证明预训练。"
+    },
+    {
+      "test_id": "B02",
+      "name": "gpu_dependency_not_chip",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "A New Vision Classifier",
+      "abstract": "We introduce a new visual representation for image classification. All experiments use four NVIDIA A100 GPUs.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.01.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "C",
+          "I",
+          "E"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "实验平台不构成芯片/系统/能源贡献。"
+    },
+    {
+      "test_id": "B03",
+      "name": "sram_hardware",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Banked SRAM for Neural Accelerators",
+      "abstract": "We design a new SRAM bank architecture and controller circuit for a neural-network accelerator and evaluate hardware area and bandwidth.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "C.02.01"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "A.01.02"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "硬件存储架构不同于 Agent 记忆。"
+    },
+    {
+      "test_id": "B04",
+      "name": "memory_io_kernel",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "IO-Aware Attention Execution",
+      "abstract": "We implement a new tiled exact attention kernel on existing GPUs, reducing transfers between HBM and SRAM without changing model semantics.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "I.02.01"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "C",
+          "A.01.02"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "既有硬件上的 kernel，不是芯片研究。"
+    },
+    {
+      "test_id": "B05",
+      "name": "agent_memory",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Episodic Memory for Language Agents",
+      "abstract": "We build a language-agent memory module that writes reflections after failed tasks and retrieves them on later trials; the LLM weights remain fixed.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "A.01.02"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "C",
+          "I.03.02",
+          "M.03.02"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "持久经验文本不等于权重更新或存储硬件。"
+    },
+    {
+      "test_id": "B06",
+      "name": "kv_paging",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Paged KV Cache for LLM Serving",
+      "abstract": "We present a serving runtime that pages KV cache blocks and batches requests to increase throughput on fixed models.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "I.02.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "A.01.02",
+          "C",
+          "M.04.02"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "执行状态分页不是 Agent 语义记忆。"
+    },
+    {
+      "test_id": "B07",
+      "name": "generic_attention_not_foundation",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Attention for Small-Data Vision",
+      "abstract": "We train a compact attention classifier from scratch on one image-label task and introduce a new attention architecture.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.01.03"
+        ],
+        "forbidden_ids_or_prefixes": [],
+        "facets": {
+          "model_scope": [
+            "task_specialized"
+          ]
+        }
+      },
+      "reason_zh": "Attention 本身不能证明 foundation model。"
+    },
+    {
+      "test_id": "B08",
+      "name": "foundation_positive",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "A General Reusable Language Model",
+      "abstract": "We pretrain a reusable language model on broad web text and demonstrate adaptation across translation, question answering and summarization.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.01.01",
+          "M.02.01"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "C",
+          "I"
+        ],
+        "facets": {
+          "model_scope": [
+            "foundation"
+          ]
+        }
+      },
+      "reason_zh": "广泛预训练、复用和跨任务支持 foundation。"
+    },
+    {
+      "test_id": "B09",
+      "name": "marl_not_llm_agents",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Multi-Agent Policy Gradients",
+      "abstract": "We prove convergence of a new multi-agent reinforcement-learning algorithm for tabular Markov games. No language model or agent software workflow is introduced.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.02.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "A.01",
+          "M.04.04"
+        ],
+        "facets": {
+          "agent_form": [
+            "multi_agent_learning"
+          ]
+        }
+      },
+      "reason_zh": "MARL 学习算法不自动等于 LLM Agent 系统。"
+    },
+    {
+      "test_id": "B10",
+      "name": "llm_multiagent",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "A Team Harness for Language Agents",
+      "abstract": "We build a multi-agent software workflow in which existing LLM agents negotiate roles, exchange messages and coordinate task execution without model retraining.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "A.01.04",
+          "A.01.01"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "M.03.02",
+          "C"
+        ],
+        "facets": {
+          "agent_form": [
+            "llm_agent",
+            "workflow_multi_agent"
+          ]
+        }
+      },
+      "reason_zh": "Agent 系统协作有明确软件组织贡献。"
+    },
+    {
+      "test_id": "B11",
+      "name": "tta_not_serving",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Online Test-Time Adaptation",
+      "abstract": "We propose an algorithm that updates a vision model from unlabeled target-distribution examples at test time to improve prediction accuracy under shift.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.02.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "I.02.03"
+        ],
+        "facets": {
+          "stage": [
+            "test_time_adaptation"
+          ]
+        }
+      },
+      "reason_zh": "改变模型以适应分布，不是吞吐服务系统。"
+    },
+    {
+      "test_id": "B12",
+      "name": "reasoning_not_serving",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Inference-Time Search for Reasoning",
+      "abstract": "We improve mathematical reasoning accuracy using a new search-and-verification strategy that spends additional model calls per question.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.04.02"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "I.02.03"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "能力导向的 test-time compute 区别于系统执行优化。"
+    },
+    {
+      "test_id": "B13",
+      "name": "ai_for_grid",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Reinforcement Learning for Grid Dispatch",
+      "abstract": "We apply an existing reinforcement-learning method to electricity-grid dispatch and evaluate outage avoidance; the grid serves ordinary public loads.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "A.03.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "E",
+          "M.02.03"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "既有 RL 的电网应用；无 AI 供能或新算法贡献。"
+    },
+    {
+      "test_id": "B14",
+      "name": "grid_for_ai",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Electricity Capacity for AI Datacenters",
+      "abstract": "We study grid expansion and generation capacity required to meet projected AI datacenter electricity demand.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "E.01.01"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "A.03.03"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "AI 是耗能负载，能源供给为中心。"
+    },
+    {
+      "test_id": "B15",
+      "name": "facility_cooling",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Liquid Cooling for AI Datacenters",
+      "abstract": "We design and evaluate a datacenter liquid-cooling and internal power-delivery system for AI compute racks.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "I.01.01"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "E",
+          "C"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "按官方层描述，机房冷却及供配电属于 Infrastructure。"
+    },
+    {
+      "test_id": "B16",
+      "name": "compression_not_chip",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "ADC-Aware Model Quantization",
+      "abstract": "We adjust neural-network weights and activations through quantization-aware training to tolerate a fixed analog accelerator; no circuits or devices are changed.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.03.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "C"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "对已有器件适配的模型方法，不自动算硬件产物。"
+    },
+    {
+      "test_id": "B17",
+      "name": "tool_learning_not_harness",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Learning API Decisions",
+      "abstract": "We train a language model to choose external APIs and generate arguments using self-supervised demonstrations.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.04.04"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "A.01.03"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "API 决策学习与工具集成平台区分。"
+    },
+    {
+      "test_id": "B18",
+      "name": "tools_harness_not_training",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "A Universal Agent Tool Executor",
+      "abstract": "We introduce a reusable tool execution and environment-connection layer for existing LLM agents, with safe argument validation and no model training.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "A.01.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "M.04.04"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "模型仅为依赖，贡献为工具执行系统。"
+    },
+    {
+      "test_id": "B19",
+      "name": "rag_not_vector_db",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Learning Retrieval-Augmented Generation",
+      "abstract": "We jointly train a retriever and generator to use external knowledge for factual answers; the vector database is an unchanged library.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "M.04.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "I.03.03",
+          "A.01.02"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "知识利用机制不同于后端引擎与情节记忆。"
+    },
+    {
+      "test_id": "B20",
+      "name": "vector_db_not_rag",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "An AI Vector Retrieval Engine",
+      "abstract": "We design an index execution engine for AI embedding retrieval that improves latency and memory utilization with no change to the learned retriever.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "I.03.03"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "M.04.03"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "系统检索引擎，无模型 RAG 创新。"
+    },
+    {
+      "test_id": "B21",
+      "name": "pure_cs_outside",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "A Crash-Consistent Filesystem",
+      "abstract": "We propose a generic crash-consistency protocol for a filesystem and prove recovery guarantees for ordinary file operations. No AI workload or learning method is involved.",
+      "expected": {
+        "classification_status": "outside_scope",
+        "required_l3_ids": [],
+        "forbidden_ids_or_prefixes": [
+          "E",
+          "C",
+          "I",
+          "M",
+          "A"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "不能为覆盖全部 CS 造第六层，也不能把一切计算基础设施算 AI。"
+    },
+    {
+      "test_id": "B22",
+      "name": "ambiguous_missing_text",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Real or Not Real",
+      "abstract": "",
+      "expected": {
+        "classification_status": "insufficient_evidence",
+        "required_l3_ids": [],
+        "forbidden_ids_or_prefixes": [
+          "E",
+          "C",
+          "I",
+          "M",
+          "A"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "缺证不同于 outside_scope。"
+    },
+    {
+      "test_id": "B23",
+      "name": "agent_eval_without_domain",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "A Benchmark for General Language Agents",
+      "abstract": "We introduce an interactive benchmark with multiple tool environments and measure end-to-end task completion by language agents across unrelated domains.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "A.01.05"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "M.01.01"
+        ],
+        "facets": {
+          "domain": [
+            "general_purpose"
+          ]
+        }
+      },
+      "reason_zh": "通用 Agent 有独立位置，不要求行业名。"
+    },
+    {
+      "test_id": "B24",
+      "name": "carbon_multilayer",
+      "fixture_type": "synthetic_adversarial_not_real_paper",
+      "title": "Carbon-Aware Training Scheduler",
+      "abstract": "We design a GPU-cluster scheduler that moves AI training jobs across regions based on electricity carbon intensity, and validate both scheduling throughput and lifecycle emissions.",
+      "expected": {
+        "classification_status": "classified",
+        "required_l3_ids": [
+          "E.02.02",
+          "I.02.04"
+        ],
+        "forbidden_ids_or_prefixes": [
+          "C"
+        ],
+        "facets": {}
+      },
+      "reason_zh": "独立的碳需求管理与调度系统贡献支持跨层，GPU 仍不证明芯片贡献。"
+    }
+  ]
+}
