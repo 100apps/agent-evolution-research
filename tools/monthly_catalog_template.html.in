@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>十会议论文目录 · 年度与虚拟月度分析</title>
+<style>
+:root{color-scheme:light;--ink:#18273a;--muted:#526478;--line:#dbe3eb;--paper:#fff;--bg:#f2f5f8;--blue:#155bb5;--teal:#087c75;--amber:#9b5b00}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select{font:inherit}header{background:#11263e;color:#fff;padding:24px clamp(16px,2.3vw,36px)}header h1{margin:0;font-size:clamp(24px,2.5vw,36px);line-height:1.18}header p{margin:9px 0 0;color:#c8d9ec}main{width:100%;padding:20px clamp(12px,2.3vw,36px) 40px;display:grid;gap:16px}.notice{border:1px solid #e5bb70;background:#fff8e8;color:#634311;padding:13px 17px;border-radius:10px}.notice strong{color:#704300}.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}.panel h2{font-size:18px;margin:0 0 12px}.controls{display:grid;grid-template-columns:repeat(6,minmax(145px,1fr));gap:12px}.control label{display:block;color:var(--muted);font-size:12px;font-weight:700;margin-bottom:4px}.control select{width:100%;min-width:0;border:1px solid #b9c7d5;border-radius:7px;background:#fff;color:var(--ink);padding:9px}.statgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);border-radius:9px;padding:13px;min-width:0}.stat strong{display:block;font-size:clamp(20px,2vw,29px);font-variant-numeric:tabular-nums}.stat span{color:var(--muted);font-size:12px}.twocol{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.7fr);gap:16px}.subtle{color:var(--muted);font-size:13px;margin:0 0 12px}.chartbox{width:100%;overflow-x:auto}.chart{width:100%;min-width:540px;height:310px;display:block}.legend{display:flex;flex-wrap:wrap;gap:8px 17px;margin-top:4px}.legend button{background:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 7px;color:var(--ink);cursor:pointer}.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}.tablewrap{overflow:auto;max-height:580px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left;white-space:normal;min-width:140px}thead th{position:sticky;top:0;background:#f7f9fb;z-index:1;color:#3d5166}tbody tr{cursor:pointer}tbody tr:hover,tbody tr.active{background:#eaf3ff}.spark{width:92px;height:23px;vertical-align:middle}.pill{display:inline-block;font-size:11px;color:#064f8d;background:#e6f3ff;border-radius:4px;padding:1px 5px;margin-left:5px}.breakdown{max-height:360px}.foot{font-size:12px;color:var(--muted);line-height:1.65}a{color:var(--blue)}.empty{color:var(--muted);padding:28px 0;text-align:center}#status{font-weight:600}.bar{height:9px;background:#e8edf2;border-radius:8px;overflow:hidden;margin-top:5px}.bar b{height:100%;display:block;background:var(--teal)}
+.foot{overflow-wrap:anywhere}
+header a{color:#b6e2ff;text-decoration:underline}
+.crosscontrols{display:flex;flex-wrap:wrap;align-items:end;gap:10px;margin:0 0 12px}.crosscontrols label{display:grid;gap:4px;color:var(--muted);font-size:12px;font-weight:700}.crosscontrols select,.crosscontrols button{border:1px solid #b9c7d5;background:#fff;border-radius:7px;padding:7px 9px;color:var(--ink);font:inherit}.crosscontrols button{cursor:pointer}.crosswrap{width:100%;max-height:700px;overflow:auto;border:1px solid var(--line);border-radius:8px}.crosstable{border-collapse:separate;border-spacing:0;width:max-content;min-width:100%;font-size:12px}.crosstable th,.crosstable td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;text-align:center;white-space:nowrap;min-width:112px}.crosstable th{background:#edf3f8;color:#30475d}.crosstable thead th{position:sticky;z-index:4}.crosstable thead tr:first-child th{top:0;height:34px}.crosstable thead tr:nth-child(2) th{top:34px;height:32px}.crosstable .rowhead{position:sticky;left:0;min-width:270px;max-width:270px;width:270px;text-align:left;padding:6px 8px;background:#fff;z-index:3;white-space:normal}.crosstable thead .rowhead{background:#edf3f8;z-index:6}.crosstable .trendcol{position:sticky;right:0;min-width:112px;width:112px;background:#fff;z-index:3}.crosstable thead .trendcol{background:#edf3f8;z-index:6}.crosstable tbody tr:hover .rowhead,.crosstable tbody tr:hover .trendcol{background:#eef6ff}.crossname{border:0;background:none;color:var(--ink);font:inherit;text-align:left;cursor:pointer;max-width:100%;white-space:normal}.crossname.active{color:var(--blue);font-weight:700}.crossarrow{display:inline-block;width:15px;color:#66809a}.crosscell{position:relative;display:block;width:100%;min-height:47px;border:0;background:none;color:var(--ink);font:inherit;text-align:center;cursor:pointer;padding:4px 5px}.crosscell:hover{outline:2px solid var(--blue);outline-offset:-2px}.crossbar{position:absolute;left:0;top:0;bottom:0;background:#cfe4f8;pointer-events:none}.crosscell .num,.crosscell .shares{position:relative;display:block}.crosscell .num{font-weight:700;font-size:13px}.crosscell .shares{font-size:10px;color:#455b6c}.crossyear{border:0;background:none;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}.crossyear .crossarrow{width:auto}.crossspark{width:90px;height:28px}.crosschart{width:100%;height:190px;min-width:500px}.crosslegend{color:var(--muted);font-size:12px}.paperdialog{width:min(900px,calc(100vw - 24px));max-height:min(85vh,850px);border:1px solid var(--line);border-radius:12px;padding:0;box-shadow:0 22px 80px #11263e55}.paperdialog::backdrop{background:#0b1d31a8}.dialoghead{position:sticky;top:0;background:#fff;padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:start;justify-content:space-between;gap:16px;z-index:2}.dialoghead h2{margin:0;font-size:20px}.dialoghead p{margin:3px 0 0;color:var(--muted);font-size:13px}.dialogclose{border:1px solid var(--line);background:#fff;border-radius:6px;font-size:23px;line-height:1;cursor:pointer}.paperlist{padding:0 20px;max-height:calc(85vh - 160px);overflow:auto}.paperitem{padding:12px 0;border-bottom:1px solid var(--line)}.paperitem strong{display:block;font-size:14px}.paperitem small{display:block;color:var(--muted);margin-top:4px}.paperitem a{display:inline-block;margin-top:3px;font-size:12px}.dialogpager{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#fff;border-top:1px solid var(--line)}.dialogpager button{border:1px solid #b9c7d5;background:#fff;border-radius:6px;padding:6px 10px;cursor:pointer}.dialogpager button:disabled{opacity:.4;cursor:default}
+body.cross-no-scroll{overflow:hidden}#crosstab.cross-fullscreen,#crosstab:fullscreen{position:fixed;inset:0;width:100vw;height:100dvh;margin:0;border-radius:0;z-index:1000;background:#fff;display:flex;flex-direction:column;overflow:hidden}#crosstab.cross-fullscreen .crosswrap,#crosstab:fullscreen .crosswrap{flex:1;max-height:none;min-height:0}#crosstab.cross-fullscreen .chartbox,#crosstab:fullscreen .chartbox{flex:none}#crosstab.cross-fullscreen .crosscontrols,#crosstab:fullscreen .crosscontrols{flex:none}#crosstab.cross-fullscreen .crosslegend,#crosstab:fullscreen .crosslegend{flex:none}
+@media(max-width:1200px){.controls{grid-template-columns:repeat(3,minmax(0,1fr))}.twocol{grid-template-columns:1fr}}@media(max-width:700px){header{padding:20px 16px}main{padding:12px;gap:12px}.panel{padding:13px}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.statgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.chart{min-width:490px}}@media(max-width:440px){.controls{grid-template-columns:1fr 1fr}.control{min-width:0}.control select{font-size:13px;padding:8px 4px}}
+</style>
+</head>
+<body>
+<header><h1>十会议论文目录 · 数量与趋势</h1><p>89,530 条来源出现记录｜按会议届次年、分类层级查看｜单文件离线分析 · <a href="#crosstab">查看交叉表 ↓</a></p></header>
+<main>
+<div class="notice"><strong>月度口径提醒：</strong>仅 <span id="realHeadline">25,379</span> 条有可核验的书目月份；其余记录在本页运行时按规范化标题的固定 FNV-1a 哈希映射到 1–12 月。月度图混合真实月与虚拟月，<strong>不能解释真实发表季节性或月度增长</strong>。年度统计始终按来源的会议届次年，不受虚拟月份影响。2026 年来源覆盖未证实完整。</div>
+<section class="panel"><h2>分析范围</h2><div class="controls">
+<div class="control"><label for="grain">时间粒度</label><select id="grain"><option value="year">按年 · 来源年份</option><option value="month">按月 · 真实与虚拟混合</option></select></div>
+<div class="control"><label for="dimension">分组维度</label><select id="dimension"><option value="venue">会议</option><option value="l1">一级分类</option><option value="l2">二级分类</option><option value="l3">三级分类</option></select></div>
+<div class="control"><label for="metric">趋势纵轴</label><select id="metric"><option value="count">论文记录数</option><option value="share">占筛选范围比例</option></select></div>
+<div class="control"><label for="venue">会议筛选</label><select id="venue"></select></div>
+<div class="control"><label for="l1">一级分类筛选</label><select id="l1"></select></div>
+<div class="control"><label for="l2">二级分类筛选</label><select id="l2"></select></div>
+<div class="control"><label for="l3">三级分类筛选</label><select id="l3"></select></div>
+</div><p class="subtle" id="status">正在解压内嵌 CSV…</p></section>
+<section class="statgrid"><div class="stat"><strong id="statTotal">—</strong><span>筛选范围记录数</span></div><div class="stat"><strong id="statReal">—</strong><span>有真实书目月份</span></div><div class="stat"><strong id="statVirtual">—</strong><span>使用标题哈希虚拟月份</span></div><div class="stat"><strong id="statGroups">—</strong><span>当前维度有记录的分组</span></div></section>
+<div class="twocol"><section class="panel"><h2 id="chartTitle">会议趋势</h2><p class="subtle" id="chartSubtitle"></p><div class="chartbox"><svg id="trendChart" class="chart" role="img" aria-label="论文数量或占比趋势"></svg></div><div id="legend" class="legend"></div></section><section class="panel"><h2>时间覆盖</h2><p class="subtle">当前筛选范围内，真实书目月份与虚拟月份的记录数。年度数量不因补月改变。</p><div id="coverage"></div></section></div>
+<div class="twocol"><section class="panel"><h2 id="tableTitle">分组汇总</h2><p class="subtle" id="denominatorNote"></p><div class="tablewrap"><table><thead><tr><th>分组</th><th>记录数</th><th>占比</th><th>真实月</th><th>虚拟月</th><th>趋势</th></tr></thead><tbody id="groupBody"></tbody></table></div></section><section class="panel"><h2 id="detailTitle">逐期明细</h2><p class="subtle">点击左侧分组查看。占比分母是该期筛选范围内全部来源记录。</p><div class="tablewrap breakdown"><table><thead><tr><th>年份 / 月份</th><th>数量</th><th>占比</th><th>真实月</th><th>虚拟月</th><th>分母</th></tr></thead><tbody id="detailBody"></tbody></table></div></section></div>
+<section class="panel" id="crosstab"><h2>交叉表 · 来源 × 分类 × 年月</h2><p class="subtle">行可逐级展开：ALL → 来源（会议）→ 一级 → 二级 → 三级。列点击年份展开 12 个月；每个单元格显示数量、行占比、列占比，点击查看分页论文记录。此表始终覆盖完整目录，与上方筛选器独立。</p>
+<div class="crosscontrols"><label>底色长度依据<select id="crossBarMetric"><option value="row">行占比（默认）</option><option value="column">列占比</option></select></label><label>选中行趋势<select id="crossTrendGrain"><option value="year">按年</option><option value="month">按月（含虚拟月）</option></select></label><button type="button" id="crossFullscreen" aria-pressed="false">全屏查看</button><button type="button" id="crossExpandRows">展开全部行</button><button type="button" id="crossCollapseRows">收起分类行</button><button type="button" id="crossExpandYears">展开全部月份</button><button type="button" id="crossCollapseYears">收起全部月份</button><button type="button" id="crossExpandAll">行列全部展开</button></div>
+<p class="crosslegend" id="crossLegend">行占比 = 本格数量 ÷ 本行全部年份数量；列占比 = 本格数量 ÷ ALL 在同一年或月的数量。蓝色底条长度与所选占比线性对应，100% 铺满整格。年度格和其下月份格是父子关系，不应重复相加。</p>
+<div class="chartbox"><svg id="crossTrendChart" class="crosschart" role="img" aria-label="交叉表选中行趋势"></svg></div><p class="subtle" id="crossTrendTitle">选中：ALL</p>
+<div class="crosswrap"><table class="crosstable"><thead id="crossHead"></thead><tbody id="crossBody"></tbody></table></div><p class="subtle" id="crossStatus"></p></section>
+<section class="panel foot"><strong>数据与计数说明</strong><p>本页使用主表的全部 89,530 条会议来源出现记录；跨来源去重尚未判清，不能解读为 89,530 篇独立论文。按年是会议届次年，不等同每篇论文的实际发表日期。分类为标题规则产生的候选标签，未独立语义审查；无标签表示证据不足，不表示“非 AI”。一条记录可以有多个标签，分类计数各计一次，因此分类占比之和可以超过 100%。占比 = 该分组记录数 ÷ 同期当前筛选范围的全部记录数。虚拟月算法为标题 NFKC 规范化、去首尾空白、折叠连续空白、转小写，再按 UTF-16 码元做 32 位 FNV-1a，取余 12 加 1；同一标题稳定映射同一月，但该月无真实日期含义。真实月仅来自书目出版月份且按 occurrence ID 精确关联。所有计算在浏览器本地完成，不发网络请求。</p><p id="sourceInfo"></p><p>方法记录：<code>reports/paper-monthly-analysis-method.md</code>。分类体系版本：<span id="taxonomyVersion"></span>。</p></section>
+</main>
+<dialog id="paperDialog" class="paperdialog"><div class="dialoghead"><div><h2 id="dialogTitle">论文记录</h2><p id="dialogMeta"></p></div><button class="dialogclose" id="dialogClose" type="button" aria-label="关闭">×</button></div><div class="paperlist" id="paperList"></div><div class="dialogpager"><button type="button" id="pagePrev">上一页</button><span id="pageState"></span><button type="button" id="pageNext">下一页</button></div></dialog>
+<script id="reportMeta" type="application/json">__REPORT_META__</script>
+<script id="csvData" type="text/plain">__CSV_GZIP_BASE64__</script>
+<script>
+"use strict";
+const meta=JSON.parse(document.getElementById('reportMeta').textContent);
+const $=id=>document.getElementById(id);
+const fmt=n=>Number(n).toLocaleString('zh-CN');
+const pct=(n,d)=>d?`${(100*n/d).toFixed(2)}%`:'—';
+const colors=['#155bb5','#087c75','#bb661b','#7c53ad','#b34063','#457941','#1b819a','#8b6a15'];
+const nodeName=id=>id==='__unassigned__'?'未归类 / 证据不足':(meta.nodes[id]?.name||id);
+let records=[],cache=new Map(),activeGroup=null,lastResult=null;
+const years=Object.keys(meta.years).sort();
+const allMonths=years.flatMap(y=>Array.from({length:12},(_,i)=>`${y}-${String(i+1).padStart(2,'0')}`));
+function fnvMonth(title){
+  const normalized=title.normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase();
+  let hash=2166136261;
+  for(let i=0;i<normalized.length;i++){hash=Math.imul(hash^normalized.charCodeAt(i),16777619)>>>0;}
+  return 1+(hash%12);
+}
+function parseCSV(text,onRow){
+  let row=[],i=0;
+  while(i<text.length){
+    let value;
+    if(text[i]==='"'){
+      i++;let start=i;const parts=[];
+      while(i<text.length){
+        if(text[i]==='"'){
+          parts.push(text.slice(start,i));
+          if(text[i+1]==='"'){parts.push('"');i+=2;start=i;}
+          else{i++;break;}
+        }else i++;
+      }
+      value=parts.join('');
+    }else{
+      const start=i;
+      while(i<text.length&&text[i]!==','&&text[i]!=='\n')i++;
+      value=text.slice(start,i);
+      if(value.endsWith('\r'))value=value.slice(0,-1);
+    }
+    row.push(value);
+    if(text[i]===',')i++;
+    else if(text[i]==='\n'){onRow(row);row=[];i++;}
+    else if(i<text.length)throw new Error('内嵌 CSV 分隔符错误');
+  }
+  if(row.length)onRow(row);
+}
+async function loadCSV(){
+  const b64=$('csvData').textContent.trim();
+  const raw=atob(b64);const bytes=new Uint8Array(raw.length);
+  for(let i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);
+  if(typeof DecompressionStream==='undefined')throw new Error('浏览器不支持原生 gzip 解压，请使用较新的 Chrome、Edge 或 Safari。');
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  const text=await new Response(stream).text();
+  let header=null,realCount=0;
+  const annual={};
+  const expected=['paper_id','occurrence_id','title','official_url','venue','year','real_month','l1','l2','l3'];
+  parseCSV(text,r=>{
+    if(!header){header=r;return;}
+    const real=Boolean(r[6]);
+    const month=real?Number(r[6].slice(5,7)):fnvMonth(r[2]);
+    records.push({paperId:r[0],occurrenceId:r[1],title:r[2],url:r[3],venue:r[4],year:r[5],period:`${r[5]}-${String(month).padStart(2,'0')}`,real,
+      l1:r[7]?r[7].split('|'):[],l2:r[8]?r[8].split('|'):[],l3:r[9]?r[9].split('|'):[]});
+    realCount+=Number(real);annual[r[5]]=(annual[r[5]]||0)+1;
+  });
+  if(header.join('|')!==expected.join('|'))throw new Error('内嵌 CSV 表头不符合预期');
+  if(records.length!==meta.rows)throw new Error(`内嵌记录数错误：${records.length} / ${meta.rows}`);
+  if(realCount!==meta.real_month_rows)throw new Error('真实月份数量与构建记录不一致');
+  if(JSON.stringify(annual)!==JSON.stringify(meta.years))throw new Error('年度总量与原始来源不一致');
+}
+function fillSelect(id,items,defaultLabel,current=''){
+  const sel=$(id);sel.replaceChildren();
+  const all=new Option(defaultLabel,'');sel.add(all);
+  for(const [value,label] of items)sel.add(new Option(label,value));
+  sel.value=current&&items.some(x=>x[0]===current)?current:'';
+}
+function descendants(level,parent){return Object.entries(meta.nodes).filter(([id,n])=>n.level===level&&(!parent||n.parent===parent)).map(([id,n])=>[id,`${id} · ${n.name}`]);}
+function setupFilters(){
+  fillSelect('venue',Object.keys(meta.venues).sort().map(x=>[x,x]),'全部会议');
+  fillSelect('l1',descendants(1,''),'全部一级');
+  fillSelect('l2',descendants(2,''),'全部二级');
+  fillSelect('l3',descendants(3,''),'全部三级');
+  $('l1').addEventListener('change',()=>{fillSelect('l2',descendants(2,$('l1').value),'全部二级');fillSelect('l3',descendants(3,''),'全部三级');changed();});
+  $('l2').addEventListener('change',()=>{fillSelect('l3',descendants(3,$('l2').value),'全部三级');changed();});
+  for(const id of ['grain','dimension','metric','venue','l3'])$(id).addEventListener('change',changed);
+}
+function relevantGroup(id,dimension,l1,l2,l3){
+  if(id==='__unassigned__'||dimension==='venue')return true;
+  if(dimension==='l1')return !l1||id===l1;
+  if(dimension==='l2')return (!l2||id===l2)&&(!l1||meta.nodes[id]?.parent===l1);
+  if(dimension==='l3')return (!l3||id===l3)&&(!l2||meta.nodes[id]?.parent===l2)&&(!l1||meta.nodes[meta.nodes[id]?.parent]?.parent===l1);
+  return true;
+}
+function aggregate(){
+  const grain=$('grain').value,dimension=$('dimension').value;
+  const venue=$('venue').value,l1=$('l1').value,l2=$('l2').value,l3=$('l3').value;
+  const key=[grain,dimension,venue,l1,l2,l3].join('~');
+  if(cache.has(key))return cache.get(key);
+  const periods=grain==='year'?years:allMonths;
+  const totalByPeriod=new Map(periods.map(p=>[p,0]));
+  const groups=new Map();let total=0,real=0;
+  for(const row of records){
+    if(venue&&row.venue!==venue)continue;
+    if(l1&&!row.l1.includes(l1))continue;
+    if(l2&&!row.l2.includes(l2))continue;
+    if(l3&&!row.l3.includes(l3))continue;
+    total++;real+=Number(row.real);
+    const period=grain==='year'?row.year:row.period;
+    totalByPeriod.set(period,(totalByPeriod.get(period)||0)+1);
+    const ids=dimension==='venue'?[row.venue]:(row[dimension].length?row[dimension]:['__unassigned__']);
+    for(const id of new Set(ids)){
+      if(!relevantGroup(id,dimension,l1,l2,l3))continue;
+      if(!groups.has(id))groups.set(id,{id,count:0,real:0,by:new Map()});
+      const g=groups.get(id);g.count++;g.real+=Number(row.real);
+      if(!g.by.has(period))g.by.set(period,{count:0,real:0});
+      const item=g.by.get(period);item.count++;item.real+=Number(row.real);
+    }
+  }
+  const sorted=[...groups.values()].sort((a,b)=>b.count-a.count||nodeName(a.id).localeCompare(nodeName(b.id)));
+  const result={periods,totalByPeriod,groups:sorted,total,real,grain,dimension,venue,l1,l2,l3};
+  cache.set(key,result);if(cache.size>48)cache.delete(cache.keys().next().value);
+  return result;
+}
+function svgEl(name,attrs={}){const e=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));return e;}
+function spark(values){const svg=svgEl('svg',{viewBox:'0 0 92 23',class:'spark','aria-hidden':'true'});const max=Math.max(1,...values);const points=values.map((v,i)=>`${i*92/Math.max(1,values.length-1)},${21-v*19/max}`).join(' ');svg.append(svgEl('polyline',{points,fill:'none',stroke:'#155bb5','stroke-width':'1.8'}));return svg;}
+function drawChart(result){
+  const svg=$('trendChart');svg.replaceChildren();const W=980,H=310,left=56,right=17,top=13,bottom=46;
+  const metric=$('metric').value;
+  let shown=result.groups.slice(0,7);
+  if(activeGroup&&!shown.some(g=>g.id===activeGroup)){const focus=result.groups.find(g=>g.id===activeGroup);if(focus)shown=[...shown.slice(0,6),focus];}
+  const series=shown.map(g=>result.periods.map(p=>{const n=g.by.get(p)?.count||0;return metric==='count'?n:(result.totalByPeriod.get(p)?100*n/result.totalByPeriod.get(p):0);}));
+  const ymax=Math.max(1,...series.flat());const plotH=H-top-bottom,plotW=W-left-right;
+  const text=(x,y,label,anchor='end')=>{const t=svgEl('text',{x,y,'text-anchor':anchor,fill:'#607488','font-size':11});t.textContent=label;svg.append(t);};
+  for(let i=0;i<=4;i++){const y=top+i*plotH/4;svg.append(svgEl('line',{x1:left,y1:y,x2:W-right,y2:y,stroke:'#e1e8ef'}));text(left-8,y+4,metric==='count'?fmt(Math.round(ymax*(1-i/4))):`${(ymax*(1-i/4)).toFixed(1)}%`);}
+  const ticks=result.grain==='year'?result.periods.map((_,i)=>i):result.periods.map((_,i)=>i).filter(i=>i%12===0||i===result.periods.length-1);
+  for(const i of ticks){const x=left+i*plotW/Math.max(1,result.periods.length-1);text(x,H-21,result.periods[i],i===0?'start':(i===result.periods.length-1?'end':'middle'));}
+  series.forEach((values,j)=>{const points=values.map((v,i)=>`${left+i*plotW/Math.max(1,values.length-1)},${top+plotH-v*plotH/ymax}`).join(' ');svg.append(svgEl('polyline',{points,fill:'none',stroke:colors[j%colors.length],'stroke-width':activeGroup===shown[j].id?3.5:2,'stroke-linejoin':'round','stroke-linecap':'round'}));});
+  if(!shown.length)text(W/2,H/2,'当前筛选范围无记录','middle');
+  const legend=$('legend');legend.replaceChildren();shown.forEach((g,i)=>{const b=document.createElement('button');const dot=document.createElement('i');dot.style.background=colors[i%colors.length];b.append(dot,document.createTextNode(nodeName(g.id)));b.onclick=()=>{activeGroup=g.id;renderResult(result);};legend.append(b);});
+  $('chartSubtitle').textContent=`${result.grain==='year'?'会议届次年':'真实月 + 标题哈希虚拟月'}｜纵轴：${metric==='count'?'来源记录数':'占当期筛选范围比例'}｜显示前 7 组${activeGroup?'及选中组':''}`;
+}
+function drawTable(result){
+  const body=$('groupBody');body.replaceChildren();const frag=document.createDocumentFragment();
+  for(const g of result.groups){const tr=document.createElement('tr');if(g.id===activeGroup)tr.className='active';
+    const name=document.createElement('td');name.textContent=nodeName(g.id);if(g.id==='__unassigned__'){const p=document.createElement('span');p.className='pill';p.textContent='证据不足';name.append(p);}tr.append(name);
+    for(const value of [fmt(g.count),pct(g.count,result.total),fmt(g.real),fmt(g.count-g.real)]){const td=document.createElement('td');td.textContent=value;tr.append(td);}
+    const trend=document.createElement('td');trend.append(spark(result.periods.map(p=>g.by.get(p)?.count||0)));tr.append(trend);
+    tr.onclick=()=>{activeGroup=g.id;renderResult(result);};frag.append(tr);
+  }
+  body.append(frag);
+  $('tableTitle').textContent=`${{venue:'会议',l1:'一级分类',l2:'二级分类',l3:'三级分类'}[result.dimension]}汇总`;
+  $('denominatorNote').textContent=`占比 = 分组记录数 / 当前筛选范围 ${fmt(result.total)} 条。分类可多标签计数；未归类为证据不足。`;
+}
+function drawDetails(result){
+  const body=$('detailBody');body.replaceChildren();const g=result.groups.find(x=>x.id===activeGroup);$('detailTitle').textContent=g?`${nodeName(g.id)} · 逐期明细`:'逐期明细';
+  if(!g)return;
+  const frag=document.createDocumentFragment();
+  for(const p of result.periods){const n=g.by.get(p)?.count||0,real=g.by.get(p)?.real||0,den=result.totalByPeriod.get(p)||0;const tr=document.createElement('tr');
+    for(const value of [p,fmt(n),pct(n,den),fmt(real),fmt(n-real),fmt(den)]){const td=document.createElement('td');td.textContent=value;tr.append(td);}frag.append(tr);}
+  body.append(frag);
+}
+function renderResult(result){
+  lastResult=result;
+  if(!result.groups.some(g=>g.id===activeGroup))activeGroup=result.groups[0]?.id||null;
+  $('statTotal').textContent=fmt(result.total);$('statReal').textContent=fmt(result.real);$('statVirtual').textContent=fmt(result.total-result.real);$('statGroups').textContent=fmt(result.groups.length);
+  $('chartTitle').textContent=`${{venue:'会议',l1:'一级分类',l2:'二级分类',l3:'三级分类'}[result.dimension]}趋势`;
+  drawChart(result);drawTable(result);drawDetails(result);
+  const coverage=$('coverage');coverage.replaceChildren();const p=document.createElement('p');p.textContent=`真实书目月份 ${fmt(result.real)} / ${fmt(result.total)}（${pct(result.real,result.total)}）；虚拟月份 ${fmt(result.total-result.real)}。`;coverage.append(p);
+  const bar=document.createElement('div');bar.className='bar';const fill=document.createElement('b');fill.style.width=result.total?`${100*result.real/result.total}%`:'0%';bar.append(fill);coverage.append(bar);
+  const note=document.createElement('p');note.className='subtle';note.textContent=result.grain==='month'?'真实月仅覆盖 ACL 与 CVPR 的部分来源；其他会议月份为标题哈希分配。':'年度汇总取自原会议届次年；月度填补不会改变这里的年度数量。';coverage.append(note);
+}
+function changed(){if(!records.length)return;activeGroup=null;renderResult(aggregate());}
+const crossYearIndex=new Map(years.map((y,i)=>[y,i]));
+const crossMonthIndex=new Map(allMonths.map((m,i)=>[m,i]));
+let crossRoot=null,crossNodes=new Map(),crossExpanded=new Set(['ALL']),crossYearOpen=new Set(),crossSelected='ALL';
+let dialogMatches=[],dialogPage=0,dialogContext='';
+let crossRenderTicket=0;
+function makeCrossNode(key,label,depth,parent){
+  const node={key,label,depth,parent,children:[],indices:[],byYear:new Uint32Array(years.length),byMonth:new Uint32Array(allMonths.length)};
+  crossNodes.set(key,node);if(parent)parent.children.push(node);return node;
+}
+function crossChild(parent,key,label){return crossNodes.get(key)||makeCrossNode(key,label,parent.depth+1,parent);}
+function addCrossIndex(node,index,row){node.indices.push(index);node.byYear[crossYearIndex.get(row.year)]++;node.byMonth[crossMonthIndex.get(row.period)]++;}
+function buildCrossTree(){
+  crossNodes=new Map();crossRoot=makeCrossNode('ALL','ALL',0,null);
+  records.forEach((row,index)=>{
+    addCrossIndex(crossRoot,index,row);
+    const venue=crossChild(crossRoot,`v:${row.venue}`,row.venue);
+    addCrossIndex(venue,index,row);
+    const seen=new Set();
+    if(!row.l3.length){const unknown=crossChild(venue,`${venue.key}|u`,'未归类 / 证据不足');addCrossIndex(unknown,index,row);return;}
+    for(const leaf of row.l3){
+      const mid=meta.nodes[leaf]?.parent,top=meta.nodes[mid]?.parent;
+      if(!mid||!top)continue;
+      const l1=crossChild(venue,`${venue.key}|1:${top}`,`${top} · ${nodeName(top)}`);
+      const l2=crossChild(l1,`${l1.key}|2:${mid}`,`${mid} · ${nodeName(mid)}`);
+      const l3=crossChild(l2,`${l2.key}|3:${leaf}`,`${leaf} · ${nodeName(leaf)}`);
+      for(const node of [l1,l2,l3])if(!seen.has(node.key)){addCrossIndex(node,index,row);seen.add(node.key);}
+    }
+  });
+  for(const node of crossNodes.values())node.children.sort((a,b)=>a.key.endsWith('|u')?1:b.key.endsWith('|u')?-1:a.label.localeCompare(b.label,'zh-CN'));
+  if(crossRoot.indices.length!==meta.rows)throw new Error('交叉表根节点数量与源数据不一致');
+  for(const [i,year] of years.entries())if(crossRoot.byYear[i]!==meta.years[year])throw new Error(`交叉表年度计数不一致：${year}`);
+}
+function crossColumns(){
+  const cols=[{kind:'total',label:'总计'}];
+  for(const year of years){cols.push({kind:'year',year,label:`${year} 合计`});if(crossYearOpen.has(year))for(let m=1;m<=12;m++)cols.push({kind:'month',year,month:m,label:`${String(m).padStart(2,'0')}月`});}
+  return cols;
+}
+function crossCount(node,col){if(col.kind==='total')return node.indices.length;if(col.kind==='year')return node.byYear[crossYearIndex.get(col.year)];return node.byMonth[crossMonthIndex.get(`${col.year}-${String(col.month).padStart(2,'0')}`)];}
+function crossVisibleRows(){const out=[];function walk(node){out.push(node);if(crossExpanded.has(node.key))for(const child of node.children)walk(child);}walk(crossRoot);return out;}
+function renderCrossHead(){
+  const head=$('crossHead');head.replaceChildren();
+  const first=document.createElement('tr'),second=document.createElement('tr');
+  const rowTh=document.createElement('th');rowTh.className='rowhead';rowTh.rowSpan=2;rowTh.textContent='ALL → 来源 → 分类';first.append(rowTh);
+  const total=document.createElement('th');total.rowSpan=2;total.textContent='总计';first.append(total);
+  for(const year of years){
+    const th=document.createElement('th');th.colSpan=crossYearOpen.has(year)?13:1;
+    const button=document.createElement('button');button.className='crossyear';button.type='button';button.textContent=`${crossYearOpen.has(year)?'▾':'▸'} ${year}`;button.title='展开或收起该年的月份';button.onclick=()=>{crossYearOpen.has(year)?crossYearOpen.delete(year):crossYearOpen.add(year);renderCrossTable();};th.append(button);first.append(th);
+    const subtotal=document.createElement('th');subtotal.textContent='年合计';second.append(subtotal);
+    if(crossYearOpen.has(year))for(let m=1;m<=12;m++){const month=document.createElement('th');month.textContent=`${String(m).padStart(2,'0')}月`;second.append(month);}
+  }
+  const trend=document.createElement('th');trend.className='trendcol';trend.rowSpan=2;trend.textContent='年度趋势';first.append(trend);
+  head.append(first,second);
+}
+function crossSpark(node){const svg=svgEl('svg',{viewBox:'0 0 90 28',class:'crossspark','aria-hidden':'true'});const values=[...node.byYear],max=Math.max(1,...values);const points=values.map((v,i)=>`${i*90/Math.max(1,values.length-1)},${25-v*22/max}`).join(' ');svg.append(svgEl('polyline',{points,fill:'none',stroke:'#155bb5','stroke-width':'2'}));return svg;}
+function crossCell(node,col){
+  const td=document.createElement('td'),count=crossCount(node,col),rowDen=node.indices.length,colDen=crossCount(crossRoot,col);
+  const rowShare=rowDen?100*count/rowDen:0,colShare=colDen?100*count/colDen:0;
+  const button=document.createElement('button');button.className='crosscell';button.type='button';
+  button.title=`${node.label} · ${col.label}：${fmt(count)} 条；行占比 ${rowShare.toFixed(2)}%；列占比 ${colShare.toFixed(2)}%。点击查看论文记录。`;
+  button.setAttribute('aria-label',button.title);
+  button.dataset.rowShare=String(rowShare);button.dataset.colShare=String(colShare);
+  setCrossBarColor(button);
+  const number=document.createElement('span');number.className='num';number.textContent=fmt(count);
+  const shares=document.createElement('span');shares.className='shares';shares.textContent=`行 ${rowShare.toFixed(1)}% · 列 ${colShare.toFixed(1)}%`;
+  button.append(number,shares);button.onclick=()=>openPaperDialog(node,col);
+  td.append(button);return td;
+}
+function setCrossBarColor(button){const value=Number($('crossBarMetric').value==='row'?button.dataset.rowShare:button.dataset.colShare);const width=Math.min(100,Math.max(0,value));button.style.background=`linear-gradient(to right,#cfe4f8 ${width}%,transparent ${width}%)`;}
+function updateCrossBarColors(){for(const button of $('crossBody').querySelectorAll('.crosscell'))setCrossBarColor(button);}
+function renderCrossTable(){
+  if(!crossRoot)return;
+  const ticket=++crossRenderTicket;
+  renderCrossHead();const body=$('crossBody');body.replaceChildren();
+  const cols=crossColumns(),visible=crossVisibleRows();
+  const rowsPerFrame=Math.max(1,Math.floor(1200/cols.length));let cursor=0;
+  function appendBatch(){
+    if(ticket!==crossRenderTicket)return;
+    const batch=document.createDocumentFragment(),end=Math.min(visible.length,cursor+rowsPerFrame);
+    for(;cursor<end;cursor++){const node=visible[cursor],tr=document.createElement('tr');
+      const nameTd=document.createElement('td');nameTd.className='rowhead';
+      const button=document.createElement('button');button.className='crossname'+(node.key===crossSelected?' active':'');button.type='button';button.style.paddingLeft=`${node.depth*14}px`;
+      const arrow=document.createElement('span');arrow.className='crossarrow';arrow.textContent=node.children.length?(crossExpanded.has(node.key)?'▾':'▸'):'·';button.append(arrow,document.createTextNode(`${node.label} (${fmt(node.indices.length)})`));
+      button.onclick=()=>{crossSelected=node.key;if(node.children.length){crossExpanded.has(node.key)?crossExpanded.delete(node.key):crossExpanded.add(node.key);renderCrossTable();}else{for(const selected of body.querySelectorAll('.crossname.active'))selected.classList.remove('active');button.classList.add('active');drawCrossTrend();}};
+      nameTd.append(button);tr.append(nameTd);
+      for(const col of cols)tr.append(crossCell(node,col));
+      const trend=document.createElement('td');trend.className='trendcol';trend.append(crossSpark(node));tr.append(trend);batch.append(tr);
+    }
+    body.append(batch);
+    $('crossStatus').textContent=`已显示 ${fmt(cursor)} / ${fmt(visible.length)} 行、${fmt(cols.length)} 个统计列${cursor<visible.length?'；正在继续渲染…':'。点击行名选中趋势；月格中的虚拟月份不代表真实发表时间。'}`;
+    if(cursor<visible.length)requestAnimationFrame(appendBatch);
+  }
+  appendBatch();
+  drawCrossTrend();
+}
+function drawCrossTrend(){
+  const node=crossNodes.get(crossSelected)||crossRoot,grain=$('crossTrendGrain').value;
+  const values=grain==='year'?[...node.byYear]:[...node.byMonth],labels=grain==='year'?years:allMonths;
+  const svg=$('crossTrendChart');svg.replaceChildren();const W=980,H=190,left=50,right=15,top=12,bottom=34,plotH=H-top-bottom,plotW=W-left-right,max=Math.max(1,...values);
+  const text=(x,y,label,anchor='end')=>{const t=svgEl('text',{x,y,'text-anchor':anchor,fill:'#607488','font-size':11});t.textContent=label;svg.append(t);};
+  for(let i=0;i<=3;i++){const y=top+i*plotH/3;svg.append(svgEl('line',{x1:left,y1:y,x2:W-right,y2:y,stroke:'#e1e8ef'}));text(left-8,y+4,fmt(Math.round(max*(1-i/3))));}
+  const points=values.map((v,i)=>`${left+i*plotW/Math.max(1,values.length-1)},${top+plotH-v*plotH/max}`).join(' ');svg.append(svgEl('polyline',{points,fill:'none',stroke:'#155bb5','stroke-width':'2.5','stroke-linejoin':'round'}));
+  for(let i=0;i<labels.length;i++)if(grain==='year'||i%12===0||i===labels.length-1)text(left+i*plotW/Math.max(1,labels.length-1),H-10,labels[i],i===0?'start':(i===labels.length-1?'end':'middle'));
+  $('crossTrendTitle').textContent=`选中：${node.label}｜${grain==='year'?'会议届次年':'真实月与虚拟月混合'}｜记录总数 ${fmt(node.indices.length)}。`;
+}
+function openPaperDialog(node,col){
+  dialogMatches=col.kind==='total'?node.indices:node.indices.filter(index=>{const row=records[index];return col.kind==='year'?row.year===col.year:row.period===`${col.year}-${String(col.month).padStart(2,'0')}`;});
+  dialogPage=0;dialogContext=`${node.label} · ${col.label}`;
+  $('dialogTitle').textContent='论文来源记录';$('dialogMeta').textContent=`${dialogContext}｜${fmt(dialogMatches.length)} 条｜每页 25 条`;
+  renderDialogPage();$('paperDialog').showModal();
+}
+function renderDialogPage(){
+  const pageSize=25,pages=Math.max(1,Math.ceil(dialogMatches.length/pageSize));dialogPage=Math.max(0,Math.min(dialogPage,pages-1));
+  const list=$('paperList');list.replaceChildren();const fragment=document.createDocumentFragment();
+  for(const index of dialogMatches.slice(dialogPage*pageSize,(dialogPage+1)*pageSize)){
+    const paper=records[index],item=document.createElement('div');item.className='paperitem';
+    const title=document.createElement('strong');title.textContent=paper.title;item.append(title);
+    const detail=document.createElement('small');detail.textContent=`${paper.venue} · ${paper.year} · ${paper.period}（${paper.real?'真实书目月':'标题哈希虚拟月'}） · ${paper.paperId} · ${paper.occurrenceId}`;item.append(detail);
+    if(/^https?:\/\//i.test(paper.url)){const a=document.createElement('a');a.href=paper.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='打开来源页面 ↗';item.append(a);}
+    fragment.append(item);
+  }
+  if(!dialogMatches.length){const empty=document.createElement('p');empty.className='empty';empty.textContent='该单元格没有记录。';fragment.append(empty);}
+  list.append(fragment);list.scrollTop=0;
+  $('pageState').textContent=`第 ${dialogPage+1} / ${pages} 页`;$('pagePrev').disabled=dialogPage===0;$('pageNext').disabled=dialogPage>=pages-1;
+}
+function setupCross(){
+  buildCrossTree();
+  $('crossBarMetric').onchange=updateCrossBarColors;$('crossTrendGrain').onchange=drawCrossTrend;
+  $('crossExpandRows').onclick=()=>{crossExpanded=new Set([...crossNodes.values()].filter(node=>node.children.length).map(node=>node.key));renderCrossTable();};
+  $('crossExpandYears').onclick=()=>{crossYearOpen=new Set(years);renderCrossTable();};
+  $('crossCollapseYears').onclick=()=>{crossYearOpen.clear();renderCrossTable();};
+  $('crossCollapseRows').onclick=()=>{crossExpanded=new Set(['ALL']);crossSelected='ALL';renderCrossTable();};
+  $('crossExpandAll').onclick=()=>{crossExpanded=new Set([...crossNodes.values()].filter(node=>node.children.length).map(node=>node.key));crossYearOpen=new Set(years);renderCrossTable();};
+  $('crossFullscreen').onclick=toggleCrossFullscreen;
+  document.addEventListener('fullscreenchange',syncCrossFullscreen);
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&$('crosstab').classList.contains('cross-fullscreen')){event.preventDefault();$('crosstab').classList.remove('cross-fullscreen');syncCrossFullscreen();}});
+  $('dialogClose').onclick=()=>$('paperDialog').close();
+  $('pagePrev').onclick=()=>{dialogPage--;renderDialogPage();};$('pageNext').onclick=()=>{dialogPage++;renderDialogPage();};
+  renderCrossTable();
+}
+function syncCrossFullscreen(){const active=document.fullscreenElement===$('crosstab')||$('crosstab').classList.contains('cross-fullscreen');$('crossFullscreen').textContent=active?'退出全屏':'全屏查看';$('crossFullscreen').setAttribute('aria-pressed',String(active));document.body.classList.toggle('cross-no-scroll',active);}
+async function toggleCrossFullscreen(){
+  const panel=$('crosstab');
+  if(document.fullscreenElement===panel){await document.exitFullscreen();syncCrossFullscreen();return;}
+  if(panel.classList.contains('cross-fullscreen')){panel.classList.remove('cross-fullscreen');syncCrossFullscreen();return;}
+  try{if(!panel.requestFullscreen)throw new Error('fullscreen API unavailable');await panel.requestFullscreen();}
+  catch{panel.classList.add('cross-fullscreen');}
+  syncCrossFullscreen();
+}
+async function main(){
+  try{await loadCSV();setupFilters();$('realHeadline').textContent=fmt(meta.real_month_rows);$('taxonomyVersion').textContent=meta.taxonomy_version;
+    $('sourceInfo').textContent=`主表 gzip SHA-256：${meta.master_gzip_sha256}；月份补充 gzip SHA-256：${meta.patch_gzip_sha256}；内嵌投影 CSV SHA-256：${meta.projection_csv_sha256}。`;
+    $('status').textContent=`已在内存载入 ${fmt(records.length)} 条；真实月份 ${fmt(meta.real_month_rows)}，虚拟月份 ${fmt(meta.virtual_month_rows)}。筛选与计算均在本地完成。`;
+    renderResult(aggregate());setupCross();
+  }catch(error){$('status').textContent=`加载失败：${error.message}`;console.error(error);}
+}
+main();
+</script>
+</body>
+</html>
