@@ -9,6 +9,7 @@
 - `data/processed/openalex_monthly_wide.csv`、`openalex_annual.csv`、`openalex_fields_monthly.csv`：月度与完整日历年度输出。
 - `data/processed/arxiv_monthly_wide.csv`、`arxiv_annual.csv`：arXiv 首次提交月份，独立于 OpenAlex；不能相加。
 - `data/query_audit.jsonl`、`arxiv_query_audit.jsonl`：每次联网尝试、URL、UTC 时间、响应 SHA-256、失败及缓存命中；原始响应在 `data/raw/`。
+- [来源权利说明](DATA_RIGHTS.md)：OpenAlex、arXiv 与会场资料分别适用的来源声明；本仓库不对第三方内容统一再许可。
 
 ## 离线验证与重建
 

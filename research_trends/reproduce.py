@@ -8,6 +8,7 @@ import csv
 import hashlib
 import json
 import platform
+import re
 import shutil
 import subprocess
 import sys
@@ -155,6 +156,21 @@ def verify_titles() -> dict[str, object]:
             "title_rule_sha256": rule_hash, "yearly_rows": len(yearly)}
 
 
+def verify_local_links() -> int:
+    checked = 0
+    for page in ROOT.rglob("*.md"):
+        if "raw" in page.relative_to(ROOT).parts:
+            continue
+        for target in re.findall(r"\]\(([^)]+)\)", page.read_text(encoding="utf-8")):
+            target = target.split("#", 1)[0].strip("<>")
+            if not target or target.startswith(("http://", "https://", "mailto:")):
+                continue
+            if not (page.parent / target).resolve().exists():
+                raise ValueError(f"broken local Markdown link in {page}: {target}")
+            checked += 1
+    return checked
+
+
 def validate() -> dict[str, object]:
     result = {
         "status": "ok",
@@ -169,6 +185,7 @@ def validate() -> dict[str, object]:
         "conference_raw_manifests": verify_conference_manifests(),
         "monthly": verify_monthly(),
         "conference_titles": verify_titles(),
+        "local_markdown_links_checked": verify_local_links(),
         "published_outputs_sha256": {name: sha256(ROOT / name) for name in DETERMINISTIC_OUTPUTS},
     }
     return result
