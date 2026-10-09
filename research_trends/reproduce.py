@@ -118,6 +118,11 @@ def verify_conference_manifests() -> dict[str, int]:
 
 def verify_monthly() -> dict[str, object]:
     result: dict[str, object] = {}
+    annual_metrics = {
+        "openalex": ("global_eligible_works", "cs_primary_field_works", "ai_primary_1702_works",
+                     "ai_vision_primary_1702_1707_works", "marketing_primary_1406_works"),
+        "arxiv": ("all_arxiv_submissions", "cs_plus_stat_ml_submissions", "core_ai_5_submissions"),
+    }
     for source, name, expected_metrics in (
         ("openalex", "openalex_monthly.csv", 3),
         ("arxiv", "arxiv_monthly.csv", 3),
@@ -134,7 +139,37 @@ def verify_monthly() -> dict[str, object]:
         wide = csv_rows(ROOT / "data" / "processed" / f"{source}_monthly_wide.csv")
         if len(wide) != 81 or [row["month"] for row in wide] != months:
             raise ValueError(f"{source} derived monthly grid does not match source")
-        result[source] = {"months": len(months), "main_queries_ok": len(rows)}
+        annual = csv_rows(ROOT / "data" / "processed" / f"{source}_annual.csv")
+        if [row["year"] for row in annual] != [str(year) for year in range(2020, 2027)]:
+            raise ValueError(f"{source} annual year grid changed")
+        for row in annual:
+            year = row["year"]
+            year_months = [month for month in wide if month["month"].startswith(year + "-")]
+            if int(row["calendar_months_observed"]) != len(year_months):
+                raise ValueError(f"{source} annual month count differs: {year}")
+            if year == "2026":
+                if row["status"] != "partial_or_missing" or any(row[metric] for metric in annual_metrics[source]):
+                    raise ValueError(f"{source} partial 2026 was presented as a full year")
+                continue
+            if row["status"] != "ok" or len(year_months) != 12:
+                raise ValueError(f"{source} complete annual status changed: {year}")
+            for metric in annual_metrics[source]:
+                if int(row[metric]) != sum(int(month[metric]) for month in year_months):
+                    raise ValueError(f"{source} monthly and annual totals differ: {year} {metric}")
+            ratios = (
+                (("ai_share_global_pct", "ai_primary_1702_works", "global_eligible_works"),
+                 ("ai_share_cs_pct", "ai_primary_1702_works", "cs_primary_field_works"))
+                if source == "openalex" else
+                (("core_ai_5_share_all_pct", "core_ai_5_submissions", "all_arxiv_submissions"),
+                 ("core_ai_5_share_cs_plus_stat_ml_pct", "core_ai_5_submissions",
+                  "cs_plus_stat_ml_submissions"))
+            )
+            for share, numerator, denominator in ratios:
+                expected_share = 100 * int(row[numerator]) / int(row[denominator])
+                if abs(float(row[share]) - expected_share) > 0.00001:
+                    raise ValueError(f"{source} annual share differs from counts: {year} {share}")
+        result[source] = {"months": len(months), "main_queries_ok": len(rows),
+                          "full_years_reconciled": 6, "partial_year_excluded": "2026"}
     pilot = csv_rows(ROOT / "data" / "arxiv_internal_pilot.csv")
     statuses = Counter(row["status"] for row in pilot)
     if len(pilot) != 18 or statuses != Counter({"ok": 10, "missing": 8}):
