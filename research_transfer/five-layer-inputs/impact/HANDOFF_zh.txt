@@ -1,0 +1,18 @@
+首版实施结论（2026-10-09）
+
+只追加 6 个默认列：citation_count、citation_provider、citation_as_of、citation_status、publication_age_days、impact_metrics_json。views_count/downloads_count 仅在真的取得文章级计数时再加。
+
+impact_metrics_json/JSONL sidecar 保存其余全部细节：其他 provider 的值、来源和缺失原因、FWCI/百分位原始值、年度引用、日期口径、评分/量表/决定、代码数据链接、完整性事件。无需进一步扩张 flat schema，也不让首次 CSV 等引用覆盖。
+
+已确认：
+1. OpenAlex 官方有 citation/归一化/撤稿字段；本研究没有发 OpenAlex API 请求。继续复用 Windows collector 的缓存和预算。
+2. Semantic Scholar 1 次匿名论文请求返回 200 和 citationCount/influentialCitationCount/date/externalIds。仅证明一个 ID 本次可查，不证明全表覆盖。
+3. 四份会议目录便利样本共80条确有 decision/forum/部分artifact链接，但没有rating/confidence。不能把decision当评分；活动与track口径须保留。
+4. OpenReview 一次论坛读取403后停止，尚无真实review/rubric载荷。标access_denied，不推断“不公开”。
+5. 标准 arXiv/Graph API 不提供通用文章浏览下载字段；arXiv公开下载是汇总。null+not_exposed，不能填0或分摊全站数。
+
+必须保留：精确ID join、原表行数和全部旧列、0与missing区别、真实as_of、来源和原始响应hash；不同来源引文不相加，不取最大值；引用/使用量不等于科学质量，无自动junk标签或综合分。
+
+文件：metrics_schema.json（正式JSON Schema，6默认+2条件列）；metrics_csv_columns.json（轻量列映射）；source_memo_zh.md（来源核验）；collector_plan_zh.md（离线及后续增量协议）；validation.json（9项契约测试通过）。example_semantic_scholar_observation.json 是真实单条探针示例，paper_id前缀example，未并入master。
+
+未执行：全量指标采集、主CSV合并、Explorer改动、repo发布。由现有Windows任务实施。

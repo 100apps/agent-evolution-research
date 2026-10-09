@@ -1,0 +1,42 @@
+[
+  {
+    "name": "citation_count",
+    "type": "integer_or_empty",
+    "mapping": "selected citation_count metric.value"
+  },
+  {
+    "name": "citation_provider",
+    "type": "string_or_empty",
+    "mapping": "selected source.provider"
+  },
+  {
+    "name": "citation_as_of",
+    "type": "datetime_or_empty",
+    "mapping": "selected as_of; retrieval observation, not source internal cutoff"
+  },
+  {
+    "name": "citation_status",
+    "type": "enum",
+    "mapping": "selected status; missing_reason remains in impact_metrics_json"
+  },
+  {
+    "name": "publication_age_days",
+    "type": "integer_or_empty",
+    "mapping": "publication_age.days; exact day known only, basis/as_of in JSON"
+  },
+  {
+    "name": "impact_metrics_json",
+    "type": "json_object",
+    "mapping": "full sidecar: alternatives, normalized metrics, usage definitions, reviews, links, integrity and provenance"
+  },
+  {
+    "name": "views_count",
+    "type": "integer_or_empty",
+    "mapping": "OPTIONAL: only introduce when real article-level views exist; provider/as_of/definition/window/status in JSON"
+  },
+  {
+    "name": "downloads_count",
+    "type": "integer_or_empty",
+    "mapping": "OPTIONAL: only introduce when real article-level downloads exist; provider/as_of/definition/window/status in JSON"
+  }
+]

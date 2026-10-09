@@ -1,0 +1,76 @@
+{
+  "schema_version": "paper-impact-v1.0.0-proposed",
+  "paper_id": "example:arxiv:1706.03762",
+  "publication_age": {
+    "days": 3406,
+    "as_of": "2026-10-09",
+    "date_used": "2017-06-12",
+    "date_precision": "day",
+    "basis": "provider_publication_date",
+    "status": "present",
+    "missing_reason": null,
+    "source": {
+      "provider": "semantic_scholar",
+      "record_id": "204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+      "source_url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:1706.03762?fields=paperId,externalIds,title,citationCount,influentialCitationCount,publicationDate,year,url",
+      "retrieved_at": "2026-10-09T06:05:47+00:00",
+      "provider_updated_at": null,
+      "raw_sha256": "ef19540f9ede7282f148585836bfd4c6d24b9b6420506a75cce8438d459b9d2e",
+      "raw_field": "publicationDate",
+      "request_fingerprint": null,
+      "identifier_match": "exact_arxiv",
+      "matched_identifier": "1706.03762"
+    }
+  },
+  "citation_observations": [
+    {
+      "metric": "citation_count",
+      "value": 196008,
+      "status": "present",
+      "missing_reason": null,
+      "as_of": "2026-10-09T06:05:47+00:00",
+      "unit": "citing_papers",
+      "window": {
+        "kind": "lifetime_to_asof",
+        "start": null,
+        "end": "2026-10-09",
+        "definition": "Provider graph count observed in HTTP response; source internal counting cutoff unavailable."
+      },
+      "source": {
+        "provider": "semantic_scholar",
+        "record_id": "204e3073870fae3d05bcbc2f6a8e263d9b72e776",
+        "source_url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:1706.03762?fields=paperId,externalIds,title,citationCount,influentialCitationCount,publicationDate,year,url",
+        "retrieved_at": "2026-10-09T06:05:47+00:00",
+        "provider_updated_at": null,
+        "raw_sha256": "ef19540f9ede7282f148585836bfd4c6d24b9b6420506a75cce8438d459b9d2e",
+        "raw_field": "citationCount",
+        "request_fingerprint": null,
+        "identifier_match": "exact_arxiv",
+        "matched_identifier": "1706.03762"
+      },
+      "method_version": null,
+      "caveats": [
+        "One-record field probe, not a master CSV join or coverage estimate. HTTP Date used as response observation timestamp."
+      ]
+    }
+  ],
+  "citation_counts_by_year": [],
+  "normalized_citation_observations": [],
+  "usage_observations": [],
+  "public_reviews": [],
+  "artifact_links": [],
+  "integrity_events": [],
+  "collection_status": {
+    "openalex": {
+      "status": "not_requested",
+      "missing_reason": "Research worker did not call OpenAlex API.",
+      "attempted_at": null
+    },
+    "arxiv_usage": {
+      "status": "not_exposed",
+      "missing_reason": "Standard article metadata API exposes no per-article usage metric.",
+      "attempted_at": null
+    }
+  },
+  "adapter_version": "contract-example-v1"
+}
