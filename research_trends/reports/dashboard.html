@@ -4,10 +4,13 @@
 body{margin:0;background:#f4f7fb;color:#13233d;font:15px/1.5 system-ui,sans-serif}
 main{max-width:1120px;margin:auto;padding:26px}h1{font-size:29px}h2{margin-top:0}
 .lead,.note{color:#4b5d79}.box{background:white;border:1px solid #dae2eb;border-radius:12px;padding:22px;margin:20px 0}
-select{padding:8px;font:inherit;border-radius:6px}svg{width:100%;height:370px}
+select{padding:8px;font:inherit;border-radius:6px}svg{width:100%;height:auto;display:block}
 table{border-collapse:collapse;width:100%}th,td{padding:5px 8px;border:1px solid #e0e6ee;text-align:center}
 th:first-child{text-align:left}td small{display:block;color:#465978}
 .scroll{overflow:auto}.bad{color:#8c3c26}
+@media(max-width:600px){main{padding:14px}.box{padding:16px}h1{font-size:25px}
+.scroll::before{content:'左右滑动查看其他年份 →';display:block;color:#4b5d79;font-size:13px;padding-bottom:8px}
+table{font-size:12px}th:first-child{position:sticky;left:0;background:white;min-width:145px;z-index:1}}
 </style>
 <main><h1>AI 与相邻科研活动：可核验来源</h1>
 <p class="lead">2020-01—2026-09 月度：OpenAlex 与 arXiv 分开展示；顶会按会场年份展示。数字为论文或作品，不是研究人员人数。2026 最近月可能回填；NeurIPS 2026 仅暂定 program，不进入完整三会合计。</p>
@@ -38,13 +41,15 @@ const metric=document.getElementById("metric"),plot=document.getElementById("plo
 function svgEl(name,attrs){let e=document.createElementNS("http://www.w3.org/2000/svg",name);for(let k in attrs)e.setAttribute(k,attrs[k]);plot.appendChild(e);return e}
 function draw(){
 let v=metric.value.split(":"),rows=v[0]==="oa"?D.openalex:D.arxiv,key=v[1],vals=rows.map(r=>r[key]),good=vals.filter(x=>x!==null);
-let max=Math.max(...good)*1.08,n=rows.length,x=i=>65+i*880/(n-1),y=a=>325-a*275/max;
-plot.innerHTML="";svgEl("rect",{x:x(n-12),y:35,width:945-x(n-12),height:290,fill:"#fff3e5"});
-for(let j=0;j<=4;j++){let q=j*max/4;svgEl("line",{x1:65,y1:y(q),x2:945,y2:y(q),stroke:"#d7e0eb"});let t=svgEl("text",{x:55,y:y(q)+4,"text-anchor":"end","font-size":12,fill:"#4b5d79"});t.textContent=q.toFixed(key.includes("submissions")||key.includes("works")?0:1)}
+let compact=window.innerWidth<600,w=compact?420:1000,h=compact?225:370,left=compact?42:65,right=compact?405:945,top=compact?20:35,bottom=compact?180:325;
+plot.setAttribute("viewBox","0 0 "+w+" "+h);
+let max=Math.max(...good)*1.08,n=rows.length,x=i=>left+i*(right-left)/(n-1),y=a=>bottom-a*(bottom-top)/max;
+plot.innerHTML="";svgEl("rect",{x:x(n-12),y:top,width:right-x(n-12),height:bottom-top,fill:"#fff3e5"});
+for(let j=0;j<=4;j++){let q=j*max/4;svgEl("line",{x1:left,y1:y(q),x2:right,y2:y(q),stroke:"#d7e0eb"});let t=svgEl("text",{x:left-7,y:y(q)+4,"text-anchor":"end","font-size":compact?10:12,fill:"#4b5d79"});t.textContent=q.toFixed(key.includes("submissions")||key.includes("works")?0:1)}
 let pts=vals.map((a,i)=>a===null?null:x(i)+","+y(a)).filter(Boolean);
 svgEl("polyline",{points:pts.join(" "),fill:"none",stroke:v[0]==="oa"?"#145ea8":"#a34535","stroke-width":2.5});
 vals.forEach((a,i)=>{if(a===null)return;let p=svgEl("circle",{cx:x(i),cy:y(a),r:3.2,fill:v[0]==="oa"?"#145ea8":"#a34535",tabindex:0});p.onmouseenter=p.onfocus=p.onpointerdown=()=>point.textContent=rows[i].month+"："+a.toLocaleString("zh-CN")+(key.endsWith("_pct")?"%":" 篇")});
-for(let i=0;i<n;i+=12){let t=svgEl("text",{x:x(i),y:355,"text-anchor":"middle","font-size":12,fill:"#4b5d79"});t.textContent=rows[i].month}
+for(let i=0;i<n;i+=compact?24:12){let t=svgEl("text",{x:x(i),y:h-8,"text-anchor":"middle","font-size":compact?10:12,fill:"#4b5d79"});t.textContent=rows[i].month}
 }
 const cohort=document.getElementById("cohort"),heat=document.getElementById("heat");
 let labels=["explicit_language_foundation","historical_pretrained_cues","pretraining_selfsupervision","posttraining_adaptation","agents_tools_broad","explicit_lm_agent_title_candidate","inference_systems_compute","evaluation_safety","optimization_theory","classical_statistics","search_retrieval","recommendation","marketing_advertising","software_code","nlp_language_tasks","vision_perception","robotics_control"];
@@ -54,5 +59,5 @@ heat.innerHTML="";let head=document.createElement("tr");head.innerHTML="<th>词�
 labels.forEach(tag=>{let tr=document.createElement("tr"),rmax=Math.max(...years.map(y=>map.get(tag+"|"+y)?.share_pct??0));let th=document.createElement("th");th.textContent=tag;tr.appendChild(th);
 years.forEach(y=>{let r=map.get(tag+"|"+y),td=document.createElement("td");if(r){let alpha=.06+.58*(rmax?r.share_pct/rmax:0);td.style.background="rgba(20,94,168,"+alpha+")";td.title=r.matching_titles+" / "+r.denominator_papers+"；"+r.source_status;td.innerHTML=r.share_pct.toFixed(2)+"%<small>"+r.matching_titles+" / "+r.denominator_papers+"</small>";if(r.source_status==="provisional_incomplete")td.style.outline="2px dashed #a34535"}tr.appendChild(td)});heat.appendChild(tr)});
 }
-metric.onchange=draw;cohort.onchange=table;draw();table();
+metric.onchange=draw;cohort.onchange=table;window.addEventListener("resize",draw);draw();table();
 </script></html>
