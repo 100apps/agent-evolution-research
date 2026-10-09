@@ -69,6 +69,8 @@ python tools/research.py all --output-dir run_outputs/clean-run
 5. 只在得到额外授权后接入模型、外部代码或有费用的服务。
 6. 更新 registry、状态、研究笔记和 HTML，并运行 `python tools/research.py all ...`。
 
+可用 `python tools/handoff_check.py` 模拟“只看到仓库的新 Agent”是否能定位目的、范围、证据状态、下一步和复跑方式。
+
 ## 研究边界与版权
 
 PDF、论文正文、上游数据和提取文本的权利归各自作者、出版社或来源方；保留文件是为了可验证研究与复现。它们不因进入本仓库而获得本项目许可证。本仓库没有为全部内容选择统一开源许可证，也没有把第三方资料声明为自有作品。使用者应遵守各来源页面和所在地法律。

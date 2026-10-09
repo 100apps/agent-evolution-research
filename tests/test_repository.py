@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -63,6 +65,15 @@ class RepositoryContractTest(unittest.TestCase):
             self.assertIn("actual", item)
             self.assertIn("tolerance", item)
             self.assertIn("command", item)
+
+    def test_agent_handoff_contract(self):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "handoff_check.py")],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 
 if __name__ == "__main__":
