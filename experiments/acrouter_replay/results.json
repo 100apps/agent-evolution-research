@@ -1,0 +1,190 @@
+{
+  "experiment_type": "公开历史矩阵的离线制品回放（不是实时 Agent 运行）",
+  "implementation": "独立 Python 标准库实现；未执行作者仓库脚本",
+  "randomness": "none; deterministic iteration in published ids order",
+  "source": {
+    "repository": "https://github.com/LanceZPF/agent-as-a-router",
+    "commit": "e43839edb0d5d0a9feec2f7078019406ab4d64bd",
+    "artifact": "data/matrices/phase2_ood/unified/matrix_acrouter_ood176.json",
+    "sha256": "f0fe49db24cf2c1d5552a1dd512544676825e0e4f34e136f194fecd9c022c15a",
+    "artifact_summary": {
+      "generated_utc": "2026-06-23 16:36:06 UTC",
+      "old112_n": 112,
+      "old112_prompt_source": "data/matrices/phase2_ood/unified/tasks.jsonl",
+      "old112_real_prompt_n": 112,
+      "new64_n": 64,
+      "combined_n": 176,
+      "models": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "gpt-5.4",
+        "glm-5",
+        "kimi-k2.5",
+        "MiniMax-M2.7",
+        "Qwen3-Max",
+        "qwen3.5-plus"
+      ],
+      "new64_model_aliases": {
+        "claude-opus-4-6": "claude-opus-4-6",
+        "claude-sonnet-4-6": "claude-sonnet-4-6",
+        "gpt-5.4-medium": "gpt-5.4",
+        "glm-5": "glm-5",
+        "kimi-k2.6": "kimi-k2.5",
+        "MiniMax-M2.5": "MiniMax-M2.7",
+        "qwen3.5-plus": "qwen3.5-plus",
+        "qwen3.6-plus": "Qwen3-Max"
+      },
+      "new64_prompt_source": "data/matrices/phase2_ood/unified/tasks.jsonl",
+      "new64_real_prompt_n": 64
+    }
+  },
+  "policy": {
+    "cheap_chain": [
+      "MiniMax-M2.7",
+      "kimi-k2.5",
+      "gpt-5.4",
+      "glm-5"
+    ],
+    "escalation_model": "claude-opus-4-6",
+    "gate": "only after all four cheap models fail and apply_ok count >= 2",
+    "utility": "resolved - 0.1 * total_attempt_cost_usd",
+    "oracle": "per-task max over one-model utilities"
+  },
+  "summaries": {
+    "single::claude-opus-4-6": {
+      "name": "single::claude-opus-4-6",
+      "tasks": 176,
+      "resolved_tasks": 112,
+      "avg_perf_percent": 63.63636363636363,
+      "cumulative_regret": 43.728647853000005,
+      "historical_estimated_total_cost_usd": 194.908255,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 1.1074332670454545
+    },
+    "single::claude-sonnet-4-6": {
+      "name": "single::claude-sonnet-4-6",
+      "tasks": 176,
+      "resolved_tasks": 76,
+      "avg_perf_percent": 43.18181818181818,
+      "cumulative_regret": 74.27932985300001,
+      "historical_estimated_total_cost_usd": 140.415075,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.7978129261363637
+    },
+    "single::gpt-5.4": {
+      "name": "single::gpt-5.4",
+      "tasks": 176,
+      "resolved_tasks": 113,
+      "avg_perf_percent": 64.20454545454545,
+      "cumulative_regret": 25.064532103,
+      "historical_estimated_total_cost_usd": 18.2670975,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.10379032670454545
+    },
+    "single::glm-5": {
+      "name": "single::glm-5",
+      "tasks": 176,
+      "resolved_tasks": 79,
+      "avg_perf_percent": 44.88636363636363,
+      "cumulative_regret": 61.062226433,
+      "historical_estimated_total_cost_usd": 38.2440408,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.21729568636363636
+    },
+    "single::kimi-k2.5": {
+      "name": "single::kimi-k2.5",
+      "tasks": 176,
+      "resolved_tasks": 35,
+      "avg_perf_percent": 19.886363636363637,
+      "cumulative_regret": 101.384063097,
+      "historical_estimated_total_cost_usd": 1.46240744,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.008309133181818182
+    },
+    "single::MiniMax-M2.7": {
+      "name": "single::MiniMax-M2.7",
+      "tasks": 176,
+      "resolved_tasks": 62,
+      "avg_perf_percent": 35.22727272727273,
+      "cumulative_regret": 76.080868853,
+      "historical_estimated_total_cost_usd": 18.430465,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.10471855113636365
+    },
+    "single::Qwen3-Max": {
+      "name": "single::Qwen3-Max",
+      "tasks": 176,
+      "resolved_tasks": 58,
+      "avg_perf_percent": 32.95454545454545,
+      "cumulative_regret": 78.658522209,
+      "historical_estimated_total_cost_usd": 4.20699856,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.02390340090909091
+    },
+    "single::qwen3.5-plus": {
+      "name": "single::qwen3.5-plus",
+      "tasks": 176,
+      "resolved_tasks": 48,
+      "avg_perf_percent": 27.272727272727273,
+      "cumulative_regret": 88.85913779500001,
+      "historical_estimated_total_cost_usd": 6.21315442,
+      "escalations": 0,
+      "avg_steps": 1.0,
+      "mean_cost_usd": 0.03530201375
+    },
+    "cheap_chain": {
+      "name": "cheap_chain",
+      "tasks": 176,
+      "resolved_tasks": 125,
+      "avg_perf_percent": 71.02272727272727,
+      "cumulative_regret": 15.844733338000003,
+      "historical_estimated_total_cost_usd": 46.069109850000004,
+      "escalations": 0,
+      "avg_steps": 2.5,
+      "mean_cost_usd": 0.2617563059659091
+    },
+    "cheap_chain_then_opus_no_gate": {
+      "name": "cheap_chain_then_opus_no_gate",
+      "tasks": 176,
+      "resolved_tasks": 138,
+      "avg_perf_percent": 78.4090909090909,
+      "cumulative_regret": 12.735807338000004,
+      "historical_estimated_total_cost_usd": 144.97984985,
+      "escalations": 51,
+      "avg_steps": 2.789772727272727,
+      "mean_cost_usd": 0.823749146875
+    },
+    "original_apply_ok_gate": {
+      "name": "original_apply_ok_gate",
+      "tasks": 176,
+      "resolved_tasks": 129,
+      "avg_perf_percent": 73.29545454545455,
+      "cumulative_regret": 15.909639838000004,
+      "historical_estimated_total_cost_usd": 86.71817485,
+      "escalations": 29,
+      "avg_steps": 2.664772727272727,
+      "mean_cost_usd": 0.49271690255681816
+    }
+  },
+  "reference_checks": {
+    "tasks_176": true,
+    "avg_perf_rounds_to_73_30": true,
+    "cumulative_regret_rounds_to_15_9": true,
+    "historical_cost_rounds_to_86_72": true,
+    "escalations_29": true,
+    "avg_steps_rounds_to_2_66": true
+  },
+  "audit_boundaries": [
+    "Costs are historical estimates stored in the public matrix; this run made no model API calls and incurred no API charges.",
+    "The 176 rows combine old112 and new64 source batches; new64 aliases model labels and does not form a same-version live leaderboard.",
+    "This replay implements the published artifact's ID/source/dimension grouping path, not online 0.8B embedding plus k-NN memory voting.",
+    "The artifact reference AvgPerf 73.30 is separate from the arXiv v3 Table 3 OOD result 62.50."
+  ]
+}

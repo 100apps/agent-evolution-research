@@ -1,0 +1,214 @@
+{
+  "experiment": "EvoC2F dependency/effect-aware scheduling mechanism example",
+  "reproduction_level": "机制示例（合成任务，不是论文基准复现）",
+  "generated_at": "2026-10-08T13:53:52.879924+00:00",
+  "seed": 20261008,
+  "repeats": 12,
+  "task_graph": {
+    "account_bonus": {
+      "deps": [],
+      "reads": [
+        "account"
+      ],
+      "writes": [
+        "account"
+      ],
+      "latency_s": 0.04,
+      "op_id": "plan/account_bonus",
+      "fail_after_commit_once": false
+    },
+    "account_credit": {
+      "deps": [],
+      "reads": [
+        "account"
+      ],
+      "writes": [
+        "account"
+      ],
+      "latency_s": 0.04,
+      "op_id": "plan/account_credit",
+      "fail_after_commit_once": false
+    },
+    "inventory_restock": {
+      "deps": [],
+      "reads": [
+        "inventory"
+      ],
+      "writes": [
+        "inventory"
+      ],
+      "latency_s": 0.055,
+      "op_id": "plan/inventory_restock",
+      "fail_after_commit_once": false
+    },
+    "account_report": {
+      "deps": [
+        "account_bonus",
+        "account_credit"
+      ],
+      "reads": [
+        "account"
+      ],
+      "writes": [
+        "report"
+      ],
+      "latency_s": 0.025,
+      "op_id": null,
+      "fail_after_commit_once": false
+    },
+    "inventory_ship": {
+      "deps": [
+        "inventory_restock"
+      ],
+      "reads": [
+        "inventory"
+      ],
+      "writes": [
+        "inventory"
+      ],
+      "latency_s": 0.03,
+      "op_id": "plan/inventory_ship",
+      "fail_after_commit_once": true
+    },
+    "finalize": {
+      "deps": [
+        "account_report",
+        "inventory_ship"
+      ],
+      "reads": [
+        "inventory",
+        "report"
+      ],
+      "writes": [
+        "summary"
+      ],
+      "latency_s": 0.02,
+      "op_id": null,
+      "fail_after_commit_once": false
+    }
+  },
+  "serial_reference_state": {
+    "account": 130,
+    "inventory": 13,
+    "report": 130,
+    "summary": 143
+  },
+  "modes": {
+    "serial": {
+      "timing_seconds": {
+        "mean": 0.21304103333022795,
+        "median": 0.21295554999960586,
+        "min": 0.21244859999569599,
+        "max": 0.21383939999213908,
+        "p95_nearest_rank": 0.21383939999213908
+      },
+      "equivalent_runs": 12,
+      "total_runs": 12,
+      "unique_final_states": [
+        {
+          "account": 130,
+          "inventory": 13,
+          "report": 130,
+          "summary": 143
+        }
+      ],
+      "mean_observed_conflicts": 0.0,
+      "retry_attempts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "dependency_only": {
+      "timing_seconds": {
+        "mean": 0.10711093333156896,
+        "median": 0.10694029999285704,
+        "min": 0.10614510001323652,
+        "max": 0.1088203999970574,
+        "p95_nearest_rank": 0.1088203999970574
+      },
+      "equivalent_runs": 0,
+      "total_runs": 12,
+      "unique_final_states": [
+        {
+          "account": 110,
+          "inventory": 13,
+          "report": 110,
+          "summary": 123
+        },
+        {
+          "account": 120,
+          "inventory": 13,
+          "report": 120,
+          "summary": 133
+        }
+      ],
+      "mean_observed_conflicts": 1.0,
+      "retry_attempts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "effect_aware": {
+      "timing_seconds": {
+        "mean": 0.12682234166762404,
+        "median": 0.1268264000027557,
+        "min": 0.12595679999503773,
+        "max": 0.12752569999429397,
+        "p95_nearest_rank": 0.12752569999429397
+      },
+      "equivalent_runs": 12,
+      "total_runs": 12,
+      "unique_final_states": [
+        {
+          "account": 130,
+          "inventory": 13,
+          "report": 130,
+          "summary": 143
+        }
+      ],
+      "mean_observed_conflicts": 0.0,
+      "retry_attempts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  "effect_aware_speedup_vs_serial": 1.679838351262791,
+  "dependency_only_speedup_vs_serial": 1.9889756041126574,
+  "checks": {
+    "effect_aware_all_equivalent": true,
+    "dependency_only_exposes_non_equivalence": true,
+    "retry_was_exercised": true,
+    "idempotent_retry_preserved_inventory": true
+  }
+}

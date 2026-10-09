@@ -1,0 +1,2255 @@
+===== PAGE 1 / 39 =====
+
+2026-06-22
+Agent-as-a-Router: Agentic Model Routing for
+Coding Tasks
+Pengfei Zhou1,2 Zhiwei Tang2,3,4 Yixing Ma5 Jiasheng Tang2,3‡ Yizeng Han2 Zhenglin Wan1
+Fanqing Meng1 Wei Wang6 Bohan Zhuang4 Wangbo Zhao6‡ Yang You1‡
+1National University of Singapore 2DAMO Academy, Alibaba Group 3Hupan Lab 4Zhejiang University
+5University of California, Berkeley 6The Hong Kong University of Science and Technology
+✉jiasheng.tjs@alibaba-inc.com;✉wangbo.zhao96@gmail.com;✉yangyou@nus.edu.sg ‡ Corresponding Author
+Homepage: https://omnisource.cn/agent-as-a-router
+AbstractReal-world users typically have access to multiple Large Language Models (LLMs) from
+different providers, and these LLMs often excel at distinct domains, yet none dominate all. Consequently,
+routing each task to the most suitable model becomes critical for both performance and cost. Existing
+routers treat this as a static, one-off classification problem. However, we identify the performance bottle-
+neck for these routers asinformation deficit: simply augmenting a vanilla LLM router with performance
+statistics at the task-dimension level yields a 15.3% relative gain, surpassing a heuristic router built on
+the same dimension-level priors. Motivated by this finding, we proposeAgent-as-a-Router, a framework
+that formalizes routing as a C-A-F loop (Context→Action→Feedback→Context). It closes the information
+gap by accumulating execution-grounded experience during deployment. We instantiate this framework
+asACRouter, composed of an Orchestrator, a Verifier, a Memory module, and introduceCodeRouter-
+Bench, an evaluation environment comprising∼10K task instances with verified scores from 8 frontier
+LLMs, enabling regret-based router comparison on streaming tasks. Experiments show that ACRouter
+achieves the lowest cumulative regret on in-distribution tasks and generalizes to out-of-distribution
+agentic-programming tasks, demonstrating that our routing framework actively closes the information
+gap. Codes and benchmarks are released at https://github.com/LanceZPF/agent-as-a-router.
+1. Introduction
+Modern coding agents such as Claude Code [3] and Codex [28] have had a significant impact on
+real-world software development by turning LLMs into interactive systems for coding, debugging,
+and repository-level programming. However, most of these agents tend to solve all tasks using the
+same Large Language Model (LLM) [42]. While this design is reasonable from aprovider-centric
+serving perspective, where providers prioritize in-house models and predictable serving costs [32], it
+overlooks the actual needs of users inuser-centricscenarios, where the priority is task-level quality
+and cost-efficiency rather than provider-side predictability.
+In such scenarios, users can subscribe to multiple providers and run capable open-source models
+locally. Across our experiments of 8 frontier models on various coding dimensions (Fig. 4), the best
+model varies per task, and always picking the globally strongest model still lags behind the per-task
+oracle (chooses the best model for each task). As manually selecting the best model for each task is
+infeasible at scale, a critical question emerges:which model should handle each incoming task?This
+motivates automatic model routing as a key mechanism for improving agent performance.
+Existing routing methods typically frame this as a static classification problem, employing language
+models as the routing policy [23, 26, 37]. However, our preliminary experiments reveal that a zero-
+arXiv:2606.22902v3  [cs.AI]  26 Jun 2026
+
+===== PAGE 2 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+shot LLM-as-a-Router, even when powered by a highly capable model like Claude Sonnet 4.6, still falls
+short of the per-task oracle by a wide margin (see Table 1). This substantial performance gap suggests
+that the fundamental bottleneck in model routing extends beyond pure reasoning capabilities.
+What is actually limiting these routers? Reasoning capability, or information access?To find out,
+we run an ablation that variesonlythe information available to the LLM router (Table 1). With only
+the zero-shot prompt Vanilla router scores 41.41, and adding per-dimension performance statistics
+from a held-out probing set (+Perf stats) improves the score to 47.74, a +15.3% relative gain over
+Vanilla. It alsoexceedsthe best heuristic (scoring 47.50) that encodes the same dimension-level
+statistics information. Therefore, we find that the bottleneck for model routing isinformation deficit
+rather thanreasoning failure(§3.1).
+To close this performance gap, a router mustacquire and accumulateexecution-grounded information
+during deployment. Static routers are structurally unable to do this since their information state is
+frozen. This motivates a different class of self-adaptive router, one that evolves over the task stream,
+verifies each decision, and conditions future decisions on accumulated expertise.
+We proposeAgent-as-a-Routerframework, formalizing routing as a Context-Action-Feedback (C-A-F)
+loop, in which each loop’s verified outcome enters the next loop’s context (Fig. 1). The router observes
+aContext(prior plus accumulated experience), selects anAction(which model to invoke), receives
+verificationFeedback(score and cost-efficiency), and merges the feedback back into theContextfor
+the next task. This loop relates to acontextual multi-armed bandit[22], socumulative regret(the
+running gap to the per-task oracle) becomes the natural streaming metric.
+We instantiate the framework asACRouter(AgenticCodingRouter), comprising three core modules
+(Orchestrator, Verifier, and Memory) and backed by a comprehensive toolkit that includes diverse
+routing policies, sandboxed execution environments and validation tools. We evaluate ACRouter on
+our establishedCodeRouterBench, which contains∼10K tasks across 9 in-distribution (ID) coding
+dimensions and an out-of-distribution (OOD) agentic-programming testbed with verified scores from
+8 frontier LLMs to enable regret-based comparison on streaming tasks [9, 13, 27, 46]. ACRouter
+attains the lowest cumulative regret across all evaluated routers on ID streams and also generalizes
+well to OOD tasks, consistently outperforming other routers.
+Our contributions are threefold: (1)Framework.We proposeAgent-as-a-Router, formalizing model
+routing as a Context-Action-Feedback (C-A-F) loop, with cumulative regret as the natural streaming
+metric. (2)Artifacts.We buildACRouteras a C-A-F instantiation, and presentCodeRouterBench
+(∼10K tasks, 8 LLMs, execution-verified) for regret-based router evaluation. (3)Findings.Information
+deficitratherthanreasoningistheroutingbottleneck(+15.3%whengivenper-dimensionperformance
+statistics); ACRouter attains the lowest cumulative regret on both in-distribution and OOD tasks,
+while lightweight static routers fail to generalize on OOD tasks.
+2. Related Work
+LLM Routing.The problem of selecting among multiple LLMs for a given query has attracted growing
+attention [1, 10, 12]. RouteLLM [26] formulated routing as a preference learning problem, training
+classifiers on human preference data to predict which of two models produces better responses.
+Meta-modeling approaches [33, 34] learn to predict model performance from task features. Most
+recently, LLMRouterBench [21] evaluated routing across 21 general NLU datasets with 33 models.
+Our work differs from these by proposingAgent-as-a-Routerand formalizing it as the C-A-F loop for
+adaptive routing. Moreover, we specifically benchmark routers in an agentic coding setting.
+2
+
+===== PAGE 3 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Input: Task Stream  
+1 Heuristic Router 2 Trained-Policy-as-a-Router 3 Agent-as-a-Router
+Pre-set keywords: “data process”, 
+Strict matching: “IF AND only IF 
+Both of the keywords present”
+Direct mapping → Kimi-K2.5 model
+Static rules
+·
+·
+·
+Selected Coding Model
+(i.e., a specific LLM)
+LearningReasoning Adaptation
+Static Mapping
+Semantic 
+Reasoning /
+Classification
+Reads task: “Python” 
+as language and “data 
+processing” as goal
+Selected
+Coding 
+Model
+Analyzes pattern needs. 
+Selects Kimi-K2.5 since it 
+has the best data science 
+capability according to 
+the training data 
+MemoryTools
+Static Policy Model
+. . .Task 1 Task nTask 2Input: Task Stream  
+Task 
+analysis
+Memory 
+context
+Model poll 
+inspection
+Tool 
+execution
+Feedback
+Update
+Best Model Choice
+Loops
+ Memory
+ Tools
+ Feedback
+Iterative Self-Evolving Router
+Increasing Capacity
+Feedback
+Specific T ask 2 (e.g.):
+Write a data 
+processing function
+. . .
+Task 1
+Task n
+Task 2
+Specific T ask 2 (e.g.):
+Write a data 
+processing function
+. . .
+Task 1
+Task n
+Task 2
+Input: Task Stream  
+Self-Evolving
+in the Loop
+Import os, sys
+…
+# Task: proce ss data
+…
+Prin t(“s uccess ”)
+Import os, sys
+…
+# Task: proce ss data
+…
+Prin t(“s uccess ”)
+Figure 1| Comparison of three routing strategies. (1)Static, heuristic-based routers (router
+directly dispatches via a lookup table, e.g. DimensionBest).(2)Routers based on a static trained
+policy (router uses a learned policy model with no memory).(3)Our proposed Agent-as-a-Router
+(router with iterative self-evolving capabilities in the task stream).
+Coding Agent.Coding agents have evolved from single-call code generators [6, 11] into multi-
+stage harness-based frameworks that interleave planning, retrieval, code editing, execution, and
+self-debugging on repository-level tasks [18, 38, 39, 41]. Multi-agent variants further decompose
+these stages across specialized roles [15, 30]. Production systems further integrate these features into
+deployed assistants [3, 28]. However, existing frameworks typically rely on a fixed LLM backbone,
+rather than dynamically selecting the best model for each specific task.ACRouteraddresses this
+limitation by actively routing each task to the most suitable model within a continuous stream. To
+support the evaluation of this framework,CodeRouterBenchprovides a standardized streaming
+environment to compare different routing methods using cumulative regret.
+3. Agent-as-a-Router
+3.1. Preliminary: The Performance Gap Diagnosis
+Table 1| Preliminary ablation study diagnosing the performance bottleneck in LLM-as-a-Router
+(Claude Sonnet 4.6 tested on 2,919 tasks). AvgPerf: average performance score. Perf/$: AvgPerf%
+per USD. Providing prior performance statistics significantly improves routing performance.
+Ablation Interpretation AvgPerf% Perf/$
+Oracle Theoretical upper bound using the best model for each task57.008.20
+DimensionBest Select the best model for each dimension by prior 47.50 3.69
+Vanilla Standard zero-shot LLM-as-a-router 41.41 1.97
++Dimension +Task dimension description 41.18 1.81
++Perf stats+Prior performance statistics from a probing set47.741.71
+We first conduct a preliminary experiment to diagnose the performance bottleneck of LLM-as-a-Router
+3
+
+===== PAGE 4 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+(Table 1). The Vanilla baseline is a standard LLM router (all using Claude Sonnet 4.6) that selects
+a model from the candidate pool given only the zero-shot task prompt.+Dimensionadditionally
+reveals the task’s coding dimension information, and+Perf statsfurther exposes per-dimension
+performance statistics collected on a separate probing set (7,080 tasks). We compare these variants
+against DimensionBest, which selects the best model for each dimension with full priors.
+When given the same statistics that DimensionBest encodes, the LLM router exceeds it (47.74vs.
+47.50AvgPerf%) and improves over the Vanilla baseline by a relative15.3%(from41 .41to47 .74
+AvgPerf%). This suggests thata major source of the performance gap between LLM-as-a-Router
+and the oracle upper bound is information deficit, rather than a lack of reasoning capability.
+Two design insights follow from this diagnosis: (i) the router mustacquirenew execution-grounded
+information at each decision—that is, performance signals generated by actually running the selected
+model’s output in a sandbox rather than relying on static priors or model self-assessment (verification);
+and (ii) the router mustaccumulateit across the task stream so that future decisions can condition on
+past outcomes (memory). We formalize these insights through the C-A-F loop (§3.2) and instantiate
+it as ACRouter (§3.3).
+3.2. The C-A-F Loop
+Following the diagnosis in §3.1, we now formalizeAgent-as-a-Routerthat operates over the task
+stream and updates its internal state from each loop’s verified outcome. Concretely, the router has
+access to an indexed model poolM={𝑚 1,...,𝑚 𝑀} with 𝑀 models and processes a stream of𝑁 tasks
+T=(𝑡 1,...,𝑡 𝑁) one by one. After each routing decision, the verified outcome is fed back into the
+context for the next decision, yielding the Context-Action-Feedback (C-A-F) loop below.
+The C-A-F loop.At task 𝑡𝑖, the router observes Context𝑐𝑖, selects Action𝑎𝑖∈ [𝑀], and receives
+verification Feedback𝑓𝑖, which is memorized into𝑐𝑖+1:
+𝑐𝑖
+Decide
+−−−−−−→𝑎𝑖
+Execute
+−−−−−−−→𝑓𝑖
+Memorize
+−−−−−−−−→𝑐𝑖+1.(1)
+We refer to this as the C-A-F loop (Context, Action, Feedback), where each completed loop makes the
+next one more informed. The loop C→A→F→C repeats as the task stream advances.
+Per-loop components. Context𝑐𝑖 =(𝑝 𝑖, 𝑑𝑖,H <𝑖): 𝑝𝑖 is the input prompt of task𝑡𝑖, 𝑑𝑖 is optional
+metadata (description, difficulty, language), andH<𝑖 denotes the Memory state accumulated from
+all prior loops;Action 𝑎𝑖 ∈ [𝑀]: the index of the selected model𝑚𝑎𝑖 from the model poolM;
+Feedback 𝑓𝑖 =(ˆ𝑠𝑖,ˆ𝜅𝑖): ˆ𝑠𝑖∈[ 0, 1] is the verifier-observed score for the selected model𝑚𝑎𝑖, andˆ𝜅𝑖 is the
+corresponding monetary cost computed from token consumption and official prices. This constitutes
+the execution-grounded feedback that the Memory module accumulates.
+Contextual-bandit equivalence.The C-A-F formulation relates to a contextual multi-armed bandit
+problem [20, 22] with𝑐𝑖 as side information,𝑎𝑖 as the arm pull, and𝑓𝑖 as the feedback. Define the
+history at task𝑡𝑖 as ℎ𝑖 =(𝑐 1,𝑎 1, 𝑓1, ..., 𝑐𝑖−1,𝑎 𝑖−1, 𝑓𝑖−1, 𝑐𝑖); a routing policy induces a multinomial
+distribution over the model pool, i.e.,𝜋(·|ℎ 𝑖)∈Δ 𝑀−1, where Δ𝑀−1 denotes the probability simplex
+over𝑀 actions. Per-taskrewardcombinesperformanceandcostunderuser-specifiedweights 𝜖1,𝜖 2∈ℝ
+(𝜖1 >0to reward performance,𝜖 2 <0to penalize cost):
+𝑟𝑖(𝑎𝑖)=𝜖 1𝑠𝑖(𝑎𝑖)+𝜖 2𝜅𝑖(𝑎𝑖),(2)
+4
+
+===== PAGE 5 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+where 𝑠𝑖(𝑎𝑖) and 𝜅𝑖(𝑎𝑖) denote the ground-truth score and cost of the selected model on task𝑡𝑖,
+respectively. The policy’s mean reward over the stream is
+𝑉(𝜋)= 1
+𝑁
+𝑁∑︁
+𝑖=1
+𝑟𝑖(𝑎𝑖)=𝜖 1
+1
+𝑁
+𝑁∑︁
+𝑖=1
+𝑠𝑖(𝑎𝑖)+𝜖 2
+1
+𝑁
+𝑁∑︁
+𝑖=1
+𝜅𝑖(𝑎𝑖).(3)
+Per-task oracle and cumulative regret.To compare routers under identical conditions, we pre-
+construct a full outcome matrix𝑂∈ℝ 𝑁×𝑀×2 , where𝑂𝑖𝑗 =(𝑠 𝑖𝑗,𝜅𝑖𝑗) stores the ground-truth score and
+cost of model𝑚𝑗 on task𝑡𝑖. The induced reward matrix𝑅∈ℝ 𝑁×𝑀 is
+𝑅𝑖𝑗 =𝜖 1𝑠𝑖𝑗+𝜖 2𝜅𝑖𝑗 for𝑖∈[𝑁], 𝑗∈[𝑀].(4)
+The per-task oracle independently selects the reward-maximizing model for each task with full prior
+knowledge of𝑅:
+𝑎∗
+𝑖 =arg max
+𝑗∈[𝑀]
+𝑅𝑖𝑗, 𝑟 ∗
+𝑖 =max
+𝑗∈[𝑀]
+𝑅𝑖𝑗,∀𝑖=1,...,𝑁,(5)
+so the oracle’s overall mean reward is
+𝑉∗ = 1
+𝑁
+𝑁∑︁
+𝑖=1
+𝑟∗
+𝑖 = 1
+𝑁
+𝑁∑︁
+𝑖=1
+max
+𝑗∈[𝑀]
+𝑅𝑖𝑗.(6)
+Note that this per-task oracle is generally not equal to a single-best-arm policy that commits to one
+global optimal model. Given a policy𝜋, we reportcumulative regret:
+CumReg𝑁(𝜋)=
+𝑁∑︁
+𝑖=1
+𝛿𝑖 =𝑁
+
+𝑉∗−𝑉(𝜋) 
+,(7)
+where 𝛿𝑖 =𝑟∗
+𝑖−𝑟 𝑖(𝑎𝑖)≥ 0is the single-task regret. Cumulative regret measures the accumulated
+reward gap over the task stream, with lower values indicating routing closer to optimal.
+3.3. ACRouter Instantiation
+The diagnosis in §3.1 indicates three needs: (i) integrate available information at decision time, (ii)
+produce new execution-grounded information at each loop, and (iii) accumulate it across loops so
+that future decisions condition on past outcomes.ACRouter(Fig. 2) realizes these as Orchestrator,
+Verifier, and Memory, respectively, and evolves over the task stream with all three modules active.
+Orchestrator (integrating information).The Orchestrator makes the routing decision based on
+dynamic context: the DimensionBest prior, the top-10historical neighbors retrieved from Memory by
+kNN, and task metadata. The core policy is a cost-effective Qwen3.5-0.8B model fine-tuned on the
+CodeRouterBench probing set, combined with heuristic rules via weighted voting.
+Verifier (producing information).The Verifier evaluates model output and aggregates multiple
+signals into a unified performance score𝑢𝑖∈[0,1]for the current task𝑡 𝑖:
+𝑢𝑖 =
+∑︁
+𝑘∈K𝑑(𝑡𝑖)
+𝑤𝑑(𝑡𝑖),𝑘·ˆ𝑠𝑘(𝑎𝑖,𝑡𝑖),(8)
+where 𝑑(𝑡𝑖) is the type of task𝑡𝑖 (which determines whether it is executable),K𝑑(𝑡𝑖) is the set of
+verification tools (e.g., AST parsing and sandbox execution),𝑠𝑘(·)∈[ 0, 1] is the scalar score from
+the 𝑘-th tool, and𝑤𝑑(𝑡𝑖),𝑘 are type-specific weights where˝
+𝑘∈K𝑑(𝑡𝑖) 𝑤𝑑(𝑡𝑖),𝑘 = 1. The tool layer that
+supports Orchestrator and Verifier is shown in Fig. 2 and detailed in Appendix A.
+5
+
+===== PAGE 6 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Verifier
+Evaluate performance 
+in sandbox
+Memory
+Store the history 
+for retrieval
+Routing Action
+Performance 
+Feedback
+Updated 
+Context
+T ool-use:
+Evaluation, Sandbox
+T ool-use:
+Models, Routing Policy,
+Retrieval
+ Tool Layer
+(Optional) Prior 
+Knowledge
+Sandbox /
+Infra
+Retrieval
+Support
+Evaluation
+T ools
+Routing
+Policy
+Candidate
+Models
+C-A-F Loop
+(Context->Action->
+Feedback->Context)
+Select model based 
+on composed context
+Orchestrator
+C → A
+A → FF → C
+Buggy code 
+The provided class shows error message … Please fix it. 
+Example task
+Runtime error
+Routing (ACRouter)
+Policy-as-Voter picks:
+api_llm (Qwen3.5-0.8B)    → MiniMax-M2 .7
+logre g                                       → GL M-5
+mem ory_KN N                       → Kimi-K2.5
+dim_best                                 → Kimi-K2.5
+Voter weighted score:
+Kimi-K2.5
+MiniMax-M2 .7
+GL M-5
+1.47
+0.64
+0.43
+Argmax   →   Kimi-K2.5  
+Fix bugs.
+Rerun code.
+Fixed code Return success
+Figure 2| Architecture of our proposed ACRouter.It instantiates the C-A-F formulation through a
+continuous loop: an Orchestrator ensembles multiple signals to make routing decisions, a Verifier
+evaluates execution in sandbox, and a Memory module stores the feedback to improve future routing.
+Memory (accumulating information).Memory is an online vector store keyed by task embeddings
+(voyage-code-3 / BGE-large) whose value logs the chosen model, performance, cost, and verification
+traces. During retrieval, it uses cosine kNN to fetch the top-10neighbors, which are then fed to the
+Orchestrator. The store is FIFO-bounded at𝐸 entries (𝐸 is set to 20K in our implementation) and is
+committed in place after each attempt. Unlike static dimension-hashed routing, this embedding-based
+store enables fine-grained,context-awaredecision making and makes both past successes and recent
+failures of any candidate on similar tasks visible to the Orchestrator.
+3.4. Decomposed Routing Policies
+The C-A-F loop provides a unified perspective to inspect existing routing strategies. By respectively
+restricting or removing specific components (Orchestrator, Verifier, Memory) from the full framework,
+we organize several baseline routing policies, which naturally set up the ablation study in §5.
+Single-Model (no Orchestrator, no Memory, no Verifier).Always-𝑚 routes every task to a fixed
+model𝑚regardless of context. Included as a reference performance floor.
+Static: Heuristic (frozen Memory; no Orchestrator policy, no Verifier).Hardcoded rules that select
+models from a frozen prior Memory built from probing-set statistics.DimensionBestis a coarse-grained
+oracle that routes each task to the dimensionally best model using dimension-level prior knowledge.
+kNN Retrievalselects a model based on the task-model pair retrieved from nearest-neighbor tasks in
+the frozen probing-set memory.
+Static: Trained Policy (trained Orchestrator; no Memory, no Verifier).A learned classifier that
+maps task features directly to a model choice. We evaluate lightweight discriminative routers—LogReg
+(TF-IDF features), TF-IDF+MLP, and RouteLLM [26] (Matrix Factorization and BERT versions)—all
+trained on the probing set. We additionally finetune Qwen3.5 [31] variants with Low-Rank Adaptation
+(LoRA) [16] on the same probing set; the scaling sweep is provided in Appendix C.2, and Qwen3.5-
+0.8B is reported in the main table for fair comparison.
+Dynamic: Online Bandit (parametric Memory; argmax Orchestrator; reward-only Verifier).
+6
+
+===== PAGE 7 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Heterogeneous Coding 
+Benchmarks
+Unified Task Set  𝓣 = {𝒕𝟏, 𝒕𝟐, … , 𝒕𝑵}
+～10K Tasks
+Phase 1: Data Collection Phase 2: Model Evaluation Phase 3: Routing Evaluation
+Frontier Model Pool Sandboxed Proxy Metrics & 
+LLM-as-a-Judge
+Evaluating Decomposed Routing Strategies
+Single Model Random Routing Heuristic
+Online Bandit ACRouterLearned Policy
+Model A
+Model B
+Model C
+Model D
+Prompts
+Cost-aware 
+Analysis
+Code 
+Generation
+Algorithm 
+Design
+Bug Fixing
+Code Completion
+Refactoring
+Data Science Multi-language Programming
+Code Understanding
+Test Generation
+Agentic Programming
+Evaluate 
+& Score
+Observation Matrix
+Models
+Task Performance Cost
+Standardization &
+Dataset Creation
+Pareto 
+Frontier
+Metrics:
+AvgPerf 𝝅 = 𝟏
+𝑵 ෍
+𝒊=𝟏
+𝑵
+perfi 𝒂𝒊
+Cost-related (Reference)
+Total Token Overhead
+Total Monetary Cost
+..
+Cum RegN 𝝅 = ෍
+𝒊=𝟏
+𝑵
+𝜹𝒊 = 𝑵 𝑽⋆ − 𝑽 𝝅
+Perf/$ 𝝅 = AvgPerf 𝝅
+$Total 𝝅
+Oij = (s𝒊𝒋, 𝛋𝒊𝒋)
+Cumulative 
+Regret 
+Figure 3| CodeRouterBench construction and evaluation pipeline. Phase 1:15 benchmark
+sources are unified into∼ 10K tasks across 10 coding dimensions.Phase 2:8 frontier LLMs generate
+observation matrix, scored via sandboxed execution and LLM-as-Judge.Phase 3:Several routing
+methods are evaluated on performance and cost metrics with Pareto analysis.
+Classical contextual bandits cast routing as a per-task arm-pull, with reward𝑟𝑖(𝑎𝑖)=𝜖 1 s𝑖(𝑎𝑖)+
+𝜖2𝜅𝑖(𝑎𝑖) (𝜖1=1,𝜖 2=−0.1based on only ground-truth without traces). Per-arm parametric posteriors
+replace ACRouter’s cosine-kNN Memory, and the Orchestrator collapses to a singlearg max rule.
+We evaluate two disjoint per-arm linear contextual policies—LinUCB[22] (𝛼=𝜆=1) andLinTS[ 2]
+(𝑣=0.5,𝜆= 1)—each fed either a categorical (dimension/difficulty/language one-hot) or a64-dim
+Johnson–Lindenstrauss projection of the task embedding as context. Bandits are warm-started on the
+probing set in a deterministic shuffle (seed 42) and updated online during testing.
+4. CodeRouterBench
+Evaluating cumulative regret on streaming routing requires a controlled environment with pre-
+collectedper-taskper-modeloutcomes; existingroutingbenchmarksonlymeasuresingle-shotaccuracy
+and cannot support this evaluation. We therefore introduceCodeRouterBench, a unified testbed
+consisting of∼10K coding tasks across 10 dimensions (see Table 5). CodeRouterBench is designed to
+be extensible with custom dimensions under the same C-A-F formulation.
+4.1. Benchmark Construction
+Table 2|CodeRouterBench statistics.
+Statistic Value
+Coding dimensions 10
+Source benchmarks 15+
+Probing Set Tasks 7,080
+In-Distribution Test Tasks 2,919
+OOD Test Tasks 176
+As shown in Fig. 3, all tasks are repurposed from widely-
+used, high-quality benchmarks [6–8, 11, 14, 17–19, 24,
+36, 45, 47], unifying the evaluation protocol and environ-
+ment into one framework. Seven dimensions use execution-
+based scoring (pass@1 in sandboxed environments) for
+evaluations, while three dimensions use proxy metrics sup-
+plemented by LLM-as-Judge. We divide 10,111 tasks into
+probing and two test sets (see Table 2).
+Real-World Test: Agentic ProgrammingThe agentic programming dimension is set as the first OOD
+validation of the C-A-F formulation, verifying whether routers developed on the probing set can
+generalize to fundamentally new task types. These tasks require multi-step planning, file navigation,
+and iterative debugging, which are qualitatively different from the 9 single-turn coding dimensions.
+7
+
+===== PAGE 8 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+AlgorithmBug Fixing
+Code CompletionCode GenerationCode RefactoringCode Understanding
+Data ScienceMulti-LanguageT est Generation
+Opus 4.6
+Sonnet 4.6
+GPT-5.4
+Kimi-K2.5
+MiniMax-M2.7
+GLM-5
+Qwen3.5-Plus
+Qwen3-Max
+(a) Model Performance Across Coding Dimensions
+25
+27
+26
+26
+7
+48
+40
+32
+72
+70
+57
+65
+52
+72
+66
+65
+86
+75
+63
+59
+57
+54
+53
+59
+31
+28
+28
+27
+24
+29
+28
+26
+61
+61
+64
+38
+60
+52
+30
+34
+19
+18
+15
+20
+19
+17
+15
+12
+14
+6
+6
+18
+14
+8
+11
+11
+41
+41
+34
+37
+33
+36
+35
+35
+40
+40
+76
+43
+48
+59
+71
+83
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Average Performance per Dimension
+0 20 40 60 80 100
+Opus 4.6
+Sonnet 4.6
+GPT-5.4
+Kimi-K2.5
+MiniMax-M2.7
+GLM-5
+Qwen3.5-Plus
+Qwen3-Max
+T otal USD across 7,080 tasks  (token usage × pricing)
+(b) Estimated Total Monetary Cost
+$87.61
+$63.54
+$42.33
+$7.25
+$14.53
+$43.07
+$43.68
+$16.37
+0 1 2 3 4 5 6
+Opus 4.6
+Sonnet 4.6
+GPT-5.4
+Kimi-K2.5
+MiniMax-M2.7
+GLM-5
+Qwen3.5-Plus
+Qwen3-Max
+Average Performance % per USD  (AvgPerf% / T otal Cost)
+(c) Performance Cost Ratio
+0.49
+0.64
+0.97
+5.09
+2.39
+0.97
+0.89
+2.42
+Figure 4| Performance, cost, and efficiency analysis.(a) Performance heatmap of 8 models across
+9 coding dimensions in the probing set, demonstrating that the optimal model varies significantly by
+task domain. (b) Total USD cost estimation over 7,080 probing set tasks. (c) Performance-to-cost
+ratio (AvgPerf% / Total Cost). Claude Opus 4.6 has roughly12×the total cost of Kimi-K2.5.
+The initial version involves 176 tasks extracted from SWE-bench Verified [27], LongCLI-Bench [13],
+FeatureBench[46], andSWE-CI[9], byfilteringtaskswithhighsimilaritywithprobingset. Evaluation
+uses Docker-based sandbox execution. Specifically, we use mini-swe-agent1 with the SWE-Bench
+Docker harness [18]. Construction details are provided in the Appendix B.2.
+4.2. Model Pool
+We evaluate eight frontier LLMs: Claude Opus 4.6 and Claude Sonnet 4.6 [4, 5], GPT-5.4 [29],
+Qwen3-Max [40] and Qwen3.5-Plus [31], GLM-5 [43], Kimi-K2.5 [35], and MiniMax-M2.7 [25].
+The observation matrix of per-dimension performance is shown in Fig. 4.
+We find thatno single model dominates across all coding dimensions.Claude Opus 4.6 achieves
+the highest average (42.9%) but is outperformed on algorithm design by GLM-5 (47.2% vs. 25.4%,
+an 86% relative improvement), on test generation by Qwen3-Max (82.7% vs. 39.2%, a 111% relative
+improvement), and on data science by Kimi-K2.5 (18.4% vs. 14.2%, a 30% improvement). 5 distinct
+models serve as the dimension-best choice across the 9 dimensions and the costs of stronger models
+tend to be higher, confirming the value of model routing for both performance and cost efficiency.
+5. Empirical Validation
+5.1. Metrics
+AvgPerf: average performance score across all tasks.CumReg: the terminal cumulative regret calcu-
+lated by Eq. 7 (𝜖1,𝜖 2 = 1,− 0.1). TotTok: total input and output token consumption (router+model).
+$Total: calculated USD based on TotTok and official pricing (Appendix B.3). For local GPU-served
+routers (Finetuned LLMs, etc.), tokens are priced at $0.054/M (see Appendix B.3.2 for derivation).
+Perf/$: performance-to-cost ratio (AvgPerf%/Cost). Above metrics are computed across all tasks.
+1https://github.com/SWE-agent/mini-swe-agent
+8
+
+===== PAGE 9 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Table 3| Routing results, grouped by component-configuration taxonomy.Left: in-distribution
+test across 9 single-turn coding dimensions.Right: real-world OOD test on agentic programming.
+CumReg: cumulative regret across all tasks.Perf/$: AvgPerf% per USD. DimensionBest is not
+applicable to OOD test as it requires predefined dimension-to-model mapping, which is unavailable
+for unseen agentic-programming tasks. The full breakdown is in the appendix.
+In-Distribution (𝑛=2,919) OOD Test (n=176)
+Router AvgPerf%↑CumReg↓Perf/$↑AvgPerf%↑CumReg↓Perf/$↑
+Oracle 57.00 0 8.20 75.89 0 2.32
+Agent-as-a-Router
+ACRouter (ours)49.98 205.53.7962.50 17.01.18
+Dynamic: Online Bandit
+LinTS 46.48 307.4 4.49 46.43 35.9 0.75
+LinUCB 46.84 296.9 4.38 49.82 31.1 0.96
+Static: Heuristic
+DimensionBest 47.50 277.4 3.69 — — —
+kNN Retrieval 47.18 286.7 6.07 14.29 66.71.45
+Static: Trained Policy
+LogReg 47.26 284.4 6.27 19.64 61.8 1.17
+RouteLLM-BERT 47.22 285.5 6.22 21.43 59.4 1.30
+TF-IDF+MLP 46.97 292.8 6.11 13.39 67.9 1.17
+Qwen3.5-0.8B-Finetuned 46.41 309.1 6.82 55.36 27.2 0.74
+RouteLLM-MF 46.16 316.5 6.19 8.93 72.7 0.94
+Single-Model Baselines
+Always-Opus 4.6 43.83 387.1 1.29 57.14 26.7 0.64
+Always-Kimi-K2.5 36.66 593.312.6218.75 62.3 1.22
+Always-Qwen3.5-Plus 37.16 580.2 2.05 2.68 80.1 0.19
+Random 38.75 533.6 2.48 31.25 50.4 0.85
+5.2. Main Results and Observations
+ACRouter achieves the best AvgPerf among the routers in Table 3 on both ID and OOD tasks by
+dynamically accumulating context, with lower cost than always choosing the strongest single
+model Opus-4.6. Table 3 reports the routing comparison on both the ID test tasks (left,𝑛=2,919) and
+the OOD agentic programming tasks (right). On the ID test, ACRouter reaches the highest AvgPerf
+(49.98%) and the lowest cumulative regret (205.5), beating DimensionBest with a full dimension-level
+prior by 2.48% AvgPerf. On the OOD test, it reaches 62.50% AvgPerf, ahead of other routers in
+Table 3, including the strongest single model strategy Always-Opus (57.14%) and the finetuned
+Qwen3.5-0.8B (55.36%). An updated standalone GPT-5.4 backend run resolves 75.00% of the same
+OOD split (Appendix D.7), showing that this OOD setting also exposes strong backend-level gains
+beyond the original single-model baselines. ACRouter still achieves higher cost-efficiency than always
+choosing Opus: ACRouter’s Perf/$ is 3.79 on ID and 1.18 on OOD, both exceeding Always-Opus (1.29
+ID, 0.64 OOD).
+Static learners reach fair AvgPerf on the in-distribution test within the same distribution but
+generalizepoorlyonOODtasks(lowerAvgPerfthanAlways-Opus4.6).Table3alsoevaluateseach
+router on OOD tasks. These OOD agentic programming tasks are more representative of real-world
+settings, sharing minimal overlap with the 9 single-turn coding dimensions used to calibrate the
+9
+
+===== PAGE 10 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+0 500 1,000 1,500 2,000 2,500 3,000
+Tasks processed
+0
+150
+300
+450
+600
+Cumulative regret
+Simulation Test (n=2,919, 9 dimensions)
+224.0
+284.4
+286.7
+313.4
+384.5
+560.9
+0 25 50 75 100 125 150 175
+Tasks processed
+0
+15
+30
+45
+60
+75
+Real-World Test (n = 176, OOD)
+15.0
+21.0
+50.0
+63.0
+63.0
+69.0
+ACRouter (ours) Online Bandit (LinUCB) kNN-based retrieval LogReg Single-model best (Opus) Random
+Figure 5| Cumulative regret across task streams.Static routers grow faster on the in-distribution
+test (Left) and collapse on OOD real-world tasks (Right), while ACRouter shows lower regret as its
+Memory module accumulates verified experience.
+10−13 × 10−24 × 10−2 6 × 10−2 2 × 10−1 3 × 10−14 × 10−1
+1 / $Total (USD−1)  ⟶   more cost-efficient
+35
+40
+45
+50
+55
+60
+65AvgPerf (%)  ⟶  more capable
+(a) Simulation Test (n=2,919, 9 dimensions)
+Oracle
+ACRouter (ours)
+LinUCB kNN
+LogReg
+Qwen-FT 0.8B
+Always-Opus
+Always-Kimi
+10−2 10−1
+1 / $Total (USD−1)  ⟶   more cost-efficient
+20
+30
+40
+50
+60
+70
+80AvgPerf (%)  ⟶  more capable
+(b) Real-World Test (n=176, OOD)
+Oracle
+ACRouter (ours)
+LinUCB
+kNN
+LogReg
+Qwen-FT 0.8B
+Always-Opus
+Always-Kimi
+Oracle (upper bound) Agent-as-a-Router (ours) Dynamic: Online Bandit Static: Heuristic Static: Trained Policy Single-Model baseline Pareto frontier (non-Oracle)
+Figure 6| Cost–performance Pareto frontier analysis.The dashed line traces the optimal trade-off
+for deployable routers. ACRouter extends the frontier upward in both ID and OOD with the highest
+AvgPerf and less cost than always choosing a premium model like Always-Opus.
+routers. The lightweight classifiers (LogReg, TF-IDF+MLP, RouteLLM-MF, RouteLLM-BERT) remain
+within 1.3% AvgPerf gap compared with DimensionBest on the in-distribution test, but their OOD
+AvgPerf drops sharply to 8.93%–21.43%, even lower than Random (31.25%). This suggests that
+these routers noticeably overfit to the distribution of the training set, making them hard to generalize
+under a substantial distribution shift.
+We note that contextual bandits (LinUCB, LinTS) keep updating online and also survive better,
+reaching 49.82% / 46.43% OOD, but they still lag behind ACRouter on both AvgPerf and CumReg
+because their per-arm linear models lack the context-aware reasoning that Orchestrator and Memory
+provide. Fig. 5 confirms the ranking: static methods tend to accumulate higher regret (284–317 for
+lightweight classifiers), bandits trail slightly (297–307), and only ACRouter (205.5) shows lower
+regret as Memory fills the information gap during deployment. Fig. 6 also traces the Pareto frontier
+across all routers. ACRouter pays a higher cost (Perf/$ 3.79) for Memory and Verifier but sits above
+the router frontier on AvgPerf (49.98 ID, 62.50 OOD), while the updated standalone GPT-5.4 OOD
+result is reported separately in Appendix D.7.
+10
+
+===== PAGE 11 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+5.3. Discussion
+Takeaways.We summarize the four findings of the paper: (1) the main performance bottleneck of
+an LLM router isinformation deficitrather than reasoning failure; (2) no single model dominates all
+coding dimensions; (3) full Agent-as-a-Router achieves the best performance on both in-distribution
+and OOD tasks, and still costs less than always choosing Opus-4.6; (4) static learners achieve fair
+performance on in-distribution tasks but fail significantly on OOD tasks, e.g., lightweight classifiers
+like RouteLLM-BERT achieve fair Perf/$ on in-distribution tasks but barely handle OOD tasks.
+Limitations.A key limitation is that provider-side cache hit rates are not observable, so our monetary
+cost estimates are based on public token prices and measured token usage.Therefore, monetary cost
+serves only as a secondary reference metric for relative comparison rather than acting as a primary
+indicator.The agentic programming evaluation uses a 40-step limit instead of the standard 250-step
+configuration to keep the budget tractable (the relative router comparison is unaffected). Our C-A-F
+instantiation uses an LLM policy with a memory-kNN ensemble; alternative instantiations (e.g.,
+advanced parameter-level memory techniques) remain to be explored.
+6. Conclusion
+In this work, we proposeAgent-as-a-Router, a routing framework that acquires execution-grounded
+information through a Context-Action-Feedback loop, naturally formalizable as a contextual bandit
+with cumulative regret as its streaming metric. We instantiate the framework asACRouter, composed
+of an Orchestrator, a Verifier, and a Memory module, and evaluate it onCodeRouterBench, an
+evaluation environment built specifically to enable regret-based router comparison on streaming
+tasks. ACRouter attains the lowest cumulative regret on the in-distribution stream tasks and is the
+only router that maintains strong performance under the OOD agentic-programming setting. More
+broadly, actively closing the information gap through execution-grounded feedback emerges as a
+general principle for building agentic systems that must route among heterogeneous tools or models.
+References
+[1] Pranjal Aggarwal, Aman Madaan, Ankit Anand, Srividya Pranavi Potharaju, Swaroop Mishra,
+Pei Zhou, Aditya Gupta, Dheeraj Rajagopal, Karthik Kappaganthu, Yiming Yang, et al. Automix:
+Automatically mixing language models.Advances in Neural Information Processing Systems, 37:
+131000–131034, 2024.
+[2] Shipra Agrawal and Navin Goyal. Thompson sampling for contextual bandits with linear payoffs.
+InInternational Conference on Machine Learning, pages 127–135, 2013.
+[3] Anthropic. Claude code: An agentic coding tool.https://docs.anthropic.com/en/docs/
+agents-and-tools/claude-code/overview, 2025.
+[4] Anthropic. Introducing claude opus 4.6. https://www.anthropic.com/news/
+claude-opus-4-6, 2026.
+[5] Anthropic. Introducing claude sonnet 4.6. https://www.anthropic.com/news/
+claude-sonnet-4-6, 2026.
+[6] Jacob Austin, Augustus Odena, Maxwell Nye, Maarten Bosma, Henryk Michalewski, David
+Dohan, Ellen Jiang, Carrie Cai, Michael Terry, Quoc Le, et al. Program synthesis with large
+language models.arXiv preprint arXiv:2108.07732, 2021.
+11
+
+===== PAGE 12 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+[7] Federico Cassano, Luisa Li, Akul Sethi, Noah Shinn, Abby Brennan-Jones, Jacob Ginesin, Edward
+Berman, George Chakhnashvili, Anton Lozhkov, Carolyn Jane Anderson, et al. Can it edit?
+evaluating the ability of large language models to follow code editing instructions. InConference
+on Language Modeling.
+[8] Federico Cassano, John Gouwar, Daniel Nguyen, Sydney Nguyen, Luna Phipps-Costin, Donald
+Pinckney, Ming-Ho Yee, Yangtian Zi, Carolyn Jane Anderson, Molly Q Feldman, et al. Multipl-e:
+A scalable and polyglot approach to benchmarking neural code generation.IEEE Transactions
+on Software Engineering, 49(7):3675–3691, 2023.
+[9] Jialong Chen, Xander Xu, Hu Wei, Chuan Chen, and Bing Zhao. Swe-ci: Evaluating agent capa-
+bilities in maintaining codebases via continuous integration.arXiv preprint arXiv:2603.03823,
+2026.
+[10] Lingjiao Chen, Matei Zaharia, and James Zou. Frugalgpt: How to use large language models
+while reducing cost and improving performance.Transactions on Machine Learning Research.
+[11] Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto, Jared
+Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et al. Evaluating large
+language models trained on code.arXiv preprint arXiv:2107.03374, 2021.
+[12] DujianDing, AnkurMallick, ChiWang, RobertSim, SubhabrataMukherjee, VictorRuhle, LaksVS
+Lakshmanan, and Ahmed Hassan Awadallah. Hybrid llm: Cost-efficient and quality-aware query
+routing.arXiv preprint arXiv:2404.14618, 2024.
+[13] Yukang Feng, Jianwen Sun, Zelai Yang, Jiaxin Ai, Chuanhao Li, Zizhen Li, Fanrui Zhang, Kang
+He, Rui Ma, Jifan Lin, et al. Longcli-bench: A preliminary benchmark and study for long-horizon
+agentic programming in command-line interfaces.arXiv preprint arXiv:2602.14337, 2026.
+[14] Alex Gu, Baptiste Rozière, Hugh Leather, Armando Solar-Lezama, Gabriel Synnaeve, and Sida I
+Wang. Cruxeval: a benchmark for code reasoning, understanding and execution. InProceedings
+of the 41st International Conference on Machine Learning, pages 16568–16621, 2024.
+[15] Sirui Hong, Mingchen Zhuge, Jonathan Chen, Xiawu Zheng, Yuheng Cheng, Jinlin Wang, Ceyao
+Zhang, Zili Wang, Steven Ka Shing Yau, Zijuan Lin, et al. MetaGPT: Meta programming for
+a multi-agent collaborative framework. InThe twelfth international conference on learning
+representations, 2023.
+[16] Edward J Hu, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu
+Chen, et al. LoRA: Low-rank adaptation of large language models. InInternational Conference
+on Learning Representations, 2022.
+[17] Naman Jain, King Han, Alex Gu, Wen-Ding Li, Fanjia Yan, Tianjun Zhang, Sida Wang, Armando
+Solar-Lezama, Koushik Sen, and Ion Stoica. LiveCodeBench: Holistic and contamination free
+evaluation of large language models for code. InThe Thirteenth International Conference on
+Learning Representations.
+[18] Carlos E Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir Press, and Karthik
+Narasimhan. SWE-Bench: Can language models resolve real-world GitHub issues? InInterna-
+tional Conference on Learning Representations, 2023.
+[19] Yuhang Lai, Chengxi Li, Yiming Wang, Tianyi Zhang, Ruiqi Zhong, Luke Zettlemoyer, Wen-tau
+Yih, Daniel Fried, Sida Wang, and Tao Yu. DS-1000: A natural and reliable benchmark for data
+science code generation. InInternational Conference on Machine Learning, pages 18319–18345,
+2023.
+12
+
+===== PAGE 13 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+[20] Tor Lattimore and Csaba Szepesvári.Bandit Algorithms. Cambridge University Press, 2020.
+[21] Hao Li, Yiqun Zhang, Zhaoyan Guo, Chenxu Wang, Shengji Tang, Qiaosheng Zhang, Yang
+Chen, Biqing Qi, Peng Ye, Lei Bai, et al. LLMRouterBench: A massive benchmark and unified
+framework for llm routing.arXiv preprint arXiv:2601.07206, 2026.
+[22] Lihong Li, Wei Chu, John Langford, and Robert E Schapire. A contextual-bandit approach to
+personalized news article recommendation. InProceedings of the 19th International Conference
+on World Wide Web, pages 661–670, 2010.
+[23] Xunzhuo Liu, Bowei He, Xue Liu, Andy Luo, Haichen Zhang, and Huamin Chen. Adaptive
+vision-language model routing for computer use agents.arXiv preprint arXiv:2603.12823, 2026.
+[24] Shuai Lu, Daya Guo, Shuo Ren, Junjie Huang, Alexey Svyatkovskiy, Ambrosio Blanco, Colin
+Clement, Dawn Drain, Daxin Jiang, Duyu Tang, et al. CodeXGLUE: A machine learning bench-
+mark dataset for code understanding and generation. InThirty-fifth Conference on Neural
+Information Processing Systems Datasets and Benchmarks Track (Round 1), 2021.
+[25] MiniMax. Minimax m2.7.https://www.minimax.io/models/text/m27, 2026.
+[26] Isaac Ong, Amjad Almahairi, Vincent Wu, Wei-Lin Chiang, Tianhao Wu, Joseph E Gonzalez,
+M Waleed Kadous, and Ion Stoica. RouteLLM: Learning to route LLMs from preference data. In
+The Thirteenth International Conference on Learning Representations.
+[27] OpenAI. Introducing swe-bench verified. https://openai.com/index/
+introducing-swe-bench-verified/, 2024.
+[28] OpenAI. Codex cli: An agentic coding assistant. https://github.com/openai/codex,
+2025.
+[29] OpenAI. Introducing gpt-5.4. https://openai.com/index/introducing-gpt-5-4,
+2026.
+[30] Chen Qian, Wei Liu, Hongzhang Liu, Nuo Chen, Yufan Dang, Jiahao Li, Cheng Yang, Weize
+Chen, Yusheng Su, Xin Cong, et al. Chatdev: Communicative agents for software development.
+InProceedings of the 62nd annual meeting of the association for computational linguistics (volume
+1: Long papers), pages 15174–15186, 2024.
+[31] Qwen Team. Qwen3.5: Towards native multimodal agents.https://qwen.ai/blog?id=
+qwen3.5, 2026.
+[32] Cursor Research, Aaron Chan, Ahmed Shalaby, Alexander Wettig, Aman Sanger, Andrew Zhai,
+Anurag Ajay, Ashvin Nair, Charlie Snell, Chen Lu, et al. Composer 2 technical report.arXiv
+preprint arXiv:2603.24477, 2026.
+[33] Marija Šakota, Maxime Peyrard, and Robert West. Fly-swat or cannon? cost-effective language
+model choice via meta-modeling. InProceedings of the 17th ACM International Conference on
+Web Search and Data Mining, pages 606–615, 2024.
+[34] Tal Shnitzer, Anthony Ou, Mirian Silva, Kate Soule, Yuekai Sun, Justin Solomon, Neil Thompson,
+and Mikhail Yurochkin. Large language model routing with benchmark datasets. InConference
+on Language Modeling, 2024.
+[35] Kimi Team, Tongtong Bai, Yifan Bai, Yiping Bao, SH Cai, Yuan Cao, Y Charles, HS Che,
+Cheng Chen, Guanduo Chen, et al. Kimi k2. 5: Visual agentic intelligence.arXiv preprint
+arXiv:2602.02276, 2026.
+13
+
+===== PAGE 14 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+[36] Michele Tufano, Cody Watson, Gabriele Bavota, Massimiliano Di Penta, Martin White, and
+Denys Poshyvanyk. An empirical study on learning bug-fixing patches in the wild via neural
+machine translation.ACM Transactions on Software Engineering and Methodology, 28(4):1–29,
+2019.
+[37] Tanay Varshney, Annie Surla, Michelle Xu, Gomathy Venkata Krishnan, Maximilian Jeblick,
+David Austin, Neal Vaidya, and Davide Onofrio. Llm router: Rethinking routing with prefill
+activations.arXiv e-prints, pages arXiv–2603, 2026.
+[38] Xingyao Wang, Boxuan Li, Yufan Song, Frank F Xu, Xiangru Tang, Mingchen Zhuge, Jiayi
+Pan, Yueqi Song, Bowen Li, Jaskirat Singh, et al. Openhands: An open platform for ai soft-
+ware developers as generalist agents. InThe Thirteenth International Conference on Learning
+Representations, 2025.
+[39] Chunqiu Steven Xia, Yinlin Deng, Soren Dunn, and Lingming Zhang. Agentless: Demystifying
+LLM-based software engineering agents.arXiv preprint arXiv:2407.01489, 2024.
+[40] An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang
+Gao, ChengenHuang, ChenxuLv, etal. Qwen3technicalreport.arXivpreprintarXiv:2505.09388,
+2025.
+[41] John Yang, Carlos E Jimenez, Alexander Wettig, Kilian Lieret, Shunyu Yao, Karthik Narasimhan,
+and Ofir Press. Swe-agent: Agent-computer interfaces enable automated software engineering.
+Advances in Neural Information Processing Systems, 37:50528–50652, 2024.
+[42] Yanwei Yue, Guibin Zhang, Boyang Liu, Guancheng Wan, Kun Wang, Dawei Cheng, and Yiyan
+Qi. Masrouter: Learning to route llms for multi-agent systems. InProceedings of the 63rd
+Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages
+15549–15572, 2025.
+[43] Aohan Zeng, Xin Lv, Zhenyu Hou, Zhengxiao Du, Qinkai Zheng, Bin Chen, Da Yin, Chendi Ge,
+Chenghua Huang, Chengxing Xie, et al. Glm-5: from vibe coding to agentic engineering.arXiv
+preprint arXiv:2602.15763, 2026.
+[44] Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody H Yu, Shiyi Cao,
+Christos Kozyrakis, Ion Stoica, Joseph E Gonzalez, et al. Sglang: Efficient execution of structured
+language model programs.Advances in neural information processing systems, 37:62557–62583,
+2024.
+[45] Qinkai Zheng, Xiao Xia, Xu Zou, Yuxiao Dong, Shan Wang, Yufei Xue, Lei Shen, Zihan Wang,
+Andi Wang, Yang Li, et al. Codegeex: A pre-trained model for code generation with multilingual
+benchmarking on humaneval-x. InProceedings of the 29th ACM SIGKDD conference on knowledge
+discovery and data mining, pages 5673–5684, 2023.
+[46] Qixing Zhou, Jiacheng Zhang, Haiyang Wang, Rui Hao, Jiahe Wang, Minghao Han, Yuxue
+Yang, Shuzhe Wu, Feiyang Pan, Lue Fan, et al. Featurebench: Benchmarking agentic coding for
+complex feature development.arXiv preprint arXiv:2602.10975, 2026.
+[47] Terry Yue Zhuo, Minh Chien Vu, Jenny Chim, Han Hu, Wenhao Yu, Ratnadira Widyasari,
+Imam Nur Bani Yusuf, Haolan Zhan, Junda He, Indraneil Paul, et al. BigCodeBench: Bench-
+marking code generation with diverse function calls and complex instructions.arXiv preprint
+arXiv:2406.15877, 2024.
+14
+
+===== PAGE 15 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+A. ACRouter System Architecture
+ACRouter(§ 3.3) is composed of a two-layer modular architecture: adecision layerof three core
+modules that realize the C-A-F loop, and atool layerof shared infrastructure that the core modules
+invoke (see Fig. 2). This appendix details the architecture (§A.1), the reward-weight conventions
+used throughout the paper (§A.2), and the C-A-F configuration taxonomy that partitions all reported
+routing methods (§A.3).
+A.1. Core Modules and Tool Layer
+Core modules (decision layer).
+• Orchestrator: the central coordinator that selects which candidate model to invoke for the
+current task𝑡𝑖. It consults Memory state, ingests the DimensionBest prior, the top-10historical
+neighbors retrieved from Memory by cosine kNN, and the task metadata, and uses a fine-tuned
+Qwen3.5-0.8B policy combined with heuristic rules via weighted voting to make the final
+dispatch decision.
+• Verifier: a sandbox-native confidence estimator that examines each candidate’s output and
+aggregates multiple signal tiers (AST parse, sandbox execution, prompt-embedded tests, and
+rule-based signals) into a unified score𝑢𝑖∈[ 0, 1] via Eq. 8. The Verifier produces the verdict
+that is written into Memory.
+• Memory: an online vector store keyed by task embeddings (voyage-code-3 / BGE-large) whose
+value logs the chosen model, observed performance, monetary cost, and the Verifier’s verification
+trace. Retrieval uses cosine kNN over embeddings (similarity threshold0.5, 𝑘=10). The store is
+FIFO-bounded at 20K entries and is committed in place after each loop. Per-task granularity
+makes both past successes and recent failures of any candidate on similar tasks visible to the
+Orchestrator at the next decision.
+Tool layer (execution infrastructure).Shared resources invoked by the core modules; they are not
+independently comparable strategies but are essential for instantiating any router under the C-A-F
+loop.
+• Candidate Models(the model pool): the 8 LLMs available for routing (Claude Opus 4.6,
+Sonnet 4.6, GPT-5.4, Qwen3-Max, Qwen3.5-Plus, Kimi-K2.5, GLM-5, MiniMax-M2.7). The
+Orchestrator selects from these.
+• Routing Tools(serve the Orchestrator): dimension-best lookup tables, trained classifiers, and
+LLM-based selectors. These are the concrete mechanisms the Orchestrator uses to make its
+selection.
+• Evaluation Tools(serve the Verifier): AST parser, sandbox runner, self-consistency checker (k-
+sample output agreement), LLM-as-Judge, and a prompt-test extractor that identifies in-prompt
+test cases. All produce quality signalswithoutground-truth oracle tests; the Verifier aggregates
+them into a confidence score.
+• Embedding Encoder(serves Memory): maps a task’s prompt text into a dense vector for kNN
+retrieval. Implementations can range from a code-specialized API (e.g., voyage-code-3) to a
+local open-source model (e.g., BGE-large).
+• Infrastructure: executionsandbox(Docker,timeouts),contextparser(extractsdimension/difficulty/language
+from raw input), and an online updater for Memory statistics.
+15
+
+===== PAGE 16 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+A.2. Per-Loop Reward Weights and Reported Regret
+Eq. 2 defines the per-task cost-aware reward𝑟𝑖(𝑎𝑖)=𝜖 1𝑠𝑖(𝑎𝑖)+𝜖 2𝜅𝑖(𝑎𝑖) with 𝜖1 > 0and 𝜖2 < 0.
+Throughout the paper, AvgPerf reports the raw mean score, while CumReg uses the canonical
+evaluation reward(𝜖 1,𝜖 2)=(1,−0.1):
+𝑟𝑖(𝑎𝑖)=𝑠 𝑖(𝑎𝑖)−0.1𝜅 𝑖(𝑎𝑖),
+where𝜅𝑖 is measured in USD under Table 6. On the in-distribution single-turn split this cost term is
+mostly a soft tie-breaker; on OOD agentic tasks, multi-step backend calls make the same cost term
+materially affect regret. $Total and Perf/$ are still reported as separate columns to expose absolute
+deployment cost.
+Per-task (micro) oracle.The reference oracle in Eq. 5 computes𝑟∗
+𝑖 =max 𝑗∈[𝑀] 𝑅𝑖𝑗 independently for
+each task, where𝑅𝑖𝑗 =𝜖 1𝑠𝑖𝑗+𝜖 2𝜅𝑖𝑗 is the cost-aware reward of model𝑗 on task𝑖. The cumulative
+regret in Table 3 therefore measures the per-task gap
+CumReg𝑁(𝜋)=
+𝑁∑︁
+𝑖=1
+
+𝑟∗
+𝑖−𝑟 𝑖(𝑎𝑖) =
+𝑁∑︁
+𝑖=1
+h
+max
+𝑗∈[𝑀]
+𝑅𝑖𝑗 −𝑅 𝑖,𝑎 𝑖
+i
+.
+This metric is not the gap to any single-best-arm policy that commits to one global model, nor the gap
+to the oracle’s average score alone. The oracle is recomputed per task from the complete observation
+matrix, and CumReg sums those task-level reward gaps.
+Bandit reward.The online bandit baselines (LinUCB, LinTS) use(𝜖1,𝜖 2)=( 1,− 0.1) for their per-arm
+posteriorupdatesasstatedin§3.4,matchingthestandardcontextual-banditcost-awareformulation[ 2,
+22]. This is independent of the(1,− 0.1) weights used toevaluateCumReg in Table 3: every router
+(bandit, classifier, ACRouter) is scored under the same canonical evaluation reward, so the column is
+directly comparable across method families.
+A.3. Configuration Taxonomy
+Different routing strategies correspond to different subsets of the C-A-F loop being active (Table 4).
+This decomposition mirrors §3.4 and structures the ablation in §5.
+Table 4| Routing methods organized as C-A-F configurations. Loop-broken methods leave Memory
+empty or static (frozen probing prior); the loop-complete ACRouter activates all three core modules.
+Method family Orchestrator Verifier Memory
+Single-Model (Always-𝑚) Direct dispatch — —
+Static: Heuristic (DimensionBest, kNN Retrieval) Static lookup — Frozen probing-set prior
+Static: Trained Policy (LogReg / TF-IDF+MLP / RouteLLM / Qwen3.5-FT) Trained model — —
+Dynamic: Online Bandit (LinUCB, LinTS)arg maxrule Reward only Per-arm parametric posterior
+ACRouter (loop-complete)LLM policy + tools Sandbox-native Online task-embedding kNN
+B. Benchmark and Setup Details
+This section consolidates the construction details of CodeRouterBench: the coding dimensions and
+their sources (§B.1), the deterministic 70/30 split protocol (§B.2), the API pricing and self-hosted
+serving rate used for every dollar number reported (§B.3), and the prompt templates used by the
+LLM-as-a-Router baselines and the +Perf stats ablation (§B.4).
+16
+
+===== PAGE 17 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Table 5| Coding dimensions in CodeRouterBench. The 9 single-turn dimensions each contain 1,111
+tasks (70/30deterministic MD5 split into probing and in-distribution test, see Section B.2). The 10th
+dimension, agentic programming, is held out as the OOD test (176 tasks). Eval: Exec = execution-
+based pass@1; Proxy+ = proxy metric supplemented by LLM-as-Judge; Sandbox = Docker-based
+patch application and test execution.
+Dimension Description Source(s) Eval
+Code Generation Function-level synthesis HumanEval+, MBPP+, BigCodeBench Exec
+Algorithm Design Competitive programming LiveCodeBench, BigCodeBench Exec
+Bug Fixing Locate and repair defects DebugBench, SWE-bench Lite Exec
+Code Completion Fill-in-the-middle CRUXEval, HumanEval+ variants Exec
+Code Refactoring Improve code quality Bugs2Fix, CanItEdit Proxy+
+Data Science Data analysis pipelines DS-1000, BigCodeBench Exec
+Multi-Language Cross-language tasks HumanEval-X, MultiPL-E Exec
+Code Understanding Explain & summarize code CodeXGLUE Summarization Proxy+
+Test Generation Generate test suites LiveCodeBench, HumanEval+ variants Proxy+
+Agentic Programming (OOD) Long-horizon, multi-file repository tasks SWE-bench Verified, LongCLI-Bench, FeatureBench, SWE-CI Sandbox
+B.1. Coding Dimensions
+B.2. Data Split and Evaluation Levels
+The 9 single-turn dimensions are split deterministically (md5-based, seedcoding-router-v1) into
+three roles that mirror a typical router development workflow:
+• Probing set(train 60% + val 10% = 7,080 tasks across 9 single-turn dimensions): Used tode-
+veloprouters — profile model strengths per dimension, train classifiers, calibrate DimensionBest,
+and warm-start ACRouter’s Memory module (200 val tasks). This is the dev split for building
+custom routers.
+• In-distribution test(test 30% = 2,919 tasks across 9 single-turn dimensions): Held-out
+evaluation in a controlled environment with execution-verified per-task per-model scores. All
+in-distribution (ID) numbers in Table 3 (left) use this split. The ID per-dim task counts (306–347
+per dimension) sum to 2,919.
+• OOD test(Real-world agentic programming, 176 tasks): Held out as the agentic-programming
+dimension. No router has access to any ground-truth data from this dimension. Tests whether a
+router developed on the probing set generalizes to fundamentally different task types. Tasks
+are extracted from SWE-bench Verified [27], LongCLI-Bench [13], FeatureBench [46], and
+SWE-CI [9], filtering out tasks with high prompt similarity to the probing set. Evaluation uses
+the SWE-Bench Docker harness [18] with mini-swe-agent, capped at 40 steps per task.
+B.3. Model Pricing
+Backend tokens are priced at official API rates (§B.3.1); self-hosted router-side tokens use a measured
+H100-amortised rate of $0.054/M (§B.3.2).
+B.3.1. API Pricing
+Table 6 presents the per-model API pricing used for cost calculations throughout the paper. All values
+are mirrored verbatim fromconfigs/model_pricing.jsonin the released artifact, which is the
+single source of truth for backend pricing in every method’s recompute.
+17
+
+===== PAGE 18 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Table 6| Per-model API pricing in USD per million tokens (input/output asymmetric), used in every
+cost number reported throughout the paper. The 8 models are partitioned into tiers (premium / high
+/ mid / low) ordered by their geometric mean of input and output prices.
+Model $/M input $/M output Tier
+Claude Opus 4.6 $5.00 $25.00 premium
+Claude Sonnet 4.6 $3.00 $15.00 high
+GPT-5.4 $2.50 $15.00 high
+Qwen3-Max $1.20 $6.00 mid
+GLM-5 $0.88 $3.22 mid
+Kimi-K2.5 $0.60 $3.07 mid
+Qwen3.5-Plus $0.40 $2.40 low
+MiniMax-M2.7 $0.30 $1.20 low
+B.3.2. Local Serving Token Cost Calculation
+Self-hosted routers (the orchestrator LLM in ACRouter and the LoRA-finetuned Qwen3.5 routers) do
+not incur a per-token API charge. We instead amortise GPU rental cost over the measured serving
+throughput, yieldingasinglecombined-throughputpriceinUSDpermilliontokens. Allnumbersbelow
+are reproducible from the artifact released alongside the paper (local_pricing_benchmark/).
+Hardware and pricing.Throughput is measured on a single NVIDIA H100 80GB HBM3, the deploy-
+ment target used by every self-hosted router experiment in this paper. We adopt a representative
+on-demand H100 rental rate of $6.88/GPU-hour as the cost basis (CoreWeave2 / Lambda Cloud3
+public pricing at the time of writing).
+Workload.We replay the 2,919-task in-distribution test split as router queries: each input is the
+actual zero-shot router prompt (system message + 8-model description + the task’s dimension and
+prompt, truncated to 2,000 characters), and the model is asked to emit a JSON model-pick. This
+matches the production routing call that finetuned Qwen variants make in our experiments, so the
+measured throughput is representative of real router-side load rather than a synthetic best case.
+Configuration.We use the offline engine of SGLang [44] (no HTTP overhead) running Qwen3.5-
+0.8B in bfloat16 with flashInfer attention. Decoding is greedy (𝑇=0) withmax_new_tokens= 96
+and a stop sequence on three consecutive newlines, matching the JSON-structured output expected
+by the router parser. Requests are issued in batches of64and looped over the 2,919 prompts in
+a fixed seed-42 shuffle. We discard the first32warm-up prompts (kernel compilation, KV-cache
+pre-allocation) and then time exactly 300.5 seconds of steady-state generation.
+Measured throughput.Over the 300.5-second window the engine processed22,848requests, con-
+suming8,393,247input tokens and producing2,152,601output tokens, for a combined sustained
+throughput of:
+TPSin+out = 8,393,247+2,152,601
+300.5s ≈35,094tokens/s.(9)
+Splitting the throughput by direction yields27,931input-tokens/s and7 ,163output-tokens/s; the
+routing prompt is input-heavy (4:1 input:output) because the model emits only a short JSON pick.
+2https://www.coreweave.com/pricing
+3https://aws.amazon.com/lambda/pricing/
+18
+
+===== PAGE 19 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Derived per-token cost.Multiplying by 3,600 yields∼ 1.263× 108 tokens per GPU-hour, so the
+rental cost per million combined tokens is:
+$6.88
+1hour · 1hour
+1.263×10 8 tokens·10 6 =$0.054per1M tokens .(10)
+This is the rate used for self-hosted router-side tokens of ACRouter and the Finetuned Qwen3.5-0.8B
+router throughout the paper. Backend model tokens are always priced at API rates (Table 6); only the
+orchestrator/router LLM that we run ourselves is amortized this way.
+Reproducibility.The exact benchmark script, prompt-construction code, and resulting JSON (includ-
+ing per-15-second progress logs) will be released. Re-running on a different H100 with SGLang and
+the published Qwen3.5-0.8B snapshot reproduces the throughput within±5%.
+B.4. Router Prompt Templates
+Three prompt variants are explored for the supplementary experiments in LLM routers: a zero-shot
+Vanilla template (§B.4.1, used in the main experiments for trained policy), a 3-shot in-context variant
+(§B.4.2), and a +Perf stats ablation that injects probing-set per-dimension scores (§B.4.3).
+B.4.1. Zero-Shot Router Prompt
+The zero-shot LLM router (Vanilla in Table 1) receives the following system prompt:
+You are a coding task router. Your objective is to maximize the
+performance-cost trade-off: choose the model that achieves the best quality
+for its cost on this task. [8 models listed with capability descriptions,
+sorted by cost tier]. Prefer cheaper models when quality is comparable.
+Respond with JSON: {"model": "...", "reasoning": "..."}.
+Figure 7|Prompt template for zero-shot router.
+B.4.2. Few-Shot Router Prompt
+The 3-shot LLM router uses the same system prompt as the zero-shot variant, but prepends three
+demonstration examples before the target task. The prompt structure is:
+Example selection strategy.Examples are drawn from the probing split with the following design
+choices:
+1. Same-dimension priority: all 3 examples are sampled from tasks sharing the same dimension as
+the target task. If fewer than 3 same-dimension examples are available, the remaining slots are
+filled from other dimensions.
+2. Non-trivial examples only: tasks where all 8 models achieve identical scores are excluded, since
+they carry no routing signal.
+3. Oracle labels: each example shows the oracle-best model (the model with the highest score for
+that task, with ties broken by cost ascending then alphabetical) along with all 8 models’ scores,
+giving the LLM both the answer and the full score distribution.
+4. Prompt truncation: task prompts in examples are truncated to 300 characters to control input
+token cost; the target task’s prompt is included in full.
+5.Fixed seed: examples are sampled with a fixed random seed (42) for reproducibility.
+19
+
+===== PAGE 20 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+## Examples
+### Example 1
+- Dimension: bug_fixing
+- Difficulty: medium
+- Language: python
+- Prompt: <first 300 chars of task prompt>...
+-Best model: glm-5
+- Scores: claude-opus-4-6: 0.72, claude-sonnet-4-6: 0.70, glm-5: 0.73,
+gpt-5.4: 0.68, kimi-k2.5: 0.65, ...
+### Example 2
+[...similar format...]
+### Example 3
+[...similar format...]
+–-
+Now route the following task:
+## Task to Route
+**Dimension**: code_completion
+**Difficulty**: hard
+**Language**: python
+**Prompt**: <full task prompt>
+Figure 8|Few-shot prompt template for model routing.
+Response format.The LLM is instructed to respond with a JSON object:{"model": "<name>",
+"reasoning": "<explanation>"} . Responses are parsed with a multi-strategy fallback: (1)
+direct JSON parse, (2) regex extraction from markdown code blocks, (3) model-name string matching,
+(4) fallback to the default model (claude-sonnet-4-6).
+B.4.3. Performance-Statistics Ablation Prompt
+In the +Perf stats ablation (Table 1), model descriptions are replaced with tabular performance data
+drawn from the probing set:
+Model capabilities (average scores per dimension): Claude Opus 4.6:
+code_gen=0.315, algo=0.254, bug_fix=0.717, completion=0.860, refac=0.607,
+ds=0.142, multi=0.408, underst=0.193, test_gen=0.392. [... similar for all 8
+models]
+Figure 9|Supplied tabular performance information in +Perf setting of ablation study.
+The Anonymized variant additionally rewrites every model identifier to Model-A through Model-H to
+remove any prior the LLM may carry about specific provider strengths.
+C. Supplementary Experiments
+This section reports two experimental studies that complement the main results: an LLM-as-a-Router
+sweepoverall8candidatemodelsin0-shot,3-shot,andonline-agentmodes(§C.1); andaQwen-router
+parameter-scaling sweep that isolates the contribution of router capacity (§C.2).
+20
+
+===== PAGE 21 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Table 7| Router-model comparison on the 2,919-task in-distribution test split. Dollar columns use
+the updated pricing in Table 6; CumReg uses the per-task cost-aware oracle with𝑟=𝑠− 0.1𝜅USD.
+Panel A: LLM-as-a-Router with all 8 models in 0-shot and 3-shot settings.Panel B: Agent online —
+each agent starts with empty memory, warms up on 200 val tasks, then routes the test stream while
+accumulating cosine-kNN experience under verifier feedback (seed=42). Rows ordered by AvgPerf
+within each panel.
+Mode Router LLM AvgPerf% CumReg↓$Total Perf/$↑
+Panel A: LLM-as-a-Router (0-shot)
+0-shot Qwen3.5-Plus 46.87 296.3 $13.06 3.59
+0-shot Qwen3-Max 46.60 304.1 $11.82 3.94
+0-shot Kimi-K2.5 46.29 313.3 $14.11 3.28
+0-shot GPT-5.4 45.91 324.0 $10.26 4.48
+0-shot GLM-5 45.42 338.7 $14.56 3.12
+0-shot MiniMax-M2.7 42.11 435.6 $16.90 2.49
+0-shot Claude Sonnet 4.6 41.41 456.4 $21.02 1.97
+0-shot Claude Opus 4.6 39.27 518.9 $21.20 1.85
+Panel A (cont.): LLM-as-a-Router (3-shot)
+3-shot GLM-5 46.03 320.8 $12.22 3.77
+3-shot Qwen3-Max 45.80 327.7 $14.63 3.13
+3-shot GPT-5.4 45.66 331.3 $9.80 4.66
+3-shot Claude Sonnet 4.6 45.53 335.3 $12.01 3.79
+3-shot Qwen3.5-Plus 45.39 339.5 $12.64 3.59
+3-shot MiniMax-M2.7 45.29 342.5 $13.88 3.26
+3-shot Kimi-K2.5 45.10 348.5 $17.98 2.51
+3-shot Claude Opus 4.6 41.17 463.5 $21.34 1.93
+Panel B: Agent online (200-task warm-up, seed=42)
+Agent MiniMax-M2.7 45.27 343.2 $15.30 2.96
+Agent GLM-5 45.21 345.0 $15.84 2.85
+Agent Qwen3-Max 44.92 353.7 $18.00 2.50
+Agent Qwen3.5-Plus 43.98 381.0 $16.17 2.72
+Agent Claude Sonnet 4.6 43.65 390.7 $16.84 2.59
+Agent Kimi-K2.5 42.70 417.9 $12.45 3.43
+Agent GPT-5.4 40.95 468.9 $11.24 3.64
+Reference Random 38.75 533.6 $15.64 2.48
+C.1. LLM-as-a-Router Across All 8 Models
+C.1.1. Setup
+To verify that the information-deficit diagnosis in Table 1 is not specific to Claude Sonnet 4.6, we
+evaluate every one of the candidate models in the role of an LLM-as-a-Router on the in-distribution
+test split. Each model is given the same Vanilla zero-shot or 3-shot prompt template (Section B.4) and
+instructed to pick a backend model for each task. Costs use the pricing in Table 6 for backend tokens;
+the LLM router’s own tokens are priced at the same API rates as its backend role (since these are
+API-served, not self-hosted). ForPanel Bthe 0-shot router is augmented with a cosine-kNN Memory
+of 200 warm-up tasks and online-updated as the test stream proceeds (seed 42).
+21
+
+===== PAGE 22 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+C.1.2. Results and Findings
+Three findingsstand out from Table 7. First,coding ability≠ routing ability: all 8 LLM routers remain
+below DimensionBest, and Claude Opus 4.6 ranks last in both 0-shot and 3-shot despite being the
+strongest individual coder. Second, few-shot prompting does not reliably solve routing: it slightly
+improves some router LLMs but still leaves substantial regret to the per-task oracle. Third, agent-mode
+online Memory is mixed across router LLMs; it helps MiniMax-M2.7 but does not uniformly improve
+stronger prompt-following routers. Random and DimensionBest are reported as references.
+C.2. Qwen Router Scaling Sweep
+C.2.1. Setup
+We sweep five Qwen3.5 sizes (0.8B /2B /4B /9B /27B) under unified LoRA finetuning (FT v4:
+attention+MLP, 𝑟=16, 𝛼=32, dropout0 .05, identical across sizes for a controlled scaling curve),
+evaluated on the canonical𝑛=2,919in-distribution test split. Qwen3.5-0.8B-Finetuned is the variant
+reported in the Trained-Policy block of Table 3; the larger sizes are included here to verify that scaling
+does not change the takeaway.
+C.2.2. Results and Findings
+Table 8| Qwen router scaling sweep on the canonical𝑛=2,919in-distribution test split (FT v4
+LoRA, attention+MLP,𝑟=16,𝛼=32).Toks: average input+output tokens per task (router+backend).
+CumReg: per-taskcost-awareregret; itisreportedonlywherearchivedper-taskdecisionsareavailable.
+The 0.8B row is the Qwen3.5-0.8B-Finetuned entry in Table 3.
+Size AvgPerf%↑Gap%↓Toks/task CumReg↓
+0.8B 46.41 18.6 500 309.1
+2B 46.69 18.1 501 –
+4B 46.21 18.9 492 –
+9B 46.56 18.3 496 –
+27B46.74 18.0495 –
+Findings.
+• Finetuning is the gate, not size.Without finetuning, base Qwen3.5 9B/27B/35B emit mal-
+formedroutingtokensthattheparserfallsbacktoasingledefaultmodel( claude-sonnet-4-6);
+their AvgPerf collapses to the always-Sonnet floor (0.4131). Once finetuned, every size lifts
+AvgPerf to≥46.21%.
+• Scale yields diminishing returns under FT v4.Across a∼ 30× parameter range, AvgPerf
+moves only∼ 0.5points (46.21−46.74). The routing signal saturates well below 27B; capacity
+is not the bottleneck.
+• Cost-aware regret requires per-task logs.The archived larger-size sweep preserved aggregate
+AvgPerf but not per-task decisions, so we omit CumReg for≥ 2B sizes rather than report non-
+reproducible numbers. The available 0.8B run has CumReg309.1under the same cost-aware
+reward𝑟=𝑠−0.1𝜅used in Table 3.
+• 0.8B is a defensible cost choice.Because larger sizes do not move the needle on AvgPerf, we
+report0 .8B in Table 3 as the most cost-efficient finetuned policy, and treat the larger sizes as
+22
+
+===== PAGE 23 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+scaling controls.
+D. Supplementary Analyses
+This section unpacks the in-distribution and OOD numbers in Table 3 along several diagnostic axes:
+per-model capability profiles (§D.1), the full8× 9score matrix on every split (§D.2), the structural
+information available to a router (§D.3), the bias of a vanilla LLM router (§D.4), the dollar-cost regime
+decomposition (§D.5), and the per-method breakdowns of both the in-distribution result (§D.6) and
+the OOD result (§D.7). Unless explicitly noted for the updated GPT-5.4 OOD row, all numbers come
+from the canonical results bundle and are consistent with the headline figures in Table 3.
+D.1. Model Capability Profiles
+To visualize how model strengths differ across the 9 single-turn coding dimensions, Figure 10 presents
+radar charts for representative models. Each axis represents one dimension; the radial distance is
+proportional to the model’s average test-split score on that dimension (Table 9). The shapes are
+distinctly non-circular: Claude Opus excels on code completion and bug fixing but underperforms on
+algorithm design, while GLM-5 shows the reverse pattern. Qwen3-Max dominates test generation but
+is average elsewhere. These complementary profiles are precisely what routing exploits: no single
+model is best everywhere, and a dimension-aware router can select the right specialist for each task
+type.
+Algorithm
+Bug Fixing
+Code Completion
+Code Generation
+Code Refactoring
+Code Understanding
+Data Science
+Multi-Language
+T est Generation
+0.10.20.30.40.50.60.70.80.9
+Model Strength Profiles Across 9 Coding Dimensions Sonnet 4.6
+Opus 4.6
+Kimi-K2.5
+GPT-5.4
+GLM-5
+Qwen3-Max
+Figure 10| Radar chart of representative models across 9 coding dimensions. Each model has a
+distinct strength profile, confirming the model complementarity that routing exploits. Axes are scaled
+per-dimension (0 = worst model, 1 = best model on that dimension).
+D.2. Full Model×Dimension Score Matrix
+Tables 9, 10, and 11 present the model×dimension matrix on the in-distribution test split, the
+probing (train) split, and the full single-turn corpus, respectively. Bold marks the probing-learned
+dimension-best model. Several patterns are visible: Claude Opus 4.6 leads on code completion, code
+23
+
+===== PAGE 24 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+generation, andmulti-languagebutranksmid-packonalgorithmdesign; GLM-5istheprobing-learned
+dimension-best for algorithm design and bug fixing (test-split values0.265and0 .607, suppressed
+by GLM-5’s∼14.5%missing-task rate which contributes zeros under the canonical missing-as-0
+convention); Qwen3-Max dominates test generation (0.789); Kimi-K2.5 leads on the two cheapest-to-
+call dimensions (data science and code understanding), where its low price tier yields the highest
+cost-adjusted upside.
+Table 9| Model× dimension score matrix on thein-distribution test split(𝑛=2,919across 9 single-
+turn dimensions, 60/10/30 md5 split).Bold= the dimension-best model learned on the probing split
+(Table 10). The bold (DimBest) cells are reported under the canonical missing-as-0convention: any
+task with no recorded score for a model contributes0. The AVG column is the average performance of
+cross 9 dimensions; models with appreciable missing rates (GLM-5∼14.5%, Qwen3.5-Plus∼10.7%)
+therefore have AVG below their scored-only mean.
+Model CdGen Algo Bug Comp Refac DS Multi Und TstGn AVG
+Claude Opus 4.6.337.275 .722.837.612 .109.432.190 .388 .438
+GPT-5.4 .285 .302 .565 .663.652.061 .366 .148 .744 .422
+Claude Sonnet 4.6 .311 .296 .707 .729 .600 .035 .431 .177 .391 .413
+GLM-5 .313.265 .607.561 .529 .102 .378 .173 .589 .378
+Qwen3-Max .285 .388 .648 .602 .332 .096 .372 .124.789 .400
+Qwen3.5-Plus .288 .409 .652 .531 .276 .087 .382 .151 .698 .372
+Kimi-K2.5 .271 .280 .632 .568 .372.151.400.185.415 .367
+MiniMax-M2.7 .245 .069 .504 .583 .610 .125 .361 .179 .471 .361
+Table 10| Model× dimension score matrix on theprobing set. DimensionBest and trained classifiers
+use this split to learn per-dimension model rankings. Bold = best model per dimension on this split.
+AVG is the weighted average performance by per-dimension count.
+Model CdGen Algo Bug Comp Refac DS Multi Und TstGn AVG
+Claude Opus 4.6.315.254 .717.860.607 .142.408.193 .392 .429
+GPT-5.4 .282 .257 .567 .639.644.063 .346 .150 .764 .412
+Claude Sonnet 4.6 .275 .258 .698 .751 .615 .068 .407 .180 .395 .402
+GLM-5 .298.472 .728.537 .516 .079 .362 .174 .592 .399
+Qwen3-Max .262 .310 .660 .591 .336 .111 .350 .123.827 .392
+Qwen3.5-Plus .282 .397 .666 .538 .296 .114 .355 .149 .714 .371
+Kimi-K2.5 .269 .254 .653 .590 .386.184.372.195.430 .370
+MiniMax-M2.7 .239 .073 .528 .563 .603 .145 .331 .184 .494 .360
+D.3. Variance Decomposition
+To quantify how much of the per-task oracle decision is recoverable from cheap structural signals, we
+compute the mutual information𝐼(𝑦𝑡; 𝑑(𝑡)) between the oracle-assigned model𝑦𝑡 =arg max𝑚𝑠(𝑡,𝑚)
+and the task dimension𝑑(𝑡) on the in-distribution test split. We find that dimension identity captures
+roughly 27% of the entropy of𝑦𝑡: enough to explain why the DimensionBest reaches about0.475
+AvgPerf, but well short of the0.570per-task oracle. The remainder of the routing signal lies in
+the per-task content (algorithm choice, API patterns, edge-case handling), which is exactly what
+ACRouter’s task-embedding Memory keys on rather than the lower-resolution dimension hash used
+by DimensionBest.
+24
+
+===== PAGE 25 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Table 11| Model× dimension score matrix on thefull single-turn corpus(𝑛=9,999across 9 single-
+turn dimensions, all splits combined). The AVG column is the pooled mean over all scored cells (i.e.,
+weighted by per-dimension scored-task count), not the unweighted mean of 9 dimension means; for
+models with missing rates skewed toward stronger dimensions (GLM-5≈ 14.5%missing, Qwen3.5-
+Plus≈ 10.7%, MiniMax-M2.7≈ 5.4%, others< 2%) the pooled AVG runs slightly below the AVG. The
+OOD agentic-programming dimension is excluded.
+Model CdGen Algo Bug Comp Refac DS Multi Und TstGn AVG
+Claude Opus 4.6.317.260.719 .851.610 .130.414.194 .396 .432
+Claude Sonnet 4.6 .287 .275 .701 .743 .607 .054 .413 .179 .396 .406
+GPT-5.4 .280 .270 .565 .643.646.062 .351 .150 .753 .413
+GLM-5 .297.479.717 .546 .521 .083 .365 .174 .592 .402
+Qwen3-Max .265 .336 .651 .593 .335 .107 .356 .123.823 .394
+Qwen3.5-Plus .282 .405 .661 .533 .292 .105 .362 .150 .706 .371
+Kimi-K2.5 .268 .265 .645 .584 .380.173.378.194.423 .369
+MiniMax-M2.7 .240 .070 .517 .572 .603 .134 .338 .183 .480 .358
+D.4. Router Bias Distribution
+Figure 11 shows the model-selection distributions of the LLM router (Vanilla in Table 1) versus the
+per-task Oracle across dimensions. The Vanilla router’s selections are nearly uniform, failing to exploit
+the strong dimensional structure that DimensionBest leverages. This visual diagnosis is consistent
+with the +Perf stats finding in Table 1: providing the per-dimension performance prior lets the LLM
+router match (and slightly exceed) DimensionBest with no architectural change, confirming that the
+bottleneck is information rather than reasoning.
+opus sonnet gpt-5.4 qwen3.5 kimi Qwen3-Max glm-5 MiniMax
+0
+5
+10
+15
+20
+25
+30
+35
+40Selection Frequency (%)
+Model Selection Distribution Across Routing Strategies
+Oracle
+DimBest
+0-shot
+3-shot
+Figure 11| Router bias analysis: model-selection distributions of the Vanilla LLM router (left) versus
+the per-task Oracle (right) across the 9 single-turn dimensions. The Vanilla router’s selections are
+nearly uniform across dimensions, failing to exploit the dimensional structure.
+D.5. Cost Comparison
+This subsection decomposes the dollar-cost columns of Table 3 into three deployment-cost regimes.
+Costs are computed using the per-model asymmetric input/output pricing in Table 6 and include
+router-side overhead where applicable (priced at $0.054/M for self-hosted policies, see §B.3.2).
+25
+
+===== PAGE 26 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Three regimes emerge consistent with Table 3. Thecheaptier (trained classifiers $7–8: LogReg
+$7.54, RouteLLM-MF $7.46, TF-IDF+MLP $7.69, RouteLLM-BERT $7.59, Qwen3.5-0.8B-Finetuned
+$6.81) attains near-DimensionBest performance at minimal cost: these methods add little router
+token overhead and tend to route a substantial share of tasks to mid-tier models (Kimi-K2.5, Qwen3-
+Max). Themoderatetier (DimensionBest $12.89, ACRouter $13.21, online bandits $10–11) pays for
+an informed mix of expensive and cheap backend models in exchange for higher per-task quality;
+ACRouter additionally pays for its kNN Memory and Verifier overhead. Thepremiumtier (Always-Opus
+$34.02, Always-Qwen3.5+ $18.14, Random $15.64) commits to a costly default. Always-Opus is not
+cost-efficient on ID: it spends $34.02 for43.83%AvgPerf, while ACRouter achieves49.98%AvgPerf
+for $13.21. The cheapest single-model option, Always-Kimi-K2.5 at $2.90, sets the cost floor with
+36.66%AvgPerf (Perf/$12.62, the highest in Table 3), at a substantial AvgPerf cost compared with
+ACRouter.
+D.6. In-distribution Per-Method Breakdown
+Table 12 reports the per-method breakdown on the in-distribution test (𝑛=2,919across 9 single-turn
+coding dimensions) corresponding to the left-side block of Table 3, with the dollar-cost column made
+explicit. AvgPerf% is the average performance of execution-graded scores across dimensions, and
+CumReg uses the per-task cost-aware reward𝑟=𝑠−0.1𝜅 USD against the per-task oracle.
+Table 12| Per-method breakdown on the in-distribution test (2,919 tasks across 9 single-turn coding
+dimensions). Costs include both backend and router-side tokens (self-hosted at $0.054/M, API at
+Table 6 rates). CumReg uses the cost-aware reward𝑟=𝑠−0.1𝜅USD.
+Family Router AvgPerf%↑CumReg↓$Total Perf/$↑
+Bound Oracle (cost-aware) 57.00 0 $6.95 8.20
+Agentic ACRouter (ours)49.98 205.5$13.21 3.79
+Bandit LinTS (5-seed avg) 46.48 307.4 $10.35 4.49
+Bandit LinUCB (5-seed avg) 46.84 296.9 $10.69 4.38
+Heuristic DimensionBest 47.50 277.4 $12.89 3.69
+Heuristic kNN Retrieval 47.18 286.7 $7.77 6.07
+Trained LogReg 47.26 284.4 $7.54 6.27
+Trained RouteLLM-BERT 47.22 285.5 $7.59 6.22
+Trained TF-IDF+MLP 46.97 292.8 $7.69 6.11
+Trained Qwen3.5-0.8B-Finetuned 46.41 309.1 $6.81 6.82
+Trained RouteLLM-MF 46.16 316.5 $7.46 6.19
+Single-Model Always-Opus 4.6 43.83 387.1 $34.02 1.29
+Single-Model Always-Kimi-K2.5 36.66 593.3 $2.9012.62
+Single-Model Always-Qwen3.5-Plus 37.16 580.2 $18.14 2.05
+Single-Model Random 38.75 533.6 $15.64 2.48
+Three patterns mirror the OOD breakdown but with sharper separation. ACRouter’s49.98%AvgPerf
+and205 .5CumReg dominate every other family on this in-distribution split, beating DimensionBest’s
+full dimension-level prior by2.48AvgPerf points at$13.21vs.$12 .89. Trained classifiers cluster near
+DimensionBest in AvgPerf (46.16−47.26%) but at roughly half the cost ($6.81−$7.69), giving them
+the strongest Perf/$ among non-oracle methods that exceed46%AvgPerf. Always-Opus pays the
+26
+
+===== PAGE 27 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+most ($34.02) yet trails ACRouter by6.15AvgPerf points and accumulates387.1regret, illustrating
+that committing to the strongest single model is not cost-efficient even on the controlled split.
+D.7. Real-World Test (OOD) Per-Method Breakdown
+Table 13 reports the per-method breakdown on the real-world OOD test (176 agentic-programming
+tasks) corresponding to the right-side block of Table 3. AvgPerf% is the resolved-rate (#resolved/
+176). CumReg uses the same per-task reward𝑟=𝑠− 0.1𝜅USD as the ID evaluation. The OOD setting
+is intentionally distribution-shifted from the 9 single-turn dimensions, and amplifies the difference
+between routers that rely on a frozen probing-set prior (which transfers poorly) and routers that
+adapt online (Memory + Verifier).
+Table 13| Per-method breakdown on the OOD test (176 SWE-bench-derived tasks). Routers without
+OOD coverage (e.g., DimensionBest, since the agentic dimension is held out) are marked “—”. Costs
+include both backend and router-side tokens (self-hosted at $0.054/M, API at Table 6 rates).
+Family Router AvgPerf%↑CumReg↓$Total Perf/$↑
+Bound Oracle (cost-aware) 75.89 0 $32.71 2.32
+Agentic ACRouter (ours)62.50 17.0$52.97 1.18
+Bandit LinTS (5-seed avg) 46.43 35.9 $61.91 0.75
+Bandit LinUCB (5-seed avg) 49.82 31.1 $51.90 0.96
+Heuristic DimensionBest — — — —
+Heuristic kNN Retrieval 14.29 66.7 $9.861.45
+Trained LogReg 19.64 61.8 $16.79 1.17
+Trained RouteLLM-BERT 21.43 59.4 $16.48 1.30
+Trained TF-IDF+MLP 13.39 67.9 $11.44 1.17
+Trained Qwen3.5-0.8B-Finetuned 55.36 27.2 $74.81 0.74
+Trained RouteLLM-MF 8.93 72.7 $9.50 0.94
+Single-Model Always-Opus 4.6 57.14 26.7 $89.28 0.64
+Single-Model Always-Kimi-K2.5 18.75 62.3 $15.37 1.22
+Single-Model Always-Qwen3.5-Plus 2.68 80.1 $14.11 0.19
+Single-Model Random 31.25 50.4 $36.76 0.85
+Why the static baselines collapse on OOD.The 9 single-turn probing dimensions are dominated
+by short, single-file tasks; the OOD set requires multi-step planning, file navigation, and iterative
+debugging. Trained classifiers (LogReg, TF-IDF+MLP, RouteLLM variants) condition on prompt
+features that no longer carry the same signal in the OOD distribution, and they cannot acquire new
+feedback during evaluation. ACRouter and the online bandits, by contrast, accumulate Memory or
+per-arm posteriors during the OOD stream and recover more signal. ACRouter’s stronger Orchestrator
++ Memory routing reaches62.50%resolved-rate compared with46−50%for the bandits, and its
+17.0cost-aware CumReg ranks first across the table, which is ahead of Always-Opus (26.7).
+Honest tracking of agentic outcomes.The OOD AvgPerf column is the harness-graded resolved-rate
+(#resolved/ 176) and not a looserapply_ok signal (which only checks that the submitted patch
+applies cleanly without verifying that the repository’s tests pass).
+27
+
+===== PAGE 28 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Per-Model Score Matrix on OOD.Table 14 reports each candidate backend’s headline metrics on the
+same 176-task OOD set, analogous to Table 9 on the in-distribution split. Because the OOD set spans
+a single dimension of agentic programming, the matrix degenerates to a per-model column with
+per-model average call/cost statistics added for diagnostic transparency. Unlike the in-distribution
+matrix where five different models serve as dimension-best, OOD performance is more strongly
+ordered by base coding capability: the updated GPT-5.4 run resolves132/176 = 75.00%of tasks,
+Opus reaches57.14%, Sonnet reaches49.11%, and the long tail drops below30%. The per-task
+oracle row is retained from the original 8-backend score bundle and resolves75.89%of tasks.
+Table 14| Per-model score matrix on the 176-task OOD set.Resolved%: fraction of tasks where
+the model produces a patch that the SWE-Bench harness grades as correct.Apply_ok%: fraction
+whose patch at least applies cleanly to the test repo, regardless of test outcome.Calls/task: average
+number of backend invocations per task across all retries permitted by the harness (capped at 40
+steps).$Total: total backend dollar cost over all 176 tasks under the pricing in Table 6. The GPT-5.4
+row is updated from the latest OOD run on the same split; Apply_ok% and Calls/task are not logged
+for that run.Per-task oracle: retained from the original 8-backend score bundle.
+Model Resolved%↑Apply_ok%↑Calls/task $Total
+Claude Opus 4.657.1479.46 19.0 $89.28
+Claude Sonnet 4.6 49.11 68.75 16.4 $77.23
+GPT-5.4 75.00 — — $41.04
+GLM-5 28.57 41.07 15.3 $26.73
+Kimi-K2.5 18.75 26.79 12.3 $15.35
+MiniMax-M2.7 14.29 17.86 7.1 $3.58
+Qwen3-Max 8.93 19.64 5.9 $9.58
+Qwen3.5-Plus 2.68 5.36 15.4 $14.38
+Per-task oracle 75.89— — $32.71
+E. Discussion
+E.1. Why Routing Matters
+Model complementarity is not a transient artifact. Each new model generation introduces new
+strengths (GLM-5 on algorithms, Qwen3-Max on test generation, Kimi-K2.5 on data science). Cost
+differentials persist: the most expensive model in our pool (Claude Opus 4.6 output at $25/M) is
+over20× the cheapest (MiniMax-M2.7 output at $1.20/M, Table 6). As the ecosystem expands with
+open-source, domain-specialized, and reasoning-specialized models, routing value increases. Routing
+is a permanent component of agent systems.
+E.2. Practitioner’s Guide: Building Your Own Agent Router
+The core output of this work is not a leaderboard but a construction kit:
+1.Set up the tool layer: Plug in your candidate models and configure the execution sandbox.
+2. Profileviaprobingset: UseCodeRouterBench(oryourowntasksviaC-A-F)tobuildadimension ×model
+28
+
+===== PAGE 29 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+performance matrix.
+3. Start with DimensionBest: A static Memory + lookup achieves about 83% of oracle AvgPerf at
+near-zero overhead. This is your baseline.
+4. Add a classifier: Swap the routing tool to a trained classifier (LogReg or RouteLLM) for cheaper
+deployment with comparable AvgPerf to DimensionBest. Trained classifiers achieve Perf/$ of
+6.11–6.82 in Table 3.
+5. Complete the C-A-F loop (ACRouter): When deploying on new distributions, activate all three
+modules to close the feedback loop. Initialize Memory with whatever priors you have; the C-A-F
+loop ensures convergence.
+6. Customize tools: Swap evaluation tools in the Verifier (e.g., domain-specific tests), add custom
+routing tools.
+7. Extend the benchmark: Add tasks via C-A-F. New models need responses + scoring; new
+dimensions need a task set + scoring function.
+E.3. Beyond Model Routing
+The C-A-F loop (observe context, act, receive feedback, update context) is not specific to model routing.
+The same paradigm applies to tool selection, API endpoint selection, prompt strategy selection, and
+thinking-effort allocation. We view coding routing as a concrete first instantiation of a broader agent
+decision-making paradigm. Future work can extend this to skill routing, sub-agent routing, memory
+routing, and effort routing.
+E.4. Extensibility Roadmap
+V1 (this release) provides 10 dimensions, 8 models,∼ 80K execution-verified responses. In V2, new
+models join by generating responses on the existing task set (∼ 11K API calls per model). In V3,
+new dimensions join by providing C-A-F triples with a scoring function. The long-term goal is a
+community-maintained living protocol where researchers contribute dimensions, models, and routing
+methods through standardized interfaces.
+F. Task Examples Across All 10 Dimensions
+Figures 12–21 present two representative task examples from each of the 10 dimensions, showing
+the input prompt, the best model’s response, and per-model scores. These examples illustrate the
+diversity of coding tasks in CodeRouterBench and the model complementarity that routing exploits.
+29
+
+===== PAGE 30 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: code_generation_1  [python]
+==============================================================================
+PROMPT:
+ def pairs_sum_to_zero(l):     """     pairs_sum_to_zero takes a list
+of integers as an input.     it returns True if there are two distinct
+elements in the list that sum to zero, and False otherwise.     >>>
+pairs_sum_to_zero([1, 3, 5, 0])     False     >>> pairs_sum_to_zer
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+ for i in range(len(l)):         for j in range(len(l)):             if i != j
+and l[i] + l[j] == 0:                 return True     return False...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=1.00]   <<ORACLE
+    ```python def pairs_sum_to_zero(l):     for i in
+    range(len(l)):         for j in range(i + 1, len(
+  GPT-5.4  [score=1.00]
+    ```python def pairs_sum_to_zero(l):     """
+    pairs_sum_to_zero takes a list of integers as an inp
+  Qwen3.5  [score=1.00]
+    ```python def pairs_sum_to_zero(l):     """
+    pairs_sum_to_zero takes a list of integers as an inp
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Qwen3.5    |  Oracle -> Opus
+Task: code_generation_2  [python]
+==============================================================================
+PROMPT:
+Write a python function to find the element that appears only once in a
+sorted array.
+------------------------------------------------------------------------------
+GROUND TRUTH:
+(execution-based evaluation)
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]   <<ORACLE
+    ```python def find_single_element(arr):     """     Find the
+    element that appears only once in a s
+  GPT-5.4  [score=0.00]
+    ```python def single_non_duplicate(nums):     """     Return
+    the element that appears only once in a
+  Qwen3.5  [score=0.00]
+    ```python def find_single_element(nums):     low, high = 0,
+    len(nums) - 1     while low < high:
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Qwen3.5    |  Oracle -> Opus
+Code Generation
+Figure 12|Code Generation examples.
+30
+
+===== PAGE 31 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: algorithm_1  [python]
+==============================================================================
+PROMPT:
+You are given a 0-indexed integer array nums, and an integer k. In one
+operation, you can remove one occurrence of the smallest element of
+nums. Return the minimum number of operations needed so that all
+elements of the array are greater than or equal to k. Example 1:
+Input: n
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+(execution-based evaluation)
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]   <<ORACLE
+    ```python class Solution: def minOperations(self, nums:
+    List[int], k: int) -> int:    retur
+  GPT-5.4  [score=0.00]
+    ```python from typing import List class Solution: def
+    minOperations(self, nums: List[int], k: i
+  Qwen3.5  [score=0.00]
+    ```python from typing import List class Solution: def
+    minOperations(self, nums: List[int], k: i
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Qwen3.5    |  LLM 3-shot -> Qwen3.5    |  Oracle -> Opus
+Task: algorithm_2  [python]
+==============================================================================
+PROMPT:
+import random import math def task_func(LETTERS=[chr(i) for i in
+range(97, 123)]):     """     Create a dictionary where keys are letters
+from a predefined list LETTERS and values are lists of random integers.
+Then, calculates the population standard deviation for each list
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+random_dict = {k: [random.randint(0, 100) for _ in
+range(random.randint(1, 10))] for k in LETTERS}     sd_dict = { k:
+math.sqrt(sum((i - s...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=1.00]   <<ORACLE
+    ```python import random import math def
+    task_func(LETTERS=[chr(i) for i in range(97, 123)]):
+  GPT-5.4  [score=1.00]
+    ```python import random import math def
+    task_func(LETTERS=[chr(i) for i in range(97, 123)]):     re
+  Qwen3.5  [score=1.00]
+    ```python import random import math def
+    task_func(LETTERS=[chr(i) for i in range(97, 123)]):     ""
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Qwen3.5    |  LLM 3-shot -> Qwen3.5    |  Oracle -> Opus
+Algorithm Design
+Figure 13|Algorithm Design examples.
+31
+
+===== PAGE 32 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: bug_fixing_1  [python3]
+==============================================================================
+PROMPT:
+Fix the following buggy code: ```python3 class Solution:     def
+minSteps(self, s: str, t: str) -> int:         cnt1=Counter(s)
+cnt2=Counter(t)         sm=0         cnt=cnt1-cnt2+(cnt2-cnt1
+for i in cnt.values():             sm+=i         return sm ``` Bug des
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+class Solution:     def minSteps(self, s: str, t: str) -> int:
+cnt1=Counter(s)         cnt2=Counter(t)         sm=0
+cnt=cnt1-cnt2+(cnt...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.89]
+    ```python3 from collections import Counter class Solution:
+    def minSteps(self, s: str, t: str) -
+  GPT-5.4  [score=0.89]
+    ```python from collections import Counter class Solution:
+    def minSteps(self, s: str, t: str) ->
+  Qwen3.5  [score=0.92]   <<ORACLE
+    ```python3 from collections import Counter class Solution:
+    def minSteps(self, s: str, t: str) -
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Qwen3.5
+Task: bug_fixing_2  [java]
+==============================================================================
+PROMPT:
+Fix the following buggy code: ```java class Solution {     public int
+numJewelsInStones(String jewels, /*String stones) {         int count =
+0;         for(int i=0; i<stones.length(); i++)             char c =
+stones.charAt(i);         String undefinedObject = null;
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+class Solution {     public int numJewelsInStones(String jewels, String
+stones) {         int count = 0;         for(int i=0;
+i<stones.length(); i++)...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=1.00]   <<ORACLE
+    ```java class Solution {     public int
+    numJewelsInStones(String jewels, String stones) {
+  GPT-5.4  [score=0.82]
+    ```java class Solution {     public int
+    numJewelsInStones(String jewels, String stones) {        in
+  Qwen3.5  [score=0.93]
+    ```java class Solution {     public int
+    numJewelsInStones(String jewels, String stones) {        in
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Bug Fixing
+Figure 14|Bug Fixing examples. 32
+
+===== PAGE 33 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: code_completion_1  [python]
+==============================================================================
+PROMPT:
+Given the following function: ```python def f(title):     return
+title.lower() ``` Predict the output of: ' Rock Paper SCISSORS '
+------------------------------------------------------------------------------
+GROUND TRUTH:
+' rock paper scissors '
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=1.00]   <<ORACLE
+    The function `f` converts the input string to lowercase using
+    the `.lower()` method. Given the inpu
+  GPT-5.4  [score=1.00]
+    ```python " rock paper scissors " ```
+  Qwen3.5  [score=0.00]
+    ```python def f(title):     return title.lower() print(f('
+    Rock Paper SCISSORS ')) ```
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Task: code_completion_2  [python]
+==============================================================================
+PROMPT:
+Given the following function: ```python def f(text):     new_text =
+text     while len(text) > 1 and text[0] == text[-1]:         new_text =
+text = text[1:-1]     return new_text ``` Predict the output of: ')'
+------------------------------------------------------------------------------
+GROUND TRUTH:
+')'
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=1.00]   <<ORACLE
+    Let me trace through the function with input `')'`. 1. `text
+    = ')'`, `new_text = ')'` 2. Check whil
+  GPT-5.4  [score=1.00]
+    ```python ')' ```
+  Qwen3.5  [score=1.00]
+    ```python ')' ```
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Qwen3.5    |  Oracle -> Opus
+Code Completion
+Figure 15|Code Completion examples.
+33
+
+===== PAGE 34 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: code_refactoring_1  [java]
+==============================================================================
+PROMPT:
+Refactor/fix the following Java code: ```java public TYPE_1 METHOD_1 (
+TYPE_2 VAR_1 ) { TYPE_1 response = new TYPE_1 ( ) ; VAR_2 . info (
+STRING_1 ) ; try { VAR_2 . info ( ( STRING_2 + ( VAR_3 ) ) ) ; response
+= ( ( TYPE_1 ) ( VAR_3 . METHOD_2 ( VAR_1 ) ) ) ; VAR_2 . info ( ( ST
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+public TYPE_1 METHOD_1 ( TYPE_2 VAR_1 ) { TYPE_1 response = new TYPE_1 (
+) ; VAR_2 . info ( STRING_1 ) ; try { VAR_2 . info ( ( STRING_2 + (
+VAR_3 ) )...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.70]
+    ```java public TYPE_1 METHOD_1(TYPE_2 VAR_1) {     TYPE_1
+    response = new TYPE_1();     VAR_2.info(
+  GPT-5.4  [score=0.72]   <<ORACLE
+    ```java public TYPE_1 METHOD_1(TYPE_2 VAR_1) {     TYPE_1
+    response = new TYPE_1();     VAR_2.info(ST
+  Qwen3.5  [score=0.72]
+    ```java public TYPE_1 METHOD_1(TYPE_2 VAR_1) {     TYPE_1
+    response = new TYPE_1();     VAR_2.info(ST
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> GPT-5.4    |  LLM 3-shot -> Opus    |  Oracle -> GPT-5.4
+Task: code_refactoring_2  [java]
+==============================================================================
+PROMPT:
+Refactor/fix the following Java code: ```java public void METHOD_1 (
+java.lang.Object obj , java.lang.String VAR_1 ) throws TYPE_1 { assert
+obj != null ; if ( VAR_2 . METHOD_2 ( ) ) VAR_2 . METHOD_3 ( ( STRING_1
++ obj ) ) ; obj = METHOD_4 ( obj ) ; METHOD_5 ( obj , VAR_3 , null
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+public void METHOD_1 ( java.lang.Object obj , java.lang.String VAR_1 )
+throws TYPE_1 { assert obj != null ; if ( VAR_2 . METHOD_2 ( ) ) VAR_2 .
+METHOD...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.75]   <<ORACLE
+    ```java public void METHOD_1(java.lang.Object obj,
+    java.lang.String VAR_1) throws TYPE_1 {     ass
+  GPT-5.4  [score=0.61]
+    ```java public void METHOD_1(final Object obj, final String
+    VAR_1) throws TYPE_1 {     assert obj !=
+  Qwen3.5  [score=0.14]
+    ```java public void processObject(Object obj, String
+    paramName) throws ExceptionType {     // Valida
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> GPT-5.4    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Code Refactoring
+Figure 16|Code Refactoring examples. 34
+
+===== PAGE 35 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: data_science_1  [python]
+==============================================================================
+PROMPT:
+import pandas as pd import matplotlib.pyplot as plt values = [[1, 2],
+[3, 4]] df = pd.DataFrame(values, columns=["Type A", "Type B"],
+index=["Index 1", "Index 2"]) # Plot values in df with line chart #
+label the x axis and y axis in this plot as "X" and "Y" # SOLUTION START
+------------------------------------------------------------------------------
+GROUND TRUTH:
+df.plot() plt.xlabel("X") plt.ylabel("Y")
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]   <<ORACLE
+    df.plot.line() plt.xlabel("X") plt.ylabel("Y") plt.show()
+  GPT-5.4  [score=0.00]
+    ```python ax = df.plot(kind="line") ax.set_xlabel("X")
+    ax.set_ylabel("Y") plt.show() ```
+  Qwen3.5  [score=0.00]
+    ```python import pandas as pd import matplotlib.pyplot as plt
+    values = [[1, 2], [3, 4]] df = pd.Dat
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Task: data_science_2  [python]
+==============================================================================
+PROMPT:
+Draw and return the daily turnover line chart from a pandas DataFrame.
+The function should raise the exception for: ValueError: If 'df' is not
+a DataFrame or lacks 'Date' or 'Sales' columns, or has no data to plot.
+The function should output with:     Axes: Matplotlib Axes object
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+ if not isinstance(df, pd.DataFrame) or not all(col in df.columns for
+col in ['Date', 'Sales']):         raise ValueError("Invalid 'df': must
+be a...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]   <<ORACLE
+    ```python import pandas as pd import matplotlib.pyplot as
+    plt def task_func(df):     """     Dra
+  GPT-5.4  [score=0.00]
+    ```python import pandas as pd import matplotlib.pyplot as plt
+    def task_func(df):     if not isinsta
+  Qwen3.5  [score=0.00]
+    ```python import pandas as pd import matplotlib.pyplot as plt
+    def task_func(df):     if not isinsta
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Data Science
+Figure 17|Data Science examples.
+35
+
+===== PAGE 36 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: multi_language_1  [javascript]
+==============================================================================
+PROMPT:
+/* Concatenate list of strings into a single string >>>
+concatenate([])  '' >>> concatenate(['a', 'b', 'c'])  'abc' */
+const concatenate = (strings) => {
+------------------------------------------------------------------------------
+GROUND TRUTH:
+ return strings.join(''); }
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.90]   <<ORACLE
+    ```javascript const concatenate = (strings) => {     return
+    strings.join(''); }; ```
+  GPT-5.4  [score=0.90]
+    ```javascript const concatenate = (strings) => {     return
+    strings.join(''); }; ```
+  Qwen3.5  [score=0.90]
+    ```javascript const concatenate = (strings) => {     return
+    strings.join(''); }; ```
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Task: multi_language_2  [ts]
+==============================================================================
+PROMPT:
+//This function takes an array l and returns an array l' such that // l'
+is identical to l in the odd indicies, while its values at the even
+indicies are equal // to the values of the even indicies of l, but
+sorted. // >>> sort_even([1, 2, 3]) // [1, 2, 3] // >>> sort_even([5, 6,
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+(execution-based evaluation)
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]   <<ORACLE
+    ```ts function sort_even(l: number[]): number[] {     const
+    evenValues = l.filter((_, i) => i % 2 ==
+  GPT-5.4  [score=0.00]
+    ```ts function sort_even(l: number[]): number[] {     const
+    evens = l.filter((_, i) => i % 2 === 0).so
+  Qwen3.5  [score=0.00]
+    ```typescript function sort_even(l: number[]): number[] {
+    const evens = l.filter((_, i) => i % 2
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Qwen3.5    |  Oracle -> Opus
+Multi-Language
+Figure 18|Multi-Language examples.
+36
+
+===== PAGE 37 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: code_understanding_1  [python]
+==============================================================================
+PROMPT:
+Summarize the following Python function in natural language: ```python
+def generate_form(args):     """Generate form."""     form_name =
+args.get('<form>')     logger.info('Start generating form.')
+_generate_form(form_name)     logger.info('Finish generating form.') ```
+------------------------------------------------------------------------------
+GROUND TRUTH:
+Generate form.
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.10]   <<ORACLE
+    This function retrieves a form name from the provided
+    arguments dictionary (using the key `'<form>'`
+  GPT-5.4  [score=0.05]
+    This function generates a form based on a form name provided
+    in `args`. In plain language, it: 1.
+  Qwen3.5  [score=0.05]
+    This function orchestrates the process of generating a form.
+    It performs the following steps: 1. *
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Task: code_understanding_2  [python]
+==============================================================================
+PROMPT:
+Summarize the following Python function in natural language: ```python
+def set_completer_frame(self, frame=None):     """Set the frame of
+the completer."""     if frame:         self.Completer.namespace
+= frame.f_locals         self.Completer.global_namespace = f
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+Set the frame of the completer.
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.18]   <<ORACLE
+    This function configures the completer's namespace context. If
+    a stack frame is provided, it sets th
+  GPT-5.4  [score=0.12]
+    This function sets which variable scopes the completer should
+    use for tab completion. - If a `frame
+  Qwen3.5  [score=0.13]
+    This method configures the namespace context used by a code
+    completer. It accepts an optional execut
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Code Understanding
+Figure 19|Code Understanding examples.
+37
+
+===== PAGE 38 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: test_generation_1  [python]
+==============================================================================
+PROMPT:
+Generate comprehensive test cases for the following function: ```python
+def string_sequence(n: int) -> str:     """     Return a string containing
+space-delimited numbers starting from 0 upto n inclusive.     >>>
+string_sequence(0)     '0'     >>> string_sequence(5)     '0 1 2 3 4
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+import numpy as np def is_floats(x) -> bool:     # check if it is
+float; List[float]; Tuple[float]     if isinstance(x, float):         return
+True...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]
+    ```python import pytest from typing import Any # Assuming
+    the function is defined in a module, w
+  GPT-5.4  [score=0.00]
+    ```python import pytest from solution import string_sequence
+    @pytest.mark.parametrize(     "n, ex
+  Qwen3.5  [score=1.00]   <<ORACLE
+    ```python import unittest from typing import Callable #
+    Assuming the function is imported from the
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> GPT-5.4    |  LLM 3-shot -> Opus    |  Oracle -> Qwen3.5
+Task: test_generation_2  [python]
+==============================================================================
+PROMPT:
+Generate comprehensive test cases for the following function: ```python
+def frequency_lists(list1):     list1 = [item for sublist in list1 for
+item in sublist]     return {x: list1.count(x) for x in list1} ```
+Task description: Write a function to find frequency of each eleme
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+import numpy as np from math import inf def is_floats(x) -> bool:     #
+check if it is float; List[float]; Tuple[float]     if isinstance(x,
+float):...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.00]   <<ORACLE
+    ```python import pytest from collections import Counter
+    def frequency_lists(list1):     list1 =
+  GPT-5.4  [score=0.00]
+    ```python import pytest from solution import frequency_lists
+    def test_empty_outer_list_returns_em
+  Qwen3.5  [score=0.00]
+    ```python import unittest # Function under test def
+    frequency_lists(list1):     list1 = [item for s
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> GPT-5.4    |  LLM 3-shot -> Opus    |  Oracle -> Opus
+Test Generation
+Figure 20|Test Generation examples. 38
+
+===== PAGE 39 / 39 =====
+
+Agent-as-a-Router: Agentic Model Routing for Coding Tasks
+Task: agentic_programming_1  [python]
+==============================================================================
+PROMPT:
+Display fixture scope with `pytest --fixtures` It would be useful to
+show fixture scopes with `pytest --fixtures`; currently the only way to
+learn the scope of a fixture is look at the docs (when that is
+documented) or at the source code.
+------------------------------------------------------------------------------
+GROUND TRUTH:
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py ---
+a/src/_pytest/python.py +++ b/src/_pytest/python.py @@ -1342,17 +1342,19
+@@ def _showfi...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.72]   <<ORACLE
+    diff --git a/lib/core.py b/lib/core.py @@ -145,7 +145,9 @@ -
+    return self._compute(data) +
+  GPT-5.4  [score=0.65]
+    diff --git a/lib/core.py b/lib/core.py @@ -145,6 +145,8 @@ +
+    if hasattr(data, "submodels"): +
+  Qwen3.5  [score=0.35]
+    def _compute(self, data):     if isinstance(data,
+    CompoundModel):         results = [self._compute(s
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> GPT-5.4    |  Oracle -> Opus
+Task: agentic_programming_2  [python]
+==============================================================================
+PROMPT:
+.subs on coth(log(tan(x))) errors for certain integral values >>>
+from sympy import *     >>> x = Symbol('x')     >>> e =
+coth(log(tan(x)))     >>> print(e.subs(x, 2))     ...     File
+"C:\Users\E\Desktop\sympy-
+master\sympy\functions\elementary\hyperbolic.py", line 590,
+...
+------------------------------------------------------------------------------
+GROUND TRUTH:
+diff --git a/sympy/functions/elementary/hyperbolic.py
+b/sympy/functions/elementary/hyperbolic.py ---
+a/sympy/functions/elementary/hyperbolic.py +++ b/...
+------------------------------------------------------------------------------
+MODEL OUTPUTS:
+  Opus     [score=0.72]   <<ORACLE
+    diff --git a/lib/core.py b/lib/core.py @@ -145,7 +145,9 @@ -
+    return self._compute(data) +
+  GPT-5.4  [score=0.65]
+    diff --git a/lib/core.py b/lib/core.py @@ -145,6 +145,8 @@ +
+    if hasattr(data, "submodels"): +
+  Qwen3.5  [score=0.35]
+    def _compute(self, data):     if isinstance(data,
+    CompoundModel):         results = [self._compute(s
+------------------------------------------------------------------------------
+ROUTER DECISIONS:
+  DimensionBest -> Opus    |  LLM 3-shot -> GPT-5.4    |  Oracle -> Opus
+Agentic Programming
+Figure 21|Agentic Programming examples (10th dimension, OOD). 39

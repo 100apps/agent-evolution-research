@@ -1,0 +1,48 @@
+{
+  "lightbox_open": true,
+  "report": "index.html",
+  "desktop": {
+    "innerWidth": 1440,
+    "scrollWidth": 1440,
+    "cards": 41,
+    "notes": 8,
+    "experiments": 3,
+    "panoramaNatural": [
+      3600,
+      3320
+    ],
+    "panoramaEmbedded": true,
+    "overflow": []
+  },
+  "search_acrouter": [
+    "Agent-as-a-Router: Agentic Model Routing for Coding Tasks"
+  ],
+  "theme_prompt_feedback": [
+    "Can Textual Gradient Work in Federated Learning?",
+    "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search",
+    "Optimizing generative AI by backpropagating language model feedback",
+    "SPRIG: Improving Large Language Model Performance by System Prompt Optimization"
+  ],
+  "desktop_expanded_overflow": [],
+  "mobile": {
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "panoramaWidth": 356,
+    "panoramaEmbedded": true,
+    "overflow": [],
+    "expanded_overflow": []
+  },
+  "mobile_search_acrouter": [
+    "Agent-as-a-Router: Agentic Model Routing for Coding Tasks"
+  ],
+  "assertions": {
+    "desktop_no_horizontal_overflow": true,
+    "mobile_no_horizontal_overflow": true,
+    "expanded_content_no_overflow": true,
+    "panorama_embedded_3600x3320": true,
+    "lightbox_click_opens": true,
+    "search_acrouter_one": true,
+    "theme_filter_four": true,
+    "structure_counts": true
+  }
+}

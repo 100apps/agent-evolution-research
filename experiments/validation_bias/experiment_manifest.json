@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "evidence_level": "合成机制实验",
+  "command": "python experiments/validation_bias/run.py --output-dir <OUTPUT_DIR>",
+  "determinism": "Python random.Random 使用每 trial 固定 seed；单线程确定性",
+  "seed": 20261008,
+  "input_files": [
+    {
+      "path": "experiments/validation_bias/run.py",
+      "sha256": "e5af67ea73c26ecda38d25c224a82a617c1879c6b9eade64d88a247dd9659c56"
+    }
+  ],
+  "configuration": {
+    "trials": 3000,
+    "rounds": 16,
+    "candidates_per_round": 12,
+    "sample_sizes": {
+      "development": 80,
+      "holdout": 80,
+      "final_test": 5000
+    }
+  },
+  "expected": {
+    "checks": {
+      "reused_holdout_more_optimistic": true,
+      "bias_increases_from_1_to_16_rounds": true,
+      "final_test_never_used_for_selection": true
+    },
+    "numeric_source": "锁定代码与 seed 的已提交结果"
+  },
+  "actual": {
+    "sealed_optimism": {
+      "mean": -0.00014086666666666625,
+      "ci95_low": -0.001709710270946472,
+      "ci95_high": 0.0014279769376131395,
+      "sd": 0.04384137914600806
+    },
+    "reused_optimism": {
+      "mean": 0.05579493333333334,
+      "ci95_low": 0.05444761722718291,
+      "ci95_high": 0.05714224943948377,
+      "sd": 0.037650786909623285
+    },
+    "checks": {
+      "reused_holdout_more_optimistic": true,
+      "bias_increases_from_1_to_16_rounds": true,
+      "final_test_never_used_for_selection": true
+    }
+  },
+  "tolerance": "同 Python 主版本精确；跨实现比较均值绝对误差 <= 1e-12",
+  "boundary": "所有数据均为合成，不对应任一论文数据集",
+  "code": {
+    "path": "experiments/validation_bias/run.py",
+    "sha256": "e5af67ea73c26ecda38d25c224a82a617c1879c6b9eade64d88a247dd9659c56",
+    "repository_commit": "see enclosing Git commit"
+  },
+  "environment": {
+    "python": "3.14.3",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "external_model_calls": 0,
+    "paid_api_cost_usd": 0
+  },
+  "outputs": [
+    {
+      "path": "experiments/validation_bias/results.json",
+      "sha256": "e3505ae60fa410fa1d16291d24c9a20b333c3c114aacd1361f5a14ccaf6b2948",
+      "bytes": 7002
+    },
+    {
+      "path": "experiments/validation_bias/round_curve.csv",
+      "sha256": "a4c0397ad8bf4684cc8cf1fd6add23aef467b4c589b642f595810b8a6726b8d2",
+      "bytes": 481
+    },
+    {
+      "path": "experiments/validation_bias/run.log",
+      "sha256": "d52db5fde11d2a684ae1a6bc73b3b63a5859d9e2c445f6e6de37ced94979260f",
+      "bytes": 2199
+    }
+  ]
+}

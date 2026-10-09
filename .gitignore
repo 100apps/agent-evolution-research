@@ -1,0 +1,13 @@
+tmp/
+run_outputs/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.zip
+.pytest_cache/
+.coverage
+.DS_Store
+Thumbs.db
+.library_*/
+

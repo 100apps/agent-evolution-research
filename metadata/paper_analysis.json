@@ -1,0 +1,371 @@
+{
+  "1": {
+    "primary_title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "把提示、检索、记忆和代码 harness 作为可改写整体。",
+    "evidence": "分类、数学与 TerminalBench-2；完整轨迹搜索优于压缩反馈。",
+    "limitation": "TB2 搜索/评估同 89 题，成本和强 proposer 贡献未充分拆开。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "2": {
+    "primary_title": "SkillX: Automatically Constructing Skill Knowledge Bases for Agents",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "从强模型轨迹构建规划—功能—原子三级技能库。",
+    "evidence": "BFCL-v3 与 AppWorld 多模型对照，公开部分技能与代码。",
+    "limitation": "按测试集性能停止迭代会引入选择偏差，跨环境迁移仍有限。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "3": {
+    "primary_title": "From Procedural Skills to Strategy Genes: Towards Experience-Driven Test-Time Evolution",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "把长篇技能压缩为带 AVOID 的策略 Gene。",
+    "evidence": "45 个科学编程场景；Flash 提升而 Pro 基本不变。",
+    "limitation": "checkpoint 分不等于整题成功，等预算和信息量控制不完整。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "4": {
+    "primary_title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "从成功/失败轨迹并行归纳可携带技能目录。",
+    "evidence": "v5 使用独立进化/留出切分，电子表格资产已发布。",
+    "limitation": "最大单项提升不能代表平均；跨模型迁移也存在负例。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "5": {
+    "primary_title": "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "在多用户会话之间创建、修订、验证并同步共享技能。",
+    "evidence": "8 个模拟用户、6 轮演化，四类任务报告 best-skill。",
+    "limitation": "缺独立未见用户/任务协议；best-so-far 曲线含选择效应与隐私风险。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "6": {
+    "primary_title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+    "theme": "权重 / 训练",
+    "update": "更新权重",
+    "claim": "训练时逐步撤去技能，让策略参数内化其作用。",
+    "evidence": "Qwen2.5-VL 3B/7B 在 ALFWorld、Search-QA、WebShop 上评测。",
+    "limitation": "需要 4×H800；视觉压缩与训练收益混杂，并非免训练上下文学习。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "7": {
+    "primary_title": "Skill1: Unified Evolution of Skill Augmented Agents via Reinforcement Learning",
+    "theme": "权重 / 训练",
+    "update": "权重 + 外部库",
+    "claim": "联合学习技能检索、执行与轨迹蒸馏。",
+    "evidence": "ALFWorld 有多种子显著性；WebShop 增益仅 0.6pp。",
+    "limitation": "8×H800 全参 RL；信用分配是代理信号而非无偏因果贡献。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "8": {
+    "primary_title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "以可下钻轨迹、manifest 和文件级回滚演化 coding harness。",
+    "evidence": "TB2 69.7→77.0；迁移 SWE-Verified 只提升 0.4pp 但降 token。",
+    "limitation": "同基准搜索评测且仅一轮 campaign；回归预测 recall 很低。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "9": {
+    "primary_title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+    "theme": "Harness / 编排",
+    "update": "外部为主；可选权重",
+    "claim": "在同一未重置 episode 内持续更新提示、子代理、技能和记忆。",
+    "evidence": "Pokémon 阶段性里程碑、导航技能与共同训练案例。",
+    "limitation": "弱模型反而退化；接口、teacher 和更多交互时间的贡献未拆开。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "10": {
+    "primary_title": "From Context to Skills: Can Language Models Learn from Context Skillfully?",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "从每份长上下文自出题、自评并形成可回放技能。",
+    "evidence": "CL-bench 500 上下文/1899 任务，多代 GPT 均有提升。",
+    "limitation": "约 3 万美元探索成本；共享上下文和 LLM judge 使因果归因复杂。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "11": {
+    "primary_title": "CoEvolve: Training LLM Agents via Agent Data Mutual Evolution",
+    "theme": "权重 / 训练",
+    "update": "更新权重 + 数据",
+    "claim": "依据当前策略弱点动态合成并验证新训练任务。",
+    "evidence": "对 GRPO 的直接增量在 AppWorld/BFCL 上为数个百分点。",
+    "limitation": "强探索模型与可执行环境是关键资源，完整训练代码尚未核实可用。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "12": {
+    "primary_title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "把技能文件、测试、经验和长期记忆纳入完整生命周期。",
+    "evidence": "SkillsBench 75 任务与 SkillLearnBench；覆盖率按全分母报告。",
+    "limitation": "同题成功轨迹蒸馏再重跑易乐观，官方实现未验证。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "13": {
+    "primary_title": "SkillForge: Forging Domain-Specific, Self-Evolving Agent Skills in Cloud Technical Support",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "从客服工单诊断失败并最小增量修改领域技能。",
+    "evidence": "1,883 工单按时间分片，五场景留出评测。",
+    "limitation": "私有数据/模型且 LLM judge 口径复杂；领域与通用基线信息不等价。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "14": {
+    "primary_title": "Autogenesis: A Self-Evolving Agent Protocol",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "用资源协议与 Reflect→Select→Improve→Evaluate→Commit 管理可回滚演化。",
+    "evidence": "GPQA/AIME、GAIA/HLE 和 LeetCode 上报告多类结果。",
+    "limitation": "协议兼容多优化器不等于都验证过；安全依赖 Accept 判定。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "15": {
+    "primary_title": "Harnessing Agentic Evolution",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "让 meta-agent 修改搜索机制或内层 agent 代码。",
+    "evidence": "Terminal-Bench、ARC-AGI-2 与开放优化任务。",
+    "limitation": "每轮成本约基线 3 倍、Best@3 且代码资产缺失，因果与稳定性有限。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "16": {
+    "primary_title": "Can Textual Gradient Work in Federated Learning?",
+    "theme": "提示 / 反馈",
+    "update": "外部状态",
+    "claim": "聚合不同客户端本地优化后的文本提示。",
+    "evidence": "同构/异构客户端及 11B→3B 迁移对照。",
+    "limitation": "提示不是数学梯度；隐私、恶意客户端与长度预算未解决。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "17": {
+    "primary_title": "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search",
+    "theme": "提示 / 反馈",
+    "update": "外部状态",
+    "claim": "用语言批评提出方向，再以 beam/bandit 搜索离散提示。",
+    "evidence": "四个分类任务及同预算搜索消融。",
+    "limitation": "可能以测试分数择优；错误反馈会改窄任务或翻转标签。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "18": {
+    "primary_title": "Optimizing generative AI by backpropagating language model feedback",
+    "theme": "提示 / 反馈",
+    "update": "外部文本变量",
+    "claim": "在计算图上传播语言反馈并改写提示、答案或代码。",
+    "evidence": "推理、代码、多模态和科学优化多域实验。",
+    "limitation": "强反馈模型与额外调用是重要资源；版本表格存在口径差异。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "19": {
+    "primary_title": "Building self-improving tax agents with Codex",
+    "theme": "工程案例",
+    "update": "外部软件状态",
+    "claim": "把专家修正、可追溯生产日志和回归测试接入工程改进闭环。",
+    "evidence": "官方案例报告 7000 份申报、吞吐与字段完成率变化。",
+    "limitation": "非论文、无随机对照；有人审查且不同百分比口径不可拼接。",
+    "status": "无核心 PDF（官方文章/评论视频）"
+  },
+  "20": {
+    "primary_title": "从Agent自进化和vibe coding出发，看任务如何被组织成反馈驱动优化循环",
+    "theme": "综述 / 评论",
+    "update": "不适用",
+    "claim": "把 vibe coding 与 Agent 自进化统一为反馈驱动工程循环。",
+    "evidence": "观点视频，用于连接合集概念。",
+    "limitation": "没有一一对应的独立论文或可核验实验，报告不把它计入论文结果。",
+    "status": "无核心 PDF（官方文章/评论视频）"
+  },
+  "21": {
+    "primary_title": "SPRIG: Improving Large Language Model Performance by System Prompt Optimization",
+    "theme": "提示 / 反馈",
+    "update": "提示 + 奖励模型权重",
+    "claim": "进化跨任务系统提示，并用训练过的奖励模型排序。",
+    "evidence": "42 个域内任务与 5 个外域基准；系统/任务提示组合。",
+    "limitation": "完整规模含 9000 组件与 10 万偏好对；组合对 ProTeGi 的 p=0.053。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "22": {
+    "primary_title": "From Interactions to Principles: Experience-Driven Self-Distillation for Evolving LLM Agents",
+    "theme": "权重 / 训练",
+    "update": "权重 + 外部记忆",
+    "claim": "先把轨迹蒸馏为原则记忆，再以 GRPO 更新策略。",
+    "evidence": "七个 QA 集；3B/7B 模型及记忆消融。",
+    "limitation": "无检索性能下降说明未完全内化；原则效用是相关而非因果。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "23": {
+    "primary_title": "TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins",
+    "theme": "预测 / 筛选",
+    "update": "训练预测器，不改目标模型",
+    "claim": "用 100 步 probe 与静态特征预测完整微调结果。",
+    "evidence": "1300+ 完整 LoRA 运行，MMLU R²=.99。",
+    "limitation": "预测器本身依赖大量历史真值；跨目标模型需重新训练。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "24": {
+    "primary_title": "Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning",
+    "theme": "权重 / 训练",
+    "update": "权重 + 外部技能",
+    "claim": "把通用技能内化，把场景技能保留在检索库。",
+    "evidence": "ALFWorld/WebShop 的 ID/OOD 分层训练。",
+    "limitation": "OOD 测试仍提供新专项技能；人工技能分层和 rollout 噪声限制外推。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "25": {
+    "primary_title": "A Simple \"Motivation\" Can Enhance Reinforcement Finetuning of Large Reasoning Models",
+    "theme": "权重 / 训练",
+    "update": "更新权重",
+    "claim": "把真实奖励规则写入训练 prompt 以引导 RL 探索。",
+    "evidence": "Knights & Knaves 与数学基准的 GRPO 对照。",
+    "limitation": "冻结模型提示对照不等于训练收益；弱模型提升仍有限。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "26": {
+    "primary_title": "SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training",
+    "theme": "预测 / 筛选",
+    "update": "不改目标模型",
+    "claim": "用 SAE 特征预测微调影响幅度。",
+    "evidence": "三类 7B–9B 模型跨域相关约 .77–.81。",
+    "limitation": "只预测变化大小、不预测正负；需要白盒激活和匹配 SAE。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "27": {
+    "primary_title": "CoPE: A Framework for Optimizing Coordination between Planning and Execution in LLM-based Agents",
+    "theme": "权重 / 训练",
+    "update": "更新权重",
+    "claim": "分别学习计划可执行性与执行遵循度。",
+    "evidence": "ALFWorld/ScienceWorld 五次运行，并主动报告短任务负面结果。",
+    "limitation": "数据收集需数十小时多 rollout；协调分是代理指标。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "28": {
+    "primary_title": "Agent-as-a-Router: Agentic Model Routing for Coding Tasks",
+    "theme": "路由 / 选择",
+    "update": "外部状态 + 小路由器",
+    "claim": "基于任务、记忆、成本与反馈选择后端模型。",
+    "evidence": "论文 v3 与最新仓库制品都可核验；本报告做了 OOD176 独立回放。",
+    "limitation": "最新 JSON 混合模型版本；工件级级联不等于论文在线 0.8B+kNN 全闭环。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "29": {
+    "primary_title": "SE-GA: Memory-Augmented Self-Evolution for GUI Agents",
+    "theme": "GUI / 记忆",
+    "update": "权重 + 外部记忆",
+    "claim": "把 GUI 轨迹、规则和成功摘要用于检索，并以 SFT/GRPO 训练。",
+    "evidence": "ScreenSpot、AndroidControl、GUIOdyssey、AndroidWorld。",
+    "limitation": "表内 75.8/73.8 冲突；默认仓库配置不等于论文设置。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "30": {
+    "primary_title": "EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "把工具调用编译为带依赖、效应、重试和幂等性的 Plan IR。",
+    "evidence": "StableToolBench、ShortcutsBench 与 ToolSeq-500。",
+    "limitation": "正确性依赖保守效应标注；真实 API 与完整训练预算门槛高。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "31": {
+    "primary_title": "Agent 自进化理解、难点与展望",
+    "theme": "综述 / 评论",
+    "update": "补充：外部状态",
+    "claim": "视频综述 Agent 自进化难点，并在 06:15 引用 SkVM。",
+    "evidence": "补充下载 SkVM v3，研究技能能力适配、AOT/JIT 与回退。",
+    "limitation": "视频本身无核心论文；SkVM 单列补充，不能当作第 42 个视频。",
+    "status": "视频无核心论文；补充 PDF 已下载并校验"
+  },
+  "32": {
+    "primary_title": "A Programming Paradigm for Spatiotemporal Composability",
+    "theme": "运行时 / 系统",
+    "update": "外部运行时状态",
+    "claim": "以可逆 effect 与 reactive coeffect 管理组件生命周期。",
+    "evidence": "形式化定理、TypeScript 实现及 Koishi 生态案例。",
+    "limitation": "逆操作正确性由作者承担，语言代理不是恶意代码沙箱。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "33": {
+    "primary_title": "Just-In-Time Reinforcement Learning: Continual Learning in LLM Agents Without Gradient Updates",
+    "theme": "技能 / 记忆",
+    "update": "外部非参数记忆",
+    "claim": "从相似状态经验估计动作优势并重加权冻结模型策略。",
+    "evidence": "WebArena、Jericho 与跨任务记忆对照。",
+    "limitation": "公开代码概率加法/argmax 与论文 logit-softmax 公式不一致。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "34": {
+    "primary_title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "用 clade 未来潜力估计与 Thompson sampling 搜索 agent 后代。",
+    "evidence": "SWE/Polyglot 的相关、成功率和 CPU-hour。",
+    "limitation": "理论依赖真实 CMP oracle；实际估计与约 5000 美元实验不能证明全局最优。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "35": {
+    "primary_title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+    "theme": "Harness / 编排",
+    "update": "生成器权重 + 外部 archive",
+    "claim": "训练按任务生成/修复 harness 的模型，部署时冻结并积累 archive。",
+    "evidence": "9 基准、多执行模型与成本/延迟比较。",
+    "limitation": "公开 27B 是蒸馏初始版本，训练数据与预算细节不足。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "36": {
+    "primary_title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "把不可改轨迹编译为持续 wiki，再生成经验证的技能。",
+    "evidence": "五模型五基准、三次演化与 bootstrap。",
+    "limitation": "小验证集反复选择会过拟合；存在明显负迁移。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "37": {
+    "primary_title": "EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems",
+    "theme": "技能 / 记忆",
+    "update": "外部状态",
+    "claim": "跨重复 episode 演化提示、记忆、超参和 Python 工具。",
+    "evidence": "六个 Jericho 游戏、50 episode 与同模型控制。",
+    "limitation": "固定任务策略性过拟合，且依赖强 evolver；不是跨任务持续学习。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "38": {
+    "primary_title": "Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies",
+    "theme": "拓扑 / 多代理",
+    "update": "外部状态",
+    "claim": "分阶段优化单代理提示、系统拓扑和联合提示。",
+    "evidence": "8 个混合指标任务与开放模型补表。",
+    "limitation": "未确认官方实现，主表任务子集小且不同方法优化器不完全可比。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "39": {
+    "primary_title": "SoL-Pi: Scaling Auto-Research Loops for Efficient Agent Harnesses",
+    "theme": "Harness / 编排",
+    "update": "外部状态",
+    "claim": "大规模自动研究筛出 Action Fusion、上下文压缩和证据保留机制。",
+    "evidence": "535 环境、3000+ run；能力—token—费用多 operating point。",
+    "limitation": "省 token 伴随分数下降；51 题中 11 题用于接受决定，不能称全未见。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "40": {
+    "primary_title": "DeepSeek Elastic Compute (DSec): A Sandbox Infrastructure for Effective Agentic Training at Scale",
+    "theme": "运行时 / 系统",
+    "update": "基础设施状态",
+    "claim": "按需加载沙盒层、资源回收和 CPU QoS 提升训练吞吐。",
+    "evidence": "10 节点 8192 容器与存储/内存/QoS 指标。",
+    "limitation": "未含 RL 框架端到端质量，且只公开部分存储组件。",
+    "status": "核心 PDF 已下载并校验"
+  },
+  "41": {
+    "primary_title": "Reinforcement Learning for Self-Improving Agent with Skill Library",
+    "theme": "权重 / 训练",
+    "update": "权重 + 可执行技能库",
+    "claim": "在连续任务中生成可执行函数，并用 skill-integrated reward 训练复用。",
+    "evidence": "AppWorld Test-Normal/Challenge 与 reward、检索、任务链消融。",
+    "limitation": "完整训练 32×H100 且前置闭源教师；不适合普通单机原数复现。",
+    "status": "核心 PDF 已下载并校验"
+  }
+}

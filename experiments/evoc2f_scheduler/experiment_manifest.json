@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "evidence_level": "合成机制实验",
+  "command": "python experiments/evoc2f_scheduler/run.py --output-dir <OUTPUT_DIR>",
+  "determinism": "任务图和故障注入确定；线程计时与冲突交错非完全确定",
+  "seed": 20261008,
+  "input_files": [
+    {
+      "path": "experiments/evoc2f_scheduler/run.py",
+      "sha256": "a28c82071fb050d3fb4fc2b185682e311f9dbefc5f57d4f59e94342214abb9e2"
+    }
+  ],
+  "configuration": {
+    "repeats": 12,
+    "task_graph": {
+      "account_bonus": {
+        "deps": [],
+        "reads": [
+          "account"
+        ],
+        "writes": [
+          "account"
+        ],
+        "latency_s": 0.04,
+        "op_id": "plan/account_bonus",
+        "fail_after_commit_once": false
+      },
+      "account_credit": {
+        "deps": [],
+        "reads": [
+          "account"
+        ],
+        "writes": [
+          "account"
+        ],
+        "latency_s": 0.04,
+        "op_id": "plan/account_credit",
+        "fail_after_commit_once": false
+      },
+      "inventory_restock": {
+        "deps": [],
+        "reads": [
+          "inventory"
+        ],
+        "writes": [
+          "inventory"
+        ],
+        "latency_s": 0.055,
+        "op_id": "plan/inventory_restock",
+        "fail_after_commit_once": false
+      },
+      "account_report": {
+        "deps": [
+          "account_bonus",
+          "account_credit"
+        ],
+        "reads": [
+          "account"
+        ],
+        "writes": [
+          "report"
+        ],
+        "latency_s": 0.025,
+        "op_id": null,
+        "fail_after_commit_once": false
+      },
+      "inventory_ship": {
+        "deps": [
+          "inventory_restock"
+        ],
+        "reads": [
+          "inventory"
+        ],
+        "writes": [
+          "inventory"
+        ],
+        "latency_s": 0.03,
+        "op_id": "plan/inventory_ship",
+        "fail_after_commit_once": true
+      },
+      "finalize": {
+        "deps": [
+          "account_report",
+          "inventory_ship"
+        ],
+        "reads": [
+          "inventory",
+          "report"
+        ],
+        "writes": [
+          "summary"
+        ],
+        "latency_s": 0.02,
+        "op_id": null,
+        "fail_after_commit_once": false
+      }
+    }
+  },
+  "expected": {
+    "effect_aware_equivalent_runs": 12,
+    "dependency_only_equivalent_runs_max": 11,
+    "retry_attempts": 2,
+    "inventory": 13
+  },
+  "actual": {
+    "effect_aware_equivalent_runs": 12,
+    "dependency_only_equivalent_runs": 0,
+    "checks": {
+      "effect_aware_all_equivalent": true,
+      "dependency_only_exposes_non_equivalence": true,
+      "retry_was_exercised": true,
+      "idempotent_retry_preserved_inventory": true
+    },
+    "effect_aware_speedup_vs_serial": 1.679838351262791
+  },
+  "tolerance": "语义检查精确；墙钟速度只作信息性指标，不设论文指标容差",
+  "boundary": "合成 DAG 机制示例，不是 EvoC2F 数据集或端到端论文结果复现",
+  "code": {
+    "path": "experiments/evoc2f_scheduler/run.py",
+    "sha256": "a28c82071fb050d3fb4fc2b185682e311f9dbefc5f57d4f59e94342214abb9e2",
+    "repository_commit": "see enclosing Git commit"
+  },
+  "environment": {
+    "python": "3.14.3",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "external_model_calls": 0,
+    "paid_api_cost_usd": 0
+  },
+  "outputs": [
+    {
+      "path": "experiments/evoc2f_scheduler/results.json",
+      "sha256": "a6495eeea57130b3311624881be9aaae1b227f78f3d05a9349897da9cec066fc",
+      "bytes": 4662
+    },
+    {
+      "path": "experiments/evoc2f_scheduler/runs.csv",
+      "sha256": "6e535fa8fe0ded66c9cbd89039c5cbaf69e25f0d49a78d887391c2285ce89589",
+      "bytes": 4127
+    },
+    {
+      "path": "experiments/evoc2f_scheduler/run.log",
+      "sha256": "59daf109dca45ac2525b242a1153ed5c953b0a979fe1abb1958aa53ebec774eb",
+      "bytes": 7830
+    }
+  ]
+}

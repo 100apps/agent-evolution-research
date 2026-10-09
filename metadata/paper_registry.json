@@ -1,0 +1,1504 @@
+{
+  "schema_version": 1,
+  "generated_from": [
+    "metadata/inventory.json",
+    "metadata/download_sources.json",
+    "metadata/pdf_manifest.json",
+    "metadata/paper_analysis.json",
+    "metadata/agent_evolution_map.json"
+  ],
+  "count": 39,
+  "identity_rules": {
+    "arxiv": "arxiv:<base-id>，版本单独保存在 source_version",
+    "pmlr": "pmlr:<volume-paper-id>",
+    "acl": "acl:<anthology-id>",
+    "supplement": "SkVM 使用自身 arXiv ID；S01 只表示其地图/合集关系"
+  },
+  "papers": [
+    {
+      "paper_id": "arxiv:2603.28052",
+      "collection_index": 1,
+      "supplemental_id": null,
+      "video_id": "BV1rQ9JBoECh",
+      "video_url": "https://www.bilibili.com/video/BV1rQ9JBoECh",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+      "map_name": "Meta-Harness",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/pdf/2603.28052"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2603.28052v1",
+      "source_version": "arXiv 2603.28052v1",
+      "local_pdf": "papers/01_meta-harness_arxiv-2603.28052v1.pdf",
+      "local_text": "text/core/01_meta-harness_arxiv-2603.28052v1.txt",
+      "pdf_sha256": "7d9b90f53a9f4801a090f1a4acb843340cde81e4f865f97d53fff2a6a570eb73",
+      "pdf_bytes": 1078140,
+      "pdf_pages": 26,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #1",
+      "paper_analysis_key": "1",
+      "analysis_summary": {
+        "primary_title": "Meta-Harness: End-to-End Optimization of Model Harnesses",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "把提示、检索、记忆和代码 harness 作为可改写整体。",
+        "evidence": "分类、数学与 TerminalBench-2；完整轨迹搜索优于压缩反馈。",
+        "limitation": "TB2 搜索/评估同 89 题，成本和强 proposer 贡献未充分拆开。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.04804",
+      "collection_index": 2,
+      "supplemental_id": null,
+      "video_id": "BV1dFd9B7EvW",
+      "video_url": "https://www.bilibili.com/video/BV1dFd9B7EvW",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SkillX: Automatically Constructing Skill Knowledge Bases for Agents",
+      "map_name": "SkillX",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.04804"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.04804v2",
+      "source_version": "arXiv 2604.04804v2",
+      "local_pdf": "papers/02_skillx_arxiv-2604.04804v2.pdf",
+      "local_text": "text/core/02_skillx_arxiv-2604.04804v2.txt",
+      "pdf_sha256": "7606defcc0e0b59bcd0d7f48a2af689a3c7abf5ee7454ee867c52414f09cd8ba",
+      "pdf_bytes": 6658859,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #2",
+      "paper_analysis_key": "2",
+      "analysis_summary": {
+        "primary_title": "SkillX: Automatically Constructing Skill Knowledge Bases for Agents",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "从强模型轨迹构建规划—功能—原子三级技能库。",
+        "evidence": "BFCL-v3 与 AppWorld 多模型对照，公开部分技能与代码。",
+        "limitation": "按测试集性能停止迭代会引入选择偏差，跨环境迁移仍有限。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.15097",
+      "collection_index": 3,
+      "supplemental_id": null,
+      "video_id": "BV1YndDBTEpm",
+      "video_url": "https://www.bilibili.com/video/BV1YndDBTEpm",
+      "video_relation": "primary_collection_item",
+      "primary_title": "From Procedural Skills to Strategy Genes: Towards Experience-Driven Test-Time Evolution",
+      "map_name": "Strategy Genes",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.15097"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.15097v4",
+      "source_version": "arXiv 2604.15097v4",
+      "local_pdf": "papers/03_strategy-genes_arxiv-2604.15097v4.pdf",
+      "local_text": "text/core/03_strategy-genes_arxiv-2604.15097v4.txt",
+      "pdf_sha256": "69eb40ff03eda820c4e333579d046d014b76d7d0634c12d6f284aed0db932ad8",
+      "pdf_bytes": 979647,
+      "pdf_pages": 26,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #3",
+      "paper_analysis_key": "3",
+      "analysis_summary": {
+        "primary_title": "From Procedural Skills to Strategy Genes: Towards Experience-Driven Test-Time Evolution",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "把长篇技能压缩为带 AVOID 的策略 Gene。",
+        "evidence": "45 个科学编程场景；Flash 提升而 Pro 基本不变。",
+        "limitation": "checkpoint 分不等于整题成功，等预算和信息量控制不完整。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2603.25158",
+      "collection_index": 4,
+      "supplemental_id": null,
+      "video_id": "BV1BU5E6pEBL",
+      "video_url": "https://www.bilibili.com/video/BV1BU5E6pEBL",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+      "map_name": "Trace2Skill",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/pdf/2603.25158"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2603.25158v5",
+      "source_version": "arXiv 2603.25158v5",
+      "local_pdf": "papers/04_trace2skill_arxiv-2603.25158v5.pdf",
+      "local_text": "text/core/04_trace2skill_arxiv-2603.25158v5.txt",
+      "pdf_sha256": "9f3f43101583a993b9a82905d790fb2dd57c60b37897187a0706c047bd0b58b0",
+      "pdf_bytes": 1991654,
+      "pdf_pages": 25,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #4",
+      "paper_analysis_key": "4",
+      "analysis_summary": {
+        "primary_title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "从成功/失败轨迹并行归纳可携带技能目录。",
+        "evidence": "v5 使用独立进化/留出切分，电子表格资产已发布。",
+        "limitation": "最大单项提升不能代表平均；跨模型迁移也存在负例。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.08377",
+      "collection_index": 5,
+      "supplemental_id": null,
+      "video_id": "BV1dC5268Eja",
+      "video_url": "https://www.bilibili.com/video/BV1dC5268Eja",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver",
+      "map_name": "SkillClaw",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/pdf/2604.08377"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.08377v2",
+      "source_version": "arXiv 2604.08377v2",
+      "local_pdf": "papers/05_skillclaw_arxiv-2604.08377v2.pdf",
+      "local_text": "text/core/05_skillclaw_arxiv-2604.08377v2.txt",
+      "pdf_sha256": "42e7a4ae0609e5d138776bb97a07af99b55a8f2e78897fc1809c90518b06a487",
+      "pdf_bytes": 3617530,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #5",
+      "paper_analysis_key": "5",
+      "analysis_summary": {
+        "primary_title": "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "在多用户会话之间创建、修订、验证并同步共享技能。",
+        "evidence": "8 个模拟用户、6 轮演化，四类任务报告 best-skill。",
+        "limitation": "缺独立未见用户/任务协议；best-so-far 曲线含选择效应与隐私风险。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.02268",
+      "collection_index": 6,
+      "supplemental_id": null,
+      "video_id": "BV1XM526WEY6",
+      "video_url": "https://www.bilibili.com/video/BV1XM526WEY6",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+      "map_name": "SKILL0",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.02268"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.02268v2",
+      "source_version": "arXiv 2604.02268v2",
+      "local_pdf": "papers/06_skill0_arxiv-2604.02268v2.pdf",
+      "local_text": "text/core/06_skill0_arxiv-2604.02268v2.txt",
+      "pdf_sha256": "60449922ad4990806cdba4775f07dc772c8a5b5c2db48ffdf7cee26235a449c0",
+      "pdf_bytes": 2072291,
+      "pdf_pages": 22,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #6",
+      "paper_analysis_key": "6",
+      "analysis_summary": {
+        "primary_title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+        "theme": "权重 / 训练",
+        "update": "更新权重",
+        "claim": "训练时逐步撤去技能，让策略参数内化其作用。",
+        "evidence": "Qwen2.5-VL 3B/7B 在 ALFWorld、Search-QA、WebShop 上评测。",
+        "limitation": "需要 4×H800；视觉压缩与训练收益混杂，并非免训练上下文学习。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2605.06130",
+      "collection_index": 7,
+      "supplemental_id": null,
+      "video_id": "BV1qS586HEdg",
+      "video_url": "https://www.bilibili.com/video/BV1qS586HEdg",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Skill1: Unified Evolution of Skill Augmented Agents via Reinforcement Learning",
+      "map_name": "Skill1",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://arxiv.org/abs/2605.06130"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2605.06130v3",
+      "source_version": "arXiv 2605.06130v3",
+      "local_pdf": "papers/07_skill1_arxiv-2605.06130v3.pdf",
+      "local_text": "text/core/07_skill1_arxiv-2605.06130v3.txt",
+      "pdf_sha256": "4c18de8751bc0c3809c5166069206cabfb0462985ce179120333217cb4b0bb4a",
+      "pdf_bytes": 2535358,
+      "pdf_pages": 20,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #7",
+      "paper_analysis_key": "7",
+      "analysis_summary": {
+        "primary_title": "Skill1: Unified Evolution of Skill Augmented Agents via Reinforcement Learning",
+        "theme": "权重 / 训练",
+        "update": "权重 + 外部库",
+        "claim": "联合学习技能检索、执行与轨迹蒸馏。",
+        "evidence": "ALFWorld 有多种子显著性；WebShop 增益仅 0.6pp。",
+        "limitation": "8×H800 全参 RL；信用分配是代理信号而非无偏因果贡献。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.25850",
+      "collection_index": 8,
+      "supplemental_id": null,
+      "video_id": "BV1n9Gd6oEUK",
+      "video_url": "https://www.bilibili.com/video/BV1n9Gd6oEUK",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+      "map_name": "AHE",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.25850"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.25850v4",
+      "source_version": "arXiv 2604.25850v4",
+      "local_pdf": "papers/08_agentic-harness-engineering_arxiv-2604.25850v4.pdf",
+      "local_text": "text/core/08_agentic-harness-engineering_arxiv-2604.25850v4.txt",
+      "pdf_sha256": "299f2633b4c13db7bed52434b4db7c48ea621993581014d30e7bcd036d3464df",
+      "pdf_bytes": 1432986,
+      "pdf_pages": 35,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #8",
+      "paper_analysis_key": "8",
+      "analysis_summary": {
+        "primary_title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "以可下钻轨迹、manifest 和文件级回滚演化 coding harness。",
+        "evidence": "TB2 69.7→77.0；迁移 SWE-Verified 只提升 0.4pp 但降 token。",
+        "limitation": "同基准搜索评测且仅一轮 campaign；回归预测 recall 很低。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2605.09998",
+      "collection_index": 9,
+      "supplemental_id": null,
+      "video_id": "BV1NTG26MEGv",
+      "video_url": "https://www.bilibili.com/video/BV1NTG26MEGv",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+      "map_name": "Continual Harness",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/pdf/2605.09998"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2605.09998v1",
+      "source_version": "arXiv 2605.09998v1",
+      "local_pdf": "papers/09_continual-harness_arxiv-2605.09998v1.pdf",
+      "local_text": "text/core/09_continual-harness_arxiv-2605.09998v1.txt",
+      "pdf_sha256": "50f60996b0d962cdbf01f5b6a262ccd68b149c8b67cc2594218453717ea0c45e",
+      "pdf_bytes": 31751676,
+      "pdf_pages": 28,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #9",
+      "paper_analysis_key": "9",
+      "analysis_summary": {
+        "primary_title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents",
+        "theme": "Harness / 编排",
+        "update": "外部为主；可选权重",
+        "claim": "在同一未重置 episode 内持续更新提示、子代理、技能和记忆。",
+        "evidence": "Pokémon 阶段性里程碑、导航技能与共同训练案例。",
+        "limitation": "弱模型反而退化；接口、teacher 和更多交互时间的贡献未拆开。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.27660",
+      "collection_index": 10,
+      "supplemental_id": null,
+      "video_id": "BV11vG669EyX",
+      "video_url": "https://www.bilibili.com/video/BV11vG669EyX",
+      "video_relation": "primary_collection_item",
+      "primary_title": "From Context to Skills: Can Language Models Learn from Context Skillfully?",
+      "map_name": "Ctx2Skill",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.27660"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.27660v4",
+      "source_version": "arXiv 2604.27660v4",
+      "local_pdf": "papers/10_context-to-skills_arxiv-2604.27660v4.pdf",
+      "local_text": "text/core/10_context-to-skills_arxiv-2604.27660v4.txt",
+      "pdf_sha256": "a00529aa61e27190bc010ab14a54131b2b61e952e5f0d54c6974903d7d3bb876",
+      "pdf_bytes": 8581488,
+      "pdf_pages": 39,
+      "analysis_file": "research_notes/skills.md",
+      "analysis_section": "合集条目 #10",
+      "paper_analysis_key": "10",
+      "analysis_summary": {
+        "primary_title": "From Context to Skills: Can Language Models Learn from Context Skillfully?",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "从每份长上下文自出题、自评并形成可回放技能。",
+        "evidence": "CL-bench 500 上下文/1899 任务，多代 GPT 均有提升。",
+        "limitation": "约 3 万美元探索成本；共享上下文和 LLM judge 使因果归因复杂。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.15840",
+      "collection_index": 11,
+      "supplemental_id": null,
+      "video_id": "BV1paVJ6FEZe",
+      "video_url": "https://www.bilibili.com/video/BV1paVJ6FEZe",
+      "video_relation": "primary_collection_item",
+      "primary_title": "CoEvolve: Training LLM Agents via Agent Data Mutual Evolution",
+      "map_name": "CoEvolve",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.15840"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.15840v1",
+      "source_version": "arXiv 2604.15840v1",
+      "local_pdf": "papers/11_coevolve_arxiv-2604.15840v1.pdf",
+      "local_text": "text/core/11_coevolve_arxiv-2604.15840v1.txt",
+      "pdf_sha256": "3cec63accd8c4248a8abdb42041420bc721adf203e3e85bf171577047b4d5b4d",
+      "pdf_bytes": 2555375,
+      "pdf_pages": 22,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #11",
+      "paper_analysis_key": "11",
+      "analysis_summary": {
+        "primary_title": "CoEvolve: Training LLM Agents via Agent Data Mutual Evolution",
+        "theme": "权重 / 训练",
+        "update": "更新权重 + 数据",
+        "claim": "依据当前策略弱点动态合成并验证新训练任务。",
+        "evidence": "对 GRPO 的直接增量在 AppWorld/BFCL 上为数个百分点。",
+        "limitation": "强探索模型与可执行环境是关键资源，完整训练代码尚未核实可用。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2605.27366",
+      "collection_index": 12,
+      "supplemental_id": null,
+      "video_id": "BV1geVD6FETm",
+      "video_url": "https://www.bilibili.com/video/BV1geVD6FETm",
+      "video_relation": "primary_collection_item",
+      "primary_title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+      "map_name": "MUSE-Autoskill",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/abs/2605.27366"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2605.27366v2",
+      "source_version": "arXiv 2605.27366v2",
+      "local_pdf": "papers/12_muse-autoskill_arxiv-2605.27366v2.pdf",
+      "local_text": "text/core/12_muse-autoskill_arxiv-2605.27366v2.txt",
+      "pdf_sha256": "be16a9327f3bf6fb7cea476c51e3128825f5698b80cf428464b817360075348d",
+      "pdf_bytes": 2085173,
+      "pdf_pages": 30,
+      "analysis_file": "research_notes/skillforge_muse.md",
+      "analysis_section": "合集条目 #12",
+      "paper_analysis_key": "12",
+      "analysis_summary": {
+        "primary_title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "把技能文件、测试、经验和长期记忆纳入完整生命周期。",
+        "evidence": "SkillsBench 75 任务与 SkillLearnBench；覆盖率按全分母报告。",
+        "limitation": "同题成功轨迹蒸馏再重跑易乐观，官方实现未验证。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.08618",
+      "collection_index": 13,
+      "supplemental_id": null,
+      "video_id": "BV1zG5F6NE5g",
+      "video_url": "https://www.bilibili.com/video/BV1zG5F6NE5g",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SkillForge: Forging Domain-Specific, Self-Evolving Agent Skills in Cloud Technical Support",
+      "map_name": "SkillForge",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.08618"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.08618v2",
+      "source_version": "arXiv 2604.08618v2",
+      "local_pdf": "papers/13_skillforge_arxiv-2604.08618v2.pdf",
+      "local_text": "text/core/13_skillforge_arxiv-2604.08618v2.txt",
+      "pdf_sha256": "4877d9e8e67782d4385d497f3de31c6be54c31519ee3fe7f940ddf6ffa7cd063",
+      "pdf_bytes": 339756,
+      "pdf_pages": 19,
+      "analysis_file": "research_notes/skillforge_muse.md",
+      "analysis_section": "合集条目 #13",
+      "paper_analysis_key": "13",
+      "analysis_summary": {
+        "primary_title": "SkillForge: Forging Domain-Specific, Self-Evolving Agent Skills in Cloud Technical Support",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "从客服工单诊断失败并最小增量修改领域技能。",
+        "evidence": "1,883 工单按时间分片，五场景留出评测。",
+        "limitation": "私有数据/模型且 LLM judge 口径复杂；领域与通用基线信息不等价。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.15034",
+      "collection_index": 14,
+      "supplemental_id": null,
+      "video_id": "BV1W27R63EmC",
+      "video_url": "https://www.bilibili.com/video/BV1W27R63EmC",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Autogenesis: A Self-Evolving Agent Protocol",
+      "map_name": "Autogenesis",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.15034"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.15034v5",
+      "source_version": "arXiv 2604.15034v5",
+      "local_pdf": "papers/14_autogenesis_arxiv-2604.15034v5.pdf",
+      "local_text": "text/core/14_autogenesis_arxiv-2604.15034v5.txt",
+      "pdf_sha256": "dece54a1a8e378d5837dc9fe5e8c79f703615f29be0f0e5bdecde7cc3ccc6a6a",
+      "pdf_bytes": 1425180,
+      "pdf_pages": 29,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #14",
+      "paper_analysis_key": "14",
+      "analysis_summary": {
+        "primary_title": "Autogenesis: A Self-Evolving Agent Protocol",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "用资源协议与 Reflect→Select→Improve→Evaluate→Commit 管理可回滚演化。",
+        "evidence": "GPQA/AIME、GAIA/HLE 和 LeetCode 上报告多类结果。",
+        "limitation": "协议兼容多优化器不等于都验证过；安全依赖 Accept 判定。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2605.13821",
+      "collection_index": 15,
+      "supplemental_id": null,
+      "video_id": "BV17w7y6aEKN",
+      "video_url": "https://www.bilibili.com/video/BV17w7y6aEKN",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Harnessing Agentic Evolution",
+      "map_name": "AEvo",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/abs/2605.13821"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2605.13821v1",
+      "source_version": "arXiv 2605.13821v1",
+      "local_pdf": "papers/15_harnessing-agentic-evolution_arxiv-2605.13821v1.pdf",
+      "local_text": "text/core/15_harnessing-agentic-evolution_arxiv-2605.13821v1.txt",
+      "pdf_sha256": "40b5c2cde5b1886488a67b511d7dd780756304a5714d8b3261b8fe35e47beba0",
+      "pdf_bytes": 1450611,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #15",
+      "paper_analysis_key": "15",
+      "analysis_summary": {
+        "primary_title": "Harnessing Agentic Evolution",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "让 meta-agent 修改搜索机制或内层 agent 代码。",
+        "evidence": "Terminal-Bench、ARC-AGI-2 与开放优化任务。",
+        "limitation": "每轮成本约基线 3 倍、Best@3 且代码资产缺失，因果与稳定性有限。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2502.19980",
+      "collection_index": 16,
+      "supplemental_id": null,
+      "video_id": "BV17aE26kEte",
+      "video_url": "https://www.bilibili.com/video/BV17aE26kEte",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Can Textual Gradient Work in Federated Learning?",
+      "map_name": "FedTextGrad",
+      "theme_group_id": "prompt",
+      "theme_group_title": "外部优化：提示与协作拓扑",
+      "source_urls": [
+        "https://arxiv.org/abs/2502.19980"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2502.19980v1",
+      "source_version": "arXiv 2502.19980v1",
+      "local_pdf": "papers/16_fedtextgrad_arxiv-2502.19980v1.pdf",
+      "local_text": "text/core/16_fedtextgrad_arxiv-2502.19980v1.txt",
+      "pdf_sha256": "7a1225ff7980728e154dbd3105bd5df5ab90a0089d8a7fad77650b816f47da1e",
+      "pdf_bytes": 3057155,
+      "pdf_pages": 22,
+      "analysis_file": "research_notes/prompts.md",
+      "analysis_section": "合集条目 #16",
+      "paper_analysis_key": "16",
+      "analysis_summary": {
+        "primary_title": "Can Textual Gradient Work in Federated Learning?",
+        "theme": "提示 / 反馈",
+        "update": "外部状态",
+        "claim": "聚合不同客户端本地优化后的文本提示。",
+        "evidence": "同构/异构客户端及 11B→3B 迁移对照。",
+        "limitation": "提示不是数学梯度；隐私、恶意客户端与长度预算未解决。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2305.03495",
+      "collection_index": 17,
+      "supplemental_id": null,
+      "video_id": "BV1sJEZ6nEWn",
+      "video_url": "https://www.bilibili.com/video/BV1sJEZ6nEWn",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search",
+      "map_name": "ProTeGi",
+      "theme_group_id": "prompt",
+      "theme_group_title": "外部优化：提示与协作拓扑",
+      "source_urls": [
+        "https://arxiv.org/abs/2305.03495"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2305.03495v2",
+      "source_version": "arXiv 2305.03495v2",
+      "local_pdf": "papers/17_apo_arxiv-2305.03495v2.pdf",
+      "local_text": "text/core/17_apo_arxiv-2305.03495v2.txt",
+      "pdf_sha256": "90ed9bd62d8e8c1f5bb810c7749c8272f2de4cac037cb75306746c9c9cfcb094",
+      "pdf_bytes": 1161931,
+      "pdf_pages": 12,
+      "analysis_file": "research_notes/prompts.md",
+      "analysis_section": "合集条目 #17",
+      "paper_analysis_key": "17",
+      "analysis_summary": {
+        "primary_title": "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search",
+        "theme": "提示 / 反馈",
+        "update": "外部状态",
+        "claim": "用语言批评提出方向，再以 beam/bandit 搜索离散提示。",
+        "evidence": "四个分类任务及同预算搜索消融。",
+        "limitation": "可能以测试分数择优；错误反馈会改窄任务或翻转标签。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2406.07496",
+      "collection_index": 18,
+      "supplemental_id": null,
+      "video_id": "BV1xKJ56PEQT",
+      "video_url": "https://www.bilibili.com/video/BV1xKJ56PEQT",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Optimizing generative AI by backpropagating language model feedback",
+      "map_name": "TextGrad",
+      "theme_group_id": "prompt",
+      "theme_group_title": "外部优化：提示与协作拓扑",
+      "source_urls": [
+        "https://www.nature.com/articles/s41586-025-08661-4",
+        "https://arxiv.org/abs/2406.07496"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2406.07496v1",
+      "source_version": "arXiv 2406.07496v1",
+      "local_pdf": "papers/18_textgrad_arxiv-2406.07496v1.pdf",
+      "local_text": "text/core/18_textgrad_arxiv-2406.07496v1.txt",
+      "pdf_sha256": "9cbfd5c78ad69e2a8363e76d6774f3e6b5e68f46b409d8b560e98276a985b428",
+      "pdf_bytes": 1336878,
+      "pdf_pages": 41,
+      "analysis_file": "research_notes/prompts.md",
+      "analysis_section": "合集条目 #18",
+      "paper_analysis_key": "18",
+      "analysis_summary": {
+        "primary_title": "Optimizing generative AI by backpropagating language model feedback",
+        "theme": "提示 / 反馈",
+        "update": "外部文本变量",
+        "claim": "在计算图上传播语言反馈并改写提示、答案或代码。",
+        "evidence": "推理、代码、多模态和科学优化多域实验。",
+        "limitation": "强反馈模型与额外调用是重要资源；版本表格存在口径差异。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2410.14826",
+      "collection_index": 21,
+      "supplemental_id": null,
+      "video_id": "BV17b7L6nEna",
+      "video_url": "https://www.bilibili.com/video/BV17b7L6nEna",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SPRIG: Improving Large Language Model Performance by System Prompt Optimization",
+      "map_name": "SPRIG",
+      "theme_group_id": "prompt",
+      "theme_group_title": "外部优化：提示与协作拓扑",
+      "source_urls": [
+        "https://openreview.net/forum?id=VdVV24KSWK"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2410.14826v3",
+      "source_version": "arXiv 2410.14826v3",
+      "local_pdf": "papers/21_sprig_arxiv-2410.14826v3.pdf",
+      "local_text": "text/core/21_sprig_arxiv-2410.14826v3.txt",
+      "pdf_sha256": "02c4199080d71770b7ce1d74e984ba914a0408d0954a38f3ae25e9c8dc0d1fdd",
+      "pdf_bytes": 956803,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/prompts.md",
+      "analysis_section": "合集条目 #21",
+      "paper_analysis_key": "21",
+      "analysis_summary": {
+        "primary_title": "SPRIG: Improving Large Language Model Performance by System Prompt Optimization",
+        "theme": "提示 / 反馈",
+        "update": "提示 + 奖励模型权重",
+        "claim": "进化跨任务系统提示，并用训练过的奖励模型排序。",
+        "evidence": "42 个域内任务与 5 个外域基准；系统/任务提示组合。",
+        "limitation": "完整规模含 9000 组件与 10 万偏好对；组合对 ProTeGi 的 p=0.053。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2510.16079",
+      "collection_index": 22,
+      "supplemental_id": null,
+      "video_id": "BV1coTi6xEM7",
+      "video_url": "https://www.bilibili.com/video/BV1coTi6xEM7",
+      "video_relation": "primary_collection_item",
+      "primary_title": "EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle",
+      "map_name": "EvolveR",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://arxiv.org/abs/2510.16079"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2510.16079v3",
+      "source_version": "arXiv 2510.16079v3",
+      "local_pdf": "papers/22_evolver_arxiv-2510.16079v3.pdf",
+      "local_text": "text/core/22_evolver_arxiv-2510.16079v3.txt",
+      "pdf_sha256": "457f2382c7b85d54cc8ada9c4c333952ee66af3bb8ab083873e5f4c3d365cfbc",
+      "pdf_bytes": 3031801,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #22",
+      "paper_analysis_key": "22",
+      "analysis_summary": {
+        "primary_title": "From Interactions to Principles: Experience-Driven Self-Distillation for Evolving LLM Agents",
+        "theme": "权重 / 训练",
+        "update": "权重 + 外部记忆",
+        "claim": "先把轨迹蒸馏为原则记忆，再以 GRPO 更新策略。",
+        "evidence": "七个 QA 集；3B/7B 模型及记忆消融。",
+        "limitation": "无检索性能下降说明未完全内化；原则效用是相关而非因果。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2606.17660",
+      "collection_index": 23,
+      "supplemental_id": null,
+      "video_id": "BV1GSTy6AEpq",
+      "video_url": "https://www.bilibili.com/video/BV1GSTy6AEpq",
+      "video_relation": "primary_collection_item",
+      "primary_title": "TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins",
+      "map_name": "TuneAhead",
+      "theme_group_id": "predictor",
+      "theme_group_title": "训练前预测与筛选辅助",
+      "source_urls": [
+        "https://arxiv.org/abs/2606.17660"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2606.17660v1",
+      "source_version": "arXiv 2606.17660v1",
+      "local_pdf": "papers/23_tuneahead_arxiv-2606.17660v1.pdf",
+      "local_text": "text/core/23_tuneahead_arxiv-2606.17660v1.txt",
+      "pdf_sha256": "99eaf2d391615125cfaeebf24ac7aa3784c1887b473ce2a00336f4bd6cc81313",
+      "pdf_bytes": 2404373,
+      "pdf_pages": 34,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #23",
+      "paper_analysis_key": "23",
+      "analysis_summary": {
+        "primary_title": "TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins",
+        "theme": "预测 / 筛选",
+        "update": "训练预测器，不改目标模型",
+        "claim": "用 100 步 probe 与静态特征预测完整微调结果。",
+        "evidence": "1300+ 完整 LoRA 运行，MMLU R²=.99。",
+        "limitation": "预测器本身依赖大量历史真值；跨目标模型需重新训练。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2605.28424",
+      "collection_index": 24,
+      "supplemental_id": null,
+      "video_id": "BV18eNg6tEdm",
+      "video_url": "https://www.bilibili.com/video/BV18eNg6tEdm",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning",
+      "map_name": "Skill0.5",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://arxiv.org/abs/2605.28424"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2605.28424v1",
+      "source_version": "arXiv 2605.28424v1",
+      "local_pdf": "papers/24_skill0.5_arxiv-2605.28424v1.pdf",
+      "local_text": "text/core/24_skill0.5_arxiv-2605.28424v1.txt",
+      "pdf_sha256": "02565c09fd529fabb8bc2ef805e9f6c4c6943a04a0e58b5ca13ea85f173e8cba",
+      "pdf_bytes": 4757778,
+      "pdf_pages": 16,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #24",
+      "paper_analysis_key": "24",
+      "analysis_summary": {
+        "primary_title": "Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning",
+        "theme": "权重 / 训练",
+        "update": "权重 + 外部技能",
+        "claim": "把通用技能内化，把场景技能保留在检索库。",
+        "evidence": "ALFWorld/WebShop 的 ID/OOD 分层训练。",
+        "limitation": "OOD 测试仍提供新专项技能；人工技能分层和 rollout 噪声限制外推。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2506.18485",
+      "collection_index": 25,
+      "supplemental_id": null,
+      "video_id": "BV14hNB6PEkT",
+      "video_url": "https://www.bilibili.com/video/BV14hNB6PEkT",
+      "video_relation": "primary_collection_item",
+      "primary_title": "A Simple \"Motivation\" Can Enhance Reinforcement Finetuning of Large Reasoning Models",
+      "map_name": "MeRF",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://openreview.net/forum?id=3owSlsYDQf"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2506.18485v3",
+      "source_version": "arXiv 2506.18485v3",
+      "local_pdf": "papers/25_merf_arxiv-2506.18485v3.pdf",
+      "local_text": "text/core/25_merf_arxiv-2506.18485v3.txt",
+      "pdf_sha256": "784e36719eaade86a840407744691d5ebc547ca5172ff5abaa4edbf1eb724d47",
+      "pdf_bytes": 2339652,
+      "pdf_pages": 21,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #25",
+      "paper_analysis_key": "25",
+      "analysis_summary": {
+        "primary_title": "A Simple \"Motivation\" Can Enhance Reinforcement Finetuning of Large Reasoning Models",
+        "theme": "权重 / 训练",
+        "update": "更新权重",
+        "claim": "把真实奖励规则写入训练 prompt 以引导 RL 探索。",
+        "evidence": "Knights & Knaves 与数学基准的 GRPO 对照。",
+        "limitation": "冻结模型提示对照不等于训练收益；弱模型提升仍有限。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2603.02908",
+      "collection_index": 26,
+      "supplemental_id": null,
+      "video_id": "BV1iRKG61EeH",
+      "video_url": "https://www.bilibili.com/video/BV1iRKG61EeH",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training",
+      "map_name": "STS",
+      "theme_group_id": "predictor",
+      "theme_group_title": "训练前预测与筛选辅助",
+      "source_urls": [
+        "https://arxiv.org/abs/2603.02908"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2603.02908v1",
+      "source_version": "arXiv 2603.02908v1",
+      "local_pdf": "papers/26_sts_arxiv-2603.02908v1.pdf",
+      "local_text": "text/core/26_sts_arxiv-2603.02908v1.txt",
+      "pdf_sha256": "8b2170260bdd75b00aa4241fbf25bd805223fdbcdeb62c933a49ba60b6caa316",
+      "pdf_bytes": 1585651,
+      "pdf_pages": 20,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #26",
+      "paper_analysis_key": "26",
+      "analysis_summary": {
+        "primary_title": "SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training",
+        "theme": "预测 / 筛选",
+        "update": "不改目标模型",
+        "claim": "用 SAE 特征预测微调影响幅度。",
+        "evidence": "三类 7B–9B 模型跨域相关约 .77–.81。",
+        "limitation": "只预测变化大小、不预测正负；需要白盒激活和匹配 SAE。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "pmlr:v306-liu26az",
+      "collection_index": 27,
+      "supplemental_id": null,
+      "video_id": "BV1EzKK6aENU",
+      "video_url": "https://www.bilibili.com/video/BV1EzKK6aENU",
+      "video_relation": "primary_collection_item",
+      "primary_title": "CoPE: A Framework for Optimizing Coordination between Planning and Execution in LLM-based Agents",
+      "map_name": "CoPE",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://openreview.net/forum?id=9aU4vrHPKD&noteId=aXiXZ7lAXc"
+      ],
+      "download_source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/liu26az/liu26az.pdf",
+      "source_version": "v306-liu26az",
+      "local_pdf": "papers/27_cope_pmlr-v306-liu26az.pdf",
+      "local_text": "text/core/27_cope_pmlr-v306-liu26az.txt",
+      "pdf_sha256": "00e70c1032743e3a3f31c251d9361476a7045f139eea9341e82de19fe5fc3aed",
+      "pdf_bytes": 6431468,
+      "pdf_pages": 31,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #27",
+      "paper_analysis_key": "27",
+      "analysis_summary": {
+        "primary_title": "CoPE: A Framework for Optimizing Coordination between Planning and Execution in LLM-based Agents",
+        "theme": "权重 / 训练",
+        "update": "更新权重",
+        "claim": "分别学习计划可执行性与执行遵循度。",
+        "evidence": "ALFWorld/ScienceWorld 五次运行，并主动报告短任务负面结果。",
+        "limitation": "数据收集需数十小时多 rollout；协调分是代理指标。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2606.22902",
+      "collection_index": 28,
+      "supplemental_id": null,
+      "video_id": "BV1gkKa6xEna",
+      "video_url": "https://www.bilibili.com/video/BV1gkKa6xEna",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Agent-as-a-Router: Agentic Model Routing for Coding Tasks",
+      "map_name": "ACRouter",
+      "theme_group_id": "execution",
+      "theme_group_title": "推理时选择与执行",
+      "source_urls": [
+        "https://arxiv.org/abs/2606.22902"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2606.22902v3",
+      "source_version": "arXiv 2606.22902v3",
+      "local_pdf": "papers/28_acrouter_arxiv-2606.22902v3.pdf",
+      "local_text": "text/core/28_acrouter_arxiv-2606.22902v3.txt",
+      "pdf_sha256": "1eda4f453a611356b553ef5ba0f82351ef0cf54d46e281e36f0bedfaaf93255d",
+      "pdf_bytes": 4210614,
+      "pdf_pages": 39,
+      "analysis_file": "research_notes/training_routing.md",
+      "analysis_section": "合集条目 #28",
+      "paper_analysis_key": "28",
+      "analysis_summary": {
+        "primary_title": "Agent-as-a-Router: Agentic Model Routing for Coding Tasks",
+        "theme": "路由 / 选择",
+        "update": "外部状态 + 小路由器",
+        "claim": "基于任务、记忆、成本与反馈选择后端模型。",
+        "evidence": "论文 v3 与最新仓库制品都可核验；本报告做了 OOD176 独立回放。",
+        "limitation": "最新 JSON 混合模型版本；工件级级联不等于论文在线 0.8B+kNN 全闭环。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2605.16883",
+      "collection_index": 29,
+      "supplemental_id": null,
+      "video_id": "BV1HJKa63EMx",
+      "video_url": "https://www.bilibili.com/video/BV1HJKa63EMx",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SE-GA: Memory-Augmented Self-Evolution for GUI Agents",
+      "map_name": "SE-GA",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://arxiv.org/abs/2605.16883"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2605.16883v1",
+      "source_version": "arXiv 2605.16883v1",
+      "local_pdf": "papers/29_se-ga_arxiv-2605.16883v1.pdf",
+      "local_text": "text/core/29_se-ga_arxiv-2605.16883v1.txt",
+      "pdf_sha256": "3cf1e576aee41ba673f40645634d1f1b38c0386561d6940e7b6c1ede1deec28a",
+      "pdf_bytes": 8706672,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/systems_gui.md",
+      "analysis_section": "合集条目 #29",
+      "paper_analysis_key": "29",
+      "analysis_summary": {
+        "primary_title": "SE-GA: Memory-Augmented Self-Evolution for GUI Agents",
+        "theme": "GUI / 记忆",
+        "update": "权重 + 外部记忆",
+        "claim": "把 GUI 轨迹、规则和成功摘要用于检索，并以 SFT/GRPO 训练。",
+        "evidence": "ScreenSpot、AndroidControl、GUIOdyssey、AndroidWorld。",
+        "limitation": "表内 75.8/73.8 冲突；默认仓库配置不等于论文设置。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "pmlr:v306-wei26q",
+      "collection_index": 30,
+      "supplemental_id": null,
+      "video_id": "BV1AW356VE9i",
+      "video_url": "https://www.bilibili.com/video/BV1AW356VE9i",
+      "video_relation": "primary_collection_item",
+      "primary_title": "EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents",
+      "map_name": "EvoC2F",
+      "theme_group_id": "execution",
+      "theme_group_title": "推理时选择与执行",
+      "source_urls": [
+        "https://openreview.net/pdf?id=ZSGB91kMOG"
+      ],
+      "download_source_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wei26q/wei26q.pdf",
+      "source_version": "v306-wei26q",
+      "local_pdf": "papers/30_evoc2f_pmlr-v306-wei26q.pdf",
+      "local_text": "text/core/30_evoc2f_pmlr-v306-wei26q.txt",
+      "pdf_sha256": "6899b1db50af6aae01782225cc12055bff64ca71eafa12f4574eec593a61a6c1",
+      "pdf_bytes": 2121363,
+      "pdf_pages": 30,
+      "analysis_file": "research_notes/systems_gui.md",
+      "analysis_section": "合集条目 #30",
+      "paper_analysis_key": "30",
+      "analysis_summary": {
+        "primary_title": "EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "把工具调用编译为带依赖、效应、重试和幂等性的 Plan IR。",
+        "evidence": "StableToolBench、ShortcutsBench 与 ToolSeq-500。",
+        "limitation": "正确性依赖保守效应标注；真实 API 与完整训练预算门槛高。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2608.25512",
+      "collection_index": 32,
+      "supplemental_id": null,
+      "video_id": "BV1ugby6jEKN",
+      "video_url": "https://www.bilibili.com/video/BV1ugby6jEKN",
+      "video_relation": "primary_collection_item",
+      "primary_title": "A Programming Paradigm for Spatiotemporal Composability",
+      "map_name": "Cordis",
+      "theme_group_id": "infrastructure",
+      "theme_group_title": "运行基础设施",
+      "source_urls": [
+        "https://github.com/cordiverse/paper"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2608.25512v1",
+      "source_version": "arXiv 2608.25512v1",
+      "local_pdf": "papers/32_cordis_arxiv-2608.25512v1.pdf",
+      "local_text": "text/core/32_cordis_arxiv-2608.25512v1.txt",
+      "pdf_sha256": "390775dbc9debdcf2ed1b076eed013387ca057630be3cb594617b2b742e48cf0",
+      "pdf_bytes": 2284543,
+      "pdf_pages": 92,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #32",
+      "paper_analysis_key": "32",
+      "analysis_summary": {
+        "primary_title": "A Programming Paradigm for Spatiotemporal Composability",
+        "theme": "运行时 / 系统",
+        "update": "外部运行时状态",
+        "claim": "以可逆 effect 与 reactive coeffect 管理组件生命周期。",
+        "evidence": "形式化定理、TypeScript 实现及 Koishi 生态案例。",
+        "limitation": "逆操作正确性由作者承担，语言代理不是恶意代码沙箱。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2601.18510",
+      "collection_index": 33,
+      "supplemental_id": null,
+      "video_id": "BV1fQ8669EK5",
+      "video_url": "https://www.bilibili.com/video/BV1fQ8669EK5/",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Just-In-Time Reinforcement Learning: Continual Learning in LLM Agents Without Gradient Updates",
+      "map_name": "JitRL",
+      "theme_group_id": "memory",
+      "theme_group_title": "外部优化：动作价值记忆",
+      "source_urls": [
+        "https://arxiv.org/abs/2601.18510"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2601.18510v4",
+      "source_version": "arXiv 2601.18510v4",
+      "local_pdf": "papers/33_jitrl_arxiv-2601.18510v4.pdf",
+      "local_text": "text/core/33_jitrl_arxiv-2601.18510v4.txt",
+      "pdf_sha256": "d7179ac1d9f1182f93d798471d1cb3bbeabf304f66453b23477c8c37979401ab",
+      "pdf_bytes": 743479,
+      "pdf_pages": 26,
+      "analysis_file": "research_notes/jitrl.md",
+      "analysis_section": "合集条目 #33",
+      "paper_analysis_key": "33",
+      "analysis_summary": {
+        "primary_title": "Just-In-Time Reinforcement Learning: Continual Learning in LLM Agents Without Gradient Updates",
+        "theme": "技能 / 记忆",
+        "update": "外部非参数记忆",
+        "claim": "从相似状态经验估计动作优势并重加权冻结模型策略。",
+        "evidence": "WebArena、Jericho 与跨任务记忆对照。",
+        "limitation": "公开代码概率加法/argmax 与论文 logit-softmax 公式不一致。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2510.21614",
+      "collection_index": 34,
+      "supplemental_id": null,
+      "video_id": "BV1nitH6KEQh",
+      "video_url": "https://www.bilibili.com/video/BV1nitH6KEQh",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+      "map_name": "Huxley–Gödel Machine",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/abs/2510.21614"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2510.21614v3",
+      "source_version": "arXiv 2510.21614v3",
+      "local_pdf": "papers/34_hgm_arxiv-2510.21614v3.pdf",
+      "local_text": "text/core/34_hgm_arxiv-2510.21614v3.txt",
+      "pdf_sha256": "06cbf326c605e59777d3f8550e01d41e6b49f78bf0d850f2d173c9f06f6cc254",
+      "pdf_bytes": 938853,
+      "pdf_pages": 30,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #34",
+      "paper_analysis_key": "34",
+      "analysis_summary": {
+        "primary_title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "用 clade 未来潜力估计与 Thompson sampling 搜索 agent 后代。",
+        "evidence": "SWE/Polyglot 的相关、成功率和 CPU-hour。",
+        "limitation": "理论依赖真实 CMP oracle；实际估计与约 5000 美元实验不能证明全局最优。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2608.25593",
+      "collection_index": 35,
+      "supplemental_id": null,
+      "video_id": "BV1hzt36WEgR",
+      "video_url": "https://www.bilibili.com/video/BV1hzt36WEgR",
+      "video_relation": "primary_collection_item",
+      "primary_title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+      "map_name": "JIT-Agent",
+      "theme_group_id": "execution",
+      "theme_group_title": "推理时选择与执行",
+      "source_urls": [
+        "https://arxiv.org/abs/2608.25593"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2608.25593v2",
+      "source_version": "arXiv 2608.25593v2",
+      "local_pdf": "papers/35_jit-agent_arxiv-2608.25593v2.pdf",
+      "local_text": "text/core/35_jit-agent_arxiv-2608.25593v2.txt",
+      "pdf_sha256": "5654012b4723f128c26908e0cce6a8c7afd58fe4a69c6688a9a88094bcfe9ebc",
+      "pdf_bytes": 9329005,
+      "pdf_pages": 24,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #35",
+      "paper_analysis_key": "35",
+      "analysis_summary": {
+        "primary_title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+        "theme": "Harness / 编排",
+        "update": "生成器权重 + 外部 archive",
+        "claim": "训练按任务生成/修复 harness 的模型，部署时冻结并积累 archive。",
+        "evidence": "9 基准、多执行模型与成本/延迟比较。",
+        "limitation": "公开 27B 是蒸馏初始版本，训练数据与预算细节不足。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2608.27454",
+      "collection_index": 36,
+      "supplemental_id": null,
+      "video_id": "BV1d1tJ6HEAs",
+      "video_url": "https://www.bilibili.com/video/BV1d1tJ6HEAs",
+      "video_relation": "primary_collection_item",
+      "primary_title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+      "map_name": "WikiSkill",
+      "theme_group_id": "skill",
+      "theme_group_title": "外部优化：技能与经验",
+      "source_urls": [
+        "https://arxiv.org/abs/2608.27454"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2608.27454v1",
+      "source_version": "arXiv 2608.27454v1",
+      "local_pdf": "papers/36_wikiskill_arxiv-2608.27454v1.pdf",
+      "local_text": "text/core/36_wikiskill_arxiv-2608.27454v1.txt",
+      "pdf_sha256": "65afc6e12f6f707483fe1b79a97ab67c03abf4b4992f82fde03eb7b8d9ad4a69",
+      "pdf_bytes": 1177706,
+      "pdf_pages": 28,
+      "analysis_file": "research_notes/skillforge_muse.md",
+      "analysis_section": "合集条目 #36",
+      "paper_analysis_key": "36",
+      "analysis_summary": {
+        "primary_title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "把不可改轨迹编译为持续 wiki，再生成经验证的技能。",
+        "evidence": "五模型五基准、三次演化与 bootstrap。",
+        "limitation": "小验证集反复选择会过拟合；存在明显负迁移。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2510.13220",
+      "collection_index": 37,
+      "supplemental_id": null,
+      "video_id": "BV1RnbV6TECG",
+      "video_url": "https://www.bilibili.com/video/BV1RnbV6TECG",
+      "video_relation": "primary_collection_item",
+      "primary_title": "EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems",
+      "map_name": "EvoTest",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://iclr.cc/virtual/2026/poster/10010217"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2510.13220v2",
+      "source_version": "arXiv 2510.13220v2",
+      "local_pdf": "papers/37_evotest_arxiv-2510.13220v2.pdf",
+      "local_text": "text/core/37_evotest_arxiv-2510.13220v2.txt",
+      "pdf_sha256": "424d8315835652f146392173027f460a4dd514f5263dd87863440661b9172783",
+      "pdf_bytes": 792470,
+      "pdf_pages": 37,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #37",
+      "paper_analysis_key": "37",
+      "analysis_summary": {
+        "primary_title": "EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems",
+        "theme": "技能 / 记忆",
+        "update": "外部状态",
+        "claim": "跨重复 episode 演化提示、记忆、超参和 Python 工具。",
+        "evidence": "六个 Jericho 游戏、50 episode 与同模型控制。",
+        "limitation": "固定任务策略性过拟合，且依赖强 evolver；不是跨任务持续学习。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2502.02533",
+      "collection_index": 38,
+      "supplemental_id": null,
+      "video_id": "BV19MYX6WEaL",
+      "video_url": "https://www.bilibili.com/video/BV19MYX6WEaL",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies",
+      "map_name": "MASS",
+      "theme_group_id": "prompt",
+      "theme_group_title": "外部优化：提示与协作拓扑",
+      "source_urls": [
+        "https://arxiv.org/abs/2502.02533"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2502.02533v2",
+      "source_version": "arXiv 2502.02533v2",
+      "local_pdf": "papers/38_mass_arxiv-2502.02533v2.pdf",
+      "local_text": "text/core/38_mass_arxiv-2502.02533v2.txt",
+      "pdf_sha256": "8e29ddf756e67b8e940325694351314b07cf4ed7902f6a3e9c9c2d9aa621b6ce",
+      "pdf_bytes": 3080029,
+      "pdf_pages": 32,
+      "analysis_file": "research_notes/prompts.md",
+      "analysis_section": "合集条目 #38",
+      "paper_analysis_key": "38",
+      "analysis_summary": {
+        "primary_title": "Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies",
+        "theme": "拓扑 / 多代理",
+        "update": "外部状态",
+        "claim": "分阶段优化单代理提示、系统拓扑和联合提示。",
+        "evidence": "8 个混合指标任务与开放模型补表。",
+        "limitation": "未确认官方实现，主表任务子集小且不同方法优化器不完全可比。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2609.20519",
+      "collection_index": 39,
+      "supplemental_id": null,
+      "video_id": "BV1h4ey6AEoy",
+      "video_url": "https://www.bilibili.com/video/BV1h4ey6AEoy",
+      "video_relation": "primary_collection_item",
+      "primary_title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness",
+      "map_name": "SoL-Pi",
+      "theme_group_id": "harness",
+      "theme_group_title": "外部优化：系统外壳与搜索",
+      "source_urls": [
+        "https://arxiv.org/abs/2609.20519",
+        "https://nvlabs.github.io/SoL-Pi/"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2609.20519v1",
+      "source_version": "arXiv 2609.20519v1",
+      "local_pdf": "papers/39_sol-pi_arxiv-2609.20519v1.pdf",
+      "local_text": "text/core/39_sol-pi_arxiv-2609.20519v1.txt",
+      "pdf_sha256": "7f3910c43a4927c7504ae14d20ee34bdaa51b755ec5d9db69c2cd6ead6fc72b9",
+      "pdf_bytes": 6137365,
+      "pdf_pages": 15,
+      "analysis_file": "research_notes/harness.md",
+      "analysis_section": "合集条目 #39",
+      "paper_analysis_key": "39",
+      "analysis_summary": {
+        "primary_title": "SoL-Pi: Scaling Auto-Research Loops for Efficient Agent Harnesses",
+        "theme": "Harness / 编排",
+        "update": "外部状态",
+        "claim": "大规模自动研究筛出 Action Fusion、上下文压缩和证据保留机制。",
+        "evidence": "535 环境、3000+ run；能力—token—费用多 operating point。",
+        "limitation": "省 token 伴随分数下降；51 题中 11 题用于接受决定，不能称全未见。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2609.22978",
+      "collection_index": 40,
+      "supplemental_id": null,
+      "video_id": "BV1LJhU6kEQ1",
+      "video_url": "https://www.bilibili.com/video/BV1LJhU6kEQ1",
+      "video_relation": "primary_collection_item",
+      "primary_title": "DeepSeek Elastic Compute (DSec): A Sandbox Infrastructure for Effective Agentic Training at Scale",
+      "map_name": "DSec",
+      "theme_group_id": "infrastructure",
+      "theme_group_title": "运行基础设施",
+      "source_urls": [
+        "https://arxiv.org/abs/2609.22978"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2609.22978v1",
+      "source_version": "arXiv 2609.22978v1",
+      "local_pdf": "papers/40_dsec_arxiv-2609.22978v1.pdf",
+      "local_text": "text/core/40_dsec_arxiv-2609.22978v1.txt",
+      "pdf_sha256": "649edc87e70b8e57f9515360b15ed5576c6c8afb3c46a3763e83c22a85a660e2",
+      "pdf_bytes": 786319,
+      "pdf_pages": 31,
+      "analysis_file": "research_notes/systems_gui.md",
+      "analysis_section": "合集条目 #40",
+      "paper_analysis_key": "40",
+      "analysis_summary": {
+        "primary_title": "DeepSeek Elastic Compute (DSec): A Sandbox Infrastructure for Effective Agentic Training at Scale",
+        "theme": "运行时 / 系统",
+        "update": "基础设施状态",
+        "claim": "按需加载沙盒层、资源回收和 CPU QoS 提升训练吞吐。",
+        "evidence": "10 节点 8192 容器与存储/内存/QoS 指标。",
+        "limitation": "未含 RL 框架端到端质量，且只公开部分存储组件。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "acl:2026.acl-long.69",
+      "collection_index": 41,
+      "supplemental_id": null,
+      "video_id": "BV1Taa861EtT",
+      "video_url": "https://www.bilibili.com/video/BV1Taa861EtT",
+      "video_relation": "primary_collection_item",
+      "primary_title": "Reinforcement Learning for Self-Improving Agent with Skill Library",
+      "map_name": "SAGE",
+      "theme_group_id": "training",
+      "theme_group_title": "参数训练：把经验写入权重",
+      "source_urls": [
+        "https://aclanthology.org/2026.acl-long.69"
+      ],
+      "download_source_url": "https://aclanthology.org/2026.acl-long.69.pdf",
+      "source_version": "2026.acl-long.69",
+      "local_pdf": "papers/41_sage_acl-2026.acl-long.69.pdf",
+      "local_text": "text/core/41_sage_acl-2026.acl-long.69.txt",
+      "pdf_sha256": "aedb4ff03508b7f3f114133d96094dd43e2e6ceac93aea832fc6e37b40e94257",
+      "pdf_bytes": 3169995,
+      "pdf_pages": 22,
+      "analysis_file": "research_notes/skillforge_muse.md",
+      "analysis_section": "合集条目 #41",
+      "paper_analysis_key": "41",
+      "analysis_summary": {
+        "primary_title": "Reinforcement Learning for Self-Improving Agent with Skill Library",
+        "theme": "权重 / 训练",
+        "update": "权重 + 可执行技能库",
+        "claim": "在连续任务中生成可执行函数，并用 skill-integrated reward 训练复用。",
+        "evidence": "AppWorld Test-Normal/Challenge 与 reward、检索、任务链消融。",
+        "limitation": "完整训练 32×H100 且前置闭源教师；不适合普通单机原数复现。",
+        "status": "核心 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    },
+    {
+      "paper_id": "arxiv:2604.03088",
+      "collection_index": null,
+      "supplemental_id": "S01",
+      "related_collection_index": 31,
+      "video_id": "BV1ccuh6jEiF",
+      "video_url": "https://www.bilibili.com/video/BV1ccuh6jEiF",
+      "video_relation": "referenced_by_commentary_video",
+      "primary_title": "SkVM: Revisiting Language VM for Skills across Heterogenous LLMs and Harnesses",
+      "map_name": "SkVM",
+      "theme_group_id": "execution",
+      "theme_group_title": "推理时选择与执行",
+      "source_urls": [
+        "https://arxiv.org/abs/2604.03088"
+      ],
+      "download_source_url": "https://arxiv.org/pdf/2604.03088v3",
+      "source_version": "arXiv 2604.03088v3",
+      "local_pdf": "papers/supplemental/skvm_arxiv-2604.03088v3.pdf",
+      "local_text": "text/supplemental/skvm_arxiv-2604.03088v3.txt",
+      "pdf_sha256": "6437cf685452b993a8d721f999afbeffa5e6f7227c55d932df5c7683a711bc9b",
+      "pdf_bytes": 1360959,
+      "pdf_pages": 14,
+      "analysis_file": "research_notes/skvm_supplemental.md",
+      "analysis_section": "SkVM 补充论文（合集评论视频 #31 引用）",
+      "paper_analysis_key": "31",
+      "analysis_summary": {
+        "primary_title": "Agent 自进化理解、难点与展望",
+        "theme": "综述 / 评论",
+        "update": "补充：外部状态",
+        "claim": "视频综述 Agent 自进化难点，并在 06:15 引用 SkVM。",
+        "evidence": "补充下载 SkVM v3，研究技能能力适配、AOT/JIT 与回退。",
+        "limitation": "视频本身无核心论文；SkVM 单列补充，不能当作第 42 个视频。",
+        "status": "视频无核心论文；补充 PDF 已下载并校验"
+      },
+      "evidence_levels": [
+        "来源核验",
+        "论文作者报告"
+      ]
+    }
+  ]
+}

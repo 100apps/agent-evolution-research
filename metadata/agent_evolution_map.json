@@ -1,0 +1,144 @@
+{
+  "title": "Agent 进化全景：经验最终改变了什么？",
+  "scope": "38篇合集核心研究 + 1篇补充SkVM；排除Tax AI工程文章与两条评论视频；同工作多版本只计一次。",
+  "count": 39,
+  "taxonomy_note": "这是按主要作用位置整理的概念地图，不是时间谱系或论文间已验证的集成架构。每篇只计一个主位置，跨层机制用标签或虚线。",
+  "groups": [
+    {
+      "id": "execution",
+      "title": "推理时选择与执行",
+      "count": 4,
+      "papers": [
+        {"inventory_index": 28, "name": "ACRouter", "label": "按任务选择模型后端", "cross_layer_tags": ["反馈更新路由记忆", "离线训练小路由器", "不训练被选后端"], "primary_title": "Agent-as-a-Router: Agentic Model Routing for Coding Tasks", "source_urls": ["https://arxiv.org/abs/2606.22902"]},
+        {"inventory_index": 35, "name": "JIT-Agent", "label": "按当前任务生成专用外壳", "cross_layer_tags": ["离线训练外壳生成器", "部署时生成器冻结", "在线档案更新"], "primary_title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution", "source_urls": ["https://arxiv.org/abs/2608.25593"]},
+        {"inventory_index": 30, "name": "EvoC2F", "label": "编译可并行工具计划", "cross_layer_tags": ["效应约束与幂等", "验证并沉淀宏技能"], "primary_title": "EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents", "source_urls": ["https://openreview.net/pdf?id=ZSGB91kMOG"]},
+        {"inventory_index": "S01", "name": "SkVM", "label": "适配并编译目标技能", "cross_layer_tags": ["模型及框架能力画像", "运行时重编译与代码固化", "合集外补充"], "primary_title": "SkVM: Revisiting Language VM for Skills across Heterogenous LLMs and Harnesses", "source_urls": ["https://arxiv.org/abs/2604.03088"]}
+      ]
+    },
+    {
+      "id": "prompt",
+      "title": "外部优化：提示与协作拓扑",
+      "count": 5,
+      "papers": [
+        {"inventory_index": 17, "name": "ProTeGi", "label": "据错例搜索任务提示", "cross_layer_tags": ["文本批评", "束搜索与预算分配"], "primary_title": "Automatic Prompt Optimization with \"Gradient Descent\" and Beam Search", "source_urls": ["https://arxiv.org/abs/2305.03495"]},
+        {"inventory_index": 18, "name": "TextGrad", "label": "沿计算图改写文本变量", "cross_layer_tags": ["反向传播语言反馈", "可优化提示、答案与代码", "非模型参数梯度"], "primary_title": "Optimizing generative AI by backpropagating language model feedback", "source_urls": ["https://www.nature.com/articles/s41586-025-08661-4", "https://arxiv.org/abs/2406.07496"]},
+        {"inventory_index": 16, "name": "FedTextGrad", "label": "聚合多端优化提示", "cross_layer_tags": ["联邦提示优化", "不等于隐私保证"], "primary_title": "Can Textual Gradient Work in Federated Learning?", "source_urls": ["https://arxiv.org/abs/2502.19980"]},
+        {"inventory_index": 21, "name": "SPRIG", "label": "搜索跨任务系统提示", "cross_layer_tags": ["训练辅助奖励模型", "主执行模型冻结"], "primary_title": "SPRIG: Improving Large Language Model Performance by System Prompt Optimization", "source_urls": ["https://openreview.net/forum?id=VdVV24KSWK"]},
+        {"inventory_index": 38, "name": "MASS", "label": "交错优化提示与协作拓扑", "cross_layer_tags": ["单体提示→拓扑→全局提示", "多智能体系统设计"], "primary_title": "Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies", "source_urls": ["https://arxiv.org/abs/2502.02533"]}
+      ]
+    },
+    {
+      "id": "skill",
+      "title": "外部优化：技能与经验",
+      "count": 8,
+      "papers": [
+        {"inventory_index": 2, "name": "SkillX", "label": "从轨迹构建分层技能库", "cross_layer_tags": ["强模型轨迹", "运行时技能检索"], "primary_title": "SkillX: Automatically Constructing Skill Knowledge Bases for Agents", "source_urls": ["https://arxiv.org/abs/2604.04804"]},
+        {"inventory_index": 3, "name": "Strategy Genes", "label": "把经验编码成策略基因", "cross_layer_tags": ["紧凑控制对象", "约束与避免规则"], "primary_title": "From Procedural Skills to Strategy Genes: Towards Experience-Driven Test-Time Evolution", "source_urls": ["https://arxiv.org/abs/2604.15097"]},
+        {"inventory_index": 4, "name": "Trace2Skill", "label": "并行合并轨迹技能补丁", "cross_layer_tags": ["成功及失败分析", "可携带技能目录"], "primary_title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills", "source_urls": ["https://arxiv.org/pdf/2603.25158"]},
+        {"inventory_index": 5, "name": "SkillClaw", "label": "汇集多用户经验演化技能", "cross_layer_tags": ["共享技能库", "候选验证后发布"], "primary_title": "SkillClaw: Let Skills Evolve Collectively with Agentic Evolver", "source_urls": ["https://arxiv.org/pdf/2604.08377"]},
+        {"inventory_index": 10, "name": "Ctx2Skill", "label": "从上下文自练并提炼技能", "cross_layer_tags": ["自行出题与判分", "回放选择技能", "不训练模型权重"], "primary_title": "From Context to Skills: Can Language Models Learn from Context Skillfully?", "source_urls": ["https://arxiv.org/abs/2604.27660"]},
+        {"inventory_index": 12, "name": "MUSE-Autoskill", "label": "维护技能生成复用闭环", "cross_layer_tags": ["技能记忆", "检索与失败修补"], "primary_title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation", "source_urls": ["https://arxiv.org/abs/2605.27366"]},
+        {"inventory_index": 13, "name": "SkillForge", "label": "诊断工单并增量修补技能", "cross_layer_tags": ["领域资料", "失败归因与版本化"], "primary_title": "SkillForge: Forging Domain-Specific, Self-Evolving Agent Skills in Cloud Technical Support", "source_urls": ["https://arxiv.org/abs/2604.08618"]},
+        {"inventory_index": 36, "name": "WikiSkill", "label": "积累证据再迭代技能", "cross_layer_tags": ["持久经验Wiki", "技能回滚不清空经验"], "primary_title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution", "source_urls": ["https://arxiv.org/abs/2608.27454"]}
+      ]
+    },
+    {
+      "id": "harness",
+      "title": "外部优化：系统外壳与搜索",
+      "count": 8,
+      "papers": [
+        {"inventory_index": 1, "name": "Meta-Harness", "label": "搜索可执行智能体外壳", "cross_layer_tags": ["源码与完整历史可查询", "执行模型冻结"], "primary_title": "Meta-Harness: End-to-End Optimization of Model Harnesses", "source_urls": ["https://arxiv.org/pdf/2603.28052"]},
+        {"inventory_index": 8, "name": "AHE", "label": "以可观测证据修订组件", "cross_layer_tags": ["多组件文件化", "验证修复与回归预测"], "primary_title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses", "source_urls": ["https://arxiv.org/abs/2604.25850"]},
+        {"inventory_index": 9, "name": "Continual Harness", "label": "在连续任务中改写外壳", "cross_layer_tags": ["不重置在线适应", "另有模型与外壳共同训练实验"], "primary_title": "Continual Harness: Online Adaptation for Self-Improving Foundation Agents", "source_urls": ["https://arxiv.org/pdf/2605.09998"]},
+        {"inventory_index": 14, "name": "Autogenesis", "label": "规范资源演化与提交回滚", "cross_layer_tags": ["协议与生命周期治理", "兼容优化器不等于全已验证"], "primary_title": "Autogenesis: A Self-Evolving Agent Protocol", "source_urls": ["https://arxiv.org/abs/2604.15034"]},
+        {"inventory_index": 15, "name": "AEvo", "label": "改进进化搜索机制本身", "cross_layer_tags": ["元优化", "保护独立评分器"], "primary_title": "Harnessing Agentic Evolution", "source_urls": ["https://arxiv.org/abs/2605.13821"]},
+        {"inventory_index": 34, "name": "Huxley–Gödel Machine", "label": "按后代潜力分配搜索", "cross_layer_tags": ["进化谱系", "异步生成与评测"], "primary_title": "Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine", "source_urls": ["https://arxiv.org/abs/2510.21614"]},
+        {"inventory_index": 37, "name": "EvoTest", "label": "跨回合改写并选择配置", "cross_layer_tags": ["完整轨迹反馈", "UCB选择", "执行模型冻结"], "primary_title": "EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems", "source_urls": ["https://iclr.cc/virtual/2026/poster/10010217"]},
+        {"inventory_index": 39, "name": "SoL-Pi", "label": "设能力门槛搜索高效外壳", "cross_layer_tags": ["能力容忍门槛", "效率优化", "已发表arXiv论文"], "primary_title": "SoL-Pi: Recursively Scaling Auto-Research Loops for Efficient Agent Harness", "source_urls": ["https://arxiv.org/abs/2609.20519", "https://nvlabs.github.io/SoL-Pi/"]}
+      ]
+    },
+    {
+      "id": "memory",
+      "title": "外部优化：动作价值记忆",
+      "count": 1,
+      "papers": [
+        {"inventory_index": 33, "name": "JitRL", "label": "用经验重排候选动作", "cross_layer_tags": ["外部价值记忆", "无基础模型梯度"], "primary_title": "Just-In-Time Reinforcement Learning: Continual Learning in LLM Agents Without Gradient Updates", "source_urls": ["https://arxiv.org/abs/2601.18510"]}
+      ]
+    },
+    {
+      "id": "training",
+      "title": "参数训练：把经验写入权重",
+      "count": 9,
+      "papers": [
+        {"inventory_index": 6, "name": "SKILL0", "label": "逐步撤去技能并内化能力", "cross_layer_tags": ["训练时技能脚手架", "测试不依赖技能上下文"], "primary_title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization", "source_urls": ["https://arxiv.org/abs/2604.02268"]},
+        {"inventory_index": 24, "name": "Skill0.5", "label": "内化通用并调用专项技能", "cross_layer_tags": ["通用与专项分层", "参数与外部技能混合"], "primary_title": "Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning", "source_urls": ["https://arxiv.org/abs/2605.28424"]},
+        {"inventory_index": 7, "name": "Skill1", "label": "联合训练技能选用与蒸馏", "cross_layer_tags": ["技能库同步演化", "选择、利用、蒸馏共同学习"], "primary_title": "Skill1: Unified Evolution of Skill Augmented Agents via Reinforcement Learning", "source_urls": ["https://arxiv.org/abs/2605.06130"]},
+        {"inventory_index": 41, "name": "SAGE", "label": "训练技能生成与跨题复用", "cross_layer_tags": ["两任务序列奖励", "可执行函数技能库"], "primary_title": "Reinforcement Learning for Self-Improving Agent with Skill Library", "source_urls": ["https://aclanthology.org/2026.acl-long.69"]},
+        {"inventory_index": 11, "name": "CoEvolve", "label": "按策略弱点更新训练任务", "cross_layer_tags": ["任务生成与验证", "训练数据和策略共同进化"], "primary_title": "CoEvolve: Training LLM Agents via Agent Data Mutual Evolution", "source_urls": ["https://arxiv.org/abs/2604.15840"]},
+        {"inventory_index": 22, "name": "EvolveR", "label": "蒸馏原则并训练检索策略", "cross_layer_tags": ["外部原则记忆", "GRPO参数更新"], "primary_title": "EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle", "source_urls": ["https://arxiv.org/abs/2510.16079"]},
+        {"inventory_index": 25, "name": "MeRF", "label": "用奖励说明引导强化训练", "cross_layer_tags": ["训练提示揭示评分规则", "真实RL更新"], "primary_title": "A Simple \"Motivation\" Can Enhance Reinforcement Finetuning of Large Reasoning Models", "source_urls": ["https://openreview.net/forum?id=3owSlsYDQf"]},
+        {"inventory_index": 27, "name": "CoPE", "label": "协调训练规划与执行策略", "cross_layer_tags": ["可执行性与遵循度", "DPO、KTO与SFT"], "primary_title": "CoPE: A Framework for Optimizing Coordination between Planning and Execution in LLM-based Agents", "source_urls": ["https://openreview.net/forum?id=9aU4vrHPKD&noteId=aXiXZ7lAXc"]},
+        {"inventory_index": 29, "name": "SE-GA", "label": "结合记忆训练界面操作", "cross_layer_tags": ["测试时多层记忆", "失败前缀重标子目标", "SFT与GRPO"], "primary_title": "SE-GA: Memory-Augmented Self-Evolution for GUI Agents", "source_urls": ["https://arxiv.org/abs/2605.16883"]}
+      ]
+    },
+    {
+      "id": "predictor",
+      "title": "训练前预测与筛选辅助",
+      "count": 2,
+      "papers": [
+        {"inventory_index": 23, "name": "TuneAhead", "label": "短程探测完整微调表现", "cross_layer_tags": ["需要100步训练探测", "性能回归预测器"], "primary_title": "TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins", "source_urls": ["https://arxiv.org/abs/2606.17660"]},
+        {"inventory_index": 26, "name": "STS", "label": "用稀疏特征预测迁移幅度", "cross_layer_tags": ["前向激活与已训练SAE", "预测幅度而非涨跌方向"], "primary_title": "SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training", "source_urls": ["https://arxiv.org/abs/2603.02908"]}
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "title": "运行基础设施",
+      "count": 2,
+      "papers": [
+        {"inventory_index": 32, "name": "Cordis", "label": "编排可撤销组件生命周期", "cross_layer_tags": ["运行时与编程范式", "不训练模型"], "primary_title": "A Programming Paradigm for Spatiotemporal Composability", "source_urls": ["https://github.com/cordiverse/paper"]},
+        {"inventory_index": 40, "name": "DSec", "label": "供给可隔离弹性执行环境", "cross_layer_tags": ["沙盒、镜像和状态管理", "不等于策略质量提高"], "primary_title": "DeepSeek Elastic Compute (DSec): A Sandbox Infrastructure for Effective Agentic Training at Scale", "source_urls": ["https://arxiv.org/abs/2609.22978"]}
+      ]
+    }
+  ],
+  "center_loop": ["任务与状态", "模型决策", "工具与环境", "轨迹、结果与成本", "独立评测与诊断", "候选更新", "验证、接受或回滚", "下一次执行"],
+  "main_edges": [
+    {"from": "任务与状态", "to": "模型决策", "label": "输入当前任务"},
+    {"from": "模型决策", "to": "工具与环境", "label": "执行动作"},
+    {"from": "工具与环境", "to": "模型决策", "label": "返回观察"},
+    {"from": "工具与环境", "to": "轨迹、结果与成本", "label": "记录过程"},
+    {"from": "轨迹、结果与成本", "to": "独立评测与诊断", "label": "提取反馈"},
+    {"from": "独立评测与诊断", "to": "外部优化", "label": "修改提示／技能／外壳"},
+    {"from": "独立评测与诊断", "to": "参数训练", "label": "更新数据／奖励／权重"},
+    {"from": "外部优化", "to": "验证、接受或回滚", "label": "提交候选"},
+    {"from": "参数训练", "to": "验证、接受或回滚", "label": "提交候选"},
+    {"from": "验证、接受或回滚", "to": "模型决策", "label": "部署下一版本"},
+    {"from": "训练前预测与筛选辅助", "to": "参数训练", "label": "决定训练什么、先筛候选"},
+    {"from": "运行基础设施", "to": "执行与训练评测全流程", "label": "承载环境、状态与生命周期"}
+  ],
+  "cross_edges": [
+    {"papers": ["EvolveR", "SE-GA", "Skill1", "SAGE", "Skill0.5"], "from": "参数训练", "to": "外部技能与记忆", "label": "权重与外部资产共同作用"},
+    {"papers": ["Continual Harness"], "from": "外壳优化", "to": "参数训练", "label": "另有共同训练实验"},
+    {"papers": ["JIT-Agent"], "from": "参数训练", "to": "外壳生成", "label": "先离线训练生成器，再按任务生成"},
+    {"papers": ["SPRIG"], "from": "参数训练", "to": "提示搜索", "label": "训练辅助奖励模型"},
+    {"papers": ["ACRouter"], "from": "参数训练／路由记忆", "to": "推理选择", "label": "小路由器与记忆选择后端"},
+    {"papers": ["EvoC2F", "SkVM"], "from": "外部技能", "to": "执行适配", "label": "编译、验证与运行时专门化"},
+    {"papers": ["TextGrad"], "from": "下游评测反馈", "to": "上游文本变量", "label": "语言反馈归因与改写"},
+    {"papers": ["JitRL"], "from": "历史回报记忆", "to": "当前动作分布", "label": "无梯度动作重加权"}
+  ],
+  "key_story": [
+    "先问经验最终写到哪里：当前动作、外部资产，还是模型参数。",
+    "执行本身不等于进化；跨次保留的改变和独立验证才构成可检查的改进闭环。",
+    "提示、技能、外壳的区别是可改动对象逐渐扩大，不是后一类天然更高级。",
+    "权重训练与外部记忆可以互补；冻结基础模型不代表全系统从未训练。",
+    "预测器帮助少走训练弯路，运行时帮助规模化执行；二者不直接证明策略更聪明。"
+  ],
+  "avoid_misreadings": [
+    "不要画成39篇沿一条时间线逐级升级。",
+    "不要把TuneAhead和STS画成实际任务奖励器；它们是训练结果预测辅助。",
+    "不要把JitRL当参数RL，把JIT-Agent当完全免训练。",
+    "不要把TextGrad的文本梯度画成模型权重反向传播。",
+    "不要把Cordis和DSec当Agent能力优化算法。",
+    "不要画出所有论文已组成一套验证过的联合系统。"
+  ],
+  "layout_major_counts": {"推理时选择与执行": 4, "外部系统优化": 22, "参数训练": 9, "训练预测辅助": 2, "运行基础设施": 2}
+}

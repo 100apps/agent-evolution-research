@@ -1,0 +1,2226 @@
+===== PAGE 1 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents
+Lei Wei * † 1 2 Qi Liu * 2 Ruiyang Huang * 2 Xiao Peng 1 Sicong Xie 1 Lanbo Lin 1 Chenhao Jiang 1
+Yuanwu Xu1 Tianyuan Yang1 Jiayao Liu 1 Li Cai 1 Zhaolu Kang 2 Bin Wang 2
+Abstract
+Tool-augmented language model agents have
+shown great potential in solving complex real-
+world tasks, but a key challenge remains bal-
+ancing planning flexibility with the reliability re-
+quired for production deployment. Existing ap-
+proaches either execute tools sequentially with-
+out parallelism or generate unconstrained code,
+hindering optimization and verification. Addi-
+tionally, agents that learn from experience often
+suffer from skill library pollution, where unveri-
+fied abstractions degrade performance over time.
+We propose EvoC2F, a framework that redefines
+tool orchestration through program compilation
+and verified continuous learning. By constrain-
+ing plan generation to a well-defined intermedi-
+ate representation with explicit semantic anno-
+tations, EvoC2F enables provably correct opti-
+mizations, parallelism, and fault tolerance, while
+ensuring soundness guarantees. Our verification-
+gated code-to-function evolution process ensures
+that learned skills undergo rigorous testing be-
+fore library admission. Experiments across di-
+verse benchmarks demonstrate that EvoC2F out-
+performs existing methods, reducing latency and
+establishing a robust foundation for building reli-
+able, evolving autonomous agents.
+1. Introduction
+The rapid advancement of Large Language Models (LLMs)
+has catalyzed a paradigm shift in autonomous agent devel-
+opment, enabling systems that interact with external tools
+and APIs to accomplish complex real-world tasks (Schick
+et al., 2023; Qin et al., 2023; Patil et al., 2024; Shen et al.,
+2025; Strehlow et al., 2026).
+*Equal contribution †Work done during internship at Alibaba
+International Digital Commerce Group. 1Alibaba International
+Digital Commerce Group 2Peking University. Correspondence to:
+Xiao Peng<xinglun.px@alibaba-inc.com>.
+Proceedings of the 43 rd International Conference on Machine
+Learning, Seoul, South Korea. PMLR 306, 2026. Copyright 2026
+by the author(s).
+However, a fundamental tension persists between the
+flexibility of natural language-driven planning and the
+stringent reliability requirements of production deploy-
+ments—current systems often generate arbitrary code or
+unstructured action sequences that resist systematic opti-
+mization, verification, and governance. Contemporary ap-
+proaches to tool orchestration fall into two predominant
+categories, each with critical limitations.Reactive execu-
+tion frameworks(Yao et al., 2022; Shinn et al., 2023; Xu
+et al., 2023) process tool calls sequentially without holis-
+tic planning, failing to exploit parallelization opportunities.
+Code generation paradigms(Wang et al., 2024; Huang et al.,
+2022; Dong et al., 2025; Li et al., 2025) produce flexible
+programs but lack formal semantic guarantees—without
+explicit dependency and side-effect annotations, automated
+reasoning and systematic optimization become intractable.
+Additionally, recent work on skill libraries (Wang et al.,
+2023; Ye et al., 2023; Wang et al., 2025) typically lacks rig-
+orous verification pipelines, where unverified abstractions
+can corrupt planning quality over time.
+To address these challenges, we proposeEvoC2F(Evolving
+CompilableCodeFramework), a framework that recon-
+ceptualizes tool orchestration through the lens of program
+compilation and verified continuous learning. Our key in-
+sight is that constraining plan generation to a well-defined
+intermediate representation (Plan IR) with explicit depen-
+dency and side-effect semantics enables a semantic compiler
+to perform provably correct optimizations—parallelization,
+critical path reduction, and fault tolerance injection—while
+maintaining formal guarantees about execution behavior.
+EvoC2F operates through two tightly coupled loops. The
+online execution loopcompiles and executes plans with
+maximal efficiency under resource constraints, constructing
+a directed acyclic graph (DAG) from Plan IR and annotat-
+ing nodes with effect types, resource dependencies, retry
+policies, and idempotency requirements. The compiler op-
+timizes this DAG to minimize makespan while respecting
+concurrency budgets and reliability constraints. Theoffline
+learning loopanalyzes successful trajectories to abstract
+candidate macro-skills, where candidates must pass auto-
+mated unit tests, contract checks, and regression evaluations
+before promotion to the skill library, ensuring controlled
+capability growth.
+1
+
+===== PAGE 2 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+A. Motivation & Key Insight B. Online Execution Loop(Compilation    Optimized Execution)
+C. Offline Learning Loop (Verified Skill Evolution) D. Skill-Augmented Planning & Governance
+1. Reactive
+     execution
+2. Code generation
+Tool
+A
+Tool
+B
+Tool
+C
+Tool
+D
+sequential/
+no holistic
+planning
+unstructured code
+no explicit deps/effects →
+hard to verify/optimize/govern
+Key Insight: Constrsin planning into a compilable Plan IR
+with explicit dependency&side-effect  sementics → enable
+with provable optimizations+governmance.
+Natural
+Language
+task q
+Planner
+(LLM)
+Plan IR
+(DAG shape)
+Task q
+Budget
+? = (????,
+????, ????)
+Plan IR
+(from Planner)
+N1
+N2 N2 N3
+N4 N5 N6
+ε=(pure, local)
+p:(cpu, R)
+φ:(3,2s, timeout, 
+fallback)
+k: id123
+Edata 
+Eres /Esync 
+N7
+(ref(u, field))
+(resource conflict/
+sync chain)
+Semantic
+Consisitency Con(π)
+• Acyclic
+• type check
+• ρ  ⊇ Infer(fv)
+• pure≺read≺write
+• non-pure⇒k≠∅
+• unknown→write/(c
+onservative)
+Semantic Plan Compiler
+Dependency
+resolution
+Scheduling
+Rate Limiting Fault tolerance
+Build augmented graph
+G=(V, E∪Esync)
+Modified HEFT
+critical path T*
+concurrency Kmax 
+exponential backoff/defer
+token bucket(Lr, Br) 
+request needs token≥1
+retry circuit breaker
+(failure rate)
+compensation (saga)
+reversible vs irreversible logged
+Optimized Execution
+DAG / Schedule
+Before
+(Serial)
+After
+(Parallel)
+Latency ↓ 63-67% via
+parallelization (sound w.r.t
+resource/effect semantics)
+Optimization target:
+min(makespan + rate violation penalty
++ retry overhead)
+Candidate extraction
+canonicalize Plan IR
+→ topological Iinearization
+→ PrefixSpan pattern mining
+anti-unification/
+LGG templates
+Three-stage verification gates
+Functional
+testing
+Contract
+verification
+Regression
+assessment
+trace-based analysis only expands footprints (never shrink) for soundness
+nominal replay+
+boundary tests+
+error injection:
+timeout/429/5xx/
+malformed
+Pre ⇒ Post;
+QuickCheck-style
+randomized+
+symbolic
+isolated correctness
++end-to-end
+controlled eval;
+accept if △??? ≤0
+Execution traces
+Skill Library S
+successful trajectories 
+τ with (vi , xi , yi , ti)
+Skill pollution
+Prevented by
+verification-gated
+Admission + staged
+deployment
+(versioned)
+Regression rate<1%
+(vs 5.8-7.3% unverified
+baselines)
+Skill retrieval scoring Constrained decoding Preference learning (DPO)
+Staged deployment pipeline Legend
+Score(s,q) = cosine(embs, embq)
++??(metadata)
+(success/cost/recency)
+IR grammar constrained
+decoding→Пvalid
+DPO updates planner;
+reward balanced success;
+time, cost, retries
+pure read
+write external
+data dependency (Edata)
+resource/sync
+dependency (Eres / Esync)
+passive observation,
+fallback to atomic
+Shadow Stable
+promote after volume,
+auto-demote on
+degradation
+Canary
+fraction traffic,
+monitor metrics
+Figure 1.Overview of the EvoC2F framework, illustrating the compilation-based tool orchestration and verification-gated skill evolution
+process.
+The contributions of this work are summarized as follows:
+• We demonstrate that tool orchestration can be formu-
+lated as a constrained compilation problem, where ex-
+plicit semantic annotations on plans enable provably
+correct optimizations while preventing the verification
+and governance challenges inherent in arbitrary code
+generation.
+• We introduce (1) a compilable Plan IR with explicit
+side-effect and resource semantics enabling static anal-
+ysis and optimization, (2) a semantic compiler achiev-
+ing 63–67% latency reduction through effect-aware par-
+allelization with formal correctness guarantees, and (3)
+a verification-gated skill evolution mechanism main-
+taining regression rates below 1% through automated
+testing, contract validation, and staged deployment.
+• We present comprehensive experiments across sev-
+eral benchmarks demonstrating state-of-the-art success
+rates with substantial efficiency gains. Ablation studies
+validate each architectural component’s necessity, and
+sequential evaluation over 500 tasks confirms sustained
+capability growth through verified skill accumulation.
+2. Related Work
+2.1. Tool Orchestration Frameworks
+Tool orchestration for task-oriented LMs commonly spans
+browser-grounded acting, modular tool routing, multi-agent
+collaboration, and agent benchmarking (Nakano et al., 2021;
+Shen et al., 2023; Wu et al., 2024; Li et al., 2023a; Zhou
+et al., 2023; Liu et al., 2023; Li et al., 2023b). These frame-
+works improve coverage and scalability, but often rely on
+heuristic scheduling and implicit effect handling, making
+systematic parallelization and reliability control difficult
+for long-horizon tasks. EvoC2F distinguishes itself by in-
+corporating a compilation-based approach that guarantees
+efficient execution through formal optimizations and paral-
+lelism, ensuring reliability without sacrificing performance.
+2.2. Code Generation and Semantic Guarantees
+Tool-mediated execution is frequently realized by synthe-
+sizing executable structures such as program-aided reason-
+ing, computation traces, and compiled LM pipelines (Gao
+et al., 2023; Chen et al., 2022; Yao et al., 2023; Besta et al.,
+2024; Khattab et al., 2023). While these paradigms offer
+expressive control, they often lack explicit dependency and
+side-effect contracts as first-class semantics, which makes
+automated reasoning, scheduling, and governance brittle in
+production. EvoC2F addresses these shortcomings by intro-
+2
+
+===== PAGE 3 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+ducing a Plan Intermediate Representation (Plan IR) with
+clear annotations for side-effects and resource dependencies,
+enabling provably correct optimizations and ensuring both
+efficiency and reliability.
+2.3. Verified Execution and Skill Evolution
+Verification-oriented evaluation has recently become central
+for agentic systems, especially via real-world issue bench-
+marks and test-driven regression protocols (Liu et al., 2026;
+Huang & Huang, 2025). These setups motivate gating mech-
+anisms, but integrating verification directly into skill pro-
+motion and connecting it to a semantics-aware planner re-
+mains nontrivial. EvoC2F mitigates this by implementing a
+verification-gated skill evolution mechanism, ensuring that
+only verified skills are added to the agent’s library, prevent-
+ing skill pollution while enabling continuous improvement.
+3. Methodology
+We present EvoC2F, a framework that formulates tool or-
+chestration as a constrained compilation problem with ver-
+ified continuous learning. Our approach comprises three
+core components: (1) a formal Plan Intermediate Repre-
+sentation with explicit semantic annotations, (2) a semantic
+compiler that optimizes execution under resource and relia-
+bility constraints, and (3) a verification-gated skill evolution
+mechanism.
+3.1. Problem Formulation
+We consider an environment E= (T,R) whereT=
+{t1,...,t n} denotes atomic tools andR represents shared
+resources (databases, APIs, file systems). Each toolt∈T
+is characterized by a tuple t=⟨σ t,ϵt,ρt,ˆτt,ˆct⟩ contain-
+ing input-output signature σt :X t → Yt, effect type
+ϵt∈{pure,read,write}×{local,external} , re-
+source footprintρt ={(r,a)|r∈R,a∈{R,W}} (pairs
+of resources and access modes derived from tool schema
+declarations), and expected latency and costˆτt,ˆct∈R +.
+Given a natural language taskq and budget constraintB=
+(Cmax,K max,T max) specifying limits on cost, concurrency,
+and deadline, we seek a plan π and scheduleS that solve
+the following optimization problem:
+min
+π,S
+Eξ[Tms(S,ξ)] +λ 1Φrate(S) +λ 2Φretry(S)
+s.t. P
+v∈π ˆcv≤C max,conc(S)≤K max
+(1)
+where the expectation is taken over random factors ξ in-
+cluding tool latency variation, failure events, and retry
+counts;T ms(S,ξ)denotes makespan (total execution time);
+Φrate(S) = P
+r[Rater(S)−L r]2
++ penalizes rate limit vio-
+lations, with Rater(S) measuring the peak request rate to
+resourcer over a sliding time window andLr denoting the
+rate limit; and Φretry(S) =P
+v E[pfail(v)]·n retry(v)·ˆτv cap-
+tures expected retry overhead in time units, wherepfail(v) is
+the empirical failure probability andnretry(v) represents the
+expected number of retries under the configured retry pol-
+icy (approximated using the maximum retry budget scaled
+by failure probability). The plan must additionally satisfy
+semantic consistency constraints detailed in Section 3.2.
+3.2. Plan Intermediate Representation
+Unlike approaches that generate arbitrary code, EvoC2F
+produces plans in a constrained intermediate representation
+amenable to static analysis and optimization.
+Definition 3.1(Plan IR).A Plan IR is a directed acyclic
+graphπ= (V,E,C) where each nodev∈V represents a
+computational unit with attributes:
+v=⟨f v,θv,ϵv,ρv,ϕv,κv⟩(2)
+Here fv ∈ T ∪ S identifies a tool or learned
+skill, θv specifies parameters potentially referencing up-
+stream outputs via ref(u,field) , ϵv = (e se,e env)∈
+{pure,read,write}×{local,external} declares
+the effect type along two orthogonal dimensions (side-effect
+and environment), ρv ={(r,a)|r∈ R,a∈ {R,W}}
+enumerates resource accesses, ϕv = (n max,γ,E retry,f fb)
+encodes retry policy, andκv provides idempotency key gen-
+eration for non-pure effects.
+The edge set decomposes as E=E data∪E res, captur-
+ing distinct dependency types. Data dependenciesEdata =
+{(u,v)|θ v referencesu} encode explicit information flow.
+To construct resource dependencies, we first establish a per-
+resource ordering≺r for each resourcer∈R by computing
+a topological order of the data-dependency graph (V,E data)
+with deterministic tie-breaking (e.g., stable hash on node
+identifiers). Resource dependencies arise from potential
+read-write and write-read conflicts on shared state:
+Eres ={(u,v)|∃r: (r,a u)∈ρ u∧(r,a v)∈ρ v
+∧(a u̸=a v∧(au =W∨a v =W))∧u≺ r v}(3)
+This formulation serializes read-write and write-read con-
+flicts while permitting concurrent read-read access. Write-
+write conflicts are additionally enforced through synchro-
+nization edges Esync introduced during compilation (Sec-
+tion 3.3), ensuring a complete serialization chain for all
+writes to each resource.
+Annotation Inference.The resource footprint ρv and
+effect type ϵv are derived from tool schema declarations
+and wrapper specifications. We define Infer(fv) as the
+union of all resource accesses declared in the schema or
+wrapper metadata for tool/skill fv. For tools with incom-
+plete or uncertain annotations, we apply a conservative
+3
+
+===== PAGE 4 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+policy: unknown side-effects default to write, and un-
+known environment defaults to external, ensuring that
+under-specified tools are serialized rather than incorrectly
+parallelized. Trace-based analysis of historical executions
+is used only to monotonically expand (never shrink) the de-
+clared footprints, maintaining soundness. Runtime guards
+detect and log any undeclared resource accesses for future
+refinement.
+Definition 3.2(Semantic Consistency).A plan π=
+(V,E,C) is semantically consistent, denoted Con(π), iff:
+(i) (V,E) is acyclic; (ii)∀(u,v)∈E data :type(u.out)⪯
+type(v.in); (iii) ∀v:ρ v ⊇Infer(f v); (iv) side-effects
+respect the lattice pure≺read≺write ; (v) ∀v:
+ese(v)̸=pure⇒κ v̸=∅.
+3.3. Semantic Plan Compiler
+The compiler transforms semantically consistent Plan IR
+into optimized execution schedules through a two-phase
+process: compile-time dependency resolution and runtime
+resource coordination.
+Compile-Time Scheduling.We first construct the aug-
+mented dependency graph G= (V,E∪E sync). For each
+resource r∈R , let VW
+r ={v∈V|(r,W)∈ρ v} de-
+note nodes with write access. We compute a per-resource
+serial chain by ordering VW
+r according to the same topo-
+logical order used to establish≺r (i.e., on (V,E data)), then
+adding synchronization edges Er
+sync to enforce this chain.
+The combined synchronization edgesEsync =S
+rEr
+sync do
+not introduce cycles since they respect the underlying data-
+dependency order.
+Let sv ∈R + denote the scheduled start time of node v.
+The earliest start time (EST) and latest start time (LST) are
+computed via forward and backward passes:
+EST(v) = max
+u∈pred(v)
+
+EST(u) + ˆτu
+
+(4)
+LST(v) = min
+w∈succ(v)
+
+LST(w)−ˆτv
+
+(5)
+with boundary conditions EST(v) = 0 for source nodes
+and LST(v) =T ∗−ˆτv for sink nodes, where T∗ =
+maxv∈Vsink(EST(v) + ˆτv) is the critical path length. Nodes
+with positive slack ∆v =LST(v)−EST(v) admit schedul-
+ing flexibility.
+Since DAG scheduling under resource and concurrency con-
+straints is NP-hard in general, we employ a modified HEFT
+(Heterogeneous Earliest Finish Time) heuristic (Topcuoglu
+et al., 2002). Specifically: (1) nodes are prioritized by up-
+ward rank (sum of execution time along the longest path to
+any sink); (2) each node is greedily assigned to the earli-
+est feasible start time that respects all dependency edges in
+E∪E sync, the concurrency limitKmax, and resource lock
+availability; (3) rate limit constraints are checked via to-
+ken bucket availability before scheduling; (4) if no feasible
+slot exists within the deadline, the node is deferred with
+exponential backoff.
+Runtime Resource Coordination.For nodes accessing
+multiple resources, we employ lock ordering to prevent
+deadlocks: resources are assigned global identifiers, and a
+node must acquire locks in ascending order before execution.
+If acquisition fails within a timeout, the node releases held
+locks and retries with exponential backoff.
+Rate Limiting.For each external resource r with rate
+limit Lr (requests per unit time), we instantiate a token
+bucket regulator with capacityBr:
+Tokensr(t) = clip[0,Br]
+
+Tokensr(0)+Lr·t−Nr(t)
+
+(6)
+whereNr(t) counts requests issued by time t. A request
+proceeds only if Tokensr ≥1 , whereupon one token is
+consumed. The penalty term Φrate in Equation 1 provides
+learning-time guidance to avoid rate-limit pressure, while
+token buckets enforce hard limits during execution.
+Fault Tolerance.Circuit breakers monitor failure statis-
+tics within a sliding window and halt invocations when
+the empirical failure rate ˆpfail exceeds service-specific tol-
+erance, preventing cascade failures. For write operations
+with reversible semantics (e.g., APIs providing explicit undo
+endpoints), the compiler generates compensation actions ¯v
+following the saga pattern (Garcia-Molina & Salem, 1987).
+We distinguish: (i)reversible writeswith compensation ¯v
+satisfying exec(¯v,exec(v,σ))≈σ , and (ii)irreversible ex-
+ternal effects(e.g., sending emails, financial transactions)
+which are logged for manual intervention but cannot be
+automatically rolled back.
+Assumption 3.3(Annotation Soundness).For all nodes
+v∈V , the declared resource footprint ρv is a superset of
+actual resources accessed during execution, and the declared
+effect typeϵv is an upper bound under the respective lattice
+orderings.
+Proposition 3.4(Parallelization Soundness).Given As-
+sumption 3.3 and a semantically consistent plan π with
+Con(π), letS∗ be the schedule produced by the compiler.
+For any nodesu,v with overlapping execution intervals un-
+derS∗, either ρu∩ρ v =∅ , or∀r∈ρ u∩ρ v : (r,R)∈
+ρu∧(r,R)∈ρ v.
+Proof. Read-write and write-read conflicts on any shared
+resourcer are serialized by Eres as defined in Equation 3.
+Write-write conflicts are additionally serialized by the per-
+resource chainEr
+sync (which totally ordersVW
+r ). The sched-
+uler respects all edges inE∪E sync, enforcingsv≥s u + ˆτu
+4
+
+===== PAGE 5 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+for (u,v)∈E∪E sync. By Assumption 3.3, actual resource
+accesses are contained within declared footprints. Thus
+concurrent execution under S∗ implies no conflicting ac-
+cess.
+3.4. Skill-Augmented Planning
+The planner generates Plan IR by leveraging both atomic
+toolsT and learned skills from a dynamically growing li-
+braryS. Given task q, we first retrieve relevant skills by
+ranking candidates according to:
+Score(s,q) = cos(es,eq)| {z }
+semantic
++ηϕ(s,q)| {z }
+learned
+(7)
+where es,eq∈R d are embedding representations (obtained
+by encoding textual descriptions of skills and tasks) and
+ηϕ :S×Q→R is a lightweight MLP that ingests skill
+metadata (historical success rate, average cost, recency)
+to produce a learned adjustment. The top- k skills, along
+with tool schemas, form the augmented contextCq for plan
+generation.
+The plannerMθ generates Plan IR autoregressively via
+constrained decoding that enforces the IR grammar:
+π∗ = arg max
+π∈Πvalid
+Pθ(π|C q)(8)
+where Πvalid denotes the set of syntactically and semantically
+consistent plans.
+To improve planning quality over time, we apply offline
+preference learning. For each completed task, trajectories
+are scored by a reward combining success, efficiency, and
+reliability:
+R(τ) =1[succ]−α T
+T(τ)
+Tmax
+−αC
+C(τ)
+Cmax
+−αR
+Nretry
+Nbudget
+(9)
+Given preference pairs (τ +,τ−) with R(τ +)> R(τ −),
+we update the planner via Direct Preference Optimiza-
+tion (Rafailov et al., 2023):
+LDPO =−E
+"
+logσ
+ 
+βlog Pθ(π+|C q)
+Pref(π+|C q)
+−βlog Pθ(π−|C q)
+Pref(π−|C q)
+!# (10)
+wherePref is the frozen planner checkpoint from the pre-
+vious training iteration. The retrieval router ηϕ is jointly
+trained with a margin ranking objective on skill utility la-
+bels derived from trajectory outcomes (specifically, credit is
+assigned proportional to the performance delta when a skill
+is used versus when the same task is solved without it).
+3.5. Verification-Gated Skill Evolution
+The learning module continuously analyzes execution traces
+to extract reusable abstractions while enforcing rigorous
+verification to prevent skill pollution.
+Candidate Extraction.From successful trajectories, we
+identify candidate macro-skills through sequential pattern
+mining on canonicalized Plan IR traces. We canonicalize
+each DAG via topological linearization with deterministic
+tie-breaking, then apply PrefixSpan (Pei et al., 2004) on lin-
+earized sequences. Let supp(P) =|{τ∈D:P⪯τ}|/|D|
+denote pattern support. High-support patterns with consis-
+tent data flow signatures are promoted to candidates. For
+structurally similar pattern families, we compute parameter-
+ized templates via anti-unification:
+LGG(P1,P 2) = arg min
+P:P 1⊴P,P 2⊴P
+Cost(P)(11)
+yielding the least general generalization, where P1 ⊴P
+indicates P generalizes P1, and Cost(P) measures com-
+plexity. Candidates failingCon(π)after generalization are
+discarded.
+Three-Stage Verification.Candidates enter a verifica-
+tion pipeline: (1)Functional Testingsynthesizes test suites
+Ts =T nom∪T bnd∪T err covering nominal inputs, bound-
+ary conditions, and error modes; (2)Contract Verifica-
+tionchecks ∀x∈Dom(s) :Pre s(x)⇒Post s(s(x)) via
+property-based testing and symbolic constraint solving; (3)
+Regression Assessmentevaluates impact through controlled
+experiments:
+∆reg(s) = 1
+|H|
+X
+q∈H
+h
+1[fail(q,S∪{s},ξ)]−1[fail(q,S,ξ)]
+i
+(12)
+whereH is a held-out task set andξ controls randomness.
+Skills with∆ reg≤0passing all stages are admitted.
+Staged Deployment.Admitted skills progress through
+shadow, canary, and stable phases. Shadow mode enables
+passive observation with atomic fallback. Canary deploy-
+ment routes a traffic fraction to new skills while monitoring
+metrics. Skills exhibiting degradation trigger automatic
+demotion. This lifecycle management ensures monotonic
+library improvement while maintaining reliability.
+4. Experiments
+4.1. Experimental Setup
+Datasets.We evaluate EvoC2F on six benchmark suites: (1)
+StableToolBench (Guo et al., 2024) with 16,000+ real-world
+API calls across 49 categories for write-heavy workflows;
+5
+
+===== PAGE 6 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+StableToolBench ShortcutsBenchτ-bench
+Model MethodSoPR↑SoWR↑Lat.↓TC↓ASA↑Acc spp↑Acc ofpa↑Acc afni↑Lat.↓pass 1
+ret↑pass 1
+air↑Lat.↓
+Qwen2.5
+-72B
+ReAct 56.2 64.8 18.4 25.7 39.5 68.4 82.7 39.1 15.1 58.6 31.2 20.3
+Toolformer 57.6 66.3 17.0 24.6 40.8 71.3 84.5 41.2 14.1 60.9 33.6 18.4
+CodeAct 62.1 69.2 13.3 21.3 42.9 73.5 86.2 41.8 11.0 66.3 38.4 15.1
+Planner-Exec 63.8 70.4 12.6 18.9 46.376.889.1 45.9 10.3 69.0 41.2 14.3
+LLMCompiler 60.7 68.1 7.2 20.5 44.0 74.6 87.3 43.5 6.1 64.5 36.8 8.5
+EvoC2F 65.9 72.5 6.7 18.4 50.175.991.5 50.6 5.8 72.7 44.8 8.2
+GPT-4o
+ReAct 60.4 68.6 17.6 24.8 43.6 73.2 87.1 44.0 13.9 64.2 37.6 19.2
+Toolformer 62.0 70.1 16.1 23.2 45.9 75.9 88.8 45.8 12.8 66.3 39.2 17.5
+CodeAct 66.1 72.9 12.4 20.1 47.7 77.9 90.1 46.3 10.2 71.5 43.6 13.8
+Planner-Exec 67.6 74.2 11.717.950.8 81.392.650.0 9.6 74.1 46.4 13.2
+LLMCompiler 65.2 72.3 6.4 19.3 48.9 79.3 91.2 48.6 5.6 70.1 41.6 7.9
+EvoC2F 70.6 77.0 5.918.054.7 84.991.853.4 5.3 78.4 51.2 7.5
+Claude-4
+-Sonnet
+ReAct 62.3 70.2 16.9 24.1 44.8 74.8 88.3 45.4 13.2 65.7 39.2 18.5
+Toolformer 64.0 71.6 15.4 22.5 47.9 77.5 90.1 47.5 12.2 67.7 40.8 16.8
+CodeAct 67.5 74.1 11.9 19.4 49.2 79.1 90.5 47.1 9.7 73.6 45.6 13.3
+Planner-Exec 69.2 75.5 11.2 17.2 52.1 82.7 93.9 51.4 9.1 75.3 48.0 12.6
+LLMCompiler 67.0 73.7 6.1 18.6 50.2 80.9 92.5 49.7 5.3 72.5 44.4 7.6
+EvoC2F 72.2 78.6 5.5 16.8 57.0 86.3 94.7 56.3 5.0 79.7 53.6 7.2
+DeepSeek
+-V3.2
+ReAct 60.5 69.6 17.3 24.5 44.3 73.9 87.6 44.6 13.6 65.0 38.4 18.9
+Toolformer 62.7 71.0 15.7 23.0 46.4 76.4 89.3 46.3 12.5 66.8 40.4 17.1
+CodeAct 66.6 73.5 12.1 19.8 48.1 78.6 89.8 47.2 9.9 72.7 45.2 13.5
+Planner-Exec 68.2 74.8 11.4 17.5 51.3 81.8 93.351.19.3 74.6 47.2 12.8
+LLMCompiler 65.9 73.1 6.3 19.0 49.4 80.0 91.7 49.0 5.5 71.3 44.0 7.8
+EvoC2F 71.4 76.2 5.7 17.1 56.3 85.7 94.150.75.2 79.1 52.8 7.4
+Table 1.Main results across three representative benchmarks (mean over 5 runs).StableToolBench: SoPR (Solvable Pass Rate, %), SoWR
+(Solvable Win Rate vs. Llama-3.1-70B-Instruct, %), Lat. (End-to-End Latency, seconds), TC (Tool Calls per Task).ShortcutsBench:
+ASA (API Selection Accuracy, %), Accspp (Static Parameter Preset Accuracy, %), Accofpa (Outputs From Previous Actions Accuracy, %),
+Accafni (Ask-for-Input Recognition Accuracy, %), Lat. (seconds).τ-bench: pass1
+ret (Retail Domain Pass Rate, %), pass1
+air (Airline Domain
+Pass Rate, %), Lat. (seconds). Best results inbold. Detailed evaluation protocols in Appendix H.
+(2) ShortcutsBench (Shen et al., 2024) with Apple Short-
+cuts automation workflows; (3)τ-bench (Yao et al., 2024)
+for multi-turn dialogues with policy constraints; (4) Tool-
+Comp (Nath et al., 2025) for dependent tool chains; (5)
+TRAJECT-Bench (He et al., 2025) for trajectory-level di-
+agnostics; (6) ToolSeq-500, a sequential protocol sampling
+500 tasks from StableToolBench for measuring skill accu-
+mulation dynamics. Detailed statistics are in Appendix G.1.
+Models.We use four backbone LLMs: Qwen2.5-72B (Yang
+et al., 2025), GPT-4o (Achiam et al., 2023), Claude-4-
+Sonnet, and DeepSeek-V3.2. All models use temperature
+0.2 for planning and 0 for execution. Implementation details
+are in Appendix G.
+Baselines.We compare against five approaches: (1) Re-
+Act (Yao et al., 2022) for sequential reasoning-action;
+(2) Toolformer-style (Schick et al., 2023) with in-context
+prompting; (3) LLMCompiler (Kim et al., 2024) for paral-
+lel execution; (4) Planner-Execute (Wei et al., 2025) with
+DAG-based planning; (5) CodeAct (Wang et al., 2024) using
+Python code actions. All baselines use identical backbone
+models and tool access. Execution semantics are detailed in
+Appendix A.
+Metrics.General metrics include: (1) Success Rate (SR)
+via executable checkers; (2) End-to-End Latency (mean and
+P95); (3) Tool Calls per Task (TC). Benchmark-specific met-
+rics include: (1) Solvable Pass Rate (SoPR) and Solvable
+Win Rate (SoWR) for StableToolBench; (2) API Selection
+Accuracy (ASA), Static Parameter Preset Accuracy (Accspp),
+Outputs From Previous Actions Accuracy (Acc ofpa), and
+Ask-for-Input Recognition Accuracy (Acc afni) for Short-
+cutsBench; (3) pass1
+ret (Retail Domain) and pass1
+air (Airline
+Domain) forτ-bench. All metrics are averaged over 5 runs
+with different random seeds.
+4.2. Main Results
+We evaluate on three representative benchmarks stressing
+different orchestration aspects: StableToolBench (write-
+heavy workflows), ShortcutsBench (workflow fidelity), and
+τ-bench (policy compliance). Table 1 summarizes perfor-
+mance across all model-method combinations.
+EvoC2F achieves state-of-the-art success rates.EvoC2F
+demonstrates competitive or superior performance across
+nearly all model-benchmark combinations. On Stable-
+ToolBench with Claude-4-Sonnet, EvoC2F achieves 72.2%
+SoPR and 78.6% SoWR, outperforming all baselines.
+6
+
+===== PAGE 7 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Configuration SoPR↑SoWR↑Lat.↓TC↓
+EvoC2F (Full)72.2 78.6 5.5 16.8
+w/o Compiler 64.9 71.2 11.2 17.5
+w/o Effects 64.8 70.9 6.7 18.9
+w/o Verification 70.5 76.8 5.9 17.2
+w/o Macro-Skills 66.1 72.4 8.1 21.5
+w/o Router 70.8 77.3 5.8 17.3
+Planner-Exec 69.2 75.5 11.2 17.2
+LLMCompiler 67.0 73.7 6.1 18.6
+Table 2.Ablation study on StableToolBench with Claude-4-Sonnet
+(mean over 5 runs).
+Similar trends hold with GPT-4o (70.6% SoPR, 77.0%
+SoWR) and DeepSeek-V3.2 (71.4% SoPR, 76.2% SoWR).
+With Qwen2.5-72B, EvoC2F achieves 65.9% SoPR versus
+Planner-Execute’s 63.8% (+2.1 points), suggesting struc-
+tured representations provide stronger scaffolding for less
+capable planners.
+Semantic compilation dramatically reduces latency.
+EvoC2F reduces end-to-end latency by 63–67% compared
+to ReAct baselines. On StableToolBench with Claude-
+4-Sonnet, latency drops from 16.9s (ReAct) to 5.5s—a
+67% reduction through critical path optimization and effect-
+aware parallelization. Similar gains are observed with
+GPT-4o (17.6s→5.9s, 66% reduction) and Qwen2.5-72B
+(18.4s→6.7s, 64% reduction). Even compared to the
+fastest baseline (LLMCompiler at 6.1s for Claude-4-Sonnet),
+EvoC2F maintains lower latency while achieving substan-
+tially higher success rates (72.2% vs 67.0% SoPR).
+Benchmark-specific metrics validate architectural con-
+tributions.On StableToolBench, EvoC2F reduces tool
+calls to 16.8–18.4 per task versus 19.4–25.7 for ReAct/Tool-
+former/CodeAct, reflecting macro-skill abstraction reducing
+redundant orchestration. On ShortcutsBench with GPT-
+4o, EvoC2F achieves 54.7% ASA, 84.9% Acc spp, 91.8%
+Accofpa, and 53.4% Accafni, substantially exceeding Code-
+Act (47.7%, 77.9%, 90.1%, 46.3%), confirming that con-
+strained IR trades flexibility for verifiable correctness. On
+τ-bench, EvoC2F achieves 79.7% pass1
+ret and 53.6% pass1
+air
+with Claude-4-Sonnet, demonstrating compilation-time con-
+straint injection ensures reliable governance while maintain-
+ing high task success rates across both domains.
+4.3. Ablation Study
+To quantify each component’s contribution, we conduct
+systematic ablations on Claude-4-Sonnet across StableTool-
+Bench, selectively disabling: (1)w/o Compiler: bypass
+semantic compilation, execute sequentially; (2)w/o Effects:
+remove side-effect annotations, parallelize by data depen-
+dencies only; (3)w/o Verification: admit skills without
+Method SR↑DSR↑CPG↓Lat.↓
+ReAct 62.7 71.3 3.84 20.9
+LLMCompiler 70.8 78.5 1.92 12.7
+Planner-Execute 74.2 83.7 1.68 11.3
+CodeAct 71.9 76.2 2.15 13.5
+EvoC2F 79.7 94.1 1.23 8.9
+Table 3.ToolComp evaluation with GPT-4o backbone (mean over
+5 runs). DSR: Dependency Satisfaction Rate (%), CPG: Critical
+Path Gap (ratio), Lat.: Latency (seconds).
+Method Tool Sel.↑Param.↑Exec. Order↑SR↑
+ReAct 78.4 82.1 85.3 64.2
+LLMCompiler 83.2 85.7 88.9 71.5
+Planner-Execute 86.5 88.3 91.2 75.8
+CodeAct 81.7 83.5 83.4 69.3
+EvoC2F 92.8 95.1 96.7 82.4
+Table 4.TRAJECT-Bench trajectory quality metrics with GPT-4o
+(mean over 5 runs). All accuracies in percentage.
+test/regression gates; (4)w/o Macro-Skills: disable skill
+abstraction; (5)w/o Router: remove learned skill retrieval
+routerηϕ.
+Table 2 shows each component contributes meaningfully.
+Semantic compilationis critical: removing it causes 2.0×
+latency increase (11.2s vs 5.5s) and 7.3-point SoPR drop,
+performing similarly to Planner-Exec baseline.Effect anno-
+tationsprevent catastrophic failures: without them, SoPR
+drops to 64.8% as aggressive parallelization causes re-
+source conflicts.Verification gatesmaintain immediate
+performance (70.5% SoPR) but prevent long-term degra-
+dation—regression rate rises from 0.8% to 7.2% without
+verification.Macro-skillscontribute 6.1 points (66.1% vs
+72.2%) and reduce tool calls from 21.5 to 16.8.Routerpro-
+vides a 1.4 point gain through learned skill selection. Even
+the weakest variants stay within 8 points of the full system
+on SoPR while maintaining competitive latency, demonstrat-
+ing gains arise from synergistic design rather than any single
+component dominating.
+4.4. Dependency Reasoning and Trajectory Quality
+To evaluate fine-grained dependency tracking and execution
+quality, we analyze ToolComp and TRAJECT-Bench with
+ground-truth dependency structures and trajectory annota-
+tions. We measureDependency Satisfaction Rate (DSR)
+(fraction of correctly-typed parameter bindings),Critical
+Path Gap (CPG)(makespan ratio to theoretical optimum),
+and per-step accuracies for tool selection, parameterization,
+and execution ordering.
+Table 3 and Table 4 demonstrate EvoC2F’s superior de-
+pendency tracking: 94.1% DSR versus 83.7% for Planner-
+Execute, validating that explicit data-flow semantics enable
+7
+
+===== PAGE 8 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Task Range SR↑Lat.↓TC↓Skills Reuse↑
+Tasks 1–100 68.2 6.8 19.2 23 12.4%
+Tasks 101–200 70.4 6.2 18.1 51 28.7%
+Tasks 201–300 72.0 5.9 17.4 78 41.3%
+Tasks 301–400 73.4 5.6 16.9 103 49.8%
+Tasks 401–500 75.0 5.4 16.5 134 58.2%
+Skill Lifecycle (final 134 skills): 93 stable, 26 canary, 15 deprecated
+Tasks with≥2 skills: 78.4% SR vs. 70.6% atomic-only
+Table 5.Sequential learning on ToolSeq-500 with Claude-4-Sonnet
+(mean over 5 runs). SR: Success Rate (%), Lat.: Latency (s),
+TC: Tool Calls per Task, Skills: Cumulative Library Size, Reuse:
+fraction of tasks whose compiled plan includes≥1 learned skill.
+accurate parameter binding. EvoC2F achieves near-optimal
+parallelization (CPG=1.23) compared to sequential execu-
+tion (ReAct: 3.84) and effect-agnostic approaches (LLM-
+Compiler: 1.92). On TRAJECT-Bench, EvoC2F achieves
+92.8% tool selection, 95.1% parameterization, and 96.7%
+execution order accuracy, substantially exceeding code gen-
+eration (CodeAct: 83.5% parameterization). Error attri-
+bution reveals EvoC2F’s failures stem primarily from tool
+execution errors (52%) and timeouts (31%), with only 17%
+planning errors versus 38–47% for baselines.
+4.5. Continual Skill Learning
+We evaluate long-horizon learning withToolSeq-500, a se-
+quential protocol that processes 500 tasks sampled from
+our StableToolBench training pool (virtual API cache) af-
+ter applying the same solvable filtering as Table 1. Tasks
+are processed in a fixed order, and all splits are disjoint by
+query ID. During execution, EvoC2F mines successful tra-
+jectories for reusable patterns and admits new skills through
+verification gates.
+Table 5 showsmonotonic improvementas the library
+grows: SR increases from 68.2% to 75.0% (+6.8), while
+latency drops from 6.8s to 5.4s (21%) and tool calls de-
+crease from 19.2 to 16.5. The mining module proposes
+356 candidates; verification admits 134 (37.6%), with rejec-
+tions from functional tests (38%), contract violations (29%),
+and regression checks (33%). Regression is monitored ev-
+ery 20 admitted skills on a held-out validation set (100
+tasks sampled from the same training pool, disjoint from
+ToolSeq-500), and remains below 1% throughout; without
+verification gates it rises to 7.2% (Table 2). Finally, skills
+compose: tasks invoking≥2 skills achieve 78.4% SR vs.
+70.6% atomic-only, and an admitted skill encapsulates 3.7
+atomic tool invocations on average.
+4.6. Robustness and Controllability
+We stress-test EvoC2F under adversarial conditions and
+evaluate controllability via compiler objective weights and
+cross-domain transfer.
+Failure Injection (20%) Strict Rate Limits (5 req/s)
+MethodSR↑RR↓Lat.↓SR↑RLV↓TO↓
+ReAct 51.2 2.34 28.7 48.7 31.4 23.4
+Planner-Exec 62.4 1.78 18.9 59.8 22.1 14.2
+LLMCompiler 57.8 2.06 21.3 52.3 28.7 19.8
+CodeAct 55.3 2.18 23.1 54.6 25.8 17.6
+EvoC2F 66.4 0.87 11.2 71.6 4.2 6.8
+Table 6.Stress testing on a StableToolBench subset (200 tasks, 5
+runs). SR: Success Rate (%), RR: Retry Rate, Lat.: Latency (s),
+RLV: Rate Limit Violations (%), TO: Timeout Rate (%).
+Configuration SR↑Lat.↓RR↓RLV↓TC↓
+Latency-opt (λ= 0) 68.55.10.42 9.3 17.2
+Balanced (λ= 0.5) 72.4 6.2 0.23 4.5 17.8
+Reliable (λ= 1.0)74.67.80.11 1.818.3
+Cross-Domain Transfer (StableT oolBench→ShortcutsBench, metric = ASA):
+Zero-shot 49.3 5.8 0.28 5.7 15.3
+w/ safe fallback52.56.3 0.19 3.2 15.9
+Baseline (atomic) 46.8 6.5 0.31 6.4 18.7
+Table 7.Controllability and transfer learning (5 runs). Top: weight
+sweep on a fixed 200-task StableToolBench validation set. Bottom:
+transfer to ShortcutsBench reportsASA(teacher-forced) as the
+success metric; safe fallback disables 34.3% (46/134) skills using
+a 50-task pilot from the ShortcutsBench train split, disjoint from
+eval.
+Table 6 shows EvoC2F remains robust under 20% failure
+injection (66.4% SR) and strict rate limits (71.6% SR), with
+lower retries (0.87), timeouts (6.8%), and violations (4.2%)
+than all baselines. We compute peak request-rate variance
+by counting per-resource requests over a 1s sliding win-
+dow and taking the variance of the per-window peak rate;
+EvoC2F reduces this variance by 2.3×. For controllability,
+sweepingλ∈{0,0.125,...,1.0} yields a smooth trade-off
+(Spearmanρ=−0.83 using mean SR/latency over 5 runs
+perλ):λ=0 minimizes latency (5.1s) whileλ=1 maximizes
+reliability (74.6% SR, 1.8% RLV). Finally, cross-domain
+transfer to ShortcutsBench (metric = ASA) improves from
+46.8% to 49.3% zero-shot; we define negative transfer as
+per-task ASA dropping below atomic-only, affecting 12.3%
+tasks. Safe fallback disables skills that decrease pilot ASA,
+improving to 52.5% while suppressing 46/134 skills; a task
+is counted as invoking transferred skills if its compiled plan
+contains at least one transferred skill node (31.6% tasks).
+5. Conclusion
+EvoC2F introduces a novel approach to tool orchestration
+by leveraging a semantic Plan IR for efficient and reli-
+able execution. Its use of a semantic compiler allows for
+sound parallelization and critical-path optimization, while
+the verification-gated skill evolution process ensures that
+new skills are rigorously tested before being added to the
+agent’s library. The framework achieves state-of-the-art
+performance in various benchmarks, with substantial re-
+ductions in latency and tool calls, and demonstrates robust,
+8
+
+===== PAGE 9 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+long-term skill accumulation.
+6. Limitations
+Despite its strengths, EvoC2F faces several challenges. The
+framework’s scalability to large, distributed systems remains
+an open problem, and its reliance on detailed Plan IR may
+impose overheads that affect real-time responsiveness. Addi-
+tionally, while the verification process ensures skill quality,
+it may limit the framework’s ability to generalize learned
+skills across diverse tasks without further tuning or retrain-
+ing.
+Impact Statement
+EvoC2F targets the engineering pipeline by which LLM
+agents invoke real-world tools, so its societal effects are
+mediated by how and where those agents are deployed. On
+the positive side, semantic compilation and effect-aware
+scheduling reduce end-to-end latency by 63–67% and sub-
+stantially cut redundant tool calls, lowering the compute,
+network, and energy cost of running agentic systems at
+scale. The explicit separation between reversible writes and
+irreversible external effects, together with verification gates
+on admitted skills, is intended to make autonomous tool
+use safer in settings where mistakes are costly: writes to
+shared resources are serialized rather than parallelized, irre-
+versible actions such as financial transactions or outbound
+notifications are routed through manual-intervention logs
+rather than automatic retries, and circuit breakers halt invo-
+cation when empirical failure rates exceed service-specific
+tolerances.
+These same properties also raise concerns. Lowering the op-
+erational cost and observable error rate of tool-using agents
+reduces the barrier to deploying them in high-stakes settings
+where human-in-the-loop oversight may still be warranted.
+The soundness of our parallelization argument rests on the
+accuracy of tool schema annotations: incorrect or incom-
+plete annotations can lead to silent resource conflicts that
+the compiler will not detect, even though our conservative
+defaults (unknown side-effects default to write, unknown
+environment to external) are designed to mitigate this.
+The verification-gated skill library reduces but does not
+eliminate the risk that admitted skills encode subtle errors or
+biases inherited from the trajectories from which they were
+mined; periodic re-verification, staged rollouts, and rollback
+paths remain necessary in any long-running deployment. We
+encourage practitioners adopting EvoC2F-style compilation
+to treat the IR-level annotations as a safety-critical surface,
+and to combine them with downstream guardrails—rate-
+limit budgets, audit logs, and human review for high-impact
+actions—rather than relying on the compiler alone.
+References
+Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I.,
+Aleman, F. L., Almeida, D., Altenschmidt, J., Altman, S.,
+Anadkat, S., et al. Gpt-4 technical report.arXiv preprint
+arXiv:2303.08774, 2023.
+Besta, M., Blach, N., Kubicek, A., Gerstenberger, R., Pod-
+stawski, M., Gianinazzi, L., Gajda, J., Lehmann, T.,
+Niewiadomski, H., Nyczyk, P., et al. Graph of thoughts:
+Solving elaborate problems with large language models.
+InProceedings of the AAAI conference on artificial intel-
+ligence, volume 38, pp. 17682–17690, 2024.
+Chen, W., Ma, X., Wang, X., and Cohen, W. W. Program
+of thoughts prompting: Disentangling computation from
+reasoning for numerical reasoning tasks.arXiv preprint
+arXiv:2211.12588, 2022.
+Claessen, K. and Hughes, J. QuickCheck: A lightweight
+tool for random testing of Haskell programs. InProceed-
+ings of the Fifth ACM SIGPLAN International Conference
+on Functional Programming (ICFP), pp. 268–279, 2000.
+de Moura, L. and Bjørner, N. Z3: An efficient SMT solver.
+InProceedings of the 14th International Conference on
+Tools and Algorithms for the Construction and Analysis
+of Systems (TACAS), volume 4963 ofLNCS, pp. 337–340.
+Springer, 2008.
+Dong, Y ., Jiang, X., Qian, J., Wang, T., Zhang, K., Jin, Z.,
+and Li, G. A survey on code generation with llm-based
+agents.arXiv preprint arXiv:2508.00083, 2025.
+Ernst, M. D., Perkins, J. H., Guo, P. J., McCamant, S.,
+Pacheco, C., Tschantz, M. S., and Xiao, C. The Daikon
+system for dynamic detection of likely invariants.Science
+of Computer Programming, 69(1–3):35–45, 2007.
+Gao, L., Madaan, A., Zhou, S., Alon, U., Liu, P., Yang,
+Y ., Callan, J., and Neubig, G. Pal: Program-aided lan-
+guage models. InInternational Conference on Machine
+Learning, pp. 10764–10799. PMLR, 2023.
+Garcia-Molina, H. and Salem, K. Sagas. InProceedings of
+the ACM SIGMOD International Conference on Manage-
+ment of Data, pp. 249–259, 1987.
+Guo, Z., Cheng, S., Wang, H., Liang, S., Qin, Y ., Li, P., Liu,
+Z., Sun, M., and Liu, Y . Stabletoolbench: Towards stable
+large-scale benchmarking on tool learning of large lan-
+guage models.arXiv preprint arXiv:2403.07714, 2024.
+He, P., Dai, Z., He, B., Liu, H., Tang, X., Lu, H., Li,
+J., Ding, J., Mukherjee, S., Wang, S., Xing, Y ., Tang,
+J., and Dumoulin, B. Traject-bench:a trajectory-aware
+benchmark for evaluating agentic tool use, 2025. URL
+https://arxiv.org/abs/2510.04550.
+9
+
+===== PAGE 10 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Huang, K. and Huang, J. Audited skill-graph self-
+improvement for agentic llms via verifiable rewards, ex-
+perience synthesis, and continual memory.arXiv preprint
+arXiv:2512.23760, 2025.
+Huang, W., Xia, F., Xiao, T., Chan, H., Liang, J., Florence,
+P., Zeng, A., Tompson, J., Mordatch, I., Chebotar, Y ., et al.
+Inner monologue: Embodied reasoning through planning
+with language models.arXiv preprint arXiv:2207.05608,
+2022.
+Khattab, O., Singhvi, A., Maheshwari, P., Zhang, Z., San-
+thanam, K., Vardhamanan, S., Haq, S., Sharma, A., Joshi,
+T. T., Moazam, H., et al. Dspy: Compiling declarative
+language model calls into self-improving pipelines.arXiv
+preprint arXiv:2310.03714, 2023.
+Kim, S., Moon, S., Tabrizi, R., Lee, N., Mahoney, M. W.,
+Keutzer, K., and Gholami, A. An llm compiler for parallel
+function calling. InForty-first International Conference
+on Machine Learning, 2024.
+Li, G., Hammoud, H., Itani, H., Khizbullin, D., and Ghanem,
+B. Camel: Communicative agents for” mind” exploration
+of large language model society.Advances in Neural In-
+formation Processing Systems, 36:51991–52008, 2023a.
+Li, J., Le, H., Zhou, Y ., Xiong, C., Savarese, S., and Sa-
+hoo, D. Codetree: Agent-guided tree search for code
+generation with large language models. InProceedings
+of the 2025 Conference of the Nations of the Americas
+Chapter of the Association for Computational Linguistics:
+Human Language Technologies (Volume 1: Long Papers),
+pp. 3711–3726, 2025.
+Li, M., Zhao, Y ., Yu, B., Song, F., Li, H., Yu, H., Li,
+Z., Huang, F., and Li, Y . Api-bank: A comprehen-
+sive benchmark for tool-augmented llms.arXiv preprint
+arXiv:2304.08244, 2023b.
+Liu, X., Yu, H., Zhang, H., Xu, Y ., Lei, X., Lai, H., Gu, Y .,
+Ding, H., Men, K., Yang, K., et al. Agentbench: Evalu-
+ating llms as agents.arXiv preprint arXiv:2308.03688,
+2023.
+Liu, Y ., Peng, X., Cao, J., Wang, X., Deng, S., Chen, J.,
+Yin, J., and Zhang, X. Toolgate: Contract-grounded
+and verified tool execution for llms.arXiv preprint
+arXiv:2601.04688, 2026.
+Nakano, R., Hilton, J., Balaji, S., Wu, J., Ouyang, L., Kim,
+C., Hesse, C., Jain, S., Kosaraju, V ., Saunders, W., et al.
+Webgpt: Browser-assisted question-answering with hu-
+man feedback.arXiv preprint arXiv:2112.09332, 2021.
+Nath, V ., Raja, P., Yoon, C., and Hendryx, S. Toolcomp: A
+multi-tool reasoning & process supervision benchmark.
+arXiv preprint arXiv:2501.01290, 2025.
+Patil, S. G., Zhang, T., Wang, X., and Gonzalez, J. E. Go-
+rilla: Large language model connected with massive apis.
+Advances in Neural Information Processing Systems, 37:
+126544–126565, 2024.
+Pei, J., Han, J., Mortazavi-Asl, B., Wang, J., Pinto, H.,
+Chen, Q., Dayal, U., and Hsu, M. Mining sequential
+patterns by pattern-growth: The PrefixSpan approach.
+IEEE Transactions on Knowledge and Data Engineering,
+16(11):1424–1440, 2004.
+Qin, Y ., Liang, S., Ye, Y ., Zhu, K., Yan, L., Lu, Y ., Lin, Y .,
+Cong, X., Tang, X., Qian, B., et al. Toolllm: Facilitating
+large language models to master 16000+ real-world apis.
+arXiv preprint arXiv:2307.16789, 2023.
+Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning,
+C. D., and Finn, C. Direct preference optimization: Your
+language model is secretly a reward model. InAdvances
+in Neural Information Processing Systems 36 (NeurIPS),
+2023.
+Schick, T., Dwivedi-Yu, J., Dess`ı, R., Raileanu, R., Lomeli,
+M., Hambro, E., Zettlemoyer, L., Cancedda, N., and
+Scialom, T. Toolformer: Language models can teach
+themselves to use tools.Advances in Neural Information
+Processing Systems, 36:68539–68551, 2023.
+Shen, C., Chen, Z., Luo, D., Xu, D., Chen, H., and Ni,
+J. Exploring multi-modal data with tool-augmented llm
+agents for precise causal discovery. InFindings of the
+Association for Computational Linguistics: ACL 2025,
+pp. 636–660, 2025.
+Shen, H., Li, Y ., Meng, D., Cai, D., Qi, S., Zhang, L.,
+Xu, M., and Ma, Y . Shortcutsbench: A large-scale real-
+world benchmark for api-based agents.arXiv preprint
+arXiv:2407.00132, 2024.
+Shen, Y ., Song, K., Tan, X., Li, D., Lu, W., and Zhuang,
+Y . Hugginggpt: Solving ai tasks with chatgpt and its
+friends in hugging face.Advances in Neural Information
+Processing Systems, 36:38154–38180, 2023.
+Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., and
+Yao, S. Reflexion: Language agents with verbal rein-
+forcement learning.Advances in Neural Information
+Processing Systems, 36:8634–8652, 2023.
+Strehlow, R. K., K ¨uster, T., Kupke, O. F., Kurps, B. L.,
+Sivrikaya, F., and Albayrak, S. Sage: Tool-augmented
+llm task solving strategies in scalable multi-agent envi-
+ronments.arXiv preprint arXiv:2601.09750, 2026.
+Topcuoglu, H., Hariri, S., and Wu, M. Performance-
+effective and low-complexity task scheduling for hetero-
+geneous computing.IEEE Transactions on Parallel and
+Distributed Systems, 13(3):260–274, 2002.
+10
+
+===== PAGE 11 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Wang, G., Xie, Y ., Jiang, Y ., Mandlekar, A., Xiao, C., Zhu,
+Y ., Fan, L., and Anandkumar, A. V oyager: An open-
+ended embodied agent with large language models.arXiv
+preprint arXiv:2305.16291, 2023.
+Wang, J., Yan, Q., Wang, Y ., Tian, Y ., Mishra, S. S., Xu, Z.,
+Gandhi, M., Xu, P., and Cheong, L. L. Reinforcement
+learning for self-improving agent with skill library.arXiv
+preprint arXiv:2512.17102, 2025.
+Wang, X., Chen, Y ., Yuan, L., Zhang, Y ., Li, Y ., Peng, H.,
+and Ji, H. Executable code actions elicit better LLM
+agents. InProceedings of the 41st International Confer-
+ence on Machine Learning (ICML). PMLR, 2024.
+Wei, X., Dong, Y ., Wang, X., Zhang, X., Zhao, Z., Shen,
+D., Xia, L., and Yin, D. Beyond react: A planner-centric
+framework for complex tool-augmented llm reasoning.
+arXiv preprint arXiv:2511.10037, 2025.
+Wu, Q., Bansal, G., Zhang, J., Wu, Y ., Li, B., Zhu, E., Jiang,
+L., Zhang, X., Zhang, S., Liu, J., et al. Autogen: Enabling
+next-gen llm applications via multi-agent conversations.
+InFirst Conference on Language Modeling, 2024.
+Xu, B., Peng, Z., Lei, B., Mukherjee, S., Liu, Y ., and Xu,
+D. Rewoo: Decoupling reasoning from observations for
+efficient augmented language models.arXiv preprint
+arXiv:2305.18323, 2023.
+Yang, A., Yang, B., Zhang, B., Hui, B., Zheng, B., Yu, B.,
+Li, C., Liu, D., Huang, F., Wei, H., Lin, H., Yang, J., Tu,
+J., Zhang, J., Yang, J., Yang, J., Zhou, J., Lin, J., Dang,
+K., Lu, K., Bao, K., Yang, K., Yu, L., Li, M., Xue, M.,
+Zhang, P., Zhu, Q., Men, R., Lin, R., Li, T., Tang, T., Xia,
+T., Ren, X., Ren, X., Fan, Y ., Su, Y ., Zhang, Y ., Wan,
+Y ., Liu, Y ., Cui, Z., Zhang, Z., and Qiu, Z. Qwen2.5
+technical report, 2025. URL https://arxiv.org/
+abs/2412.15115.
+Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan,
+K. R., and Cao, Y . React: Synergizing reasoning and
+acting in language models. InThe eleventh international
+conference on learning representations, 2022.
+Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y .,
+and Narasimhan, K. Tree of thoughts: Deliberate problem
+solving with large language models.Advances in neural
+information processing systems, 36:11809–11822, 2023.
+Yao, S., Shinn, N., Razavi, P., and Narasimhan, K.τ-bench:
+A benchmark for tool-agent-user interaction in real-world
+domains.arXiv preprint arXiv:2406.12045, 2024.
+Ye, Y ., Cong, X., Tian, S., Cao, J., Wang, H., Qin, Y ., Lu, Y .,
+Yu, H., Wang, H., Lin, Y ., et al. Proagent: From robotic
+process automation to agentic process automation.arXiv
+preprint arXiv:2311.10751, 2023.
+Zhou, S., Xu, F. F., Zhu, H., Zhou, X., Lo, R., Sridhar, A.,
+Cheng, X., Ou, T., Bisk, Y ., Fried, D., et al. Webarena:
+A realistic web environment for building autonomous
+agents.arXiv preprint arXiv:2307.13854, 2023.
+11
+
+===== PAGE 12 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+A. Baseline Implementation Details and Fairness
+To ensure fair comparison, all baseline methods share identical experimental infrastructure with EvoC2F across tool access,
+execution environment, and failure handling.
+Shared infrastructure.All methods operate over the same tool collection T with identical tool schemas, sandbox
+environments, and failure models. Tool invocations execute in isolated containers with deterministic timeout (30s per call)
+and failure injection rates controlled by experimental conditions (Section 4.6). All methods have access to the same retry
+budgets (nmax = 3 retries with exponential backoff baseγ= 2.0 ), rate limit specifications (method-agnostic token bucket
+parametersLr,Br per resource), and cost constraints (Cmax set per benchmark). Prompts for all methods include identical
+tool documentation, input-output schemas, and task descriptions, differing only in method-specific formatting (e.g., ReAct
+includes reasoning traces, CodeAct wraps in Python syntax).
+ReAct and Toolformer.We implement ReAct following Yao et al. (2022) with interleaved thought-action-observation
+loops. At each step, the model generates a reasoning trace followed by a single tool invocation or final answer. Observations
+from tool execution are appended to the prompt for the next iteration, with a maximum of 15 reasoning steps before
+forced termination. Toolformer follows Schick et al. (2023) with in-context demonstrations of tool usage patterns. The
+model generates text interspersed with tool calls in the format [ToolName(arg1=val1, ...)] , which are parsed and
+executed sequentially. Both methods execute tools strictly one-at-a-time without lookahead or parallelization.
+CodeAct.Following Wang et al. (2024), we allow the model to generate executable Python code with tool invocations
+as function calls. The generated code is executed in a sandboxed Python interpreter with tool functions exposed in the
+global namespace. We use the publicly available implementation from the CodeAct repository1 with default parameters:
+temperature 0.2 for code generation, maximum 10 code blocks per task, and 60s timeout per block execution. Unlike
+EvoC2F’s Plan IR which enforces explicit dependency annotations, CodeAct allows arbitrary control flow including loops
+and conditionals, providing maximum flexibility at the cost of reduced analyzability.
+LLMCompiler.We implement LLMCompiler following Kim et al. (2024), which generates a dependency-annotated task
+graph and schedules nodes for parallel execution. The planner outputs a JSON representation specifying tool calls with
+explicit depends on fields. We use the reference implementation2 with modifications to match our evaluation harness:
+concurrency limit Kmax enforced via semaphore, and retry policies aligned with EvoC2F (same nmax,γ parameters).
+Critically, LLMCompiler lacks explicit side-effect annotations and performs dependency analysis solely from data-flow
+declarations, potentially leading to read-write conflicts when tools have undeclared side-effects.
+Planner-Execute.We implement a planner-executor separation where the planner first generates a complete DAG of tool
+invocations with data dependencies, then a separate executor schedules and runs the graph. The planner uses a structured
+JSON schema similar to EvoC2F’s Plan IR but without explicit effect types ϵv or resource footprints ρv. The executor
+performs topological scheduling with greedy parallelization subject to data dependencies and concurrency limits, but without
+rate-aware scheduling or effect-based conflict detection. This baseline isolates the benefit of planning from EvoC2F’s
+semantic compilation optimizations.
+Alignment of retry and rate-limit policies.All methods share identical retry configurations: exponential backoff with
+baseγ= 2.0 , maximum retries nmax = 3, and retryable error classes (timeouts, 5xx responses, rate-limit 429s). For
+rate limiting, all methods are subject to the same token bucket constraints (Lr,Br) per resourcer, enforced by a shared
+rate-limiter middleware that blocks requests when tokens are unavailable. The key difference is that EvoC2F’s compiler
+proactively schedules to avoid rate-limit pressure (viaΦrate penalty and bucket-aware timing), while baselines reactively back
+off upon encountering 429 responses. This difference reflects architectural capability rather than unfair advantage—baselines
+could in principle implement similar lookahead if equipped with explicit resource annotations.
+Skill libraries for baselines.To ensure fair comparison in continual learning experiments (Section 4.5), we provide
+ReAct and CodeAct with access to accumulated execution traces and allow them to reference past successful solutions via
+retrieval-augmented prompting. Specifically, for each new task, we retrieve the top-3 most similar historical trajectories
+1https://github.com/xingyaoww/code-act
+2https://github.com/SqueezeAILab/LLMCompiler
+12
+
+===== PAGE 13 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+(by task embedding similarity) and include them as in-context examples. This gives baselines an opportunity to reuse
+patterns without requiring the formal verification pipeline. LLMCompiler and Planner-Execute do not natively support skill
+abstraction, so we evaluate them in their standard single-task formulation.
+B. Token Bucket Constraints and Rate Penalty Consistency
+We formalize the relationship between EvoC2F’s soft rate-limit penaltyΦrate(S) used during plan optimization (Equation 1)
+and the hard token bucket constraints enforced during execution. This establishes that minimizing the soft penalty during
+compilation produces schedules that satisfy hard rate limits at runtime.
+Token bucket model.For each external resource r∈R with rate limitLr (requests per unit time) and burst capacityBr,
+we maintain a token bucket with state Tokr(t)∈[0,B r] denoting available tokens at timet. Tokens regenerate at rateLr
+and are consumed by requests. In discrete time with update interval∆, the dynamics are:
+Tokr(t+ ∆) = min{Br,Tokr(t) +Lr·∆}−n r(t,t+ ∆)(13)
+wherenr(t,t+ ∆) is the number of requests to resource r in the interval [t,t+ ∆) . A request at time t is admitted if
+Tokr(t)≥1, upon which one token is consumed. If Tok r(t)<1, the request blocks until sufficient tokens accumulate.
+Feasibility condition.A schedule S israte-feasiblefor resource r if for any time window W= [t 1,t 2] of length
+|W|=t 2−t 1, the number of requests satisfies:
+Nr(W)≤L r·|W|+B r (14)
+This is the classical token bucket feasibility condition: over any window, request count cannot exceed the base rate multiplied
+by window duration plus the burst allowance. When this condition holds and the bucket starts with sufficient initial tokens
+(typically Tokr(0) =B r), the token count never becomes negative, ensuring all requests are admitted without blocking.
+Peak rate and soft penalty.EvoC2F’s compiler computes the peak request rate over sliding windows during schedule
+construction. Specifically, for scheduleSand resourcer, we define Rate r(S)as:
+Rater(S) = max
+W=[t 1,t2]
+|W|≥∆ min
+Nr(W)
+|W| (15)
+where ∆min is a minimum window size (set to 1/Lr to capture instantaneous bursts) and Nr(W) counts nodes in S
+accessingrwith execution intervals overlappingW. The soft penalty in Equation 1 is:
+Φrate(S) =
+X
+r∈R
+
+Rater(S)−L r
+2
++ (16)
+where [·]+ denotes the positive part. This penalty is zero when the peak rate over any window does not exceed Lr, and
+grows quadratically when violations occur.
+Consistency between soft penalty and hard constraint.We now establish that schedules minimizing Φrate respect token
+bucket feasibility. SupposeΦ rate(S) = 0, which implies Rater(S)≤L r for allr. Then for any windowWof length|W|:
+Nr(W)≤Rate r(S)·|W|≤L r·|W|≤L r·|W|+B r (17)
+where the final inequality holds since Br≥0 . Thus S satisfies the feasibility condition (Equation 11) for all resources.
+Conversely, if Φrate(S)>0 , there exist a resource r and a witness window W∗ with δ0 :=Rate r(S)−L r >0 and
+Nr(W∗)≥(L r +δ 0)·|W∗|. Whenever the witness window satisfies|W∗|>B r/δ0, we obtainNr(W∗)>L r·|W∗|+Br,
+violating the feasibility condition (Equation 11).
+This establishes a practical guarantee: during compilation, EvoC2F’s optimizer (which includesλ1Φrate in its objective) is
+incentivized to produce schedules with Rater(S)≤L r, ensuring that when these schedules execute under token bucket
+regulation at runtime, requests are admitted without blocking (up to stochastic latency variation and minor timing jitter).
+The soft penalty thus serves as a differentiable surrogate for the hard bucket constraint, enabling gradient-based or heuristic
+optimization during planning while guaranteeing runtime compliance. In practice, we set λ1 >0 to trade off makespan
+minimization against rate-limit safety, producing schedules that operate below peak capacity with controlled slack (as
+demonstrated in Table 7).
+13
+
+===== PAGE 14 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+C. Parallelization Correctness and Deadlock Freedom
+We provide formal proofs establishing three key properties of EvoC2F’s semantic compiler: (1) synchronization edgesEsync
+preserve acyclicity, (2) the resulting schedule respects all resource conflicts, and (3) the multi-resource locking protocol is
+deadlock-free.
+C.1. Acyclicity Preservation
+Theorem C.1(Synchronization Edges Preserve DAG Structure).Let π= (V,E data,C) be a semantically consistent plan
+with(V,E data)acyclic, and letE sync be the synchronization edges constructed as in Section 3.3. Then(V,E data∪E sync)is
+acyclic.
+Proof. Let≺ denote a topological order on (V,E data) with deterministic tie-breaking (e.g., lexicographic ordering on node
+identifiers). By construction, for each resource r and the set of nodes with write access VW
+r ={v∈V|(r,W)∈ρ v},
+we impose a total order u≺ r v for allu,v∈V W
+r withu≺v , and add synchronization edges Er
+sync ={(u,v)|u,v∈
+VW
+r ,u≺ r v,∄w∈V W
+r :u≺w≺v} to enforce consecutive pairs in this chain. The combined synchronization set is
+Esync =S
+rEr
+sync.
+Suppose for contradiction thatG′ = (V,E data∪E sync) contains a cycleC=v 1→v 2→···→v k→v 1. Since (V,E data)
+is acyclic, at least one edge inC must belong toEsync. Let (vi,vj)∈E sync be such an edge, meaning there exists resourcer
+withvi,vj∈V W
+r andvi≺v j (by construction ofEr
+sync). Now consider the pathvj→···→v i completing the cycle. This
+path consists of edges fromE data∪E sync.
+For any edge(u,w)along this path:
+• If(u,w)∈E data, thenu≺wsince≺is a topological order ofE data.
+• If(u,w)∈E r′
+sync for some resourcer′, then by the same construction argument,u≺w.
+Therefore, every edge in the pathvj→···→v i satisfiesu≺w , implying by transitivity thatvj≺v i. But this contradicts
+vi≺v j established earlier. Hence no such cycle can exist, andG′ is acyclic.
+This theorem guarantees that adding synchronization edges to serialize write conflicts does not introduce cyclic dependencies,
+preserving the schedulability of the plan.
+C.2. Parallelization Soundness
+We now strengthen the parallelization soundness result from the main text (Proposition following Assumption 3.3) by
+explicitly addressing how resource dependenciesEres and synchronization edgesEsync together prevent all resource conflicts.
+Theorem C.2(Schedule Respects Resource Conflicts).Let π= (V,E data,C) be a semantically consistent plan satisfying
+Assumption 3.3 (annotation soundness), and let S be the schedule produced by the compiler from the augmented graph
+G= (V,E data∪E res∪E sync). Then for any pair of nodes u,v∈V with overlapping execution intervals under S (i.e.,
+[su,su +τu)∩[s v,sv +τv)̸=∅), either:
+(i)ρ u∩ρv =∅(disjoint resource footprints), or
+(ii)∀r∈ρ u∩ρv : (r,R)∈ρ u∧(r,R)∈ρ v (both are read-only accesses).
+Proof. The scheduler enforces sw ≥s x +τ x whenever (x,w)∈G (Algorithm 7, dependency bound on line 2), so
+overlapping execution intervals betweenu andv imply neither is an ancestor of the other inG. Consider any shared resource
+r∈ρ u∩ρv.
+Case 1: At least one write.Suppose (r,W)∈ρ u (the case (r,W)∈ρ v is symmetric). By the construction of Eres (Equation
+3), there exists an edge (u,v)∈E res if u≺ r v (where≺r is the per-resource topological order), or (v,u)∈E res if
+v≺ r u. Sinceu has write access,u∈V W
+r , and by construction ofEr
+sync, all writes tor are totally ordered via a chain of
+synchronization edges. Ifv also has write access (i.e.,v∈V W
+r ), then there exists a directed path from one to the other in
+14
+
+===== PAGE 15 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+(V,E r
+sync). Ifv has only read access but shares resourcer with writeru, thenEres contains an edge serializing the read-write
+conflict. In either case, there exists a directed path from one node to the other in G, contradicting the assumption thatu and
+vhave overlapping execution intervals (the scheduler respects all edges inG).
+Case 2: Both reads.If (r,R)∈ρ u and (r,R)∈ρ v, then no edge is introduced inEres orEsync for this resource (read-read
+conflicts are permitted). This matches condition (ii).
+By Assumption 3.3, the declared footprints ρu,ρv are supersets of actual resources accessed during execution, so any
+undeclared access would violate the assumption. Therefore, concurrent execution underS respects all resource conflicts.
+Conservative handling of unknown effects.When a tool’s side-effects are incompletely specified, EvoC2F applies a
+conservative default: unknown side-effects are treated as write and unknown environments as external. This ensures
+Assumption 3.3 holds even for under-annotated tools, at the cost of reduced parallelism (such tools are serialized with
+respect to all other accesses to the same resource). Over time, trace-based monitoring can refine these annotations: if a tool
+consistently exhibits read-only behavior in practice, its declared effect can be downgraded toread, monotonically expanding
+the set of safe parallelizations. Runtime guards detect any undeclared resource accesses (via sandbox instrumentation) and
+log them for future annotation updates, maintaining soundness throughout the system’s lifecycle.
+C.3. Deadlock Freedom via Lock Ordering
+When a node accesses multiple resources, EvoC2F must acquire locks on all required resources before execution. Naively
+acquiring locks in arbitrary order can lead to circular wait conditions and deadlock. We prevent this via a global resource
+ordering protocol.
+Theorem C.3(Multi-Resource Lock Ordering Prevents Deadlock).Let ≺global be a total order on resourcesR (e.g., by
+resource identifier hash). Suppose every nodev acquires locks on{r|(r,a)∈ρ v} in ascending order according to≺global,
+and releases all locks upon completion. Then the system is deadlock-free.
+Proof. We prove by contradiction using the classical Coffman conditions for deadlock, specifically showing that circular
+wait cannot occur. Suppose a deadlock exists, meaning there is a set of nodes{v1,...,v k} such that eachvi holds lockri
+and waits for lockri+1 (withvk+1 =v 1, forming a cycle). By the acquisition protocol, node vi acquires locks in ascending
+order≺global. Since vi holdsri and waits for ri+1, we must have ri≺global ri+1 (otherwisevi would have attempted to
+acquireri+1 beforeri, or would have already acquiredri+1). Applying this reasoning around the cycle:
+r1≺global r2≺global···≺ global rk≺global r1 (18)
+But≺global is a total order, hence transitive and irreflexive, sor1≺global r1 is impossible. This contradiction shows no such
+cycle can exist, and therefore no deadlock can occur.
+In practice, nodes implement this protocol with timeout-based lock acquisition: if a node cannot acquire all required locks
+within a timeout window (set to 5× the expected makespan), it releases all held locks and retries with exponential backoff.
+This prevents livelock in the presence of transient contention. The combination of acyclic dependency graphs (Theorem C.1),
+conflict-respecting schedules (Theorem C.2), and deadlock-free locking (Theorem C.3) establishes the formal correctness of
+EvoC2F’s parallel execution semantics.
+D. Plan IR Complete Specification
+This appendix provides the formal specification of Plan IR, including grammar, type system, static verification procedures,
+and complete examples demonstrating the compilation process.
+D.1. Grammar and JSON Example
+A Plan IR instance is represented as a JSON object. Listing 1 shows an illustrative example of a single node (with the $ref
+marker used to encode upstream references inside a parameter value) and one data edge; field types and admissible values
+are specified in the type system below.
+15
+
+===== PAGE 16 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Listing 1.Plan IR JSON example (illustrative; not a JSON Schema document).
+{
+"nodes": [
+{
+"id": "string",
+"function": "string",
+"parameters": {
+"param_name": "value_or_ref",
+"$ref": ["node_id", "field_path"]
+},
+"effect": {
+"side_effect": "read",
+"environment": "local"
+},
+"resources": [
+{"resource": "string", "access": "R"}
+],
+"retry_policy": {
+"max_retries": 3,
+"backoff_gamma": 2.0,
+"retry_on": ["error_class"],
+"fallback": null
+},
+"idempotency_key": null,
+"output_schema": "type_expr",
+"latency_estimate": 0.0,
+"cost_estimate": 0.0
+}
+],
+"edges": [
+{"from": "string", "to": "string", "type": "data"}
+]
+}
+Reference Syntax.Parameter values may reference upstream outputs via the$refconstruct:
+ref(u,p)≜{"$ref": [u.id,p]}(19)
+wherep is a field path string (e.g., "result.items[0].id") specifying JSONPath-style extraction from node u’s
+output. The pathp is parsed into accessor sequencep= [a 1,a 2,...,a k] where eachai is either a field name or array index.
+Effect Lattice.Side-effect types form a lattice(E se,⪯ se)with:
+pure≺ se read≺ se write(20)
+Environment types form a lattice(E env,⪯ env)with:
+local≺ env external(21)
+The combined effect type is the product latticeϵv = (ese,e env)∈E se×E env with pointwise ordering:
+(e1,e′
+1)⪯(e 2,e′
+2)⇐⇒e 1⪯se e2∧e′
+1⪯enve′
+2 (22)
+Resource Footprint Format.Each resource access is a tuple (r,a) wherer∈R is a resource identifier (URI, database
+name, API endpoint) and a∈{R,W} denotes access mode. The footprint ρv ={(r 1,a 1),...,(r m,am)} is a set with
+unique resource identifiers.
+Resource Footprint Normalization.When a resource r appears multiple times in the JSON list with different access
+modes, we apply the normalization rule:
+(r,R)⊔(r,W) = (r,W)(23)
+ensuring thatρv is a proper set with unique resource identifiers, where write access dominates read access.
+16
+
+===== PAGE 17 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+D.2. Type System
+Base Types.We define a type languageTwith base types and constructors:
+τ::=Int|Float|String|Bool|Any(24)
+|Record({ℓ 1 :τ 1,...,ℓ n :τ n})(25)
+|Optional(τ)(26)
+|List(τ)(27)
+|τ 1∪τ 2 (union type) (28)
+Subtyping Relation.The subtyping relationτ 1⪯τ 2 (read “τ1 is a subtype ofτ 2”) is defined inductively:
+(i)Reflexivity:τ⪯τfor allτ∈T.
+(ii)Top type:τ⪯Anyfor allτ.
+(iii)Record depth subtyping:
+Record({ℓ1 :τ 1,...,ℓ n :τ n,ℓn+1 :τ n+1,...})⪯
+Record({ℓ1 :τ′
+1,...,ℓ n :τ′
+n})
+ifτi⪯τ′
+i for alli∈[1,n](29)
+(iv)Optional covariance:Optional(τ 1)⪯Optional(τ 2)ifτ 1⪯τ 2.
+(v)List covariance:List(τ 1)⪯List(τ 2)ifτ 1⪯τ 2.
+(vi)Union subtyping:τ⪯τ 1∪τ 2 ifτ⪯τ 1 orτ⪯τ 2.
+(vii)Transitivity:Ifτ 1⪯τ 2 andτ 2⪯τ 3, thenτ 1⪯τ 3.
+Type Compatibility Check.For data dependency edge(u,v)∈E data where parameterθv[p] =ref(u,q), we require:
+Extract(σu.out,q)⪯σ v.in[p](30)
+where Extract(τ,q)computes the type obtained by following pathqthrough typeτ:
+Extract(Record({...,ℓ:τ,...}),[ℓ]·q ′) =Extract(τ,q ′)(31)
+Extract(List(τ),[i]·q ′) =Extract(τ,q ′)(32)
+Extract(Optional(τ),q) =Optional(Extract(τ,q))(33)
+Extract(τ,[]) =τ(34)
+D.3. Static Verification
+The static checkerVerify:π→{valid,error}performs the following checks:
+Acyclicity Check.We use depth-first search with color marking:
+IsAcyclic(G) =¬∃v∈V:DFS(v,{},{}) =cycle(35)
+where DFS(v,gray,black) returns cycle if a back edge to a gray node is encountered during traversal. Complexity:
+O(|V|+|E|).
+Reference Validity.For each referenceref(u,q)inθ v:
+(a)(u,v)∈E data must exist (enforced by DAG construction).
+(b) Pathqmust be valid forσ u.out: Extract(σu.out,q)̸=⊥.
+(c) No forward references: if(u,v)∈E data, thenumust precedevin topological order.
+17
+
+===== PAGE 18 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 1Static Verification
+1:Input:π= (V,E,C)
+2:G←(V,E)
+3:if¬IsAcyclic(G)then
+4:returnerror("Cycle detected")
+5:end if
+6:for all(u,v)∈E data do
+7:for allp∈dom(θ v)whereθ v[p] =ref(u,q)do
+8:τ out←Extract(σ u.out,q)
+9:τ in←σ v.in[p]
+10:if¬(τ out⪯τ in)then
+11:returnerror("Type mismatch at edge(u, v)")
+12:end if
+13:end for
+14:end for
+15:for allv∈Vdo
+16:ρ inferred
+v ←Infer(f v)
+17:if¬(ρ inferred
+v ⊆ρ v)then
+18:returnerror("Incomplete resource annotation atv")
+19:end if
+20:ife se(v) =write∧κ v =nullthen
+21:returnerror("Missing idempotency key atv")
+22:end if
+23:end for
+24:returnvalid
+Idempotency Key Generation.For nodes withe se(v) =write, the idempotency keyκ v is generated as:
+κv =Hash(f v∥Canonicalize(θv)∥nonce)(36)
+where Canonicalize produces deterministic parameter encoding and nonce ensures uniqueness across plan instances. For
+pure nodes and read-only operations,κv =null . Note that for external read operations that require exactly-once semantics
+(e.g., metered APIs), the system can optionally generate idempotency keys by setting the effect to(read,external) with
+explicit key generation.
+Conservative Annotation Policy.When tool metadata is incomplete or uncertain, we apply upper-bound inference:
+Inferconservative(fv) =
+(
+ρdeclared
+v ∪ρ trace
+v if metadata available
+{("unknown external",W)}otherwise (37)
+econservative
+se (v) = max
+⪯se
+{edeclared
+se ,e trace
+se }(38)
+econservative
+env (v) = max
+⪯env
+{edeclared
+env ,e trace
+env}(39)
+whereρtrace
+v andetrace are extracted from historical execution traces via runtime monitoring, and the special resource identifier
+"unknown external" represents global external state, ensuring serialization with all external write operations while
+remaining computable. This policy ensures soundness: over-approximating effects may reduce parallelism but never causes
+incorrect concurrent execution.
+E. Semantic Compiler Algorithms and Complexity Analysis
+This appendix details the compilation pipeline, scheduling algorithms, resource coordination mechanisms, and complexity
+analysis.
+18
+
+===== PAGE 19 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 2Semantic Compilation
+1:Input:π= (V,E,C),B= (C max,K max,T max)
+2:// Phase 1: Dependency Graph Construction
+3:E data←BuildDataDependencies(V,E)
+4:E res←BuildResourceDependencies(V,E data)
+5:E sync←S
+r∈R BuildWriteChain(V,r,E data)
+6:G←(V,E data∪E res∪E sync)
+7:
+8:// Phase 2: Scheduling with Resource Constraints
+9:rank←ComputeUpwardRank(G)
+10:priority queue←SortByRank(V,rank)
+11:S←∅// Scheduled nodes
+12:L←InitializeLockManager(R)
+13:TB←InitializeTokenBuckets(R)
+14:
+15:whilepriority queue̸=∅do
+16:v←priority queue.pop()
+17:s v←FindEarliestFeasibleSlot(v,G,S,B,TB)
+18:ifs v =⊥then
+19:returnerror("Unschedulable under constraints")
+20:end if
+21:S←S∪{(v,s v)}
+22:end while
+23:
+24:// Phase 3: Runtime Coordination Setup
+25:lock order←AssignGlobalResourceOrdering(R)
+26:return(S,lock order,TB)
+E.1. Compilation Pipeline
+E.2. Dependency Construction Subroutines
+Complexity:O(|V|·d param)whered param is the maximum number of parameters per node (typically small constant).
+Complexity:
+O
+ 
+|V|+|E data|+
+X
+r∈R
+|Vr|2
+!
+=O(|V|+|E data|+|R|·|V| 2)(40)
+In practice,|Vr|≪|V|for most resources, yielding near-linear behavior.
+Implementation Note:The conceptual definition above enumerates all pairs in Vr, yielding O(|Vr|2) complexity per
+resource. In practice, we use a more efficient sweep-line algorithm: sortVr by topological order once, then maintain the
+most recent writer and set of active readers in a single linear scan. When encountering a new nodev: ifv writes tor, add
+edges from all active readers and the last writer tov, then update the last writer; ifv only readsr, add an edge from the last
+writer (if any) tov and addv to active readers. This reduces the per-resource complexity toO(|Vr|log|V r|+|E r|) where
+|Er| is the number of resource edges forr, making the practical total complexityO(|V|log|V|+|E data|+P
+r|Er|), which
+is typically much better than the worst-case quadratic bound.
+Complexity:O(|V W
+r |log|V W
+r |)for sorting. Summing over all resources:
+O
+ X
+r∈R
+|VW
+r |log|V W
+r |
+!
+≤O(|R|·|V|log|V|)(41)
+19
+
+===== PAGE 20 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 3Build Data Dependencies
+1:Input:V,E
+2:E data←∅
+3:for allv∈Vdo
+4:for allp∈dom(θ v)do
+5:ifθ v[p] =ref(u,q)then
+6:E data←E data∪{(u,v)}
+7:end if
+8:end for
+9:end for
+10:returnE data
+Algorithm 4Build Resource Dependencies
+1:Input:V,E data
+2:E res←∅
+3:topo order←TopologicalSort((V,E data))
+4:for allr∈Rdo
+5:V r←{v∈V|∃a: (r,a)∈ρ v}
+6:OrderV r according to topo order to obtain≺r
+7:for allpairs(u,v)withu≺ r vdo
+8:(r,a u)∈ρ u,(r,a v)∈ρ v
+9:if(a u =W∨a v =W)∧a u̸=a v then
+10:E res←E res∪{(u,v)}
+11:end if
+12:end for
+13:end for
+14:returnE res
+E.3. HEFT-Based Scheduling
+Upward Rank Computation.For node v, the upward rank ranku(v) measures the length of the longest path fromv to
+any sink:
+ranku(v) = ˆτv + max
+w∈succ(v)
+ranku(w)(42)
+with base case ranku(v) = ˆτv for sink nodes (nodes with no successors).
+Complexity:O(|V|+|E|)(linear in graph size).
+Earliest Feasible Slot Finding.Given nodev, budgetB, and current scheduleS, we find the earliest times v satisfying:
+(i)Dependency constraint:s v≥max u∈pred(v)(su + ˆτu)
+(ii)Concurrency constraint:∀t∈[s v,sv + ˆτv) :|{w∈S|s w≤t<s w + ˆτw}|≤K max
+(iii)Resource lock availability:For each(r,a)∈ρ v, lock onrcan be acquired ats v
+(iv)Rate limit constraint:For each external resourcerwith limitL r: Tokensr(sv)≥1
+(v)Deadline constraint:s v + ˆτv≤T max
+Complexity Analysis:In the worst case, finding a feasible slot requires examining O(|S|) existing scheduled nodes for
+each constraint check. With event-driven simulation (jumping to next conflict time), typical-case complexity isO(log|S|)
+per check via priority queue of event times. Summing over all|V|nodes:
+O(|V|·|V|·log|V|) =O(|V| 2 log|V|)(43)
+In practice, bucketed timeline representation (discretize time into slots of sizeδ) reduces this toO(|V|·T max/δ).
+20
+
+===== PAGE 21 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 5Build Write Chain
+1:Input:V,r,E data
+2:V W
+r ←{v∈V|(r,W)∈ρ v}
+3:topo order←TopologicalSort((V,E data))
+4:SortV W
+r according to topo order to get sequence[v 1,...,v k]
+5:E r
+sync←{(v i,vi+1)|i∈[1,k−1]}
+6:returnE r
+sync
+Algorithm 6Compute Upward Rank
+1:Input:G= (V,E)
+2:rank←{}
+3:topo order←TopologicalSort(G)
+4:for allv∈reverse(topo order)do{Reverse topological order}
+5:ifsucc(v) =∅then
+6:rank[v]←ˆτ v
+7:else
+8:rank[v]←ˆτ v + maxw∈succ(v) rank[w]
+9:end if
+10:end for
+11:returnrank
+E.4. Runtime Resource Coordination
+Global Lock Ordering.To prevent deadlocks when nodes acquire multiple locks, we assign global total order ≺lock to
+resources. We use a stable, deterministic ordering based on the canonical string representation of resource identifiers:
+ri≺lock rj ⇐⇒canonical(r i)<canonical(r j)(lexicographic) (44)
+where canonical:R→String converts resource identifiers to a normalized string form (e.g., URI with sorted query
+parameters). This ensures consistency across all executors in distributed settings.
+Token Bucket Rate Limiting.For resourcerwith rate limitL r (requests/second), we maintain token bucket:
+Br(t) = min (Cr,Br(t0) +Lr·(t−t 0)−N r(t0,t))(45)
+whereCr is bucket capacity,Br(t0)is tokens at last update, andN r(t0,t)counts requests in interval[t 0,t).
+E.5. Circuit Breaker and Fault Tolerance
+Circuit Breaker State Machine.For each external resource r, we maintain circuit breaker with states
+{closed,open,half-open}:
+State(r,t) =
+
+
+
+closedifˆp r
+fail(t)<θ fail
+openifˆp r
+fail(t)≥θ fail∧t−t trip <T cooldown
+half-openift−t trip≥T cooldown
+(46)
+where ˆpr
+fail(t) is the empirical failure rate in sliding window [t−W,t] ,θfail is failure threshold,ttrip is time of last circuit
+open, andT cooldown is recovery period.
+Saga Pattern for Compensation.Following the saga model (Garcia-Molina & Salem, 1987), for reversible write
+operations we generate compensation actions:
+Compensate(v) =
+(
+¯vifvhas reversible semantics
+log-for-manual-interventionotherwise (47)
+21
+
+===== PAGE 22 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+where¯vis the inverse operation satisfying:
+∀σ∈Σ :exec(¯v,exec(v,σ))≈ ϵ σ(48)
+for some small toleranceϵ(e.g., eventual consistency delay).
+E.6. Overall Complexity Summary
+Phase Time Complexity
+Static verificationO(|V|+|E|)
+BuildE data O(|V|·d param)
+BuildE res (worst)O(|V|+|E data|+|R|·|V| 2)
+BuildE res (sweep-line)O(|V|log|V|+|E data|+ P
+r|Er|)
+BuildE sync O(P
+r|VW
+r |log|V W
+r |)
+Upward rankO(|V|+|E|)
+HEFT schedulingO(|V| 2 log|V|)worst-case
+O(|V|log|V|+|E|)typical-case
+Runtime lock acquireO(|ρ v|log|ρ v|)per node
+Token bucket opsO(1)per request
+Total (worst)O(|V| 2 log|V|+|R|·|V| 2)
+Total (typical)O(|V|log|V|+|E|+ P
+r|Er|)
+Table 8.Time complexity of compilation phases. Typical case assumes sparse resource conflicts and event-driven scheduling.
+Space Complexity.The compiler maintains:
+• Dependency graph:O(|V|+|E|)
+• Schedule:O(|V|)
+• Lock manager:O(|R|)
+• Token buckets:O(|R|)
+• Circuit breakers:O(|R|·W)for sliding windows
+Total space:O(|V|+|E|+|R|·W).
+F. Verification-Gated Skill Evolution: Complete Pipeline
+This appendix provides comprehensive details on the verification-gated skill evolution mechanism, expanding on the
+summary presented in Section 3.5. The pipeline consists of three main stages: candidate extraction, three-stage verification,
+and staged deployment.
+F.1. Candidate Extraction and Generalization
+From successful trajectories τ={(v i,xi,yi,ti)}|τ|
+i=1 where each tuple represents a node execution with its inputs xi,
+outputsyi, and timestamp ti, we extract reusable patterns through sequential pattern mining on canonicalized Plan IR
+traces. Each Plan IR DAG is first converted to a linearized sequence via topological sorting with deterministic tie-
+breaking based on lexicographically smallest node identifiers when multiple nodes have no remaining predecessors. We
+then apply the PrefixSpan algorithm to the corpus of canonicalized trajectories D, where the support of a pattern P is
+supp(P) =|{τ∈D:P⪯τ}|/|D| andP⪯τ indicates thatP appears as a contiguous subsequence in τ’s linearized
+representation. We set a minimum support threshold of 5% to identify frequent patterns, then filter for data flow consistency
+by verifying that input-output type signatures, parameter references, and resource footprints match across all occurrences.
+22
+
+===== PAGE 23 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+When multiple pattern instances exhibit structural similarity but differ in specific parameter values or tool selections,
+we generalize them into parameterized templates via anti-unification. Given two instances P1 andP2, their least gen-
+eral generalization LGG(P1,P 2) = arg min P:P 1⊴P,P 2⊴P Cost(P) minimizes generalization complexity Cost(P) =
+αp·|Params(P)|+α w·|Wildcards(P)|+α c·|Constraints(P)| , balancing introduced parameters, wildcards, and type
+constraints. During generalization, we synthesize type constraints for template parameters—for example, if a pattern uses
+different specific tools like SearchEmail and SearchSlack across instances, we generalize to a parameter constrained
+to SearchInterface if such abstraction exists. We simultaneously generate placeholder pre- and post-conditions
+derived from the intersection of conditions satisfied by all instances, which are refined during contract verification. After
+generalization, we verify that templates satisfy Con(π): the DAG remains acyclic under all parameter instantiations, type
+constraints ensure compatibility, resource footprints remain sound, and idempotency keys are valid for non-pure effects.
+Templates failing these checks are discarded or retained only as non-executable planning suggestions.
+F.2. Three-Stage Verification
+Candidate skills enter a rigorous verification pipeline before library admission. In Stage 1, we synthesize comprehensive test
+suitesTs =T nom∪T bnd∪T err covering diverse execution scenarios. Nominal test casesTnom replay observed inputs from
+successful execution traces, extracting input parameter values, expected outputs, and execution contexts to form positive
+test cases that the skill must reproduce. Boundary condition testsTbnd explore edge conditions via property-based testing
+frameworks (Hypothesis, QuickCheck (Claessen & Hughes, 2000)) that automatically generate cases based on parameter
+type specifications: empty/null values for strings and collections, numeric boundaries from schema constraints including
+zero and negatives, maximum lengths and cardinalities, and type coercion scenarios at type boundaries. Error mode tests
+Terr inject expected failures including network timeouts and connection errors, HTTP 429 rate limiting and 5xx server errors,
+malformed responses with invalid JSON or missing fields, and resource unavailability simulating database outages and
+file system errors. For each error mode, we verify graceful recovery via retries or fallbacks, no resource leaks with proper
+connection and lock cleanup, and appropriate circuit breaker activation for cascading failures. Each test executes in an
+isolated sandbox with controlled tool execution, passing if outputs match expected values for nominal/boundary cases or if
+error handling terminates appropriately without crashes or silent failures. Skills must pass at least 95% of nominal tests,
+90% of boundary tests, and 100% of critical error mode tests to proceed.
+In Stage 2, we verify formal contracts∀x∈Dom(s) :Pre s(x)⇒Post s(s(x)) derived from three sources. Tool schemas
+provide explicit contracts such as required parameter constraints (e.g., valid email format), output guarantees (e.g., max 100
+search results), and side-effect specifications (e.g., unique document IDs). We mine implicit invariants from execution traces
+using Daikon-style detection (Ernst et al., 2007) to infer output value ranges (e.g., confidence scores in [0,1]), field presence
+requirements, and relationship invariants (e.g., output.count == len(output.items) ), validating candidates
+across all observed traces. For recognized patterns, we instantiate standard contract templates: search patterns verify
+all results match the query, CRUD patterns check existence pre-conditions and success post-conditions, and aggregation
+patterns ensure non-empty inputs and non-negative counts. Verification employs two complementary approaches: lightweight
+randomized testing generates 1000 random inputs satisfying pre-conditions via QuickCheck-style property checking with
+shrinking to find minimal counterexamples, while symbolic constraint solving encodes contracts as SMT constraints in
+Z3 (de Moura & Bjørner, 2008) to verify pre-condition satisfiability, search for counterexamples, and prove contract
+satisfaction for bounded domains within 10-minute timeouts. Skills pass if no counterexamples emerge from randomized
+testing and symbolic verification either proves correctness or finds no counterexamples within resource limits.
+Stage 3 evaluates impact through controlled experiments at two levels. We first test isolated skill correctness by directly
+invoking it on held-out inputsItest, computing intrinsic reliability Acciso(s) = 1
+|Itest|
+P
+x 1[correct(s(x),y expected)] which
+must exceed 95%. For end-to-end evaluation, we perform A/B testing on held-out task set H disjoint from training
+trajectories, comparing control group execution with current library S against treatment group with augmented library
+S∪{s} . To control for planner stochasticity, we use fixed random seeds for LLM sampling, provide identical retrieval
+candidate sets (control uses a dummy placeholder), and execute under identical environmental conditions with same resource
+states and simulated latencies. The regression delta ∆reg(s) = 1
+|H|
+P
+q∈H
+
+1[fail(q,S∪{s},ξ)]−1[fail(q,S,ξ)]
+
+measures
+impact, where positive values indicate regressions. Skills are admitted if ∆reg(s)≤0 , functional tests pass, contract
+verification succeeds, and optionally show meaningful performance improvement ∆perf(s)≥0.5 s average latency reduction.
+23
+
+===== PAGE 24 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+F.3. Staged Deployment and Lifecycle Management
+Newly admitted skills progress through a three-phase deployment pipeline ensuring production reliability. In shadow
+mode, skills appear in planner context and can be selected during planning, but execution always falls back to atomic
+tool decomposition—the planner generates Plan IR potentially including the new skill, but during compilation the skill is
+transparently expanded to atomic components while logging what skill-based execution would have done. We collect metrics
+on planning frequency (how often the planner selects the skill), theoretical performance gain (estimated latency reduction),
+and counterfactual success (whether the skill-based plan would have succeeded). Shadow mode lasts for minimum 20 task
+executions or 7 days, allowing passive observation without production risk.
+After successful shadow evaluation, skills enter canary deployment where a fraction of compatible traffic routes to actual
+skill execution. We start with 5% canary traffic and gradually increase to 50% over multiple stages, selecting canary tasks via
+deterministic hashing on task IDs for reproducibility. Real-time monitoring tracks success rate, latency, retry rate, and error
+types, triggering automatic rollback if success rate drops by more than 2% compared to control, P95 latency increases by
+more than 20%, or retry rate increases by more than 50%. Canary deployment continues for minimum 50 task executions or
+14 days with sustained performance before promotion to stable status, where skills become available to 100% of compatible
+traffic, are included in standard library snapshots, and receive continuous monitoring for performance degradation.
+Skills exhibiting sustained degradation in stable deployment face demotion: if metrics degrade below threshold for 3
+consecutive days, the skill enters warning state with increased monitoring; if degradation persists for 7 days, it demotes to
+canary with reduced traffic allocation; if metrics remain poor after demotion or critical failures occur, the skill is deprecated
+and removed from the library. Deprecated skills can only be reintroduced after re-verification through the full pipeline.
+The skill library maintains version control with semantic versioning (major.minor.patch), where breaking changes like
+signature modifications increment major version, backward-compatible improvements increment minor version, and bug
+fixes increment patch version. Clients can pin to specific library versions for reproducibility while production deployments
+automatically use latest stable versions, with rollback to previous library snapshots supported for emergency recovery.
+G. Detailed Experimental Setup
+G.1. Dataset Details
+StableToolBench(Guo et al., 2024) provides evaluation on real-world API calls across 49 categories including weather
+services, e-commerce platforms, social media APIs, and productivity tools. Following the official protocol, we evaluate on
+thesolvable subsetconsisting of 765 queries (filtered from 1,100 total test queries through multi-model solvability voting).
+The benchmark emphasizes write-heavy workflows and rate-limited services that stress-test semantic effect reasoning and
+resource-aware compilation. Tasks are executed in a reproducible simulated environment backed by a virtual API server
+with controlled rate limits and failure injection.
+ShortcutsBench(Shen et al., 2024) contains 7,627 total queries, with an evaluation set of 5,220 queries evenly distributed
+across three difficulty levels (1,740 queries per level: easy, medium, hard). The benchmark provides real-world Apple
+Shortcuts automation workflows with high-quality action sequences requiring both sequential and parallel tool coordination.
+Each workflow includes ground-truth action graphs with explicit dependencies, parameter bindings, and control flow
+annotations, enabling evaluation of plan fidelity and structural correctness.
+τ-bench(Yao et al., 2024) features multi-turn dialogues with domain-specific policy constraints and tool interaction
+requirements. The benchmark provides two control environments:retaildomain with 115 test tasks andairlinedomain with
+50 test tasks. Tasks stress-test long-term policy compliance, state tracking, and contextual constraint satisfaction across
+extended interactions. The benchmark proposes pass@k metrics for evaluating consistency and reliability; we primarily
+report pass@1 rates following standard practice.
+ToolComp(Nath et al., 2025) contains 485 prompts with 11 tools and 1,731 step-wise labels. The benchmark focuses on
+tasks with dependent tool chains where each tool’s output serves as input for subsequent operations, stressing dependency
+tracking, data flow analysis, and critical path optimization. Tasks require correct chaining of 3–8 tools with complex
+input-output mappings.
+TRAJECT-Bench(He et al., 2025) provides trajectory-level diagnostics across 10 domains with 1,228 total tools. The
+benchmark includes datasets for different complexity levels: 2,000 simple parallel tasks, 2,000 hard parallel tasks, and 1,870
+sequential tasks distributed across domains. Fine-grained error annotations enable attribution analysis across planning errors,
+24
+
+===== PAGE 25 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+parameter errors, and execution errors, supporting detailed ablation studies of agent components. For our evaluation, we
+subsample 428 representative trajectories stratified by domain and complexity (using fixed seed 42 for reproducibility) to
+balance evaluation cost and coverage.
+ToolSeq-500is a sequential evaluation protocol we construct by uniformly sampling 500 tasks from StableToolBench’s
+training pool (virtual API cache, disjoint from the solvable test split used in Table 1 and from any training trajectories used
+in skill learning), stratified by category to maintain domain diversity. Task order is randomized using fixed seed 42 for
+reproducibility. This protocol enables measurement of skill accumulation dynamics, regression rates, and long-horizon
+learning effects by tracking performance evolution as the agent processes tasks sequentially and updates its skill library.
+G.2. Metric Definitions
+Success Rate (SR)is computed as the percentage of tasks where the final output satisfies all correctness criteria. For
+StableToolBench, we use executable checkers that verify API response correctness. Forτ-bench, we verify policy compliance
+via the benchmark’s policy checker. For ShortcutsBench, we check both functional correctness and workflow structure.
+End-to-End Latencymeasures wall-clock time from task submission to final result delivery, including: (1) planning phase
+(IR generation for EvoC2F, direct action generation for baselines); (2) compilation phase (only for EvoC2F); (3) tool
+execution phase with all retries and error handling. We report both mean latency and 95th percentile (P95) to capture tail
+behavior.
+Retry Rate (RR)is the average number of retry attempts per task across all tool calls, computed asRR=
+P
+tasks
+P
+calls retry count
+#tasks .
+This metric indicates execution robustness and failure handling quality.
+Tool Calls per Task (TC)is the average number of tool invocations per task, reflecting planning efficiency and skill reuse.
+Lower values (when maintaining success rate) indicate better abstraction and skill library utilization.
+Rate-limit Violation Rate (RLV)is computed from execution logs as RLV= #rate-limited calls
+#total calls , where rate-limited calls are
+those returning HTTP 429 or equivalent rate-limit errors. This metric validates whether semantic compilation prevents
+resource conflicts through proper scheduling.
+All metrics are reported as the mean over 5 independent runs. Each run uses a different random seed controlling: (1) LLM
+sampling randomness (different temperature-based samples); (2) task shuffling within evaluation batches; (3) stochastic
+components in tool execution simulation (network latency jitter, probabilistic failures).
+H. Evaluation Protocols
+This appendix details the evaluation protocols and metric definitions for all benchmarks reported in Table 1. We clarify key
+methodological choices to ensure reproducibility and enable fair comparison with future work.
+H.1. StableToolBench
+Dataset.We use the StableToolBench evaluation suite (Guo et al., 2024) with 1,100 test queries spanning 49 API categories.
+Following the official protocol, all evaluations use thesolvable subsetof 765 queries, where solvability is determined
+through multi-model voting to filter queries with verified executable solutions.
+Metrics and Key Methodological Choices.
+• Solvable Pass Rate (SoPR):Following the official StableToolBench protocol, we compute SoPR as the mean score over
+solvable queries, where each query receives a score based on the evaluator’s judgment: Solved=1.0, Unsure=0.5,
+Unsolved=0.0.Critical distinction from ToolBench:StableToolBench addresses evaluation instability in the
+original ToolBench by: (1) treating Unsure cases as 0.5 to provide stable partial credit rather than binary pass/fail
+assignment, and (2) excluding unsolvable tasks from evaluation to focus on tasks with verified solutions. Our
+implementation strictly follows this refined protocol.
+• Solvable Win Rate (SoWR):Proportion of solvable queries where the method outperforms a reference baseline.
+Following the official win rate computation rule, when one method achieves Solved and the other Unsolved,
+the solved method wins; for other cases (both solved, both unsolved, or unsure outcomes), we use GPT-4-Turbo to
+make win/lose judgments.Baseline selection:We use Llama-3.1-70B-Instruct with single-pass execution as the
+25
+
+===== PAGE 26 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+reference baseline (deviating from the original paper’s GPT-3.5-Turbo-0613 baseline) to provide a stronger and more
+contemporary comparison point reflecting recent model capabilities.
+• Latency (Lat.):Wall-clock time from query submission to final response, including all tool execution time, network
+delays, and retry overhead.
+• Tool Calls per Task (TC):Total number of tool invocations (including retries) averaged over successful completions.
+Evaluator Configuration.We use GPT-4-Turbo (gpt-4-turbo-2024-04-09) as the evaluator with temperature=0, consistent
+with StableToolBench’s official setup (May 2024 version). All evaluations use the same evaluator version to ensure fair
+comparison.
+H.2. ShortcutsBench
+Dataset.We evaluate on the ShortcutsBench evaluation set (Shen et al., 2024) containing 5,220 queries (from 7,627 total)
+evenly distributed across three difficulty levels: easy, medium, and hard (1,740 queries per level). Each query includes
+ground-truth action sequences and parameter annotations for Apple Shortcuts workflows.
+Metrics and Key Methodological Choices.All accuracy metrics are computed over the overall evaluation set (all difficulty
+levels combined) using the official evaluation scripts:
+• API Selection Accuracy (ASA):At each prediction step, the agent receivescorrect historical actionsfrom ground
+truth (teacher-forced evaluation) to isolate API selection errors from cascading failures. ASA measures the fraction
+of correctly predicted API types across all steps.Methodological choice:Following the official protocol, we adopt
+teacher-forced history where the agent is given correct past actions at each step, rather than using its own predicted
+history. This design prevents error accumulation and provides a cleaner assessment of API selection capability in
+isolation.
+• Static Parameter Preset Accuracy (Accspp):For parameters with static values (e.g., constants, literals), accuracy
+of correctly filling the ground-truth value. Computed as the ratio of correctly-filled static parameters to total static
+parameters across all queries.
+• Outputs From Previous Actions Accuracy (Accofpa):For parameters that reference outputs from previous actions
+(using UID+OutputName format), accuracy of correctly identifying and referencing the source action and output field.
+Following Equation 3 in (Shen et al., 2024), computed as the ratio of correctly identified output references to total
+required references.
+• Ask-for-Input Recognition Accuracy (Acc afni):Accuracy of correctly identifying parameters requiring external
+input, including both system-provided inputs (Clipboard, CurrentDate, ExtensionInput) and user-requested inputs (Ask
+action). Following the official protocol, computed as:
+Accafni = Number of correctly identified Ask-for-Input parameters
+Total number of Ask-for-Input parameters required (49)
+where the numerator counts all input parameters correctly recognized across all queries and steps, and the denominator
+represents the total ground-truth Ask-for-Input parameters in the evaluation set.
+• Latency (Lat.):End-to-end agent loop time.Note:ShortcutsBench does not execute real tools; tool outputs are
+returned from cached ground-truth responses with simulated per-call network delay. Reported latency therefore
+includes all LLM forward passes (multi-turn for sequential baselines such as ReAct/Toolformer), retrieval and internal
+reasoning, and the simulated tool-response delays for every invoked action; it excludes only real network round-trips.
+Temperature=0.2 for all methods.
+H.3.τ-bench
+Dataset.We evaluate on τ-bench (Yao et al., 2024), which contains multi-turn dialogues with policy constraints across two
+domains:retail(115 test tasks) andairline(50 test tasks).
+Metrics and Domain-Specific Reporting.
+26
+
+===== PAGE 27 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+• Domain-Specific Pass Rates (pass 1
+ret, pass1
+air):Following the official τ-bench protocol, we report pass@1 rates
+separatelyfor retail and airline domains rather than aggregating across domains. A task passes if the agent successfully
+completes all required actions while respecting domain-specific policies (e.g., refund eligibility windows, loyalty
+program rules). We use the official executable evaluation scripts with ground-truth state validation.
+Methodological choice:The two domains have substantially different task distributions and difficulty profiles: retail
+tasks typically achieve higher pass rates (60–80%) due to simpler policies and more forgiving error margins, while airline
+tasks are more challenging (35–55%) due to complex multi-step booking policies and stricter compliance requirements.
+Aggregating these domains into a single metric would obscure domain-specific performance characteristics and hinder
+reproducibility. We therefore followτ-bench’s official protocol of domain-stratified reporting.
+The benchmark proposes pass@k metrics for evaluating consistency and reliability; we primarily report pass@1 as the
+standard success rate measure, consistent with common practice in tool-use evaluation.
+• Latency (Lat.):End-to-end task completion time including all dialogue turns, tool calls, and policy checking overhead.
+Temperature=0 for deterministic policy compliance.
+H.4. ToolComp
+Dataset.ToolComp (Nath et al., 2025) provides 485 prompts using 11 tools with 1,731 step-wise labels for dependent tool
+chains. Each task requires correct chaining of 3–8 tools with ground-truth dependency annotations enabling evaluation of
+data flow correctness and scheduling quality.
+Metrics.
+•Success Rate (SR):Fraction of tasks where the agent produces correct final outputs verified by executable checkers.
+• Dependency Satisfaction Rate (DSR):Fraction of tool invocations where all input parameters are correctly bound
+to outputs from upstream dependencies with matching types. Computed by comparing predicted data-flow edges to
+ground-truth dependency annotations.
+• Critical Path Gap (CPG):Ratio of actual execution makespan to the theoretical minimum makespan (critical path
+length assuming infinite parallelism and zero overhead). CPG=1.0 indicates optimal scheduling; higher values indicate
+suboptimal parallelization or unnecessary serialization.
+•Latency (Lat.):Wall-clock execution time as in StableToolBench.
+H.5. TRAJECT-Bench
+Dataset.TRAJECT-Bench (He et al., 2025) provides trajectory-level diagnostics across 10 domains with 1,228 tools. The
+benchmark includes 2,000 simple parallel tasks, 2,000 hard parallel tasks, and 1,870 sequential tasks distributed across
+domains, with fine-grained annotations for each step. For our evaluation, we subsample 428 representative trajectories
+stratified by domain and complexity (using fixed seed 42) to balance evaluation cost while maintaining domain coverage.
+Metrics.All metrics are step-level accuracies computed over the sampled trajectories:
+•Tool Selection Accuracy:Fraction of steps where the predicted tool matches the ground-truth tool.
+• Parameterization Accuracy:Fraction of steps where all tool parameters are correctly filled (correct values for static
+parameters; correct references for dynamic parameters).
+•Execution Order Accuracy:Fraction of steps executed in the correct topological order relative to dependencies.
+•Success Rate (SR):End-to-end task success as in ToolComp.
+H.6. General Experimental Setup
+Concurrency and Runs.Concurrency limit set to Kmax = 8 parallel tool executions. All results report the mean over 5
+independent runs with different random seeds.
+27
+
+===== PAGE 28 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 7Find Earliest Feasible Slot
+1:Input:v,G,S,B,TB
+2:t min←max u∈pred(v)(su + ˆτu)// Dependency bound
+3:t cand←t min
+4:max iterations←1000// Safety cap; not a complexity bound
+5:fori= 1tomax iterationsdo
+6:feasible←true
+7:
+8:// Check concurrency constraint
+9:active←{w∈S|[s w,sw + ˆτw)∩[t cand,t cand + ˆτv)̸=∅}
+10:if|active|≥K max then
+11:feasible←false
+12:t cand←min w∈active(sw + ˆτw)// Jump to next event
+13:continue
+14:end if
+15:
+16:// Check resource lock availability (R-R is permitted; flag only W-involving conflicts)
+17:conflicts←{w∈S|(∃r: (r,a v)∈ρ v∧(r,a w)∈ρ w∧(av =W∨a w =W))∧
+18:[s w,sw + ˆτw)∩[t cand,t cand + ˆτv)̸=∅}
+19:ifconflicts̸=∅then
+20:feasible←false
+21:t cand←min w∈conflicts(sw + ˆτw)
+22:continue
+23:end if
+24:
+25:// Check rate limits
+26:for all(r,a)∈ρ v whereris externaldo
+27:ifTB[r].HasTokens(t cand) =falsethen
+28:feasible←false
+29:t cand←TB[r].NextAvailable(t cand)
+30:break
+31:end if
+32:end for
+33:if¬feasiblethen
+34:continue
+35:end if
+36:
+37:// Check deadline
+38:ift cand + ˆτv >T max then
+39:return⊥// Unschedulable
+40:end if
+41:
+42:returnt cand // Found feasible slot
+43:end for
+44:return⊥// Timeout after max iterations
+28
+
+===== PAGE 29 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 8Acquire Locks
+1:Input:v,lock order,L,retry count// retry count maintained by caller
+2:resources←{r|(r,a)∈ρ v}
+3:Sort resources according to≺ lock to get[r 1,...,r k]
+4:acquired←[]
+5:timeout←5.0seconds
+6:t start←CurrentTime()
+7:fori= 1tokdo
+8:success←L.TryAcquire(r i,max(0,timeout−(CurrentTime()−t start)))
+9:if¬successthen
+10:// Release all acquired locks in reverse order
+11:for allr∈reverse(acquired)do
+12:L.Release(r)
+13:end for
+14:Sleep(min(2 retry count,10)seconds)// Exponential backoff
+15:returnretry// Caller increments retry count and re-invokes
+16:end if
+17:acquired.append(r i)
+18:end for
+19:returnsuccess
+Algorithm 9Token Bucket Implementation
+1:Input:r,L r,Cr // requiresLr >0
+2:tokens←C r
+3:t last←CurrentTime()
+4:
+5:functionHasTokens(t):
+6:Refill(t)
+7:returntokens≥1
+8:
+9:functionConsume(t):
+10:Refill(t)
+11:iftokens≥1then
+12:tokens←tokens−1
+13:returntrue
+14:else
+15:returnfalse
+16:end if
+17:
+18:functionRefill(t):
+19:∆t←t−t last
+20:tokens←min(C r,tokens+L r·∆t)
+21:t last←t
+22:
+23:functionNextAvailable(t):
+24:Refill(t)
+25:iftokens≥1then
+26:returnt
+27:else
+28:∆t wait←(1−tokens)/L r
+29:returnt+ ∆t wait
+30:end if
+29
+
+===== PAGE 30 / 30 =====
+
+EvoC2F: Compiling Tool Orchestration
+Algorithm 10Circuit Breaker
+1:Input:r,θ fail,W,T cooldown,n min //n min: minimum samples before tripping
+2:state←closed
+3:failures←deque()// Timestamps of recent failures
+4:requests←deque()// Timestamps of recent requests
+5:t trip←⊥
+6:
+7:functionAllowRequest():
+8:t←CurrentTime()
+9:CleanWindow(t,W)
+10:
+11:ifstate=openthen
+12:ift−t trip≥T cooldown then
+13:state←half-open
+14:else
+15:returnfalse
+16:end if
+17:end if
+18:
+19:ifstate=half-openthen
+20:returntrue// Allow single probe request
+21:end if
+22:
+23:returntrue
+24:
+25:functionRecordSuccess():
+26:t←CurrentTime()
+27:requests.append(t)
+28:CleanWindow(t,W)
+29:ifstate=half-openthen
+30:state←closed
+31:failures.clear()
+32:end if
+33:
+34:functionRecordFailure():
+35:t←CurrentTime()
+36:requests.append(t)
+37:failures.append(t)
+38:CleanWindow(t,W)
+39:
+40:ˆp fail←|failures|/max(1,|requests|)
+41:if|requests|≥n min∧ˆpfail≥θ fail then
+42:state←open
+43:t trip←t
+44:end if
+45:
+46:functionCleanWindow(t,W):
+47:while|failures|>0∧failures[0]<t−Wdo
+48:failures.popleft()
+49:end while
+50:while|requests|>0∧requests[0]<t−Wdo
+51:requests.popleft()
+52:end while
+30

@@ -1,0 +1,21 @@
+{
+  "original": {
+    "name": "original_apply_ok_gate",
+    "tasks": 176,
+    "resolved_tasks": 129,
+    "avg_perf_percent": 73.29545454545455,
+    "cumulative_regret": 15.909639838000004,
+    "historical_estimated_total_cost_usd": 86.71817485,
+    "escalations": 29,
+    "avg_steps": 2.664772727272727,
+    "mean_cost_usd": 0.49271690255681816
+  },
+  "checks": {
+    "tasks_176": true,
+    "avg_perf_rounds_to_73_30": true,
+    "cumulative_regret_rounds_to_15_9": true,
+    "historical_cost_rounds_to_86_72": true,
+    "escalations_29": true,
+    "avg_steps_rounds_to_2_66": true
+  }
+}

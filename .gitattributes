@@ -1,0 +1,4 @@
+# Preserve research artifacts byte-for-byte across clones; hashes are evidence.
+* -text
+*.pdf binary
+*.png binary

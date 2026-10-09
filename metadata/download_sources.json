@@ -1,0 +1,52 @@
+{
+  "downloaded_at": "2026-10-08",
+  "policy": "仅保存公开论文的官方或正式出版方副本；URL 固定到实际下载版本。OpenReview 遇到人机验证时未绕过，改用同一论文的 arXiv、PMLR 或会议正式副本。",
+  "core": [
+    {"index": 1, "filename": "01_meta-harness_arxiv-2603.28052v1.pdf", "url": "https://arxiv.org/pdf/2603.28052v1", "source": "arXiv"},
+    {"index": 2, "filename": "02_skillx_arxiv-2604.04804v2.pdf", "url": "https://arxiv.org/pdf/2604.04804v2", "source": "arXiv"},
+    {"index": 3, "filename": "03_strategy-genes_arxiv-2604.15097v4.pdf", "url": "https://arxiv.org/pdf/2604.15097v4", "source": "arXiv"},
+    {"index": 4, "filename": "04_trace2skill_arxiv-2603.25158v5.pdf", "url": "https://arxiv.org/pdf/2603.25158v5", "source": "arXiv"},
+    {"index": 5, "filename": "05_skillclaw_arxiv-2604.08377v2.pdf", "url": "https://arxiv.org/pdf/2604.08377v2", "source": "arXiv"},
+    {"index": 6, "filename": "06_skill0_arxiv-2604.02268v2.pdf", "url": "https://arxiv.org/pdf/2604.02268v2", "source": "arXiv"},
+    {"index": 7, "filename": "07_skill1_arxiv-2605.06130v3.pdf", "url": "https://arxiv.org/pdf/2605.06130v3", "source": "arXiv"},
+    {"index": 8, "filename": "08_agentic-harness-engineering_arxiv-2604.25850v4.pdf", "url": "https://arxiv.org/pdf/2604.25850v4", "source": "arXiv"},
+    {"index": 9, "filename": "09_continual-harness_arxiv-2605.09998v1.pdf", "url": "https://arxiv.org/pdf/2605.09998v1", "source": "arXiv"},
+    {"index": 10, "filename": "10_context-to-skills_arxiv-2604.27660v4.pdf", "url": "https://arxiv.org/pdf/2604.27660v4", "source": "arXiv"},
+    {"index": 11, "filename": "11_coevolve_arxiv-2604.15840v1.pdf", "url": "https://arxiv.org/pdf/2604.15840v1", "source": "arXiv"},
+    {"index": 12, "filename": "12_muse-autoskill_arxiv-2605.27366v2.pdf", "url": "https://arxiv.org/pdf/2605.27366v2", "source": "arXiv"},
+    {"index": 13, "filename": "13_skillforge_arxiv-2604.08618v2.pdf", "url": "https://arxiv.org/pdf/2604.08618v2", "source": "arXiv"},
+    {"index": 14, "filename": "14_autogenesis_arxiv-2604.15034v5.pdf", "url": "https://arxiv.org/pdf/2604.15034v5", "source": "arXiv"},
+    {"index": 15, "filename": "15_harnessing-agentic-evolution_arxiv-2605.13821v1.pdf", "url": "https://arxiv.org/pdf/2605.13821v1", "source": "arXiv"},
+    {"index": 16, "filename": "16_fedtextgrad_arxiv-2502.19980v1.pdf", "url": "https://arxiv.org/pdf/2502.19980v1", "source": "arXiv"},
+    {"index": 17, "filename": "17_apo_arxiv-2305.03495v2.pdf", "url": "https://arxiv.org/pdf/2305.03495v2", "source": "arXiv"},
+    {"index": 18, "filename": "18_textgrad_arxiv-2406.07496v1.pdf", "url": "https://arxiv.org/pdf/2406.07496v1", "source": "arXiv", "note": "与 Nature 正式版为同一工作，不重复计数。"},
+    {"index": 21, "filename": "21_sprig_arxiv-2410.14826v3.pdf", "url": "https://arxiv.org/pdf/2410.14826v3", "source": "arXiv", "note": "OpenReview 页面触发人机验证，使用同论文公开 arXiv 副本。"},
+    {"index": 22, "filename": "22_evolver_arxiv-2510.16079v3.pdf", "url": "https://arxiv.org/pdf/2510.16079v3", "source": "arXiv", "note": "当前 v3 标题为 EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle；清单保留视频所用旧标题。"},
+    {"index": 23, "filename": "23_tuneahead_arxiv-2606.17660v1.pdf", "url": "https://arxiv.org/pdf/2606.17660v1", "source": "arXiv"},
+    {"index": 24, "filename": "24_skill0.5_arxiv-2605.28424v1.pdf", "url": "https://arxiv.org/pdf/2605.28424v1", "source": "arXiv"},
+    {"index": 25, "filename": "25_merf_arxiv-2506.18485v3.pdf", "url": "https://arxiv.org/pdf/2506.18485v3", "source": "arXiv", "note": "OpenReview 页面触发人机验证，使用同论文公开 arXiv 副本。"},
+    {"index": 26, "filename": "26_sts_arxiv-2603.02908v1.pdf", "url": "https://arxiv.org/pdf/2603.02908v1", "source": "arXiv"},
+    {"index": 27, "filename": "27_cope_pmlr-v306-liu26az.pdf", "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/liu26az/liu26az.pdf", "source": "PMLR", "note": "OpenReview 页面触发人机验证，使用 ICML 2026 正式出版方副本。"},
+    {"index": 28, "filename": "28_acrouter_arxiv-2606.22902v3.pdf", "url": "https://arxiv.org/pdf/2606.22902v3", "source": "arXiv"},
+    {"index": 29, "filename": "29_se-ga_arxiv-2605.16883v1.pdf", "url": "https://arxiv.org/pdf/2605.16883v1", "source": "arXiv"},
+    {"index": 30, "filename": "30_evoc2f_pmlr-v306-wei26q.pdf", "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/wei26q/wei26q.pdf", "source": "PMLR", "note": "OpenReview 页面触发人机验证，使用 ICML 2026 正式出版方副本。"},
+    {"index": 32, "filename": "32_cordis_arxiv-2608.25512v1.pdf", "url": "https://arxiv.org/pdf/2608.25512v1", "source": "arXiv", "note": "视频链接为作者 GitHub 论文仓库，另用仓库所指向的 arXiv 固定版本下载。"},
+    {"index": 33, "filename": "33_jitrl_arxiv-2601.18510v4.pdf", "url": "https://arxiv.org/pdf/2601.18510v4", "source": "arXiv"},
+    {"index": 34, "filename": "34_hgm_arxiv-2510.21614v3.pdf", "url": "https://arxiv.org/pdf/2510.21614v3", "source": "arXiv"},
+    {"index": 35, "filename": "35_jit-agent_arxiv-2608.25593v2.pdf", "url": "https://arxiv.org/pdf/2608.25593v2", "source": "arXiv"},
+    {"index": 36, "filename": "36_wikiskill_arxiv-2608.27454v1.pdf", "url": "https://arxiv.org/pdf/2608.27454v1", "source": "arXiv"},
+    {"index": 37, "filename": "37_evotest_arxiv-2510.13220v2.pdf", "url": "https://arxiv.org/pdf/2510.13220v2", "source": "arXiv", "note": "ICLR 虚拟海报页对应的公开 arXiv 版本。"},
+    {"index": 38, "filename": "38_mass_arxiv-2502.02533v2.pdf", "url": "https://arxiv.org/pdf/2502.02533v2", "source": "arXiv"},
+    {"index": 39, "filename": "39_sol-pi_arxiv-2609.20519v1.pdf", "url": "https://arxiv.org/pdf/2609.20519v1", "source": "arXiv", "note": "项目页在核验时已新增 Paper 链接。"},
+    {"index": 40, "filename": "40_dsec_arxiv-2609.22978v1.pdf", "url": "https://arxiv.org/pdf/2609.22978v1", "source": "arXiv"},
+    {"index": 41, "filename": "41_sage_acl-2026.acl-long.69.pdf", "url": "https://aclanthology.org/2026.acl-long.69.pdf", "source": "ACL Anthology"}
+  ],
+  "supplemental": [
+    {"related_to_index": 31, "filename": "skvm_arxiv-2604.03088v3.pdf", "title": "SkVM: Revisiting Language VM for Skills across Heterogenous LLMs and Harnesses", "url": "https://arxiv.org/pdf/2604.03088v3", "source": "arXiv"}
+  ],
+  "no_core_pdf": [
+    {"index": 19, "reason": "官方行业实践文章，不是论文。"},
+    {"index": 20, "reason": "观点视频，仅引用社交媒体帖子并讨论多项工作，无一一对应论文。"},
+    {"index": 31, "reason": "观点综述视频；SkVM 仅作为补充材料单列。"}
+  ]
+}

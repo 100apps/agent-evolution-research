@@ -1,0 +1,252 @@
+{
+  "experiment": "Independent validation and repeated holdout selection bias",
+  "reproduction_level": "机制示例（合成统计模拟，不是论文基准复现）",
+  "generated_at": "2026-10-08T13:55:30.422445+00:00",
+  "seed": 20261008,
+  "trials": 3000,
+  "rounds": 16,
+  "candidates_per_round": 12,
+  "sample_sizes": {
+    "development": 80,
+    "holdout": 80,
+    "final_test": 5000
+  },
+  "sampling_note": "二项准确率使用正态近似并量化到 1/n；全部数据为合成。",
+  "sealed_once": {
+    "reported_holdout": {
+      "mean": 0.8156583333333333,
+      "ci95_low": 0.8135136312675048,
+      "ci95_high": 0.8178030353991618,
+      "sd": 0.05993376023378484
+    },
+    "final_test": {
+      "mean": 0.8157992,
+      "ci95_low": 0.8143187425620171,
+      "ci95_high": 0.8172796574379828,
+      "sd": 0.04137142521477154
+    },
+    "true_quality": {
+      "mean": 0.8157403116040285,
+      "ci95_low": 0.8142720079034176,
+      "ci95_high": 0.8172086153046394,
+      "sd": 0.041031788678208746
+    },
+    "optimism_reported_minus_final": {
+      "mean": -0.00014086666666666625,
+      "ci95_low": -0.001709710270946472,
+      "ci95_high": 0.0014279769376131395,
+      "sd": 0.04384137914600806
+    }
+  },
+  "reused_holdout": {
+    "reported_holdout": {
+      "mean": 0.8797166666666667,
+      "ci95_low": 0.8786154402032361,
+      "ci95_high": 0.8808178931300973,
+      "sd": 0.03077380484400785
+    },
+    "final_test": {
+      "mean": 0.8239217333333333,
+      "ci95_low": 0.8225809431665443,
+      "ci95_high": 0.8252625235001223,
+      "sd": 0.037468419348544474
+    },
+    "true_quality": {
+      "mean": 0.8238941724756321,
+      "ci95_low": 0.822570352649145,
+      "ci95_high": 0.8252179923021192,
+      "sd": 0.03699418270610167
+    },
+    "optimism_reported_minus_final": {
+      "mean": 0.05579493333333334,
+      "ci95_low": 0.05444761722718291,
+      "ci95_high": 0.05714224943948377,
+      "sd": 0.037650786909623285
+    }
+  },
+  "bias_curve": {
+    "1": {
+      "mean": 0.0008411333333333328,
+      "ci95_low": -0.0008536946107635864,
+      "ci95_high": 0.002535961277430252,
+      "sd": 0.04736201510571364
+    },
+    "2": {
+      "mean": 0.018554400000000002,
+      "ci95_low": 0.017019021317106447,
+      "ci95_high": 0.020089778682893557,
+      "sd": 0.04290620096598833
+    },
+    "4": {
+      "mean": 0.03283356666666667,
+      "ci95_low": 0.031403277815622285,
+      "ci95_high": 0.03426385551771105,
+      "sd": 0.03996946262577327
+    },
+    "8": {
+      "mean": 0.04453213333333333,
+      "ci95_low": 0.04315744408770284,
+      "ci95_high": 0.045906822578963814,
+      "sd": 0.03841573007099893
+    },
+    "16": {
+      "mean": 0.05579493333333334,
+      "ci95_low": 0.05444761722718291,
+      "ci95_high": 0.05714224943948377,
+      "sd": 0.037650786909623285
+    }
+  },
+  "checks": {
+    "reused_holdout_more_optimistic": true,
+    "bias_increases_from_1_to_16_rounds": true,
+    "final_test_never_used_for_selection": true
+  },
+  "sample_trial": {
+    "sealed": {
+      "round_index": 2,
+      "candidate_index": 2,
+      "true_quality": 0.8467027633332169,
+      "dev_score": 0.85,
+      "holdout_score": 0.8625,
+      "final_score": 0.84
+    },
+    "reused_holdout": {
+      "round_index": 12,
+      "candidate_index": 8,
+      "true_quality": 0.8352903241529752,
+      "dev_score": 0.825,
+      "holdout_score": 0.9,
+      "final_score": 0.8306
+    },
+    "round_winners": [
+      {
+        "round_index": 0,
+        "candidate_index": 2,
+        "true_quality": 0.7807768845013411,
+        "dev_score": 0.825,
+        "holdout_score": 0.8,
+        "final_score": 0.7772
+      },
+      {
+        "round_index": 1,
+        "candidate_index": 6,
+        "true_quality": 0.7127537157778953,
+        "dev_score": 0.8,
+        "holdout_score": 0.6,
+        "final_score": 0.7162
+      },
+      {
+        "round_index": 2,
+        "candidate_index": 2,
+        "true_quality": 0.8467027633332169,
+        "dev_score": 0.85,
+        "holdout_score": 0.8625,
+        "final_score": 0.84
+      },
+      {
+        "round_index": 3,
+        "candidate_index": 2,
+        "true_quality": 0.8007043905288167,
+        "dev_score": 0.7625,
+        "holdout_score": 0.7875,
+        "final_score": 0.795
+      },
+      {
+        "round_index": 4,
+        "candidate_index": 5,
+        "true_quality": 0.7796812463451199,
+        "dev_score": 0.7875,
+        "holdout_score": 0.65,
+        "final_score": 0.78
+      },
+      {
+        "round_index": 5,
+        "candidate_index": 11,
+        "true_quality": 0.7580774856267326,
+        "dev_score": 0.825,
+        "holdout_score": 0.6875,
+        "final_score": 0.7614
+      },
+      {
+        "round_index": 6,
+        "candidate_index": 10,
+        "true_quality": 0.6699396470160534,
+        "dev_score": 0.7875,
+        "holdout_score": 0.65,
+        "final_score": 0.6768
+      },
+      {
+        "round_index": 7,
+        "candidate_index": 6,
+        "true_quality": 0.7729663742003433,
+        "dev_score": 0.7875,
+        "holdout_score": 0.8125,
+        "final_score": 0.7726
+      },
+      {
+        "round_index": 8,
+        "candidate_index": 1,
+        "true_quality": 0.7305824037387062,
+        "dev_score": 0.8,
+        "holdout_score": 0.7625,
+        "final_score": 0.7372
+      },
+      {
+        "round_index": 9,
+        "candidate_index": 1,
+        "true_quality": 0.7846753792785265,
+        "dev_score": 0.8125,
+        "holdout_score": 0.8,
+        "final_score": 0.7912
+      },
+      {
+        "round_index": 10,
+        "candidate_index": 8,
+        "true_quality": 0.8380315053917191,
+        "dev_score": 0.825,
+        "holdout_score": 0.8125,
+        "final_score": 0.8354
+      },
+      {
+        "round_index": 11,
+        "candidate_index": 8,
+        "true_quality": 0.7011485032978395,
+        "dev_score": 0.775,
+        "holdout_score": 0.65,
+        "final_score": 0.6996
+      },
+      {
+        "round_index": 12,
+        "candidate_index": 8,
+        "true_quality": 0.8352903241529752,
+        "dev_score": 0.825,
+        "holdout_score": 0.9,
+        "final_score": 0.8306
+      },
+      {
+        "round_index": 13,
+        "candidate_index": 3,
+        "true_quality": 0.6896669865442312,
+        "dev_score": 0.7875,
+        "holdout_score": 0.725,
+        "final_score": 0.6896
+      },
+      {
+        "round_index": 14,
+        "candidate_index": 6,
+        "true_quality": 0.7665173527397068,
+        "dev_score": 0.7625,
+        "holdout_score": 0.7625,
+        "final_score": 0.771
+      },
+      {
+        "round_index": 15,
+        "candidate_index": 7,
+        "true_quality": 0.6614774720920295,
+        "dev_score": 0.8,
+        "holdout_score": 0.725,
+        "final_score": 0.655
+      }
+    ]
+  }
+}

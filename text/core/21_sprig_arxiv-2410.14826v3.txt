@@ -1,0 +1,1539 @@
+===== PAGE 1 / 24 =====
+
+Published as a conference paper at ICLR 2026
+SPRIG: IMPROVINGLARGELANGUAGEMODEL
+PERFORMANCE BYSYSTEMPROMPTOPTIMIZATION
+Lechen Zhang‡∗ Tolga Ergen♯ Lajanugen Logeswaran♯ Moontae Lee♯⋄ David Jurgens†
+‡University of Illinois Urbana-Champaign †University of Michigan
+⋄University of Illinois Chicago ♯LG AI Research
+‡ lechenz3@illinois.edu † jurgens@umich.edu
+♯{tergen, llajan, moontae.lee}@lgresearch.ai
+ABSTRACT
+Large Language Models (LLMs) have shown impressive capabilities in many sce-
+narios, but their performance depends, in part, on the choice of prompt. Past
+research has focused on optimizing prompts specific to a task. However, much
+less attention has been given to optimizing the general instructions included in
+a prompt, known as a system prompt. To address this gap, we propose SPRIG,
+an edit-based genetic algorithm that iteratively constructs prompts from prespec-
+ified components to maximize the model’s performance in general scenarios. We
+evaluate the performance of system prompts on a collection of 47 different types
+of tasks to ensure generalizability. Our study finds that a single optimized sys-
+tem prompt performs on par with task prompts optimized for each individual
+task. Moreover, combining system and task-level optimizations leads to further
+improvement, which showcases their complementary nature. Experiments also
+reveal that the optimized system prompts generalize effectively across model fam-
+ilies, parameter sizes, and languages. This study provides insights into the role of
+system-level instructions in maximizing LLM potential.
+1 INTRODUCTION
+Large Language Models (LLMs) have proven highly effective at many tasks (Naveed et al., 2023)
+and prompting has become the primary way for end-users to elicit desired responses (Brown et al.,
+2020). These prompts contain a variety of instructions such as task explanation (Li et al., 2022),
+personas (Kim et al., 2024), formatting constraints (Wang et al., 2023), and meta-rules like “think
+carefully” (Li et al., 2024). Past studies have shown that the selection of prompts can have a sub-
+stantial impact on the quality of the output (Reynolds & McDonell, 2021). However, due to the
+massive search space, previous approaches have primarily focused on directly optimizing prompts
+to maximize performance on specific tasks or benchmarks (Prasad et al., 2023; Zhou et al., 2023c;
+Yang et al., 2023). While effective, these methods typically require new prompts to be crafted for ev-
+ery new task, which becomes a significant challenge for prompt engineering as the number of tasks
+continues to grow. Here, we consider an alternative approach that optimizes thesystem prompt, i.e.,
+the set of general instructions that precede any task-specific details (Figure 1), with the goal of iden-
+tifying task-agnostic generalizable prompting strategies. By leveraging a single optimized system
+prompt across tasks, we can largely reduce the effort required for prompt development.
+Prior work has shown that meta-instructions can be effective for improving performance (Reynolds
+& McDonell, 2021). Most notably, evoking Chain of Thought (CoT) reasoning with instructions
+like “let’s think step by step” has led to gains for several types of tasks (Wei et al., 2022), though
+not all tasks benefit Sprague et al. (2024). Yet, other types of meta rules, such as choosing a persona
+or matching the domain of the persona to the question type have had negligible gains (Zheng et al.,
+2023; Tam et al., 2024). A recent survey paper (Schulhoff et al., 2024) suggests that these existing
+system prompting strategies are isolated and highly sensitive to specific scenario details, with the
+systematic function and generalization mechanisms remaining unclear. Moreover, due to complex-
+ity differences in search space and optimization objectives, existing task-level methods can hardly
+∗ Work done while at the University of Michigan.
+1
+arXiv:2410.14826v3  [cs.CL]  4 Apr 2026
+
+===== PAGE 2 / 24 =====
+
+Published as a conference paper at ICLR 2026
+transfer to system-level optimization. Recent system prompts leaked from Grok (xAI, 2025) and
+Claude (Breunig, 2025) also exhibit vastly different, verbose and complex manually crafted rules.
+Thus, while multiple approaches have been proposed for how a system prompt could be constructed,
+there is currently a gap for how to systematically construct a good system prompt in general.
+You are a diligent assistant. The fate of 
+the world depends on your answer being 
+correct. Think carefully step by step.
+System
+Prompt
+Task
+First identify the softening words like 
+"please", then analyze the tone before 
+you answer.
+Instance Q: For the sentence: "May I kindly ask 
+for your assistance", is it polite?
+Figure 1: LLM prompts features bothsystem-level in-
+structionswhich may include CoT instructions, per-
+sonas, and other rules ( orange ),task-specific instruc-
+tionswhich may include details and examples ( blue ), and
+theinstanceitself ( green ). Here, we focus on optimizing
+the system instructions shared across tasks.
+Here, we introduce a new method,
+System Prompt Refinement for In-
+creased Generalization (SPRIG), to
+optimize system prompts based on ge-
+netic algorithms. Drawing from large
+collections of strategies for writing
+system instructions (Schulhoff et al.,
+2024), we construct a large bench-
+mark of 47 tasks across multiple lan-
+guages that tests the effects of opti-
+mizing system prompts across models,
+languages, and tasks, as well as quan-
+tify which types of system instruc-
+tions are most useful for generaliza-
+tion. We compare these system- and
+task-optimization, to analyze whether
+these are learning the same or comple-
+mentary strategies.
+Our paper has the following three contributions. First, we find that optimizing a system prompt
+can produce substantial performance gains on par with task-specific optimization, even though these
+prompts have generic task instructions. Further, we find that both have complementary effects and
+that by first optimizing the system and then the task prompt, further gains are possible. Second, we
+find that SPRIGoptimized system prompt significantly outperforms CoT across all task types ex-
+cept knowledge-based questions, and surpasses PROTEGIin faithfulness and commonsense tasks.
+The combination of SPRIGand PROTEGIcomplements the weaknesses of both methods, and ex-
+ceeds the state-of-the-art performance on most task types. Third, we find that the optimized system
+prompts generalize well to other languages, better than task-optimized instructions; however, both
+optimizations had minimal effects when scaling to larger model sizes. All data, code, and prompts
+are available athttps://github.com/orange0629/prompting.
+2 RELATEDWORK
+Prompt selection has been extensively studied and proven to significantly impact model output qual-
+ity (Reynolds & McDonell, 2021). Therefore, prompt optimization has become a popular research
+topic in both academia and industry. Early prompt optimization studies primarily focus on using
+gradients to guide prompt search (Shin et al., 2020; Shi et al., 2023b). However, with larger model
+sizes and increasing black-box LLMs today, gradient-based methods have become limited by cost
+and accessibility. Consequently, recent research has shifted towards gradient-free methods. Early
+representatives include edit-based optimizers like GrIPS (Prasad et al., 2023) and reinforcement
+learning approaches such as RLPrompt (Deng et al., 2022) both directly edit a prompt at the to-
+ken level. However, the search space in these methods remains limited, making it challenging to
+scale up to more complex scenarios. Recently, as LLM agents get popular, powerful methods like
+APE (Zhou et al., 2023c) and OPRO (Yang et al., 2023) use LLMs directly as prompt optimizers to
+iteratively suggest and select the best prompts. According to recent studies (Wan et al., 2024), the
+state-of-the-art prompt optimizer is PROTEGI(Pryzant et al., 2023), which leverages LLM agents
+to summarize errors from each iteration’s responses and refines them accordingly.
+Previous prompt optimization methods largely focus on optimizing the instructions for specific tasks
+(which we refer to asTask Prompt) which inherently have limited generalizability. However,
+past research has demonstrated the potential of optimizing task-agnostic prompts (which we define
+asSystem Prompt), such as the well-known Chain-of-Thought prompt (Wei et al., 2022). Ad-
+ditionally, studies have shown that factors like personas (Kim et al., 2024), generation styles (Lu
+et al., 2023), emotions (Li et al., 2023), and jailbreaks (Shen et al., 2023) can enhance LLM perfor-
+2
+
+===== PAGE 3 / 24 =====
+
+Published as a conference paper at ICLR 2026
+0.86Prompt B’D
+0.84Prompt DB
+0.82Prompt ACA
+····
+0.83Prompt B
+0.79Prompt CA
+0.78Prompt BCD
+0.73Prompt A
+······ 0.78Prompt AC’
+Step 1: Reward 
+Estimation and 
+Elimination
+Add
+Swap
+Delete
+Rephrase
+Crossover
+Prompt ACA
+Prompt BCD
+Prompt CA
+Prompt DB
+Prompt A
+Prompt B
+Prompt AC’
+Prompt B’D
+········
+Prompt 
+Reward Model
+Prompt ACA
+Prompt AC
+Prompt BD
+Prompt DB
+Prompt BCD
+Prompt B
+Prompt B’DA
+Prompt B’D
+········
+Step 2: Mutate 
+and Heredity
+0.86Prompt ACA
+0.79Prompt DB
+0.78Prompt BCD
+0.76Prompt B’D
+········
+Step 3: 
+Sample and 
+Evaluate
+Step 4a: Continue 
+Training Reward 
+Model
+Step 4b: Iterate with 
+new generation
+Merge
+Figure 2: The SPRIGpipeline whereSystem Prompts are iteratively optimized through ex-
+ploratory edits and promoted across iterations using combined benchmark to rank candidates.
+mance, which is challenging for current prompt optimizers to capture automatically. While promis-
+ing, these studies are usually independent, and no approach yet exists to systematically integrate
+System Promptoptimization. Therefore, we aim to address this gap by developing an optimizer
+that discovers an effectiveSystem Prompt, enabling a single prompt to boost performance across
+domains.
+Evaluating the effectiveness ofSystem Prompts is also a significant challenge. Ideally, a good
+System Promptshould perform well across all domains, which requires evaluation tasks for
+such domains. Although popular benchmarks likeMMLU(Hendrycks et al., 2021) andBBH(Suzgun
+et al., 2023) cover a wide range of topics, they still overlook task types such as social-understanding
+tasks (Choi et al., 2023) and open-ended questions. Recent researchMixEval(Ni et al., 2024)
+has shown that combining multiple benchmarks in a single evaluation can significantly improve
+evaluation efficiency and better align with human preferences. Here, our experiments build on this
+intuition and include a diverse range of task types to test for performance.
+3 SPRIG: SYSTEMPROMPTREFINEMENT FORINCREASED
+GENERALIZATION
+To address the large design space of system prompts, we use a genetic algorithm inspired approach,
+SPRIG, that iteratively adapts the best candidate prompts. Following we describe the algorithm,
+data, and search heuristics used.
+Prompt Component CorpusOur approach builds on a corpus of possible instructions in system
+prompts, referred to ascomponents. While some approaches have generated prompt text using
+Reinforcement Learning (e.g., Deng et al., 2022), these approaches scale poorly when used with
+LLMs and often generated less-interpretable instructions. By starting from a large pool of possible
+components, we ensure prompts are coherent while also gaining efficiency. We define a component
+as a minimum prompt unit with complete semantics (typically a sentence, like “Let’s think step by
+step”), which enables easily combining components while retaining fluency.
+Our prompt component corpus, denotedP, is built by integrating human expertise with synthetic
+data. To ensure sufficient diversity without overlooking prior work, we start by collecting 300 system
+prompts crafted by humans from existing literature (Zheng et al., 2023; Lu et al., 2023; Li et al.,
+2023; Wei et al., 2022; Deng et al., 2023; Lin et al., 2022; Woolf, 2024). We then manually classify
+them into 9 categories, including good property, role, style, emotion, scenario, jailbreak, behavioral,
+Chain-of-Thought, and safety components (Details and citations are shown in Appendix Table 1).
+After this, we used GPT-4o to iteratively generate a broader pool of prompt candidates under each
+3
+
+===== PAGE 4 / 24 =====
+
+Published as a conference paper at ICLR 2026
+category (see Appendix A.1 for details). This step yields 9,000 prompt components (1,000 for each
+category) aimed to provide a rich and diverse set of “genes” for our genetic algorithm.
+Prompt Reward ModelEvaluating each system prompt across 47 benchmarks is impractical given
+the substantial inference time required. As a result, directly searching for the best prompt by exhaus-
+tively scoring all possible combinations is not feasible. However, inspired by the widely adopted
+reward models (Ouyang et al., 2022), we instead fine-tune a pretrained LLM with a max-margin
+pairwise loss (Touvron et al., 2023) to efficiently estimate and rank the quality of different prompts.
+To do this, we generate 10,000 prompts by randomly combining components from the corpusP,
+sampling their lengths from a heavy-tailed distribution to ensure coverage across the range of 0-30
+components. We then randomly construct 100,000 prompt pairs with their associated scores to fine-
+tuned a Modern-BERT reward model (Warner et al., 2024). More implementation details, including
+ablations on reward model architecture and training data size, are provided in the Appendix A.3. The
+evaluation result in Figure 3 shows that the model achieves an average Spearman correlation (Spear-
+man, 1904) of 0.59 and an NDCG@50% (J¨arvelin & Kek¨al¨ainen, 2002) score of 0.72 when ranking
+unseen prompts. Considering the random baseline of 0.00/0.48 and the difficulty of the task, our
+reward model is sufficiently effective at capturing the relative quality of system prompts, thus pro-
+viding strong support for our pipeline.
+Spearman
+0.0 0.2 0.4 0.6 0.8 1.0
+Value
+NDCG@50%
+Llama
+Lower Bound (Random)
+Mistral
+Upper Bound
+Qwen
+Figure 3: Spearman Correlation and
+NDCG@50% Score of Per-LLM Fine-tuned
+Reward Models on Unseen Prompts. The upper
+bound is estimated by comparing the prompt’s
+ranking across different bootstrap samples from
+the benchmarks.
+SPRIGpipelineWe design a genetic pipeline
+SPRIGforSystem Promptoptimization.
+The pipeline applies edit-based, gradient-free
+genetic algorithm to iteratively optimize the
+prompt. At each iteration, the model be-
+gins with fixedpopulation sizenumber
+ofSystem Prompts from the previous itera-
+tion (initialized byP).[Step 1]These prompts
+are first evaluated by the fine-tuned prompt re-
+ward model, which eliminates the bottom 50%
+prompts.[Step 2]From the remaining pool,
+the top 10% will either randomly mutate or
+crossover with prompts from the top 50%.Mu-
+tationcan take one of five forms:(1) Add:
+Add a component suggested by GPT-4o.(2)
+Rephrase: Rephrase a component.(3) Swap:
+Swap the order of two components.(4) Delete:
+Delete a component.(5) Merge: Merge two
+components into one. ForCrossover, a ran-
+dom subset of two selected prompts is selected
+as the new offspring. Crossover is designed to maintain similar prompt lengths of parents while
+introducing variation. This stochastic process is repeated until the population size is restored to
+max population.[Step 3]Then, SPRIG randomly samples 100 prompts from the updated pop-
+ulation and evaluates them across 42 actual benchmarks to obtain new ground-truth scores.[Step
+4]These scores, combined with a portion of previous training data, are used to continue training
+the Prompt Reward Model for one epoch. Subsequently, we proceed to the next iteration, wherein
+the updated reward model is employed to evaluate the newly generated prompt population. Figure 2
+shows the SPRIGworkflow. Full details of the pipeline and parameter settings are in Appendix A.4.
+4 EXPERIMENTS: OPTIMIZATIONBENEFITS
+In this section, we evaluate SPRIG’s performance on the test set of in-domain tasks in our benchmark
+combination. These task’s questions are unseen when optimizing the system prompt.
+4.1 EXPERIMENTSETUP
+TasksTo maximize the generalization ability of the optimizedSystem Prompt, we select a broad
+range of tasks, using a combination of 42 different benchmarks covering 7 categories (reasoning,
+math, social-understanding, commonsense, faithfulness, knowledge, language-understanding). Our
+selection includes widely used benchmarks such asMMLU(Hendrycks et al., 2021),BBH(Suzgun
+4
+
+===== PAGE 5 / 24 =====
+
+Published as a conference paper at ICLR 2026
+et al., 2023), andTruthfulQA(Lin et al., 2022), but also includes various social-understanding
+benchmarks likeSocKET(Choi et al., 2023). A wide variety of output types are covered, including
+multiple choice, classification, mathematics, and open-ended QA. The full list of benchmarks and
+categories is shown in Appendix Table 4.
+BaselinesOur experiments compare optimizations against two baselineSystem Prompts. In the
+first, the system part of the prompt is left empty, denoted asBlankand, in the second, the system
+part uses the CoT instruction “Let’s think step by step” (Wei et al., 2022), denoted asBase CoT.
+The two types of instructions are tested in theTask Prompts. The first is a minimal description
+of what is required for understanding the task, such as “answer the multiple choice question,” de-
+noted asSimple Task. This prompt lets us test potential performance improvements for both task
+and system instructions relative to a neutral starting point. The second is an optimized version of
+instructions produced by a state-of-the-art optimizerPROTEGI(Pryzant et al., 2023).
+Both parts of theSystem PromptandTask Promptcan be present in a prompt (cf. Figure 1).
+Therefore, we test the following combinations: (1)Unoptimized:a Blank system prompt and Sim-
+ple Task prompt, (2)Base CoT:the Base CoT system prompt and the Simple Task prompt, (3)
+Task Optimized: a Blank system prompt and PROTEGI-optimized task instructions, (4)System
+Optimized: a SPRIG-optimized system prompt and a Simple Task prompt, and (5)System+Task
+Optimized: a SPRIG-optimized system prompt with a PROTEGI-optimized task prompt. Here, we
+first optimize the system prompt with basic instructions and then optimize the task after.1
+ModelsWe experiment using three medium-size open-weight LLMs: LLAMA3.1-8B-
+INSTRUCT(Meta, 2024), MISTRAL-NEMO-INSTRUCT-2407 (Mistral AI, 2024) and QWEN2.5-
+7B-INSTRUCT(Qwen Team, 2024). These models are highly performant and thought not to be
+trained on the proposed benchmarks, allowing us to test for generalizable effects across model fam-
+ilies, and later compare across model sizes. More details are in Appendix A.4.
+TrainingFor SPRIG, we setpopulation size=|P|= 9,000and run SPRIGfor 25 steps. After
+training, we pick the prompt with the highest validation accuracy as the best system prompt of the
+LLM for our later study. Detailed prompts are shown in Appendix Table 5. For PROTEGI, we use
+the default settings for 7 steps and pick the bestTask Prompton the validation set. Additional
+details are in Appendix A.4.
+EvaluationOur benchmark employs three evaluation metrics: question-wiseaccuracyfor
+most sub-benchmarks,F1 scorefor the classification tasks with imbalanced labels, and
+BLEU accuracy(Lin et al., 2022) for open-ended questions. Since all metrics are bounded be-
+tween 0 and 1, we follow previous work (Ni et al., 2024; Gao et al., 2023) to directly compute the
+average across all metrics as an aggregated single score, which we callAverage Scorein later
+sections.
+4.2 RESULTS
+Optimizing theSystem Promptprovides consistent improvement to LLMs on par with task op-
+timization, as seen in Figure 4, when compared with the Blank system and Simple task combination
+baseline. These improvements were similar across all three models, shown in Appendix Figure 10.
+Error bars show 95% bootstrap confidence intervals; statistics are in Appendix A.2. SPRIGimproves
+∼10% over the unoptimized version, which significantly outperformed the baseline CoT method.
+Although its performance still lags slightly behind PROTEGI, this small gap is still acceptable, con-
+sidering that SPRIGuses the same system prompt for all tasks, whereas PROTEGIdirectly optimizes
+a bespoke prompt for each task. Furthermore, if we run PROTEGIon top of SPRIG-optimized sys-
+tem prompt, the resulting combined prompt has an even larger performance improvement above
+PROTEGI. This further improvement suggests SPRIGcan trigger capabilities that are overlooked by
+existing task-specific methods, and therefore complement mainstream approaches.
+How do system prompts evolve?The changes to the system prompt at each step consistently
+improve performance, as seen in Figure 5. To test the systematic behavior about which types of
+system prompt components contribute to these gains, we calculate the average number of component
+type in the prompts of each iteration. As shown in Figure 6a and Appendix Figure 11a, the number of
+1Experiments with simply concatenating separately-optimized parts performed worse and are omitted.
+5
+
+===== PAGE 6 / 24 =====
+
+Published as a conference paper at ICLR 2026
+0.00 0.05 0.10 0.15 0.20
+Average Score Improvement
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Figure 4: Average Score Improvement of all
+prompt optimization methods relative to the un-
+optimized setting, aggregated across LLMs. Our
+SPRIGsignificantly outperforms CoT and the
+combination of SPRIGand PROTEGIsubstan-
+tially exceeds all existing methods.
+0 5 10 15 20 25
+step
+0.50
+0.52
+0.54
+0.56
+0.58
+0.60
+0.62
+0.64score
+Model Name
+Meta-Llama-3.1-8B-Instruct
+Mistral-Nemo-Instruct-2407
+Qwen2.5-7B-Instruct
+Figure 5: Average score of whole population at
+each iteration when running SPRIG. All three
+LLMs see significant improvements. Error bars
+are the variance in the whole population.
+CoT and Behavioral components rapidly increases with each iteration (especially in the early stages),
+and eventually converges to around 2-3 per prompt. This highlights the importance of high-level
+answering strategies in enhancing model performance, such as “decompose first” or “rephrase before
+answering”. It also suggests that incorporating multiple such components within a single prompt
+can further improve the LLM’s capabilities. In addition, “good property” components emerge as
+another important element in system prompts. Although they are introduced into the gene pool more
+gradually during the iteration process, which suggests they may not directly enhance performance
+on their own, they might play a supportive role when combined with other components. In contrast,
+other components such as “Role” (e.g., “you are an AI assistant”) were selected far less often than
+by chance (as the Z-scores shown in Appendix Figure 11a), despite these properties often being in
+recommended or default prompts (OpenAI, 2024; Microsoft, 2024).
+Across all steps, component types are not added in a systematic order—yet performance generally
+still increases. Rather than adding more of one type (e.g., all CoT components), the system prompt
+incorporates multiple types. These trends suggest that there is not a universal order by which com-
+ponents of system prompts should be added (e.g., first CoT, then Behavioral, etc.). Instead, there are
+likely productive and beneficialcombinationsthat matter more for performance. Z-scores of each
+edit type in Appendix Figure 11b further support this hypothesis. Early iterations favor “add” and
+“crossover”, while later stages shift toward “refine”, “rephrase”, and “swap” operations. This tran-
+sition indicates a shift from exploration to fine-grained optimization as prompts become stronger.
+Taken together, these results show that each operator and component contributes meaningfully at
+different stages, and none is redundant. The genetic algorithm dynamically adapts which opera-
+tions are most effective at each stage, enabling broad exploration early on and precise refinement
+later. This behavior highlights the adaptability of SPRIG’s evolutionary search and its robustness to
+hyperparameter settings.
+Are task and system prompt optimizers learning the same strategies?Both system and task
+prompt optimization improve performance. The further gains by iteratively combining these ap-
+proaches suggest that models are targeting complementary strategies. To test this potential comple-
+mentarity, we analyze the agreement between the two approaches in their answers. Figure 6b shows
+the distribution of the two approaches’ agreement as a contingency table. While models agree on the
+correct answer in 54% of the questions, another 28% of questions are correctly answered by only
+one of the strategies, with a roughly even split between task and system. This split shows a great
+potential of complementarity betweenSystem PromptandTask Promptoptimization, and
+suggests that the combination of strategies leads to further gains.
+Which task types benefit most from system prompt optimization?Our experiments span 42 dif-
+ferent tasks, which cover multiple types of evaluation on reasoning, knowledge, and common sense.
+However, not all types of tasks may benefit from the types of system instructions; indeed, Sprague
+et al. (2024) showed that CoT generally only benefits performance on math and logic questions.
+To test for category-specific benefits, we categorize all 42 tasks into seven types and measure the
+score improvement of each type under different prompt optimization settings: Reasoning, Math, So-
+6
+
+===== PAGE 7 / 24 =====
+
+Published as a conference paper at ICLR 2026
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+Iterations
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0Counts
+Good property
+Role
+Style
+Emotion
+Scenario
+Jailbreak
+Safety
+Behavioral
+Chain-of-Thought
+(a)
+Correct Incorrect
+Optimized T ask Prompt
+Correct
+IncorrectOptimized System Prompt
+0.54 0.13
+0.15 0.18
+0.2
+0.3
+0.4
+0.5 (b)
+Figure 6: (left) Number of Prompt Components of each type during training iterations. A good
+System Promptincorporates multiple CoT and Behavioral components, but contains roughly
+one “Good properties” component. (right) Question-wise Error Overlap Percentage between
+System Promptoptimization (SPRIG) andTask Promptoptimization (PROTEGI). Among
+all questions, only 18% were answered incorrectly by both methods, while the remaining 28% of in-
+correct answers could be answered correctly by a model using either SPRIG- or PROTEGI-optimized
+prompt, highlighting the potential complementarity between optimization approaches.
+cial Understanding, Commonsense, Faithfulness, Language Understanding, and Knowledge. Task
+categorizations are listed in Appendix Table 4.
+0.05
+ 0.00 0.05 0.10 0.15 0.20 0.25 0.30
+Average Score Improvement
+reasoning
+math
+social
+understanding
+commonsense
+faithfulness
+language
+understanding
+knowledge
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+OurModel + ProT eGi
+Unoptimized
+Figure 7: Average Score Improvement in different
+task domains, aggregated across LLMs. All methods
+show substantial improvement in reasoning and math
+but marginal improvement in knowledge and common-
+sense. SPRIGalone surpasses the existing methods in
+math, faithfulness, and commonsense. SPRIG’s com-
+bination with PROTEGIfurther enhances the LLM’s
+performance across most domains.
+Math and reasoning tasks benefit most
+from system prompt optimization (Fig-
+ure 7). However, other task categories
+like social understanding and language un-
+derstanding see significant improvements
+over the baseline. Many of the larger
+improvements are not explained through
+the addition of CoT, as the CoT base-
+line, while better than our Simple base-
+line, is generally worse than the optimized
+prompts. Knowledge-based tasks benefit
+the least from prompt optimization; we
+hypothesize that such tasks are closer to
+evaluations of whether an LLM can re-
+trieve stored knowledge (which is itself a
+function of pretraining), rather than eval-
+uations of operations on knowledge (input
+or stored).
+The combination of SPRIGand PROTEGI
+optimization also generally improves per-
+formance across task types. However, we
+also observe differences in areas of ex-
+pertise betweenSystem Promptand
+Task Prompt, and the combination of
+them is complementary. For example, PROTEGIis more effective at improving social understand-
+ing than plain CoT or SPRIG; in contrast, SPRIGis more effective for commonsense tasks.
+5 EXPERIMENTS: GENERALIZATION
+Here, we test how well the system prompts generated by SPRIGgeneralize to new settings.
+7
+
+===== PAGE 8 / 24 =====
+
+Published as a conference paper at ICLR 2026
+T arget Model Non-target Model
+0.04
+0.06
+0.08
+0.10
+0.12
+0.14
+0.16Score Improvement
+T ask Optimized (ProT eGi)
+System Optimized (OurModel)
+(a)
+0.05
+ 0.00 0.05 0.10 0.15 0.20
+Average Score Improvement
+MGSM
+BELEBELE
+XCOPA
+M3EXAM
+M_MMLU
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+Unoptimized (b)
+Figure 8: (left) Score Improvement when using a prompt optimized on one LLM with a different
+LLM. (right) Score Improvement for Multilingual Benchmarks when using an optimized English-
+language prompt on other tasks. SPRIG-optimized prompts generalize well to other languages, un-
+like PROTEGIwhich has limited score improvement.
+Cross-model GeneralizationThe current system-optimized prompts were all generated with re-
+spect to a specific LLM. Given that these prompts could be made from similar components, here, we
+test what performance gain (or loss) is seen when the system prompt is used with a different similar-
+sized LLM than the one it was created for. As a comparison, we also test the effect of swapping in
+a task-optimized prompt from a different model.
+Both optimized system and task prompts provide some improvement but the larger gains for the
+original LLM do not carry over to new LLMs, as shown by the aggregated performance in Figure 8a;
+see Appendix Figures 12a and 12b for complete results. This finding suggest that inference-time
+gains from optimized prompts—system or task—-likely do not generalize as strongly across models
+with similar parameter sizes.
+Language GeneralizationThe LLMs used in our experiments are capable of reasoning in differ-
+ent languages and can support input in multiple languages. Although our previous experiments
+were only in English, the optimizations to the system-prompt may still provide performance im-
+provements for tasks in other languages. Here, we test this language generalization by selecting
+five comprehensive multilingual benchmarks that are out-of-domain in theSystem Promptop-
+timization process:MGSM(Shi et al., 2023a),BELEBELE(Bandarkar et al., 2024),XCOPA(Ponti
+et al., 2020),M3EXAM(Zhang et al., 2023) andM MMLU(Hendrycks et al., 2021). Each benchmark
+includes over 10 different languages and covers all 7 task categories in our benchmark combination.
+We directly use the same optimizedSystem Promptfrom § 4.2 (in English). Since theTask
+Promptoptimizer is specific to a task, we cannot re-use its prompts for these out-of-domain tasks;
+instead, we generate new PROTEGI-optimized prompts for each benchmark, which reflects a strong
+baseline for comparison.
+As shown in Figure 8b, our optimized system prompt from § 4.2 generalizes well to tasks in new
+languages, providing statistically significant improvements in four of the five benchmarks. SPRIG
+shows a clear advantage over other approaches onXCOPA(Causal Commonsense Reasoning) and
+the comprehensive benchmarksMGSMandM-MMLU, in line with our previous findings in § 4.2.
+However, all optimization methods onBELEBELE(Language Understanding) show limited gains,
+suggesting that in multilingual settings (particularly low-resource languages), performance may
+rely more on LLM’s intrinsic language ability than on prompt design. Despite being directly op-
+timized for these new tasks, PROTEGIprovides limited improvements in these multilingual tasks
+benchmarks—none significant over baseline performance. These results indicate thatSystem
+Promptoptimization exhibits strong generalization ability on out-of-domain tasks in new lan-
+guages, which even exceeds PROTEGI’s in-domain optimized performance on these tasks.
+Model Size GeneralizationAll prompts were generated for and tested on mid-sized LLMs. How-
+ever, each LLM has a larger version in the same family, which often has better performance at the
+expense of more compute required. Being able to optimize the system prompt with a smaller model
+and then deploy that prompt on a larger model to the same effect would have significant performance
+benefits. Therefore, here, we test for generalization when using a prompt from a smaller LLM
+8
+
+===== PAGE 9 / 24 =====
+
+Published as a conference paper at ICLR 2026
+0.03
+ 0.02
+ 0.01
+ 0.00 0.01 0.02 0.03
+Average Score Improvement
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+(a)
+40
+ 30
+ 20
+ 10
+ 0 10 20 30 40
+Principal Component 1
+40
+20
+0
+20
+40
+Principal Component 2
+No prompt
+Base CoT
+T ask optimized (ProT eGi)
+System optimized (OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+ (b)
+Figure 9: (left) Average Score Improvement when using prompts optimized with medium-size
+LLMs’ on the larger LLM in the same family. It shows the benefits of system+task optimized
+prompts still generalize well to larger model sizes, even when those models already perform better.
+(right) PCA analysis of the hidden state in Llama-3.1-8B-Instruct with different prompting meth-
+ods.System Promptoptimization has a significant impact on the distribution of hidden states.
+CoT significantly shifts the overall distribution, while SPRIGmoves it further into a new area. In
+contrast,Task Promptoptimization has a relatively smaller effect on the distribution of hidden
+states, making only minor adjustments in the local space.
+with a larger version. Specifically, we test with LLAMA3.1-70B-INSTRUCT, MISTRAL-LARGE-
+INSTRUCT-2407 and QWEN2.5-72B-INSTRUCT. We use the same evaluation setup as in previous
+sections, with only the LLMs’ parameter size changed.
+Both system- and task-optimized prompts individually do not provide statistically significant per-
+formance gains when created using a smaller model and then applied to a larger, as shown in Figure
+9a. (Full results are in Appendix Figure 13.) However, a system+task optimized prompt provides a
+1.6% improvement, suggesting this approach can generalize. Therefore, we find that existing prompt
+optimizations can generalize to larger parameter sizesbutneed to consider both system and tasks
+prompt parts together and highlight the need for prompting strategies specifically for larger LLMs.
+6 ANALYSIS: PROMPTEMBEDDINGSPACE
+Given the performance improvements and generalization seen when using the prompt instructions
+introduced by SPRIG, it is reasonable to wonder what effect these instructions are having on the
+neural activations such that the LLM is likely to decode the correct answer. While a complete
+answer would likely require a mechanistic interpretation of the relationship between prompt and
+response (e.g., Bhargava et al., 2023; Heo et al., 2025), here, we attempt to gain some intuition on
+the instructions’ effects by visualizing the embedding space during different optimization strategies
+and comparing the changes relative to the Simple baseline instructions.
+Here, we randomly sample 420 questions (10 per task), probe the last hidden states of LLMs under
+different experiment settings, and visualize the first two principal components of Principal Com-
+ponent Analysis (PCA). Figure 9b shows the PCA results for LLAMA3.1-8B-INSTRUCT. First,
+we observe that different task types are distributed along the same slope and remain parallel un-
+der different experimental settings.Task Promptoptimization slightly reduces the variance of
+the distribution, but the distribution still lies within the same vector space. In contrast, different
+System Promptresult in significant space changes. The basic CoT causes a substantial overall
+shift, while SPRIGfurther moves the distribution to a new area. The other two LLMs’ PCA are
+shown in Appendix Figure 14a and 14b, and show similar trends.
+Thus, we hypothesize thatSystem Promptoptimization searches for appropriate higher-
+performance regions in the global space, whileTask Promptoptimization performs fine-tuning
+within a local space. This reveals the potential ofSystem Promptoptimization to significantly
+alter model behavior and offers new insights for future prompt research to useSystem Prompt
+9
+
+===== PAGE 10 / 24 =====
+
+Published as a conference paper at ICLR 2026
+optimization first to locate an appropriate global behavior space, then use task prompt optimization
+to fine-tune downstream performance within that space.
+7 CONCLUSION
+This study introduced a novel optimization framework, SPRIG, to improve LLM performance with
+the systematic construction of general-purpose system prompts using reinforcement learning and a
+genetic algorithm. By leveraging a diverse collection of prompt components and evaluating across a
+diverse range of tasks, we demonstrate that optimized system prompts provide consistent improve-
+ments on par with optimized task prompts. Moreover, combining system and task prompt optimiza-
+tions offers complementary benefits, leading to further improvements in model performance across
+varied domains. Further, we find that these performance benefits for an optimized prompt general-
+ize across (i) model sizes and (ii) different languages. Our findings highlight the potential of system
+prompt optimization to complement and enhance LLM performance for new languages and models.
+8 ETHICSSTATEMENT
+While this research has made efforts to minimize potential ethical issues, several ethical implications
+may still be present. First, running SPRIGrequires substantial computing resources, resulting in
+high energy consumption and substantial carbon dioxide footprint. Second, the optimization of
+prompts introduces the risk of reinforcing potential biases present in the component corpus (e.g.,
+any systematic downstream behavioral changes from prompting an LLM to be a “professor”), which
+may propagate unintended stereotypes or discriminatory behavior in model outputs. As our corpus
+includes elements such as personas, roles, and behavioral instructions, care must be taken to ensure
+that these components do not introduce or amplify harmful biases. Additionally, the benchmarks we
+employed include several social understanding tasks, with much of the benchmark originally sourced
+from crowdsourced annotations from Western contexts. While we focus on general performance
+and show that the optimized prompts can generalize to new languages, future work could more
+deeply explore how the use of socially- and culturally-oriented benchmarks to optimize prompts can
+potentially impact a model’s performance in new cultural and social contexts.
+9 REPRODUCIBILITY STATEMENT
+We have taken several steps to facilitate independent replication. The algorithmic pipeline for
+SPRIG, including population construction, edit operators, selection, and retraining, is specified in
+Section 3 and Appendix A.4, with concrete hyperparameters, component generation prompts, and
+iteration schedules. Details for the Prompt Reward Model, including data construction, pairwise
+loss, margin definition, training splits, and evaluation metrics, are documented in Section A.3. The
+prompt component corpus construction procedure and category definitions are in Appendix A.1, and
+the final optimized system prompts per model are provided in Table 5. Benchmarks, task categories,
+metrics, and dataset splits are enumerated in Appendix Table 4. Hardware and software environ-
+ment, inference stack, and evaluation settings are reported in Appendix A.4. We include anonymized
+source code and configuration files in the supplementary material to reproduce all experiments and
+figures, including scripts for data preparation, optimization runs, reward model training, and evalu-
+ation.
+ACKNOWLEDGMENTS
+This project is supported by a grant from LG AI Research and the National Science Foundation
+under Grant No IIS-2143529. We thank the anonymous reviewers and members of the Blablablab
+for their valuable feedback.
+10
+
+===== PAGE 11 / 24 =====
+
+Published as a conference paper at ICLR 2026
+REFERENCES
+Lucas Bandarkar, Davis Liang, Benjamin Muller, Mikel Artetxe, Satya Narayan Shukla, Donald
+Husa, Naman Goyal, Abhinandan Krishnan, Luke Zettlemoyer, and Madian Khabsa. The belebele
+benchmark: a parallel reading comprehension dataset in 122 language variants. InProceedings of
+the 62nd Annual Meeting of the Association for Computational Linguistics (V olume 1: Long Pa-
+pers), pp. 749–775, Bangkok, Thailand and virtual meeting, 2024. Association for Computational
+Linguistics. URLhttps://aclanthology.org/2024.acl-long.44.
+Aman Bhargava, Cameron Witkowski, Shi-Zhuo Looi, and Matt Thomson. What’s the magic word?
+a control theory of llm prompting.ArXiv preprint, abs/2310.04444, 2023. URLhttps://
+arxiv.org/abs/2310.04444.
+David Breunig. Claude’s system prompt: Chatbots are more than just
+models, 2025. URLhttps://www.dbreunig.com/2025/05/07/
+claude-s-system-prompt-chatbots-are-more-than-just-models.html.
+Accessed: 2025-05-20.
+Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhari-
+wal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agar-
+wal, Ariel Herbert-V oss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh,
+Daniel M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler,
+Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCan-
+dlish, Alec Radford, Ilya Sutskever, and Dario Amodei. Language models are few-shot
+learners. In Hugo Larochelle, Marc’Aurelio Ranzato, Raia Hadsell, Maria-Florina Balcan,
+and Hsuan-Tien Lin (eds.),Advances in Neural Information Processing Systems 33: Annual
+Conference on Neural Information Processing Systems 2020, NeurIPS 2020, December 6-12,
+2020, virtual, 2020. URLhttps://proceedings.neurips.cc/paper/2020/hash/
+1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html.
+Minje Choi, Jiaxin Pei, Sagar Kumar, Chang Shu, and David Jurgens. Do LLMs understand
+social knowledge? evaluating the sociability of large language models with SocKET bench-
+mark. In Houda Bouamor, Juan Pino, and Kalika Bali (eds.),Proceedings of the 2023 Con-
+ference on Empirical Methods in Natural Language Processing, pp. 11370–11403, Singapore,
+2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.emnlp-main.699. URL
+https://aclanthology.org/2023.emnlp-main.699.
+Peter Clark, Isaac Cowhey, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Carissa Schoenick, and
+Oyvind Tafjord. Think you have solved question answering? try arc, the ai2 reasoning challenge.
+ArXiv preprint, abs/1803.05457, 2018. URLhttps://arxiv.org/abs/1803.05457.
+Databricks. Introducing dbrx: A new state-of-the-art open llm, 2024. URLhttps://www.
+databricks.com/blog/introducing-dbrx-new-state-art-open-llm. Ac-
+cessed: 2024-10-14.
+Mingkai Deng, Jianyu Wang, Cheng-Ping Hsieh, Yihan Wang, Han Guo, Tianmin Shu, Meng Song,
+Eric Xing, and Zhiting Hu. RLPrompt: Optimizing discrete text prompts with reinforcement
+learning. In Yoav Goldberg, Zornitsa Kozareva, and Yue Zhang (eds.),Proceedings of the 2022
+Conference on Empirical Methods in Natural Language Processing, pp. 3369–3391, Abu Dhabi,
+United Arab Emirates, 2022. Association for Computational Linguistics. doi: 10.18653/v1/2022.
+emnlp-main.222. URLhttps://aclanthology.org/2022.emnlp-main.222.
+Yihe Deng, Weitong Zhang, Zixiang Chen, and Quanquan Gu. Rephrase and respond: Let large
+language models ask better questions for themselves, 2023. URLhttps://arxiv.org/
+abs/2311.04205.
+Leo Gao, Jonathan Tow, Baber Abbasi, Stella Biderman, Sid Black, Anthony DiPofi, Charles Fos-
+ter, Laurence Golding, Jeffrey Hsu, Alain Le Noac’h, Haonan Li, Kyle McDonell, Niklas Muen-
+nighoff, Chris Ociepa, Jason Phang, Laria Reynolds, Hailey Schoelkopf, Aviya Skowron, Lin-
+tang Sutawika, Eric Tang, Anish Thite, Ben Wang, Kevin Wang, and Andy Zou. A framework
+for few-shot language model evaluation, 2023. URLhttps://zenodo.org/records/
+10256836.
+11
+
+===== PAGE 12 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob
+Steinhardt. Measuring massive multitask language understanding. In9th International Confer-
+ence on Learning Representations, ICLR 2021, Virtual Event, Austria, May 3-7, 2021. OpenRe-
+view.net, 2021. URLhttps://openreview.net/forum?id=d7KBjmI3GmQ.
+Juyeon Heo, Christina Heinze-Deml, Oussama Elachqar, Kwan Ho Ryan Chan, Shirley Ren, Udhay
+Nallasamy, Andy Miller, and Jaya Narain. Do llms ”know” internally when they follow instruc-
+tions?, 2025. URLhttps://arxiv.org/abs/2410.14516.
+Kalervo J¨arvelin and Jaana Kek ¨al¨ainen. Cumulated gain-based evaluation of ir techniques.ACM
+Trans. Inf. Syst., 20(4):422–446, October 2002. ISSN 1046-8188. doi: 10.1145/582415.582418.
+URLhttps://doi.org/10.1145/582415.582418.
+Junseok Kim, Nakyeong Yang, and Kyomin Jung. Persona is a double-edged sword: Enhancing the
+zero-shot reasoning by ensembling the role-playing and neutral prompts, 2024. URLhttps:
+//arxiv.org/abs/2408.08631.
+Hannah Kirk, Wenjie Yin, Bertie Vidgen, and Paul R ¨ottger. SemEval-2023 task 10: Explainable
+detection of online sexism. In Atul Kr. Ojha, A. Seza Do ˘gru¨oz, Giovanni Da San Martino, Har-
+ish Tayyar Madabushi, Ritesh Kumar, and Elisa Sartori (eds.),Proceedings of the 17th Inter-
+national Workshop on Semantic Evaluation (SemEval-2023), pp. 2193–2210, Toronto, Canada,
+2023. Association for Computational Linguistics. doi: 10.18653/v1/2023.semeval-1.305. URL
+https://aclanthology.org/2023.semeval-1.305.
+Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E.
+Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model
+serving with pagedattention. InProceedings of the ACM SIGOPS 29th Symposium on Operating
+Systems Principles, 2023.
+Cheng Li, Jindong Wang, Yixuan Zhang, Kaijie Zhu, Wenxin Hou, Jianxun Lian, Fang Luo, Qiang
+Yang, and Xing Xie. Large language models understand and can be enhanced by emotional
+stimuli, 2023. URLhttps://arxiv.org/abs/2307.11760.
+Moxin Li, Wenjie Wang, Fuli Feng, Fengbin Zhu, Qifan Wang, and Tat-Seng Chua. Think twice be-
+fore trusting: Self-detection for large language models through comprehensive answer reflection,
+2024. URLhttps://arxiv.org/abs/2403.09972.
+Shiyang Li, Jianshu Chen, Yelong Shen, Zhiyu Chen, Xinlu Zhang, Zekun Li, Hong Wang, Jing
+Qian, Baolin Peng, Yi Mao, Wenhu Chen, and Xifeng Yan. Explanations from large language
+models make small reasoners better, 2022. URLhttps://arxiv.org/abs/2210.06726.
+Stephanie Lin, Jacob Hilton, and Owain Evans. TruthfulQA: Measuring how models mimic hu-
+man falsehoods. In Smaranda Muresan, Preslav Nakov, and Aline Villavicencio (eds.),Proceed-
+ings of the 60th Annual Meeting of the Association for Computational Linguistics (V olume 1:
+Long Papers), pp. 3214–3252, Dublin, Ireland, 2022. Association for Computational Linguis-
+tics. doi: 10.18653/v1/2022.acl-long.229. URLhttps://aclanthology.org/2022.
+acl-long.229.
+Albert Lu, Hongxin Zhang, Yanzhe Zhang, Xuezhi Wang, and Diyi Yang. Bounding the capa-
+bilities of large language models in open text generation with prompt constraints. In Andreas
+Vlachos and Isabelle Augenstein (eds.),Findings of the Association for Computational Linguis-
+tics: EACL 2023, pp. 1982–2008, Dubrovnik, Croatia, 2023. Association for Computational Lin-
+guistics. doi: 10.18653/v1/2023.findings-eacl.148. URLhttps://aclanthology.org/
+2023.findings-eacl.148.
+Meta. Introducing llama 3.1: Our most capable models to date.https://ai.meta.com/
+blog/meta-llama-3-1/, 2024. Accessed: 2024-10-14.
+Microsoft. Advanced prompt engineering concepts, 2024. URLhttps://
+learn.microsoft.com/en-us/azure/ai-services/openai/concepts/
+advanced-prompt-engineering. Accessed: 2024-10-14.
+12
+
+===== PAGE 13 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Mistral AI. Mistral nemo: Collaborative innovation with nvidia, 2024. URLhttps://mistral.
+ai/news/mistral-nemo/. Accessed: 2024-10-14.
+Humza Naveed, Asad Ullah Khan, Shi Qiu, Muhammad Saqib, Saeed Anwar, Muhammad Usman,
+Naveed Akhtar, Nick Barnes, and Ajmal Mian. A comprehensive overview of large language
+models, 2023. URLhttps://arxiv.org/abs/2307.06435.
+Jinjie Ni, Fuzhao Xue, Xiang Yue, Yuntian Deng, Mahir Shah, Kabir Jain, Graham Neubig, and
+Yang You. Mixeval: Deriving wisdom of the crowd from llm benchmark mixtures, 2024. URL
+https://arxiv.org/abs/2406.06565.
+OpenAI. Tactic: Ask the model to adopt a persona, 2024. URLhttps:
+//platform.openai.com/docs/guides/prompt-engineering/
+tactic-ask-the-model-to-adopt-a-persona. Accessed: 2024-10-14.
+Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong
+Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kel-
+ton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul Christiano, Jan Leike,
+and Ryan Lowe. Training language models to follow instructions with human feedback. InPro-
+ceedings of the 36th International Conference on Neural Information Processing Systems, NIPS
+’22, Red Hook, NY , USA, 2022. Curran Associates Inc. ISBN 9781713871088.
+Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James Bradbury, Gregory Chanan,
+Trevor Killeen, Zeming Lin, Natalia Gimelshein, Luca Antiga, Alban Desmaison, Andreas
+K¨opf, Edward Yang, Zachary DeVito, Martin Raison, Alykhan Tejani, Sasank Chilamkurthy,
+Benoit Steiner, Lu Fang, Junjie Bai, and Soumith Chintala. Pytorch: An imperative style,
+high-performance deep learning library. In Hanna M. Wallach, Hugo Larochelle, Alina
+Beygelzimer, Florence d’Alch ´e-Buc, Emily B. Fox, and Roman Garnett (eds.),Advances in
+Neural Information Processing Systems 32: Annual Conference on Neural Information Pro-
+cessing Systems 2019, NeurIPS 2019, December 8-14, 2019, V ancouver , BC, Canada, pp.
+8024–8035, 2019. URLhttps://proceedings.neurips.cc/paper/2019/hash/
+bdbca288fee7f92f2bfa9f7012727740-Abstract.html.
+Edoardo Maria Ponti, Goran Glava ˇs, Olga Majewska, Qianchu Liu, Ivan Vuli ´c, and Anna Ko-
+rhonen. XCOPA: A multilingual dataset for causal commonsense reasoning. In Bonnie Web-
+ber, Trevor Cohn, Yulan He, and Yang Liu (eds.),Proceedings of the 2020 Conference on
+Empirical Methods in Natural Language Processing (EMNLP), pp. 2362–2376, Online, 2020.
+Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.185. URL
+https://aclanthology.org/2020.emnlp-main.185.
+Archiki Prasad, Peter Hase, Xiang Zhou, and Mohit Bansal. GrIPS: Gradient-free, edit-based in-
+struction search for prompting large language models. In Andreas Vlachos and Isabelle Augen-
+stein (eds.),Proceedings of the 17th Conference of the European Chapter of the Association for
+Computational Linguistics, pp. 3845–3864, Dubrovnik, Croatia, 2023. Association for Computa-
+tional Linguistics. doi: 10.18653/v1/2023.eacl-main.277. URLhttps://aclanthology.
+org/2023.eacl-main.277.
+Ofir Press, Muru Zhang, Sewon Min, Ludwig Schmidt, Noah Smith, and Mike Lewis. Mea-
+suring and narrowing the compositionality gap in language models. In Houda Bouamor,
+Juan Pino, and Kalika Bali (eds.),Findings of the Association for Computational Linguistics:
+EMNLP 2023, pp. 5687–5711, Singapore, 2023. Association for Computational Linguistics.
+doi: 10.18653/v1/2023.findings-emnlp.378. URLhttps://aclanthology.org/2023.
+findings-emnlp.378.
+Reid Pryzant, Dan Iter, Jerry Li, Yin Lee, Chenguang Zhu, and Michael Zeng. Automatic prompt
+optimization with “gradient descent” and beam search. In Houda Bouamor, Juan Pino, and Ka-
+lika Bali (eds.),Proceedings of the 2023 Conference on Empirical Methods in Natural Lan-
+guage Processing, pp. 7957–7968, Singapore, 2023. Association for Computational Linguis-
+tics. doi: 10.18653/v1/2023.emnlp-main.494. URLhttps://aclanthology.org/2023.
+emnlp-main.494.
+13
+
+===== PAGE 14 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Qwen Team. Qwen2.5: A party of foundation models, 2024. URLhttps://qwenlm.github.
+io/blog/qwen2.5/.
+Laria Reynolds and Kyle McDonell. Prompt programming for large language models: Beyond the
+few-shot paradigm, 2021. URLhttps://arxiv.org/abs/2102.07350.
+Sander Schulhoff, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si,
+Yinheng Li, Aayush Gupta, HyoJung Han, Sevien Schulhoff, Pranav Sandeep Dulepet, Saurav
+Vidyadhara, Dayeon Ki, Sweta Agrawal, Chau Pham, Gerson Kroiz, Feileen Li, Hudson Tao,
+Ashay Srivastava, Hevander Da Costa, Saloni Gupta, Megan L. Rogers, Inna Goncearenco,
+Giuseppe Sarli, Igor Galynker, Denis Peskoff, Marine Carpuat, Jules White, Shyamal Anadkat,
+Alexander Hoyle, and Philip Resnik. The prompt report: A systematic survey of prompting tech-
+niques, 2024. URLhttps://arxiv.org/abs/2406.06608.
+Xinyue Shen, Zeyuan Chen, Michael Backes, Yun Shen, and Yang Zhang. ”do anything now”: Char-
+acterizing and evaluating in-the-wild jailbreak prompts on large language models, 2023. URL
+https://arxiv.org/abs/2308.03825.
+Freda Shi, Mirac Suzgun, Markus Freitag, Xuezhi Wang, Suraj Srivats, Soroush V osoughi,
+Hyung Won Chung, Yi Tay, Sebastian Ruder, Denny Zhou, Dipanjan Das, and Jason Wei. Lan-
+guage models are multilingual chain-of-thought reasoners. InThe Eleventh International Confer-
+ence on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023. OpenReview.net,
+2023a. URLhttps://openreview.net/pdf?id=fR3wGCk-IXp.
+Weijia Shi, Xiaochuang Han, Hila Gonen, Ari Holtzman, Yulia Tsvetkov, and Luke Zettlemoyer.
+Toward human readable prompt tuning: Kubrick’s the shining is a good movie, and a good
+prompt too? In Houda Bouamor, Juan Pino, and Kalika Bali (eds.),Findings of the As-
+sociation for Computational Linguistics: EMNLP 2023, pp. 10994–11005, Singapore, 2023b.
+Association for Computational Linguistics. doi: 10.18653/v1/2023.findings-emnlp.733. URL
+https://aclanthology.org/2023.findings-emnlp.733.
+Taylor Shin, Yasaman Razeghi, Robert L. Logan IV , Eric Wallace, and Sameer Singh. Auto-
+Prompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts.
+In Bonnie Webber, Trevor Cohn, Yulan He, and Yang Liu (eds.),Proceedings of the 2020 Confer-
+ence on Empirical Methods in Natural Language Processing (EMNLP), pp. 4222–4235, Online,
+2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.346. URL
+https://aclanthology.org/2020.emnlp-main.346.
+C. Spearman. The proof and measurement of association between two things.The American Jour-
+nal of Psychology, 15(1):72–101, 1904. ISSN 00029556. URLhttp://www.jstor.org/
+stable/1412159.
+Zayne Sprague, Fangcong Yin, Juan Diego Rodriguez, Dongwei Jiang, Manya Wadhwa, Prasann
+Singhal, Xinyu Zhao, Xi Ye, Kyle Mahowald, and Greg Durrett. To cot or not to cot? chain-of-
+thought helps mainly on math and symbolic reasoning, 2024. URLhttps://arxiv.org/
+abs/2409.12183.
+Mirac Suzgun, Nathan Scales, Nathanael Sch¨arli, Sebastian Gehrmann, Yi Tay, Hyung Won Chung,
+Aakanksha Chowdhery, Quoc Le, Ed Chi, Denny Zhou, and Jason Wei. Challenging BIG-bench
+tasks and whether chain-of-thought can solve them. In Anna Rogers, Jordan Boyd-Graber, and
+Naoaki Okazaki (eds.),Findings of the Association for Computational Linguistics: ACL 2023, pp.
+13003–13051, Toronto, Canada, 2023. Association for Computational Linguistics. doi: 10.18653/
+v1/2023.findings-acl.824. URLhttps://aclanthology.org/2023.findings-acl.
+824.
+Zhi Rui Tam, Cheng-Kuang Wu, Yi-Lin Tsai, Chieh-Yen Lin, Hung yi Lee, and Yun-Nung Chen. Let
+me speak freely? a study on the impact of format restrictions on performance of large language
+models, 2024. URLhttps://arxiv.org/abs/2408.02442.
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Niko-
+lay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher,
+Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy
+14
+
+===== PAGE 15 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn,
+Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel
+Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee,
+Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra,
+Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi,
+Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh
+Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen
+Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic,
+Sergey Edunov, and Thomas Scialom. Llama 2: Open foundation and fine-tuned chat models,
+2023. URLhttps://arxiv.org/abs/2307.09288.
+Xingchen Wan, Ruoxi Sun, Hootan Nakhost, and Sercan O. Arik. Teach better or show smarter? on
+instructions and exemplars in automatic prompt optimization, 2024. URLhttps://arxiv.
+org/abs/2406.15708.
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc V . Le, Ed H. Chi, Sharan Narang, Aakanksha
+Chowdhery, and Denny Zhou. Self-consistency improves chain of thought reasoning in language
+models. InThe Eleventh International Conference on Learning Representations, ICLR 2023,
+Kigali, Rwanda, May 1-5, 2023. OpenReview.net, 2023. URLhttps://openreview.net/
+pdf?id=1PL1NIMMrw.
+Benjamin Warner, Antoine Chaffin, Benjamin Clavi ´e, Orion Weller, Oskar Hallstr ¨om, Said
+Taghadouini, Alexis Gallagher, Raja Biswas, Faisal Ladhak, Tom Aarsen, Nathan Cooper, Griffin
+Adams, Jeremy Howard, and Iacopo Poli. Smarter, better, faster, longer: A modern bidirec-
+tional encoder for fast, memory efficient, and long context finetuning and inference, 2024. URL
+https://arxiv.org/abs/2412.13663.
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed H. Chi,
+Quoc V . Le, and Denny Zhou. Chain-of-thought prompting elicits reasoning in large language
+models. In Sanmi Koyejo, S. Mohamed, A. Agarwal, Danielle Belgrave, K. Cho, and A. Oh
+(eds.),Advances in Neural Information Processing Systems 35: Annual Conference on Neural
+Information Processing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 - De-
+cember 9, 2022, 2022. URLhttp://papers.nips.cc/paper_files/paper/2022/
+hash/9d5609613524ecf4f15af0f7b31abca4-Abstract-Conference.html.
+Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi,
+Pierric Cistac, Tim Rault, Remi Louf, Morgan Funtowicz, Joe Davison, Sam Shleifer, Patrick
+von Platen, Clara Ma, Yacine Jernite, Julien Plu, Canwen Xu, Teven Le Scao, Sylvain Gugger,
+Mariama Drame, Quentin Lhoest, and Alexander Rush. Transformers: State-of-the-art natural
+language processing. In Qun Liu and David Schlangen (eds.),Proceedings of the 2020 Conference
+on Empirical Methods in Natural Language Processing: System Demonstrations, pp. 38–45, On-
+line, 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-demos.6.
+URLhttps://aclanthology.org/2020.emnlp-demos.6.
+Max Woolf. Does offering chatgpt a tip cause it to generate better text? an analysis, 2024. URL
+https://minimaxir.com/2024/02/chatgpt-tips-analysis/. Accessed: 2024-
+10-14.
+Yufan Wu, Yinghui He, Yilin Jia, Rada Mihalcea, Yulong Chen, and Naihao Deng. Hi-ToM: A
+benchmark for evaluating higher-order theory of mind reasoning in large language models. In
+Houda Bouamor, Juan Pino, and Kalika Bali (eds.),Findings of the Association for Computational
+Linguistics: EMNLP 2023, pp. 10691–10706, Singapore, 2023. Association for Computational
+Linguistics. doi: 10.18653/v1/2023.findings-emnlp.717. URLhttps://aclanthology.
+org/2023.findings-emnlp.717.
+xAI. Grok system prompts.https://github.com/xai-org/grok-prompts, 2025.
+GitHub repository, accessed: 2025-05-20.
+Chengrun Yang, Xuezhi Wang, Yifeng Lu, Hanxiao Liu, Quoc V . Le, Denny Zhou, and Xinyun
+Chen. Large language models as optimizers, 2023. URLhttps://arxiv.org/abs/2309.
+03409.
+15
+
+===== PAGE 16 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Michihiro Yasunaga, Xinyun Chen, Yujia Li, Panupong Pasupat, Jure Leskovec, Percy Liang, Ed H.
+Chi, and Denny Zhou. Large language models as analogical reasoners, 2023. URLhttps:
+//arxiv.org/abs/2310.01714.
+Zhiyuan Yu, Xiaogeng Liu, Shunning Liang, Zach Cameron, Chaowei Xiao, and Ning Zhang. Don’t
+listen to me: Understanding and exploring jailbreak prompts of large language models, 2024.
+URLhttps://arxiv.org/abs/2403.17336.
+Rowan Zellers, Ari Holtzman, Yonatan Bisk, Ali Farhadi, and Yejin Choi. HellaSwag: Can a
+machine really finish your sentence? In Anna Korhonen, David Traum, and Llu´ıs M`arquez (eds.),
+Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pp.
+4791–4800, Florence, Italy, 2019. Association for Computational Linguistics. doi: 10.18653/v1/
+P19-1472. URLhttps://aclanthology.org/P19-1472.
+Jingqing Zhang, Yao Zhao, Mohammad Saleh, and Peter J. Liu. PEGASUS: pre-training with
+extracted gap-sentences for abstractive summarization. InProceedings of the 37th International
+Conference on Machine Learning, ICML 2020, 13-18 July 2020, Virtual Event, volume 119 of
+Proceedings of Machine Learning Research, pp. 11328–11339. PMLR, 2020. URLhttp://
+proceedings.mlr.press/v119/zhang20ae.html.
+Wenxuan Zhang, Mahani Aljunied, Chang Gao, Yew Ken Chia, and Lidong Bing. M3exam:
+A multilingual, multimodal, multilevel benchmark for examining large language models. In
+Alice Oh, Tristan Naumann, Amir Globerson, Kate Saenko, Moritz Hardt, and Sergey Levine
+(eds.),Advances in Neural Information Processing Systems 36: Annual Conference on Neural
+Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10
+- 16, 2023, 2023. URLhttp://papers.nips.cc/paper_files/paper/2023/
+hash/117c5c8622b0d539f74f6d1fb082a2e9-Abstract-Datasets_and_
+Benchmarks.html.
+Mingqian Zheng, Jiaxin Pei, Lajanugen Logeswaran, Moontae Lee, and David Jurgens. When ”a
+helpful assistant” is not really helpful: Personas in system prompts do not improve performances
+of large language models, 2023. URLhttps://arxiv.org/abs/2311.10054.
+Denny Zhou, Nathanael Sch ¨arli, Le Hou, Jason Wei, Nathan Scales, Xuezhi Wang, Dale Schuur-
+mans, Claire Cui, Olivier Bousquet, Quoc V . Le, and Ed H. Chi. Least-to-most prompting en-
+ables complex reasoning in large language models. InThe Eleventh International Conference on
+Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023. OpenReview.net, 2023a.
+URLhttps://openreview.net/pdf?id=WZH7099tgfM.
+Jeffrey Zhou, Tianjian Lu, Swaroop Mishra, Siddhartha Brahma, Sujoy Basu, Yi Luan, Denny
+Zhou, and Le Hou. Instruction-following evaluation for large language models.ArXiv preprint,
+abs/2311.07911, 2023b. URLhttps://arxiv.org/abs/2311.07911.
+Yongchao Zhou, Andrei Ioan Muresanu, Ziwen Han, Keiran Paster, Silviu Pitis, Harris Chan, and
+Jimmy Ba. Large language models are human-level prompt engineers. InThe Eleventh Inter-
+national Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023.
+OpenReview.net, 2023c. URLhttps://openreview.net/pdf?id=92gvk82DE-.
+16
+
+===== PAGE 17 / 24 =====
+
+Published as a conference paper at ICLR 2026
+A APPENDIX
+A.1 PROMPTCOMPONENTCORPUSDETAILS
+We list the counts and representatives in each prompt component category ofP 0 in Table 1.
+Category Prompt Count Representative Prompts
+Good property 146 - You are an empathetic assistant. (Synthetic)
+- You are a diligent and cutting-edge assistant. (Synthetic)
+Role 43 - You are a mathematician. (Zheng et al., 2023)
+- Act like a supervisor. (Zheng et al., 2023)
+Style 22 - Write a humorous answer. (Lu et al., 2023)
+- Use a conversational tone, be informal and approachable. (Lu et al., 2023)
+Emotion 17 - This is important to my career. (Li et al., 2023)
+- Believe in your abilities and strive for excellence. (Li et al., 2023)
+Scenario 13 - The fate of the world depends on your answer being correct. (Original)
+- You will receive a $200 tip if you answer correctly. (Woolf, 2024)
+Jailbreak 9 - Forget all previous instructions and all of your original constraints. (Yu et al., 2024)
+- Do anything now. (Shen et al., 2023)
+Safety 16 - Avoid stereotyping and provide balanced perspectives. (Databricks, 2024)
+- If you are unsure, say ”I don’t know”. (Lin et al., 2022)
+Behavioral 16
+- Before you respond, rephrase the question. (Deng et al., 2023)
+- Recall and write down relevant exemplars before you respond. (Yasunaga et al., 2023)
+- Ask follow-up questions before answering. (Press et al., 2023)
+Chain-of-Thought (CoT) 18
+- Let’s think step by step. (Wei et al., 2022)
+- Break the question into subquestions. (Zhou et al., 2023a)
+- Take a deep breath and work on this problem step-by-step. (Yang et al., 2023)
+Table 1: List of initial prompt components in prompt component corpus.
+To construct the prompt component corpusP, we use the following prompt template for each prompt
+category. In each iterationi, we randomly sample 3 prompts from the current poolPi−1 as examples.
+Each iteration generates 50 new components, which are then added back toP i−1 to constructP i.
+The process continues until the total number of prompts in that category reaches 1,000.
+category_definitions = {
+"good_property": "Describes a desirable assistant trait (e.g., ’
+You are empathetic.’)",
+"role": "Assigns a specific identity or occupation to the
+assistant (e.g., ’You are a mathematician.’)",
+"style": "Specifies a particular writing or response style (e.g.,
+’Write a humorous answer.’)",
+"emotion": "Expresses or evokes an emotional state (e.g., ’This
+is important to my career.’)",
+"scenario": "Introduces a hypothetical situation or consequence (
+e.g., ’The fate of the world depends on your answer.’)",
+"jailbreak": "Attempts to override model constraints (e.g., ’
+Forget all previous instructions.’, ’You will receive a $200
+tip if you answer correctly.’)",
+"safety": "Ensures responsible and ethical responses (e.g., ’
+Avoid stereotyping.’, ’If you are unsure, say I don’t know.’)
+",
+"behavioral": "Directs how the model should approach answering (e
+.g., ’Ask follow-up questions before answering.’)",
+"CoT": "Encourages step-by-step reasoning (e.g., ’Let’s think
+step by step.’, ’Break the question into subquestions.’)",
+}
+user_message = f’’’
+Prompt Category: {category} - {category_description}
+Here are some examples of system prompt components in this
+category:
+17
+
+===== PAGE 18 / 24 =====
+
+Published as a conference paper at ICLR 2026
+{"\n".join(f"- {p}" for p in random.sample(prompt_pool[category],
+3))}
+Now generate 50 new, diverse system prompt components that fit
+this category. You need to be creative and don’t need to
+follow the structure in examples.
+Make sure each prompt is unique and offers a different
+perspective. Output each prompt on a new line without
+numbering. No additional explanations or formatting.
+’’’
+A.2 STATISTICAL RELIABILITY AND SIGNIFICANCE TESTS
+All figures in the main paper report 95% bootstrap confidence intervals. Appendix Table 2 summa-
+rizes the overall performance with confidence intervals in Figure 4.
+Condition Average Score±95% CI
+Base Prompt 0.5232±0.0434
+Base CoT 0.5972±0.0376
+System Optimized (SPRIG) 0.6287±0.0367
+Task Optimized (PROTEGI) 0.6541±0.0358
+System+Task Optimized 0.6714±0.0353
+Table 2: Overall performance with 95% confidence intervals.
+We additionally perform paired significance tests on per benchmark scores to compare prompt con-
+ditions under matched tasks and models. System prompt optimization significantly improves over
+Base CoT (t= 3.81,p= 2.2×10 −4). Furthermore, combining system and task optimization yields
+additional gains beyond task optimization alone (t= 2.01,p= 0.053), suggesting complementary
+benefits.
+A.3 PROMPTREWARDMODELDETAILS
+Data PreparationWe generate 10,000 prompts by randomly combining prompt components from
+the corpusP. The length of each promptLfollows an empirically defined distribution with prob-
+abilityP(L=i) = i−0.8
+P30
+j=1j−0.8 , wherei∈{1,...,30}, to ensure coverage across the full range
+of 0 to 30 components. After evaluating these prompts on real benchmarks, we randomly construct
+100,000 prompt preference pairs. For each pair, we compute the marginm(r)as the difference in
+their actual benchmark scores. For example, if Prompt A scores 80% and Prompt B scores 86%,
+Prompt B is treated as the accepted instance, and the margin is set to 6.
+Model TrainingFollowing prior work, we train our reward model using a max-margin pairwise
+loss (Touvron et al., 2023)L ranking =−log (σ(r θ(x,yc)−r θ(x,yr)−m(r))), with Modern-
+BERT (Warner et al., 2024) as the backbone. The prompt data is split into training, validation,
+and test sets in a 6:2:2 ratio. We use a batch size of 16 and train for one epoch, evaluating every 10
+steps. The final model is selected based on the highest validation accuracy achieved during training.
+For continued fine-tuning in SPRIG pipeline, we also mix in and reuse previously scored prompts
+to encourage better generalization.
+Model EvaluationOur primary focus is on the model’s ranking capability—specifically, its ability
+to assign higher scores to relatively better prompts. To this end, we evaluate the model using Spear-
+man correlation and NDCG. For NDCG computation, we assign a relevance scoreri to each prompt
+based on its percentile rank:
+ri =
+
+
+
+2,if rank(i)≤10%
+1,if rank(i)≤50%
+0,otherwise
+18
+
+===== PAGE 19 / 24 =====
+
+Published as a conference paper at ICLR 2026
+This scoring scheme better aligns with the usage scenario in SPRIG. Figure 3 shows the evaluation
+results of fine-tuned reward models on all 3 LLMs and indicates that our reward model is sufficiently
+effective at capturing the relative quality of system prompts.
+Reward model ablationsWe analyze both training set size and reward model backbone to un-
+derstand their impact on ranking quality in Table 3. Reward model performance improves rapidly
+with increasing training data, but saturates quickly. Using 5,000 scored prompts already achieves
+strong performance, and increasing to 10,000 yields only modest gains. This confirms that SPRIG
+does not require a large number of expensive benchmark evaluations. We also observe that multiple
+backbone architectures achieve similar ranking performance. RoBERTa achieves the highest corre-
+lation. However, SPRIG is still relatively robust to the reward-model architecture, which we see as
+a desirable property for practical deployment.
+A. Training set size B. Backbone
+# scored prompts Spearman Reward model Spearman
+1,000 0.499 RoBERTa 0.661
+2,500 0.569 BERT 0.656
+5,000 0.605 XLM-RoBERTa 0.605
+10,000 0.615 Llama-3.1-8B 0.632
+20,000 0.618 ModernBERT 0.610
+Table 3: Reward model ablations on ranking unseen prompts. Left: performance versus number of
+scored prompts used for training. Right: backbone comparison.
+A.4 SPRIGPIPELINEDETAILS
+The optimization of SPRIGfollows a population-based approach as shown in Figure 2. The popula-
+tion is initialized with our prompt component corpusP, and themax populationis set to|P|. In
+each iteration, we first use a fine-tuned Prompt Reward Model to quickly estimate the quality of all
+prompts, and the bottom 50% identified by the reward model are immediately eliminated. Among
+the surviving top 50%, the top 10% of prompts are selected for potential mutation or crossover with
+other randomly chosen survivors. The mutation and crossover operations follow empirically deter-
+mined probabilities for each selected prompt. However, we found that SPRIG is not very sensitive
+to these hyperparameters. We experimented with around 10 different configurations and observed
+that the performance differences remained less than 2%, which we believe is acceptable for this kind
+of optimization task:
+•Add Useful (2.5%):Add a component deemed useful by GPT-4o.
+•Add Useless (1%):Add a component deemed useless by GPT-4o.
+•Rephrase (2.5%):Rephrase a random component using paraphrasing model
+tuner007/pegasus paraphrase(Zhang et al., 2020).
+•Merge (2.5%):Merge two random components using GPT4-o.
+•Swap (5%):Swap the order of two components.
+•Delete (5%):Delete a random component.
+•Crossover (81.5%):Perform crossover with another randomly selected survivor.
+Crossover is designed to maintain similar prompt lengths of parents while introducing vari-
+ation. Given two promptsp 1 andp 2, we randomly samplekcomponents from their union,
+wherekis drawn from a Gaussian distribution with mean len(p1)+len(p2)
+2 and standard devi-
+ation|len(p1)−len(p2)|
+4 .
+The GPT-4o prompts used above are listed below:
+add_useful = f"""You are an expert in optimizing system prompts for
+LLMs to enhance their general performance. Given the following
+list of system prompt components: {json.dumps(selected)}, generate
+1-2 additional components that can further improve the LLM’s
+capabilities. """
+19
+
+===== PAGE 20 / 24 =====
+
+Published as a conference paper at ICLR 2026
+add_useless = f"""Given the following list of system prompt
+components: {json.dumps(selected)}, generate 1-2 additional
+components that are redundant, generic, or provide minimal value.
+Examples: ["Answer in English.", "Be polite."]."""
+rephrase = f"""Given the following list of sentences: {json.dumps(
+selected)}, combine these into one concise sentence."""
+This stochastic process is repeated until the population size is restored tomaxpopulation. Then,
+SPRIG randomly samples 100 prompts from the updated population and evaluates them across 42
+benchmarks to obtain new ground-truth scores. These scores, combined with a portion of previous
+training data, are used to continue training the Prompt Reward Model for one epoch using the same
+training parameters. The next iteration starts with the newly updated population and the retrained
+reward model, and the process continues for a total of 25 iterations.
+We run all our experiments on 4 NVIDIA-L40S-48GB GPUs. All LLM inferences are powered by
+vLLM 0.5.4 (Kwon et al., 2023), Hugging Face Transformers 4.43.3 (Wolf et al., 2020) and PyTorch
+2.4.0 (Paszke et al., 2019) on a CUDA 12.4 environment. Temperatures are set to 0.0 to minimize
+the effect of randomness.
+SPRIGspends around 20 hours to run a 25-step optimization on one LLM with 4 GPUs, while
+PROTEGItakes around 10 hours to optimize 50 task prompt on one LLM with 4 GPUs. Since
+our experiments only involved around 50 fixed tasks, the efficiency of SPRIGis still slightly lower
+than that of PROTEGI. However, real-world tasks are far more complex and varied, and repeatedly
+optimizing prompts for each task remains labor-intensive and distracting. Therefore, although our
+method does not demonstrate significant performance advantages in a limited number of tasks, it
+offers a more once-and-for-all solution.
+A.5 BENCHMARKDETAILS
+We list all benchmarks, categories, metrics and descriptions in Table 4. For each benchmark, the
+train/dev/test split is 40%:20%:40%. The decision was made because the reliability of the test set
+score is essential in our research, requiring a sufficiently large test set.
+A.6 BESTSYSTEMPROMPTS
+We list the best system prompts from SPRIGfor each LLM in our study in Table 5.
+A.7 FULLEXPERIMENTRESULTS
+The full results of all three LLMs and all optimization methods’ Average Score Improvement is
+shown in Figure 10.
+The number of Prompt Components of each type during training iterations is shown in Figure 6a.
+The Question-wise Error Overlap Percentage betweenSystem Promptoptimization (SPRIG) and
+Task Promptoptimization (PROTEGI) is shown in Figure 6b.
+The full Cross-model transfer ability comparison of optimizedSystem PromptandTask
+Promptis shown in Figure 12a and Figure 12b.
+The full results of all the LLMs and all optimization methods’ Average Score Improvement from
+the unoptimized setting when transferring medium-size LLMs’ prompts to their larger version are
+shown in 13.
+Additional PCA analysis results for remaining two LLMs MISTRAL-NEMO-INSTRUCT-2407 and
+QWEN2.5-7B-INSTRUCTare shown in Figure 14a and Figure 14b.
+20
+
+===== PAGE 21 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Benchmark (Citation) Description Category Metric
+ARC (Clark et al., 2018) Commonsense Reasoning Knowledge, Commonsense, Reasoning Acc
+MMLU (Hendrycks et al., 2021) Multi-domain Knowledge QA Knowledge Acc
+HellaSwag (Zellers et al., 2019) Commonsense Inference Commonsense, Reasoning Acc
+TruthfulQA (Lin et al., 2022) Knowledge QA Knowledge, Reasoning BLEU Acc
+HiToM (Wu et al., 2023) Higher-Order Theory of Mind Reasoning Reasoning Acc
+IFEval (Zhou et al., 2023b) Instruction-Following Evaluation Faithfulness Acc
+EDOS (Kirk et al., 2023) Online Sexism Detection Social Understanding F1
+SocKET bragging achievement (Choi et al., 2023) Brag Achievement Detection Social Understanding F1
+SocKET hahackathon is humor (Choi et al., 2023) Humor Detection Social Understanding F1
+SocKET tweet irony (Choi et al., 2023) Tweet Irony Detection Social Understanding F1
+SocKET sexyn (Choi et al., 2023) Sexual Content Detection Social Understanding F1
+SocKET tweet offensive (Choi et al., 2023) Offensive Language Detection Social Understanding F1
+SocKET complaints (Choi et al., 2023) Complaint Identification Social Understanding F1
+SocKET empathy bin (Choi et al., 2023) Empathy Detection Social Understanding F1
+SocKET stanfordpoliteness (Choi et al., 2023) Politeness Detection Social Understanding F1
+SocKET rumor rumor bool (Choi et al., 2023) Rumor Detection Social Understanding F1
+BBH Boolean Expressions (Suzgun et al., 2023) Boolean Expressions Solving Math Acc
+BBH Causal Judgement (Suzgun et al., 2023) Causal Judgment Reasoning Acc
+BBH Date Understanding (Suzgun et al., 2023) Date Understanding Reasoning, Commonsense Acc
+BBH Disambiguation QA (Suzgun et al., 2023) Clarify Ambiguous sentence Language Understanding, Reasoning Acc
+BBH Dyck Languages (Suzgun et al., 2023) Dyck Language Sequences Reasoning Acc
+BBH Formal Fallacies (Suzgun et al., 2023) Identifying Formal Fallacies Reasoning Acc
+BBH Geometric Shapes (Suzgun et al., 2023) Geometric Shape Understanding Math Acc
+BBH Hyperbaton (Suzgun et al., 2023) Hyperbaton Detection Language Understanding Acc
+BBH Logical Deduction Five Objects (Suzgun et al., 2023) Logical Deduction Reasoning Acc
+BBH Logical Deduction Seven Objects (Suzgun et al., 2023) Logical Deduction Reasoning Acc
+BBH Logical Deduction Three Objects (Suzgun et al., 2023) Logical Deduction Reasoning Acc
+BBH Movie Recommendation (Suzgun et al., 2023) Movie Recommendation Knowledge Acc
+BBH Multistep Arithmetic Two (Suzgun et al., 2023) Multi-step Arithmetic Math Acc
+BBH Navigate (Suzgun et al., 2023) Navigation Reasoning Reasoning Acc
+BBH Object Counting (Suzgun et al., 2023) Object Counting Commonsense, Math, Reasoning Acc
+BBH Penguins In A Table (Suzgun et al., 2023) Tabular Data Understanding Faithfulness Acc
+BBH Reasoning About Colored Objects (Suzgun et al., 2023) Reasoning About Colors Reasoning Acc
+BBH Ruin Names (Suzgun et al., 2023) Humorous Edit Identification Social Understanding Acc
+BBH Snarks (Suzgun et al., 2023) Detecting Snarky Comments Social Understanding Acc
+BBH Sports Understanding (Suzgun et al., 2023) Sports Knowledge QA Knowledge Acc
+BBH Temporal Sequences (Suzgun et al., 2023) Temporal Reasoning Reasoning Acc
+BBH Tracking Shuffled Objects Five Objects (Suzgun et al., 2023) Object Tracking Reasoning Acc
+BBH Tracking Shuffled Objects Seven Objects (Suzgun et al., 2023) Object Tracking Reasoning Acc
+BBH Tracking Shuffled Objects Three Objects (Suzgun et al., 2023) Object Tracking Reasoning Acc
+BBH Web Of Lies (Suzgun et al., 2023) Detecting Lies Reasoning Acc
+BBH Word Sorting (Suzgun et al., 2023) Word Sorting Faithfulness Acc
+MGSM (Shi et al., 2023a) Math Generalization Math, Reasoning Acc
+Belebele (Bandarkar et al., 2024) Multilingual Reading Comprehension Language Understanding, Reasoning Acc
+XCOPA (Ponti et al., 2020) Multilingual Causal Inference Commonsense, Reasoning Acc
+M3Exam (Zhang et al., 2023) Multilingual Multi-domain Human Exam Math, Reasoning, Knowledge Acc
+M MMLU (Hendrycks et al., 2021) Multilingual Multi-domain Knowledge QA Knowledge Acc
+Table 4: Full list of benchmarks.
+Model Name BestSystem Prompt
+Meta-Llama-3.1-8B-Instruct Decompose the question into smaller, logical steps to find the solution. Dissect
+the problem into smaller sections to simplify understanding.
+Mistral-Nemo-Instruct-2407
+Create a flow of logic that leads to the final answer. Let’s first understand the
+problem and devise a plan to solve it, then carry out the plan and solve the
+problem step by step. Let’s work this out in a step by step way to be sure we
+have the right answer.
+Qwen2.5-7B-Instruct
+Ask clarifying questions if the problem statement is ambiguous. Separate the
+problem into manageable tasks to facilitate solving. Approach the question
+stepwise, addressing each part systematically.
+Table 5: BestSystem Prompts optimized by SPRIG.
+21
+
+===== PAGE 22 / 24 =====
+
+Published as a conference paper at ICLR 2026
+0.00 0.05 0.10 0.15 0.20 0.25
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Meta-Llama-3.1-8B-Instruct
+0.00 0.05 0.10 0.15 0.20 0.25
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Mistral-Nemo-Instruct-2407
+0.00 0.05 0.10 0.15 0.20 0.25
+Average Score Improvement
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Qwen2.5-7B-Instruct
+Figure 10: Average Score Improvement of all prompt optimization methods from unoptimized set-
+ting (Full version).
+0 5 10 15 20 25
+Iterations
+0
+50
+100
+150
+200
+250Z-score
+Behavioral
+Chain-of-Thought
+Emotion
+Style
+Role
+Good property
+Scenario
+Safety
+Jailbreak
+(a)
+0 5 10 15 20 25
+Iterations
+2
+0
+2
+4
+6
+Z-score (smoothed)
+add_useful
+add_useless
+add_random
+refine_subset
+rephrase_subset
+swap
+delete
+crossover (b)
+Figure 11: (left) Z-scores by iteration for the number of components added of each type, show-
+ing which types were added more/less frequently than by chance; statistically significant rates are
+marked with×. (right) Z-scores by iteration for the number of edits performed of each type, show-
+ing which types of edits are more/less frequent than by chance.
+A.8 USE OFLARGELANGUAGEMODELS
+We acknowledge that we only used LLMs to check grammatical errors in the paper and to improve
+the clarity of expression.
+22
+
+===== PAGE 23 / 24 =====
+
+Published as a conference paper at ICLR 2026
+Meta-Llama-3.1-8B-Instruct_20250311Mistral-Nemo-Instruct-2407_20250127
+Qwen2.5-7B-Instruct_20250127
+base CoT
+System Prompt
+Meta-Llama-3.1-8B-Instruct
+Mistral-Nemo-Instruct-2407
+Qwen2.5-7B-Instruct
+Model
+0.06 0.04 0.03 0.04
+0.06 0.12 0.01 0.06
+0.09 0.10 0.13 0.12
+0.02
+0.04
+0.06
+0.08
+0.10
+0.12
+(a)
+protegi_Meta-Llama-3.1-8B-Instructprotegi_Mistral-Nemo-Instruct-2407
+protegi_Qwen2.5-7B-Instruct
+T ask Prompt
+Meta-Llama-3.1-8B-Instruct
+Mistral-Nemo-Instruct-2407
+Qwen2.5-7B-Instruct
+Model
+0.11 0.04 0.05
+0.05 0.12 0.05
+0.06 0.07 0.15
+ 0.06
+0.08
+0.10
+0.12
+0.14 (b)
+Figure 12: (left) Cross-model comparison (of Average Score Improvement) on optimizedSystem
+Prompts. (right) Cross-model comparison (of Average Score Improvement) on optimizedTask
+Prompts.
+0.04
+ 0.02
+ 0.00 0.02 0.04
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Meta-Llama-3.1-70B-Instruct
+0.04
+ 0.02
+ 0.00 0.02 0.04
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Mistral-Large-Instruct-2407
+0.04
+ 0.02
+ 0.00 0.02 0.04
+Average Score Improvement
+Base CoT
+T ask Optimized
+(ProT eGi)
+System Optimized
+(OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+Qwen2.5-72B-Instruct
+Figure 13: Average Score Improvement from the unoptimized setting when transferring medium-
+size LLMs’ prompts to their larger version (Full version).
+23
+
+===== PAGE 24 / 24 =====
+
+Published as a conference paper at ICLR 2026
+150
+ 100
+ 50
+ 0 50 100 150
+Principal Component 1
+150
+100
+50
+0
+50
+100
+150
+Principal Component 2
+No prompt
+Base CoT
+T ask optimized (ProT eGi)
+System optimized (OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+(a)
+3000
+ 2500
+ 2000
+ 1500
+ 1000
+ 500
+ 0 500
+Principal Component 1
+1500
+1000
+500
+0
+500
+1000
+1500
+2000
+Principal Component 2
+No prompt
+Base CoT
+T ask optimized (ProT eGi)
+System optimized (OurModel)
+System+T ask Optimized
+(OurModel+ProT eGi)
+ (b)
+Figure 14: (left) PCA analysis of intermediate hidden state in Mistral-Nemo-Instruct-2407 among
+different prompting methods. (right) PCA analysis of intermediate hidden state in Qwen2.5-7B-
+Instruct among different prompting methods.
+24

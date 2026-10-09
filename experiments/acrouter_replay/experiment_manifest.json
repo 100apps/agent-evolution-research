@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "evidence_level": "公开工件回放",
+  "command": "python experiments/acrouter_replay/run.py --output-dir <OUTPUT_DIR>",
+  "determinism": "无随机数；按发布 ids 顺序确定性遍历",
+  "seed": null,
+  "input_files": [
+    {
+      "path": "experiments/acrouter_replay/data/matrix_acrouter_ood176.json",
+      "sha256": "f0fe49db24cf2c1d5552a1dd512544676825e0e4f34e136f194fecd9c022c15a",
+      "shape": "176 tasks × 8 model backends"
+    }
+  ],
+  "configuration": {
+    "cheap_chain": [
+      "MiniMax-M2.7",
+      "kimi-k2.5",
+      "gpt-5.4",
+      "glm-5"
+    ],
+    "escalation_model": "claude-opus-4-6",
+    "gate": "only after all four cheap models fail and apply_ok count >= 2",
+    "utility": "resolved - 0.1 * total_attempt_cost_usd",
+    "oracle": "per-task max over one-model utilities"
+  },
+  "expected": {
+    "source": "发布工件参考检查",
+    "avg_perf_percent_rounded_2": 73.3,
+    "cumulative_regret_rounded_1": 15.9,
+    "historical_cost_usd_rounded_2": 86.72,
+    "escalations": 29,
+    "avg_steps_rounded_2": 2.66
+  },
+  "actual": {
+    "avg_perf_percent": 73.29545454545455,
+    "cumulative_regret": 15.909639838000004,
+    "historical_estimated_total_cost_usd": 86.71817485,
+    "escalations": 29,
+    "avg_steps": 2.664772727272727,
+    "reference_checks": {
+      "tasks_176": true,
+      "avg_perf_rounds_to_73_30": true,
+      "cumulative_regret_rounds_to_15_9": true,
+      "historical_cost_rounds_to_86_72": true,
+      "escalations_29": true,
+      "avg_steps_rounds_to_2_66": true
+    }
+  },
+  "tolerance": "按发布参考口径分别四舍五入到 2、1、2、整数、2 位；逐题字段要求精确",
+  "boundary": "固定顺序 cascade 的发布矩阵重放；非跨任务在线学习；数值与论文 v3 Table 3 口径不同",
+  "code": {
+    "path": "experiments/acrouter_replay/run.py",
+    "sha256": "876f15543a69a712d82c489300166adedeb34e6fb5e92de8fcaa63411760459b",
+    "repository_commit": "see enclosing Git commit"
+  },
+  "environment": {
+    "python": "3.14.3",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "external_model_calls": 0,
+    "paid_api_cost_usd": 0
+  },
+  "outputs": [
+    {
+      "path": "experiments/acrouter_replay/results.json",
+      "sha256": "486e756d09a6f06f7a6323fe7324ad83185a0fdc5fe7f55b716c44e140014f50",
+      "bytes": 6813
+    },
+    {
+      "path": "experiments/acrouter_replay/decisions.csv",
+      "sha256": "aa8bfd0ac341f5d5c6b146e09e0e2d0aa2c52c7603f459803092a8668933512f",
+      "bytes": 315077
+    },
+    {
+      "path": "experiments/acrouter_replay/run.log",
+      "sha256": "3284f0975755e757e9fd86bc04d4f694d07fb9984d9044c847aa7d0af58e298f",
+      "bytes": 608
+    }
+  ]
+}
