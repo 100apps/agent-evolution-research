@@ -33,7 +33,7 @@
 
 ## 快速开始
 
-私有仓库需要相应 GitHub 权限：
+公开仓库可直接克隆：
 
 ```bash
 git clone https://github.com/100apps/agent-evolution-research.git

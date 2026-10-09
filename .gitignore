@@ -10,4 +10,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .library_*/
+.pages-build/
 

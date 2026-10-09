@@ -1,0 +1,61 @@
+name: Deploy public research report
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install locked build dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Build public-safe report
+        run: python tools/build_public_site.py --repo . --staging .pages-build
+      - name: Enforce Pages artifact allowlist
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f .pages-build/dist/index.html
+          test -f .pages-build/dist/.nojekyll
+          test "$(find .pages-build/dist -type f | sort | tr '\n' ' ')" = ".pages-build/dist/.nojekyll .pages-build/dist/index.html "
+          ! find .pages-build/dist -type f \( -iname '*.pdf' -o -iname '*.log' -o -iname '*.json' -o -iname '*.csv' -o -iname '*.md' \) | grep -q .
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('.pages-build/build_manifest.json').read_text(encoding='utf-8'))
+          assert manifest['registered_papers'] == 39
+          assert manifest['converted_local_pdf_links'] == 39
+          assert manifest['embedded_panorama_images'] == 1
+          assert manifest['remaining_relative_links'] == []
+          assert manifest['privacy_hits'] == []
+          PY
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .pages-build/dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
