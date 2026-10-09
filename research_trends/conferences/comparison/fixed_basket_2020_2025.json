@@ -1,0 +1,2342 @@
+[
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "modern_foundation_llm",
+    "venue_count": 9,
+    "count": 0,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.0,
+    "equal_venue_weight_share_pct": 0.0
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "historical_pretrained",
+    "venue_count": 9,
+    "count": 48,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.7411982705373688,
+    "equal_venue_weight_share_pct": 0.7392228113084605
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "modern_or_historical",
+    "venue_count": 9,
+    "count": 48,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.7411982705373688,
+    "equal_venue_weight_share_pct": 0.7392228113084605
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "language_model_context",
+    "venue_count": 9,
+    "count": 89,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.3743051266213713,
+    "equal_venue_weight_share_pct": 1.3400212447615443
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "reasoning",
+    "venue_count": 9,
+    "count": 68,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.0500308832612724,
+    "equal_venue_weight_share_pct": 0.9826669068266537
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "testtime_compute",
+    "venue_count": 9,
+    "count": 1,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.015441630636195183,
+    "equal_venue_weight_share_pct": 0.01025010250102501
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "reasoning_testtime",
+    "venue_count": 9,
+    "count": 69,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.0654725138974677,
+    "equal_venue_weight_share_pct": 0.9929170093276787
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "agents_broad",
+    "venue_count": 9,
+    "count": 71,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.0963557751698578,
+    "equal_venue_weight_share_pct": 0.7566989948222568
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "agents_language_action_strict",
+    "venue_count": 9,
+    "count": 0,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.0,
+    "equal_venue_weight_share_pct": 0.0
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "pretraining_explicit",
+    "venue_count": 9,
+    "count": 32,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.49413218035824585,
+    "equal_venue_weight_share_pct": 0.5091841883492175
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "pretrained_usage_cue",
+    "venue_count": 9,
+    "count": 29,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.4478072884496603,
+    "equal_venue_weight_share_pct": 0.4082886910490245
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "self_supervision",
+    "venue_count": 9,
+    "count": 106,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.6368128474366894,
+    "equal_venue_weight_share_pct": 1.0055496246527644
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "posttraining_named_broad",
+    "venue_count": 9,
+    "count": 3,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.04632489190858555,
+    "equal_venue_weight_share_pct": 0.02635432044520656
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "posttraining_model_context",
+    "venue_count": 9,
+    "count": 0,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.0,
+    "equal_venue_weight_share_pct": 0.0
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "posttraining_context",
+    "venue_count": 9,
+    "count": 143,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 2.208153180975911,
+    "equal_venue_weight_share_pct": 2.0043123443960895
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "finetuning_adaptation",
+    "venue_count": 9,
+    "count": 12,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.1852995676343422,
+    "equal_venue_weight_share_pct": 0.3289823221060596
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "retrieval",
+    "venue_count": 9,
+    "count": 80,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.2353304508956147,
+    "equal_venue_weight_share_pct": 2.460800126873664
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "recommendation",
+    "venue_count": 9,
+    "count": 99,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.528721432983323,
+    "equal_venue_weight_share_pct": 5.749237475530602
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "retrieval_recommendation",
+    "venue_count": 9,
+    "count": 177,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 2.7331686226065472,
+    "equal_venue_weight_share_pct": 8.11827843391397
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "coding_software",
+    "venue_count": 9,
+    "count": 113,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.7449042618900557,
+    "equal_venue_weight_share_pct": 4.644244188019638
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "generative",
+    "venue_count": 9,
+    "count": 305,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 4.70969734403953,
+    "equal_venue_weight_share_pct": 3.4025914953344247
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "diffusion",
+    "venue_count": 9,
+    "count": 7,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.10809141445336627,
+    "equal_venue_weight_share_pct": 0.05149586944255551
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "multimodal",
+    "venue_count": 9,
+    "count": 89,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.3743051266213713,
+    "equal_venue_weight_share_pct": 1.4437037907085992
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "efficiency",
+    "venue_count": 9,
+    "count": 448,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 6.917850525015441,
+    "equal_venue_weight_share_pct": 6.183064307487583
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "inference_serving_gpu",
+    "venue_count": 9,
+    "count": 11,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.169857936998147,
+    "equal_venue_weight_share_pct": 0.6853055446184966
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "theory_optimization",
+    "venue_count": 9,
+    "count": 667,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 10.299567634342187,
+    "equal_venue_weight_share_pct": 7.151202431849793
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "evaluation",
+    "venue_count": 9,
+    "count": 180,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 2.7794935145151327,
+    "equal_venue_weight_share_pct": 2.9378098174438376
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "safety_security",
+    "venue_count": 9,
+    "count": 512,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 7.906114885731934,
+    "equal_venue_weight_share_pct": 7.959402755825773
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "evaluation_safety",
+    "venue_count": 9,
+    "count": 671,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 10.361334156886967,
+    "equal_venue_weight_share_pct": 10.579189012150295
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "traditional_statistics",
+    "venue_count": 9,
+    "count": 348,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 5.373687461395924,
+    "equal_venue_weight_share_pct": 3.9338530692086118
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "rl_control",
+    "venue_count": 9,
+    "count": 391,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 6.037677578752316,
+    "equal_venue_weight_share_pct": 4.704001014124912
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "graphs",
+    "venue_count": 9,
+    "count": 394,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 6.084002470660902,
+    "equal_venue_weight_share_pct": 7.498521767413432
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "nlp_translation_syntax",
+    "venue_count": 9,
+    "count": 163,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 2.516985793699815,
+    "equal_venue_weight_share_pct": 2.4126864522943148
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "nlp_extraction_qa",
+    "venue_count": 9,
+    "count": 71,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.0963557751698578,
+    "equal_venue_weight_share_pct": 1.1952267195355133
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "vision_recognition_detection",
+    "venue_count": 9,
+    "count": 352,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 5.435453983940704,
+    "equal_venue_weight_share_pct": 2.9963392694065707
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "vision_geometry_rendering",
+    "venue_count": 9,
+    "count": 275,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 4.246448424953675,
+    "equal_venue_weight_share_pct": 2.5028180316817665
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "software_testing_analysis",
+    "venue_count": 9,
+    "count": 77,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 1.189005558987029,
+    "equal_venue_weight_share_pct": 4.141005173532829
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "systems_storage_networking",
+    "venue_count": 9,
+    "count": 37,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 0.5713403335392218,
+    "equal_venue_weight_share_pct": 3.513979708669928
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2020,
+    "topic": "mining_temporal_anomaly",
+    "venue_count": 9,
+    "count": 202,
+    "denominator": 6476,
+    "observed_paper_weighted_share_pct": 3.1192093885114267,
+    "equal_venue_weight_share_pct": 3.050180740101091
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "modern_foundation_llm",
+    "venue_count": 9,
+    "count": 1,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.01368738023542294,
+    "equal_venue_weight_share_pct": 0.004760544606302961
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "historical_pretrained",
+    "venue_count": 9,
+    "count": 55,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.7528059129482617,
+    "equal_venue_weight_share_pct": 0.9583692113084263
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "modern_or_historical",
+    "venue_count": 9,
+    "count": 56,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.7664932931836846,
+    "equal_venue_weight_share_pct": 0.9631297559147293
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "language_model_context",
+    "venue_count": 9,
+    "count": 108,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.4782370654256776,
+    "equal_venue_weight_share_pct": 1.6837437279913674
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "reasoning",
+    "venue_count": 9,
+    "count": 79,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.0813030385984124,
+    "equal_venue_weight_share_pct": 1.197279131840555
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "testtime_compute",
+    "venue_count": 9,
+    "count": 1,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.01368738023542294,
+    "equal_venue_weight_share_pct": 0.004760544606302961
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "reasoning_testtime",
+    "venue_count": 9,
+    "count": 80,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.0949904188338353,
+    "equal_venue_weight_share_pct": 1.2020396764468577
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "agents_broad",
+    "venue_count": 9,
+    "count": 80,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.0949904188338353,
+    "equal_venue_weight_share_pct": 0.670281286053282
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "agents_language_action_strict",
+    "venue_count": 9,
+    "count": 0,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.0,
+    "equal_venue_weight_share_pct": 0.0
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "pretraining_explicit",
+    "venue_count": 9,
+    "count": 63,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.8623049548316453,
+    "equal_venue_weight_share_pct": 0.8787989200424415
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "pretrained_usage_cue",
+    "venue_count": 9,
+    "count": 47,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.6433068710648782,
+    "equal_venue_weight_share_pct": 0.7522052411601979
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "self_supervision",
+    "venue_count": 9,
+    "count": 190,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 2.6006022447303585,
+    "equal_venue_weight_share_pct": 1.999510112074039
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "posttraining_named_broad",
+    "venue_count": 9,
+    "count": 4,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.05474952094169176,
+    "equal_venue_weight_share_pct": 0.03183330293805757
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "posttraining_model_context",
+    "venue_count": 9,
+    "count": 0,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.0,
+    "equal_venue_weight_share_pct": 0.0
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "posttraining_context",
+    "venue_count": 9,
+    "count": 174,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 2.3816041609635916,
+    "equal_venue_weight_share_pct": 2.3188599292614445
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "finetuning_adaptation",
+    "venue_count": 9,
+    "count": 41,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.5611825896523406,
+    "equal_venue_weight_share_pct": 0.44977257913546903
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "retrieval",
+    "venue_count": 9,
+    "count": 123,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.6835477689570215,
+    "equal_venue_weight_share_pct": 3.8664252359932285
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "recommendation",
+    "venue_count": 9,
+    "count": 94,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.2866137421297563,
+    "equal_venue_weight_share_pct": 4.869678165213931
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "retrieval_recommendation",
+    "venue_count": 9,
+    "count": 215,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 2.942786750615932,
+    "equal_venue_weight_share_pct": 8.588936366622907
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "coding_software",
+    "venue_count": 9,
+    "count": 98,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.341363263071448,
+    "equal_venue_weight_share_pct": 4.18396791036185
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "generative",
+    "venue_count": 9,
+    "count": 339,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 4.640021899808377,
+    "equal_venue_weight_share_pct": 3.606120758115534
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "diffusion",
+    "venue_count": 9,
+    "count": 32,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.4379961675335341,
+    "equal_venue_weight_share_pct": 0.39600666746822044
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "multimodal",
+    "venue_count": 9,
+    "count": 103,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.409800164248563,
+    "equal_venue_weight_share_pct": 1.7538084063781914
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "efficiency",
+    "venue_count": 9,
+    "count": 551,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 7.54174650971804,
+    "equal_venue_weight_share_pct": 7.934343096327227
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "inference_serving_gpu",
+    "venue_count": 9,
+    "count": 8,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.10949904188338352,
+    "equal_venue_weight_share_pct": 0.5438012686153908
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "theory_optimization",
+    "venue_count": 9,
+    "count": 809,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 11.07309061045716,
+    "equal_venue_weight_share_pct": 8.220587670500924
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "evaluation",
+    "venue_count": 9,
+    "count": 211,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 2.8880372296742403,
+    "equal_venue_weight_share_pct": 3.1644225073315333
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "safety_security",
+    "venue_count": 9,
+    "count": 597,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 8.171366000547495,
+    "equal_venue_weight_share_pct": 9.494912122428502
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "evaluation_safety",
+    "venue_count": 9,
+    "count": 792,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 10.840405146454968,
+    "equal_venue_weight_share_pct": 12.496236248330808
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "traditional_statistics",
+    "venue_count": 9,
+    "count": 424,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 5.803449219819327,
+    "equal_venue_weight_share_pct": 4.096174120323928
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "rl_control",
+    "venue_count": 9,
+    "count": 504,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 6.898439638653162,
+    "equal_venue_weight_share_pct": 5.265438330002144
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "graphs",
+    "venue_count": 9,
+    "count": 414,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 5.666575417465097,
+    "equal_venue_weight_share_pct": 8.464234483048676
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "nlp_translation_syntax",
+    "venue_count": 9,
+    "count": 132,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.806734191075828,
+    "equal_venue_weight_share_pct": 1.9094104514296926
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "nlp_extraction_qa",
+    "venue_count": 9,
+    "count": 104,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.4234875444839858,
+    "equal_venue_weight_share_pct": 1.5845918161877819
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "vision_recognition_detection",
+    "venue_count": 9,
+    "count": 426,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 5.830823980290172,
+    "equal_venue_weight_share_pct": 3.3823652939431255
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "vision_geometry_rendering",
+    "venue_count": 9,
+    "count": 347,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 4.7495209416917605,
+    "equal_venue_weight_share_pct": 2.501435092980255
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "software_testing_analysis",
+    "venue_count": 9,
+    "count": 78,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 1.0676156583629892,
+    "equal_venue_weight_share_pct": 3.1391942845324508
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "systems_storage_networking",
+    "venue_count": 9,
+    "count": 30,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 0.4106214070626882,
+    "equal_venue_weight_share_pct": 3.9374639895389283
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2021,
+    "topic": "mining_temporal_anomaly",
+    "venue_count": 9,
+    "count": 263,
+    "denominator": 7306,
+    "observed_paper_weighted_share_pct": 3.599781001916233,
+    "equal_venue_weight_share_pct": 3.565230087347226
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "modern_foundation_llm",
+    "venue_count": 9,
+    "count": 20,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.23716352424997036,
+    "equal_venue_weight_share_pct": 0.19339235351928663
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "historical_pretrained",
+    "venue_count": 9,
+    "count": 71,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.8419305110873948,
+    "equal_venue_weight_share_pct": 1.2181081029562824
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "modern_or_historical",
+    "venue_count": 9,
+    "count": 91,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.079094035337365,
+    "equal_venue_weight_share_pct": 1.4115004564755689
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "language_model_context",
+    "venue_count": 9,
+    "count": 182,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 2.15818807067473,
+    "equal_venue_weight_share_pct": 2.380843766829933
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "reasoning",
+    "venue_count": 9,
+    "count": 76,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.9012213921498874,
+    "equal_venue_weight_share_pct": 1.1922951650307172
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "testtime_compute",
+    "venue_count": 9,
+    "count": 7,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.08300723348748962,
+    "equal_venue_weight_share_pct": 0.036365740187921596
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "reasoning_testtime",
+    "venue_count": 9,
+    "count": 83,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.984228625637377,
+    "equal_venue_weight_share_pct": 1.2286609052186388
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "agents_broad",
+    "venue_count": 9,
+    "count": 93,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.102810387762362,
+    "equal_venue_weight_share_pct": 0.7811389299575731
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "agents_language_action_strict",
+    "venue_count": 9,
+    "count": 1,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.011858176212498519,
+    "equal_venue_weight_share_pct": 0.009011444534558889
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "pretraining_explicit",
+    "venue_count": 9,
+    "count": 154,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.8261591367247718,
+    "equal_venue_weight_share_pct": 1.9886608130136925
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "pretrained_usage_cue",
+    "venue_count": 9,
+    "count": 80,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.9486540969998815,
+    "equal_venue_weight_share_pct": 1.185093099703737
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "self_supervision",
+    "venue_count": 9,
+    "count": 275,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 3.2609984584370926,
+    "equal_venue_weight_share_pct": 2.8291283071412665
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "posttraining_named_broad",
+    "venue_count": 9,
+    "count": 9,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.10672358591248667,
+    "equal_venue_weight_share_pct": 0.055462579685111396
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "posttraining_model_context",
+    "venue_count": 9,
+    "count": 1,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.011858176212498519,
+    "equal_venue_weight_share_pct": 0.004159906818087275
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "posttraining_context",
+    "venue_count": 9,
+    "count": 298,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 3.5337365113245585,
+    "equal_venue_weight_share_pct": 3.369184977238884
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "finetuning_adaptation",
+    "venue_count": 9,
+    "count": 54,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.6403415154749199,
+    "equal_venue_weight_share_pct": 0.5322779961101263
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "retrieval",
+    "venue_count": 9,
+    "count": 127,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.5059883789873119,
+    "equal_venue_weight_share_pct": 3.32392605182808
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "recommendation",
+    "venue_count": 9,
+    "count": 115,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.3636902644373294,
+    "equal_venue_weight_share_pct": 6.084040281213595
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "retrieval_recommendation",
+    "venue_count": 9,
+    "count": 238,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 2.822245938574647,
+    "equal_venue_weight_share_pct": 9.261620294422755
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "coding_software",
+    "venue_count": 9,
+    "count": 134,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.5889956124748015,
+    "equal_venue_weight_share_pct": 5.158136513315962
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "generative",
+    "venue_count": 9,
+    "count": 388,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 4.6009723704494245,
+    "equal_venue_weight_share_pct": 3.1795449090915135
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "diffusion",
+    "venue_count": 9,
+    "count": 77,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.9130795683623859,
+    "equal_venue_weight_share_pct": 0.5236637610862901
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "multimodal",
+    "venue_count": 9,
+    "count": 188,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 2.229337127949721,
+    "equal_venue_weight_share_pct": 2.0043176657459476
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "efficiency",
+    "venue_count": 9,
+    "count": 719,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 8.526028696786435,
+    "equal_venue_weight_share_pct": 7.925811535400634
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "inference_serving_gpu",
+    "venue_count": 9,
+    "count": 12,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.1422981145499822,
+    "equal_venue_weight_share_pct": 0.7296856336851378
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "theory_optimization",
+    "venue_count": 9,
+    "count": 898,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 10.648642238823669,
+    "equal_venue_weight_share_pct": 7.600004175296146
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "evaluation",
+    "venue_count": 9,
+    "count": 231,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 2.7392387050871574,
+    "equal_venue_weight_share_pct": 2.9175747816927786
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "safety_security",
+    "venue_count": 9,
+    "count": 725,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 8.597177754061425,
+    "equal_venue_weight_share_pct": 9.116652932836391
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "evaluation_safety",
+    "venue_count": 9,
+    "count": 923,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 10.945096644136132,
+    "equal_venue_weight_share_pct": 11.603940895434295
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "traditional_statistics",
+    "venue_count": 9,
+    "count": 456,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 5.407328352899324,
+    "equal_venue_weight_share_pct": 4.295133356750705
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "rl_control",
+    "venue_count": 9,
+    "count": 554,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 6.569429621724179,
+    "equal_venue_weight_share_pct": 4.8241575800473795
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "graphs",
+    "venue_count": 9,
+    "count": 466,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 5.525910115024309,
+    "equal_venue_weight_share_pct": 8.409110686462073
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "nlp_translation_syntax",
+    "venue_count": 9,
+    "count": 135,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.6008537886873,
+    "equal_venue_weight_share_pct": 1.9529265939476135
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "nlp_extraction_qa",
+    "venue_count": 9,
+    "count": 78,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.9249377445748844,
+    "equal_venue_weight_share_pct": 1.3751334596830862
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "vision_recognition_detection",
+    "venue_count": 9,
+    "count": 498,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 5.905371753824262,
+    "equal_venue_weight_share_pct": 3.1387408481776937
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "vision_geometry_rendering",
+    "venue_count": 9,
+    "count": 475,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 5.632633700936796,
+    "equal_venue_weight_share_pct": 2.817419383454013
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "software_testing_analysis",
+    "venue_count": 9,
+    "count": 102,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 1.2095339736748487,
+    "equal_venue_weight_share_pct": 4.9478663300914985
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "systems_storage_networking",
+    "venue_count": 9,
+    "count": 20,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 0.23716352424997036,
+    "equal_venue_weight_share_pct": 1.7234820526844556
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2022,
+    "topic": "mining_temporal_anomaly",
+    "venue_count": 9,
+    "count": 300,
+    "denominator": 8433,
+    "observed_paper_weighted_share_pct": 3.5574528637495555,
+    "equal_venue_weight_share_pct": 3.4408064537209464
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "modern_foundation_llm",
+    "venue_count": 9,
+    "count": 168,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.557285873192436,
+    "equal_venue_weight_share_pct": 1.2581086349423765
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "historical_pretrained",
+    "venue_count": 9,
+    "count": 63,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.5839822024471635,
+    "equal_venue_weight_share_pct": 0.8183851537269378
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "modern_or_historical",
+    "venue_count": 9,
+    "count": 231,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 2.1412680756395996,
+    "equal_venue_weight_share_pct": 2.0764937886693144
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "language_model_context",
+    "venue_count": 9,
+    "count": 478,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 4.430849091583241,
+    "equal_venue_weight_share_pct": 4.027706906600331
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "reasoning",
+    "venue_count": 9,
+    "count": 159,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.4738598442714126,
+    "equal_venue_weight_share_pct": 1.771036167031448
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "testtime_compute",
+    "venue_count": 9,
+    "count": 2,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.01853911753800519,
+    "equal_venue_weight_share_pct": 0.008174904390597197
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "reasoning_testtime",
+    "venue_count": 9,
+    "count": 161,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.4923989618094178,
+    "equal_venue_weight_share_pct": 1.7792110714220455
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "agents_broad",
+    "venue_count": 9,
+    "count": 116,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.075268817204301,
+    "equal_venue_weight_share_pct": 0.7499055738693695
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "agents_language_action_strict",
+    "venue_count": 9,
+    "count": 6,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.05561735261401557,
+    "equal_venue_weight_share_pct": 0.023342289458895587
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "pretraining_explicit",
+    "venue_count": 9,
+    "count": 214,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.9836855765665555,
+    "equal_venue_weight_share_pct": 1.8735603614559544
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "pretrained_usage_cue",
+    "venue_count": 9,
+    "count": 129,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.1957730812013347,
+    "equal_venue_weight_share_pct": 1.4998952686351534
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "self_supervision",
+    "venue_count": 9,
+    "count": 297,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 2.753058954393771,
+    "equal_venue_weight_share_pct": 2.5641521364818587
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "posttraining_named_broad",
+    "venue_count": 9,
+    "count": 18,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.1668520578420467,
+    "equal_venue_weight_share_pct": 0.09403441438490423
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "posttraining_model_context",
+    "venue_count": 9,
+    "count": 5,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.046347793845012975,
+    "equal_venue_weight_share_pct": 0.028041910278237422
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "posttraining_context",
+    "venue_count": 9,
+    "count": 816,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 7.563959955506118,
+    "equal_venue_weight_share_pct": 5.728043761745715
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "finetuning_adaptation",
+    "venue_count": 9,
+    "count": 125,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.1586948461253244,
+    "equal_venue_weight_share_pct": 0.9473479536776424
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "retrieval",
+    "venue_count": 9,
+    "count": 166,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.5387467556544308,
+    "equal_venue_weight_share_pct": 2.78091947876465
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "recommendation",
+    "venue_count": 9,
+    "count": 141,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.3070077864293659,
+    "equal_venue_weight_share_pct": 6.289129144350482
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "retrieval_recommendation",
+    "venue_count": 9,
+    "count": 302,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 2.7994067482387837,
+    "equal_venue_weight_share_pct": 8.915501482547358
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "coding_software",
+    "venue_count": 9,
+    "count": 189,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.7519466073414904,
+    "equal_venue_weight_share_pct": 5.517386494158604
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "generative",
+    "venue_count": 9,
+    "count": 801,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 7.424916573971079,
+    "equal_venue_weight_share_pct": 5.109421250727778
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "diffusion",
+    "venue_count": 9,
+    "count": 421,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 3.9024842417500927,
+    "equal_venue_weight_share_pct": 2.238315034165657
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "multimodal",
+    "venue_count": 9,
+    "count": 320,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 2.9662588060808304,
+    "equal_venue_weight_share_pct": 2.5165027388028367
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "efficiency",
+    "venue_count": 9,
+    "count": 944,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 8.75046347793845,
+    "equal_venue_weight_share_pct": 8.848747194258447
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "inference_serving_gpu",
+    "venue_count": 9,
+    "count": 16,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.14831294030404152,
+    "equal_venue_weight_share_pct": 0.47165201120048816
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "theory_optimization",
+    "venue_count": 9,
+    "count": 1091,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 10.113088616981832,
+    "equal_venue_weight_share_pct": 7.212584117814327
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "evaluation",
+    "venue_count": 9,
+    "count": 317,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 2.938450129773823,
+    "equal_venue_weight_share_pct": 2.938546008469595
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "safety_security",
+    "venue_count": 9,
+    "count": 873,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 8.092324805339265,
+    "equal_venue_weight_share_pct": 8.429613810147455
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "evaluation_safety",
+    "venue_count": 9,
+    "count": 1153,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 10.687801260659992,
+    "equal_venue_weight_share_pct": 10.983137301682817
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "traditional_statistics",
+    "venue_count": 9,
+    "count": 574,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 5.32072673340749,
+    "equal_venue_weight_share_pct": 4.261113039373322
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "rl_control",
+    "venue_count": 9,
+    "count": 664,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 6.154987022617723,
+    "equal_venue_weight_share_pct": 5.224634854081483
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "graphs",
+    "venue_count": 9,
+    "count": 591,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 5.478309232480534,
+    "equal_venue_weight_share_pct": 8.752375756249215
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "nlp_translation_syntax",
+    "venue_count": 9,
+    "count": 151,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.3997033741193918,
+    "equal_venue_weight_share_pct": 1.485139540730375
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "nlp_extraction_qa",
+    "venue_count": 9,
+    "count": 130,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.2050426399703373,
+    "equal_venue_weight_share_pct": 1.5826529628733836
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "vision_recognition_detection",
+    "venue_count": 9,
+    "count": 575,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 5.329996292176492,
+    "equal_venue_weight_share_pct": 3.2625385765053867
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "vision_geometry_rendering",
+    "venue_count": 9,
+    "count": 697,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 6.460882461994809,
+    "equal_venue_weight_share_pct": 3.7927698412465256
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "software_testing_analysis",
+    "venue_count": 9,
+    "count": 112,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 1.0381905821282906,
+    "equal_venue_weight_share_pct": 4.11178181282757
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "systems_storage_networking",
+    "venue_count": 9,
+    "count": 42,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 0.389321468298109,
+    "equal_venue_weight_share_pct": 3.2946191759506656
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2023,
+    "topic": "mining_temporal_anomaly",
+    "venue_count": 9,
+    "count": 442,
+    "denominator": 10788,
+    "observed_paper_weighted_share_pct": 4.097144975899147,
+    "equal_venue_weight_share_pct": 4.125778848088917
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "modern_foundation_llm",
+    "venue_count": 9,
+    "count": 1381,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 10.34999625271678,
+    "equal_venue_weight_share_pct": 12.857398175336055
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "historical_pretrained",
+    "venue_count": 9,
+    "count": 19,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.1423967623472982,
+    "equal_venue_weight_share_pct": 0.1770929856045975
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "modern_or_historical",
+    "venue_count": 9,
+    "count": 1400,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 10.492393015064078,
+    "equal_venue_weight_share_pct": 13.034491160940654
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "language_model_context",
+    "venue_count": 9,
+    "count": 1865,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 13.97736640935322,
+    "equal_venue_weight_share_pct": 16.03092663060012
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "reasoning",
+    "venue_count": 9,
+    "count": 244,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.8286742111968823,
+    "equal_venue_weight_share_pct": 2.1338055668426623
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "testtime_compute",
+    "venue_count": 9,
+    "count": 8,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.05995653151465188,
+    "equal_venue_weight_share_pct": 0.028206833941249874
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "reasoning_testtime",
+    "venue_count": 9,
+    "count": 252,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.888630742711534,
+    "equal_venue_weight_share_pct": 2.162012400783912
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "agents_broad",
+    "venue_count": 9,
+    "count": 248,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.858652476954208,
+    "equal_venue_weight_share_pct": 1.719500659659989
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "agents_language_action_strict",
+    "venue_count": 9,
+    "count": 77,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.5770816158285244,
+    "equal_venue_weight_share_pct": 0.5704079997653052
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "pretraining_explicit",
+    "venue_count": 9,
+    "count": 165,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.2366034624896949,
+    "equal_venue_weight_share_pct": 1.2568512029619414
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "pretrained_usage_cue",
+    "venue_count": 9,
+    "count": 103,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.7719403432511429,
+    "equal_venue_weight_share_pct": 0.8511402663362234
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "self_supervision",
+    "venue_count": 9,
+    "count": 212,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.5888480851382747,
+    "equal_venue_weight_share_pct": 1.4805428036186983
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "posttraining_named_broad",
+    "venue_count": 9,
+    "count": 86,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.6445327137825076,
+    "equal_venue_weight_share_pct": 0.38577888427817925
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "posttraining_model_context",
+    "venue_count": 9,
+    "count": 25,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.18736416098328712,
+    "equal_venue_weight_share_pct": 0.11819530773707385
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "posttraining_context",
+    "venue_count": 9,
+    "count": 2520,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 18.88630742711534,
+    "equal_venue_weight_share_pct": 19.103674624377803
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "finetuning_adaptation",
+    "venue_count": 9,
+    "count": 328,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 2.458217792100727,
+    "equal_venue_weight_share_pct": 2.1337111493278087
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "retrieval",
+    "venue_count": 9,
+    "count": 241,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.806190511878888,
+    "equal_venue_weight_share_pct": 4.3026080284710595
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "recommendation",
+    "venue_count": 9,
+    "count": 165,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.2366034624896949,
+    "equal_venue_weight_share_pct": 6.4425257261153925
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "retrieval_recommendation",
+    "venue_count": 9,
+    "count": 404,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 3.0278048414899197,
+    "equal_venue_weight_share_pct": 10.648654976538332
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "coding_software",
+    "venue_count": 9,
+    "count": 230,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 1.7237502810462415,
+    "equal_venue_weight_share_pct": 5.20245560675639
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "generative",
+    "venue_count": 9,
+    "count": 1456,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 10.912088735666641,
+    "equal_venue_weight_share_pct": 7.526165999215809
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "diffusion",
+    "venue_count": 9,
+    "count": 921,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 6.902495690624297,
+    "equal_venue_weight_share_pct": 4.14967837826093
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "multimodal",
+    "venue_count": 9,
+    "count": 633,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 4.74406055609683,
+    "equal_venue_weight_share_pct": 4.155004252018071
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "efficiency",
+    "venue_count": 9,
+    "count": 1343,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 10.065202728022184,
+    "equal_venue_weight_share_pct": 10.145262095228059
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "inference_serving_gpu",
+    "venue_count": 9,
+    "count": 51,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.38222288840590574,
+    "equal_venue_weight_share_pct": 1.5816620587180077
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "theory_optimization",
+    "venue_count": 9,
+    "count": 1260,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 9.44315371355767,
+    "equal_venue_weight_share_pct": 7.368123797872215
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "evaluation",
+    "venue_count": 9,
+    "count": 482,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 3.612381023757776,
+    "equal_venue_weight_share_pct": 3.767082280239809
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "safety_security",
+    "venue_count": 9,
+    "count": 1074,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 8.049164355842015,
+    "equal_venue_weight_share_pct": 9.050125549212035
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "evaluation_safety",
+    "venue_count": 9,
+    "count": 1510,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 11.316795323390542,
+    "equal_venue_weight_share_pct": 12.351954695963594
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "traditional_statistics",
+    "venue_count": 9,
+    "count": 616,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 4.616652926628195,
+    "equal_venue_weight_share_pct": 3.0026365700464495
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "rl_control",
+    "venue_count": 9,
+    "count": 790,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 5.920707487071873,
+    "equal_venue_weight_share_pct": 4.114271050915657
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "graphs",
+    "venue_count": 9,
+    "count": 622,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 4.661620325264184,
+    "equal_venue_weight_share_pct": 6.768369032175695
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "nlp_translation_syntax",
+    "venue_count": 9,
+    "count": 101,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.7569512103724799,
+    "equal_venue_weight_share_pct": 1.0113064769600546
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "nlp_extraction_qa",
+    "venue_count": 9,
+    "count": 78,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.5845761822678558,
+    "equal_venue_weight_share_pct": 0.9377900485549175
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "vision_recognition_detection",
+    "venue_count": 9,
+    "count": 543,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 4.069549576556996,
+    "equal_venue_weight_share_pct": 2.317491203438597
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "vision_geometry_rendering",
+    "venue_count": 9,
+    "count": 912,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 6.835044592670314,
+    "equal_venue_weight_share_pct": 3.8148480251279286
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "software_testing_analysis",
+    "venue_count": 9,
+    "count": 125,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.9368208049164356,
+    "equal_venue_weight_share_pct": 3.4268625335836043
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "systems_storage_networking",
+    "venue_count": 9,
+    "count": 57,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 0.4271902870418946,
+    "equal_venue_weight_share_pct": 3.1771553391974603
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2024,
+    "topic": "mining_temporal_anomaly",
+    "venue_count": 9,
+    "count": 528,
+    "denominator": 13343,
+    "observed_paper_weighted_share_pct": 3.957131079967024,
+    "equal_venue_weight_share_pct": 3.948887702453401
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "modern_foundation_llm",
+    "venue_count": 9,
+    "count": 2798,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 15.625174512760372,
+    "equal_venue_weight_share_pct": 16.521874649327792
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "historical_pretrained",
+    "venue_count": 9,
+    "count": 20,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.11168816663874462,
+    "equal_venue_weight_share_pct": 0.18399848803937338
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "modern_or_historical",
+    "venue_count": 9,
+    "count": 2817,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 15.73127827106718,
+    "equal_venue_weight_share_pct": 16.699333342716717
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "language_model_context",
+    "venue_count": 9,
+    "count": 3511,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 19.606857653431618,
+    "equal_venue_weight_share_pct": 19.547882322962405
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "reasoning",
+    "venue_count": 9,
+    "count": 737,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 4.11570894063774,
+    "equal_venue_weight_share_pct": 3.1069202373150158
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "testtime_compute",
+    "venue_count": 9,
+    "count": 65,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.36298654157592003,
+    "equal_venue_weight_share_pct": 0.21958974485344107
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "reasoning_testtime",
+    "venue_count": 9,
+    "count": 790,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 4.411682582230413,
+    "equal_venue_weight_share_pct": 3.293332417965545
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "agents_broad",
+    "venue_count": 9,
+    "count": 597,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 3.3338917741665273,
+    "equal_venue_weight_share_pct": 2.913600966261694
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "agents_language_action_strict",
+    "venue_count": 9,
+    "count": 194,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.0833752163958228,
+    "equal_venue_weight_share_pct": 1.2529546565853027
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "pretraining_explicit",
+    "venue_count": 9,
+    "count": 200,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.1168816663874463,
+    "equal_venue_weight_share_pct": 0.950396340342101
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "pretrained_usage_cue",
+    "venue_count": 9,
+    "count": 89,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.4970123415424136,
+    "equal_venue_weight_share_pct": 0.4195011100303345
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "self_supervision",
+    "venue_count": 9,
+    "count": 227,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.2676606913497515,
+    "equal_venue_weight_share_pct": 1.4617268624321111
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "posttraining_named_broad",
+    "venue_count": 9,
+    "count": 277,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.5468811079466132,
+    "equal_venue_weight_share_pct": 1.0771242216491084
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "posttraining_model_context",
+    "venue_count": 9,
+    "count": 89,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.4970123415424136,
+    "equal_venue_weight_share_pct": 0.3088204636857633
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "posttraining_context",
+    "venue_count": 9,
+    "count": 4316,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 24.10230636064109,
+    "equal_venue_weight_share_pct": 22.54124863814234
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "finetuning_adaptation",
+    "venue_count": 9,
+    "count": 481,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 2.686100407661808,
+    "equal_venue_weight_share_pct": 1.985430182619612
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "retrieval",
+    "venue_count": 9,
+    "count": 465,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 2.5967498743508126,
+    "equal_venue_weight_share_pct": 5.145052394658759
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "recommendation",
+    "venue_count": 9,
+    "count": 211,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.1783101580387558,
+    "equal_venue_weight_share_pct": 5.365027165740185
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "retrieval_recommendation",
+    "venue_count": 9,
+    "count": 667,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 3.7248003574021333,
+    "equal_venue_weight_share_pct": 10.31306833123554
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "coding_software",
+    "venue_count": 9,
+    "count": 341,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.9042832411905959,
+    "equal_venue_weight_share_pct": 5.987634697024394
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "generative",
+    "venue_count": 9,
+    "count": 2028,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 11.325180097168705,
+    "equal_venue_weight_share_pct": 9.091392671914495
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "diffusion",
+    "venue_count": 9,
+    "count": 1227,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 6.852069023286982,
+    "equal_venue_weight_share_pct": 5.00120028593109
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "multimodal",
+    "venue_count": 9,
+    "count": 1302,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 7.270899648182275,
+    "equal_venue_weight_share_pct": 5.586254123464789
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "efficiency",
+    "venue_count": 9,
+    "count": 1938,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 10.822583347294355,
+    "equal_venue_weight_share_pct": 10.178750925954098
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "inference_serving_gpu",
+    "venue_count": 9,
+    "count": 121,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.675713408164405,
+    "equal_venue_weight_share_pct": 1.5130193058230335
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "theory_optimization",
+    "venue_count": 9,
+    "count": 1735,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 9.688948455911095,
+    "equal_venue_weight_share_pct": 7.488589244783743
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "evaluation",
+    "venue_count": 9,
+    "count": 912,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 5.092980398726755,
+    "equal_venue_weight_share_pct": 4.918758112011241
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "safety_security",
+    "venue_count": 9,
+    "count": 1457,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 8.136482939632545,
+    "equal_venue_weight_share_pct": 8.01934619146653
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "evaluation_safety",
+    "venue_count": 9,
+    "count": 2270,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 12.676606913497515,
+    "equal_venue_weight_share_pct": 12.315968684897022
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "traditional_statistics",
+    "venue_count": 9,
+    "count": 707,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 3.9481766906796225,
+    "equal_venue_weight_share_pct": 3.707054164239341
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "rl_control",
+    "venue_count": 9,
+    "count": 987,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 5.511811023622047,
+    "equal_venue_weight_share_pct": 3.472262734910039
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "graphs",
+    "venue_count": 9,
+    "count": 805,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 4.495448707209471,
+    "equal_venue_weight_share_pct": 6.659619221064617
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "nlp_translation_syntax",
+    "venue_count": 9,
+    "count": 96,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.5361031998659742,
+    "equal_venue_weight_share_pct": 0.8066754117686269
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "nlp_extraction_qa",
+    "venue_count": 9,
+    "count": 98,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.5472720165298487,
+    "equal_venue_weight_share_pct": 0.757519307331443
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "vision_recognition_detection",
+    "venue_count": 9,
+    "count": 497,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 2.775450940972804,
+    "equal_venue_weight_share_pct": 1.7527753656761282
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "vision_geometry_rendering",
+    "venue_count": 9,
+    "count": 1069,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 5.9697325068409,
+    "equal_venue_weight_share_pct": 4.036158577229218
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "software_testing_analysis",
+    "venue_count": 9,
+    "count": 181,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 1.010777908080639,
+    "equal_venue_weight_share_pct": 4.255156961162751
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "systems_storage_networking",
+    "venue_count": 9,
+    "count": 134,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 0.748310716479589,
+    "equal_venue_weight_share_pct": 2.8315834617599216
+  },
+  {
+    "panel": "fixed_nine_venues",
+    "year": 2025,
+    "topic": "mining_temporal_anomaly",
+    "venue_count": 9,
+    "count": 813,
+    "denominator": 17907,
+    "observed_paper_weighted_share_pct": 4.540123973864969,
+    "equal_venue_weight_share_pct": 4.545253135728795
+  }
+]

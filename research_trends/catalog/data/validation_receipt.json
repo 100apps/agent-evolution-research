@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "master_sha256": "fa3803790cd36697143e708e8c1fe413c04c17b30bfd8549d17b62ac3b2344e7",
+  "rows": 89530,
+  "columns": 69,
+  "source_coverage_rows": 70,
+  "counts": {
+    "rows": 89530,
+    "citations:no_verified_doi": 79026,
+    "candidate": 7656,
+    "authors": 89071,
+    "paper_institutions": 8266,
+    "countries": 172,
+    "citations:reported_exact_doi": 10451,
+    "citations:ambiguous_exact_doi": 20,
+    "citations:possibly_truncated": 19,
+    "citations:not_found_exact_doi": 14
+  },
+  "errors": []
+}

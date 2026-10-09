@@ -1,0 +1,194 @@
+[
+  {
+    "conference": "OSDI",
+    "year": 2020,
+    "scope": "research_only",
+    "n": 70,
+    "ai_title_marked": 14,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2020,
+    "scope": "all_main_program",
+    "n": 70,
+    "ai_title_marked": 14,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2021,
+    "scope": "research_only",
+    "n": 31,
+    "ai_title_marked": 7,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2021,
+    "scope": "all_main_program",
+    "n": 31,
+    "ai_title_marked": 7,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2022,
+    "scope": "research_only",
+    "n": 49,
+    "ai_title_marked": 7,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2022,
+    "scope": "all_main_program",
+    "n": 49,
+    "ai_title_marked": 7,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2023,
+    "scope": "research_only",
+    "n": 55,
+    "ai_title_marked": 6,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2023,
+    "scope": "all_main_program",
+    "n": 55,
+    "ai_title_marked": 6,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "OSDI",
+    "year": 2024,
+    "scope": "research_only",
+    "n": 53,
+    "ai_title_marked": 17,
+    "llm_title_marked": 9
+  },
+  {
+    "conference": "OSDI",
+    "year": 2024,
+    "scope": "all_main_program",
+    "n": 53,
+    "ai_title_marked": 17,
+    "llm_title_marked": 9
+  },
+  {
+    "conference": "OSDI",
+    "year": 2025,
+    "scope": "research_only",
+    "n": 53,
+    "ai_title_marked": 9,
+    "llm_title_marked": 4
+  },
+  {
+    "conference": "OSDI",
+    "year": 2025,
+    "scope": "all_main_program",
+    "n": 53,
+    "ai_title_marked": 9,
+    "llm_title_marked": 4
+  },
+  {
+    "conference": "OSDI",
+    "year": 2026,
+    "scope": "research_only",
+    "n": 117,
+    "ai_title_marked": 26,
+    "llm_title_marked": 14
+  },
+  {
+    "conference": "OSDI",
+    "year": 2026,
+    "scope": "all_main_program",
+    "n": 136,
+    "ai_title_marked": 32,
+    "llm_title_marked": 18
+  },
+  {
+    "conference": "SOSP",
+    "year": 2021,
+    "scope": "research_only",
+    "n": 54,
+    "ai_title_marked": 2,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "SOSP",
+    "year": 2021,
+    "scope": "all_main_program",
+    "n": 54,
+    "ai_title_marked": 2,
+    "llm_title_marked": 0
+  },
+  {
+    "conference": "SOSP",
+    "year": 2023,
+    "scope": "research_only",
+    "n": 43,
+    "ai_title_marked": 6,
+    "llm_title_marked": 1
+  },
+  {
+    "conference": "SOSP",
+    "year": 2023,
+    "scope": "all_main_program",
+    "n": 43,
+    "ai_title_marked": 6,
+    "llm_title_marked": 1
+  },
+  {
+    "conference": "SOSP",
+    "year": 2024,
+    "scope": "research_only",
+    "n": 43,
+    "ai_title_marked": 10,
+    "llm_title_marked": 4
+  },
+  {
+    "conference": "SOSP",
+    "year": 2024,
+    "scope": "all_main_program",
+    "n": 43,
+    "ai_title_marked": 10,
+    "llm_title_marked": 4
+  },
+  {
+    "conference": "SOSP",
+    "year": 2025,
+    "scope": "research_only",
+    "n": 66,
+    "ai_title_marked": 17,
+    "llm_title_marked": 14
+  },
+  {
+    "conference": "SOSP",
+    "year": 2025,
+    "scope": "all_main_program",
+    "n": 66,
+    "ai_title_marked": 17,
+    "llm_title_marked": 14
+  },
+  {
+    "conference": "SOSP",
+    "year": 2026,
+    "scope": "research_only",
+    "n": 62,
+    "ai_title_marked": 13,
+    "llm_title_marked": 9
+  },
+  {
+    "conference": "SOSP",
+    "year": 2026,
+    "scope": "all_main_program",
+    "n": 62,
+    "ai_title_marked": 13,
+    "llm_title_marked": 9
+  }
+]

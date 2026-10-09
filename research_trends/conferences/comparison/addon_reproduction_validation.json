@@ -1,0 +1,75 @@
+{
+  "result": "PASS",
+  "files_verified": 17,
+  "checks": [
+    {
+      "file": "change_decomposition.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "change_decomposition_by_venue.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "common_topic_rules.json",
+      "byte_identical": true
+    },
+    {
+      "file": "coverage_common.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "fixed_basket_2020_2025.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "fixed_basket_2020_2025.json",
+      "byte_identical": true
+    },
+    {
+      "file": "fixed_basket_headline_deltas.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "fixed_basket_headline_deltas.json",
+      "byte_identical": true
+    },
+    {
+      "file": "illustrative_title_examples.json",
+      "byte_identical": true
+    },
+    {
+      "file": "key_definition_sensitivities.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "normalized_title_corpus.jsonl",
+      "byte_identical": true
+    },
+    {
+      "file": "osdi_2026_scopebreak_separate.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "paired_2025_2026.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "source_urls_by_venue_year.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "venue_2020_2025_deltas.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "venue_year_topic_counts.csv",
+      "byte_identical": true
+    },
+    {
+      "file": "venue_year_topic_counts.json",
+      "byte_identical": true
+    }
+  ],
+  "note": "Source manifest timestamp and local paths are deliberately not byte-compared. The 55 MB normalized corpus is regenerated but not shipped; large per-paper match detail was skipped."
+}

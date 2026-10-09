@@ -1,0 +1,517 @@
+{
+  "version": "common-title-v1.0",
+  "text_field": "title only",
+  "nonexclusive": true,
+  "not_exhaustive": true,
+  "rules": {
+    "modern_foundation_llm": {
+      "label_zh": "现代大模型/基础模型词汇",
+      "group": "shared",
+      "patterns": [
+        "large (?:language|vision language|multimodal|vision|reasoning) models?",
+        "foundation models?",
+        "(?:m?llms?|vlms?|lvlms?|lmms?)",
+        "chat ?gpt",
+        "gpt ?[345](?:\\b|\\d)",
+        "llama(?: ?[234])?",
+        "qwen(?: ?[23])?",
+        "generative ai"
+      ],
+      "caveat": "Explicit modern vocabulary; VLM/vision foundation terms included. Not all LMs, transformers or pretrained models. Named tokens may be ambiguous."
+    },
+    "historical_pretrained": {
+      "label_zh": "历史预训练模型词汇",
+      "group": "shared",
+      "patterns": [
+        "bert",
+        "roberta",
+        "albert",
+        "electra",
+        "xlnet",
+        "elmo",
+        "t5",
+        "bart",
+        "gpt ?2",
+        "pre ?trained language models?"
+      ],
+      "caveat": "Historical model-name sensitivity, not an exhaustive census. Names such as BART/ALBERT can be ambiguous."
+    },
+    "modern_or_historical": {
+      "label_zh": "现代大模型或历史预训练词汇并集",
+      "group": "sensitivity",
+      "any_of": [
+        "modern_foundation_llm",
+        "historical_pretrained"
+      ]
+    },
+    "language_model_context": {
+      "label_zh": "语言模型上下文词汇",
+      "group": "context",
+      "patterns": [
+        "language models?",
+        "vision language models?",
+        "language vision models?"
+      ],
+      "any_of": [
+        "modern_foundation_llm",
+        "historical_pretrained"
+      ],
+      "caveat": "Context gate only; it still depends on explicit wording."
+    },
+    "reasoning": {
+      "label_zh": "推理/思维链词汇",
+      "group": "shared",
+      "patterns": [
+        "reasoning",
+        "chain of thoughts?",
+        "chains of thought",
+        "tree of thoughts?",
+        "step by step"
+      ],
+      "caveat": "Includes symbolic/spatial/causal reasoning; not exclusively LLM reasoning."
+    },
+    "testtime_compute": {
+      "label_zh": "测试时计算/搜索词汇",
+      "group": "shared",
+      "patterns": [
+        "test time (?:scal\\w*|comput\\w*|search|reason\\w*|budget\\w*)",
+        "inference time (?:scal\\w*|comput\\w*|search|reason\\w*|budget\\w*)",
+        "best of n",
+        "test time training"
+      ],
+      "caveat": "Not plain inference or all test-time adaptation; test-time training explicitly included."
+    },
+    "reasoning_testtime": {
+      "label_zh": "推理或测试时计算词汇并集",
+      "group": "shared",
+      "any_of": [
+        "reasoning",
+        "testtime_compute"
+      ]
+    },
+    "agents_broad": {
+      "label_zh": "广义智能体/工具行动词汇",
+      "group": "shared",
+      "patterns": [
+        "agents?",
+        "agentic",
+        "multi ?agents?",
+        "tool (?:use|using|usage|calling|calls?|invocation|learning|augmented)",
+        "web navigation",
+        "computer use"
+      ],
+      "caveat": "Includes traditional multi-agent RL and software agents; no autonomy/feedback-loop claim."
+    },
+    "agents_language_action_strict": {
+      "label_zh": "语言模型上下文且智能体/工具行动词汇",
+      "group": "sensitivity",
+      "all_of": [
+        "language_model_context",
+        "agents_broad"
+      ],
+      "caveat": "Strict lexical conjunction, NOT validated semantic evidence of an LLM observation-action feedback loop. Agent-memory alone is not counted."
+    },
+    "pretraining_explicit": {
+      "label_zh": "显式预训练过程词汇",
+      "group": "shared",
+      "patterns": [
+        "pre ?training",
+        "pre ?train(?:s|ing)?"
+      ],
+      "caveat": "Infinitive/process wording only; does not prove paper itself trains a base model."
+    },
+    "pretrained_usage_cue": {
+      "label_zh": "预训练模型/已预训练措辞",
+      "group": "shared",
+      "patterns": [
+        "pre ?trained"
+      ],
+      "caveat": "Adjectival wording; cannot establish whether paper trains, analyzes or merely uses an existing model."
+    },
+    "self_supervision": {
+      "label_zh": "自监督/对比学习词汇",
+      "group": "shared",
+      "patterns": [
+        "self supervis\\w*",
+        "contrastive learning"
+      ]
+    },
+    "posttraining_named_broad": {
+      "label_zh": "后训练/偏好学习方法词汇",
+      "group": "shared",
+      "patterns": [
+        "post ?training",
+        "rlhf",
+        "rlaif",
+        "dpo",
+        "grpo",
+        "rlvr",
+        "direct preference optimi[sz]ation",
+        "group relative policy optimi[sz]ation",
+        "reinforcement learning (?:from|with) (?:human feedback|ai feedback|verifiable rewards?)",
+        "preference optimi[sz]ation",
+        "reward model(?:s|ing)?"
+      ],
+      "caveat": "Method cues alone can be ambiguous, including reward-model papers outside language models."
+    },
+    "posttraining_model_context": {
+      "label_zh": "后训练方法且语言/生成模型上下文",
+      "group": "sensitivity",
+      "all_of": [
+        "posttraining_named_broad",
+        "posttraining_context"
+      ],
+      "caveat": "Requires title to name model context; excludes context-implicit DPO/RLHF titles. Not all fine-tuning, reinforcement learning or alignment."
+    },
+    "posttraining_context": {
+      "label_zh": "后训练模型上下文门槛",
+      "group": "context",
+      "patterns": [
+        "diffusion models?",
+        "generative models?",
+        "text to (?:image|video)",
+        "image generation"
+      ],
+      "any_of": [
+        "language_model_context"
+      ]
+    },
+    "finetuning_adaptation": {
+      "label_zh": "微调/指令调优/适配词汇",
+      "group": "shared",
+      "patterns": [
+        "fine ?tun\\w*",
+        "instruction tun\\w*",
+        "parameter efficient",
+        "lora",
+        "adapters?"
+      ],
+      "caveat": "Broader adaptation signal; not equivalent to preference post-training."
+    },
+    "retrieval": {
+      "label_zh": "检索/排序词汇",
+      "group": "shared",
+      "patterns": [
+        "retriev\\w*",
+        "rerank\\w*",
+        "ranking",
+        "rag",
+        "search engines?",
+        "web search"
+      ],
+      "caveat": "Includes conventional IR and RAG; not all search algorithms."
+    },
+    "recommendation": {
+      "label_zh": "推荐词汇",
+      "group": "shared",
+      "patterns": [
+        "recommend\\w*",
+        "collaborative filtering",
+        "click through",
+        "ctr prediction"
+      ]
+    },
+    "retrieval_recommendation": {
+      "label_zh": "检索/推荐并集",
+      "group": "shared",
+      "any_of": [
+        "retrieval",
+        "recommendation"
+      ]
+    },
+    "coding_software": {
+      "label_zh": "代码/软件词汇",
+      "group": "shared",
+      "patterns": [
+        "code",
+        "coding",
+        "programming",
+        "software",
+        "program (?:synthesis|repair|analysis|verification|generation)",
+        "bug\\w*",
+        "debug\\w*"
+      ],
+      "caveat": "Includes conventional software work; code can also mean coding theory. Not equivalent to AI coding."
+    },
+    "generative": {
+      "label_zh": "生成模型词汇",
+      "group": "shared",
+      "patterns": [
+        "generative",
+        "diffusion",
+        "gans?",
+        "variational autoencoders?",
+        "normalizing flows?",
+        "(?:image|video|text|audio|speech|3d|motion|molecule|molecular|code) (?:generation|synthesis)",
+        "text to (?:image|video|3d|audio)"
+      ],
+      "caveat": "Diffusion and code/speech synthesis can have non-modern-generative-model meanings."
+    },
+    "diffusion": {
+      "label_zh": "扩散词汇",
+      "group": "shared",
+      "patterns": [
+        "diffusion"
+      ],
+      "caveat": "All explicit diffusion mentions, including graph/network diffusion; not a validated diffusion-model census."
+    },
+    "multimodal": {
+      "label_zh": "多模态/跨模态词汇",
+      "group": "shared",
+      "patterns": [
+        "multi ?modal\\w*",
+        "cross modal\\w*",
+        "vision language",
+        "language vision",
+        "image text",
+        "text image",
+        "video language",
+        "language video",
+        "visual language",
+        "vlms?",
+        "mllms?"
+      ]
+    },
+    "efficiency": {
+      "label_zh": "效率/压缩/加速词汇",
+      "group": "shared",
+      "patterns": [
+        "efficien\\w*",
+        "compress\\w*",
+        "quantiz\\w*",
+        "quanti[sz]ation",
+        "prun\\w*",
+        "accelerat\\w*",
+        "low latency",
+        "low rank",
+        "distill\\w*"
+      ],
+      "caveat": "Cross-field efficiency vocabulary. Not automatically AI work or realized speedup."
+    },
+    "inference_serving_gpu": {
+      "label_zh": "推理服务/GPU基础设施词汇",
+      "group": "shared",
+      "patterns": [
+        "gpus?",
+        "tpus?",
+        "cuda",
+        "tensor cores?",
+        "kv cach\\w*",
+        "key value cach\\w*",
+        "model serving",
+        "llm serving",
+        "inference serving",
+        "inference engines?",
+        "inference system\\w*",
+        "inference accelerat\\w*",
+        "neural network inference",
+        "llm inference",
+        "language model inference",
+        "model inference"
+      ],
+      "caveat": "Does not count bare statistical inference, generic training or generic memory."
+    },
+    "theory_optimization": {
+      "label_zh": "理论/优化词汇",
+      "group": "shared",
+      "patterns": [
+        "theor\\w*",
+        "optimi[sz]\\w*",
+        "convergen\\w*",
+        "convex\\w*",
+        "gradient\\w*",
+        "regret",
+        "generalization",
+        "generalisation",
+        "sample complexity",
+        "pac bayes\\w*",
+        "lower bounds?",
+        "upper bounds?"
+      ],
+      "caveat": "Includes optimizer/optimization mentions in applications; does not measure all theory."
+    },
+    "evaluation": {
+      "label_zh": "评估/基准词汇",
+      "group": "shared",
+      "patterns": [
+        "evaluat\\w*",
+        "benchmarks?",
+        "benchmarking",
+        "assess\\w*",
+        "measur\\w*"
+      ],
+      "caveat": "Includes conventional measurement papers and measurement terminology."
+    },
+    "safety_security": {
+      "label_zh": "安全/公平/隐私/稳健性词汇",
+      "group": "shared",
+      "patterns": [
+        "safety",
+        "safe",
+        "secur\\w*",
+        "privacy",
+        "private",
+        "fair\\w*",
+        "(?:social|demographic|gender|racial) bias\\w*",
+        "robust\\w*",
+        "hallucinat\\w*",
+        "jailbreak\\w*",
+        "toxic\\w*",
+        "attack\\w*",
+        "trustworth\\w*",
+        "vulnerab\\w*"
+      ],
+      "caveat": "Broad cross-field signal including conventional robustness, fairness and security. Bare bias/alignment excluded to avoid inductive-bias/geometric-alignment conflation."
+    },
+    "evaluation_safety": {
+      "label_zh": "评估/安全词汇并集",
+      "group": "shared",
+      "any_of": [
+        "evaluation",
+        "safety_security"
+      ]
+    },
+    "traditional_statistics": {
+      "label_zh": "统计/概率传统方法词汇",
+      "group": "specialty",
+      "patterns": [
+        "bayesian",
+        "gaussian processes?",
+        "kernels?",
+        "causal\\w*",
+        "causality",
+        "statistic\\w*",
+        "probabilistic",
+        "markov",
+        "monte carlo"
+      ]
+    },
+    "rl_control": {
+      "label_zh": "强化学习/控制词汇",
+      "group": "specialty",
+      "patterns": [
+        "reinforcement learning",
+        "bandits?",
+        "policy (?:gradient|optimi[sz]ation|learning)",
+        "markov decision",
+        "control(?:ler|lers)?",
+        "robot\\w*"
+      ]
+    },
+    "graphs": {
+      "label_zh": "图/网络学习词汇",
+      "group": "specialty",
+      "patterns": [
+        "graphs?",
+        "knowledge graphs?",
+        "graph neural networks?"
+      ],
+      "caveat": "Graph vocabulary can include graph algorithms beyond ML."
+    },
+    "nlp_translation_syntax": {
+      "label_zh": "机器翻译/句法分析词汇",
+      "group": "specialty",
+      "patterns": [
+        "translation",
+        "parsing",
+        "syntax",
+        "syntactic",
+        "part of speech",
+        "dependency pars\\w*"
+      ]
+    },
+    "nlp_extraction_qa": {
+      "label_zh": "信息抽取/问答词汇",
+      "group": "specialty",
+      "patterns": [
+        "question answering",
+        "information extraction",
+        "named entity",
+        "relation extraction",
+        "event extraction",
+        "coreference"
+      ]
+    },
+    "vision_recognition_detection": {
+      "label_zh": "视觉识别/检测/分割词汇",
+      "group": "specialty",
+      "patterns": [
+        "recognition",
+        "object detection",
+        "object detector\\w*",
+        "segmentation",
+        "image classification"
+      ],
+      "caveat": "Recognition/segmentation also occur outside vision; title wording proxy."
+    },
+    "vision_geometry_rendering": {
+      "label_zh": "三维/几何/渲染词汇",
+      "group": "specialty",
+      "patterns": [
+        "3d",
+        "point clouds?",
+        "depth estimation",
+        "pose estimation",
+        "multi view",
+        "stereo",
+        "nerf\\w*",
+        "neural radiance",
+        "render\\w*",
+        "gaussian splatting"
+      ]
+    },
+    "software_testing_analysis": {
+      "label_zh": "软件测试/分析/修复词汇",
+      "group": "specialty",
+      "patterns": [
+        "testing",
+        "test generation",
+        "test suites?",
+        "fuzz\\w*",
+        "static analysis",
+        "dynamic analysis",
+        "program analysis",
+        "program repair",
+        "bug\\w*",
+        "debug\\w*",
+        "verification"
+      ]
+    },
+    "systems_storage_networking": {
+      "label_zh": "存储/网络/分布式系统词汇",
+      "group": "specialty",
+      "patterns": [
+        "storage",
+        "file systems?",
+        "filesystem\\w*",
+        "cach\\w*",
+        "databases?",
+        "transactions?",
+        "consensus",
+        "distributed systems?",
+        "networking",
+        "computer networks?",
+        "network (?:stack|protocol|traffic|packet|switch)\\w*",
+        "data ?center networks?",
+        "rdma",
+        "virtualization",
+        "operating systems?",
+        "cpu\\w*"
+      ],
+      "caveat": "Cache vocabulary may refer to model caches. Bare network(s) excluded to avoid neural-network conflation. No mutually exclusive traditional/AI split."
+    },
+    "mining_temporal_anomaly": {
+      "label_zh": "数据挖掘/时序/异常任务词汇",
+      "group": "specialty",
+      "patterns": [
+        "data mining",
+        "clustering",
+        "anomaly",
+        "outlier\\w*",
+        "time series",
+        "temporal",
+        "forecast\\w*"
+      ]
+    }
+  }
+}

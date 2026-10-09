@@ -1,0 +1,149 @@
+[
+  {
+    "venue": "ICSE",
+    "year": 2020,
+    "n_main": 129,
+    "with_abstract": 0,
+    "with_doi": 12
+  },
+  {
+    "venue": "ICSE",
+    "year": 2021,
+    "n_main": 138,
+    "with_abstract": 0,
+    "with_doi": 7
+  },
+  {
+    "venue": "ICSE",
+    "year": 2022,
+    "n_main": 197,
+    "with_abstract": 0,
+    "with_doi": 80
+  },
+  {
+    "venue": "ICSE",
+    "year": 2023,
+    "n_main": 207,
+    "with_abstract": 0,
+    "with_doi": 6
+  },
+  {
+    "venue": "ICSE",
+    "year": 2024,
+    "n_main": 234,
+    "with_abstract": 0,
+    "with_doi": 35
+  },
+  {
+    "venue": "ICSE",
+    "year": 2025,
+    "n_main": 245,
+    "with_abstract": 0,
+    "with_doi": 7
+  },
+  {
+    "venue": "ICSE",
+    "year": 2026,
+    "n_main": 321,
+    "with_abstract": 0,
+    "with_doi": 21
+  },
+  {
+    "venue": "KDD",
+    "year": 2020,
+    "n_main": 217,
+    "with_abstract": 0,
+    "with_doi": 0
+  },
+  {
+    "venue": "KDD",
+    "year": 2021,
+    "n_main": 239,
+    "with_abstract": 239,
+    "with_doi": 239
+  },
+  {
+    "venue": "KDD",
+    "year": 2022,
+    "n_main": 253,
+    "with_abstract": 253,
+    "with_doi": 253
+  },
+  {
+    "venue": "KDD",
+    "year": 2023,
+    "n_main": 313,
+    "with_abstract": 313,
+    "with_doi": 313
+  },
+  {
+    "venue": "KDD",
+    "year": 2024,
+    "n_main": 411,
+    "with_abstract": 0,
+    "with_doi": 0
+  },
+  {
+    "venue": "KDD",
+    "year": 2025,
+    "n_main": 552,
+    "with_abstract": 0,
+    "with_doi": 552
+  },
+  {
+    "venue": "KDD",
+    "year": 2026,
+    "n_main": 785,
+    "with_abstract": 0,
+    "with_doi": 785
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2020,
+    "n_main": 147,
+    "with_abstract": 0,
+    "with_doi": 0
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2021,
+    "n_main": 151,
+    "with_abstract": 0,
+    "with_doi": 0
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2022,
+    "n_main": 161,
+    "with_abstract": 148,
+    "with_doi": 148
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2023,
+    "n_main": 165,
+    "with_abstract": 0,
+    "with_doi": 0
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2024,
+    "n_main": 160,
+    "with_abstract": 158,
+    "with_doi": 158
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2025,
+    "n_main": 239,
+    "with_abstract": 32,
+    "with_doi": 32
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2026,
+    "n_main": 233,
+    "with_abstract": 0,
+    "with_doi": 0
+  }
+]

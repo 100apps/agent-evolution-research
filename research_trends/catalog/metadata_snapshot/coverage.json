@@ -1,0 +1,7590 @@
+{
+  "extractor_version": "1.0.0",
+  "generated_at_utc": "2026-10-09T06:00:06.337932+00:00",
+  "network_requests": 0,
+  "scope": "source occurrences preserved; unique entities use only source-validated exact identifiers",
+  "total": {
+    "source_occurrences": 89530,
+    "ordered_author_slots": 438069,
+    "authors": {
+      "present": 81207,
+      "denominator": 89530,
+      "percent": 90.704
+    },
+    "institutions": {
+      "present": 38213,
+      "denominator": 89530,
+      "percent": 42.682
+    },
+    "countries": {
+      "present": 172,
+      "denominator": 89530,
+      "percent": 0.192
+    },
+    "doi": {
+      "present": 11067,
+      "denominator": 89530,
+      "percent": 12.361
+    },
+    "arxiv_id": {
+      "present": 11742,
+      "denominator": 89530,
+      "percent": 13.115
+    },
+    "openreview_id": {
+      "present": 35016,
+      "denominator": 89530,
+      "percent": 39.111
+    },
+    "publication_date": {
+      "present": 25379,
+      "denominator": 89530,
+      "percent": 28.347
+    },
+    "abstract": {
+      "present": 18833,
+      "denominator": 89530,
+      "percent": 21.035
+    },
+    "affiliation_author_count": {
+      "present": 198842,
+      "denominator": 438069,
+      "percent": 45.391
+    },
+    "publication_time_affiliation_author_count": {
+      "present": 37410,
+      "denominator": 438069,
+      "percent": 8.54
+    },
+    "country_author_count": {
+      "present": 226,
+      "denominator": 438069,
+      "percent": 0.052
+    },
+    "paper_scoped_institution_papers": 8266,
+    "paper_reported_unlinked_institution_papers": 0,
+    "unverified_time_institution_papers": 29947,
+    "date_precision": {
+      "missing": 64151,
+      "month": 25379
+    },
+    "field_status_counts": {
+      "authors": {
+        "source_ordered": 26066,
+        "source_ordered_profile_institution_time_unverified": 29964,
+        "source_ordered_profile_institution_time_unverified:partial_names": 2,
+        "missing": 8323,
+        "source_delimited_ordered": 19441,
+        "parsed_explicit_delimiters": 5734
+      },
+      "institutions": {
+        "missing": 51317,
+        "present_publication_time_unverified": 29947,
+        "present": 8266
+      },
+      "countries": {
+        "missing": 89358,
+        "present": 172
+      },
+      "doi": {
+        "missing": 78463,
+        "present": 8194,
+        "source_native_identifier": 2310,
+        "reported_identifier_not_yet_raw_verified": 563
+      },
+      "arxiv_id": {
+        "missing": 77788,
+        "present": 11369,
+        "reported_identifier_not_yet_raw_verified": 373
+      },
+      "openreview_id": {
+        "present": 35016,
+        "missing": 54514
+      },
+      "publication_date": {
+        "missing": 64151,
+        "present_month_precision": 25379
+      },
+      "abstract": {
+        "missing": 70697,
+        "present": 18833
+      }
+    }
+  },
+  "conference_only": {
+    "source_occurrences": 89530,
+    "ordered_author_slots": 438069,
+    "authors": {
+      "present": 81207,
+      "denominator": 89530,
+      "percent": 90.704
+    },
+    "institutions": {
+      "present": 38213,
+      "denominator": 89530,
+      "percent": 42.682
+    },
+    "countries": {
+      "present": 172,
+      "denominator": 89530,
+      "percent": 0.192
+    },
+    "doi": {
+      "present": 11067,
+      "denominator": 89530,
+      "percent": 12.361
+    },
+    "arxiv_id": {
+      "present": 11742,
+      "denominator": 89530,
+      "percent": 13.115
+    },
+    "openreview_id": {
+      "present": 35016,
+      "denominator": 89530,
+      "percent": 39.111
+    },
+    "publication_date": {
+      "present": 25379,
+      "denominator": 89530,
+      "percent": 28.347
+    },
+    "abstract": {
+      "present": 18833,
+      "denominator": 89530,
+      "percent": 21.035
+    },
+    "affiliation_author_count": {
+      "present": 198842,
+      "denominator": 438069,
+      "percent": 45.391
+    },
+    "publication_time_affiliation_author_count": {
+      "present": 37410,
+      "denominator": 438069,
+      "percent": 8.54
+    },
+    "country_author_count": {
+      "present": 226,
+      "denominator": 438069,
+      "percent": 0.052
+    },
+    "paper_scoped_institution_papers": 8266,
+    "paper_reported_unlinked_institution_papers": 0,
+    "unverified_time_institution_papers": 29947,
+    "date_precision": {
+      "missing": 64151,
+      "month": 25379
+    },
+    "field_status_counts": {
+      "authors": {
+        "source_ordered": 26066,
+        "source_ordered_profile_institution_time_unverified": 29964,
+        "source_ordered_profile_institution_time_unverified:partial_names": 2,
+        "missing": 8323,
+        "source_delimited_ordered": 19441,
+        "parsed_explicit_delimiters": 5734
+      },
+      "institutions": {
+        "missing": 51317,
+        "present_publication_time_unverified": 29947,
+        "present": 8266
+      },
+      "countries": {
+        "missing": 89358,
+        "present": 172
+      },
+      "doi": {
+        "missing": 78463,
+        "present": 8194,
+        "source_native_identifier": 2310,
+        "reported_identifier_not_yet_raw_verified": 563
+      },
+      "arxiv_id": {
+        "missing": 77788,
+        "present": 11369,
+        "reported_identifier_not_yet_raw_verified": 373
+      },
+      "openreview_id": {
+        "present": 35016,
+        "missing": 54514
+      },
+      "publication_date": {
+        "missing": 64151,
+        "present_month_precision": 25379
+      },
+      "abstract": {
+        "missing": 70697,
+        "present": 18833
+      }
+    }
+  },
+  "unique_exact_id_entities": 89530,
+  "multi_occurrence_entities": 0,
+  "identifier_conflicts": [],
+  "baseline_normalized": {
+    "source_occurrences": 89530,
+    "fields": {
+      "authors": 6193,
+      "institutions": 0,
+      "countries": 0,
+      "doi": 2873,
+      "arxiv_id": 0,
+      "openreview_id": 0,
+      "publication_date": 0,
+      "abstract": 18833
+    }
+  },
+  "by_venue": {
+    "ACL": {
+      "source_occurrences": 8198,
+      "ordered_author_slots": 47081,
+      "authors": {
+        "present": 8198,
+        "denominator": 8198,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 5893,
+        "denominator": 8198,
+        "percent": 71.883
+      },
+      "countries": {
+        "present": 160,
+        "denominator": 8198,
+        "percent": 1.952
+      },
+      "doi": {
+        "present": 8194,
+        "denominator": 8198,
+        "percent": 99.951
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 8198,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 8198,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 8198,
+        "denominator": 8198,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 8196,
+        "denominator": 8198,
+        "percent": 99.976
+      },
+      "affiliation_author_count": {
+        "present": 24575,
+        "denominator": 47081,
+        "percent": 52.197
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 24575,
+        "denominator": 47081,
+        "percent": 52.197
+      },
+      "country_author_count": {
+        "present": 193,
+        "denominator": 47081,
+        "percent": 0.41
+      },
+      "paper_scoped_institution_papers": 5893,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 8198
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 8198
+        },
+        "institutions": {
+          "missing": 2305,
+          "present": 5893
+        },
+        "countries": {
+          "missing": 8038,
+          "present": 160
+        },
+        "doi": {
+          "present": 8194,
+          "missing": 4
+        },
+        "arxiv_id": {
+          "missing": 8198
+        },
+        "openreview_id": {
+          "missing": 8198
+        },
+        "publication_date": {
+          "present_month_precision": 8198
+        },
+        "abstract": {
+          "present": 8196,
+          "missing": 2
+        }
+      }
+    },
+    "CVPR": {
+      "source_occurrences": 17182,
+      "ordered_author_slots": 97478,
+      "authors": {
+        "present": 17181,
+        "denominator": 17182,
+        "percent": 99.994
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 17182,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 17182,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 17182,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 11369,
+        "denominator": 17182,
+        "percent": 66.168
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 17182,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 17181,
+        "denominator": 17182,
+        "percent": 99.994
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 17182,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 97478,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 97478,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 97478,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 17181,
+        "missing": 1
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 17181,
+          "missing": 1
+        },
+        "institutions": {
+          "missing": 17182
+        },
+        "countries": {
+          "missing": 17182
+        },
+        "doi": {
+          "missing": 17182
+        },
+        "arxiv_id": {
+          "present": 11369,
+          "missing": 5813
+        },
+        "openreview_id": {
+          "missing": 17182
+        },
+        "publication_date": {
+          "present_month_precision": 17181,
+          "missing": 1
+        },
+        "abstract": {
+          "missing": 17182
+        }
+      }
+    },
+    "ICLR": {
+      "source_occurrences": 15534,
+      "ordered_author_slots": 86601,
+      "authors": {
+        "present": 15534,
+        "denominator": 15534,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 14843,
+        "denominator": 15534,
+        "percent": 95.552
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 15534,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 15534,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 15534,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 15534,
+        "denominator": 15534,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 15534,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 9494,
+        "denominator": 15534,
+        "percent": 61.118
+      },
+      "affiliation_author_count": {
+        "present": 81546,
+        "denominator": 86601,
+        "percent": 94.163
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 86601,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 86601,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 14843,
+      "date_precision": {
+        "missing": 15534
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 687,
+          "source_ordered_profile_institution_time_unverified": 14845,
+          "source_ordered_profile_institution_time_unverified:partial_names": 2
+        },
+        "institutions": {
+          "missing": 691,
+          "present_publication_time_unverified": 14843
+        },
+        "countries": {
+          "missing": 15534
+        },
+        "doi": {
+          "missing": 15534
+        },
+        "arxiv_id": {
+          "missing": 15534
+        },
+        "openreview_id": {
+          "present": 15534
+        },
+        "publication_date": {
+          "missing": 15534
+        },
+        "abstract": {
+          "missing": 6040,
+          "present": 9494
+        }
+      }
+    },
+    "ICML": {
+      "source_occurrences": 17460,
+      "ordered_author_slots": 53222,
+      "authors": {
+        "present": 9597,
+        "denominator": 17460,
+        "percent": 54.966
+      },
+      "institutions": {
+        "present": 9592,
+        "denominator": 17460,
+        "percent": 54.937
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 17460,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 17460,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 17460,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 13960,
+        "denominator": 17460,
+        "percent": 79.954
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 17460,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 17460,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 52173,
+        "denominator": 53222,
+        "percent": 98.029
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 53222,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 53222,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 9592,
+      "date_precision": {
+        "missing": 17460
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 7863,
+          "source_ordered_profile_institution_time_unverified": 9597
+        },
+        "institutions": {
+          "missing": 7868,
+          "present_publication_time_unverified": 9592
+        },
+        "countries": {
+          "missing": 17460
+        },
+        "doi": {
+          "missing": 17460
+        },
+        "arxiv_id": {
+          "missing": 17460
+        },
+        "openreview_id": {
+          "missing": 3500,
+          "present": 13960
+        },
+        "publication_date": {
+          "missing": 17460
+        },
+        "abstract": {
+          "missing": 17460
+        }
+      }
+    },
+    "ICSE": {
+      "source_occurrences": 1471,
+      "ordered_author_slots": 7347,
+      "authors": {
+        "present": 1444,
+        "denominator": 1471,
+        "percent": 98.165
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1471,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1471,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 168,
+        "denominator": 1471,
+        "percent": 11.421
+      },
+      "arxiv_id": {
+        "present": 373,
+        "denominator": 1471,
+        "percent": 25.357
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1471,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1471,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1471,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 7347,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 7347,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 7347,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1471
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 1444,
+          "missing": 27
+        },
+        "institutions": {
+          "missing": 1471
+        },
+        "countries": {
+          "missing": 1471
+        },
+        "doi": {
+          "missing": 1303,
+          "source_native_identifier": 168
+        },
+        "arxiv_id": {
+          "missing": 1098,
+          "reported_identifier_not_yet_raw_verified": 373
+        },
+        "openreview_id": {
+          "missing": 1471
+        },
+        "publication_date": {
+          "missing": 1471
+        },
+        "abstract": {
+          "missing": 1471
+        }
+      }
+    },
+    "KDD": {
+      "source_occurrences": 2770,
+      "ordered_author_slots": 14582,
+      "authors": {
+        "present": 2770,
+        "denominator": 2770,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 1962,
+        "denominator": 2770,
+        "percent": 70.83
+      },
+      "countries": {
+        "present": 7,
+        "denominator": 2770,
+        "percent": 0.253
+      },
+      "doi": {
+        "present": 2142,
+        "denominator": 2770,
+        "percent": 77.329
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 2770,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2770,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 2770,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 805,
+        "denominator": 2770,
+        "percent": 29.061
+      },
+      "affiliation_author_count": {
+        "present": 10618,
+        "denominator": 14582,
+        "percent": 72.816
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 10618,
+        "denominator": 14582,
+        "percent": 72.816
+      },
+      "country_author_count": {
+        "present": 20,
+        "denominator": 14582,
+        "percent": 0.137
+      },
+      "paper_scoped_institution_papers": 1962,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 2770
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 2770
+        },
+        "institutions": {
+          "present": 1962,
+          "missing": 808
+        },
+        "countries": {
+          "missing": 2763,
+          "present": 7
+        },
+        "doi": {
+          "missing": 628,
+          "source_native_identifier": 2142
+        },
+        "arxiv_id": {
+          "missing": 2770
+        },
+        "openreview_id": {
+          "missing": 2770
+        },
+        "publication_date": {
+          "missing": 2770
+        },
+        "abstract": {
+          "missing": 1965,
+          "present": 805
+        }
+      }
+    },
+    "NeurIPS": {
+      "source_occurrences": 24963,
+      "ordered_author_slots": 122936,
+      "authors": {
+        "present": 24963,
+        "denominator": 24963,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 5512,
+        "denominator": 24963,
+        "percent": 22.081
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 24963,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 24963,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 24963,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 5522,
+        "denominator": 24963,
+        "percent": 22.121
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 24963,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 24963,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 27713,
+        "denominator": 122936,
+        "percent": 22.543
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 122936,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 122936,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 5512,
+      "date_precision": {
+        "missing": 24963
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 19441,
+          "source_ordered_profile_institution_time_unverified": 5522
+        },
+        "institutions": {
+          "missing": 19451,
+          "present_publication_time_unverified": 5512
+        },
+        "countries": {
+          "missing": 24963
+        },
+        "doi": {
+          "missing": 24963
+        },
+        "arxiv_id": {
+          "missing": 24963
+        },
+        "openreview_id": {
+          "missing": 19441,
+          "present": 5522
+        },
+        "publication_date": {
+          "missing": 24963
+        },
+        "abstract": {
+          "missing": 24963
+        }
+      }
+    },
+    "OSDI": {
+      "source_occurrences": 428,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 428,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 428
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 428
+        },
+        "institutions": {
+          "missing": 428
+        },
+        "countries": {
+          "missing": 428
+        },
+        "doi": {
+          "missing": 428
+        },
+        "arxiv_id": {
+          "missing": 428
+        },
+        "openreview_id": {
+          "missing": 428
+        },
+        "publication_date": {
+          "missing": 428
+        },
+        "abstract": {
+          "missing": 428
+        }
+      }
+    },
+    "SIGIR": {
+      "source_occurrences": 1256,
+      "ordered_author_slots": 6908,
+      "authors": {
+        "present": 1256,
+        "denominator": 1256,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 147,
+        "denominator": 1256,
+        "percent": 11.704
+      },
+      "countries": {
+        "present": 2,
+        "denominator": 1256,
+        "percent": 0.159
+      },
+      "doi": {
+        "present": 338,
+        "denominator": 1256,
+        "percent": 26.911
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1256,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1256,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1256,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 338,
+        "denominator": 1256,
+        "percent": 26.911
+      },
+      "affiliation_author_count": {
+        "present": 757,
+        "denominator": 6908,
+        "percent": 10.958
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 757,
+        "denominator": 6908,
+        "percent": 10.958
+      },
+      "country_author_count": {
+        "present": 2,
+        "denominator": 6908,
+        "percent": 0.029
+      },
+      "paper_scoped_institution_papers": 147,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1256
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 1256
+        },
+        "institutions": {
+          "present": 147,
+          "missing": 1109
+        },
+        "countries": {
+          "missing": 1254,
+          "present": 2
+        },
+        "doi": {
+          "missing": 918,
+          "reported_identifier_not_yet_raw_verified": 338
+        },
+        "arxiv_id": {
+          "missing": 1256
+        },
+        "openreview_id": {
+          "missing": 1256
+        },
+        "publication_date": {
+          "missing": 1256
+        },
+        "abstract": {
+          "missing": 918,
+          "present": 338
+        }
+      }
+    },
+    "SOSP": {
+      "source_occurrences": 268,
+      "ordered_author_slots": 1914,
+      "authors": {
+        "present": 264,
+        "denominator": 268,
+        "percent": 98.507
+      },
+      "institutions": {
+        "present": 264,
+        "denominator": 268,
+        "percent": 98.507
+      },
+      "countries": {
+        "present": 3,
+        "denominator": 268,
+        "percent": 1.119
+      },
+      "doi": {
+        "present": 225,
+        "denominator": 268,
+        "percent": 83.955
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 268,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 268,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 268,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 268,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 1460,
+        "denominator": 1914,
+        "percent": 76.28
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 1460,
+        "denominator": 1914,
+        "percent": 76.28
+      },
+      "country_author_count": {
+        "present": 11,
+        "denominator": 1914,
+        "percent": 0.575
+      },
+      "paper_scoped_institution_papers": 264,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 268
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 264,
+          "missing": 4
+        },
+        "institutions": {
+          "present": 264,
+          "missing": 4
+        },
+        "countries": {
+          "missing": 265,
+          "present": 3
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 225,
+          "missing": 43
+        },
+        "arxiv_id": {
+          "missing": 268
+        },
+        "openreview_id": {
+          "missing": 268
+        },
+        "publication_date": {
+          "missing": 268
+        },
+        "abstract": {
+          "missing": 268
+        }
+      }
+    }
+  },
+  "by_venue_year": [
+    {
+      "venue": "ACL",
+      "year": 2020,
+      "source_occurrences": 778,
+      "ordered_author_slots": 3319,
+      "authors": {
+        "present": 778,
+        "denominator": 778,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 778,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 778,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 778,
+        "denominator": 778,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 778,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 778,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 778,
+        "denominator": 778,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 778,
+        "denominator": 778,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 3319,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 3319,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 3319,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 778
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 778
+        },
+        "institutions": {
+          "missing": 778
+        },
+        "countries": {
+          "missing": 778
+        },
+        "doi": {
+          "present": 778
+        },
+        "arxiv_id": {
+          "missing": 778
+        },
+        "openreview_id": {
+          "missing": 778
+        },
+        "publication_date": {
+          "present_month_precision": 778
+        },
+        "abstract": {
+          "present": 778
+        }
+      }
+    },
+    {
+      "venue": "ACL",
+      "year": 2021,
+      "source_occurrences": 710,
+      "ordered_author_slots": 3303,
+      "authors": {
+        "present": 710,
+        "denominator": 710,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 1,
+        "denominator": 710,
+        "percent": 0.141
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 710,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 710,
+        "denominator": 710,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 710,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 710,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 710,
+        "denominator": 710,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 710,
+        "denominator": 710,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 1,
+        "denominator": 3303,
+        "percent": 0.03
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 1,
+        "denominator": 3303,
+        "percent": 0.03
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 3303,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 1,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 710
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 710
+        },
+        "institutions": {
+          "missing": 709,
+          "present": 1
+        },
+        "countries": {
+          "missing": 710
+        },
+        "doi": {
+          "present": 710
+        },
+        "arxiv_id": {
+          "missing": 710
+        },
+        "openreview_id": {
+          "missing": 710
+        },
+        "publication_date": {
+          "present_month_precision": 710
+        },
+        "abstract": {
+          "present": 710
+        }
+      }
+    },
+    {
+      "venue": "ACL",
+      "year": 2022,
+      "source_occurrences": 700,
+      "ordered_author_slots": 3253,
+      "authors": {
+        "present": 700,
+        "denominator": 700,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 700,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 700,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 700,
+        "denominator": 700,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 700,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 700,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 700,
+        "denominator": 700,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 700,
+        "denominator": 700,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 3253,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 3253,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 3253,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 700
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 700
+        },
+        "institutions": {
+          "missing": 700
+        },
+        "countries": {
+          "missing": 700
+        },
+        "doi": {
+          "present": 700
+        },
+        "arxiv_id": {
+          "missing": 700
+        },
+        "openreview_id": {
+          "missing": 700
+        },
+        "publication_date": {
+          "present_month_precision": 700
+        },
+        "abstract": {
+          "present": 700
+        }
+      }
+    },
+    {
+      "venue": "ACL",
+      "year": 2023,
+      "source_occurrences": 1075,
+      "ordered_author_slots": 5579,
+      "authors": {
+        "present": 1075,
+        "denominator": 1075,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 1071,
+        "denominator": 1075,
+        "percent": 99.628
+      },
+      "countries": {
+        "present": 35,
+        "denominator": 1075,
+        "percent": 3.256
+      },
+      "doi": {
+        "present": 1074,
+        "denominator": 1075,
+        "percent": 99.907
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1075,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1075,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 1075,
+        "denominator": 1075,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 1075,
+        "denominator": 1075,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 5550,
+        "denominator": 5579,
+        "percent": 99.48
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 5550,
+        "denominator": 5579,
+        "percent": 99.48
+      },
+      "country_author_count": {
+        "present": 43,
+        "denominator": 5579,
+        "percent": 0.771
+      },
+      "paper_scoped_institution_papers": 1071,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 1075
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 1075
+        },
+        "institutions": {
+          "present": 1071,
+          "missing": 4
+        },
+        "countries": {
+          "missing": 1040,
+          "present": 35
+        },
+        "doi": {
+          "present": 1074,
+          "missing": 1
+        },
+        "arxiv_id": {
+          "missing": 1075
+        },
+        "openreview_id": {
+          "missing": 1075
+        },
+        "publication_date": {
+          "present_month_precision": 1075
+        },
+        "abstract": {
+          "present": 1075
+        }
+      }
+    },
+    {
+      "venue": "ACL",
+      "year": 2024,
+      "source_occurrences": 940,
+      "ordered_author_slots": 5555,
+      "authors": {
+        "present": 940,
+        "denominator": 940,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 917,
+        "denominator": 940,
+        "percent": 97.553
+      },
+      "countries": {
+        "present": 14,
+        "denominator": 940,
+        "percent": 1.489
+      },
+      "doi": {
+        "present": 940,
+        "denominator": 940,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 940,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 940,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 940,
+        "denominator": 940,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 939,
+        "denominator": 940,
+        "percent": 99.894
+      },
+      "affiliation_author_count": {
+        "present": 3640,
+        "denominator": 5555,
+        "percent": 65.527
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 3640,
+        "denominator": 5555,
+        "percent": 65.527
+      },
+      "country_author_count": {
+        "present": 20,
+        "denominator": 5555,
+        "percent": 0.36
+      },
+      "paper_scoped_institution_papers": 917,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 940
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 940
+        },
+        "institutions": {
+          "present": 917,
+          "missing": 23
+        },
+        "countries": {
+          "missing": 926,
+          "present": 14
+        },
+        "doi": {
+          "present": 940
+        },
+        "arxiv_id": {
+          "missing": 940
+        },
+        "openreview_id": {
+          "missing": 940
+        },
+        "publication_date": {
+          "present_month_precision": 940
+        },
+        "abstract": {
+          "present": 939,
+          "missing": 1
+        }
+      }
+    },
+    {
+      "venue": "ACL",
+      "year": 2025,
+      "source_occurrences": 1699,
+      "ordered_author_slots": 10847,
+      "authors": {
+        "present": 1699,
+        "denominator": 1699,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 1656,
+        "denominator": 1699,
+        "percent": 97.469
+      },
+      "countries": {
+        "present": 58,
+        "denominator": 1699,
+        "percent": 3.414
+      },
+      "doi": {
+        "present": 1699,
+        "denominator": 1699,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1699,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1699,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 1699,
+        "denominator": 1699,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 1699,
+        "denominator": 1699,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 6644,
+        "denominator": 10847,
+        "percent": 61.252
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 6644,
+        "denominator": 10847,
+        "percent": 61.252
+      },
+      "country_author_count": {
+        "present": 70,
+        "denominator": 10847,
+        "percent": 0.645
+      },
+      "paper_scoped_institution_papers": 1656,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 1699
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 1699
+        },
+        "institutions": {
+          "present": 1656,
+          "missing": 43
+        },
+        "countries": {
+          "missing": 1641,
+          "present": 58
+        },
+        "doi": {
+          "present": 1699
+        },
+        "arxiv_id": {
+          "missing": 1699
+        },
+        "openreview_id": {
+          "missing": 1699
+        },
+        "publication_date": {
+          "present_month_precision": 1699
+        },
+        "abstract": {
+          "present": 1699
+        }
+      }
+    },
+    {
+      "venue": "ACL",
+      "year": 2026,
+      "source_occurrences": 2296,
+      "ordered_author_slots": 15225,
+      "authors": {
+        "present": 2296,
+        "denominator": 2296,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 2248,
+        "denominator": 2296,
+        "percent": 97.909
+      },
+      "countries": {
+        "present": 53,
+        "denominator": 2296,
+        "percent": 2.308
+      },
+      "doi": {
+        "present": 2293,
+        "denominator": 2296,
+        "percent": 99.869
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 2296,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2296,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 2296,
+        "denominator": 2296,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 2295,
+        "denominator": 2296,
+        "percent": 99.956
+      },
+      "affiliation_author_count": {
+        "present": 8740,
+        "denominator": 15225,
+        "percent": 57.406
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 8740,
+        "denominator": 15225,
+        "percent": 57.406
+      },
+      "country_author_count": {
+        "present": 60,
+        "denominator": 15225,
+        "percent": 0.394
+      },
+      "paper_scoped_institution_papers": 2248,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 2296
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 2296
+        },
+        "institutions": {
+          "present": 2248,
+          "missing": 48
+        },
+        "countries": {
+          "missing": 2243,
+          "present": 53
+        },
+        "doi": {
+          "present": 2293,
+          "missing": 3
+        },
+        "arxiv_id": {
+          "missing": 2296
+        },
+        "openreview_id": {
+          "missing": 2296
+        },
+        "publication_date": {
+          "present_month_precision": 2296
+        },
+        "abstract": {
+          "present": 2295,
+          "missing": 1
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2020,
+      "source_occurrences": 1466,
+      "ordered_author_slots": 6970,
+      "authors": {
+        "present": 1466,
+        "denominator": 1466,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1466,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1466,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1466,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 965,
+        "denominator": 1466,
+        "percent": 65.825
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1466,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 1466,
+        "denominator": 1466,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1466,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 6970,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 6970,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 6970,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 1466
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 1466
+        },
+        "institutions": {
+          "missing": 1466
+        },
+        "countries": {
+          "missing": 1466
+        },
+        "doi": {
+          "missing": 1466
+        },
+        "arxiv_id": {
+          "present": 965,
+          "missing": 501
+        },
+        "openreview_id": {
+          "missing": 1466
+        },
+        "publication_date": {
+          "present_month_precision": 1466
+        },
+        "abstract": {
+          "missing": 1466
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2021,
+      "source_occurrences": 1660,
+      "ordered_author_slots": 8087,
+      "authors": {
+        "present": 1660,
+        "denominator": 1660,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1660,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1660,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1660,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 1175,
+        "denominator": 1660,
+        "percent": 70.783
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1660,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 1660,
+        "denominator": 1660,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1660,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 8087,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 8087,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 8087,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 1660
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 1660
+        },
+        "institutions": {
+          "missing": 1660
+        },
+        "countries": {
+          "missing": 1660
+        },
+        "doi": {
+          "missing": 1660
+        },
+        "arxiv_id": {
+          "missing": 485,
+          "present": 1175
+        },
+        "openreview_id": {
+          "missing": 1660
+        },
+        "publication_date": {
+          "present_month_precision": 1660
+        },
+        "abstract": {
+          "missing": 1660
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2022,
+      "source_occurrences": 2074,
+      "ordered_author_slots": 10877,
+      "authors": {
+        "present": 2074,
+        "denominator": 2074,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2074,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2074,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2074,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 1339,
+        "denominator": 2074,
+        "percent": 64.561
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2074,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 2074,
+        "denominator": 2074,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2074,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 10877,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 10877,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 10877,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 2074
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 2074
+        },
+        "institutions": {
+          "missing": 2074
+        },
+        "countries": {
+          "missing": 2074
+        },
+        "doi": {
+          "missing": 2074
+        },
+        "arxiv_id": {
+          "present": 1339,
+          "missing": 735
+        },
+        "openreview_id": {
+          "missing": 2074
+        },
+        "publication_date": {
+          "present_month_precision": 2074
+        },
+        "abstract": {
+          "missing": 2074
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2023,
+      "source_occurrences": 2353,
+      "ordered_author_slots": 12696,
+      "authors": {
+        "present": 2353,
+        "denominator": 2353,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2353,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2353,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2353,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 1454,
+        "denominator": 2353,
+        "percent": 61.793
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2353,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 2353,
+        "denominator": 2353,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2353,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 12696,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 12696,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 12696,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 2353
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 2353
+        },
+        "institutions": {
+          "missing": 2353
+        },
+        "countries": {
+          "missing": 2353
+        },
+        "doi": {
+          "missing": 2353
+        },
+        "arxiv_id": {
+          "missing": 899,
+          "present": 1454
+        },
+        "openreview_id": {
+          "missing": 2353
+        },
+        "publication_date": {
+          "present_month_precision": 2353
+        },
+        "abstract": {
+          "missing": 2353
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2024,
+      "source_occurrences": 2716,
+      "ordered_author_slots": 15288,
+      "authors": {
+        "present": 2715,
+        "denominator": 2716,
+        "percent": 99.963
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2716,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2716,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2716,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 1866,
+        "denominator": 2716,
+        "percent": 68.704
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2716,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 2715,
+        "denominator": 2716,
+        "percent": 99.963
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2716,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 15288,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 15288,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 15288,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 2715,
+        "missing": 1
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 2715,
+          "missing": 1
+        },
+        "institutions": {
+          "missing": 2716
+        },
+        "countries": {
+          "missing": 2716
+        },
+        "doi": {
+          "missing": 2716
+        },
+        "arxiv_id": {
+          "present": 1866,
+          "missing": 850
+        },
+        "openreview_id": {
+          "missing": 2716
+        },
+        "publication_date": {
+          "present_month_precision": 2715,
+          "missing": 1
+        },
+        "abstract": {
+          "missing": 2716
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2025,
+      "source_occurrences": 2871,
+      "ordered_author_slots": 17793,
+      "authors": {
+        "present": 2871,
+        "denominator": 2871,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2871,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2871,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2871,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 1913,
+        "denominator": 2871,
+        "percent": 66.632
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2871,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 2871,
+        "denominator": 2871,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2871,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 17793,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 17793,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 17793,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 2871
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 2871
+        },
+        "institutions": {
+          "missing": 2871
+        },
+        "countries": {
+          "missing": 2871
+        },
+        "doi": {
+          "missing": 2871
+        },
+        "arxiv_id": {
+          "present": 1913,
+          "missing": 958
+        },
+        "openreview_id": {
+          "missing": 2871
+        },
+        "publication_date": {
+          "present_month_precision": 2871
+        },
+        "abstract": {
+          "missing": 2871
+        }
+      }
+    },
+    {
+      "venue": "CVPR",
+      "year": 2026,
+      "source_occurrences": 4042,
+      "ordered_author_slots": 25767,
+      "authors": {
+        "present": 4042,
+        "denominator": 4042,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 4042,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 4042,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 4042,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 2657,
+        "denominator": 4042,
+        "percent": 65.735
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 4042,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 4042,
+        "denominator": 4042,
+        "percent": 100.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 4042,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 25767,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 25767,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 25767,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "month": 4042
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 4042
+        },
+        "institutions": {
+          "missing": 4042
+        },
+        "countries": {
+          "missing": 4042
+        },
+        "doi": {
+          "missing": 4042
+        },
+        "arxiv_id": {
+          "present": 2657,
+          "missing": 1385
+        },
+        "openreview_id": {
+          "missing": 4042
+        },
+        "publication_date": {
+          "present_month_precision": 4042
+        },
+        "abstract": {
+          "missing": 4042
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2020,
+      "source_occurrences": 687,
+      "ordered_author_slots": 3045,
+      "authors": {
+        "present": 687,
+        "denominator": 687,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 687,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 687,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 687,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 687,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 687,
+        "denominator": 687,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 687,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 687,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 3045,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 3045,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 3045,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 687
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered": 687
+        },
+        "institutions": {
+          "missing": 687
+        },
+        "countries": {
+          "missing": 687
+        },
+        "doi": {
+          "missing": 687
+        },
+        "arxiv_id": {
+          "missing": 687
+        },
+        "openreview_id": {
+          "present": 687
+        },
+        "publication_date": {
+          "missing": 687
+        },
+        "abstract": {
+          "missing": 687
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2021,
+      "source_occurrences": 860,
+      "ordered_author_slots": 3836,
+      "authors": {
+        "present": 860,
+        "denominator": 860,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 860,
+        "denominator": 860,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 860,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 860,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 860,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 860,
+        "denominator": 860,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 860,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 860,
+        "denominator": 860,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 3556,
+        "denominator": 3836,
+        "percent": 92.701
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 3836,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 3836,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 860,
+      "date_precision": {
+        "missing": 860
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 860
+        },
+        "institutions": {
+          "present_publication_time_unverified": 860
+        },
+        "countries": {
+          "missing": 860
+        },
+        "doi": {
+          "missing": 860
+        },
+        "arxiv_id": {
+          "missing": 860
+        },
+        "openreview_id": {
+          "present": 860
+        },
+        "publication_date": {
+          "missing": 860
+        },
+        "abstract": {
+          "present": 860
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2022,
+      "source_occurrences": 1095,
+      "ordered_author_slots": 5121,
+      "authors": {
+        "present": 1095,
+        "denominator": 1095,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 1095,
+        "denominator": 1095,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1095,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1095,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1095,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 1095,
+        "denominator": 1095,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1095,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 1095,
+        "denominator": 1095,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 4894,
+        "denominator": 5121,
+        "percent": 95.567
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 5121,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 5121,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 1095,
+      "date_precision": {
+        "missing": 1095
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 1093,
+          "source_ordered_profile_institution_time_unverified:partial_names": 2
+        },
+        "institutions": {
+          "present_publication_time_unverified": 1095
+        },
+        "countries": {
+          "missing": 1095
+        },
+        "doi": {
+          "missing": 1095
+        },
+        "arxiv_id": {
+          "missing": 1095
+        },
+        "openreview_id": {
+          "present": 1095
+        },
+        "publication_date": {
+          "missing": 1095
+        },
+        "abstract": {
+          "present": 1095
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2023,
+      "source_occurrences": 1574,
+      "ordered_author_slots": 7610,
+      "authors": {
+        "present": 1574,
+        "denominator": 1574,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 1573,
+        "denominator": 1574,
+        "percent": 99.936
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1574,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1574,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1574,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 1574,
+        "denominator": 1574,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1574,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 1574,
+        "denominator": 1574,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 7434,
+        "denominator": 7610,
+        "percent": 97.687
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 7610,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 7610,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 1573,
+      "date_precision": {
+        "missing": 1574
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 1574
+        },
+        "institutions": {
+          "present_publication_time_unverified": 1573,
+          "missing": 1
+        },
+        "countries": {
+          "missing": 1574
+        },
+        "doi": {
+          "missing": 1574
+        },
+        "arxiv_id": {
+          "missing": 1574
+        },
+        "openreview_id": {
+          "present": 1574
+        },
+        "publication_date": {
+          "missing": 1574
+        },
+        "abstract": {
+          "present": 1574
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2024,
+      "source_occurrences": 2260,
+      "ordered_author_slots": 11999,
+      "authors": {
+        "present": 2260,
+        "denominator": 2260,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 2259,
+        "denominator": 2260,
+        "percent": 99.956
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2260,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2260,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 2260,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 2260,
+        "denominator": 2260,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 2260,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 2260,
+        "denominator": 2260,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 11733,
+        "denominator": 11999,
+        "percent": 97.783
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 11999,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 11999,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 2259,
+      "date_precision": {
+        "missing": 2260
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 2260
+        },
+        "institutions": {
+          "present_publication_time_unverified": 2259,
+          "missing": 1
+        },
+        "countries": {
+          "missing": 2260
+        },
+        "doi": {
+          "missing": 2260
+        },
+        "arxiv_id": {
+          "missing": 2260
+        },
+        "openreview_id": {
+          "present": 2260
+        },
+        "publication_date": {
+          "missing": 2260
+        },
+        "abstract": {
+          "present": 2260
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2025,
+      "source_occurrences": 3705,
+      "ordered_author_slots": 21285,
+      "authors": {
+        "present": 3705,
+        "denominator": 3705,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 3704,
+        "denominator": 3705,
+        "percent": 99.973
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 3705,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 3705,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 3705,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 3705,
+        "denominator": 3705,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 3705,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 3705,
+        "denominator": 3705,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 20828,
+        "denominator": 21285,
+        "percent": 97.853
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 21285,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 21285,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 3704,
+      "date_precision": {
+        "missing": 3705
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 3705
+        },
+        "institutions": {
+          "present_publication_time_unverified": 3704,
+          "missing": 1
+        },
+        "countries": {
+          "missing": 3705
+        },
+        "doi": {
+          "missing": 3705
+        },
+        "arxiv_id": {
+          "missing": 3705
+        },
+        "openreview_id": {
+          "present": 3705
+        },
+        "publication_date": {
+          "missing": 3705
+        },
+        "abstract": {
+          "present": 3705
+        }
+      }
+    },
+    {
+      "venue": "ICLR",
+      "year": 2026,
+      "source_occurrences": 5353,
+      "ordered_author_slots": 33705,
+      "authors": {
+        "present": 5353,
+        "denominator": 5353,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 5352,
+        "denominator": 5353,
+        "percent": 99.981
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 5353,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 5353,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 5353,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 5353,
+        "denominator": 5353,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 5353,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 5353,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 33101,
+        "denominator": 33705,
+        "percent": 98.208
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 33705,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 33705,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 5352,
+      "date_precision": {
+        "missing": 5353
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 5353
+        },
+        "institutions": {
+          "present_publication_time_unverified": 5352,
+          "missing": 1
+        },
+        "countries": {
+          "missing": 5353
+        },
+        "doi": {
+          "missing": 5353
+        },
+        "arxiv_id": {
+          "missing": 5353
+        },
+        "openreview_id": {
+          "present": 5353
+        },
+        "publication_date": {
+          "missing": 5353
+        },
+        "abstract": {
+          "missing": 5353
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2020,
+      "source_occurrences": 1084,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1084,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1084
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 1084
+        },
+        "institutions": {
+          "missing": 1084
+        },
+        "countries": {
+          "missing": 1084
+        },
+        "doi": {
+          "missing": 1084
+        },
+        "arxiv_id": {
+          "missing": 1084
+        },
+        "openreview_id": {
+          "missing": 1084
+        },
+        "publication_date": {
+          "missing": 1084
+        },
+        "abstract": {
+          "missing": 1084
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2021,
+      "source_occurrences": 1183,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1183,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1183
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 1183
+        },
+        "institutions": {
+          "missing": 1183
+        },
+        "countries": {
+          "missing": 1183
+        },
+        "doi": {
+          "missing": 1183
+        },
+        "arxiv_id": {
+          "missing": 1183
+        },
+        "openreview_id": {
+          "missing": 1183
+        },
+        "publication_date": {
+          "missing": 1183
+        },
+        "abstract": {
+          "missing": 1183
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2022,
+      "source_occurrences": 1233,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1233,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1233
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 1233
+        },
+        "institutions": {
+          "missing": 1233
+        },
+        "countries": {
+          "missing": 1233
+        },
+        "doi": {
+          "missing": 1233
+        },
+        "arxiv_id": {
+          "missing": 1233
+        },
+        "openreview_id": {
+          "missing": 1233
+        },
+        "publication_date": {
+          "missing": 1233
+        },
+        "abstract": {
+          "missing": 1233
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2023,
+      "source_occurrences": 1828,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 1828,
+        "denominator": 1828,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1828,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1828
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 1828
+        },
+        "institutions": {
+          "missing": 1828
+        },
+        "countries": {
+          "missing": 1828
+        },
+        "doi": {
+          "missing": 1828
+        },
+        "arxiv_id": {
+          "missing": 1828
+        },
+        "openreview_id": {
+          "present": 1828
+        },
+        "publication_date": {
+          "missing": 1828
+        },
+        "abstract": {
+          "missing": 1828
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2024,
+      "source_occurrences": 2535,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 2535,
+        "denominator": 2535,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2535,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 2535
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 2535
+        },
+        "institutions": {
+          "missing": 2535
+        },
+        "countries": {
+          "missing": 2535
+        },
+        "doi": {
+          "missing": 2535
+        },
+        "arxiv_id": {
+          "missing": 2535
+        },
+        "openreview_id": {
+          "present": 2535
+        },
+        "publication_date": {
+          "missing": 2535
+        },
+        "abstract": {
+          "missing": 2535
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2025,
+      "source_occurrences": 3257,
+      "ordered_author_slots": 17123,
+      "authors": {
+        "present": 3257,
+        "denominator": 3257,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 3257,
+        "denominator": 3257,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 3257,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 3257,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 3257,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 3257,
+        "denominator": 3257,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 3257,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 3257,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 16749,
+        "denominator": 17123,
+        "percent": 97.816
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 17123,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 17123,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 3257,
+      "date_precision": {
+        "missing": 3257
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 3257
+        },
+        "institutions": {
+          "present_publication_time_unverified": 3257
+        },
+        "countries": {
+          "missing": 3257
+        },
+        "doi": {
+          "missing": 3257
+        },
+        "arxiv_id": {
+          "missing": 3257
+        },
+        "openreview_id": {
+          "present": 3257
+        },
+        "publication_date": {
+          "missing": 3257
+        },
+        "abstract": {
+          "missing": 3257
+        }
+      }
+    },
+    {
+      "venue": "ICML",
+      "year": 2026,
+      "source_occurrences": 6340,
+      "ordered_author_slots": 36099,
+      "authors": {
+        "present": 6340,
+        "denominator": 6340,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 6335,
+        "denominator": 6340,
+        "percent": 99.921
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 6340,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 6340,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 6340,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 6340,
+        "denominator": 6340,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 6340,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 6340,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 35424,
+        "denominator": 36099,
+        "percent": 98.13
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 36099,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 36099,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 6335,
+      "date_precision": {
+        "missing": 6340
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 6340
+        },
+        "institutions": {
+          "present_publication_time_unverified": 6335,
+          "missing": 5
+        },
+        "countries": {
+          "missing": 6340
+        },
+        "doi": {
+          "missing": 6340
+        },
+        "arxiv_id": {
+          "missing": 6340
+        },
+        "openreview_id": {
+          "present": 6340
+        },
+        "publication_date": {
+          "missing": 6340
+        },
+        "abstract": {
+          "missing": 6340
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2020,
+      "source_occurrences": 129,
+      "ordered_author_slots": 599,
+      "authors": {
+        "present": 126,
+        "denominator": 129,
+        "percent": 97.674
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 129,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 129,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 12,
+        "denominator": 129,
+        "percent": 9.302
+      },
+      "arxiv_id": {
+        "present": 7,
+        "denominator": 129,
+        "percent": 5.426
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 129,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 129,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 129,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 599,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 599,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 599,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 129
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 126,
+          "missing": 3
+        },
+        "institutions": {
+          "missing": 129
+        },
+        "countries": {
+          "missing": 129
+        },
+        "doi": {
+          "missing": 117,
+          "source_native_identifier": 12
+        },
+        "arxiv_id": {
+          "missing": 122,
+          "reported_identifier_not_yet_raw_verified": 7
+        },
+        "openreview_id": {
+          "missing": 129
+        },
+        "publication_date": {
+          "missing": 129
+        },
+        "abstract": {
+          "missing": 129
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2021,
+      "source_occurrences": 138,
+      "ordered_author_slots": 639,
+      "authors": {
+        "present": 135,
+        "denominator": 138,
+        "percent": 97.826
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 138,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 138,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 7,
+        "denominator": 138,
+        "percent": 5.072
+      },
+      "arxiv_id": {
+        "present": 82,
+        "denominator": 138,
+        "percent": 59.42
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 138,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 138,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 138,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 639,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 639,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 639,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 138
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 135,
+          "missing": 3
+        },
+        "institutions": {
+          "missing": 138
+        },
+        "countries": {
+          "missing": 138
+        },
+        "doi": {
+          "missing": 131,
+          "source_native_identifier": 7
+        },
+        "arxiv_id": {
+          "missing": 56,
+          "reported_identifier_not_yet_raw_verified": 82
+        },
+        "openreview_id": {
+          "missing": 138
+        },
+        "publication_date": {
+          "missing": 138
+        },
+        "abstract": {
+          "missing": 138
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2022,
+      "source_occurrences": 197,
+      "ordered_author_slots": 945,
+      "authors": {
+        "present": 193,
+        "denominator": 197,
+        "percent": 97.97
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 197,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 197,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 80,
+        "denominator": 197,
+        "percent": 40.609
+      },
+      "arxiv_id": {
+        "present": 83,
+        "denominator": 197,
+        "percent": 42.132
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 197,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 197,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 197,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 945,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 945,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 945,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 197
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 193,
+          "missing": 4
+        },
+        "institutions": {
+          "missing": 197
+        },
+        "countries": {
+          "missing": 197
+        },
+        "doi": {
+          "missing": 117,
+          "source_native_identifier": 80
+        },
+        "arxiv_id": {
+          "reported_identifier_not_yet_raw_verified": 83,
+          "missing": 114
+        },
+        "openreview_id": {
+          "missing": 197
+        },
+        "publication_date": {
+          "missing": 197
+        },
+        "abstract": {
+          "missing": 197
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2023,
+      "source_occurrences": 207,
+      "ordered_author_slots": 975,
+      "authors": {
+        "present": 202,
+        "denominator": 207,
+        "percent": 97.585
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 207,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 207,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 6,
+        "denominator": 207,
+        "percent": 2.899
+      },
+      "arxiv_id": {
+        "present": 48,
+        "denominator": 207,
+        "percent": 23.188
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 207,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 207,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 207,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 975,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 975,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 975,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 207
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 202,
+          "missing": 5
+        },
+        "institutions": {
+          "missing": 207
+        },
+        "countries": {
+          "missing": 207
+        },
+        "doi": {
+          "missing": 201,
+          "source_native_identifier": 6
+        },
+        "arxiv_id": {
+          "missing": 159,
+          "reported_identifier_not_yet_raw_verified": 48
+        },
+        "openreview_id": {
+          "missing": 207
+        },
+        "publication_date": {
+          "missing": 207
+        },
+        "abstract": {
+          "missing": 207
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2024,
+      "source_occurrences": 234,
+      "ordered_author_slots": 1204,
+      "authors": {
+        "present": 229,
+        "denominator": 234,
+        "percent": 97.863
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 234,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 234,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 35,
+        "denominator": 234,
+        "percent": 14.957
+      },
+      "arxiv_id": {
+        "present": 37,
+        "denominator": 234,
+        "percent": 15.812
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 234,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 234,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 234,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1204,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1204,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1204,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 234
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 229,
+          "missing": 5
+        },
+        "institutions": {
+          "missing": 234
+        },
+        "countries": {
+          "missing": 234
+        },
+        "doi": {
+          "missing": 199,
+          "source_native_identifier": 35
+        },
+        "arxiv_id": {
+          "reported_identifier_not_yet_raw_verified": 37,
+          "missing": 197
+        },
+        "openreview_id": {
+          "missing": 234
+        },
+        "publication_date": {
+          "missing": 234
+        },
+        "abstract": {
+          "missing": 234
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2025,
+      "source_occurrences": 245,
+      "ordered_author_slots": 1310,
+      "authors": {
+        "present": 241,
+        "denominator": 245,
+        "percent": 98.367
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 245,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 245,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 7,
+        "denominator": 245,
+        "percent": 2.857
+      },
+      "arxiv_id": {
+        "present": 38,
+        "denominator": 245,
+        "percent": 15.51
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 245,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 245,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 245,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1310,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1310,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1310,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 245
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 241,
+          "missing": 4
+        },
+        "institutions": {
+          "missing": 245
+        },
+        "countries": {
+          "missing": 245
+        },
+        "doi": {
+          "missing": 238,
+          "source_native_identifier": 7
+        },
+        "arxiv_id": {
+          "reported_identifier_not_yet_raw_verified": 38,
+          "missing": 207
+        },
+        "openreview_id": {
+          "missing": 245
+        },
+        "publication_date": {
+          "missing": 245
+        },
+        "abstract": {
+          "missing": 245
+        }
+      }
+    },
+    {
+      "venue": "ICSE",
+      "year": 2026,
+      "source_occurrences": 321,
+      "ordered_author_slots": 1675,
+      "authors": {
+        "present": 318,
+        "denominator": 321,
+        "percent": 99.065
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 321,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 321,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 21,
+        "denominator": 321,
+        "percent": 6.542
+      },
+      "arxiv_id": {
+        "present": 78,
+        "denominator": 321,
+        "percent": 24.299
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 321,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 321,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 321,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1675,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1675,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1675,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 321
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 318,
+          "missing": 3
+        },
+        "institutions": {
+          "missing": 321
+        },
+        "countries": {
+          "missing": 321
+        },
+        "doi": {
+          "missing": 300,
+          "source_native_identifier": 21
+        },
+        "arxiv_id": {
+          "reported_identifier_not_yet_raw_verified": 78,
+          "missing": 243
+        },
+        "openreview_id": {
+          "missing": 321
+        },
+        "publication_date": {
+          "missing": 321
+        },
+        "abstract": {
+          "missing": 321
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2020,
+      "source_occurrences": 217,
+      "ordered_author_slots": 957,
+      "authors": {
+        "present": 217,
+        "denominator": 217,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 217,
+        "denominator": 217,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 5,
+        "denominator": 217,
+        "percent": 2.304
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 217,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 217,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 217,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 217,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 217,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 956,
+        "denominator": 957,
+        "percent": 99.896
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 956,
+        "denominator": 957,
+        "percent": 99.896
+      },
+      "country_author_count": {
+        "present": 14,
+        "denominator": 957,
+        "percent": 1.463
+      },
+      "paper_scoped_institution_papers": 217,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 217
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 217
+        },
+        "institutions": {
+          "present": 217
+        },
+        "countries": {
+          "missing": 212,
+          "present": 5
+        },
+        "doi": {
+          "missing": 217
+        },
+        "arxiv_id": {
+          "missing": 217
+        },
+        "openreview_id": {
+          "missing": 217
+        },
+        "publication_date": {
+          "missing": 217
+        },
+        "abstract": {
+          "missing": 217
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2021,
+      "source_occurrences": 239,
+      "ordered_author_slots": 1117,
+      "authors": {
+        "present": 239,
+        "denominator": 239,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 239,
+        "denominator": 239,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 239,
+        "denominator": 239,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1117,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1117,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1117,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 239
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 239
+        },
+        "institutions": {
+          "missing": 239
+        },
+        "countries": {
+          "missing": 239
+        },
+        "doi": {
+          "source_native_identifier": 239
+        },
+        "arxiv_id": {
+          "missing": 239
+        },
+        "openreview_id": {
+          "missing": 239
+        },
+        "publication_date": {
+          "missing": 239
+        },
+        "abstract": {
+          "present": 239
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2022,
+      "source_occurrences": 253,
+      "ordered_author_slots": 1205,
+      "authors": {
+        "present": 253,
+        "denominator": 253,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 253,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 253,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 253,
+        "denominator": 253,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 253,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 253,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 253,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 253,
+        "denominator": 253,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1205,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1205,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1205,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 253
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 253
+        },
+        "institutions": {
+          "missing": 253
+        },
+        "countries": {
+          "missing": 253
+        },
+        "doi": {
+          "source_native_identifier": 253
+        },
+        "arxiv_id": {
+          "missing": 253
+        },
+        "openreview_id": {
+          "missing": 253
+        },
+        "publication_date": {
+          "missing": 253
+        },
+        "abstract": {
+          "present": 253
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2023,
+      "source_occurrences": 313,
+      "ordered_author_slots": 1633,
+      "authors": {
+        "present": 313,
+        "denominator": 313,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 313,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 313,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 313,
+        "denominator": 313,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 313,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 313,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 313,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 313,
+        "denominator": 313,
+        "percent": 100.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1633,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1633,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1633,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 313
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 313
+        },
+        "institutions": {
+          "missing": 313
+        },
+        "countries": {
+          "missing": 313
+        },
+        "doi": {
+          "source_native_identifier": 313
+        },
+        "arxiv_id": {
+          "missing": 313
+        },
+        "openreview_id": {
+          "missing": 313
+        },
+        "publication_date": {
+          "missing": 313
+        },
+        "abstract": {
+          "present": 313
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2024,
+      "source_occurrences": 411,
+      "ordered_author_slots": 2171,
+      "authors": {
+        "present": 411,
+        "denominator": 411,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 411,
+        "denominator": 411,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 1,
+        "denominator": 411,
+        "percent": 0.243
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 411,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 411,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 411,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 411,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 411,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 2170,
+        "denominator": 2171,
+        "percent": 99.954
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 2170,
+        "denominator": 2171,
+        "percent": 99.954
+      },
+      "country_author_count": {
+        "present": 2,
+        "denominator": 2171,
+        "percent": 0.092
+      },
+      "paper_scoped_institution_papers": 411,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 411
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 411
+        },
+        "institutions": {
+          "present": 411
+        },
+        "countries": {
+          "missing": 410,
+          "present": 1
+        },
+        "doi": {
+          "missing": 411
+        },
+        "arxiv_id": {
+          "missing": 411
+        },
+        "openreview_id": {
+          "missing": 411
+        },
+        "publication_date": {
+          "missing": 411
+        },
+        "abstract": {
+          "missing": 411
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2025,
+      "source_occurrences": 552,
+      "ordered_author_slots": 3002,
+      "authors": {
+        "present": 552,
+        "denominator": 552,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 549,
+        "denominator": 552,
+        "percent": 99.457
+      },
+      "countries": {
+        "present": 1,
+        "denominator": 552,
+        "percent": 0.181
+      },
+      "doi": {
+        "present": 552,
+        "denominator": 552,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 552,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 552,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 552,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 552,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 2995,
+        "denominator": 3002,
+        "percent": 99.767
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 2995,
+        "denominator": 3002,
+        "percent": 99.767
+      },
+      "country_author_count": {
+        "present": 4,
+        "denominator": 3002,
+        "percent": 0.133
+      },
+      "paper_scoped_institution_papers": 549,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 552
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 552
+        },
+        "institutions": {
+          "present": 549,
+          "missing": 3
+        },
+        "countries": {
+          "missing": 551,
+          "present": 1
+        },
+        "doi": {
+          "source_native_identifier": 552
+        },
+        "arxiv_id": {
+          "missing": 552
+        },
+        "openreview_id": {
+          "missing": 552
+        },
+        "publication_date": {
+          "missing": 552
+        },
+        "abstract": {
+          "missing": 552
+        }
+      }
+    },
+    {
+      "venue": "KDD",
+      "year": 2026,
+      "source_occurrences": 785,
+      "ordered_author_slots": 4497,
+      "authors": {
+        "present": 785,
+        "denominator": 785,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 785,
+        "denominator": 785,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 785,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 785,
+        "denominator": 785,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 785,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 785,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 785,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 785,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 4497,
+        "denominator": 4497,
+        "percent": 100.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 4497,
+        "denominator": 4497,
+        "percent": 100.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 4497,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 785,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 785
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 785
+        },
+        "institutions": {
+          "present": 785
+        },
+        "countries": {
+          "missing": 785
+        },
+        "doi": {
+          "source_native_identifier": 785
+        },
+        "arxiv_id": {
+          "missing": 785
+        },
+        "openreview_id": {
+          "missing": 785
+        },
+        "publication_date": {
+          "missing": 785
+        },
+        "abstract": {
+          "missing": 785
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2020,
+      "source_occurrences": 1898,
+      "ordered_author_slots": 7791,
+      "authors": {
+        "present": 1898,
+        "denominator": 1898,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 1898,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 7791,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 7791,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 7791,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 1898
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 1898
+        },
+        "institutions": {
+          "missing": 1898
+        },
+        "countries": {
+          "missing": 1898
+        },
+        "doi": {
+          "missing": 1898
+        },
+        "arxiv_id": {
+          "missing": 1898
+        },
+        "openreview_id": {
+          "missing": 1898
+        },
+        "publication_date": {
+          "missing": 1898
+        },
+        "abstract": {
+          "missing": 1898
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2021,
+      "source_occurrences": 2334,
+      "ordered_author_slots": 9932,
+      "authors": {
+        "present": 2334,
+        "denominator": 2334,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2334,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 9932,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 9932,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 9932,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 2334
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 2334
+        },
+        "institutions": {
+          "missing": 2334
+        },
+        "countries": {
+          "missing": 2334
+        },
+        "doi": {
+          "missing": 2334
+        },
+        "arxiv_id": {
+          "missing": 2334
+        },
+        "openreview_id": {
+          "missing": 2334
+        },
+        "publication_date": {
+          "missing": 2334
+        },
+        "abstract": {
+          "missing": 2334
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2022,
+      "source_occurrences": 2671,
+      "ordered_author_slots": 11960,
+      "authors": {
+        "present": 2671,
+        "denominator": 2671,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 2671,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 11960,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 11960,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 11960,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 2671
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 2671
+        },
+        "institutions": {
+          "missing": 2671
+        },
+        "countries": {
+          "missing": 2671
+        },
+        "doi": {
+          "missing": 2671
+        },
+        "arxiv_id": {
+          "missing": 2671
+        },
+        "openreview_id": {
+          "missing": 2671
+        },
+        "publication_date": {
+          "missing": 2671
+        },
+        "abstract": {
+          "missing": 2671
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2023,
+      "source_occurrences": 3218,
+      "ordered_author_slots": 15090,
+      "authors": {
+        "present": 3218,
+        "denominator": 3218,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 3218,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 15090,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 15090,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 15090,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 3218
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 3218
+        },
+        "institutions": {
+          "missing": 3218
+        },
+        "countries": {
+          "missing": 3218
+        },
+        "doi": {
+          "missing": 3218
+        },
+        "arxiv_id": {
+          "missing": 3218
+        },
+        "openreview_id": {
+          "missing": 3218
+        },
+        "publication_date": {
+          "missing": 3218
+        },
+        "abstract": {
+          "missing": 3218
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2024,
+      "source_occurrences": 4034,
+      "ordered_author_slots": 20697,
+      "authors": {
+        "present": 4034,
+        "denominator": 4034,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 4034,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 20697,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 20697,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 20697,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 4034
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 4034
+        },
+        "institutions": {
+          "missing": 4034
+        },
+        "countries": {
+          "missing": 4034
+        },
+        "doi": {
+          "missing": 4034
+        },
+        "arxiv_id": {
+          "missing": 4034
+        },
+        "openreview_id": {
+          "missing": 4034
+        },
+        "publication_date": {
+          "missing": 4034
+        },
+        "abstract": {
+          "missing": 4034
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2025,
+      "source_occurrences": 5286,
+      "ordered_author_slots": 29237,
+      "authors": {
+        "present": 5286,
+        "denominator": 5286,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 5286,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 29237,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 29237,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 29237,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 5286
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_delimited_ordered": 5286
+        },
+        "institutions": {
+          "missing": 5286
+        },
+        "countries": {
+          "missing": 5286
+        },
+        "doi": {
+          "missing": 5286
+        },
+        "arxiv_id": {
+          "missing": 5286
+        },
+        "openreview_id": {
+          "missing": 5286
+        },
+        "publication_date": {
+          "missing": 5286
+        },
+        "abstract": {
+          "missing": 5286
+        }
+      }
+    },
+    {
+      "venue": "NeurIPS",
+      "year": 2026,
+      "source_occurrences": 5522,
+      "ordered_author_slots": 28229,
+      "authors": {
+        "present": 5522,
+        "denominator": 5522,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 5512,
+        "denominator": 5522,
+        "percent": 99.819
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 5522,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 5522,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 5522,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 5522,
+        "denominator": 5522,
+        "percent": 100.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 5522,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 5522,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 27713,
+        "denominator": 28229,
+        "percent": 98.172
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 28229,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 28229,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 5512,
+      "date_precision": {
+        "missing": 5522
+      },
+      "field_status_counts": {
+        "authors": {
+          "source_ordered_profile_institution_time_unverified": 5522
+        },
+        "institutions": {
+          "present_publication_time_unverified": 5512,
+          "missing": 10
+        },
+        "countries": {
+          "missing": 5522
+        },
+        "doi": {
+          "missing": 5522
+        },
+        "arxiv_id": {
+          "missing": 5522
+        },
+        "openreview_id": {
+          "present": 5522
+        },
+        "publication_date": {
+          "missing": 5522
+        },
+        "abstract": {
+          "missing": 5522
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2020,
+      "source_occurrences": 70,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 70,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 70
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 70
+        },
+        "institutions": {
+          "missing": 70
+        },
+        "countries": {
+          "missing": 70
+        },
+        "doi": {
+          "missing": 70
+        },
+        "arxiv_id": {
+          "missing": 70
+        },
+        "openreview_id": {
+          "missing": 70
+        },
+        "publication_date": {
+          "missing": 70
+        },
+        "abstract": {
+          "missing": 70
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2021,
+      "source_occurrences": 31,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 31,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 31
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 31
+        },
+        "institutions": {
+          "missing": 31
+        },
+        "countries": {
+          "missing": 31
+        },
+        "doi": {
+          "missing": 31
+        },
+        "arxiv_id": {
+          "missing": 31
+        },
+        "openreview_id": {
+          "missing": 31
+        },
+        "publication_date": {
+          "missing": 31
+        },
+        "abstract": {
+          "missing": 31
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2022,
+      "source_occurrences": 49,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 49,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 49
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 49
+        },
+        "institutions": {
+          "missing": 49
+        },
+        "countries": {
+          "missing": 49
+        },
+        "doi": {
+          "missing": 49
+        },
+        "arxiv_id": {
+          "missing": 49
+        },
+        "openreview_id": {
+          "missing": 49
+        },
+        "publication_date": {
+          "missing": 49
+        },
+        "abstract": {
+          "missing": 49
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2023,
+      "source_occurrences": 55,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 55,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 55
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 55
+        },
+        "institutions": {
+          "missing": 55
+        },
+        "countries": {
+          "missing": 55
+        },
+        "doi": {
+          "missing": 55
+        },
+        "arxiv_id": {
+          "missing": 55
+        },
+        "openreview_id": {
+          "missing": 55
+        },
+        "publication_date": {
+          "missing": 55
+        },
+        "abstract": {
+          "missing": 55
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2024,
+      "source_occurrences": 53,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 53
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 53
+        },
+        "institutions": {
+          "missing": 53
+        },
+        "countries": {
+          "missing": 53
+        },
+        "doi": {
+          "missing": 53
+        },
+        "arxiv_id": {
+          "missing": 53
+        },
+        "openreview_id": {
+          "missing": 53
+        },
+        "publication_date": {
+          "missing": 53
+        },
+        "abstract": {
+          "missing": 53
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2025,
+      "source_occurrences": 53,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 53,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 53
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 53
+        },
+        "institutions": {
+          "missing": 53
+        },
+        "countries": {
+          "missing": 53
+        },
+        "doi": {
+          "missing": 53
+        },
+        "arxiv_id": {
+          "missing": 53
+        },
+        "openreview_id": {
+          "missing": 53
+        },
+        "publication_date": {
+          "missing": 53
+        },
+        "abstract": {
+          "missing": 53
+        }
+      }
+    },
+    {
+      "venue": "OSDI",
+      "year": 2026,
+      "source_occurrences": 117,
+      "ordered_author_slots": 0,
+      "authors": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 117,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 0,
+        "percent": null
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 117
+      },
+      "field_status_counts": {
+        "authors": {
+          "missing": 117
+        },
+        "institutions": {
+          "missing": 117
+        },
+        "countries": {
+          "missing": 117
+        },
+        "doi": {
+          "missing": 117
+        },
+        "arxiv_id": {
+          "missing": 117
+        },
+        "openreview_id": {
+          "missing": 117
+        },
+        "publication_date": {
+          "missing": 117
+        },
+        "abstract": {
+          "missing": 117
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2020,
+      "source_occurrences": 147,
+      "ordered_author_slots": 757,
+      "authors": {
+        "present": 147,
+        "denominator": 147,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 147,
+        "denominator": 147,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 2,
+        "denominator": 147,
+        "percent": 1.361
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 147,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 147,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 147,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 147,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 147,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 757,
+        "denominator": 757,
+        "percent": 100.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 757,
+        "denominator": 757,
+        "percent": 100.0
+      },
+      "country_author_count": {
+        "present": 2,
+        "denominator": 757,
+        "percent": 0.264
+      },
+      "paper_scoped_institution_papers": 147,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 147
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 147
+        },
+        "institutions": {
+          "present": 147
+        },
+        "countries": {
+          "missing": 145,
+          "present": 2
+        },
+        "doi": {
+          "missing": 147
+        },
+        "arxiv_id": {
+          "missing": 147
+        },
+        "openreview_id": {
+          "missing": 147
+        },
+        "publication_date": {
+          "missing": 147
+        },
+        "abstract": {
+          "missing": 147
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2021,
+      "source_occurrences": 151,
+      "ordered_author_slots": 789,
+      "authors": {
+        "present": 151,
+        "denominator": 151,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 151,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 789,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 789,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 789,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 151
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 151
+        },
+        "institutions": {
+          "missing": 151
+        },
+        "countries": {
+          "missing": 151
+        },
+        "doi": {
+          "missing": 151
+        },
+        "arxiv_id": {
+          "missing": 151
+        },
+        "openreview_id": {
+          "missing": 151
+        },
+        "publication_date": {
+          "missing": 151
+        },
+        "abstract": {
+          "missing": 151
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2022,
+      "source_occurrences": 161,
+      "ordered_author_slots": 875,
+      "authors": {
+        "present": 161,
+        "denominator": 161,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 161,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 161,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 148,
+        "denominator": 161,
+        "percent": 91.925
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 161,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 161,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 161,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 148,
+        "denominator": 161,
+        "percent": 91.925
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 875,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 875,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 875,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 161
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 161
+        },
+        "institutions": {
+          "missing": 161
+        },
+        "countries": {
+          "missing": 161
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 148,
+          "missing": 13
+        },
+        "arxiv_id": {
+          "missing": 161
+        },
+        "openreview_id": {
+          "missing": 161
+        },
+        "publication_date": {
+          "missing": 161
+        },
+        "abstract": {
+          "present": 148,
+          "missing": 13
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2023,
+      "source_occurrences": 165,
+      "ordered_author_slots": 889,
+      "authors": {
+        "present": 165,
+        "denominator": 165,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 165,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 889,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 889,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 889,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 165
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 165
+        },
+        "institutions": {
+          "missing": 165
+        },
+        "countries": {
+          "missing": 165
+        },
+        "doi": {
+          "missing": 165
+        },
+        "arxiv_id": {
+          "missing": 165
+        },
+        "openreview_id": {
+          "missing": 165
+        },
+        "publication_date": {
+          "missing": 165
+        },
+        "abstract": {
+          "missing": 165
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2024,
+      "source_occurrences": 160,
+      "ordered_author_slots": 916,
+      "authors": {
+        "present": 160,
+        "denominator": 160,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 160,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 160,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 158,
+        "denominator": 160,
+        "percent": 98.75
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 160,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 160,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 160,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 158,
+        "denominator": 160,
+        "percent": 98.75
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 916,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 916,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 916,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 160
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 160
+        },
+        "institutions": {
+          "missing": 160
+        },
+        "countries": {
+          "missing": 160
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 158,
+          "missing": 2
+        },
+        "arxiv_id": {
+          "missing": 160
+        },
+        "openreview_id": {
+          "missing": 160
+        },
+        "publication_date": {
+          "missing": 160
+        },
+        "abstract": {
+          "present": 158,
+          "missing": 2
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2025,
+      "source_occurrences": 239,
+      "ordered_author_slots": 1346,
+      "authors": {
+        "present": 239,
+        "denominator": 239,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 32,
+        "denominator": 239,
+        "percent": 13.389
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 239,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 32,
+        "denominator": 239,
+        "percent": 13.389
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1346,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1346,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1346,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 239
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 239
+        },
+        "institutions": {
+          "missing": 239
+        },
+        "countries": {
+          "missing": 239
+        },
+        "doi": {
+          "missing": 207,
+          "reported_identifier_not_yet_raw_verified": 32
+        },
+        "arxiv_id": {
+          "missing": 239
+        },
+        "openreview_id": {
+          "missing": 239
+        },
+        "publication_date": {
+          "missing": 239
+        },
+        "abstract": {
+          "missing": 207,
+          "present": 32
+        }
+      }
+    },
+    {
+      "venue": "SIGIR",
+      "year": 2026,
+      "source_occurrences": 233,
+      "ordered_author_slots": 1336,
+      "authors": {
+        "present": 233,
+        "denominator": 233,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 233,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 0,
+        "denominator": 1336,
+        "percent": 0.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 0,
+        "denominator": 1336,
+        "percent": 0.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 1336,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 0,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 233
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 233
+        },
+        "institutions": {
+          "missing": 233
+        },
+        "countries": {
+          "missing": 233
+        },
+        "doi": {
+          "missing": 233
+        },
+        "arxiv_id": {
+          "missing": 233
+        },
+        "openreview_id": {
+          "missing": 233
+        },
+        "publication_date": {
+          "missing": 233
+        },
+        "abstract": {
+          "missing": 233
+        }
+      }
+    },
+    {
+      "venue": "SOSP",
+      "year": 2021,
+      "source_occurrences": 54,
+      "ordered_author_slots": 352,
+      "authors": {
+        "present": 53,
+        "denominator": 54,
+        "percent": 98.148
+      },
+      "institutions": {
+        "present": 53,
+        "denominator": 54,
+        "percent": 98.148
+      },
+      "countries": {
+        "present": 1,
+        "denominator": 54,
+        "percent": 1.852
+      },
+      "doi": {
+        "present": 54,
+        "denominator": 54,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 54,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 54,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 54,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 54,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 352,
+        "denominator": 352,
+        "percent": 100.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 352,
+        "denominator": 352,
+        "percent": 100.0
+      },
+      "country_author_count": {
+        "present": 7,
+        "denominator": 352,
+        "percent": 1.989
+      },
+      "paper_scoped_institution_papers": 53,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 54
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 53,
+          "missing": 1
+        },
+        "institutions": {
+          "present": 53,
+          "missing": 1
+        },
+        "countries": {
+          "missing": 53,
+          "present": 1
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 54
+        },
+        "arxiv_id": {
+          "missing": 54
+        },
+        "openreview_id": {
+          "missing": 54
+        },
+        "publication_date": {
+          "missing": 54
+        },
+        "abstract": {
+          "missing": 54
+        }
+      }
+    },
+    {
+      "venue": "SOSP",
+      "year": 2023,
+      "source_occurrences": 43,
+      "ordered_author_slots": 339,
+      "authors": {
+        "present": 43,
+        "denominator": 43,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 43,
+        "denominator": 43,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 43,
+        "denominator": 43,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 339,
+        "denominator": 339,
+        "percent": 100.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 339,
+        "denominator": 339,
+        "percent": 100.0
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 339,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 43,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 43
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 43
+        },
+        "institutions": {
+          "present": 43
+        },
+        "countries": {
+          "missing": 43
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 43
+        },
+        "arxiv_id": {
+          "missing": 43
+        },
+        "openreview_id": {
+          "missing": 43
+        },
+        "publication_date": {
+          "missing": 43
+        },
+        "abstract": {
+          "missing": 43
+        }
+      }
+    },
+    {
+      "venue": "SOSP",
+      "year": 2024,
+      "source_occurrences": 43,
+      "ordered_author_slots": 275,
+      "authors": {
+        "present": 43,
+        "denominator": 43,
+        "percent": 100.0
+      },
+      "institutions": {
+        "present": 43,
+        "denominator": 43,
+        "percent": 100.0
+      },
+      "countries": {
+        "present": 1,
+        "denominator": 43,
+        "percent": 2.326
+      },
+      "doi": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 43,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 275,
+        "denominator": 275,
+        "percent": 100.0
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 275,
+        "denominator": 275,
+        "percent": 100.0
+      },
+      "country_author_count": {
+        "present": 1,
+        "denominator": 275,
+        "percent": 0.364
+      },
+      "paper_scoped_institution_papers": 43,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 43
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 43
+        },
+        "institutions": {
+          "present": 43
+        },
+        "countries": {
+          "missing": 42,
+          "present": 1
+        },
+        "doi": {
+          "missing": 43
+        },
+        "arxiv_id": {
+          "missing": 43
+        },
+        "openreview_id": {
+          "missing": 43
+        },
+        "publication_date": {
+          "missing": 43
+        },
+        "abstract": {
+          "missing": 43
+        }
+      }
+    },
+    {
+      "venue": "SOSP",
+      "year": 2025,
+      "source_occurrences": 66,
+      "ordered_author_slots": 539,
+      "authors": {
+        "present": 65,
+        "denominator": 66,
+        "percent": 98.485
+      },
+      "institutions": {
+        "present": 65,
+        "denominator": 66,
+        "percent": 98.485
+      },
+      "countries": {
+        "present": 0,
+        "denominator": 66,
+        "percent": 0.0
+      },
+      "doi": {
+        "present": 66,
+        "denominator": 66,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 66,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 66,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 66,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 66,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 297,
+        "denominator": 539,
+        "percent": 55.102
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 297,
+        "denominator": 539,
+        "percent": 55.102
+      },
+      "country_author_count": {
+        "present": 0,
+        "denominator": 539,
+        "percent": 0.0
+      },
+      "paper_scoped_institution_papers": 65,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 66
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 65,
+          "missing": 1
+        },
+        "institutions": {
+          "present": 65,
+          "missing": 1
+        },
+        "countries": {
+          "missing": 66
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 66
+        },
+        "arxiv_id": {
+          "missing": 66
+        },
+        "openreview_id": {
+          "missing": 66
+        },
+        "publication_date": {
+          "missing": 66
+        },
+        "abstract": {
+          "missing": 66
+        }
+      }
+    },
+    {
+      "venue": "SOSP",
+      "year": 2026,
+      "source_occurrences": 62,
+      "ordered_author_slots": 409,
+      "authors": {
+        "present": 60,
+        "denominator": 62,
+        "percent": 96.774
+      },
+      "institutions": {
+        "present": 60,
+        "denominator": 62,
+        "percent": 96.774
+      },
+      "countries": {
+        "present": 1,
+        "denominator": 62,
+        "percent": 1.613
+      },
+      "doi": {
+        "present": 62,
+        "denominator": 62,
+        "percent": 100.0
+      },
+      "arxiv_id": {
+        "present": 0,
+        "denominator": 62,
+        "percent": 0.0
+      },
+      "openreview_id": {
+        "present": 0,
+        "denominator": 62,
+        "percent": 0.0
+      },
+      "publication_date": {
+        "present": 0,
+        "denominator": 62,
+        "percent": 0.0
+      },
+      "abstract": {
+        "present": 0,
+        "denominator": 62,
+        "percent": 0.0
+      },
+      "affiliation_author_count": {
+        "present": 197,
+        "denominator": 409,
+        "percent": 48.166
+      },
+      "publication_time_affiliation_author_count": {
+        "present": 197,
+        "denominator": 409,
+        "percent": 48.166
+      },
+      "country_author_count": {
+        "present": 3,
+        "denominator": 409,
+        "percent": 0.733
+      },
+      "paper_scoped_institution_papers": 60,
+      "paper_reported_unlinked_institution_papers": 0,
+      "unverified_time_institution_papers": 0,
+      "date_precision": {
+        "missing": 62
+      },
+      "field_status_counts": {
+        "authors": {
+          "parsed_explicit_delimiters": 60,
+          "missing": 2
+        },
+        "institutions": {
+          "present": 60,
+          "missing": 2
+        },
+        "countries": {
+          "missing": 61,
+          "present": 1
+        },
+        "doi": {
+          "reported_identifier_not_yet_raw_verified": 62
+        },
+        "arxiv_id": {
+          "missing": 62
+        },
+        "openreview_id": {
+          "missing": 62
+        },
+        "publication_date": {
+          "missing": 62
+        },
+        "abstract": {
+          "missing": 62
+        }
+      }
+    }
+  ],
+  "raw_index_warnings": [],
+  "source_failures": [],
+  "notes": [
+    "Program starttime is program_date, never publication_date.",
+    "Source institution labels are not canonical institution identities; multi-affiliation compound labels remain verbatim.",
+    "Country/region codes require explicit location tokens in paper-scoped affiliations; institutional headquarters and author names are never used.",
+    "ML and ICSE user-profile institution fields are publication_time_unverified and cannot supply historical countries.",
+    "Some existing normalized identifiers/abstracts came from upstream title joins; identifier dedup eligibility is separately recorded.",
+    "No paper is dropped because of missing authors, affiliations, countries or abstract."
+  ]
+}

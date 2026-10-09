@@ -40,9 +40,13 @@ jobs:
           set -euo pipefail
           test -f .pages-build/dist/index.html
           test -f .pages-build/dist/research-trends/index.html
+          test -f .pages-build/dist/research-trends/explorer/index.html
+          test -f .pages-build/dist/research-trends/explorer/index_manifest.json
+          test -f .pages-build/dist/research-trends/explorer/papers_index.jsonl.gz
+          test -f .pages-build/dist/research-trends/explorer/explorer_worker.js
           test -f .pages-build/dist/.nojekyll
-          test "$(find .pages-build/dist -type f | sort | tr '\n' ' ')" = ".pages-build/dist/.nojekyll .pages-build/dist/index.html .pages-build/dist/research-trends/index.html "
-          ! find .pages-build/dist -type f \( -iname '*.pdf' -o -iname '*.log' -o -iname '*.json' -o -iname '*.csv' -o -iname '*.md' \) | grep -q .
+          test "$(find .pages-build/dist -type f | sort | tr '\n' ' ')" = ".pages-build/dist/.nojekyll .pages-build/dist/index.html .pages-build/dist/research-trends/explorer/explorer_worker.js .pages-build/dist/research-trends/explorer/index.html .pages-build/dist/research-trends/explorer/index_manifest.json .pages-build/dist/research-trends/explorer/papers_index.jsonl.gz .pages-build/dist/research-trends/index.html "
+          ! find .pages-build/dist -type f \( -iname '*.pdf' -o -iname '*.log' -o -iname '*.csv' -o -iname '*.md' \) | grep -q .
           python - <<'PY'
           import json
           from pathlib import Path
@@ -54,7 +58,7 @@ jobs:
           assert manifest['privacy_hits'] == []
           assert manifest['trend_privacy_hits'] == []
           assert manifest['trend_index_bytes'] > 10000
-          assert manifest['dist_files'] == ['dist/.nojekyll', 'dist/index.html', 'dist/research-trends/index.html']
+          assert manifest['dist_files'] == ['dist/.nojekyll', 'dist/index.html', 'dist/research-trends/index.html', 'dist/research-trends/explorer/index.html', 'dist/research-trends/explorer/explorer_worker.js', 'dist/research-trends/explorer/index_manifest.json', 'dist/research-trends/explorer/papers_index.jsonl.gz']
           PY
       - name: Configure Pages
         uses: actions/configure-pages@v5

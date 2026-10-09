@@ -1,0 +1,5 @@
+stratum,conference_group,years,all_papers,all_papers_with_abstract,lexical_positive_papers,eligible_abstract_papers,missing_abstract_positive_papers,abstract_coverage_among_positive,sample_n,inclusion_probability,inverse_probability_weight
+ML_2020_2022,ML,"[2020, 2021, 2022]",13045,12358,232,218,14,0.9396551724137931,16,0.07339449541284404,13.625
+ML_2024_2026,ML,"[2024, 2025, 2026]",32770,32770,1721,1721,0,1.0,17,0.009877977919814061,101.23529411764706
+ACL_2020_2022,ACL,"[2020, 2021, 2022]",2188,2188,11,11,0,1.0,11,1.0,1.0
+ACL_2024_2026,ACL,"[2024, 2025, 2026]",4935,4933,593,593,0,1.0,16,0.026981450252951095,37.0625

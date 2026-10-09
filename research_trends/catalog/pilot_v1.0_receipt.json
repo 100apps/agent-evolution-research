@@ -1,0 +1,963 @@
+{
+  "status": "ok",
+  "rows": 89530,
+  "taxonomy_version": "ai-cake-research-v1.0.0-proposed",
+  "taxonomy_sha256": "e3289464ff67fd7cf470c1525a880eaa7d3a6e8a44837dc5acd75844aa2248eb",
+  "rule_version": "cake-title-rules-v1.0.0-proposed",
+  "rule_sha256": "a1de4cf5d8bddbf861b4d8ce9a404e924d19f5ebf24e4621dc924963ab1d252c",
+  "assignments_sha256": "c009c7635b0aa582083391f4223155620a97c1b3a20890a82e9849472f2f9685",
+  "method": "title-only lexical candidates; not full-text semantic labels",
+  "counts": {
+    "insufficient_evidence": 73936,
+    "layer:A": 1250,
+    "layer:E": 2,
+    "layer:I": 139,
+    "layer:M": 14827,
+    "leaf:A.01.01": 465,
+    "leaf:A.01.04": 188,
+    "leaf:A.01.05": 9,
+    "leaf:A.02.01": 42,
+    "leaf:A.02.03": 96,
+    "leaf:A.02.04": 161,
+    "leaf:A.04.01": 337,
+    "leaf:E.02.01": 2,
+    "leaf:I.02.01": 6,
+    "leaf:I.02.02": 35,
+    "leaf:I.02.03": 63,
+    "leaf:I.02.04": 2,
+    "leaf:I.03.01": 4,
+    "leaf:I.03.03": 20,
+    "leaf:I.04.01": 1,
+    "leaf:I.04.02": 9,
+    "leaf:M.01.01": 7772,
+    "leaf:M.01.02": 5808,
+    "leaf:M.01.03": 410,
+    "leaf:M.01.04": 37,
+    "leaf:M.01.05": 747,
+    "leaf:M.01.06": 367,
+    "leaf:M.02.01": 14,
+    "leaf:M.02.02": 3,
+    "leaf:M.02.03": 1742,
+    "leaf:M.02.04": 85,
+    "leaf:M.03.01": 1299,
+    "leaf:M.03.02": 198,
+    "leaf:M.03.03": 369,
+    "leaf:M.04.01": 316,
+    "leaf:M.04.02": 513,
+    "leaf:M.04.03": 324,
+    "leaf:M.04.04": 1,
+    "leaf:M.05.01": 36,
+    "leaf:M.05.02": 29,
+    "leaf:M.05.03": 2,
+    "leaf:M.05.04": 32,
+    "title_rule_candidate": 15594
+  },
+  "year_leaf_counts": [
+    {
+      "year": 2020,
+      "leaf_id": "A.01.04",
+      "records": 1
+    },
+    {
+      "year": 2020,
+      "leaf_id": "A.02.03",
+      "records": 6
+    },
+    {
+      "year": 2020,
+      "leaf_id": "A.04.01",
+      "records": 14
+    },
+    {
+      "year": 2020,
+      "leaf_id": "I.02.01",
+      "records": 1
+    },
+    {
+      "year": 2020,
+      "leaf_id": "I.02.02",
+      "records": 5
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.01.01",
+      "records": 47
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.01.02",
+      "records": 8
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.01.05",
+      "records": 69
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.01.06",
+      "records": 6
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.02.03",
+      "records": 138
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.02.04",
+      "records": 9
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.03.01",
+      "records": 8
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.03.03",
+      "records": 28
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.04.03",
+      "records": 1
+    },
+    {
+      "year": 2020,
+      "leaf_id": "M.05.02",
+      "records": 3
+    },
+    {
+      "year": 2021,
+      "leaf_id": "A.02.03",
+      "records": 8
+    },
+    {
+      "year": 2021,
+      "leaf_id": "A.02.04",
+      "records": 3
+    },
+    {
+      "year": 2021,
+      "leaf_id": "A.04.01",
+      "records": 8
+    },
+    {
+      "year": 2021,
+      "leaf_id": "I.02.02",
+      "records": 5
+    },
+    {
+      "year": 2021,
+      "leaf_id": "I.02.03",
+      "records": 1
+    },
+    {
+      "year": 2021,
+      "leaf_id": "I.03.01",
+      "records": 1
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.01.01",
+      "records": 53
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.01.02",
+      "records": 7
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.01.03",
+      "records": 21
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.01.05",
+      "records": 96
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.01.06",
+      "records": 7
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.02.01",
+      "records": 2
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.02.03",
+      "records": 189
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.02.04",
+      "records": 16
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.03.01",
+      "records": 27
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.03.03",
+      "records": 33
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.04.03",
+      "records": 1
+    },
+    {
+      "year": 2021,
+      "leaf_id": "M.05.02",
+      "records": 4
+    },
+    {
+      "year": 2022,
+      "leaf_id": "A.01.01",
+      "records": 1
+    },
+    {
+      "year": 2022,
+      "leaf_id": "A.01.04",
+      "records": 1
+    },
+    {
+      "year": 2022,
+      "leaf_id": "A.02.03",
+      "records": 15
+    },
+    {
+      "year": 2022,
+      "leaf_id": "A.02.04",
+      "records": 3
+    },
+    {
+      "year": 2022,
+      "leaf_id": "A.04.01",
+      "records": 12
+    },
+    {
+      "year": 2022,
+      "leaf_id": "I.02.01",
+      "records": 1
+    },
+    {
+      "year": 2022,
+      "leaf_id": "I.02.02",
+      "records": 3
+    },
+    {
+      "year": 2022,
+      "leaf_id": "I.02.03",
+      "records": 1
+    },
+    {
+      "year": 2022,
+      "leaf_id": "I.03.01",
+      "records": 2
+    },
+    {
+      "year": 2022,
+      "leaf_id": "I.03.03",
+      "records": 2
+    },
+    {
+      "year": 2022,
+      "leaf_id": "I.04.02",
+      "records": 1
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.01.01",
+      "records": 95
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.01.02",
+      "records": 21
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.01.03",
+      "records": 82
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.01.05",
+      "records": 89
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.01.06",
+      "records": 8
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.02.01",
+      "records": 2
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.02.03",
+      "records": 229
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.02.04",
+      "records": 15
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.03.01",
+      "records": 36
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.03.03",
+      "records": 56
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.04.01",
+      "records": 7
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.04.02",
+      "records": 2
+    },
+    {
+      "year": 2022,
+      "leaf_id": "M.05.02",
+      "records": 3
+    },
+    {
+      "year": 2023,
+      "leaf_id": "A.01.01",
+      "records": 1
+    },
+    {
+      "year": 2023,
+      "leaf_id": "A.01.04",
+      "records": 2
+    },
+    {
+      "year": 2023,
+      "leaf_id": "A.02.03",
+      "records": 15
+    },
+    {
+      "year": 2023,
+      "leaf_id": "A.02.04",
+      "records": 17
+    },
+    {
+      "year": 2023,
+      "leaf_id": "A.04.01",
+      "records": 26
+    },
+    {
+      "year": 2023,
+      "leaf_id": "I.02.02",
+      "records": 5
+    },
+    {
+      "year": 2023,
+      "leaf_id": "I.02.03",
+      "records": 2
+    },
+    {
+      "year": 2023,
+      "leaf_id": "I.02.04",
+      "records": 1
+    },
+    {
+      "year": 2023,
+      "leaf_id": "I.03.03",
+      "records": 4
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.01.01",
+      "records": 223
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.01.02",
+      "records": 92
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.01.03",
+      "records": 76
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.01.04",
+      "records": 3
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.01.05",
+      "records": 141
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.01.06",
+      "records": 20
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.02.03",
+      "records": 273
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.02.04",
+      "records": 7
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.03.01",
+      "records": 85
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.03.02",
+      "records": 3
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.03.03",
+      "records": 55
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.04.01",
+      "records": 38
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.04.02",
+      "records": 24
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.04.03",
+      "records": 1
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.04.04",
+      "records": 1
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.05.02",
+      "records": 2
+    },
+    {
+      "year": 2023,
+      "leaf_id": "M.05.04",
+      "records": 3
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.01.01",
+      "records": 39
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.01.04",
+      "records": 6
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.01.05",
+      "records": 1
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.02.01",
+      "records": 2
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.02.03",
+      "records": 10
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.02.04",
+      "records": 38
+    },
+    {
+      "year": 2024,
+      "leaf_id": "A.04.01",
+      "records": 52
+    },
+    {
+      "year": 2024,
+      "leaf_id": "E.02.01",
+      "records": 1
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.02.01",
+      "records": 3
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.02.02",
+      "records": 7
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.02.03",
+      "records": 9
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.02.04",
+      "records": 1
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.03.01",
+      "records": 1
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.03.03",
+      "records": 4
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.04.01",
+      "records": 1
+    },
+    {
+      "year": 2024,
+      "leaf_id": "I.04.02",
+      "records": 2
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.01.01",
+      "records": 1307
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.01.02",
+      "records": 737
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.01.03",
+      "records": 85
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.01.04",
+      "records": 4
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.01.05",
+      "records": 117
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.01.06",
+      "records": 42
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.02.01",
+      "records": 2
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.02.03",
+      "records": 280
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.02.04",
+      "records": 11
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.03.01",
+      "records": 250
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.03.02",
+      "records": 37
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.03.03",
+      "records": 52
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.04.01",
+      "records": 89
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.04.02",
+      "records": 41
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.04.03",
+      "records": 19
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.05.01",
+      "records": 1
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.05.02",
+      "records": 4
+    },
+    {
+      "year": 2024,
+      "leaf_id": "M.05.04",
+      "records": 1
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.01.01",
+      "records": 104
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.01.04",
+      "records": 42
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.01.05",
+      "records": 2
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.02.01",
+      "records": 7
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.02.03",
+      "records": 16
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.02.04",
+      "records": 45
+    },
+    {
+      "year": 2025,
+      "leaf_id": "A.04.01",
+      "records": 79
+    },
+    {
+      "year": 2025,
+      "leaf_id": "I.02.01",
+      "records": 1
+    },
+    {
+      "year": 2025,
+      "leaf_id": "I.02.02",
+      "records": 5
+    },
+    {
+      "year": 2025,
+      "leaf_id": "I.02.03",
+      "records": 17
+    },
+    {
+      "year": 2025,
+      "leaf_id": "I.03.03",
+      "records": 4
+    },
+    {
+      "year": 2025,
+      "leaf_id": "I.04.02",
+      "records": 2
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.01.01",
+      "records": 2534
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.01.02",
+      "records": 1854
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.01.03",
+      "records": 67
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.01.04",
+      "records": 10
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.01.05",
+      "records": 133
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.01.06",
+      "records": 96
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.02.01",
+      "records": 6
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.02.02",
+      "records": 2
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.02.03",
+      "records": 295
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.02.04",
+      "records": 12
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.03.01",
+      "records": 389
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.03.02",
+      "records": 84
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.03.03",
+      "records": 77
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.04.01",
+      "records": 93
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.04.02",
+      "records": 150
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.04.03",
+      "records": 127
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.05.01",
+      "records": 12
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.05.02",
+      "records": 5
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.05.03",
+      "records": 1
+    },
+    {
+      "year": 2025,
+      "leaf_id": "M.05.04",
+      "records": 13
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.01.01",
+      "records": 320
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.01.04",
+      "records": 136
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.01.05",
+      "records": 6
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.02.01",
+      "records": 33
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.02.03",
+      "records": 26
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.02.04",
+      "records": 55
+    },
+    {
+      "year": 2026,
+      "leaf_id": "A.04.01",
+      "records": 146
+    },
+    {
+      "year": 2026,
+      "leaf_id": "E.02.01",
+      "records": 1
+    },
+    {
+      "year": 2026,
+      "leaf_id": "I.02.02",
+      "records": 5
+    },
+    {
+      "year": 2026,
+      "leaf_id": "I.02.03",
+      "records": 33
+    },
+    {
+      "year": 2026,
+      "leaf_id": "I.03.03",
+      "records": 6
+    },
+    {
+      "year": 2026,
+      "leaf_id": "I.04.02",
+      "records": 4
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.01.01",
+      "records": 3513
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.01.02",
+      "records": 3089
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.01.03",
+      "records": 79
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.01.04",
+      "records": 20
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.01.05",
+      "records": 102
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.01.06",
+      "records": 188
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.02.01",
+      "records": 2
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.02.02",
+      "records": 1
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.02.03",
+      "records": 338
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.02.04",
+      "records": 15
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.03.01",
+      "records": 504
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.03.02",
+      "records": 74
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.03.03",
+      "records": 68
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.04.01",
+      "records": 89
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.04.02",
+      "records": 296
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.04.03",
+      "records": 175
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.05.01",
+      "records": 23
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.05.02",
+      "records": 8
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.05.03",
+      "records": 1
+    },
+    {
+      "year": 2026,
+      "leaf_id": "M.05.04",
+      "records": 15
+    }
+  ],
+  "unmatched_policy": "insufficient_evidence; no automatic outside_scope or taxonomy_gap inference"
+}

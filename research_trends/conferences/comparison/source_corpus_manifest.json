@@ -1,0 +1,63 @@
+{
+  "version": "common-title-v1.0",
+  "created_utc": "2026-10-09T04:02:23.580433+00:00",
+  "source_files": [
+    {
+      "path": "ml/metadata_main.jsonl",
+      "relative_path": "ml/metadata_main.jsonl",
+      "sha256": "e388b29b46bdb5b33df5c3628b51d5b994ebe5d9d15dc571c72000b2c343b114",
+      "bytes": 123184489,
+      "records": 57957
+    },
+    {
+      "path": "nlp_vision/papers_main.jsonl",
+      "relative_path": "nlp_vision/papers_main.jsonl",
+      "sha256": "8c67c96d4fdfd5d7d7ed92fba1ef2b2758fbce264623122276e3e228e7867071",
+      "bytes": 32349970,
+      "records": 25380
+    },
+    {
+      "path": "systems_ir/combined_papers.jsonl",
+      "relative_path": "systems_ir/combined_papers.jsonl",
+      "sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+      "bytes": 7399299,
+      "records": 6193
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "ml/coverage.json",
+      "sha256": "830fcedb816eb17e97e4d6f341148afdb8f994705953c555775aa57805983c82"
+    },
+    {
+      "path": "ml/README_sources_coverage.md",
+      "sha256": "f823a9a9883f1416413da427fb433e7dec810b0e624865932076c4c43c91c312"
+    },
+    {
+      "path": "nlp_vision/coverage.json",
+      "sha256": "f975470db67fa626a2604aa2349999e0ebb704b5d6084aee0ecf9226a5b25c4b"
+    },
+    {
+      "path": "nlp_vision/README.md",
+      "sha256": "123f399555014f9855c950974ec382f7d51724580b5b92d1af9f8b2fe67ba9f4"
+    },
+    {
+      "path": "systems_ir/combined_coverage.json",
+      "sha256": "ef4c03af93c96495ed8bf89d04de2abc33b7a1e635e43098ec460b2fd7b65078"
+    },
+    {
+      "path": "systems_ir/SOURCE_MEMO.md",
+      "sha256": "1febec3b40d245bc5c3aa681479d5e1d4fccbe7c96d78dced716f3891eb9c4d3"
+    },
+    {
+      "path": "systems_ir/systems/README.md",
+      "sha256": "8746abce63871a107929f57ce2a4ae4806404ac68e436cee8254e9e7de4fe3d8"
+    }
+  ],
+  "script_sha256": "84a5efe83b55c9376dd628a3845e15ea257efcf954e314069524d27b88d5b3bd",
+  "total_records": 89530,
+  "normalization": "NFKC + casefold + replace all non-ASCII letters/digits with spaces; collapse/strip spaces",
+  "match_span_coordinates": "0-based half-open indices in normalized_title; original title preserved",
+  "no_network": true,
+  "packaging_note": "Only machine-specific absolute path fields were replaced by project-relative paths. Source SHA-256, byte counts, record counts and original analysis script hash remain unchanged."
+}

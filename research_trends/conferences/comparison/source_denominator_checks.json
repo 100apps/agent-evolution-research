@@ -1,0 +1,478 @@
+[
+  {
+    "venue": "ICML",
+    "year": 2020,
+    "comparison_n": 1084,
+    "source_coverage_n": 1084,
+    "pass": true
+  },
+  {
+    "venue": "ICML",
+    "year": 2021,
+    "comparison_n": 1183,
+    "source_coverage_n": 1183,
+    "pass": true
+  },
+  {
+    "venue": "ICML",
+    "year": 2022,
+    "comparison_n": 1233,
+    "source_coverage_n": 1233,
+    "pass": true
+  },
+  {
+    "venue": "ICML",
+    "year": 2023,
+    "comparison_n": 1828,
+    "source_coverage_n": 1828,
+    "pass": true
+  },
+  {
+    "venue": "ICML",
+    "year": 2024,
+    "comparison_n": 2535,
+    "source_coverage_n": 2535,
+    "pass": true
+  },
+  {
+    "venue": "ICML",
+    "year": 2025,
+    "comparison_n": 3257,
+    "source_coverage_n": 3257,
+    "pass": true
+  },
+  {
+    "venue": "ICML",
+    "year": 2026,
+    "comparison_n": 6340,
+    "source_coverage_n": 6340,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2020,
+    "comparison_n": 1898,
+    "source_coverage_n": 1898,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2021,
+    "comparison_n": 2334,
+    "source_coverage_n": 2334,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2022,
+    "comparison_n": 2671,
+    "source_coverage_n": 2671,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2023,
+    "comparison_n": 3218,
+    "source_coverage_n": 3218,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2024,
+    "comparison_n": 4034,
+    "source_coverage_n": 4034,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2025,
+    "comparison_n": 5286,
+    "source_coverage_n": 5286,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2020,
+    "comparison_n": 687,
+    "source_coverage_n": 687,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2021,
+    "comparison_n": 860,
+    "source_coverage_n": 860,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2022,
+    "comparison_n": 1095,
+    "source_coverage_n": 1095,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2023,
+    "comparison_n": 1574,
+    "source_coverage_n": 1574,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2024,
+    "comparison_n": 2260,
+    "source_coverage_n": 2260,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2025,
+    "comparison_n": 3705,
+    "source_coverage_n": 3705,
+    "pass": true
+  },
+  {
+    "venue": "ICLR",
+    "year": 2026,
+    "comparison_n": 5353,
+    "source_coverage_n": 5353,
+    "pass": true
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2026,
+    "comparison_n": 5522,
+    "source_coverage_n": 5522,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2020,
+    "comparison_n": 778,
+    "source_coverage_n": 778,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2020,
+    "comparison_n": 1466,
+    "source_coverage_n": 1466,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2021,
+    "comparison_n": 710,
+    "source_coverage_n": 710,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2021,
+    "comparison_n": 1660,
+    "source_coverage_n": 1660,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2022,
+    "comparison_n": 700,
+    "source_coverage_n": 700,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2022,
+    "comparison_n": 2074,
+    "source_coverage_n": 2074,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2023,
+    "comparison_n": 1075,
+    "source_coverage_n": 1075,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2023,
+    "comparison_n": 2353,
+    "source_coverage_n": 2353,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2024,
+    "comparison_n": 940,
+    "source_coverage_n": 940,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2024,
+    "comparison_n": 2716,
+    "source_coverage_n": 2716,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2025,
+    "comparison_n": 1699,
+    "source_coverage_n": 1699,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2025,
+    "comparison_n": 2871,
+    "source_coverage_n": 2871,
+    "pass": true
+  },
+  {
+    "venue": "ACL",
+    "year": 2026,
+    "comparison_n": 2296,
+    "source_coverage_n": 2296,
+    "pass": true
+  },
+  {
+    "venue": "CVPR",
+    "year": 2026,
+    "comparison_n": 4042,
+    "source_coverage_n": 4042,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2020,
+    "comparison_n": 129,
+    "source_coverage_n": 129,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2021,
+    "comparison_n": 138,
+    "source_coverage_n": 138,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2022,
+    "comparison_n": 197,
+    "source_coverage_n": 197,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2023,
+    "comparison_n": 207,
+    "source_coverage_n": 207,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2024,
+    "comparison_n": 234,
+    "source_coverage_n": 234,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2025,
+    "comparison_n": 245,
+    "source_coverage_n": 245,
+    "pass": true
+  },
+  {
+    "venue": "ICSE",
+    "year": 2026,
+    "comparison_n": 321,
+    "source_coverage_n": 321,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2020,
+    "comparison_n": 217,
+    "source_coverage_n": 217,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2021,
+    "comparison_n": 239,
+    "source_coverage_n": 239,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2022,
+    "comparison_n": 253,
+    "source_coverage_n": 253,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2023,
+    "comparison_n": 313,
+    "source_coverage_n": 313,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2024,
+    "comparison_n": 411,
+    "source_coverage_n": 411,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2025,
+    "comparison_n": 552,
+    "source_coverage_n": 552,
+    "pass": true
+  },
+  {
+    "venue": "KDD",
+    "year": 2026,
+    "comparison_n": 785,
+    "source_coverage_n": 785,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2020,
+    "comparison_n": 70,
+    "source_coverage_n": 70,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2021,
+    "comparison_n": 31,
+    "source_coverage_n": 31,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2022,
+    "comparison_n": 49,
+    "source_coverage_n": 49,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2023,
+    "comparison_n": 55,
+    "source_coverage_n": 55,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2024,
+    "comparison_n": 53,
+    "source_coverage_n": 53,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2025,
+    "comparison_n": 53,
+    "source_coverage_n": 53,
+    "pass": true
+  },
+  {
+    "venue": "OSDI",
+    "year": 2026,
+    "comparison_n": 117,
+    "source_coverage_n": 117,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2020,
+    "comparison_n": 147,
+    "source_coverage_n": 147,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2021,
+    "comparison_n": 151,
+    "source_coverage_n": 151,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2022,
+    "comparison_n": 161,
+    "source_coverage_n": 161,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2023,
+    "comparison_n": 165,
+    "source_coverage_n": 165,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2024,
+    "comparison_n": 160,
+    "source_coverage_n": 160,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2025,
+    "comparison_n": 239,
+    "source_coverage_n": 239,
+    "pass": true
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2026,
+    "comparison_n": 233,
+    "source_coverage_n": 233,
+    "pass": true
+  },
+  {
+    "venue": "SOSP",
+    "year": 2021,
+    "comparison_n": 54,
+    "source_coverage_n": 54,
+    "pass": true
+  },
+  {
+    "venue": "SOSP",
+    "year": 2023,
+    "comparison_n": 43,
+    "source_coverage_n": 43,
+    "pass": true
+  },
+  {
+    "venue": "SOSP",
+    "year": 2024,
+    "comparison_n": 43,
+    "source_coverage_n": 43,
+    "pass": true
+  },
+  {
+    "venue": "SOSP",
+    "year": 2025,
+    "comparison_n": 66,
+    "source_coverage_n": 66,
+    "pass": true
+  },
+  {
+    "venue": "SOSP",
+    "year": 2026,
+    "comparison_n": 62,
+    "source_coverage_n": 62,
+    "pass": true
+  }
+]

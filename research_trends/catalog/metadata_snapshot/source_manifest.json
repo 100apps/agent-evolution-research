@@ -1,0 +1,324 @@
+{
+  "sources": [
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2020.xml",
+      "source_sha256": "66bf7609dda09a956f9e24659584ff00af7080872ac09ded48260d80fb421487",
+      "bytes": 1500418,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2020.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:62f664416ec247d14c60"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2021.xml",
+      "source_sha256": "ecf9e004200e80b42c7145c4f6d4d71762c645c95661d51adc7ee003e7374de9",
+      "bytes": 1459421,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2021.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:6354dbe5ccb61a0e0847"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2022.xml",
+      "source_sha256": "a972702e7b6e3efe52c014f52c3bb5c20c40e3ae91062c1bc1201c55593420c3",
+      "bytes": 1546321,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2022.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:2f5c2fc03a637761a8fd"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2023.xml",
+      "source_sha256": "280222c79aec87ebf2bcb4a0e6d770cabc392f5d075345633730006c1d68057e",
+      "bytes": 2795527,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2023.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:930153b54187cfeb3612"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2024.xml",
+      "source_sha256": "aabf746814d4803ecdfee81befdef6bed0dc03eb17d49b7f4178fa3aed245d48",
+      "bytes": 2256924,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2024.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:b5129407e27ea80fd6ca"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2025.xml",
+      "source_sha256": "5b6ee8a3bc987f7d3a100198f2308a31781c58f978335d06a7c84de6ad0af281",
+      "bytes": 5084096,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2025.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:380ba0c989b2832cff2e"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/acl_2026.xml",
+      "source_sha256": "647198b750ff349f36f37f007701906edce423e583632c57f2deaa1b9290b16e",
+      "bytes": 7314227,
+      "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2026.acl.xml",
+      "retrieved_at": "",
+      "source_id": "src:1dee482f2316f1440348"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2020_day16.html",
+      "source_sha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+      "bytes": 1152492,
+      "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+      "retrieved_at": "",
+      "source_id": "src:19c57e58b3a6a8d0d3ca"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2020_day17.html",
+      "source_sha256": "63d4130f6d805a62b5cc226b87b2876504ddc398f8084eead0d7782739393576",
+      "bytes": 1132652,
+      "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-17",
+      "retrieved_at": "",
+      "source_id": "src:0562c3e3a88a2e09295c"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2020_day18.html",
+      "source_sha256": "e97ffae30a4c2f0db5d1d833e219f4c65cfb89703c8bf2a7d4d9bd79e4571bc1",
+      "bytes": 1221014,
+      "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-18",
+      "retrieved_at": "",
+      "source_id": "src:942f1d5d7a1454829617"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2021.html",
+      "source_sha256": "f5258ccf5ada02023cbf9f9d80d87007c86c6cd5a691c2c75088afaf0d97d9f3",
+      "bytes": 4124575,
+      "source_url": "https://openaccess.thecvf.com/CVPR2021?day=all",
+      "retrieved_at": "",
+      "source_id": "src:1cefa1aca20d00b29480"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2022.html",
+      "source_sha256": "7c6a81f30b3317d1837142298c512807e62981d7184057df50acc5d6c66b131c",
+      "bytes": 5411665,
+      "source_url": "https://openaccess.thecvf.com/CVPR2022?day=all",
+      "retrieved_at": "",
+      "source_id": "src:3334eb7b7d1af360b6be"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2023.html",
+      "source_sha256": "8284937abea6f8052da24f58802f619bb7b4261d80ee52305f31b428a2cfe4c5",
+      "bytes": 6273840,
+      "source_url": "https://openaccess.thecvf.com/CVPR2023?day=all",
+      "retrieved_at": "",
+      "source_id": "src:a802fb83daffba219c16"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2024.html",
+      "source_sha256": "720265923ad5cc65224d2ce1cd9cea868c6e4589ae51c05d1493f1f9d9aea03c",
+      "bytes": 7471679,
+      "source_url": "https://openaccess.thecvf.com/CVPR2024?day=all",
+      "retrieved_at": "",
+      "source_id": "src:3e6d201a687ff871acd6"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2025.html",
+      "source_sha256": "2f08dc191b870530993ba6a5a79e8c8ae812f158b6a30b21a96f3b190af96bfa",
+      "bytes": 8396274,
+      "source_url": "https://openaccess.thecvf.com/CVPR2025?day=all",
+      "retrieved_at": "",
+      "source_id": "src:fe8ed51b3bccb71fc203"
+    },
+    {
+      "source_path": "conferences/nlp_vision/raw/cvpr_2026.html",
+      "source_sha256": "31f63227934062163d5bc57838d339c3c7a7e1e6e51f71a238022bff73f1b792",
+      "bytes": 12117927,
+      "source_url": "https://openaccess.thecvf.com/CVPR2026?day=all",
+      "retrieved_at": "",
+      "source_id": "src:b1064603920a921d956e"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2021.json",
+      "source_sha256": "682836b786186694ba5f87d9efc3643067f1df0daa8b342a6f0b6c79b01552b4",
+      "bytes": 4550572,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:47fc7e42c8d96ad6766f"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2022.json",
+      "source_sha256": "73222fe34d4c1f629033bd9f0fde4dc6211c37c18d61729704a8035956014e7f",
+      "bytes": 5810241,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:5940f2375beefcfd1127"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2023.json",
+      "source_sha256": "4a907eccf24f321debcf3a70e6bdb9ebd75adee499ba323130a77c25e10f74b7",
+      "bytes": 7602832,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:b57d14f842689544da71"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2024.json",
+      "source_sha256": "23f4d0512a8d9d65b3b4e4908201416f0e343b188f85d33f3cf6a8d1b22f969a",
+      "bytes": 10587487,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:abdd5ea87c667e34bece"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2025.json",
+      "source_sha256": "ebd6fa23d9ca54628eb715885756bf7e5addf72db134648dc683251678f86a70",
+      "bytes": 16535673,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:20cd9dec949ffdec5dfd"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2026.json",
+      "source_sha256": "064c43404a720a56ae51831dd6db48bfb58ec79f300f29b8d7cc8f889fcf1aca",
+      "bytes": 15031089,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:91851bd87cad1e2c34ab"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2024_program.json",
+      "source_sha256": "77eb6ee09ee69875743c67c3e06bf47eef06c4838299392481feaeb8241cb8e9",
+      "bytes": 11354731,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:59a3becfe48c3ecfedf6"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2025_program.json",
+      "source_sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+      "bytes": 14110788,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:33c5d6ba1a3f071b76d1"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2026_program.json",
+      "source_sha256": "d42e85ba174771bc13869c3afa5a743f139deec7eda41be278fcaba605a12cbc",
+      "bytes": 16407726,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:f3081014a2c58a7bde62"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2026_program.json",
+      "source_sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21",
+      "bytes": 19301002,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:f87c0f64e62051141b8c"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2023.html",
+      "source_sha256": "fceaba96362eda584dccc6ca38ee5fa68e399efcbdc827f6f9db71af6667e2b0",
+      "bytes": 1670480,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:81b3a43910d80bea2cf7"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2024.html",
+      "source_sha256": "ab9400795dbdd1f63eb42499e69fddf9803ccdc2e055311c6bd8d7a49240beb6",
+      "bytes": 2552499,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:ad8957aa0eef956ecc03"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2025.html",
+      "source_sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+      "bytes": 3639879,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:e6ae5eee9645a0595d3c"
+    },
+    {
+      "source_path": "conferences/ml/raw/icml_2026.html",
+      "source_sha256": "36e4d82cfc94f5ae93a8697d517d39a04cf35cc9aedfb1cc2a66bbd6a3855d8e",
+      "bytes": 7156776,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:ef12e1f21a12f07bca81"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2020.html",
+      "source_sha256": "92a206ec3e110f72c1ac352a40291a5ca821878ddac9064551271339e1be4fd9",
+      "bytes": 1015900,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:6a4d25d6cc4e74f2eebd"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2021.html",
+      "source_sha256": "22091adee395db305b0dede0b12658386b3f812b11279f042008342fb9ce2564",
+      "bytes": 1254783,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:538f14fdac0aca670762"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2022.html",
+      "source_sha256": "a7a50e3897323a5f71bbf5bc71dbc42a4397a6ec6ab9cc6350ece1c895b6951d",
+      "bytes": 1936963,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:13eef68cab0bac9f18e7"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2023.html",
+      "source_sha256": "7511a4e6456f30144e8ee4a2f94c93ec1f1f1375bd3b567a44bf0437ac54d721",
+      "bytes": 2445813,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:573ec279bd564ce39f83"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2024.html",
+      "source_sha256": "0563caf8d9a661bfa9d26e3e8692cc352ce6a446ea922e27f73b37b87a4f7506",
+      "bytes": 3149226,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:c73a582e62e193717267"
+    },
+    {
+      "source_path": "conferences/ml/raw/neurips_2025.html",
+      "source_sha256": "48c2de5e5acae991a8b88eaa00174387a7ce066efeb337e30593989bd5015c9a",
+      "bytes": 4104303,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:78b8f17054e1977417d2"
+    },
+    {
+      "source_path": "conferences/ml/metadata_main.jsonl",
+      "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+      "bytes": 44148320,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:c40cd3775c7873043610"
+    },
+    {
+      "source_path": "conferences/ml/raw/iclr_2020.json",
+      "source_sha256": "2405f2da6e2641fa600762f7d7cdf7c9d27f4d0ae65799168f3aee46036d30d2",
+      "bytes": 391687,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:13ab8e76f496a889000d"
+    },
+    {
+      "source_path": "conferences/nlp_vision/papers_main.jsonl",
+      "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+      "bytes": 28123352,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:aa5dde199cdaf3f20a5a"
+    },
+    {
+      "source_path": "conferences/systems_ir/combined_papers.jsonl",
+      "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+      "bytes": 7399299,
+      "source_url": "",
+      "retrieved_at": "",
+      "source_id": "src:f8e2533217135af8d8b2"
+    }
+  ]
+}

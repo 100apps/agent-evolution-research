@@ -1,0 +1,562 @@
+[
+  {
+    "venue": "ACL",
+    "year": 2020,
+    "n_records": 778,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ACL",
+    "year": 2021,
+    "n_records": 710,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ACL",
+    "year": 2022,
+    "n_records": 700,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ACL",
+    "year": 2023,
+    "n_records": 1075,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ACL",
+    "year": 2024,
+    "n_records": 940,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ACL",
+    "year": 2025,
+    "n_records": 1699,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ACL",
+    "year": 2026,
+    "n_records": 2296,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2020,
+    "n_records": 1466,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2021,
+    "n_records": 1660,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2022,
+    "n_records": 2074,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2023,
+    "n_records": 2353,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2024,
+    "n_records": 2716,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2025,
+    "n_records": 2871,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "CVPR",
+    "year": 2026,
+    "n_records": 4042,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "4042 indexed papers versus 4089 announced acceptances; cause unknown."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2020,
+    "n_records": 687,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2021,
+    "n_records": 860,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2022,
+    "n_records": 1095,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2023,
+    "n_records": 1574,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2024,
+    "n_records": 2260,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2025,
+    "n_records": 3705,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICLR",
+    "year": 2026,
+    "n_records": 5353,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2020,
+    "n_records": 1084,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2021,
+    "n_records": 1183,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2022,
+    "n_records": 1233,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2023,
+    "n_records": 1828,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2024,
+    "n_records": 2535,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2025,
+    "n_records": 3257,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICML",
+    "year": 2026,
+    "n_records": 6340,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2020,
+    "n_records": 129,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2021,
+    "n_records": 138,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2022,
+    "n_records": 197,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2023,
+    "n_records": 207,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2024,
+    "n_records": 234,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2025,
+    "n_records": 245,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "ICSE",
+    "year": 2026,
+    "n_records": 321,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2020,
+    "n_records": 217,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2021,
+    "n_records": 239,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2022,
+    "n_records": 253,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2023,
+    "n_records": 313,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2024,
+    "n_records": 411,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2025,
+    "n_records": 552,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "KDD",
+    "year": 2026,
+    "n_records": 785,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2020,
+    "n_records": 1898,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2021,
+    "n_records": 2334,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2022,
+    "n_records": 2671,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2023,
+    "n_records": 3218,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2024,
+    "n_records": 4034,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2025,
+    "n_records": 5286,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "NeurIPS",
+    "year": 2026,
+    "n_records": 5522,
+    "analysis_status": "provisional_excluded",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Incomplete pre-conference program; excluded from all trend deltas/panels."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2020,
+    "n_records": 70,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2021,
+    "n_records": 31,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2022,
+    "n_records": 49,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2023,
+    "n_records": 55,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2024,
+    "n_records": 53,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2025,
+    "n_records": 53,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "OSDI",
+    "year": 2026,
+    "n_records": 117,
+    "analysis_status": "scope_break_separate",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "117 research only; 19 new Operational Systems omitted. Acceptance/format/scope changes remain; separate endpoint."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2020,
+    "n_records": 147,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2021,
+    "n_records": 151,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2022,
+    "n_records": 161,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2023,
+    "n_records": 165,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2024,
+    "n_records": 160,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2025,
+    "n_records": 239,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": true,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SIGIR",
+    "year": 2026,
+    "n_records": 233,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "233 listed full papers versus 234 stated; preliminary acceptance list."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2020,
+    "n_records": "",
+    "analysis_status": "no_edition",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "No edition. Missing calendar cell, NOT zero topical activity."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2021,
+    "n_records": 54,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2022,
+    "n_records": "",
+    "analysis_status": "no_edition",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "No edition. Missing calendar cell, NOT zero topical activity."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2023,
+    "n_records": 43,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2024,
+    "n_records": 43,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2025,
+    "n_records": 66,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  },
+  {
+    "venue": "SOSP",
+    "year": 2026,
+    "n_records": 62,
+    "analysis_status": "source_census",
+    "in_fixed_basket_2020_2025": false,
+    "notes": "Title-only; main/research source census; accepted list is not identical to published census."
+  }
+]

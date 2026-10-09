@@ -1,0 +1,18 @@
+{
+  "version": "systems_ir_title_v1",
+  "basis": "title_only",
+  "lexicon": {
+    "language_model_explicit": "large[- ]language[- ]models?|\\b(?:m?llms?|chatgpt|gpt[- ]?[2345](?:\\.\\d)?|bert|roberta|t5)\\b|foundation[- ]models?|generative[- ]ai|language[- ]models?",
+    "llm_generative_explicit": "large[- ]language[- ]models?|\\b(?:m?llms?|chatgpt|gpt[- ]?[2345](?:\\.\\d)?)\\b|foundation[- ]models?|generative[- ]ai|retrieval[- ]augmented[- ]generation|\\brag\\b",
+    "learning_extended": "\\blearning\\b|\\blearned\\b|\\bembeddings?\\b",
+    "ai_ml_explicit": "distributed[- ]training|(?:large[- ])?model[- ](?:training|inference|serving)|\\bai\\b|artificial[- ]intelligence|machine[- ]learning|deep[- ]learning|\\bneural\\b|\\b(?:dnn|cnn|rnn|lstm|gnn|gcn|gan)s?\\b|\\btransformers?\\b|reinforcement[- ]learning|federated[- ]learning|contrastive[- ]learning|representation[- ]learning|meta[- ]learning|multi[- ]task[- ]learning|self[- ]supervised|semi[- ]supervised|unsupervised[- ]learning|supervised[- ]learning|transfer[- ]learning|\\blearned\\b|graph[- ]convolution|convolutional|autoencod\\w*|diffusion[- ]models?|generative[- ]models?|pre[- ]?train\\w*|fine[- ]tun\\w*|prompt\\w*|zero[- ]shot|few[- ]shot|in[- ]context[- ]learning|knowledge[- ]distill\\w*|\\brl[- ]agent",
+    "retrieval_recommendation_ranking": "retriev\\w*|recommend\\w*|\\brank\\w*|\\bre[- ]?rank\\w*|search[- ]engines?|information[- ]access|collaborative[- ]filter\\w*|\\bsearch\\b",
+    "data_mining_core": "\\bmining\\b|clustering|classification|regression|anomaly|outlier|causal|time[- ]series|forecast\\w*|pattern\\w*|graph\\w*|tabular|data[- ](?:cleaning|integration|preprocessing)|\\bstream\\w*|\\boptimiza\\w*",
+    "software_testing_analysis": "\\btest\\w*|fuzz\\w*|\\bbugs?\\b|defect\\w*|debug\\w*|verif\\w*|static[- ]analysis|dynamic[- ]analysis|program[- ]analysis|vulnerab\\w*|program[- ]repair",
+    "software_code_generation": "code[- ](?:generation|generating|synthesis|completion)|generating[- ]code|program[- ]synthesis|program[- ]repair|code[- ]repair|automated[- ]repair|code[- ]translation|code[- ]summari\\w*|code[- ]review",
+    "systems_ai_infrastructure": "distributed[- ]training|(?:large[- ])?model[- ](?:training|inference|serving)|\\bgpus?\\b|\\btensor\\w*|(?:model|neural|deep[- ]learning|llm)[- ](?:training|inference|serving)|(?:training|inference|serving).{0,45}(?:language[- ]model|llm|neural|deep[- ]learning)|(?:language[- ]model|llm).{0,45}(?:training|inference|serving)|\\bai[- ](?:workloads?|systems?|clusters?)",
+    "agents_explicit": "\\bagents?\\b|agentic|multi[- ]agent"
+  },
+  "ai_any": "union(language_model_explicit, llm_generative_explicit, ai_ml_explicit)",
+  "warning": "Dictionary proxy, not paper-topic ground truth. Whole venue belongs the traditional domain. AI and traditional labels overlap. No marker is not proof of non-AI. Plain agent not in AI union. BERT counts as language model, but not generative LLM. learning_extended is a deliberately broader sensitivity proxy and can include human-learning false positives."
+}

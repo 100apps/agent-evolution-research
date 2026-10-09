@@ -1,0 +1,1875 @@
+[
+  {
+    "source_group": "nlp_vision",
+    "source_paper_id": "2021.acl-long.309",
+    "occurrence_id": "ACL:2021:76015d3086e1c0f06c29",
+    "venue": "ACL",
+    "year": 2021,
+    "track": "long",
+    "title": "A unified approach to sentence segmentation of punctuated text in many languages",
+    "official_url": "https://aclanthology.org/2021.acl-long.309/",
+    "program_url": "",
+    "authors_raw": [],
+    "authors": [
+      {
+        "name": "Rachel Wicks",
+        "affiliations": [],
+        "author_id": "",
+        "orcid": ""
+      },
+      {
+        "name": "Matt Post",
+        "affiliations": [
+          {
+            "name": "Johns Hopkins University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ],
+        "author_id": "",
+        "orcid": ""
+      }
+    ],
+    "institutions": [
+      "Johns Hopkins University"
+    ],
+    "countries": [],
+    "doi": "10.18653/v1/2021.acl-long.309",
+    "arxiv_id": "",
+    "openreview_id": "",
+    "publication_date": "2021-08",
+    "date_precision": "month",
+    "date_type": "proceedings_bibliographic_date",
+    "program_date": "",
+    "abstract": "The sentence is a fundamental unit of text processing. Yet sentences in the wild are commonly encountered not in isolation, but unsegmented within larger paragraphs and documents. Therefore, the first step in many NLP pipelines is sentence segmentation. Despite its importance, this step is the subject of relatively little research. There are no standard test sets or even methods for evaluation, leaving researchers and engineers without a clear footing for evaluating and selecting models for the task. Existing tools have relatively small language coverage, and efforts to extend them to other languages are often ad hoc. We introduce a modern context-based modeling approach that provides a solution to the problem of segmenting punctuated text in many languages, and show how it can be trained on noisily-annotated data. We also establish a new 23-language multilingual evaluation set. Our approach exceeds high baselines set by existing methods on prior English corpora (WSJ and Brown corpora), and also performs well on average on our new evaluation set. We release our tool, ersatz, as open source.",
+    "field_provenance": {
+      "authors": {
+        "status": "source_ordered",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/acl_2021.xml",
+            "source_sha256": "ecf9e004200e80b42c7145c4f6d4d71762c645c95661d51adc7ee003e7374de9",
+            "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2021.acl.xml",
+            "locator": "paper:2021.acl-long.309",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/acl_2021.xml",
+            "source_sha256": "ecf9e004200e80b42c7145c4f6d4d71762c645c95661d51adc7ee003e7374de9",
+            "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2021.acl.xml",
+            "locator": "paper:2021.acl-long.309",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/acl_2021.xml",
+            "source_sha256": "ecf9e004200e80b42c7145c4f6d4d71762c645c95661d51adc7ee003e7374de9",
+            "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2021.acl.xml",
+            "locator": "paper:2021.acl-long.309",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "doi": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/acl_2021.xml",
+            "source_sha256": "ecf9e004200e80b42c7145c4f6d4d71762c645c95661d51adc7ee003e7374de9",
+            "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2021.acl.xml",
+            "locator": "paper:2021.acl-long.309",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/papers_main.jsonl",
+            "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+            "source_url": "",
+            "locator": "line:1012",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/papers_main.jsonl",
+            "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+            "source_url": "",
+            "locator": "line:1012",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "present_month_precision",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/acl_2021.xml",
+            "source_sha256": "ecf9e004200e80b42c7145c4f6d4d71762c645c95661d51adc7ee003e7374de9",
+            "source_url": "https://raw.githubusercontent.com/acl-org/acl-anthology/master/data/xml/2021.acl.xml",
+            "locator": "paper:2021.acl-long.309",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/papers_main.jsonl",
+            "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+            "source_url": "",
+            "locator": "line:1012",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {
+      "doi": "10.18653/v1/2021.acl-long.309"
+    },
+    "warnings": [],
+    "author_affiliation_completeness": "partial",
+    "affiliation_author_count": 1,
+    "publication_time_affiliation_author_count": 1,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:bfb20b55229e3d6982a27ea2",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "nlp_vision",
+    "source_paper_id": "CVF:content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+    "occurrence_id": "CVPR:2020:784657f80664e638300d",
+    "venue": "CVPR",
+    "year": 2020,
+    "track": "main",
+    "title": "Conditional Channel Gated Networks for Task-Aware Continual Learning",
+    "official_url": "https://openaccess.thecvf.com/content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+    "program_url": "",
+    "authors_raw": [],
+    "authors": [
+      {
+        "name": "Davide Abati",
+        "affiliations": []
+      },
+      {
+        "name": "Jakub Tomczak",
+        "affiliations": []
+      },
+      {
+        "name": "Tijmen Blankevoort",
+        "affiliations": []
+      },
+      {
+        "name": "Simone Calderara",
+        "affiliations": []
+      },
+      {
+        "name": "Rita Cucchiara",
+        "affiliations": []
+      },
+      {
+        "name": "Babak Ehteshami Bejnordi",
+        "affiliations": []
+      }
+    ],
+    "institutions": [],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "2004.00070",
+    "openreview_id": "",
+    "publication_date": "2020-06",
+    "date_precision": "month",
+    "date_type": "proceedings_bibliographic_date",
+    "program_date": "",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "source_ordered",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/cvpr_2020_day16.html",
+            "source_sha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+            "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+            "locator": "paper_url:https://openaccess.thecvf.com/content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "missing",
+        "missing_reason": "no_affiliation_in_identity_verified_linked_source",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/cvpr_2020_day16.html",
+            "source_sha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+            "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+            "locator": "paper_url:https://openaccess.thecvf.com/content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/cvpr_2020_day16.html",
+            "source_sha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+            "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+            "locator": "paper_url:https://openaccess.thecvf.com/content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/papers_main.jsonl",
+            "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+            "source_url": "",
+            "locator": "line:8199",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/cvpr_2020_day16.html",
+            "source_sha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+            "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+            "locator": "paper_url:https://openaccess.thecvf.com/content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/papers_main.jsonl",
+            "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+            "source_url": "",
+            "locator": "line:8199",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "present_month_precision",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/raw/cvpr_2020_day16.html",
+            "source_sha256": "57975bf59819520d60a46210e17146e7a519d0783412f14900ffeb7d58bf49bc",
+            "source_url": "https://openaccess.thecvf.com/CVPR2020.py?day=2020-06-16",
+            "locator": "paper_url:https://openaccess.thecvf.com/content_CVPR_2020/html/Abati_Conditional_Channel_Gated_Networks_for_Task-Aware_Continual_Learning_CVPR_2020_paper.html",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/nlp_vision/papers_main.jsonl",
+            "source_sha256": "b390171039f8adf1d9b905b1cbcc184ce10017ba2087695e161364908a237286",
+            "source_url": "",
+            "locator": "line:8199",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {
+      "arxiv_id": "2004.00070"
+    },
+    "warnings": [],
+    "author_affiliation_completeness": "missing",
+    "affiliation_author_count": 0,
+    "publication_time_affiliation_author_count": 0,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:ebc66fb697c05d6525fed1b9",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "ml",
+    "source_paper_id": "openreview:--gvHfE3Xf5",
+    "occurrence_id": "ICLR:2021:d613cc630e7fc83d6784",
+    "venue": "ICLR",
+    "year": 2021,
+    "track": "main",
+    "title": "Meta-Learning of Structured Task Distributions in Humans and Machines",
+    "official_url": "https://openreview.net/forum?id=--gvHfE3Xf5",
+    "program_url": "",
+    "authors_raw": [],
+    "authors": [
+      {
+        "name": "Sreejan Kumar",
+        "affiliations": [
+          {
+            "name": "Princeton University",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Ishita Dasgupta",
+        "affiliations": [
+          {
+            "name": "Princeton University",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Jonathan Cohen",
+        "affiliations": [
+          {
+            "name": "Princeton University",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Nathaniel Daw",
+        "affiliations": [
+          {
+            "name": "Princeton University",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Thomas L Griffiths",
+        "affiliations": [
+          {
+            "name": "Brown University",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      }
+    ],
+    "institutions": [
+      "Princeton University",
+      "Brown University"
+    ],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "--gvHfE3Xf5",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "2021-05-06T09:00:00-07:00",
+    "abstract": "In recent years, meta-learning, in which a model is trained on a family of tasks (i.e. a task distribution), has emerged as an approach to training neural networks to perform tasks that were previously assumed to require structured representations, making strides toward closing the gap between humans and machines. However, we argue that evaluating meta-learning remains a challenge, and can miss whether meta-learning actually uses the structure embedded within the tasks. These meta-learners might therefore still be significantly different from humans learners. To demonstrate this difference, we first define a new meta-reinforcement learning task in which a structured task distribution is generated using a compositional grammar. We then introduce a novel approach to constructing a \"null task distribution\" with the same statistical complexity as this structured task distribution but without the explicit rule-based structure used to generate the structured task. We train a standard meta-learning agent, a recurrent network trained with model-free reinforcement learning, and compare it with human performance across the two task distributions. We find a double dissociation in which humans do better in the structured task distribution whereas agents do better in the null task distribution -- despite comparable statistical complexity. This work highlights that multiple strategies can achieve reasonable meta-test performance, and that careful construction of control task distributions is a valuable way to understand which strategies meta-learners acquire, and how they might differ from humans.",
+    "field_provenance": {
+      "authors": {
+        "status": "source_ordered_profile_institution_time_unverified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/iclr_2021.json",
+            "source_sha256": "682836b786186694ba5f87d9efc3643067f1df0daa8b342a6f0b6c79b01552b4",
+            "source_url": "",
+            "locator": "results[103];event_id=3064",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present_publication_time_unverified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/iclr_2021.json",
+            "source_sha256": "682836b786186694ba5f87d9efc3643067f1df0daa8b342a6f0b6c79b01552b4",
+            "source_url": "",
+            "locator": "results[103];event_id=3064",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/iclr_2021.json",
+            "source_sha256": "682836b786186694ba5f87d9efc3643067f1df0daa8b342a6f0b6c79b01552b4",
+            "source_url": "",
+            "locator": "results[103];event_id=3064",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:688",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:688",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/iclr_2021.json",
+            "source_sha256": "682836b786186694ba5f87d9efc3643067f1df0daa8b342a6f0b6c79b01552b4",
+            "source_url": "",
+            "locator": "results[103];event_id=3064",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:688",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:688",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "program_date": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/iclr_2021.json",
+            "source_sha256": "682836b786186694ba5f87d9efc3643067f1df0daa8b342a6f0b6c79b01552b4",
+            "source_url": "",
+            "locator": "results[103];event_id=3064",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {
+      "openreview_id": "--gvHfE3Xf5"
+    },
+    "warnings": [],
+    "author_affiliation_completeness": "complete",
+    "affiliation_author_count": 5,
+    "publication_time_affiliation_author_count": 0,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:95735b9cdfdf3ed7bb7db302",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "ml",
+    "source_paper_id": "pmlr:v267:a-mancisidor25a",
+    "occurrence_id": "ICML:2025:0f90ac1bf6d80fa8e898",
+    "venue": "ICML",
+    "year": 2025,
+    "track": "main",
+    "title": "Aggregation of Dependent Expert Distributions in Multimodal Variational Autoencoders",
+    "official_url": "https://proceedings.mlr.press/v267/a-mancisidor25a.html",
+    "program_url": "",
+    "authors_raw": [],
+    "authors": [
+      {
+        "name": "Rogelio A. Mancisidor",
+        "affiliations": [
+          {
+            "name": "BI Norwegian Business School",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Robert Jenssen",
+        "affiliations": [
+          {
+            "name": "UiT The Arctic University of Norway",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Shujian Yu",
+        "affiliations": [
+          {
+            "name": "Vrije Universiteit Amsterdam",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Michael Kampffmeyer",
+        "affiliations": [
+          {
+            "name": "UiT The Arctic University of Norway",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      }
+    ],
+    "institutions": [
+      "BI Norwegian Business School",
+      "UiT The Arctic University of Norway",
+      "Vrije Universiteit Amsterdam"
+    ],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "jYmGi1175R",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "2025-07-15T11:00:00-07:00",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "source_ordered_profile_institution_time_unverified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/icml_2025.html",
+            "source_sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+            "source_url": "",
+            "locator": "paper_url:https://proceedings.mlr.press/v267/a-mancisidor25a.html",
+            "method": "raw_exact_identifier"
+          },
+          {
+            "source_path": "conferences/ml/raw/icml_2025_program.json",
+            "source_sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+            "source_url": "",
+            "locator": "results[1012];event_id=44298",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present_publication_time_unverified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/icml_2025.html",
+            "source_sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+            "source_url": "",
+            "locator": "paper_url:https://proceedings.mlr.press/v267/a-mancisidor25a.html",
+            "method": "raw_exact_identifier"
+          },
+          {
+            "source_path": "conferences/ml/raw/icml_2025_program.json",
+            "source_sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+            "source_url": "",
+            "locator": "results[1012];event_id=44298",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/icml_2025.html",
+            "source_sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+            "source_url": "",
+            "locator": "paper_url:https://proceedings.mlr.press/v267/a-mancisidor25a.html",
+            "method": "raw_exact_identifier"
+          },
+          {
+            "source_path": "conferences/ml/raw/icml_2025_program.json",
+            "source_sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+            "source_url": "",
+            "locator": "results[1012];event_id=44298",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:23398",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:23398",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/icml_2025.html",
+            "source_sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+            "source_url": "",
+            "locator": "paper_url:https://proceedings.mlr.press/v267/a-mancisidor25a.html",
+            "method": "raw_exact_identifier"
+          },
+          {
+            "source_path": "conferences/ml/raw/icml_2025_program.json",
+            "source_sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+            "source_url": "",
+            "locator": "results[1012];event_id=44298",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:23398",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:23398",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "program_date": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/icml_2025.html",
+            "source_sha256": "9e17ee7ed7eda2727ad46178644225738ee1d8e3e319441ad4d1c11e4986288d",
+            "source_url": "",
+            "locator": "paper_url:https://proceedings.mlr.press/v267/a-mancisidor25a.html",
+            "method": "raw_exact_identifier"
+          },
+          {
+            "source_path": "conferences/ml/raw/icml_2025_program.json",
+            "source_sha256": "1e2ff498f2559b2a0e34504e84b5e6d41906dcd4a7fe868122514adaaba06c7b",
+            "source_url": "",
+            "locator": "results[1012];event_id=44298",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {
+      "openreview_id": "jYmGi1175R"
+    },
+    "warnings": [],
+    "author_affiliation_completeness": "complete",
+    "affiliation_author_count": 4,
+    "publication_time_affiliation_author_count": 0,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:f5cb6cb3216dad7f1fb978c2",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "systems_ir",
+    "source_paper_id": "researchr:event:a712ef6b-75eb-43ff-b72a-40920d8d7131",
+    "occurrence_id": "ICSE:2020:54165da27335b626dfe1",
+    "venue": "ICSE",
+    "year": 2020,
+    "track": "Technical Papers",
+    "title": "Accessibility Issues in Android Apps: State of Affairs, Sentiments, and Ways Forward",
+    "official_url": "https://conf.researchr.org/track/icse-2020/icse-2020-papers",
+    "program_url": "",
+    "authors_raw": "Abdulaziz Alshayban; Iftekhar Ahmed; Sam Malek",
+    "authors": [
+      {
+        "name": "Abdulaziz Alshayban",
+        "affiliations": []
+      },
+      {
+        "name": "Iftekhar Ahmed",
+        "affiliations": []
+      },
+      {
+        "name": "Sam Malek",
+        "affiliations": []
+      }
+    ],
+    "institutions": [],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "parsed_explicit_delimiters",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "missing",
+        "missing_reason": "no_affiliation_in_identity_verified_linked_source",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {},
+    "warnings": [],
+    "author_affiliation_completeness": "missing",
+    "affiliation_author_count": 0,
+    "publication_time_affiliation_author_count": 0,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:794ed3b349e2919977735419",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "systems_ir",
+    "source_paper_id": "https://www.kdd.org/kdd2020/accepted-papers/view/a-block-decomposition-algorithm-for-sparse-optimization.html",
+    "occurrence_id": "KDD:2020:25426149079a8246d501",
+    "venue": "KDD",
+    "year": 2020,
+    "track": "Research Track",
+    "title": "A Block Decomposition Algorithm for Sparse Optimization",
+    "official_url": "https://www.kdd.org/kdd2020/accepted-papers/view/a-block-decomposition-algorithm-for-sparse-optimization.html",
+    "program_url": "",
+    "authors_raw": "Ganzhao Yuan: Peng Cheng Laboratory; Li Shen: Tencent AI LAB; Weishi Zheng: Sun Yat-sen University",
+    "authors": [
+      {
+        "name": "Ganzhao Yuan",
+        "affiliations": [
+          {
+            "name": "Peng Cheng Laboratory",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Li Shen",
+        "affiliations": [
+          {
+            "name": "Tencent AI LAB",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Weishi Zheng",
+        "affiliations": [
+          {
+            "name": "Sun Yat-sen University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      }
+    ],
+    "institutions": [
+      "Peng Cheng Laboratory",
+      "Tencent AI LAB",
+      "Sun Yat-sen University"
+    ],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "parsed_explicit_delimiters",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:2728",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {},
+    "warnings": [],
+    "author_affiliation_completeness": "complete",
+    "affiliation_author_count": 3,
+    "publication_time_affiliation_author_count": 3,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:812f4a65035342fdee8d716d",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "ml",
+    "source_paper_id": "openreview:00GgrAB0VK",
+    "occurrence_id": "NeurIPS:2026:3649e1ff006e7f60cdca",
+    "venue": "NeurIPS",
+    "year": 2026,
+    "track": "main",
+    "title": "Strategic Decision Focused Learning",
+    "official_url": "https://openreview.net/forum?id=00GgrAB0VK",
+    "program_url": "",
+    "authors_raw": [],
+    "authors": [
+      {
+        "name": "Tinashe Handina",
+        "affiliations": [
+          {
+            "name": "California Institute of Technology",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Yuehan Diao",
+        "affiliations": [
+          {
+            "name": "Cornell University",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Adam Wierman",
+        "affiliations": [
+          {
+            "name": "Caltech",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      },
+      {
+        "name": "Eric Mazumdar",
+        "affiliations": [
+          {
+            "name": "California Institute of Technology",
+            "temporal_status": "publication_time_unverified",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "institution_profile_is_not_historical_location_evidence"
+          }
+        ]
+      }
+    ],
+    "institutions": [
+      "California Institute of Technology",
+      "Cornell University",
+      "Caltech"
+    ],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "00GgrAB0VK",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "2026-12-09T13:30:00-08:00",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "source_ordered_profile_institution_time_unverified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/neurips_2026_program.json",
+            "source_sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21",
+            "source_url": "",
+            "locator": "results[6277];event_id=156150",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present_publication_time_unverified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/neurips_2026_program.json",
+            "source_sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21",
+            "source_url": "",
+            "locator": "results[6277];event_id=156150",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/neurips_2026_program.json",
+            "source_sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21",
+            "source_url": "",
+            "locator": "results[6277];event_id=156150",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:52436",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:52436",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/neurips_2026_program.json",
+            "source_sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21",
+            "source_url": "",
+            "locator": "results[6277];event_id=156150",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:52436",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/metadata_main.jsonl",
+            "source_sha256": "72c29b95ff514b96bd64b1dabe18a2679c776469f9e18a8fd6a58ae2e3a7530e",
+            "source_url": "",
+            "locator": "line:52436",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "program_date": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/ml/raw/neurips_2026_program.json",
+            "source_sha256": "17f3f12691ff024bfc0e5ff072d1f32979554a934a3bbf1a60eb83a513267c21",
+            "source_url": "",
+            "locator": "results[6277];event_id=156150",
+            "method": "raw_exact_identifier"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {
+      "openreview_id": "00GgrAB0VK"
+    },
+    "warnings": [],
+    "author_affiliation_completeness": "complete",
+    "affiliation_author_count": 4,
+    "publication_time_affiliation_author_count": 0,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:2e3f9b21ceb0a2dddecbc0dc",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "systems_ir",
+    "source_paper_id": "osdi2020-c1b0f4b3e5e83c5c",
+    "occurrence_id": "OSDI:2020:2c5659863cdc64a7262b",
+    "venue": "OSDI",
+    "year": 2020,
+    "track": "research",
+    "title": "A large scale analysis of hundreds of in-memory cache clusters at Twitter",
+    "official_url": "https://www.usenix.org/conference/osdi20/technical-sessions",
+    "program_url": "",
+    "authors_raw": "Juncheng Yang, Carnegie Mellon University; Yao Yue, Twitter; K. V. Rashmi, Carnegie Mellon University",
+    "authors": [],
+    "institutions": [],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "missing",
+        "missing_reason": "author_affiliation_comma_boundary_ambiguous",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "missing",
+        "missing_reason": "no_affiliation_in_identity_verified_linked_source",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5498",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {},
+    "warnings": [
+      "structured_authors_missing_see_authors_raw"
+    ],
+    "author_affiliation_completeness": "missing",
+    "affiliation_author_count": 0,
+    "publication_time_affiliation_author_count": 0,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:f8d9249ec0d4c672acdd2088",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "systems_ir",
+    "source_paper_id": "sigir:2020:title_sha256:792649d3ea7c49156963a340bfb9125dae0f585ec6311c211befa1f6dc697cac",
+    "occurrence_id": "SIGIR:2020:22dfd60d67de3176b031",
+    "venue": "SIGIR",
+    "year": 2020,
+    "track": "Full Papers",
+    "title": "Learning Efficient Representations of Mouse Movements toPredict User Attention in Sponsored Search",
+    "official_url": "https://sigir.org/sigir2020/accepted-papers/",
+    "program_url": "",
+    "authors_raw": "Ioannis Arapakis: Telefonica Research; Luis A. Leiva: Aalto University",
+    "authors": [
+      {
+        "name": "Ioannis Arapakis",
+        "affiliations": [
+          {
+            "name": "Telefonica Research",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Luis A. Leiva",
+        "affiliations": [
+          {
+            "name": "Aalto University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      }
+    ],
+    "institutions": [
+      "Telefonica Research",
+      "Aalto University"
+    ],
+    "countries": [],
+    "doi": "",
+    "arxiv_id": "",
+    "openreview_id": "",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "parsed_explicit_delimiters",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "doi": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:1472",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {},
+    "warnings": [],
+    "author_affiliation_completeness": "complete",
+    "affiliation_author_count": 2,
+    "publication_time_affiliation_author_count": 2,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:213a74fa61d162ea0f5ad26a",
+    "entity_identifier_conflict": false
+  },
+  {
+    "source_group": "systems_ir",
+    "source_paper_id": "sosp2021-84bce6b4e85881e2",
+    "occurrence_id": "SOSP:2021:b8dee8aaf9b7fd27f51e",
+    "venue": "SOSP",
+    "year": 2021,
+    "track": "research",
+    "title": "Automated SmartNIC Offloading Insights for Network Functions",
+    "official_url": "https://dl.acm.org/doi/10.1145/3477132.3483583",
+    "program_url": "",
+    "authors_raw": "Yiming Qiu (Rice University), Jiarong Xing (Rice University), Kuo-Feng Hsu (Rice University), Qiao Kang (Rice University), Ming Liu (University of Wisconsin at Madison/VMware Research), Srinivas Narayana (Rutgers University), and Ang Chen (Rice University)",
+    "authors": [
+      {
+        "name": "Yiming Qiu",
+        "affiliations": [
+          {
+            "name": "Rice University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Jiarong Xing",
+        "affiliations": [
+          {
+            "name": "Rice University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Kuo-Feng Hsu",
+        "affiliations": [
+          {
+            "name": "Rice University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Qiao Kang",
+        "affiliations": [
+          {
+            "name": "Rice University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Ming Liu",
+        "affiliations": [
+          {
+            "name": "University of Wisconsin at Madison/VMware Research",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Srinivas Narayana",
+        "affiliations": [
+          {
+            "name": "Rutgers University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      },
+      {
+        "name": "Ang Chen",
+        "affiliations": [
+          {
+            "name": "Rice University",
+            "temporal_status": "paper_scoped_explicit",
+            "country_code": "",
+            "country_name": "",
+            "country_status": "missing",
+            "country_missing_reason": "no_explicit_affiliation_country"
+          }
+        ]
+      }
+    ],
+    "institutions": [
+      "Rice University",
+      "University of Wisconsin at Madison/VMware Research",
+      "Rutgers University"
+    ],
+    "countries": [],
+    "doi": "10.1145/3477132.3483583",
+    "arxiv_id": "",
+    "openreview_id": "",
+    "publication_date": "",
+    "date_precision": "",
+    "date_type": "",
+    "program_date": "",
+    "abstract": "",
+    "field_provenance": {
+      "authors": {
+        "status": "parsed_explicit_delimiters",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "institutions": {
+        "status": "present",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "countries": {
+        "status": "missing",
+        "missing_reason": "no_explicit_publication_time_affiliation_country",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "doi": {
+        "status": "reported_identifier_not_yet_raw_verified",
+        "missing_reason": "",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "arxiv_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "openreview_id": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "publication_date": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      },
+      "abstract": {
+        "status": "missing",
+        "missing_reason": "not_in_normalized_record",
+        "evidence": [
+          {
+            "source_path": "conferences/systems_ir/combined_papers.jsonl",
+            "source_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+            "source_url": "",
+            "locator": "line:5926",
+            "method": "normalized_record"
+          }
+        ]
+      }
+    },
+    "dedup_identifiers": {},
+    "warnings": [
+      "inherited_doi_from_accepted_to_proceedings_title_crosswalk_not_dedup_eligible"
+    ],
+    "author_affiliation_completeness": "complete",
+    "affiliation_author_count": 7,
+    "publication_time_affiliation_author_count": 7,
+    "country_author_count": 0,
+    "paper_entity_id": "paper:452e5188448b3cbf93d6c2f4",
+    "entity_identifier_conflict": false
+  }
+]

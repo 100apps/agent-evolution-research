@@ -1,0 +1,28 @@
+{
+  "baseline_records": 83337,
+  "author_rows": 83337,
+  "coverage_by_venue": {
+    "ACL": {
+      "with_authors": 8198,
+      "records": 8198
+    },
+    "CVPR": {
+      "with_authors": 17182,
+      "records": 17182
+    },
+    "ICLR": {
+      "with_authors": 15534,
+      "records": 15534
+    },
+    "ICML": {
+      "with_authors": 17460,
+      "records": 17460
+    },
+    "NeurIPS": {
+      "with_authors": 24963,
+      "records": 24963
+    }
+  },
+  "unmatched_baseline_records": 0,
+  "raw_author_records_outside_scope": 2890
+}

@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 REPOSITORY_URL = "https://github.com/100apps/agent-evolution-research"
 SITE_URL = "https://100apps.github.io/agent-evolution-research/"
 TREND_URL = SITE_URL + "research-trends/"
+EXPLORER_URL = TREND_URL + "explorer/"
 PANORAMA_PATH = "assets/Agent_自进化论文全景图.png"
 FORBIDDEN_PUBLIC_PATTERNS = {
     "Windows user path": re.compile(r"[A-Za-z]:[\\/]+Users[\\/]", re.IGNORECASE),
@@ -130,9 +131,9 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
 <div class="wrap public-notice public-boundary" role="note">
   <strong>公开在线版。</strong>
   论文入口指向作者、arXiv、OpenReview、PMLR、ACL 等公开原文；本站不托管论文 PDF、全文提取、原始数据或实验日志。
-  研究代码和归档链接直接指向公开 GitHub 仓库。<a href="{TREND_URL}">查看 AI 科研活动趋势</a>。
+  研究代码和归档链接直接指向公开 GitHub 仓库。<a href="{TREND_URL}">查看 AI 科研活动趋势</a> · <a href="{EXPLORER_URL}">浏览十会议论文目录</a>。
 </div>
-""".replace("{TREND_URL}", TREND_URL),
+""".replace("{TREND_URL}", TREND_URL).replace("{EXPLORER_URL}", EXPLORER_URL),
             "html.parser",
         )
         nav.insert_after(notice_fragment.div)
@@ -251,6 +252,7 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
         raise SystemExit("trend dashboard layout or evidence boundary changed")
     trend_links = (
         f'<nav aria-label="研究导航"><a href="{SITE_URL}">39 篇 Agent 进化论文报告</a>'
+        f' · <a href="{EXPLORER_URL}">十会议论文 CSV Explorer</a>'
         f' · <a href="{REPOSITORY_URL}/tree/main/research_trends">复核数据与研究过程</a></nav>'
     )
     trend_html = trend_html.replace("<main><h1>", "<main>" + trend_links + "<h1>", 1)
@@ -261,6 +263,31 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
     trend_output = dist / "research-trends" / "index.html"
     trend_output.parent.mkdir(parents=True, exist_ok=True)
     trend_output.write_text(trend_html, encoding="utf-8", newline="\n")
+
+    catalog = repo / "research_trends" / "catalog"
+    explorer = dist / "research-trends" / "explorer"
+    explorer.mkdir(parents=True, exist_ok=True)
+    explorer_sources = {
+        "index.html": catalog / "explorer.html",
+        "explorer_worker.js": catalog / "explorer_worker.js",
+        "index_manifest.json": catalog / "index_manifest.json",
+        "papers_index.jsonl.gz": catalog / "papers_index.jsonl.gz",
+    }
+    for name, source in explorer_sources.items():
+        if not source.is_file():
+            raise SystemExit(f"missing Explorer asset: {source}")
+        target = explorer / name
+        if name.endswith(".gz"):
+            target.write_bytes(source.read_bytes())
+        else:
+            value = source.read_text(encoding="utf-8")
+            hits = [label for label, pattern in FORBIDDEN_PUBLIC_PATTERNS.items() if pattern.search(value)]
+            if hits:
+                raise SystemExit(f"Explorer asset {name} contains forbidden local data: {hits}")
+            target.write_text(value, encoding="utf-8", newline="\n")
+    index_manifest = json.loads((explorer / "index_manifest.json").read_text(encoding="utf-8"))
+    if index_manifest["row_count"] != 89530 or sha256(explorer / "papers_index.jsonl.gz") != index_manifest["data_sha256"]:
+        raise SystemExit("Explorer index row count or SHA-256 mismatch")
 
     manifest = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -274,7 +301,8 @@ a[data-access=repository]{border-style:dashed!important}.publication-grid{displa
         "unique_verified_paper_sources": len(set(source_urls)),
         "remaining_relative_links": relative_links,
         "privacy_hits": privacy_hits,
-        "dist_files": ["dist/.nojekyll", "dist/index.html", "dist/research-trends/index.html"],
+        "dist_files": ["dist/.nojekyll", "dist/index.html", "dist/research-trends/index.html"] +
+        ["dist/research-trends/explorer/" + name for name in explorer_sources],
         "index_bytes": output_html.stat().st_size,
         "index_sha256": sha256(output_html),
         "trend_index_bytes": trend_output.stat().st_size,

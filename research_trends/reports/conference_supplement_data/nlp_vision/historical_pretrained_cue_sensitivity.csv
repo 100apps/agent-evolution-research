@@ -1,0 +1,15 @@
+venue,year,total_titles,original_modern_llm_foundation_count,original_share_pct,historical_model_cue_count,expanded_union_count,expanded_union_share_pct,added_count,fields,interpretation
+ACL,2020,778,2,0.2571,26,27,3.4704,25,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+ACL,2021,710,1,0.1408,37,37,5.2113,36,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+ACL,2022,700,6,0.8571,43,49,7.0,43,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+ACL,2023,1075,32,2.9767,38,70,6.5116,38,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+ACL,2024,940,332,35.3191,4,336,35.7447,4,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+ACL,2025,1699,652,38.3755,5,656,38.6109,4,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+ACL,2026,2296,807,35.1481,1,807,35.1481,0,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2020,1466,0,0.0,1,1,0.0682,1,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2021,1660,0,0.0,2,2,0.1205,2,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2022,2074,2,0.0964,3,5,0.2411,3,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2023,2353,11,0.4675,3,14,0.595,3,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2024,2716,113,4.1605,0,113,4.1605,0,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2025,2871,223,7.7673,0,223,7.7673,0,title,Historical lexical sensitivity only; not all pretrained/foundation model research
+CVPR,2026,4042,340,8.4117,2,341,8.4364,1,title,Historical lexical sensitivity only; not all pretrained/foundation model research

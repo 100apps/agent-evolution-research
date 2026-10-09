@@ -1,0 +1,13 @@
+{
+  "title_positive_rows": 2557,
+  "eligible_with_abstract": 2543,
+  "missing_abstract": 14,
+  "uncompressed_sha256": "741e3ce6774160a2282d40a0ef04f5725653e26f8ff2259851787ade8abaf01f",
+  "source_sha256": {
+    "ML": "e388b29b46bdb5b33df5c3628b51d5b994ebe5d9d15dc571c72000b2c343b114",
+    "ACL": "63834d9725bb692db7f5ef6df1d6dd45afb033006af246319f54fbf69c57376d"
+  },
+  "rule_pattern": "\\b(?:agents?|agentic|tool[- ](?:use|using|augmented|learning|calling)|toolformer|function calling|retrieval[- ]augmented|rag|long[- ]term memory|episodic memory|memory[- ]augmented|world models?)\\b",
+  "exclusions": "Observed main-conference records, ML (ICLR/ICML/NeurIPS) and ACL, 2020–2022 or 2024–2026, matching broad agent/tool/memory title regex, with nonempty collected abstract. Excludes 2023, CVPR, title-negative papers, missing abstracts, and all NeurIPS 2026 records because their observed program is incomplete. ICML/ICLR/ACL 2026 remain included as collected; upstream source and track caveats apply.",
+  "scope": "Complete frozen title-positive frame for the four audit strata. Not the full conference corpus; aggregate full-corpus denominators remain in sampling_manifest.json."
+}

@@ -1,0 +1,24 @@
+{
+  "format": "Complete parsed-text table snapshot; not original CSV bytes",
+  "retrieved_files": [
+    {
+      "name": "arxiv_monthly_wide.csv",
+      "has_more": false,
+      "original_declared_size_bytes": 10267,
+      "table_text_sha256": "a05f4ab55dd702f4e477a254661078ee22644ae1c3d18ac123063c414cd47e01"
+    },
+    {
+      "name": "openalex_monthly_wide.csv",
+      "has_more": false,
+      "original_declared_size_bytes": 18592,
+      "table_text_sha256": "915b1084eb338a2d11fe90e5f7b534ffb8d5b10cbe163e3f15fa409aabb134cc"
+    }
+  ],
+  "month_count": 81,
+  "date_range": [
+    "2020-01",
+    "2026-09"
+  ],
+  "arxiv_definition": "submittedDate UTC; category union cs.AI OR cs.LG OR cs.CL OR cs.CV OR stat.ML",
+  "note": "Generated index column preserved. SHA values refer to parsed table text, not original CSV bytes. OpenAlex mapping 1702 is not semantically pure AI, and first-day date heaping affects monthly shapes."
+}

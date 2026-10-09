@@ -1,0 +1,12 @@
+{
+  "rows": 6193,
+  "source_files_hash_verified": 83,
+  "hash_failures": [],
+  "duplicate_title_year_keys": 0,
+  "all_main_research": true,
+  "empty_titles": 0,
+  "empty_stable_ids": 0,
+  "count_invariants": true,
+  "classification_basis": "title_only",
+  "manual_validation": "Not performed; deterministic raw-source parsing and dictionary invariants checked"
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="十个计算机科学会议论文的五层 AI 产业分类、来源和证据浏览器。">
+<title>论文 CSV Explorer｜AI 五层分类</title>
+<style>
+:root{color-scheme:light;--ink:#193047;--muted:#627589;--line:#d8e2e8;--bg:#f4f8fb;--accent:#006f70;--focus:#f0b344}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,"Microsoft YaHei",sans-serif}a{color:#065f80}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{width:min(1480px,calc(100% - 32px));margin:auto}header{background:#102b3a;color:#eef9fa;padding:27px 0}header h1{margin:6px 0;font-size:clamp(26px,4vw,42px)}header p{max-width:960px;margin:8px 0;color:#d4e5ea}header a{color:#aff3ea}.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:#86d9d1}
+.notice{padding:13px 16px;border-left:4px solid #db9231;background:#fff9eb;margin:18px 0;border-radius:8px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0}.toolbar button,.toolbar a.button{border:1px solid #8eb4b5;border-radius:9px;background:white;padding:8px 12px;text-decoration:none;color:var(--ink)}.toolbar button.primary{background:var(--accent);color:white;border-color:var(--accent)}.status{font-weight:650;color:var(--accent)}
+.grid{display:grid;grid-template-columns:minmax(275px,350px) minmax(0,1fr);gap:18px;align-items:start}.filters,.results{background:white;border:1px solid var(--line);border-radius:13px;padding:18px;min-width:0}.filters{position:sticky;top:8px;max-height:calc(100vh - 16px);overflow:auto}.filters h2,.results h2{font-size:19px;margin:0 0 12px}.field{margin:12px 0}.field>label{display:block;font-weight:650;margin-bottom:5px}.field input[type=search],.field select{width:100%;padding:9px;border:1px solid #b6c8d0;border-radius:7px;background:#fff}.years{display:flex;gap:8px}.years select{min-width:0}.choices{display:flex;flex-wrap:wrap;gap:5px 11px}.choices label{display:inline-flex;align-items:center;gap:4px;white-space:nowrap;font-size:13px}.hierarchy{display:grid;grid-template-columns:1fr;gap:9px}.hierarchy section{border:1px solid var(--line);border-radius:9px;padding:9px}.hierarchy h3{font-size:14px;margin:0 0 6px}.hierarchy .choices{max-height:120px;overflow:auto}.hint{color:var(--muted);font-size:12px;margin:4px 0}.disabled{opacity:.65}
+.summary{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}.metric{border:1px solid var(--line);border-radius:9px;padding:8px 12px;min-width:120px}.metric strong{font-size:19px;display:block}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;min-width:840px}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #e4ebef;padding:9px 10px;font-size:13px}th{position:sticky;top:0;background:#edf5f7;z-index:1}tbody tr:hover{background:#f6fbfc}.title-cell{max-width:360px;min-width:250px}.clip{max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.small{font-size:12px;color:var(--muted)}.pager{display:flex;gap:10px;align-items:center;margin:14px 0}.pager button{padding:5px 10px}.details-button{border:1px solid #aac8c8;background:#f8ffff;color:#005d62;border-radius:6px;padding:4px 7px}
+details.more{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}details.more summary{cursor:pointer;font-weight:650}.cross{max-height:300px;overflow:auto;margin-top:10px}.cross table{min-width:480px}dialog{border:1px solid #a6bec4;border-radius:13px;box-shadow:0 18px 60px #173b4b55;width:min(760px,calc(100% - 20px));max-height:90vh;overflow:auto}dialog::backdrop{background:#12293699}dialog h2{font-size:20px;margin:0 0 12px}dialog dl{display:grid;grid-template-columns:145px 1fr;gap:7px 12px}dialog dt{font-weight:650}dialog dd{margin:0;overflow-wrap:anywhere}footer{padding:35px 0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+@media(max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.filters{position:static;max-height:none}.hierarchy{grid-template-columns:repeat(3,minmax(0,1fr))}.hierarchy .choices{max-height:110px}}@media(max-width:580px){.wrap{width:min(100% - 20px,1480px)}.filters,.results{padding:13px}.hierarchy{grid-template-columns:minmax(0,1fr)}.hierarchy .choices{max-height:88px}header{padding:20px 0}dialog dl{grid-template-columns:1fr;gap:2px}dialog dt{margin-top:10px}.table-wrap{margin:0 -4px}.metric{min-width:100px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="eyebrow">Evidence first · CSV Explorer</div><h1>十会议论文分类浏览器</h1><p>按 AI 五层、二三级主题、来源和年份浏览论文级记录。五层名称取自 <a href="https://blogs.nvidia.com/blog/ai-5-layer-cake/" target="_blank" rel="noopener noreferrer">NVIDIA 原文</a>；二三级是本研究扩展。分类可重叠，标题命中是词汇证据，不能当全文语义判断。</p><a href="../">返回月度趋势面板</a></div></header>
+<main class="wrap">
+<div class="notice">样本是十个会议的 89,530 条来源记录，不是全球论文普查；arXiv 和 OpenAlex 月度总数未混入逐篇底表。标题规则仅给出待复核候选，未命中不表示非 AI。NeurIPS 2026 会前暂定记录默认排除。只有 172 条记录含明确论文机构国家；筛选结果不可解释为全球国家分布。</div>
+<div class="toolbar"><span id="loadStatus" class="status" role="status">正在读取索引…</span><button id="clear" type="button">清除筛选</button><button id="share" type="button">复制筛选链接</button><button id="export" type="button" class="primary" disabled>导出筛选结果（Excel 安全 CSV）</button><a id="fullCsv" class="button" href="https://github.com/100apps/agent-evolution-research/releases/tag/trends-catalog-2026-10-09" target="_blank" rel="noopener noreferrer">下载完整大 CSV</a></div>
+<div class="grid">
+<aside class="filters" aria-label="筛选条件"><h2>筛选</h2>
+  <div class="field"><label for="query">标题、作者、机构或 ID 搜索</label><input id="query" type="search" autocomplete="off" placeholder="输入关键词，可用空格组合"></div>
+  <div class="field"><label>一级到三级分类（可多选）</label><div class="hierarchy"><section><h3>一级 · 五层</h3><div id="level1" class="choices"></div></section><section><h3>二级</h3><div id="level2" class="choices"></div></section><section><h3>三级</h3><div id="level3" class="choices"></div></section></div><p class="hint">选择多个分类时按“任一命中”筛选。同篇论文可在多个分类出现，分类合计不可相加。</p></div>
+  <div class="field"><label>会议来源</label><div id="venues" class="choices"></div></div>
+  <div class="field"><label>会议年份</label><div class="years"><select id="yearMin" aria-label="起始年份"></select><select id="yearMax" aria-label="结束年份"></select></div></div>
+  <div class="field"><label>分类状态</label><div id="statuses" class="choices"></div></div>
+  <div class="field"><label for="sort">排序</label><select id="sort"><option value="year">会议年份（新到旧）</option><option value="title">标题（A–Z）</option><option value="citations">引用次数（有值优先）</option></select><p class="hint">引用值若有，先筛同一年份与会议再比较；高引用不等于质量。缺失排在末尾，不作 0。</p></div>
+  <div class="field"><label for="country">论文署名机构国家（极低覆盖）</label><select id="country"><option value="">所有（含缺失）</option></select><p class="hint">仅明确论文期机构地点；会议用户资料机构另列，不能据此推发表国家。筛选不会把未知值算作其他国家。</p></div>
+  <div class="field"><label><input id="provisional" type="checkbox"> 包含 NeurIPS 2026 暂定记录</label></div>
+  <div class="field"><label>表格列</label><div id="columns" class="choices"></div></div>
+</aside>
+<section class="results"><h2>论文记录</h2><div id="summary" class="summary" aria-live="polite"></div><div class="table-wrap"><table><thead><tr id="tableHead"></tr></thead><tbody id="tableBody"></tbody></table></div><div class="pager"><button id="prev" type="button" disabled>上一页</button><span id="pageInfo">—</span><button id="next" type="button" disabled>下一页</button></div>
+<details class="more"><summary>来源 × 年份 × 一级分类交叉统计</summary><p class="hint">单位是当前筛选下的会议来源记录。多标签跨分类重叠；同格每篇只计一次。国家缺失不按零计。</p><div id="cross" class="cross"></div></details>
+<p class="small">单篇详情展示原始来源 ID、分类规则和证据。论文链接仅允许 http(s)；完整 CSV 保留更多溯源字段。CSV 导出会对 Excel 公式开头的文本加前缀，原始数据下载另供程序读取。</p>
+</section></div>
+</main>
+<dialog id="detail"><h2>论文详情</h2><div id="detailBody"></div><p><button id="closeDetail" type="button">关闭</button></p></dialog>
+<footer><div class="wrap"><span id="footerMeta">索引与分类版本加载中。</span> 来源、哈希、规则、缺失和代码见 <a href="https://github.com/100apps/agent-evolution-research/tree/main/research_trends" target="_blank" rel="noopener noreferrer">公开研究目录</a>。</div></footer>
+<script>
+"use strict";
+const worker = new Worker("explorer_worker.js");
+const byId = id => document.getElementById(id);
+let manifest, columns = {}, currentPage = 0, totalRows = 0, currentRows = [], crossRows = [], ready = false;
+const selected = new Set();
+const visibleColumns = new Set(["conference_year", "venue", "title", "authors", "category_paths", "citation_count", "classification_status"]);
+const labels = {conference_year:"年份",venue:"会议",title:"论文标题",authors:"作者",category_paths:"分类路径",citation_count:"OpenAlex 引用",citation_status:"引用状态",classification_status:"分类状态",paper_affiliations:"署名机构",affiliation_countries:"国家",doi_reported:"DOI",source_record_id:"来源 ID"};
+function val(row, name) { return row[columns[name]] || ""; }
+function safeLink(url) { try { const u = new URL(url); return ["http:","https:"].includes(u.protocol) ? u.href : ""; } catch { return ""; } }
+function element(tag, text, className) { const node=document.createElement(tag); node.textContent=text; if(className)node.className=className; return node; }
+function checkbox(container, id, label, checked, onChange) { const item=document.createElement("label"); const input=document.createElement("input"); input.type="checkbox"; input.value=id; input.checked=checked; input.addEventListener("change",onChange); item.append(input,document.createTextNode(label)); container.append(item); }
+function chosen(id) { return [...byId(id).querySelectorAll("input:checked")].map(node=>node.value); }
+function taxonomyNodes() { return manifest?.taxonomy?.nodes || []; }
+function nodeLabel(node) { return node.label_zh || node.name_zh || node.label || node.name || node.id; }
+function renderTaxonomy() {
+  const nodes=taxonomyNodes();
+  for (const level of [1,2,3]) {
+    const box=byId("level"+level); box.replaceChildren();
+    const previous=level===1 ? [] : chosen("level"+(level-1));
+    const available=nodes.filter(node=>Number(node.level)===level && (!previous.length || previous.includes(node.parent_id)));
+    for(const node of available) checkbox(box,node.id,nodeLabel(node),selected.has(node.id),()=>{ if(box.querySelector(`input[value="${CSS.escape(node.id)}"]`)?.checked) selected.add(node.id); else {selected.delete(node.id);for(const child of nodes)if(child.path_ids?.includes(node.id))selected.delete(child.id);} renderTaxonomy(); requestFilter(); });
+    if(!available.length) box.append(element("span","暂无可选分类","hint"));
+  }
+}
+function fillChoices(id, values) { const box=byId(id); box.replaceChildren(); for(const value of values) checkbox(box,value,value,false,requestFilter); }
+function setupFilters() {
+  columns=Object.fromEntries(manifest.columns.map((name,index)=>[name,index]));
+  const venues=Object.keys(manifest.counts).filter(key=>key.startsWith("venue:")).map(key=>key.slice(6)); fillChoices("venues",venues);
+  const states=Object.keys(manifest.counts).filter(key=>key.startsWith("status:")).map(key=>key.slice(7)); fillChoices("statuses",states);
+  const countries=Object.keys(manifest.counts).filter(key=>key.startsWith("country:")).map(key=>key.slice(8));for(const country of countries)byId("country").append(new Option(`${country} (${manifest.counts["country:"+country]})`,country));
+  for(const id of ["yearMin","yearMax"]) { const select=byId(id); select.append(new Option(id==="yearMin"?"所有起始年":"所有结束年","")); for(let year=2020;year<=2026;year++)select.append(new Option(String(year),String(year))); }
+  const list=byId("columns"); for(const [name,label] of Object.entries(labels)) checkbox(list,name,label,visibleColumns.has(name),event=>{ if(event.target.checked)visibleColumns.add(name);else visibleColumns.delete(name); renderTable(currentRows); });
+  const url=new URL(location.href); byId("query").value=url.searchParams.get("q")||""; byId("yearMin").value=url.searchParams.get("from")||""; byId("yearMax").value=url.searchParams.get("to")||"";byId("country").value=url.searchParams.get("country")||"";byId("sort").value=url.searchParams.get("sort")||"year";byId("provisional").checked=url.searchParams.get("provisional")==="1";if(!manifest.counts["citation:present"])byId("sort").querySelector('option[value="citations"]').disabled=true;
+  for(const [name,id] of [["venue","venues"],["status","statuses"]]) for(const input of byId(id).querySelectorAll("input"))input.checked=(url.searchParams.get(name)||"").split(",").includes(input.value);
+  for(const id of (url.searchParams.get("cat")||"").split(","))if(id)selected.add(id);
+  renderTaxonomy();
+  for(const id of ["query","yearMin","yearMax","country","sort","provisional"])byId(id).addEventListener(id==="query"?"input":"change",requestFilter);
+  byId("clear").addEventListener("click",()=>{selected.clear();for(const input of document.querySelectorAll("aside input"))input.checked=false;for(const select of document.querySelectorAll("aside select"))select.value="";byId("query").value="";renderTaxonomy();requestFilter();});
+  byId("share").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(location.href);byId("loadStatus").textContent="筛选链接已复制";}catch{byId("loadStatus").textContent="可从地址栏复制筛选链接";}});
+  byId("export").addEventListener("click",()=>{byId("loadStatus").textContent="正在生成安全 CSV…";worker.postMessage({type:"export"});});
+  byId("prev").addEventListener("click",()=>goPage(currentPage-1));byId("next").addEventListener("click",()=>goPage(currentPage+1));byId("closeDetail").addEventListener("click",()=>byId("detail").close());
+  byId("footerMeta").textContent=`${manifest.row_count.toLocaleString()} 条来源记录 · 浏览索引 SHA-256 ${manifest.data_sha256} · 分类请查看单篇规则证据。`;
+}
+let debounce;
+function requestFilter() { if(!ready)return;clearTimeout(debounce);debounce=setTimeout(()=>{
+  const filters={query:byId("query").value,venues:chosen("venues"),yearMin:byId("yearMin").value,yearMax:byId("yearMax").value,statuses:chosen("statuses"),countries:byId("country").value?[byId("country").value]:[],sort:byId("sort").value,categoryIds:[...selected],includeProvisional:byId("provisional").checked};
+  const url=new URL(location.href); for(const key of ["q","venue","from","to","status","country","cat","sort","provisional"])url.searchParams.delete(key);
+  if(filters.query)url.searchParams.set("q",filters.query);if(filters.venues.length)url.searchParams.set("venue",filters.venues.join(","));if(filters.yearMin)url.searchParams.set("from",filters.yearMin);if(filters.yearMax)url.searchParams.set("to",filters.yearMax);if(filters.statuses.length)url.searchParams.set("status",filters.statuses.join(","));if(filters.countries.length)url.searchParams.set("country",filters.countries[0]);if(filters.categoryIds.length)url.searchParams.set("cat",filters.categoryIds.join(","));if(filters.sort!=="year")url.searchParams.set("sort",filters.sort);if(filters.includeProvisional)url.searchParams.set("provisional","1");history.replaceState(null,"",url);
+  byId("loadStatus").textContent="正在筛选…";worker.postMessage({type:"filter",filters});
+},180); }
+function renderTable(rows) {currentRows=rows;const head=byId("tableHead"),body=byId("tableBody");head.replaceChildren();body.replaceChildren();const names=[...visibleColumns];for(const name of names)head.append(element("th",labels[name]||name));head.append(element("th","详情"));for(const row of rows){const tr=document.createElement("tr");for(const name of names){const td=document.createElement("td");const value=val(row,name);if(name==="title"){td.className="title-cell";const href=safeLink(val(row,"paper_url"));if(href){const a=element("a",value);a.href=href;a.target="_blank";a.rel="noopener noreferrer";td.append(a);}else td.textContent=value;}else{td.textContent=value||"—";if(["authors","category_paths","paper_affiliations"].includes(name))td.className="clip";}tr.append(td);}const action=document.createElement("td");const button=element("button","查看","details-button");button.type="button";button.addEventListener("click",()=>showDetail(row));action.append(button);tr.append(action);body.append(tr);} }
+function showDetail(row){const body=byId("detailBody");body.replaceChildren();const dl=document.createElement("dl");for(const [label,name] of [["标题","title"],["会议与年份","venue"],["原始记录 ID","source_record_id"],["作者","authors"],["未拆分作者原文","authors_raw"],["论文署名机构","paper_affiliations"],["会议资料机构（时间未核实）","profile_institutions_unverified"],["机构国家","affiliation_countries"],["国家覆盖状态","country_coverage_status"],["分类路径","category_paths"],["分类状态","classification_status"],["分类依据","classification_evidence"],["规则 ID","classification_rule_ids"],["判定方式","classification_method"],["词表版本","taxonomy_version"],["去重状态","dedup_status"],["DOI","doi_reported"],["DOI 依据","doi_basis"],["引用次数","citation_count"],["引用状态","citation_status"],["查看量","view_count"],["查看量状态","view_status"],["可复现工件状态","artifact_status"],["撤稿核验状态","retraction_status"],["来源语料","source_corpus"]]){dl.append(element("dt",label),element("dd",val(row,name)||"未提供"));}const href=safeLink(val(row,"paper_url"));if(href){const dt=element("dt","来源链接");const dd=document.createElement("dd");const a=element("a",href);a.href=href;a.target="_blank";a.rel="noopener noreferrer";dd.append(a);dl.append(dt,dd);}body.append(dl);byId("detail").showModal();}
+function renderSummary(data){totalRows=data.rows;const box=byId("summary");box.replaceChildren();for(const [label,value] of [["当前来源记录",data.rows.toLocaleString()],["暂定不同作品 ID",data.distinctWorks.toLocaleString()],["当前页",String(currentPage+1)]]){const card=document.createElement("div");card.className="metric";card.append(element("strong",value),element("span",label));box.append(card);}crossRows=data.cross;const cross=byId("cross");cross.replaceChildren();const table=document.createElement("table"),head=document.createElement("tr");for(const label of ["会议","年份","一级分类","记录数"])head.append(element("th",label));table.append(head);for(const cells of crossRows.slice(0,150)){const tr=document.createElement("tr");for(const cell of cells)tr.append(element("td",String(cell)));table.append(tr);}cross.append(table);if(crossRows.length>150)cross.append(element("p",`显示前 150／${crossRows.length} 行；可继续筛选缩小范围。`,"hint"));}
+function goPage(page){if(page<0||page*50>=totalRows)return;currentPage=page;worker.postMessage({type:"page",page});}
+worker.onmessage=event=>{const message=event.data;
+  if(message.type==="progress")byId("loadStatus").textContent=`正在读取 ${message.rows.toLocaleString()} 条…`;
+  if(message.type==="ready"){manifest=message.manifest;ready=true;setupFilters();byId("export").disabled=false;requestFilter();}
+  if(message.type==="result"){currentPage=0;renderTable(message.rows);renderSummary(message.summary);byId("loadStatus").textContent=`已载入 ${manifest.row_count.toLocaleString()} 条；筛选完成`;updatePager();}
+  if(message.type==="page"){currentPage=message.page;renderTable(message.rows);updatePager();}
+  if(message.type==="error"){byId("loadStatus").textContent=`错误：${message.message}`;byId("loadStatus").style.color="#a02121";}
+  if(message.type==="export"){const blob=new Blob([message.csv],{type:"text/csv;charset=utf-8"});const link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download="filtered_papers_excel_safe.csv";link.click();setTimeout(()=>URL.revokeObjectURL(link.href),30000);byId("loadStatus").textContent=`已导出 ${message.rows.toLocaleString()} 条`;}
+};
+function updatePager(){byId("prev").disabled=currentPage===0;byId("next").disabled=(currentPage+1)*50>=totalRows;byId("pageInfo").textContent=totalRows?`第 ${currentPage+1} / ${Math.ceil(totalRows/50)} 页`:`无匹配记录`;}
+worker.postMessage({type:"init",manifestUrl:new URL("index_manifest.json",location.href).href});
+</script>
+</body></html>

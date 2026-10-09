@@ -1,0 +1,32 @@
+{
+  "author_csv": {
+    "expected": "9398aaee3c503bc937103fdfba8def4d99f4f729224995263b062af420671da4",
+    "actual": "9398aaee3c503bc937103fdfba8def4d99f4f729224995263b062af420671da4",
+    "matches": true
+  },
+  "metadata_patch": {
+    "expected": "70e353858c901e98bc0a80732351c42261731fbae9c371f053c5a31b5bfd6425",
+    "actual": "70e353858c901e98bc0a80732351c42261731fbae9c371f053c5a31b5bfd6425",
+    "matches": true
+  },
+  "title_assignments": {
+    "expected": "f250deda72e63eabacef0afa8cda9e36fb6219b790e6445c68fb27cb58923a0f",
+    "actual": "f250deda72e63eabacef0afa8cda9e36fb6219b790e6445c68fb27cb58923a0f",
+    "matches": true
+  },
+  "final_csv": {
+    "expected": "fa3803790cd36697143e708e8c1fe413c04c17b30bfd8549d17b62ac3b2344e7",
+    "actual": "fa3803790cd36697143e708e8c1fe413c04c17b30bfd8549d17b62ac3b2344e7",
+    "matches": true
+  },
+  "final_gzip": {
+    "expected": "7c6eadf6546a39f1b86db2ced8de5f608d3aec028e9c38c8133560bd13bcf002",
+    "actual": "7c6eadf6546a39f1b86db2ced8de5f608d3aec028e9c38c8133560bd13bcf002",
+    "matches": true
+  },
+  "explorer_index": {
+    "expected": "51cecc154f6dbb011ff4d725b78dca5c60fc8012ddc513f6d3eb8665a926572a",
+    "actual": "51cecc154f6dbb011ff4d725b78dca5c60fc8012ddc513f6d3eb8665a926572a",
+    "matches": true
+  }
+}

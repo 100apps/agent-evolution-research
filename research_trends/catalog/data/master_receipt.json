@@ -1,0 +1,19 @@
+{
+  "rows": 89530,
+  "columns": 69,
+  "base_schema": "paper-master-v1.1.0-proposed",
+  "impact_schema": "paper-impact-v1.0.0-proposed",
+  "citation_status_counts": {
+    "no_verified_doi": 79026,
+    "reported_exact_doi": 10451,
+    "ambiguous_exact_doi": 20,
+    "possibly_truncated": 19,
+    "not_found_exact_doi": 14
+  },
+  "source_master_sha256": "4d576b96496cec10bad0db718bdad6cb1dd71341db1aff44d3846b4935a9b143",
+  "citation_audit_sha256": "7f9edab3f9189db95e9f21d080c296bb8f009ac67bce625b4fe8d11bf46e7b9b",
+  "csv_bytes": 942446463,
+  "csv_sha256": "fa3803790cd36697143e708e8c1fe413c04c17b30bfd8549d17b62ac3b2344e7",
+  "gzip_bytes": 52385189,
+  "gzip_sha256": "7c6eadf6546a39f1b86db2ced8de5f608d3aec028e9c38c8133560bd13bcf002"
+}

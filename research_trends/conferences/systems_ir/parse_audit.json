@@ -1,0 +1,18 @@
+[
+  {
+    "deduplicated": [
+      "KDD",
+      2026,
+      "orderingbasedcausaldiscoveryviageneralizedscorematching"
+    ],
+    "stable_id": "10.1145/3770855.3817672"
+  },
+  {
+    "deduplicated": [
+      "KDD",
+      2026,
+      "ontheroleofanticausaldirectioninllmbaseddatasynthesis"
+    ],
+    "stable_id": "10.1145/3770855.3817910"
+  }
+]

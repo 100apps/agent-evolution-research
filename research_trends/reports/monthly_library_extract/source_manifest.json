@@ -1,0 +1,36 @@
+{
+  "status": "source snapshot; portability work pending",
+  "date_utc": "2026-10-09",
+  "files": [
+    {
+      "file": "build_stage_report.py",
+      "bytes": 57064,
+      "sha256": "9f05380e0a7a3e1bc8a2714c06f7a27e6e4e325df83b004ef557d418190b198f",
+      "modification": "Unchanged builder source snapshot; original cloud ROOT path retained. Portability adaptation required."
+    },
+    {
+      "file": "monthly_library_extract/arxiv_monthly_wide.csv.read.json",
+      "bytes": 10972,
+      "sha256": "2551ca4fc7c8d9932b1a7b0f26a8a439c58b58a82b96c16b2f9276c295e7b18d",
+      "original_snapshot_sha256": "5dac741a5e11b26dc73548123baa9d0444c3874aaf67836ede7eee822afc6256",
+      "content_sha256": "5e28eb82e6d51585190685afaffdf48c52d743ccf8b7e085176d92c03c887a61",
+      "modification": "Research content unchanged; private Library identifiers and unrelated service metadata removed; library_file_id null."
+    },
+    {
+      "file": "monthly_library_extract/openalex_monthly_wide.csv.read.json",
+      "bytes": 19271,
+      "sha256": "a34c540ee9c41ce10c1dfac4074ed73098a089bfe0eace11f95006eee702d883",
+      "original_snapshot_sha256": "eb4f352fc604a8dfdd3083cbe48f6992625c5235306cf899929d6161b17772b9",
+      "content_sha256": "fca3bcab427e014bb4f78aa30893d181f9693a2d87634089cc404a7f255d5921",
+      "modification": "Research content unchanged; private Library identifiers and unrelated service metadata removed; library_file_id null."
+    },
+    {
+      "file": "monthly_library_extract/report_zh.md.read.json",
+      "bytes": 18304,
+      "sha256": "ef190a33db9e8a0e1d76e9bce5464d1aaef89b181c2ec8f2a9fa9df7fb444030",
+      "original_snapshot_sha256": "0f4a3c390912a2e283423ed4ee3fa4e9f50ef981762df34d17435e080a9c9311",
+      "content_sha256": "826805b25145cd3166bc32e8851e4ffc8077e237535754ccb26a9c02d00fa52f",
+      "modification": "Research content unchanged; private Library identifiers and unrelated service metadata removed; library_file_id null."
+    }
+  ]
+}

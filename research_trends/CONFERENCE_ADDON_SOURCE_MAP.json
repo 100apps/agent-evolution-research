@@ -1,0 +1,464 @@
+[
+  {
+    "package_path": "conferences/comparison/venue_year_topic_counts.csv",
+    "source_project_path": "conferences/comparison/venue_year_topic_counts.csv",
+    "source_sha256": "86fcaab110fa8f4c16a1146470d820c6a2605eee952562238bb89a05df00bbba",
+    "package_sha256": "86fcaab110fa8f4c16a1146470d820c6a2605eee952562238bb89a05df00bbba",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/coverage_common.json",
+    "source_project_path": "conferences/comparison/coverage_common.json",
+    "source_sha256": "316af6e3991b6515683c77ac1030f49ee2ee58aa66ab5250781d2291857c22d2",
+    "package_sha256": "316af6e3991b6515683c77ac1030f49ee2ee58aa66ab5250781d2291857c22d2",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/osdi_2026_scopebreak_separate.csv",
+    "source_project_path": "conferences/comparison/osdi_2026_scopebreak_separate.csv",
+    "source_sha256": "b2eeb2bf8354edc16728eb30c3c7a334ea1e9e367c0824d63e1e5f7c99bbb5e0",
+    "package_sha256": "b2eeb2bf8354edc16728eb30c3c7a334ea1e9e367c0824d63e1e5f7c99bbb5e0",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/fixed_basket_2020_2025.json",
+    "source_project_path": "conferences/comparison/fixed_basket_2020_2025.json",
+    "source_sha256": "d897af2005fc634d3b782c6ba27a65191c05c15ac8eda254bc367b51247949eb",
+    "package_sha256": "d897af2005fc634d3b782c6ba27a65191c05c15ac8eda254bc367b51247949eb",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/coverage_common.csv",
+    "source_project_path": "conferences/comparison/coverage_common.csv",
+    "source_sha256": "35d43974148ec35b58951fe02e5462005aee8b8b5b96ad53c0c7eeb29a1edb1e",
+    "package_sha256": "35d43974148ec35b58951fe02e5462005aee8b8b5b96ad53c0c7eeb29a1edb1e",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/reproduction_validation.json",
+    "source_project_path": "conferences/comparison/reproduction_validation.json",
+    "source_sha256": "df8cade0833a0aa7cc936cce552434f9391c62d6c48fe93186720dee22448068",
+    "package_sha256": "df8cade0833a0aa7cc936cce552434f9391c62d6c48fe93186720dee22448068",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/venue_2020_2025_deltas.csv",
+    "source_project_path": "conferences/comparison/venue_2020_2025_deltas.csv",
+    "source_sha256": "f4a81bc92c002d5ab0aa56138d4edf640e80f1cc3667045261316dcfd09577b5",
+    "package_sha256": "f4a81bc92c002d5ab0aa56138d4edf640e80f1cc3667045261316dcfd09577b5",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/paired_2025_2026.csv",
+    "source_project_path": "conferences/comparison/paired_2025_2026.csv",
+    "source_sha256": "db5558ec7714bf3e518e5823a075e15ece1128bd4dc50bb5831bd769f640b40f",
+    "package_sha256": "db5558ec7714bf3e518e5823a075e15ece1128bd4dc50bb5831bd769f640b40f",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/test_compare_titles.py",
+    "source_project_path": "conferences/comparison/test_compare_titles.py",
+    "source_sha256": "e3234c2a013574880a134f78fe163c7319dc8e21106cc5d953a7104c95959005",
+    "package_sha256": "e3234c2a013574880a134f78fe163c7319dc8e21106cc5d953a7104c95959005",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/fixed_basket_headline_deltas.csv",
+    "source_project_path": "conferences/comparison/fixed_basket_headline_deltas.csv",
+    "source_sha256": "7a4ddef3facc347a900467f7dd9febc7f65ce9d95ca83c5e1fbcf391864fef9a",
+    "package_sha256": "7a4ddef3facc347a900467f7dd9febc7f65ce9d95ca83c5e1fbcf391864fef9a",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/validation.json",
+    "source_project_path": "conferences/comparison/validation.json",
+    "source_sha256": "a5f3822cf89127c087d160179b07ff214ad38a363e973607f907dfdaaeb53bc6",
+    "package_sha256": "a5f3822cf89127c087d160179b07ff214ad38a363e973607f907dfdaaeb53bc6",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/fixed_basket_headline_deltas.json",
+    "source_project_path": "conferences/comparison/fixed_basket_headline_deltas.json",
+    "source_sha256": "7e4706607f1d4a5d6119656310ef27481091dda6aeb821b84a6af01485db7658",
+    "package_sha256": "7e4706607f1d4a5d6119656310ef27481091dda6aeb821b84a6af01485db7658",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/compare_titles.py",
+    "source_project_path": "conferences/comparison/compare_titles.py",
+    "source_sha256": "84a5efe83b55c9376dd628a3845e15ea257efcf954e314069524d27b88d5b3bd",
+    "package_sha256": "84a5efe83b55c9376dd628a3845e15ea257efcf954e314069524d27b88d5b3bd",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/README_zh.md",
+    "source_project_path": "conferences/comparison/README_zh.md",
+    "source_sha256": "b4e510f8b1bce7218cbce07e58d5ac7f46de5e9d31774eb25c633013752f982c",
+    "package_sha256": "b4e510f8b1bce7218cbce07e58d5ac7f46de5e9d31774eb25c633013752f982c",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/venue_year_topic_counts.json",
+    "source_project_path": "conferences/comparison/venue_year_topic_counts.json",
+    "source_sha256": "a26b2ed8a229945a096c539a8f917987ed5d82cdc7db5af09080340b1ca71398",
+    "package_sha256": "a26b2ed8a229945a096c539a8f917987ed5d82cdc7db5af09080340b1ca71398",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/change_decomposition.csv",
+    "source_project_path": "conferences/comparison/change_decomposition.csv",
+    "source_sha256": "bc29e2aae93bb83247b1422d8fb075ee3d145dd1367494a3cf126e8b4a6c76f8",
+    "package_sha256": "bc29e2aae93bb83247b1422d8fb075ee3d145dd1367494a3cf126e8b4a6c76f8",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/change_decomposition_by_venue.csv",
+    "source_project_path": "conferences/comparison/change_decomposition_by_venue.csv",
+    "source_sha256": "8c5e432afd43523b242dd660d31080be31d51153cfb7e7d91a1a00ad0d48a068",
+    "package_sha256": "8c5e432afd43523b242dd660d31080be31d51153cfb7e7d91a1a00ad0d48a068",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/source_corpus_manifest.json",
+    "source_project_path": "conferences/comparison/source_corpus_manifest.json",
+    "source_sha256": "a5af2731b19bc7e409dfe97b231bfeabec1cd76ae7192895d325781d39c98e43",
+    "package_sha256": "3ba174c3352b5ffb8bc1204e260c2ef9f11e784f0600acbcd7986e6f9f84ce5d",
+    "change": "absolute source path fields made project-relative; source hashes unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/common_topic_rules.json",
+    "source_project_path": "conferences/comparison/common_topic_rules.json",
+    "source_sha256": "98b14743a67967b3ab43a696f4f33104a2f2a5e84b45898c94092bc8c3a67005",
+    "package_sha256": "98b14743a67967b3ab43a696f4f33104a2f2a5e84b45898c94092bc8c3a67005",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/key_definition_sensitivities.csv",
+    "source_project_path": "conferences/comparison/key_definition_sensitivities.csv",
+    "source_sha256": "9b9c4752aeb30ebb5d9813c162cde15fca9fff6cd4065e794ba898097ecd201f",
+    "package_sha256": "9b9c4752aeb30ebb5d9813c162cde15fca9fff6cd4065e794ba898097ecd201f",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/illustrative_title_examples.json",
+    "source_project_path": "conferences/comparison/illustrative_title_examples.json",
+    "source_sha256": "bbd1540877aef33967420a63986a8ef944415afa8d79be9d5d755e9ac10aa8bf",
+    "package_sha256": "bbd1540877aef33967420a63986a8ef944415afa8d79be9d5d755e9ac10aa8bf",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/source_urls_by_venue_year.csv",
+    "source_project_path": "conferences/comparison/source_urls_by_venue_year.csv",
+    "source_sha256": "c07721935575c0af08d40ce905a3084611ff80ad3807ab4a68080408d2ea4307",
+    "package_sha256": "c07721935575c0af08d40ce905a3084611ff80ad3807ab4a68080408d2ea4307",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/fixed_basket_2020_2025.csv",
+    "source_project_path": "conferences/comparison/fixed_basket_2020_2025.csv",
+    "source_sha256": "8cf7eb62201c52f786026218ff73c92a199c39b8db801498076191e4e7bcbb7a",
+    "package_sha256": "8cf7eb62201c52f786026218ff73c92a199c39b8db801498076191e4e7bcbb7a",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/make_memo.py",
+    "source_project_path": "conferences/comparison/make_memo.py",
+    "source_sha256": "8acd17f82a4469c3e5f851c1fccd101309fcf01aed59c6f62a1cb59c6b42705c",
+    "package_sha256": "8acd17f82a4469c3e5f851c1fccd101309fcf01aed59c6f62a1cb59c6b42705c",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/comparison/source_denominator_checks.json",
+    "source_project_path": "conferences/comparison/source_denominator_checks.json",
+    "source_sha256": "f4e46052da01ba93baf7beb6bfc42416632bc988aac33402cb41f009724ddb4a",
+    "package_sha256": "f4e46052da01ba93baf7beb6bfc42416632bc988aac33402cb41f009724ddb4a",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/audit_stratum_summary.csv",
+    "source_project_path": "conferences/audit/audit_stratum_summary.csv",
+    "source_sha256": "0ec9476e20fc53468642defe044d875ebdff074550818063bf3c5ff47c5757ae",
+    "package_sha256": "0ec9476e20fc53468642defe044d875ebdff074550818063bf3c5ff47c5757ae",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/audit_sample_unlabeled.json",
+    "source_project_path": "conferences/audit/audit_sample_unlabeled.json",
+    "source_sha256": "239e22e5cde5d8d85d3cd49de942e452fbafbbdf97d7220effb96b40e750af9c",
+    "package_sha256": "239e22e5cde5d8d85d3cd49de942e452fbafbbdf97d7220effb96b40e750af9c",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/audit_compact_transfer.json",
+    "source_project_path": "conferences/audit/audit_compact_transfer.json",
+    "source_sha256": "dd5f9b1b0c33d4a9a586622dd31d773bbc64e724a2cd6306493205f571279a09",
+    "package_sha256": "dd5f9b1b0c33d4a9a586622dd31d773bbc64e724a2cd6306493205f571279a09",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/validate_audit.py",
+    "source_project_path": "conferences/audit/validate_audit.py",
+    "source_sha256": "41f6e8e3a73c3944f76d19ae8cdc73433b2165a6cf949431b8bd25cee33fd633",
+    "package_sha256": "41f6e8e3a73c3944f76d19ae8cdc73433b2165a6cf949431b8bd25cee33fd633",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/agent_abstract_audit.json",
+    "source_project_path": "conferences/audit/agent_abstract_audit.json",
+    "source_sha256": "135ebd97c1ff323acdd42f0fff1e465ab10d0ab0a62eda5abb0be9bb9c116b58",
+    "package_sha256": "135ebd97c1ff323acdd42f0fff1e465ab10d0ab0a62eda5abb0be9bb9c116b58",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/label_agent_abstracts.py",
+    "source_project_path": "conferences/audit/label_agent_abstracts.py",
+    "source_sha256": "4103ef955f371438e931495c89be9395a69634713c7915e966d64c4f2cc2af3c",
+    "package_sha256": "4103ef955f371438e931495c89be9395a69634713c7915e966d64c4f2cc2af3c",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/sample_agent_abstracts.py",
+    "source_project_path": "conferences/audit/sample_agent_abstracts.py",
+    "source_sha256": "1f070140e811cbaf1f1f15f6073ae57bb0ebc73a57f484d1bad1b4dd07426d5c",
+    "package_sha256": "1f070140e811cbaf1f1f15f6073ae57bb0ebc73a57f484d1bad1b4dd07426d5c",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/validation.json",
+    "source_project_path": "conferences/audit/validation.json",
+    "source_sha256": "5e6d2dcfb7feff89b2ccca30f9a38b2609a6b169ae1bc2a70a24c63420337d4d",
+    "package_sha256": "5e6d2dcfb7feff89b2ccca30f9a38b2609a6b169ae1bc2a70a24c63420337d4d",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/audit_sample_unlabeled.csv",
+    "source_project_path": "conferences/audit/audit_sample_unlabeled.csv",
+    "source_sha256": "b5038ce40605f75dfbd77f9a0400b513866df1be6ea1cc01c3ac09d8155b6b67",
+    "package_sha256": "b5038ce40605f75dfbd77f9a0400b513866df1be6ea1cc01c3ac09d8155b6b67",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/agent_abstract_audit.csv",
+    "source_project_path": "conferences/audit/agent_abstract_audit.csv",
+    "source_sha256": "02c5324a1a27f37f152eebf6995b515ad5b0e0c7126f2c415659d8ee20765616",
+    "package_sha256": "02c5324a1a27f37f152eebf6995b515ad5b0e0c7126f2c415659d8ee20765616",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/README_方法与发现.md",
+    "source_project_path": "conferences/audit/README_方法与发现.md",
+    "source_sha256": "fbd91687d8b8b521ab3b438dc2c9430a2bc201b0acb0fee4e1b3130eb09d0827",
+    "package_sha256": "fbd91687d8b8b521ab3b438dc2c9430a2bc201b0acb0fee4e1b3130eb09d0827",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/audit_summary.json",
+    "source_project_path": "conferences/audit/audit_summary.json",
+    "source_sha256": "bf6bf1ff25631adeaa441de35b99d5efe1cae33fc8e23c642a5d79e01552e24a",
+    "package_sha256": "bf6bf1ff25631adeaa441de35b99d5efe1cae33fc8e23c642a5d79e01552e24a",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/sampling_manifest.json",
+    "source_project_path": "conferences/audit/sampling_manifest.json",
+    "source_sha256": "e122c0c83cc7a02f97d743e949ac26443c191fc7b8872d2c0811fe3640f24cf0",
+    "package_sha256": "e122c0c83cc7a02f97d743e949ac26443c191fc7b8872d2c0811fe3640f24cf0",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/audit/stratum_frame.csv",
+    "source_project_path": "conferences/audit/stratum_frame.csv",
+    "source_sha256": "cbc6e2354c816f8a760343d305192125c5035209e0eef3ea1407a460f67ac1d8",
+    "package_sha256": "cbc6e2354c816f8a760343d305192125c5035209e0eef3ea1407a460f67ac1d8",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/combined_coverage.json",
+    "source_project_path": "conferences/systems_ir/combined_coverage.json",
+    "source_sha256": "ef4c03af93c96495ed8bf89d04de2abc33b7a1e635e43098ec460b2fd7b65078",
+    "package_sha256": "ef4c03af93c96495ed8bf89d04de2abc33b7a1e635e43098ec460b2fd7b65078",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/sources_manifest.json",
+    "source_project_path": "conferences/systems_ir/sources_manifest.json",
+    "source_sha256": "c1df4adfe794d664fed165f1eae02a03e56f049c1944e9ddcc7c2349142332c3",
+    "package_sha256": "c1df4adfe794d664fed165f1eae02a03e56f049c1944e9ddcc7c2349142332c3",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/SOURCE_MEMO.md",
+    "source_project_path": "conferences/systems_ir/SOURCE_MEMO.md",
+    "source_sha256": "1febec3b40d245bc5c3aa681479d5e1d4fccbe7c96d78dced716f3891eb9c4d3",
+    "package_sha256": "1febec3b40d245bc5c3aa681479d5e1d4fccbe7c96d78dced716f3891eb9c4d3",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/coverage.json",
+    "source_project_path": "conferences/systems_ir/coverage.json",
+    "source_sha256": "b7821588593cd0c31228dce1e4e233487780b62092305678b07df35636ee3715",
+    "package_sha256": "b7821588593cd0c31228dce1e4e233487780b62092305678b07df35636ee3715",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/quality_checks.json",
+    "source_project_path": "conferences/systems_ir/quality_checks.json",
+    "source_sha256": "be4d785b91e7f4f922a7becd579759e01915a4c8bfdd8bcbcef9596488836b33",
+    "package_sha256": "be4d785b91e7f4f922a7becd579759e01915a4c8bfdd8bcbcef9596488836b33",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/parse_audit.json",
+    "source_project_path": "conferences/systems_ir/parse_audit.json",
+    "source_sha256": "f43a7aec16a99bbb9205e177d2a65efb8bcbd0d58a3621981d773a0d2a349e8b",
+    "package_sha256": "f43a7aec16a99bbb9205e177d2a65efb8bcbd0d58a3621981d773a0d2a349e8b",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/title_lexicon.json",
+    "source_project_path": "conferences/systems_ir/title_lexicon.json",
+    "source_sha256": "bf73de71f194b3bdb737d4d521f8f666402be14fed6c03dbebf181c22123296a",
+    "package_sha256": "bf73de71f194b3bdb737d4d521f8f666402be14fed6c03dbebf181c22123296a",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/title_topic_counts.csv",
+    "source_project_path": "conferences/systems_ir/title_topic_counts.csv",
+    "source_sha256": "1a69f700e1eedb364a8838a6882d0ba773479b5b2e9b047d56754f6fb0e4bac8",
+    "package_sha256": "1a69f700e1eedb364a8838a6882d0ba773479b5b2e9b047d56754f6fb0e4bac8",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/title_topic_counts.json",
+    "source_project_path": "conferences/systems_ir/title_topic_counts.json",
+    "source_sha256": "be9615adfcaf83f4748a9c2777fe9936d9172a90c933bd2aa343a7b91e5954ca",
+    "package_sha256": "be9615adfcaf83f4748a9c2777fe9936d9172a90c933bd2aa343a7b91e5954ca",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/classify_titles.py",
+    "source_project_path": "conferences/systems_ir/classify_titles.py",
+    "source_sha256": "c49c1398d1db14878d77d16c0ea5cc4d1469fea79986b37076cc563658108edb",
+    "package_sha256": "c49c1398d1db14878d77d16c0ea5cc4d1469fea79986b37076cc563658108edb",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/parse_conferences.py",
+    "source_project_path": "conferences/systems_ir/parse_conferences.py",
+    "source_sha256": "f61a173eecd48c4dfa77c0def7562b86c9c3fc87f151e9336044bcf1311d4505",
+    "package_sha256": "f61a173eecd48c4dfa77c0def7562b86c9c3fc87f151e9336044bcf1311d4505",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/merge_systems.py",
+    "source_project_path": "conferences/systems_ir/merge_systems.py",
+    "source_sha256": "c4e3d266d9372dc28185ef798e7c2f4327f550a8e02d33fb38e520ee535c9f88",
+    "package_sha256": "c4e3d266d9372dc28185ef798e7c2f4327f550a8e02d33fb38e520ee535c9f88",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/download_sources.py",
+    "source_project_path": "conferences/systems_ir/download_sources.py",
+    "source_sha256": "15156e8fbc6671449f3337901a0fdd2a99c733643e6b2026577bd782ad69c528",
+    "package_sha256": "15156e8fbc6671449f3337901a0fdd2a99c733643e6b2026577bd782ad69c528",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/systems/README.md",
+    "source_project_path": "conferences/systems_ir/systems/README.md",
+    "source_sha256": "8746abce63871a107929f57ce2a4ae4806404ac68e436cee8254e9e7de4fe3d8",
+    "package_sha256": "8746abce63871a107929f57ce2a4ae4806404ac68e436cee8254e9e7de4fe3d8",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/systems/sources_manifest.json",
+    "source_project_path": "conferences/systems_ir/systems/sources_manifest.json",
+    "source_sha256": "9a56fab6e5050fd28ff5cd86fdb1b095c50fb4814e972d0303a926449010e5f4",
+    "package_sha256": "9a56fab6e5050fd28ff5cd86fdb1b095c50fb4814e972d0303a926449010e5f4",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/systems/summary_counts.csv",
+    "source_project_path": "conferences/systems_ir/systems/summary_counts.csv",
+    "source_sha256": "c86a14eea3cfbc3461ead11fe323dc73cf6778917f40d0615012aaedd5987306",
+    "package_sha256": "c86a14eea3cfbc3461ead11fe323dc73cf6778917f40d0615012aaedd5987306",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/systems/summary_counts.json",
+    "source_project_path": "conferences/systems_ir/systems/summary_counts.json",
+    "source_sha256": "a0c018206020e3a0346f3ed9f0178b806caaf1a6d3a8bcbda66cb90fda00f6eb",
+    "package_sha256": "a0c018206020e3a0346f3ed9f0178b806caaf1a6d3a8bcbda66cb90fda00f6eb",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/systems/parse_audit.json",
+    "source_project_path": "conferences/systems_ir/systems/parse_audit.json",
+    "source_sha256": "019928391ee7e5101eb1aa8980e302ac749a48790d87a29f61ef7ffdc0db6211",
+    "package_sha256": "019928391ee7e5101eb1aa8980e302ac749a48790d87a29f61ef7ffdc0db6211",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "conferences/systems_ir/systems/collect_systems.py",
+    "source_project_path": "conferences/systems_ir/systems/collect_systems.py",
+    "source_sha256": "467cb49a8b7a07d391bc25c3e04e6830f1957d8be5ddcb573e7edf2d662cdef3",
+    "package_sha256": "467cb49a8b7a07d391bc25c3e04e6830f1957d8be5ddcb573e7edf2d662cdef3",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement.html",
+    "source_project_path": "conference_stage_report.html",
+    "source_sha256": "ff7779533139662f629ecb610a54f7f70f213e700980f50535e9f2c9cb639d7c",
+    "package_sha256": "5bf5dd196f7b63787d81861331111bfc55606383b8e151d4dbc60beb31ee5ad7",
+    "change": "Only companion-package location prose adjusted; data and graphics unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_source_validation.json",
+    "source_project_path": "conference_stage_report_validation.json",
+    "source_sha256": "a4d7dd559c59c5588a45d8f128fc436264fbed1bfe42da9df3e5eaa84ae9ddf8",
+    "package_sha256": "a4d7dd559c59c5588a45d8f128fc436264fbed1bfe42da9df3e5eaa84ae9ddf8",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_data/monthly/arxiv_monthly_library_extracted.csv",
+    "source_project_path": "conference_stage_evidence/monthly/arxiv_monthly_library_extracted.csv",
+    "source_sha256": "a05f4ab55dd702f4e477a254661078ee22644ae1c3d18ac123063c414cd47e01",
+    "package_sha256": "a05f4ab55dd702f4e477a254661078ee22644ae1c3d18ac123063c414cd47e01",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_data/monthly/openalex_monthly_library_extracted.csv",
+    "source_project_path": "conference_stage_evidence/monthly/openalex_monthly_library_extracted.csv",
+    "source_sha256": "915b1084eb338a2d11fe90e5f7b534ffb8d5b10cbe163e3f15fa409aabb134cc",
+    "package_sha256": "915b1084eb338a2d11fe90e5f7b534ffb8d5b10cbe163e3f15fa409aabb134cc",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_data/monthly/extraction_provenance.json",
+    "source_project_path": "conference_stage_evidence/monthly/extraction_provenance.json",
+    "source_sha256": "9930018ea812f9ccfc197cd42f9d703bf65b278a6d08a06d636eab668c8a024a",
+    "package_sha256": "9930018ea812f9ccfc197cd42f9d703bf65b278a6d08a06d636eab668c8a024a",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_data/nlp_vision/lexical_tag_rules.json",
+    "source_project_path": "conferences/nlp_vision/derived/lexical_tag_rules.json",
+    "source_sha256": "aef38240260e2edde6914879e2d6c5dc6c6d7ed858f353f6b9c8dabb87b74f23",
+    "package_sha256": "aef38240260e2edde6914879e2d6c5dc6c6d7ed858f353f6b9c8dabb87b74f23",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_data/nlp_vision/title_tag_counts_shares.csv",
+    "source_project_path": "conferences/nlp_vision/derived/title_tag_counts_shares.csv",
+    "source_sha256": "2b280dd9941956132104f084139888c42c30a77537107badd0929303bfbfc8ef",
+    "package_sha256": "2b280dd9941956132104f084139888c42c30a77537107badd0929303bfbfc8ef",
+    "change": "unchanged"
+  },
+  {
+    "package_path": "reports/conference_supplement_data/nlp_vision/historical_pretrained_cue_sensitivity.csv",
+    "source_project_path": "conferences/nlp_vision/derived/historical_pretrained_cue_sensitivity.csv",
+    "source_sha256": "b410aeb43ed907f39fa2fb6e0c10febf4212c7702eda8cf0bd1711cc6ba79029",
+    "package_sha256": "b410aeb43ed907f39fa2fb6e0c10febf4212c7702eda8cf0bd1711cc6ba79029",
+    "change": "unchanged"
+  }
+]

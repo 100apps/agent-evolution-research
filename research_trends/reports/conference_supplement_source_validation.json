@@ -1,0 +1,17 @@
+{
+  "title": "Conference-stage report",
+  "html_bytes": 1286946,
+  "figures": 9,
+  "nonprovisional_records": 84008,
+  "all_records": 89530,
+  "excluded_neurips_2026": 5522,
+  "audit_records": 60,
+  "chart_values": 308,
+  "numeric_checks": "passed",
+  "html_sha256": "ff7779533139662f629ecb610a54f7f70f213e700980f50535e9f2c9cb639d7c",
+  "html_render_check": "Chromium unavailable: environment denies socket creation. Visual screenshot check not completed; HTML parse/numeric/download QA passed.",
+  "structural_html_qa": "passed; 9 figures, 9 accessible SVGs, unique IDs, valid local navigation, no external assets",
+  "embedded_downloads_verified": 14,
+  "monthly_rows": 81,
+  "monthly_macro_count_share_annual_checks": "passed"
+}

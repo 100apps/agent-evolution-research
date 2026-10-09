@@ -1,0 +1,135 @@
+[
+  {
+    "conference": "OSDI",
+    "year": 2020,
+    "program_title_count": 70,
+    "excluded_nonpaper_titles": [],
+    "accepted_paper_count": 70,
+    "captured_line_min": 0,
+    "captured_line_max": 794,
+    "toc_line_count": 216,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "OSDI",
+    "year": 2021,
+    "program_title_count": 34,
+    "excluded_nonpaper_titles": [
+      "Distributed Trust: Is “Blockchain” the answer?",
+      "AI in Finance: Scope and Examples",
+      "It's Time for Operating Systems to Rediscover Hardware"
+    ],
+    "accepted_paper_count": 31,
+    "captured_line_min": 0,
+    "captured_line_max": 438,
+    "toc_line_count": 117,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "OSDI",
+    "year": 2022,
+    "program_title_count": 52,
+    "excluded_nonpaper_titles": [
+      "Surprise-Inspired Networking",
+      "Trustworthy Open Source: The Consequences of Success",
+      "The Computing and Information Science and Engineering Landscape: A Look Forward"
+    ],
+    "accepted_paper_count": 49,
+    "captured_line_min": 0,
+    "captured_line_max": 657,
+    "toc_line_count": 179,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "OSDI",
+    "year": 2023,
+    "program_title_count": 56,
+    "excluded_nonpaper_titles": [
+      "Sky Computing"
+    ],
+    "accepted_paper_count": 55,
+    "captured_line_min": 0,
+    "captured_line_max": 684,
+    "toc_line_count": 229,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "OSDI",
+    "year": 2024,
+    "program_title_count": 54,
+    "excluded_nonpaper_titles": [
+      "Scaling AI Sustainably: An Uncharted Territory"
+    ],
+    "accepted_paper_count": 53,
+    "captured_line_min": 0,
+    "captured_line_max": 679,
+    "toc_line_count": 193,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "OSDI",
+    "year": 2025,
+    "program_title_count": 54,
+    "excluded_nonpaper_titles": [
+      "Accelerating Software Development: The LLM (R)evolution"
+    ],
+    "accepted_paper_count": 53,
+    "captured_line_min": 0,
+    "captured_line_max": 694,
+    "toc_line_count": 198,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "OSDI",
+    "year": 2026,
+    "program_title_count": 137,
+    "excluded_nonpaper_titles": [
+      "Analysis for Better Resilience"
+    ],
+    "accepted_paper_count": 136,
+    "captured_line_min": 0,
+    "captured_line_max": 1583,
+    "toc_line_count": 531,
+    "title_membership_check": "Every included title occurs in normalized official proceedings TOC"
+  },
+  {
+    "conference": "SOSP",
+    "year": 2021,
+    "accepted_paper_count": 54,
+    "bold_title_count": 54,
+    "comments_removed": true,
+    "parser_note": "Case-insensitive tags; optional br between title and authors; exactly one row per visible paperlist li for 2024 onward."
+  },
+  {
+    "conference": "SOSP",
+    "year": 2023,
+    "accepted_paper_count": 43,
+    "bold_title_count": 43,
+    "comments_removed": true,
+    "parser_note": "Case-insensitive tags; optional br between title and authors; exactly one row per visible paperlist li for 2024 onward."
+  },
+  {
+    "conference": "SOSP",
+    "year": 2024,
+    "accepted_paper_count": 43,
+    "bold_title_count": 43,
+    "comments_removed": true,
+    "parser_note": "Case-insensitive tags; optional br between title and authors; exactly one row per visible paperlist li for 2024 onward."
+  },
+  {
+    "conference": "SOSP",
+    "year": 2025,
+    "accepted_paper_count": 66,
+    "bold_title_count": 66,
+    "comments_removed": true,
+    "parser_note": "Case-insensitive tags; optional br between title and authors; exactly one row per visible paperlist li for 2024 onward."
+  },
+  {
+    "conference": "SOSP",
+    "year": 2026,
+    "accepted_paper_count": 62,
+    "bold_title_count": 62,
+    "comments_removed": true,
+    "parser_note": "Case-insensitive tags; optional br between title and authors; exactly one row per visible paperlist li for 2024 onward."
+  }
+]

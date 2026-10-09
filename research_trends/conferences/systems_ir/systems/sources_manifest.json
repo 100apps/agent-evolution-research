@@ -1,0 +1,371 @@
+[
+  {
+    "conference": "OSDI",
+    "year": 2020,
+    "url": "https://www.usenix.org/conference/osdi20/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi20__contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2020_sessions_0_web.json",
+      "osdi2020_sessions_180_web.json",
+      "osdi2020_sessions_360_web.json",
+      "osdi2020_sessions_540_web.json",
+      "osdi2020_sessions_720_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2020_toc_190_web.json",
+      "osdi2020_toc_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2020_sessions_0_web.json": "99e6ced1e9ecb31874042d5f0fd9e3d7cd01e13d7de6695bc4e5191c12e70c5e",
+      "osdi2020_sessions_180_web.json": "515d9a957347abad51c4065407fd06c2a0044ff5f785ada0ef545179e599d981",
+      "osdi2020_sessions_360_web.json": "2ea56514346f76f8377707482edb14cbd33e82dfa4250b532d41966a2d4984b0",
+      "osdi2020_sessions_540_web.json": "80c8f17b56b900aa13850ad446adf47f0b2f298e79bef34799793ea9619addef",
+      "osdi2020_sessions_720_web.json": "eb7b04ffb7c5bc03a154258c8602b212cbe67be93e69686b1fa7e36960abd723",
+      "osdi2020_toc_190_web.json": "544e034f821830a71e36227bd6e421ce40d6829c021d01e96e7f4c551a17d130",
+      "osdi2020_toc_web.json": "661ffc95f87bd4671cafad1515965ecff85643de827f2c9636be427411556360"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2021,
+    "url": "https://www.usenix.org/conference/osdi21/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi21-contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2021_sessions_0_web.json",
+      "osdi2021_sessions_180_web.json",
+      "osdi2021_sessions_360_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2021_toc_0_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2021_sessions_0_web.json": "a1602bacd1c69f5a0699a285fd42bd24fcc396248c90e25a2bc6d147f43f7021",
+      "osdi2021_sessions_180_web.json": "5d8f9e94aad440f6f8c93c77cc4813a1a347623e831d8237766f18a31f5db99d",
+      "osdi2021_sessions_360_web.json": "b4eded19065f868df84e66753aaf0b8c4e20778f07db60777d7d09646651db36",
+      "osdi2021_toc_0_web.json": "ea7416da160067aca43abbf2bbedb07c0f8cf0b87c49ccd1ff64dc1ee86ad905"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2022,
+    "url": "https://www.usenix.org/conference/osdi22/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi22__contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2022_sessions_0_web.json",
+      "osdi2022_sessions_180_web.json",
+      "osdi2022_sessions_360_web.json",
+      "osdi2022_sessions_540_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2022_toc_0_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2022_sessions_0_web.json": "ffe7cfd7a1a9885d225ddd2597c9e52c44a066358b85a934f8c8ce86d2912415",
+      "osdi2022_sessions_180_web.json": "6f8825392f1c2fb7c7742d641216bd083af11093e1e4f28e5faac816f7a61e5d",
+      "osdi2022_sessions_360_web.json": "e851f178d515b051deb8fafb033fe76fa3b0f880738e9163e92436fb52a7fa33",
+      "osdi2022_sessions_540_web.json": "96c688cff8d9597f532e3691c0a70d6171fadf015e0d7ddf9e3641cfd74a2287",
+      "osdi2022_toc_0_web.json": "d0944491d8fe8ea0020b73d189e4ce168830252ff1357cda88b5ee25094f5e60"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2023,
+    "url": "https://www.usenix.org/conference/osdi23/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi23_contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2023_sessions_0_web.json",
+      "osdi2023_sessions_180_web.json",
+      "osdi2023_sessions_360_web.json",
+      "osdi2023_sessions_540_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2023_toc_0_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2023_sessions_0_web.json": "58de84ddf160c2578ff9a5d367dd1d61fdfb658abb747e70bc70f4299ee0afd6",
+      "osdi2023_sessions_180_web.json": "c080e737607e8e4bfecaa5633c5b032f348bfdfd377e412105cf96954a8b0309",
+      "osdi2023_sessions_360_web.json": "d7318c99b355b575adcc53980939e58234e42720034a62db7444b877813ad087",
+      "osdi2023_sessions_540_web.json": "200897acb9c25607e20a789613476e362ea696ab568e824c2c4abb03d5add30e",
+      "osdi2023_toc_0_web.json": "6ef525d4cf71a6f9b2bf0f7a8155d7bb4079d0f3864a799a9bf2ce9bc3621c1d"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2024,
+    "url": "https://www.usenix.org/conference/osdi24/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi24_contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2024_sessions_0_web.json",
+      "osdi2024_sessions_180_web.json",
+      "osdi2024_sessions_360_web.json",
+      "osdi2024_sessions_540_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2024_toc_0_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2024_sessions_0_web.json": "00bb1b7b7db3adc06015bba94e64967f7b060198efac2fa41f54a5b2d41139f1",
+      "osdi2024_sessions_180_web.json": "9731ba30f96f2d47b4bb47f577d1329a4554bdd5d2249579818f93e6a9885394",
+      "osdi2024_sessions_360_web.json": "9bbffbe67cb34f36caed2e1d9548a08f83609034b4f599d94aad37e1abcb4de5",
+      "osdi2024_sessions_540_web.json": "9854b13a884cb55335bc3135fdf57dbaf72b21c4a307774eea26a92c5fc03167",
+      "osdi2024_toc_0_web.json": "b025cb21fc0f13466c343cdb4d9b59d60ebb3356283a2899b1032497d8d92f8e"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2025,
+    "url": "https://www.usenix.org/conference/osdi25/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi25-contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2025_sessions_0_web.json",
+      "osdi2025_sessions_180_web.json",
+      "osdi2025_sessions_360_web.json",
+      "osdi2025_sessions_540_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2025_toc_0_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2025_sessions_0_web.json": "99ea6772eaf33e3c42f77e6be6fd9549298000cd701fdd46cee90196c51422cd",
+      "osdi2025_sessions_180_web.json": "7ecfaacb9554006f6f49e45323711f990b882f9d4f739ffa29389b086fefc9e0",
+      "osdi2025_sessions_360_web.json": "c8d96ff49282210827a22f85eb2b50b0e6cfd0b0e8ff7544583d842f76d14643",
+      "osdi2025_sessions_540_web.json": "45c10445d029b5dd3b801babc6e0e4dd6d570dfecef76e65ecfad3dc199fe4e5",
+      "osdi2025_toc_0_web.json": "6fff245a7629aadf20043e49bfc9d80ee149912cd7eb09f2d99d6b8c029572bc"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2026,
+    "url": "https://www.usenix.org/conference/osdi26/technical-sessions",
+    "secondary_validation_url": "https://www.usenix.org/sites/default/files/osdi26-contents.pdf",
+    "fetch_method": "web.run open; direct HTTP access was unavailable and not retried",
+    "snapshots": [
+      "osdi2026_sessions_0_web.json",
+      "osdi2026_sessions_1080_web.json",
+      "osdi2026_sessions_1260_web.json",
+      "osdi2026_sessions_1440_web.json",
+      "osdi2026_sessions_180_web.json",
+      "osdi2026_sessions_360_web.json",
+      "osdi2026_sessions_540_web.json",
+      "osdi2026_sessions_720_web.json",
+      "osdi2026_sessions_900_web.json"
+    ],
+    "toc_snapshots": [
+      "osdi2026_toc_0_web.json",
+      "osdi2026_toc_180_web.json",
+      "osdi2026_toc_360_web.json",
+      "osdi2026_toc_510_web.json"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2026_sessions_0_web.json": "d9b6ab0a7709fad22f1ebcf37199e4b2f32b4187cac4ba7c3a32b541a23427c3",
+      "osdi2026_sessions_1080_web.json": "71fa6fa74204383f18cbb3d51391fa2391104e84574c5683d28892226ee94258",
+      "osdi2026_sessions_1260_web.json": "50c064f5e994c75bacd43149f9ec9be0f081cea42b7dc3bd710888be4fc86c4b",
+      "osdi2026_sessions_1440_web.json": "c0e9ca62968a06738f315c5dde2af4d3270dc94e05ad6864dc775f7d018b9b89",
+      "osdi2026_sessions_180_web.json": "572cf1fd41307655a634f90e6c70607cb13fc06f12d05f85765f35d0f5559263",
+      "osdi2026_sessions_360_web.json": "aeb07a4b21c868cb7ab883dc86e1fd304248f95ca5c84a6cc488bd3e862e0082",
+      "osdi2026_sessions_540_web.json": "67b5f9c7da6dff3a431cd563a886695ce953bc83a41c46f7bb6b902d6b6836b8",
+      "osdi2026_sessions_720_web.json": "30e579f3ac5c0edc3e6050eaa6437417929af4addc7fe3b488157527d512534c",
+      "osdi2026_sessions_900_web.json": "c958e998c94fde5c55dc0403dd0aac66b17dde9d92d5766d4016c51edad73a73",
+      "osdi2026_toc_0_web.json": "41591b30c0c128b191dd6b100d48028f9eb027bf3067f2d24f3306c6fd0ad488",
+      "osdi2026_toc_180_web.json": "1360ba41186621e21fa688748248cc1829a0c3aab5997a0b42d56d191dcca1e5",
+      "osdi2026_toc_360_web.json": "fa067b20bfd294bfe5f298a4ae2841066b3e0e349144421bb5f0856ff3966a10",
+      "osdi2026_toc_510_web.json": "b3ac60b7be5c667356a8189977123dee3da674acfa832403300639e6bb23c9ab"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2021,
+    "url": "https://sosp2021.mpi-sws.org/accepted.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2021.html"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2021.html": "9bad6118a70a82db8b34afc9130d86efac22e6d52dfe2525d9c13ecf994263ea"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2023,
+    "url": "https://sosp2023.mpi-sws.org/accepted.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2023.html"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2023.html": "7052922f229266690d0724ab1a148e8a3f612e07da397204b738d79a75f9b7f1"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2024,
+    "url": "https://sigops.org/s/conferences/sosp/2024/accepted.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2024.html"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2024.html": "d60f2e146dc5f6cea002fed1b963e91799b43c3c60dd1c64eef938b4571720cc"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2025,
+    "url": "https://sigops.org/s/conferences/sosp/2025/accepted.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2025.html"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2025.html": "7096099ed3679d1421a95c3d0b1722bc04f8516da6eaef7c3011fcd0f372fb39"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2026,
+    "url": "https://sigops.org/s/conferences/sosp/2026/accepted.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2026.html"
+    ],
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2026.html": "aa9882bdf2df1d9cb3da3760d6f6b1ed24d2d50e4c2002b92175d593fcb509d5"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2021,
+    "url": "https://sigops.org/s/conferences/sosp/2021/toc.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2021_toc.html"
+    ],
+    "purpose": "paper-level link enrichment",
+    "matched_accepted_titles": 54,
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2021_toc.html": "39f3f605297c3b3419d83423552acc0c436e245d68b6ad2fc5ad734fd76885e6"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2023,
+    "url": "https://sigops.org/s/conferences/sosp/2023/toc.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2023_toc.html"
+    ],
+    "purpose": "paper-level link enrichment",
+    "matched_accepted_titles": 43,
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2023_toc.html": "973914abde32dff7d4feabff5ace2ca336106a619d3479202bec9d49447b45fd"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2024,
+    "url": "https://sigops.org/s/conferences/sosp/2024/schedule.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2024_schedule.html"
+    ],
+    "purpose": "paper-level link enrichment",
+    "matched_accepted_titles": 43,
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2024_schedule.html": "4dfe0d9294242b288ea2d49116228eb840f22263918493c75f49f8ee99acab97"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2025,
+    "url": "https://sigops.org/s/conferences/sosp/2025/schedule.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2025_schedule.html"
+    ],
+    "purpose": "paper-level link enrichment",
+    "matched_accepted_titles": 65,
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2025_schedule.html": "0bc2fbcb9cbbc810cd8c494dbf21c7116b6f68fd959c3a541040d867f9ba1940"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2026,
+    "url": "https://sigops.org/s/conferences/sosp/2026/schedule.html",
+    "fetch_method": "Python urllib public official URL",
+    "snapshots": [
+      "sosp2026_schedule.html"
+    ],
+    "purpose": "paper-level link enrichment",
+    "matched_accepted_titles": 62,
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2026_schedule.html": "f553498ec6c6e601a396df3d0d98859c2a38b0d090617748f9ec23d5226c774b"
+    }
+  },
+  {
+    "conference": "SOSP",
+    "year": 2025,
+    "url": "https://pure.kaist.ac.kr/en/publications/analyzing-and-enhancing-arckfs-an-anecdotal-example-of-benefits-o/",
+    "secondary_validation_url": "https://rs3lab.github.io/assets/papers/2025/jeon:arckfsfix.pdf",
+    "fetch_method": "web.run open",
+    "snapshots": [
+      "sosp2025_arckfs_verified_metadata_web.json"
+    ],
+    "purpose": "Verify DOI, main proceedings, pages 1149-1157, and 9-page length of ArckFS contribution",
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "sosp2025_arckfs_verified_metadata_web.json": "0914cdae32f895a31db2946493a096a9e616c3138cd27c97245f7bdd3a09dbfb"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2026,
+    "url": "https://www.usenix.org/sites/default/files/osdi26-message.pdf",
+    "fetch_method": "web.run open",
+    "snapshots": [
+      "osdi2026_chairs_web.json"
+    ],
+    "purpose": "Validate 136 program papers, 19 Operational Systems, acceptance and format change",
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2026_chairs_web.json": "fd6e6ee279dfa5333aa2f3f40eb52ecddf5fcd868c94eefd3bb79a4463d7a1ca"
+    }
+  },
+  {
+    "conference": "OSDI",
+    "year": 2026,
+    "url": "https://www.usenix.org/conference/osdi26/call-for-papers",
+    "fetch_method": "web.run open",
+    "snapshots": [
+      "osdi2026_scope_validation_web.json"
+    ],
+    "purpose": "Document 2026 review-process and scope changes",
+    "retrieved_date_utc": "2026-10-09",
+    "sha256": {
+      "osdi2026_scope_validation_web.json": "03fb6034557685eed649cbcf64f36babafb723b846596a42fc9565baecc2099f"
+    }
+  }
+]

@@ -1,0 +1,302 @@
+{
+  "title_rule_file_sha256": "f1235157080a4ce5470c8318abcddf4148cb84c6b4f0230e806e7710d779cb7e",
+  "excluded_provisional_neurips_2026": {
+    "all_papers": 5522,
+    "lexical_positive_papers": 432,
+    "positive_with_abstract": 286
+  },
+  "seed": 20261009,
+  "random_generator": "Python random.Random(str(seed)+\":\"+stratum); sample without replacement; sorted eligible population by venue, year, stable paper ID",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "pattern": "\\b(?:agents?|agentic|tool[- ](?:use|using|augmented|learning|calling)|toolformer|function calling|retrieval[- ]augmented|rag|long[- ]term memory|episodic memory|memory[- ]augmented|world models?)\\b",
+  "source_sha256": {
+    "ML": "e388b29b46bdb5b33df5c3628b51d5b994ebe5d9d15dc571c72000b2c343b114",
+    "ACL": "63834d9725bb692db7f5ef6df1d6dd45afb033006af246319f54fbf69c57376d"
+  },
+  "strata": [
+    {
+      "stratum": "ML_2020_2022",
+      "conference_group": "ML",
+      "years": [
+        2020,
+        2021,
+        2022
+      ],
+      "all_papers": 13045,
+      "all_papers_with_abstract": 12358,
+      "lexical_positive_papers": 232,
+      "eligible_abstract_papers": 218,
+      "missing_abstract_positive_papers": 14,
+      "abstract_coverage_among_positive": 0.9396551724137931,
+      "sample_n": 16,
+      "inclusion_probability": 0.07339449541284404,
+      "inverse_probability_weight": 13.625
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "conference_group": "ML",
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "all_papers": 32770,
+      "all_papers_with_abstract": 32770,
+      "lexical_positive_papers": 1721,
+      "eligible_abstract_papers": 1721,
+      "missing_abstract_positive_papers": 0,
+      "abstract_coverage_among_positive": 1.0,
+      "sample_n": 17,
+      "inclusion_probability": 0.009877977919814061,
+      "inverse_probability_weight": 101.23529411764706
+    },
+    {
+      "stratum": "ACL_2020_2022",
+      "conference_group": "ACL",
+      "years": [
+        2020,
+        2021,
+        2022
+      ],
+      "all_papers": 2188,
+      "all_papers_with_abstract": 2188,
+      "lexical_positive_papers": 11,
+      "eligible_abstract_papers": 11,
+      "missing_abstract_positive_papers": 0,
+      "abstract_coverage_among_positive": 1.0,
+      "sample_n": 11,
+      "inclusion_probability": 1.0,
+      "inverse_probability_weight": 1.0
+    },
+    {
+      "stratum": "ACL_2024_2026",
+      "conference_group": "ACL",
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "all_papers": 4935,
+      "all_papers_with_abstract": 4933,
+      "lexical_positive_papers": 593,
+      "eligible_abstract_papers": 593,
+      "missing_abstract_positive_papers": 0,
+      "abstract_coverage_among_positive": 1.0,
+      "sample_n": 16,
+      "inclusion_probability": 0.026981450252951095,
+      "inverse_probability_weight": 37.0625
+    }
+  ],
+  "by_venue_year": [
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "ICLR",
+      "year": 2020,
+      "all_papers": 687,
+      "all_with_abstract": 0,
+      "lexical_positive_papers": 14,
+      "positive_with_abstract": 0
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "ICLR",
+      "year": 2021,
+      "all_papers": 860,
+      "all_with_abstract": 860,
+      "lexical_positive_papers": 12,
+      "positive_with_abstract": 12
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "ICLR",
+      "year": 2022,
+      "all_papers": 1095,
+      "all_with_abstract": 1095,
+      "lexical_positive_papers": 19,
+      "positive_with_abstract": 19
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "ICML",
+      "year": 2020,
+      "all_papers": 1084,
+      "all_with_abstract": 1084,
+      "lexical_positive_papers": 17,
+      "positive_with_abstract": 17
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "ICML",
+      "year": 2021,
+      "all_papers": 1183,
+      "all_with_abstract": 1183,
+      "lexical_positive_papers": 24,
+      "positive_with_abstract": 24
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "ICML",
+      "year": 2022,
+      "all_papers": 1233,
+      "all_with_abstract": 1233,
+      "lexical_positive_papers": 21,
+      "positive_with_abstract": 21
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "NeurIPS",
+      "year": 2020,
+      "all_papers": 1898,
+      "all_with_abstract": 1898,
+      "lexical_positive_papers": 34,
+      "positive_with_abstract": 34
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "NeurIPS",
+      "year": 2021,
+      "all_papers": 2334,
+      "all_with_abstract": 2334,
+      "lexical_positive_papers": 41,
+      "positive_with_abstract": 41
+    },
+    {
+      "stratum": "ML_2020_2022",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "all_papers": 2671,
+      "all_with_abstract": 2671,
+      "lexical_positive_papers": 50,
+      "positive_with_abstract": 50
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "ICLR",
+      "year": 2024,
+      "all_papers": 2260,
+      "all_with_abstract": 2260,
+      "lexical_positive_papers": 53,
+      "positive_with_abstract": 53
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "ICLR",
+      "year": 2025,
+      "all_papers": 3705,
+      "all_with_abstract": 3705,
+      "lexical_positive_papers": 182,
+      "positive_with_abstract": 182
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "ICLR",
+      "year": 2026,
+      "all_papers": 5353,
+      "all_with_abstract": 5353,
+      "lexical_positive_papers": 386,
+      "positive_with_abstract": 386
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "ICML",
+      "year": 2024,
+      "all_papers": 2535,
+      "all_with_abstract": 2535,
+      "lexical_positive_papers": 78,
+      "positive_with_abstract": 78
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "ICML",
+      "year": 2025,
+      "all_papers": 3257,
+      "all_with_abstract": 3257,
+      "lexical_positive_papers": 141,
+      "positive_with_abstract": 141
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "ICML",
+      "year": 2026,
+      "all_papers": 6340,
+      "all_with_abstract": 6340,
+      "lexical_positive_papers": 522,
+      "positive_with_abstract": 522
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "NeurIPS",
+      "year": 2024,
+      "all_papers": 4034,
+      "all_with_abstract": 4034,
+      "lexical_positive_papers": 111,
+      "positive_with_abstract": 111
+    },
+    {
+      "stratum": "ML_2024_2026",
+      "venue": "NeurIPS",
+      "year": 2025,
+      "all_papers": 5286,
+      "all_with_abstract": 5286,
+      "lexical_positive_papers": 248,
+      "positive_with_abstract": 248
+    },
+    {
+      "stratum": "ACL_2020_2022",
+      "venue": "ACL",
+      "year": 2020,
+      "all_papers": 778,
+      "all_with_abstract": 778,
+      "lexical_positive_papers": 7,
+      "positive_with_abstract": 7
+    },
+    {
+      "stratum": "ACL_2020_2022",
+      "venue": "ACL",
+      "year": 2021,
+      "all_papers": 710,
+      "all_with_abstract": 710,
+      "lexical_positive_papers": 1,
+      "positive_with_abstract": 1
+    },
+    {
+      "stratum": "ACL_2020_2022",
+      "venue": "ACL",
+      "year": 2022,
+      "all_papers": 700,
+      "all_with_abstract": 700,
+      "lexical_positive_papers": 3,
+      "positive_with_abstract": 3
+    },
+    {
+      "stratum": "ACL_2024_2026",
+      "venue": "ACL",
+      "year": 2024,
+      "all_papers": 940,
+      "all_with_abstract": 939,
+      "lexical_positive_papers": 55,
+      "positive_with_abstract": 55
+    },
+    {
+      "stratum": "ACL_2024_2026",
+      "venue": "ACL",
+      "year": 2025,
+      "all_papers": 1699,
+      "all_with_abstract": 1699,
+      "lexical_positive_papers": 172,
+      "positive_with_abstract": 172
+    },
+    {
+      "stratum": "ACL_2024_2026",
+      "venue": "ACL",
+      "year": 2026,
+      "all_papers": 2296,
+      "all_with_abstract": 2295,
+      "lexical_positive_papers": 366,
+      "positive_with_abstract": 366
+    }
+  ],
+  "population_restriction": "Observed main-conference records, ML (ICLR/ICML/NeurIPS) and ACL, 2020–2022 or 2024–2026, matching broad agent/tool/memory title regex, with nonempty collected abstract. Excludes 2023, CVPR, title-negative papers, missing abstracts, and all NeurIPS 2026 records because their observed program is incomplete. ICML/ICLR/ACL 2026 remain included as collected; upstream source and track caveats apply.",
+  "allocation": "Near-balanced four-stratum sample. ACL 2020–2022 has only 11 eligible papers, all sampled; remaining 49 allocated ML early 16, ML recent 17, ACL recent 16. Allocation fixed before abstract interpretation.",
+  "audit_type": "AI-assisted single-rater title-and-abstract content audit; not human validation and not recall estimation."
+}

@@ -1,9 +1,10 @@
 # AI 与相邻研究方向的活动趋势
 
-本目录是 [预注册记录](PREREGISTRATION.md)、[协议](protocol.md) 和采集后修订的可重跑研究输入。它测量**来源所覆盖的作品与其他代理变量**，不提供世界研究人员人数普查；仓库原有 39 篇 Agent 进化论文也没有被当作行业样本。
+本目录保留[采集前本地计划的历史快照](PREREGISTRATION.md)、[协议](protocol.md) 和采集后修订的可重跑研究输入。该计划随结果一并公开，没有独立公开时间戳，不能称外部预注册。研究测量**来源所覆盖的作品与其他代理变量**，不提供世界研究人员人数普查；仓库原有 39 篇 Agent 进化论文也没有被当作行业样本。
 
 ## 先看结果
 
+- [十会议论文主 CSV 与 Explorer](catalog/README_zh.md)：89,530 条来源记录、五层三级候选分类、精确 DOI 引用快照和完整字段证据。此目录与月度宏观统计分母不同。
 - [中文分析报告](report_zh.md)：结论、反证、不能回答的问题和项目含义。
 - [交互面板](reports/dashboard.html)：分开查看 OpenAlex、arXiv 月线，以及五会场共享标题规则热图；离线打开即可。
 - `data/processed/openalex_monthly_wide.csv`、`openalex_annual.csv`、`openalex_fields_monthly.csv`：月度与完整日历年度输出。

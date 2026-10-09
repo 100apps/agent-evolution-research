@@ -1,0 +1,16 @@
+{
+  "result": "PASS",
+  "offline": true,
+  "third_party_dependencies": false,
+  "frame_rows": 2557,
+  "eligible_rows": 2543,
+  "sample_n": 60,
+  "semantic_equality_checks": {
+    "audit_sample_unlabeled.json": true,
+    "agent_abstract_audit.json": true,
+    "audit_summary.json": true,
+    "agent_abstract_audit.csv": true,
+    "audit_stratum_summary.csv": true
+  },
+  "note": "Frozen AI decisions are replayed; no fresh AI/human annotation, new network evidence or recall estimation."
+}

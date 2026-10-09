@@ -1,0 +1,572 @@
+{
+  "schema_version": "paper-master-v1.1.0-proposed",
+  "row_grain": "one canonical scholarly work, not one venue occurrence",
+  "csv_encoding": "UTF-8 RFC4180; JSON cells serialized compactly and quoted by a CSV library",
+  "null_policy": {
+    "scalar_unknown": "empty string",
+    "json_unknown": "null",
+    "json_known_empty_array": "[]",
+    "json_known_empty_object": "{}",
+    "missing_abstract": "empty string plus abstract_status=missing; never literal fabricated summary"
+  },
+  "fields": [
+    {
+      "name": "paper_id",
+      "type": "string",
+      "required": true,
+      "description_zh": "跨版本/来源的规范 work ID；优先可靠标识符映射，不仅靠题名强行合并。"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "description_zh": "规范题名，保留来源版本与选择依据。"
+    },
+    {
+      "name": "abstract",
+      "type": "string_or_empty",
+      "required": true,
+      "description_zh": "真实已抓取摘要；缺失留空，不能用生成摘要冒充。"
+    },
+    {
+      "name": "authors_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "原始作者名；未知 null，确认为无则 []。"
+    },
+    {
+      "name": "doi",
+      "type": "string_or_empty",
+      "required": false,
+      "description_zh": "核验 DOI；未知留空。"
+    },
+    {
+      "name": "arxiv_id",
+      "type": "string_or_empty",
+      "required": false,
+      "description_zh": "核验 arXiv ID，不从汇总计数推断关联。"
+    },
+    {
+      "name": "openreview_id",
+      "type": "string_or_empty",
+      "required": false,
+      "description_zh": "核验 OpenReview ID。"
+    },
+    {
+      "name": "official_url",
+      "type": "url_or_empty",
+      "required": true,
+      "description_zh": "论文官方公开页面。"
+    },
+    {
+      "name": "source_urls_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "所有实际用于此行元数据/分类的来源。"
+    },
+    {
+      "name": "publication_year",
+      "type": "integer_or_empty",
+      "required": true,
+      "description_zh": "选定的出版/接收年份；无可靠值留空。venue/year 统计从 occurrences 展开，不能用此列代替全部出现年份。"
+    },
+    {
+      "name": "year_basis",
+      "type": "string",
+      "required": true,
+      "description_zh": "年份来自会议目录、文章元数据或其他依据；不虚构月份。"
+    },
+    {
+      "name": "venues_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "所有已确认收录会议。"
+    },
+    {
+      "name": "occurrence_ids_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "指向 occurrence 表，保留每次 venue/year/track 出现。"
+    },
+    {
+      "name": "occurrences_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "可供单 CSV Explorer 使用的 occurrence 信息：occurrence_id、venue、year、track、source_id、source_url、coverage_status。"
+    },
+    {
+      "name": "dedup_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "single_source / identifier_matched / title_author_reviewed / unresolved；不把题名近似当同一 work。"
+    },
+    {
+      "name": "dedup_evidence_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "跨来源合并依据及冲突。"
+    },
+    {
+      "name": "field_provenance_json",
+      "type": "json_object",
+      "required": true,
+      "description_zh": "逐字段来源 source_url、source_record_id、retrieved_at、status、transform；abstract 来源独立于 title。"
+    },
+    {
+      "name": "abstract_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "present / missing / truncated / unverified；词数/字数不是内容真实性保证。"
+    },
+    {
+      "name": "abstract_char_count",
+      "type": "integer",
+      "required": true,
+      "description_zh": "所存摘要实际字符数。"
+    },
+    {
+      "name": "coverage_flags_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "year_partial、abstract_missing、track_scope_break、title_only、source_conflict 等真实覆盖问题。"
+    },
+    {
+      "name": "classification_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "classified / outside_scope / insufficient_evidence / taxonomy_gap；不是第六层。"
+    },
+    {
+      "name": "classification_label_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "candidate / accepted / disputed / unassigned；初轮自动标注为 candidate。"
+    },
+    {
+      "name": "classification_method",
+      "type": "string",
+      "required": true,
+      "description_zh": "如 rules_candidate_v1 / llm_title_abstract_v1 / human_review；必须如实。"
+    },
+    {
+      "name": "classifier_version",
+      "type": "string",
+      "required": true,
+      "description_zh": "规则/模型提示/配置的可复现版本。"
+    },
+    {
+      "name": "taxonomy_version",
+      "type": "string",
+      "required": true,
+      "description_zh": "精确 taxonomy 版本。"
+    },
+    {
+      "name": "classified_at",
+      "type": "datetime_or_empty",
+      "required": true,
+      "description_zh": "实际运行时间 UTC ISO8601。"
+    },
+    {
+      "name": "classification_basis",
+      "type": "enum",
+      "required": true,
+      "description_zh": "title_only / title_abstract / title_abstract_fulltext / metadata_only；metadata_only 不能以 venue 判断 leaf。"
+    },
+    {
+      "name": "classification_input_fields_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "实际输入字段及其 sha256，可复现。"
+    },
+    {
+      "name": "classification_reason",
+      "type": "string",
+      "required": true,
+      "description_zh": "简短判定/不判定理由，不输出私有推理。"
+    },
+    {
+      "name": "review_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "unreviewed / automated / ai_adjudicated / human_reviewed / disputed。"
+    },
+    {
+      "name": "review_notes",
+      "type": "string_or_empty",
+      "required": true,
+      "description_zh": "简短冲突/待补证说明；自动首轮不写人工已核验。"
+    },
+    {
+      "name": "category_ids_l1_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "由有证据 L3 路径去重得到的 L1。"
+    },
+    {
+      "name": "category_ids_l2_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "由有证据 L3 路径去重得到的 L2。"
+    },
+    {
+      "name": "category_ids_l3_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "被分配的 L3，自动时属于候选。"
+    },
+    {
+      "name": "category_paths_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "每个叶子的 [L1_ID,L2_ID,L3_ID]，一个论文可以有多个。"
+    },
+    {
+      "name": "category_paths_text",
+      "type": "string",
+      "required": false,
+      "description_zh": "方便阅读的 id/name 路径；真源仍是 JSON。"
+    },
+    {
+      "name": "category_evidence_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "每个叶子至少一条证据：category_id、source_field、source_url、span_start/end、quote、assignment_role、rationale、evidence_strength、basis、rule_ids、review_status。"
+    },
+    {
+      "name": "facets_json",
+      "type": "json_object_or_null",
+      "required": true,
+      "description_zh": "method/task/stage/evaluation/safety/contribution_type/domain/model_modality/model_scope/agent_form；unknown 与 [] 分开。"
+    },
+    {
+      "name": "facet_evidence_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "facet 名、值、来源字段、跨度、引用、理由。不能靠分类叶子随意推断。"
+    },
+    {
+      "name": "candidate_topics_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "taxonomy_gap 或待补证的候选主题；不参与五层计数。"
+    },
+    {
+      "name": "label_warnings_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "title_only、ambiguous_acronym、weak_rule_match、needs_fulltext 等。"
+    },
+    {
+      "name": "retrieved_at",
+      "type": "datetime_or_empty",
+      "required": true,
+      "description_zh": "主来源真实采集时间；其他来源时间放逐字段 provenance。"
+    },
+    {
+      "name": "record_updated_at",
+      "type": "datetime",
+      "required": true,
+      "description_zh": "此主表行本次更新的实际时间。"
+    },
+    {
+      "name": "authors_raw",
+      "type": "string_or_empty",
+      "required": true,
+      "description_zh": "保留无法可靠结构化的作者/机构原文，例如 OSDI 混合逗号字符串；不把空结构列表说成无作者。"
+    },
+    {
+      "name": "author_affiliations_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "按 occurrence_id 与 author_position 保留有序作者—多机构链接；复制审计 authors[*].affiliations，保留 name、时间状态、原文和出处。不同版本作者顺序不得混写。"
+    },
+    {
+      "name": "institutions_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "来源报告的机构原文字串去重并集；可能含 profile/历史时间未验证机构。不是规范实体库，也不默认代表发表期机构。"
+    },
+    {
+      "name": "publication_affiliations_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "仅具有论文/发表版本明确机构证据的结构化机构记录；保留 occurrence/author 关联。论文列机构但作者未链接时必须注明 unlinked，不擅自归给全部作者。"
+    },
+    {
+      "name": "profile_affiliations_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "API user/profile 或程序资料中的机构，发表期有效性未验证；保留可展示，不参与历史机构/国家分布。"
+    },
+    {
+      "name": "unlinked_affiliations_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "来源明确报告但无法关联具体作者的机构列表；保留来源与时间状态，不能向相邻姓名传播。"
+    },
+    {
+      "name": "institution_entities_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "只有已核验的机构规范实体及 ID：scheme、id、name、resolution_status、source_url/locator；没有核验时保留 unresolved 原文或空 ID，禁止臆造 ROR/OpenAlex 等。"
+    },
+    {
+      "name": "countries_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "论文发表期 affiliation 的明确国家/地区代码去重列表；兼容 audit.countries；绝非作者国籍。无证据 []/null 配合状态，不推断。"
+    },
+    {
+      "name": "country_evidence_json",
+      "type": "json_array_or_null",
+      "required": true,
+      "description_zh": "每个国家/地区到 occurrence、作者槽位、机构原文和明确地点词的证据关系；保留 code/name/code_scheme、temporal_status、source_url/locator、country_status、missing_reason。"
+    },
+    {
+      "name": "author_affiliation_completeness",
+      "type": "enum",
+      "required": true,
+      "description_zh": "complete / partial / missing / unstructured / not_checked；complete 仅指已读来源中的作者链接覆盖，发表期覆盖另列。"
+    },
+    {
+      "name": "affiliation_temporal_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "paper_scoped / profile_time_unverified / mixed / paper_reported_unlinked / missing / not_checked；行级概览不能抹去各条机构时间状态。"
+    },
+    {
+      "name": "institution_resolution_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "verified_all / verified_partial / unresolved / not_checked / missing；机构字符串有值不等于已规范化/ID 核验。"
+    },
+    {
+      "name": "country_coverage_status",
+      "type": "enum",
+      "required": true,
+      "description_zh": "complete_known_author_affiliations / partial / missing / not_checked / conflict；至少一位有国家仍常常只是 partial。"
+    },
+    {
+      "name": "metadata_field_status_json",
+      "type": "json_object",
+      "required": true,
+      "description_zh": "逐字段保留 audit.field_provenance 的原 status；至少 authors/affiliations/institutions/countries/institution_ids，并记录当前映射状态。"
+    },
+    {
+      "name": "metadata_missing_reasons_json",
+      "type": "json_object",
+      "required": true,
+      "description_zh": "逐字段和必要的作者/机构槽位缺失原因，如 no_explicit_publication_time_affiliation_country、institution_profile_is_not_historical_location_evidence、unstructured_author_string。"
+    },
+    {
+      "name": "metadata_field_coverage_json",
+      "type": "json_object",
+      "required": true,
+      "description_zh": "本行作者槽位分母、已结构化数、有机构数、论文期机构数、有明确国家数、规范 ID 核验数；unknown 与 0 分开，保留部分覆盖。"
+    },
+    {
+      "name": "metadata_occurrence_provenance_json",
+      "type": "json_array",
+      "required": true,
+      "description_zh": "每个出现版本的来源字段、状态、missing_reason、evidence 原样保留，避免 work 合并覆盖冲突的机构/国家。"
+    },
+    {
+      "name": "metadata_audit_version",
+      "type": "string_or_empty",
+      "required": true,
+      "description_zh": "实际使用 enrichment 脚本/输入 manifest 的版本或 SHA；未运行留空并给 not_checked，不声称已在本机复核原始源。"
+    }
+  ],
+  "evidence_contract": {
+    "span_unit": "Python/Unicode code-point offsets, 0-based, [start,end), over the exact stored source_field. JavaScript must use Array.from(text) or equivalent for non-BMP characters.",
+    "required_per_label": [
+      "category_id",
+      "source_field",
+      "source_url",
+      "span_start",
+      "span_end",
+      "quote",
+      "assignment_role",
+      "rationale_zh",
+      "evidence_strength",
+      "basis",
+      "rule_ids",
+      "review_status"
+    ],
+    "quote_validation": "stored_text[span_start:span_end] == quote",
+    "allowed_assignment_roles": [
+      "central_contribution",
+      "primary_object_of_study"
+    ],
+    "not_valid_roles": [
+      "background_mention",
+      "uses_gpu",
+      "uses_llm",
+      "cites_paper",
+      "benchmark_only_without_target_contribution"
+    ],
+    "rule_baseline": "rule_ids identify a separate versioned rule file; spans show literal match, and basis must say lexical_rule_candidate. A hit is not verified semantic evidence.",
+    "prohibited_without_validation": [
+      "fabricated confidence probabilities",
+      "human_reviewed on unreviewed output",
+      "claiming fulltext basis with title/abstract only"
+    ]
+  },
+  "counting_contract": {
+    "paper_denominator": "distinct paper_id within explicitly selected corpus/years/coverage statuses",
+    "occurrence_denominator": "distinct occurrence_id within selected venue/year/track; reported separately",
+    "multilabel": "count distinct paper_id per category after closure; sum can exceed total",
+    "non_additivity_warning": true,
+    "status_breakout_required": [
+      "classified",
+      "outside_scope",
+      "insufficient_evidence",
+      "taxonomy_gap"
+    ],
+    "automatic_candidate_breakout_required": true,
+    "arxiv_warning": "Aggregate arXiv counts are not paper-level master rows; do not fabricate records or cross-corpus coverage.",
+    "dedup_denominator_breakout_required": [
+      "single_source",
+      "identifier_matched",
+      "title_author_reviewed",
+      "unresolved"
+    ],
+    "unresolved_work_label": "If unresolved duplicate candidates remain, label total as provisional work IDs; do not claim proven unique papers.",
+    "institution_country_counting": "A multi-institution/multi-country paper counts once per supported institution/country; sums may exceed paper total. Do not assign fractional contributions without an explicitly documented rule.",
+    "geography_coverage_required": true
+  },
+  "companion_table_recommendation": [
+    "paper_occurrences.csv",
+    "sources_manifest.csv",
+    "taxonomy_nodes.csv",
+    "classification_runs.json"
+  ],
+  "previous_schema_version": "paper-master-v1.0.0",
+  "migration": "Additive columns and nested contracts only; existing columns remain. Populate unknowns with documented empty/null + status/missing reason. No taxonomy changes.",
+  "affiliation_country_contract": {
+    "metadata_audit_alignment": {
+      "root": "paper_metadata_audit/",
+      "patch": "deliverable/metadata_patch.jsonl.gz",
+      "join_key": [
+        "venue",
+        "year",
+        "track",
+        "source_paper_id"
+      ],
+      "join_warning": "Join exact occurrence composite key; never title-only, and source_paper_id alone is not globally unique. Preserve occurrence_id before work aggregation.",
+      "maps": {
+        "authors_json": "ordered audit.authors[*].name; preserve previous name array convention",
+        "author_affiliations_json": "audit.authors, augmented with occurrence_id, 1-based author_position and source evidence references",
+        "institutions_json": "audit.institutions, labeled source-reported and not normalized",
+        "countries_json": "audit.countries, only explicit publication-affiliation country/region codes",
+        "author_affiliation_completeness": "audit.author_affiliation_completeness",
+        "field_provenance_json": "merge audit.field_provenance without discarding status/missing_reason/evidence",
+        "metadata_occurrence_provenance_json": "one unmodified provenance object per source occurrence"
+      }
+    },
+    "author_affiliation_object": {
+      "occurrence_id": "required exact source occurrence ID",
+      "author_position": "1-based order within this source byline; null if unknown; never unique person count",
+      "author_name": "source name; no cross-paper identity inference",
+      "author_ids": "verified ORCID/source IDs only; unknown empty",
+      "affiliations": [
+        {
+          "name": "unmodified source institution string",
+          "affiliation_key": "source-scoped local ID; not an institutional registry ID",
+          "temporal_status": "preserve original audit value; paper_scoped_explicit / paper_explicit / publication_time_unverified / paper_reported_unlinked / unknown",
+          "institution_ids": [
+            {
+              "scheme": "e.g. ROR or another verified registry",
+              "id": "only a verified ID",
+              "resolution_status": "verified_exact or verified_manual; unresolved is not a verified entity",
+              "source_url": "verification source",
+              "source_locator": "specific locator",
+              "verified_at": "actual verification time"
+            }
+          ],
+          "country_code": "explicit affiliation location code, else empty",
+          "country_name": "source-reported country/region name, else empty",
+          "country_status": "explicit_location_token / separately_verified_paper_location / missing / conflict",
+          "country_missing_reason": "required if code absent after checking",
+          "source_occurrence_id": "source occurrence",
+          "evidence_refs": "point to existing audit field provenance plus local author/affiliation ordinal"
+        }
+      ]
+    },
+    "temporal_normalization": {
+      "paper_scoped_explicit": "publication evidence eligible",
+      "paper_explicit": "publication evidence eligible",
+      "publication_time_unverified": "profile/program report retained but excluded from publication-time geography",
+      "paper_reported_unlinked": "paper-level institution known but author linkage unknown; no invented author mapping",
+      "unknown": "not eligible until checked"
+    },
+    "country_definition_zh": "国家/地区表示该论文/版本作者机构的地点，绝不表示作者国籍、族裔、出生地、居住地或个人身份。保留来源报告的国家/地区代码；不赋予政治含义。",
+    "country_acceptance_zh": "首轮沿用审计的明确论文期 affiliation 地点词。以后如另行核验同一论文期机构/校区地址，必须新增来源和 separately_verified_paper_location 状态；只有规范机构 ID 或今天总部地址仍不足以推断历史地点。",
+    "prohibited_inference_sources": [
+      "author name",
+      "nationality guess",
+      "institution name containing a country word",
+      "email domain",
+      "conference city/address",
+      "current profile institution",
+      "current headquarters without paper-period/campus evidence"
+    ],
+    "country_example_zh": "University of Science and Technology of China 的机构名本身不能推出 CN；MOE Key Laboratory ..., Peking University, China 中独立地址地点 China 可以作为明确国家地点。",
+    "no_false_completeness": "An institution present for one author does not mean all affiliations are known. A country present for one affiliation does not mean all authors or affiliations have known countries.",
+    "flat_array_rule": "Flat institutions/countries are convenience unions, not substitutes for author-affiliation provenance. Work-level union across versions must remain traceable by occurrence; historical filters select matching occurrence.",
+    "null_policy": "null means not checked/unknown; [] means checked and no supported structured value. Never display [] as no author/no institution/no country. Show status and missing reason.",
+    "coverage_object": {
+      "author_slots_total": "integer or null; source-byline slots, not unique people",
+      "author_slots_structured": "integer or null",
+      "author_slots_with_any_affiliation": "integer or null",
+      "author_slots_with_publication_affiliation": "integer or null",
+      "author_slots_with_explicit_country": "integer or null",
+      "affiliation_slots_total": "integer or null",
+      "affiliation_slots_with_verified_institution_id": "integer or null",
+      "affiliation_slots_with_explicit_country": "integer or null",
+      "scope": "occurrence or work; include occurrence_breakdown for merged work"
+    },
+    "geography_display": "Default historical institution/country filters use publication-scoped evidence. Offer profile/unverified institutions separately and visibly. Country charts must show records with eligible country / all selected records and author-slot coverage; unknown is not another country."
+  },
+  "required_companion_tables": [
+    "paper_occurrences.csv",
+    "source_coverage_manifest.csv"
+  ],
+  "source_coverage_manifest_contract": {
+    "grain": "one expected source venue/year/track even if zero rows were collected",
+    "required_columns": [
+      "source_scope_id",
+      "venue",
+      "year",
+      "track",
+      "event_status",
+      "collection_status",
+      "observed_occurrences",
+      "announced_expected_count",
+      "field_coverage_json",
+      "coverage_notes",
+      "source_url",
+      "retrieved_at"
+    ],
+    "event_status": [
+      "held",
+      "no_event",
+      "not_yet_held",
+      "unknown"
+    ],
+    "collection_status": [
+      "complete_visible_index",
+      "partial",
+      "not_collected",
+      "unavailable",
+      "unknown"
+    ],
+    "rules": [
+      "no_event is structural absence, never zero research output",
+      "not_collected/partial must remain visible even with no paper rows",
+      "announced_expected_count unknown remains blank, not zero",
+      "2026 provisional and scope changes remain separate",
+      "coverage manifest is required for Explorer denominators, not inferable solely from collected rows"
+    ]
+  }
+}

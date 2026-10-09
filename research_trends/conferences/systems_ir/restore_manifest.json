@@ -1,0 +1,16 @@
+{
+  "format": "exact original UTF-8 JSONL bytes compressed with gzip mtime=0",
+  "records": 6193,
+  "uncompressed_bytes": 7399299,
+  "uncompressed_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+  "compressed_sha256": "52cf6616a091ed93e7342ebf5ce6c21661a5a965db7dbdc30930ae61e94262cc",
+  "venue_counts": {
+    "ICSE": 1471,
+    "KDD": 2770,
+    "OSDI": 428,
+    "SIGIR": 1256,
+    "SOSP": 268
+  },
+  "original_source_snapshots_included": false,
+  "provenance": "Every original metadata field is preserved. Source snapshots are named and hashed in sources_manifest.json and systems/sources_manifest.json but omitted from this portable addon."
+}

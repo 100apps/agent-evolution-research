@@ -1,0 +1,36 @@
+{
+  "version": "common-title-v1.0",
+  "total_records": 89530,
+  "distinct_venue_year_ids": 89530,
+  "duplicate_ids": 0,
+  "title_only": true,
+  "all_topics_nonexclusive": true,
+  "fixed_basket": [
+    "ACL",
+    "CVPR",
+    "ICLR",
+    "ICML",
+    "ICSE",
+    "KDD",
+    "NeurIPS",
+    "OSDI",
+    "SIGIR"
+  ],
+  "fixed_basket_2020_n": 6476,
+  "fixed_basket_2025_n": 17907,
+  "provisional_excluded_n": 5522,
+  "scope_break_osdi_2026_n": 117,
+  "no_edition_cells": [
+    [
+      "SOSP",
+      2020
+    ],
+    [
+      "SOSP",
+      2022
+    ]
+  ],
+  "decomposition_max_abs_residual_pp": 3.4416913763379853e-15,
+  "classification_validation": "Regex behavior and denominator checks only; no human semantic precision/recall benchmark",
+  "output_rule_sha256": "98b14743a67967b3ab43a696f4f33104a2f2a5e84b45898c94092bc8c3a67005"
+}

@@ -1,0 +1,1282 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "paper-impact-v1.0.0-proposed"
+    },
+    "paper_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publication_age": {
+      "$ref": "#/$defs/publication_age"
+    },
+    "citation_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/metric"
+      }
+    },
+    "citation_counts_by_year": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source": {
+            "$ref": "#/$defs/source"
+          },
+          "as_of": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "year",
+          "count",
+          "source",
+          "as_of"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "normalized_citation_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/normalized_metric"
+      }
+    },
+    "usage_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/usage_metric"
+      }
+    },
+    "public_reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/public_review"
+      }
+    },
+    "artifact_links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact_link"
+      }
+    },
+    "integrity_events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/integrity_event"
+      }
+    },
+    "collection_status": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "enum": [
+              "present",
+              "not_requested",
+              "missing_identifier",
+              "not_found",
+              "not_exposed",
+              "not_public",
+              "field_missing",
+              "rate_limited",
+              "budget_exhausted",
+              "transport_error",
+              "parse_error",
+              "identifier_conflict",
+              "invalid_value",
+              "not_applicable",
+              "access_denied",
+              "partial_response",
+              "not_observed",
+              "rubric_unverified"
+            ]
+          },
+          "missing_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "attempted_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "status",
+          "missing_reason",
+          "attempted_at"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "adapter_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "paper_id",
+    "publication_age",
+    "citation_observations",
+    "citation_counts_by_year",
+    "normalized_citation_observations",
+    "usage_observations",
+    "public_reviews",
+    "artifact_links",
+    "integrity_events",
+    "collection_status",
+    "adapter_version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Additive paper impact metadata sidecar",
+  "description": "One existing canonical paper_id; attention/impact, review and integrity evidence. Never a scientific-quality score. Does not modify existing master columns.",
+  "$id": "urn:paper-impact:v1.0.0",
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "record_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "provider_updated_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "raw_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "raw_field": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "request_fingerprint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identifier_match": {
+          "enum": [
+            "exact_doi",
+            "exact_arxiv",
+            "exact_openalex",
+            "exact_s2",
+            "exact_openreview_forum",
+            "exact_official_record",
+            "verified_crosswalk",
+            "not_joined"
+          ]
+        },
+        "matched_identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "provider",
+        "record_id",
+        "source_url",
+        "retrieved_at",
+        "provider_updated_at",
+        "raw_sha256",
+        "raw_field",
+        "request_fingerprint",
+        "identifier_match",
+        "matched_identifier"
+      ],
+      "additionalProperties": false
+    },
+    "window": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "lifetime_to_asof",
+            "calendar_year",
+            "rolling",
+            "fixed",
+            "publication_year_plus_3",
+            "provider_defined",
+            "unknown"
+          ]
+        },
+        "start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "definition": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "start",
+        "end",
+        "definition"
+      ],
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "enum": [
+            "citation_count",
+            "influential_citation_count"
+          ]
+        },
+        "value": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "status": {
+          "enum": [
+            "present",
+            "not_requested",
+            "missing_identifier",
+            "not_found",
+            "not_exposed",
+            "not_public",
+            "field_missing",
+            "rate_limited",
+            "budget_exhausted",
+            "transport_error",
+            "parse_error",
+            "identifier_conflict",
+            "invalid_value",
+            "not_applicable",
+            "access_denied",
+            "partial_response",
+            "not_observed",
+            "rubric_unverified"
+          ]
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "window": {
+          "$ref": "#/$defs/window"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "method_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "metric",
+        "value",
+        "status",
+        "missing_reason",
+        "as_of",
+        "unit",
+        "window",
+        "source",
+        "method_version",
+        "caveats"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "missing_reason": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "null"
+              },
+              "missing_reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "publication_age": {
+      "type": "object",
+      "properties": {
+        "days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_used": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "date_precision": {
+          "enum": [
+            "day",
+            "month",
+            "year",
+            "unknown"
+          ]
+        },
+        "basis": {
+          "enum": [
+            "first_arxiv_submission",
+            "first_online_publication",
+            "version_of_record",
+            "provider_publication_date",
+            "unknown"
+          ]
+        },
+        "status": {
+          "enum": [
+            "present",
+            "not_requested",
+            "missing_identifier",
+            "not_found",
+            "not_exposed",
+            "not_public",
+            "field_missing",
+            "rate_limited",
+            "budget_exhausted",
+            "transport_error",
+            "parse_error",
+            "identifier_conflict",
+            "invalid_value",
+            "not_applicable",
+            "access_denied",
+            "partial_response",
+            "not_observed",
+            "rubric_unverified"
+          ]
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "days",
+        "as_of",
+        "date_used",
+        "date_precision",
+        "basis",
+        "status",
+        "missing_reason",
+        "source"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "days": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "days"
+            ]
+          },
+          "then": {
+            "properties": {
+              "date_precision": {
+                "const": "day"
+              },
+              "status": {
+                "const": "present"
+              },
+              "date_used": {
+                "type": "string",
+                "format": "date"
+              },
+              "as_of": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "normalized_metric": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "enum": [
+            "fwci",
+            "citation_normalized_percentile",
+            "cited_by_percentile_year_min",
+            "cited_by_percentile_year_max"
+          ]
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "status": {
+          "enum": [
+            "present",
+            "not_requested",
+            "missing_identifier",
+            "not_found",
+            "not_exposed",
+            "not_public",
+            "field_missing",
+            "rate_limited",
+            "budget_exhausted",
+            "transport_error",
+            "parse_error",
+            "identifier_conflict",
+            "invalid_value",
+            "not_applicable",
+            "access_denied",
+            "partial_response",
+            "not_observed",
+            "rubric_unverified"
+          ]
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "window": {
+          "$ref": "#/$defs/window"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "method_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "normalization": {
+          "type": "object",
+          "properties": {
+            "provided_by_source": {
+              "const": true
+            },
+            "cohort_dimensions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "cohort_year": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "work_type": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "subfield_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "definition_url": {
+              "type": "string"
+            },
+            "scale": {
+              "enum": [
+                "ratio_world_mean_1",
+                "fraction_0_1",
+                "percentile_0_100",
+                "source_raw_unverified"
+              ]
+            }
+          },
+          "required": [
+            "provided_by_source",
+            "cohort_dimensions",
+            "cohort_year",
+            "work_type",
+            "subfield_id",
+            "definition_url",
+            "scale"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metric",
+        "value",
+        "status",
+        "missing_reason",
+        "as_of",
+        "unit",
+        "window",
+        "source",
+        "method_version",
+        "caveats",
+        "normalization"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "missing_reason": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "null"
+              },
+              "missing_reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "usage_metric": {
+      "type": "object",
+      "properties": {
+        "metric": {
+          "enum": [
+            "article_views",
+            "abstract_views",
+            "fulltext_views",
+            "pdf_downloads",
+            "fulltext_downloads",
+            "video_views",
+            "repository_stars"
+          ]
+        },
+        "value": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "status": {
+          "enum": [
+            "present",
+            "not_requested",
+            "missing_identifier",
+            "not_found",
+            "not_exposed",
+            "not_public",
+            "field_missing",
+            "rate_limited",
+            "budget_exhausted",
+            "transport_error",
+            "parse_error",
+            "identifier_conflict",
+            "invalid_value",
+            "not_applicable",
+            "access_denied",
+            "partial_response",
+            "not_observed",
+            "rubric_unverified"
+          ]
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "window": {
+          "$ref": "#/$defs/window"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "method_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "caveats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "definition": {
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "single_article",
+            "single_artifact",
+            "unknown"
+          ]
+        },
+        "counting_rules": {
+          "type": "object",
+          "properties": {
+            "unique_or_total": {
+              "enum": [
+                "unique",
+                "total",
+                "unknown"
+              ]
+            },
+            "bot_filtering": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "repeat_deduplication": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "counter_release": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "unique_or_total",
+            "bot_filtering",
+            "repeat_deduplication",
+            "counter_release"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "metric",
+        "value",
+        "status",
+        "missing_reason",
+        "as_of",
+        "unit",
+        "window",
+        "source",
+        "method_version",
+        "caveats",
+        "definition",
+        "scope",
+        "counting_rules"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "present"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "missing_reason": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "null"
+              },
+              "missing_reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "public_review": {
+      "type": "object",
+      "properties": {
+        "forum_id": {
+          "type": "string"
+        },
+        "note_id": {
+          "type": "string"
+        },
+        "reply_to": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "invitation_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "venue": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "track": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "round": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "official_review",
+            "meta_review",
+            "decision",
+            "official_program_decision"
+          ]
+        },
+        "decision_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "public_status": {
+          "enum": [
+            "public",
+            "public_program_only"
+          ]
+        },
+        "rating_field": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rating_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rating_numeric": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rating_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence_numeric": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rubric": {
+          "type": "object",
+          "properties": {
+            "invitation_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "invitation_version": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "rubric_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "rubric_sha256": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "options_raw": {},
+            "direction": {
+              "enum": [
+                "higher_better",
+                "lower_better",
+                "unordered",
+                "unknown"
+              ]
+            },
+            "verified": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "invitation_id",
+            "invitation_version",
+            "rubric_url",
+            "rubric_sha256",
+            "options_raw",
+            "direction",
+            "verified"
+          ],
+          "additionalProperties": false
+        },
+        "comparable_group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "forum_id",
+        "note_id",
+        "reply_to",
+        "invitation_id",
+        "venue",
+        "year",
+        "track",
+        "round",
+        "kind",
+        "decision_raw",
+        "public_status",
+        "rating_field",
+        "rating_raw",
+        "rating_numeric",
+        "rating_label",
+        "confidence_raw",
+        "confidence_numeric",
+        "rubric",
+        "comparable_group",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "artifact_link": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "code",
+            "data",
+            "model",
+            "benchmark",
+            "supplement",
+            "project",
+            "video",
+            "other"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "relation": {
+          "enum": [
+            "author_provided",
+            "venue_provided",
+            "paper_text_link",
+            "third_party_implementation",
+            "unknown"
+          ]
+        },
+        "evidence_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linked_from": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "availability": {
+          "enum": [
+            "link_observed",
+            "reachable",
+            "unreachable",
+            "not_checked"
+          ]
+        },
+        "checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "reproducibility_claim": {
+          "const": "not_assessed"
+        }
+      },
+      "required": [
+        "kind",
+        "url",
+        "relation",
+        "evidence_text",
+        "linked_from",
+        "source",
+        "availability",
+        "checked_at",
+        "reproducibility_claim"
+      ],
+      "additionalProperties": false
+    },
+    "integrity_event": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "retraction",
+            "correction",
+            "expression_of_concern",
+            "withdrawal",
+            "reinstatement"
+          ]
+        },
+        "assertion": {
+          "enum": [
+            "reported",
+            "not_flagged_by_source",
+            "unresolved"
+          ]
+        },
+        "notice_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notice_doi": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "original_doi": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "event_date_precision": {
+          "enum": [
+            "day",
+            "month",
+            "year",
+            "unknown"
+          ]
+        },
+        "evidence_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "kind",
+        "assertion",
+        "notice_url",
+        "notice_doi",
+        "original_doi",
+        "event_date",
+        "event_date_precision",
+        "evidence_text",
+        "source"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "x_csv_projection": [
+    {
+      "name": "citation_count",
+      "type": "integer_or_empty",
+      "mapping": "selected citation_count metric.value"
+    },
+    {
+      "name": "citation_provider",
+      "type": "string_or_empty",
+      "mapping": "selected source.provider"
+    },
+    {
+      "name": "citation_as_of",
+      "type": "datetime_or_empty",
+      "mapping": "selected as_of; retrieval observation, not source internal cutoff"
+    },
+    {
+      "name": "citation_status",
+      "type": "enum",
+      "mapping": "selected status; missing_reason remains in impact_metrics_json"
+    },
+    {
+      "name": "publication_age_days",
+      "type": "integer_or_empty",
+      "mapping": "publication_age.days; exact day known only, basis/as_of in JSON"
+    },
+    {
+      "name": "impact_metrics_json",
+      "type": "json_object",
+      "mapping": "full sidecar: alternatives, normalized metrics, usage definitions, reviews, links, integrity and provenance"
+    },
+    {
+      "name": "views_count",
+      "type": "integer_or_empty",
+      "mapping": "OPTIONAL: only introduce when real article-level views exist; provider/as_of/definition/window/status in JSON"
+    },
+    {
+      "name": "downloads_count",
+      "type": "integer_or_empty",
+      "mapping": "OPTIONAL: only introduce when real article-level downloads exist; provider/as_of/definition/window/status in JSON"
+    }
+  ],
+  "x_csv_required_first_release": [
+    "citation_count",
+    "citation_provider",
+    "citation_as_of",
+    "citation_status",
+    "publication_age_days",
+    "impact_metrics_json"
+  ],
+  "x_csv_optional_only_if_observed": [
+    "views_count",
+    "downloads_count"
+  ],
+  "x_csv_policy": {
+    "encoding": "UTF-8, RFC4180",
+    "null_scalar": "empty string",
+    "json_unknown": "null",
+    "known_empty_array": "[]",
+    "join": "paper_id, 1:1 left join; preserve master row count/order and all previous column values",
+    "selection": "OpenAlex first when present and join-verified; otherwise Semantic Scholar, explicitly labeled. Do not select the larger count. All providers retained. For comparisons require one provider and similar as_of; mixed-provider default sort must show warning.",
+    "unknown_order": "unknown values sort last; explicit numeric zero remains zero"
+  },
+  "x_invariants": [
+    "No fuzzy-title auto-join, no automatic title-only merge; ambiguous identity remains unresolved.",
+    "Citation count and usage count are attention/impact signals, not automatic scientific quality or junk labels.",
+    "No aggregate quality score, no automatic exclusion by low citation/view count.",
+    "Zero is valid only if explicitly returned by provider; null/missing/429/403 never become zero.",
+    "Every present numeric observation needs source record, source URL, raw field and raw SHA256; as_of is retrieval time if known, otherwise null and caveat asof_unknown.",
+    "Provider updated_date is not a citation counting cutoff; store separately.",
+    "Normalized values must be supplied by source, not calculated from the incomplete master CSV.",
+    "Do not sum provider citation counts; preprint/published and merged-ID mappings require evidence.",
+    "counts_by_year is a rolling ten-year sparse history, not a lifetime total; filling absent years with zero is permissible only inside documented covered years after successful retrieval.",
+    "Only comparable_group with same venue/year/track/round/rubric hash supports any review summary; retain every raw label and score.",
+    "Video views, repository stars, site-wide/venue-wide downloads are never article view/download counts.",
+    "No author identifiers or inferred reviewer identities are required for public review metrics.",
+    "An observed artifact link or available PDF is not a reproduced result or data/code verification.",
+    "Not flagged is not proof of no retraction; corrections, concern, withdrawal and reinstatement are different events.",
+    "Empty arrays mean no collected observations; collection_status distinguishes not_requested from checked-with-no-records.",
+    "Collect missing/coverage counts from actual attempts grouped by provider, venue/year and ID availability, never from API documentation."
+  ]
+}

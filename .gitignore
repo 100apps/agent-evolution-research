@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 *.zip
 mobile_packages/
+conference-addon-restored/
 research_trends/DELIVERY_IDS.json
 .pytest_cache/
 .coverage
@@ -14,3 +15,5 @@ Thumbs.db
 .library_*/
 .pages-build/
 
+research_transfer/
+research_trends/conferences/processed/author_enrichment.csv

@@ -1,0 +1,91 @@
+{
+  "result": "PASS",
+  "files_verified": 17,
+  "checks": [
+    {
+      "file": "change_decomposition.csv",
+      "byte_identical": true,
+      "sha256": "bc29e2aae93bb83247b1422d8fb075ee3d145dd1367494a3cf126e8b4a6c76f8"
+    },
+    {
+      "file": "change_decomposition_by_venue.csv",
+      "byte_identical": true,
+      "sha256": "8c5e432afd43523b242dd660d31080be31d51153cfb7e7d91a1a00ad0d48a068"
+    },
+    {
+      "file": "common_topic_rules.json",
+      "byte_identical": true,
+      "sha256": "98b14743a67967b3ab43a696f4f33104a2f2a5e84b45898c94092bc8c3a67005"
+    },
+    {
+      "file": "coverage_common.csv",
+      "byte_identical": true,
+      "sha256": "35d43974148ec35b58951fe02e5462005aee8b8b5b96ad53c0c7eeb29a1edb1e"
+    },
+    {
+      "file": "fixed_basket_2020_2025.csv",
+      "byte_identical": true,
+      "sha256": "8cf7eb62201c52f786026218ff73c92a199c39b8db801498076191e4e7bcbb7a"
+    },
+    {
+      "file": "fixed_basket_2020_2025.json",
+      "byte_identical": true,
+      "sha256": "d897af2005fc634d3b782c6ba27a65191c05c15ac8eda254bc367b51247949eb"
+    },
+    {
+      "file": "fixed_basket_headline_deltas.csv",
+      "byte_identical": true,
+      "sha256": "7a4ddef3facc347a900467f7dd9febc7f65ce9d95ca83c5e1fbcf391864fef9a"
+    },
+    {
+      "file": "fixed_basket_headline_deltas.json",
+      "byte_identical": true,
+      "sha256": "7e4706607f1d4a5d6119656310ef27481091dda6aeb821b84a6af01485db7658"
+    },
+    {
+      "file": "illustrative_title_examples.json",
+      "byte_identical": true,
+      "sha256": "bbd1540877aef33967420a63986a8ef944415afa8d79be9d5d755e9ac10aa8bf"
+    },
+    {
+      "file": "key_definition_sensitivities.csv",
+      "byte_identical": true,
+      "sha256": "9b9c4752aeb30ebb5d9813c162cde15fca9fff6cd4065e794ba898097ecd201f"
+    },
+    {
+      "file": "normalized_title_corpus.jsonl",
+      "byte_identical": true,
+      "sha256": "4fd17d09d17cb68faf4271d85e9b74ee53de31db244c871410a29efb4a2a032c"
+    },
+    {
+      "file": "osdi_2026_scopebreak_separate.csv",
+      "byte_identical": true,
+      "sha256": "b2eeb2bf8354edc16728eb30c3c7a334ea1e9e367c0824d63e1e5f7c99bbb5e0"
+    },
+    {
+      "file": "paired_2025_2026.csv",
+      "byte_identical": true,
+      "sha256": "db5558ec7714bf3e518e5823a075e15ece1128bd4dc50bb5831bd769f640b40f"
+    },
+    {
+      "file": "source_urls_by_venue_year.csv",
+      "byte_identical": true,
+      "sha256": "c07721935575c0af08d40ce905a3084611ff80ad3807ab4a68080408d2ea4307"
+    },
+    {
+      "file": "venue_2020_2025_deltas.csv",
+      "byte_identical": true,
+      "sha256": "f4a81bc92c002d5ab0aa56138d4edf640e80f1cc3667045261316dcfd09577b5"
+    },
+    {
+      "file": "venue_year_topic_counts.csv",
+      "byte_identical": true,
+      "sha256": "86fcaab110fa8f4c16a1146470d820c6a2605eee952562238bb89a05df00bbba"
+    },
+    {
+      "file": "venue_year_topic_counts.json",
+      "byte_identical": true,
+      "sha256": "a26b2ed8a229945a096c539a8f917987ed5d82cdc7db5af09080340b1ca71398"
+    }
+  ]
+}

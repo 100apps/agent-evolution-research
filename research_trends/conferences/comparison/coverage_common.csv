@@ -1,0 +1,71 @@
+﻿venue,year,n_records,analysis_status,in_fixed_basket_2020_2025,notes
+ACL,2020,778,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ACL,2021,710,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ACL,2022,700,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ACL,2023,1075,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ACL,2024,940,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ACL,2025,1699,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ACL,2026,2296,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2020,1466,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2021,1660,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2022,2074,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2023,2353,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2024,2716,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2025,2871,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+CVPR,2026,4042,source_census,False,4042 indexed papers versus 4089 announced acceptances; cause unknown.
+ICLR,2020,687,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICLR,2021,860,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICLR,2022,1095,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICLR,2023,1574,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICLR,2024,2260,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICLR,2025,3705,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICLR,2026,5353,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2020,1084,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2021,1183,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2022,1233,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2023,1828,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2024,2535,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2025,3257,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICML,2026,6340,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2020,129,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2021,138,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2022,197,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2023,207,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2024,234,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2025,245,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+ICSE,2026,321,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2020,217,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2021,239,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2022,253,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2023,313,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2024,411,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2025,552,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+KDD,2026,785,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2020,1898,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2021,2334,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2022,2671,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2023,3218,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2024,4034,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2025,5286,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+NeurIPS,2026,5522,provisional_excluded,False,Incomplete pre-conference program; excluded from all trend deltas/panels.
+OSDI,2020,70,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+OSDI,2021,31,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+OSDI,2022,49,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+OSDI,2023,55,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+OSDI,2024,53,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+OSDI,2025,53,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+OSDI,2026,117,scope_break_separate,False,117 research only; 19 new Operational Systems omitted. Acceptance/format/scope changes remain; separate endpoint.
+SIGIR,2020,147,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+SIGIR,2021,151,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+SIGIR,2022,161,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+SIGIR,2023,165,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+SIGIR,2024,160,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+SIGIR,2025,239,source_census,True,Title-only; main/research source census; accepted list is not identical to published census.
+SIGIR,2026,233,source_census,False,233 listed full papers versus 234 stated; preliminary acceptance list.
+SOSP,2020,,no_edition,False,"No edition. Missing calendar cell, NOT zero topical activity."
+SOSP,2021,54,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+SOSP,2022,,no_edition,False,"No edition. Missing calendar cell, NOT zero topical activity."
+SOSP,2023,43,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+SOSP,2024,43,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+SOSP,2025,66,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.
+SOSP,2026,62,source_census,False,Title-only; main/research source census; accepted list is not identical to published census.

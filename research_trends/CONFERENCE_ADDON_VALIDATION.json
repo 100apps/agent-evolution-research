@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "date_utc": "2026-10-09",
+  "python_scripts_syntax_checked": 16,
+  "lexical_regression_tests_passed": 6,
+  "comparison_reproduced_files_byte_identical": 17,
+  "restored_metadata_records": 6193,
+  "restored_metadata_sha256": "ec487b5b31e1589c7ca3032570023e76cfc3172ca1d6045b5d84e2fb9689cfd2",
+  "audit_offline_frame_positive": 2557,
+  "audit_offline_frame_eligible": 2543,
+  "audit_sample_identical": 60,
+  "audit_reproduced_json_csv_content_checks": 5,
+  "audit_portable_third_party_dependencies": false,
+  "full_base_corpus_needed_for_comparison": true,
+  "browser_visual_qa": "NOT RUN: original Chromium environment denied socket creation. Structural HTML and data checks are not a visual QA pass.",
+  "source_mutation": "None: all portability additions were made in a separate packaging tree. Original sources retained."
+}

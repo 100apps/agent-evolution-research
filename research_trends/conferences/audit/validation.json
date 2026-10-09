@@ -1,0 +1,27 @@
+{
+  "sample_n": 60,
+  "unique_paper_ids": 60,
+  "all_nonempty_abstracts": true,
+  "no_neurips_2026": true,
+  "exact_quote_substrings": true,
+  "all_quotes_max25_words": true,
+  "all_https_paper_urls": true,
+  "positive_probabilities": true,
+  "inverse_probability_weights_correct": true,
+  "weights_sum_to_eligible_population": true,
+  "finite_population_corrections_correct": true,
+  "census_ci_collapses": true,
+  "compact_summary_matches": true,
+  "compact_source_manifest_matches": true,
+  "compact_all60_records_match": true,
+  "compact_under80kb": true,
+  "reproduced_files_identical": {
+    "audit_sample_unlabeled.json": true,
+    "agent_abstract_audit.json": true,
+    "agent_abstract_audit.csv": true,
+    "audit_summary.json": true,
+    "audit_stratum_summary.csv": true,
+    "sampling_manifest.json": true
+  },
+  "all_main_checks_pass": true
+}
