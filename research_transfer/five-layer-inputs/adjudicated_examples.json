@@ -1,0 +1,1533 @@
+{
+  "note_zh": "17 个使用本地标题+摘要的 AI 示范判定，另有 1 个真实缺摘要例子。非人工金标准，不作为自动分类准确率估计。",
+  "examples": [
+    {
+      "example_id": "EX01",
+      "paper_id": "openreview:aIok3ZD9to",
+      "title": "LLMCarbon: Modeling the End-to-End Carbon Footprint of Large Language Models",
+      "abstract": "The carbon footprint associated with large language models (LLMs) is a significant concern, encompassing emissions from their training, inference, experimentation, and storage processes, including operational and embodied carbon emissions. An essential aspect is accurately estimating the carbon impact of emerging LLMs even before their training, which heavily relies on GPU usage. Existing studies have reported the carbon footprint of LLM training, but only one tool, mlco2, can predict the carbon footprint of new neural networks prior to physical training. However, mlco2 has several serious limitations. It cannot extend its estimation to dense or mixture-of-experts (MoE) LLMs, disregards critical architectural parameters, focuses solely on GPUs, and cannot model embodied carbon footprints. Addressing these gaps, we introduce \\textit{\\carb}, an end-to-end carbon footprint projection model designed for both dense and MoE LLMs. Compared to mlco2, \\carb~significantly enhances the accuracy of carbon footprint estimations for various LLMs. The source code is released at \\url{https://github.com/SotaroKaneda/MLCarbon}.",
+      "venue": "ICLR",
+      "year": 2024,
+      "official_url": "https://openreview.net/forum?id=aIok3ZD9to",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 5472,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "E.02.01"
+      ],
+      "category_ids_l2_json": [
+        "E.02"
+      ],
+      "category_ids_l1_json": [
+        "E"
+      ],
+      "category_paths_json": [
+        [
+          "E",
+          "E.02",
+          "E.02.01"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "E.02.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 5472
+          },
+          "span_start": 855,
+          "span_end": 899,
+          "quote": "end-to-end carbon footprint projection model",
+          "rationale_zh": "模型在此指碳核算工具；中心目标是 AI 生命周期碳。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "evaluation": [
+          "carbon",
+          "energy"
+        ],
+        "stage": [
+          "cross_lifecycle"
+        ],
+        "contribution_type": [
+          "measurement_tool"
+        ],
+        "model_scope": [
+          "not_applicable"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "C",
+        "M"
+      ],
+      "boundary_reason_zh": "不是新 AI 模型或新 GPU；测量工具名称含 Modeling 不决定层。",
+      "text_sha256": "3e58d1b0cd30bf1f10f59118d3628fdbc3ce6d60328cb7d701adbc239f6e1a70",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX02",
+      "paper_id": "openreview:LmUJqB1Cz8",
+      "title": "Winning the L2RPN Challenge: Power Grid Management via Semi-Markov Afterstate Actor-Critic",
+      "abstract": "Safe and reliable electricity transmission in power grids is crucial for modern society. It is thus quite natural that there has been a growing interest in the automatic management of power grids, exempliﬁed by the Learning to Run a Power Network Challenge (L2RPN), modeling the problem as a reinforcement learning (RL) task. However, it is highly challenging to manage a real-world scale power grid, mostly due to the massive scale of its state and action space. In this paper, we present an off-policy actor-critic approach that effectively tackles the unique challenges in power grid management by RL, adopting the hierarchical policy together with the afterstate representation. Our agent ranked ﬁrst in the latest challenge (L2RPN WCCI 2020), being able to avoid disastrous situations while maintaining the highest level of operational efﬁciency in every test scenarios. This paper provides a formal description of the algorithmic aspect of our approach, as well as further experimental studies on diverse power grids.",
+      "venue": "ICLR",
+      "year": 2021,
+      "official_url": "https://openreview.net/forum?id=LmUJqB1Cz8",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2021-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 979,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "A.03.03",
+        "M.02.03"
+      ],
+      "category_ids_l2_json": [
+        "M.02",
+        "A.03"
+      ],
+      "category_ids_l1_json": [
+        "M",
+        "A"
+      ],
+      "category_paths_json": [
+        [
+          "A",
+          "A.03",
+          "A.03.03"
+        ],
+        [
+          "M",
+          "M.02",
+          "M.02.03"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "A.03.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2021-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 979
+          },
+          "span_start": 160,
+          "span_end": 195,
+          "quote": "automatic management of power grids",
+          "rationale_zh": "电网管理是 AI 应用目标。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "M.02.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2021-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 979
+          },
+          "span_start": 479,
+          "span_end": 525,
+          "quote": "we present an off-policy actor-critic approach",
+          "rationale_zh": "提出算法来解决状态/行动空间挑战，有方法层贡献。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "reinforcement_learning"
+        ],
+        "task": [
+          "control"
+        ],
+        "domain": [
+          "energy_environment"
+        ],
+        "agent_form": [
+          "non_llm_agent"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "E",
+        "A.01"
+      ],
+      "boundary_reason_zh": "电网是 AI 的使用对象；不是给 AI 供能。传统 RL agent 不等于 LLM harness。",
+      "text_sha256": "a47bb37a58315ef2fd1fccf7f063a993d0b90a5d9e39c00c561ef7dbb6a88e92",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX03",
+      "paper_id": "openreview:GsH-K1VIyy",
+      "title": "Data-Driven Offline Optimization for Architecting Hardware Accelerators",
+      "abstract": "To attain higher efficiency, the industry has gradually reformed towards application-specific hardware accelerators. While such a paradigm shift is already starting to show promising results, designers need to spend considerable manual effort and perform large number of time-consuming simulations to find accelerators that can accelerate multiple target applications while obeying design constraints. Moreover, such a simulation-driven approach must be re-run from scratch every time the set of target applications or design constraints change. An alternative paradigm is to use a data-driven, offline approach that utilizes logged simulation data, to architect hardware accelerators, without needing any form of simulations. Such an approach not only alleviates the need to run time-consuming simulation, but also enables data reuse and applies even when set of target applications changes. In this paper, we develop such a data-driven offline optimization method for designing hardware accelerators, dubbed PRIME, that enjoys all of these properties. Our approach learns a conservative, robust estimate of the desired cost function, utilizes infeasible points and optimizes the design against this estimate without any additional simulator queries during optimization. PRIME architects accelerators---tailored towards both single- and multi-applications---improving performance upon stat-of-the-art simulation-driven methods by about 1.54x and 1.20x, while considerably reducing the required total simulation time by 93% and 99%, respectively. In addition, PRIME also architects effective accelerators for unseen applications in a zero-shot setting, outperforming simulation-based methods by 1.26x.",
+      "venue": "ICLR",
+      "year": 2022,
+      "official_url": "https://openreview.net/forum?id=GsH-K1VIyy",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 1850,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "A.03.02",
+        "M.02.03"
+      ],
+      "category_ids_l2_json": [
+        "M.02",
+        "A.03"
+      ],
+      "category_ids_l1_json": [
+        "M",
+        "A"
+      ],
+      "category_paths_json": [
+        [
+          "A",
+          "A.03",
+          "A.03.02"
+        ],
+        [
+          "M",
+          "M.02",
+          "M.02.03"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "A.03.02",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 1850
+          },
+          "span_start": 908,
+          "span_end": 1001,
+          "quote": "we develop such a data-driven offline optimization method for designing hardware accelerators",
+          "rationale_zh": "用学习方法做硬件工程设计。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "M.02.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 1850
+          },
+          "span_start": 1067,
+          "span_end": 1134,
+          "quote": "learns a conservative, robust estimate of the desired cost function",
+          "rationale_zh": "离线学习优化方法也是核心贡献。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "hardware_design"
+        ],
+        "domain": [
+          "science_engineering"
+        ],
+        "contribution_type": [
+          "algorithm",
+          "application_workflow"
+        ],
+        "model_scope": [
+          "task_specialized"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "C"
+      ],
+      "boundary_reason_zh": "摘要未明确目标是 AI 芯片。不能只因 accelerator 一词加 Chips；补全文确认 AI 加速器研究对象后可加 C.01.04。",
+      "text_sha256": "21f5e3ccd6d9bf6d4c3e85d0ad4724d60b0de06c0288c17f3d9e0e484cd2f3ff",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX04",
+      "paper_id": "neurips:2022:67d57c32e20fd0a7a302cb81d36e40d5",
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "abstract": "Transformers are slow and memory-hungry on long sequences, since the time and memory complexity of self-attention are quadratic in sequence length. Approximate attention methods have attempted to address this problem by trading off model quality to reduce the compute complexity, but often do not achieve wall-clock speedup. We argue that a missing principle is making attention algorithms IO-aware---accounting for reads and writes between levels of GPU memory. We propose FlashAttention, an IO-aware exact attention algorithm that uses tiling to reduce the number of memory reads/writes between GPU high bandwidth memory (HBM) and GPU on-chip SRAM. We analyze the IO complexity of FlashAttention, showing that it requires fewer HBM accesses than standard attention, and is optimal for a range of SRAM sizes. We also extend FlashAttention, yielding an approximate attention algorithm that is faster than any existing approximate attention method. FlashAttention, 3x speedup on GPT-2 (seq. length 1K), and 2.4x speedup on long-range arena (seq. length 1K-4K). FlashAttention, yielding higher quality models (0.7 better perplexity on GPT-2 and 6.4 points of lift on long-document classification) and entirely new capabilities: the first Transformers to achieve better-than-chance performance on the Path-X challenge (seq. length 16K, 61.4% accuracy) and Path-256 (seq. length 64K, 63.1% accuracy).",
+      "venue": "NeurIPS",
+      "year": 2022,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2022/hash/67d57c32e20fd0a7a302cb81d36e40d5-Abstract-Conference.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2022-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 38350,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "I.02.01"
+      ],
+      "category_ids_l2_json": [
+        "I.02"
+      ],
+      "category_ids_l1_json": [
+        "I"
+      ],
+      "category_paths_json": [
+        [
+          "I",
+          "I.02",
+          "I.02.01"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "I.02.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2022-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 38350
+          },
+          "span_start": 490,
+          "span_end": 544,
+          "quote": "an IO-aware exact attention algorithm that uses tiling",
+          "rationale_zh": "中心贡献是既有 GPU 上的 attention 执行及 IO 优化。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "kernel_compilation"
+        ],
+        "evaluation": [
+          "latency",
+          "memory_usage"
+        ],
+        "contribution_type": [
+          "algorithm",
+          "software_system"
+        ],
+        "model_scope": [
+          "general_method"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "C",
+        "E"
+      ],
+      "boundary_reason_zh": "HBM、SRAM、GPU 是执行平台；没有提出芯片，也不能把吞吐提升自动当能源研究。",
+      "text_sha256": "6837436190d389510df13be66aa30044168c55b9c1f2a3b84340fb17bff82fd6",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX05",
+      "paper_id": "neurips:2020:1457c0d6bfcb4967418bfb8ac142f64a",
+      "title": "Language Models are Few-Shot Learners",
+      "abstract": "We demonstrate that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even becoming competitive with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks. We also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora.",
+      "venue": "NeurIPS",
+      "year": 2020,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 33153,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.01.01",
+        "M.02.01",
+        "M.04.01"
+      ],
+      "category_ids_l2_json": [
+        "M.01",
+        "M.02",
+        "M.04"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.01",
+          "M.01.01"
+        ],
+        [
+          "M",
+          "M.02",
+          "M.02.01"
+        ],
+        [
+          "M",
+          "M.04",
+          "M.04.01"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.01.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 33153
+          },
+          "span_start": 203,
+          "span_end": 279,
+          "quote": "we train GPT-3, an autoregressive language model with 175 billion parameters",
+          "rationale_zh": "新通用语言模型产物。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "M.02.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 33153
+          },
+          "span_start": 20,
+          "span_end": 99,
+          "quote": "scaling up language models greatly improves task-agnostic, few-shot performance",
+          "rationale_zh": "主要研究规模与通用能力。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "M.04.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 33153
+          },
+          "span_start": 477,
+          "span_end": 553,
+          "quote": "few-shot demonstrations specified purely via text interaction with the model",
+          "rationale_zh": "无梯度的上下文示例使用是中心结果。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "foundation_model",
+          "in_context_learning"
+        ],
+        "stage": [
+          "pretraining",
+          "inference"
+        ],
+        "model_scope": [
+          "foundation"
+        ],
+        "contribution_type": [
+          "model_artifact",
+          "empirical_analysis"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "I",
+        "C"
+      ],
+      "boundary_reason_zh": "规模大或训练用 GPU 本身不能证明分布式系统或芯片贡献。",
+      "text_sha256": "5e4449b6d03303c2e879ab0774efa9707c62646fdbc1df01d5428502f187ceb7",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX06",
+      "paper_id": "neurips:2023:a85b405ed65c6477a4fe8302b5e06ce7",
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "abstract": "While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper, we leverage a mapping between reward functions and optimal policies to show that this constrained reward maximization problem can be optimized exactly with a single stage of policy training, essentially solving a classification problem on the human preference data. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for fitting a reward model, sampling from the LM during fine-tuning, or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds RLHF's ability to control sentiment of generations and improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train.",
+      "venue": "NeurIPS",
+      "year": 2023,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 42016,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.03.02"
+      ],
+      "category_ids_l2_json": [
+        "M.03"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.03",
+          "M.03.02"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.03.02",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 42016
+          },
+          "span_start": 940,
+          "span_end": 1030,
+          "quote": "policy training, essentially solving a classification problem on the human preference data",
+          "rationale_zh": "以偏好数据直接优化已有语言模型。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "preference_optimization"
+        ],
+        "stage": [
+          "posttraining"
+        ],
+        "model_scope": [
+          "foundation"
+        ],
+        "contribution_type": [
+          "algorithm"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "M.05.03",
+        "I",
+        "C"
+      ],
+      "boundary_reason_zh": "对齐偏好不自动等于具体安全研究；算法更轻量不自动变成系统论文。",
+      "text_sha256": "c0d66859fccb5ac074d57eff89857e7bc2e9a20b4f363b22044fd45b920fd7f5",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX07",
+      "paper_id": "openreview:nZeVKeeFYf9",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "abstract": "An important paradigm of natural language processing consists of large-scale pre-training on general domain data and adaptation to particular tasks or domains. As we pre-train larger models, full fine-tuning, which retrains all model parameters, becomes less feasible.Using GPT-3 175B as an example -- deploying independent instances of fine-tuned models, each with 175B parameters, is prohibitively expensive. We propose Low-Rank Adaptation, or LoRA, which freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture, greatly reducing the number of trainable parameters for downstream tasks. Compared to GPT-3 175B fine-tuned with Adam, LoRA can reduce the number of trainable parameters by a factor of 10,000 and the GPU memory requirement by a factor of 3. LoRA performs on-par or better than fine-tuning in model quality on RoBERTa, DeBERTa, GPT-2, and GPT-3, despite having fewer trainable parameters, a higher training throughput, and, unlike adapters, no additional inference latency. We also provide an empirical investigation into rank-deficiency in language model adaptation, which sheds light on the efficacy of LoRA. We release a package that facilitates the integration of LoRA with PyTorch models and provide our implementations and model checkpoints for RoBERTa, DeBERTa, and GPT-2 at https://github.com/microsoft/LoRA.",
+      "venue": "ICLR",
+      "year": 2022,
+      "official_url": "https://openreview.net/forum?id=nZeVKeeFYf9",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 2428,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.03.01"
+      ],
+      "category_ids_l2_json": [
+        "M.03"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.03",
+          "M.03.01"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.03.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2022-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 2428
+          },
+          "span_start": 458,
+          "span_end": 545,
+          "quote": "freezes the pre-trained model weights and injects trainable rank decomposition matrices",
+          "rationale_zh": "参数高效适配是主要方法。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "parameter_efficient_adaptation"
+        ],
+        "stage": [
+          "posttraining"
+        ],
+        "evaluation": [
+          "memory_usage",
+          "capability_accuracy"
+        ],
+        "model_scope": [
+          "foundation"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "C",
+        "I"
+      ],
+      "boundary_reason_zh": "GPU memory requirement 是结果；改变可训练参数不是芯片或 serving 系统。",
+      "text_sha256": "166cb5d901854cf7e3b10f68a006e7b8f372477926d1fd018b34c18636aa7519",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX08",
+      "paper_id": "neurips:2020:6b493230205f780e1bc26945df7481e5",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "abstract": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, but have so far been only investigated for extractive downstream tasks. We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation. We introduce RAG models where the parametric memory is a pre-trained seq2seq model and the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever. We compare two RAG formulations, one which conditions on the same retrieved passages across the whole generated sequence, the other can use different passages per token. We fine-tune and evaluate our models on a wide range of knowledge-intensive NLP tasks and set the state-of-the-art on three open domain QA tasks, outperforming parametric seq2seq models and task-specific retrieve-and-extract architectures. For language generation tasks, we find that RAG models generate more specific, diverse and factual language than a state-of-the-art parametric-only seq2seq baseline.",
+      "venue": "NeurIPS",
+      "year": 2020,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 33787,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.04.03"
+      ],
+      "category_ids_l2_json": [
+        "M.04"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.04",
+          "M.04.03"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.04.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 33787
+          },
+          "span_start": 776,
+          "span_end": 856,
+          "quote": "combine pre-trained parametric and non-parametric memory for language generation",
+          "rationale_zh": "检索与生成结合的模型方法。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "retrieval_augmented_generation"
+        ],
+        "task": [
+          "question_answering"
+        ],
+        "stage": [
+          "posttraining",
+          "inference"
+        ],
+        "model_scope": [
+          "foundation"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "I.03.03",
+        "A.01.02",
+        "A.02.02"
+      ],
+      "boundary_reason_zh": "使用向量索引不表示数据库引擎贡献；外部知识记忆不是 Agent 情节记忆；通用 QA 验证不等于办公应用。",
+      "text_sha256": "c70409e44884718a59d1aa73945702eb773ed3117b64ecc976b92df22c151a6a",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX09",
+      "paper_id": "neurips:2023:d842425e4bf79ba039352da0f658a906",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "abstract": "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller specialized models excel. In this paper, we show that LMs can teach themselves to *use external tools* via simple APIs and achieve the best of both worlds. We introduce *Toolformer*, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q&A system, a search engine, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.",
+      "venue": "NeurIPS",
+      "year": 2023,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 42620,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.04.04"
+      ],
+      "category_ids_l2_json": [
+        "M.04"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.04",
+          "M.04.04"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.04.04",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 42620
+          },
+          "span_start": 454,
+          "span_end": 517,
+          "quote": "a model trained to decide which APIs to call, when to call them",
+          "rationale_zh": "工具决策能力通过训练获得。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "self_supervised_learning"
+        ],
+        "stage": [
+          "posttraining"
+        ],
+        "agent_form": [
+          "llm_agent"
+        ],
+        "model_scope": [
+          "foundation"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "A.01.03"
+      ],
+      "boundary_reason_zh": "调用多个 API 是模型能力的训练目标；摘要没有独立工具连接平台贡献。",
+      "text_sha256": "bb8823a86cfc397b9ec5d021a81f6f52ecfdfd60a2b9188004f2247c8b146971",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX10",
+      "paper_id": "openreview:WE_vluYUL-X",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "abstract": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it to interface with external sources, such as knowledge bases or environments, to gather additional information. We apply our approach, named ReAct, to a diverse set of language and decision making tasks and demonstrate its effectiveness over state-of-the-art baselines, as well as improved human interpretability and trustworthiness over methods without reasoning or acting components. Concretely, on question answering (HotpotQA) and fact verification (Fever), ReAct overcomes issues of hallucination and error propagation prevalent in chain-of-thought reasoning by interacting with a simple Wikipedia API, and generates human-like task-solving trajectories that are more interpretable than baselines without reasoning traces. On two interactive decision making benchmarks (ALFWorld and WebShop), ReAct outperforms imitation and reinforcement learning methods by an absolute success rate of 34% and 10% respectively, while being prompted with only one or two in-context examples.",
+      "venue": "ICLR",
+      "year": 2023,
+      "official_url": "https://openreview.net/forum?id=WE_vluYUL-X",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2023-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 3470,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.04.02",
+        "A.01.01",
+        "M.04.01"
+      ],
+      "category_ids_l2_json": [
+        "M.04",
+        "A.01"
+      ],
+      "category_ids_l1_json": [
+        "M",
+        "A"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.04",
+          "M.04.02"
+        ],
+        [
+          "A",
+          "A.01",
+          "A.01.01"
+        ],
+        [
+          "M",
+          "M.04",
+          "M.04.01"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.04.02",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 3470
+          },
+          "span_start": 347,
+          "span_end": 428,
+          "quote": "generate both reasoning traces and task-specific actions in an interleaved manner",
+          "rationale_zh": "推理与行动耦合的方法贡献。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "A.01.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 3470
+          },
+          "span_start": 476,
+          "span_end": 575,
+          "quote": "reasoning traces help the model induce, track, and update action plans as well as handle exceptions",
+          "rationale_zh": "明确的计划/行动/异常处理交互循环。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "M.04.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 3470
+          },
+          "span_start": 1523,
+          "span_end": 1578,
+          "quote": "being prompted with only one or two in-context examples",
+          "rationale_zh": "少样本上下文实现也是方法的重要证据。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "in_context_learning",
+          "search_planning"
+        ],
+        "task": [
+          "interactive_goal_completion",
+          "reasoning"
+        ],
+        "agent_form": [
+          "llm_agent"
+        ],
+        "model_scope": [
+          "foundation"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "C",
+        "M.03.02"
+      ],
+      "boundary_reason_zh": "能跨 Models 与 Applications；没有权重 RL 证据不能归 RL 后训练。",
+      "text_sha256": "91486a9ebb7464fd8e3b3d4d8ce2d83c6c71f82b414e7f6956ed3bd3de75c5ea",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX11",
+      "paper_id": "neurips:2021:01894d6f048493d2cacde3c579c315a3",
+      "title": "ReAct: Out-of-distribution Detection With Rectified Activations",
+      "abstract": "Out-of-distribution (OOD) detection has received much attention lately due to its practical importance in enhancing the safe deployment of neural networks. One of the primary challenges is that models often produce highly confident predictions on OOD data, which undermines the driving principle in OOD detection that the model should only be confident about in-distribution samples. In this work, we propose ReAct—a simple and effective technique for reducing model overconfidence on OOD data. Our method is motivated by novel analysis on internal activations of neural networks, which displays highly distinctive signature patterns for OOD distributions. Our method can generalize effectively to different network architectures and different OOD detection scores. We empirically demonstrate that ReAct achieves competitive detection performance on a comprehensive suite of benchmark datasets, and give theoretical explication for our method’s efficacy. On the ImageNet benchmark, ReAct reduces the false positive rate (FPR95) by 25.05% compared to the previous best method.",
+      "venue": "NeurIPS",
+      "year": 2021,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2021/hash/01894d6f048493d2cacde3c579c315a3-Abstract.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2021-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 34904,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.05.02"
+      ],
+      "category_ids_l2_json": [
+        "M.05"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.05",
+          "M.05.02"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.05.02",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2021-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 34904
+          },
+          "span_start": 438,
+          "span_end": 493,
+          "quote": "technique for reducing model overconfidence on OOD data",
+          "rationale_zh": "此 ReAct 是 OOD 检测方法。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "evaluation": [
+          "robustness",
+          "uncertainty_calibration"
+        ],
+        "model_scope": [
+          "general_method"
+        ],
+        "contribution_type": [
+          "algorithm"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "A.01",
+        "M.04.02"
+      ],
+      "boundary_reason_zh": "与 2023 年同名 ReAct 不同。只靠简称会误标 Agent。",
+      "text_sha256": "0e387f8b086835b13243092f60fe5bbcbec252079d8411053bce60e5b3bcb50a",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX12",
+      "paper_id": "neurips:2023:1b44b878bb782e6954cd888628510e90",
+      "title": "Reflexion: language agents with verbal reinforcement learning",
+      "abstract": "Large language models (LLMs) have been increasingly used to interact with external environments (e.g., games, compilers, APIs) as goal-driven agents. However, it remains challenging for these language agents to quickly and efficiently learn from trial-and-error as traditional reinforcement learning methods require extensive training samples and expensive model fine-tuning. We propose \\emph{Reflexion}, a novel framework to reinforce language agents not by updating weights, but instead through linguistic feedback. Concretely, Reflexion agents verbally reflect on task feedback signals, then maintain their own reflective text in an episodic memory buffer to induce better decision-making in subsequent trials. Reflexion is flexible enough to incorporate various types (scalar values or free-form language) and sources (external or internally simulated) of feedback signals, and obtains significant improvements over a baseline agent across diverse tasks (sequential decision-making, coding, language reasoning). For example, Reflexion achieves a 91\\% pass@1 accuracy on the HumanEval coding benchmark, surpassing the previous state-of-the-art GPT-4 that achieves 80\\%. We also conduct ablation and analysis studies using different feedback signals, feedback incorporation methods, and agent types, and provide insights into how they affect performance. We release all code, demos, and datasets at \\url{https://github.com/noahshinn024/reflexion}.",
+      "venue": "NeurIPS",
+      "year": 2023,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 40241,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "A.01.01",
+        "A.01.02"
+      ],
+      "category_ids_l2_json": [
+        "A.01"
+      ],
+      "category_ids_l1_json": [
+        "A"
+      ],
+      "category_paths_json": [
+        [
+          "A",
+          "A.01",
+          "A.01.01"
+        ],
+        [
+          "A",
+          "A.01",
+          "A.01.02"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "A.01.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 40241
+          },
+          "span_start": 405,
+          "span_end": 475,
+          "quote": "a novel framework to reinforce language agents not by updating weights",
+          "rationale_zh": "围绕已有模型的反馈工作流。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "A.01.02",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2023-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 40241
+          },
+          "span_start": 595,
+          "span_end": 658,
+          "quote": "maintain their own reflective text in an episodic memory buffer",
+          "rationale_zh": "Agent 持久情节记忆是中心设计。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "search_planning"
+        ],
+        "stage": [
+          "agent_assembly",
+          "inference"
+        ],
+        "agent_form": [
+          "llm_agent"
+        ],
+        "contribution_type": [
+          "software_system"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "M.03.02",
+        "I.03.02"
+      ],
+      "boundary_reason_zh": "标题有 reinforcement learning，但摘要明确不更新权重；情节记忆不是模型 checkpoint。",
+      "text_sha256": "460eca4aa0b122034b914c4e115b6c6dcaee8b59100b5009438ce95d2071170c",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX13",
+      "paper_id": "openreview:zAdUB0aCTQ",
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "abstract": "The potential of Large Language Model (LLM) as agents has been widely acknowledged recently.Thus, there is an urgent need to quantitatively evaluate LLMs as agents on challenging tasks in interactive environments.We present AgentBench, a multi-dimensional benchmark that consists of 8 distinct environments to assess LLM-as-Agent's reasoning and decision-making abilities.Our extensive test over 29 API-based and open-sourced (OSS) LLMs shows that, while top commercial LLMs present a strong ability of acting as agents in complex environments, there is a significant disparity in performance between them and many OSS competitors that are no larger than 70B.We identify the typical reasons of failures in environments and LLMs, showing that poor long-term reasoning, decision-making, and instruction following abilities are the main obstacles for developing usable LLM agents.Improving instruction following and training on high quality multi-round alignment data could improve agent performance.And different from existing assumptions, training on code present ambivalent impacts on different agent tasks.Datasets, environments, and an integrated evaluation package for AgentBench are released at https://github.com/THUDM/AgentBench.",
+      "venue": "ICLR",
+      "year": 2024,
+      "official_url": "https://openreview.net/forum?id=zAdUB0aCTQ",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 6453,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "A.01.05"
+      ],
+      "category_ids_l2_json": [
+        "A.01"
+      ],
+      "category_ids_l1_json": [
+        "A"
+      ],
+      "category_paths_json": [
+        [
+          "A",
+          "A.01",
+          "A.01.05"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "A.01.05",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 6453
+          },
+          "span_start": 283,
+          "span_end": 329,
+          "quote": "8 distinct environments to assess LLM-as-Agent",
+          "rationale_zh": "以交互环境测试完整 Agent 的行动成果。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "evaluation": [
+          "benchmark_construction",
+          "task_success"
+        ],
+        "stage": [
+          "evaluation_only"
+        ],
+        "agent_form": [
+          "llm_agent"
+        ],
+        "domain": [
+          "general_purpose"
+        ],
+        "contribution_type": [
+          "benchmark"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "M.01.01",
+        "M.03.02"
+      ],
+      "boundary_reason_zh": "评测现有 LLM 或建议提高训练质量，不等于提出新模型或后训练算法。",
+      "text_sha256": "83a04811c15b1d024e67eb635314ad4f0371b4175e1c3595005f2490affd8164",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX14",
+      "paper_id": "openreview:VTF8yNQM66",
+      "title": "SWE-bench: Can Language Models Resolve Real-world Github Issues?",
+      "abstract": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of 2,294 software engineering problems drawn from real GitHub issues and corresponding pull requests across 12 popular Python repositories. Given a codebase along with a description of an issue to be resolved, a language model is tasked with editing the codebase to address the issue. Resolving issues in SWE-bench frequently requires understanding and coordinating changes across multiple functions, classes, and even files simultaneously, calling for models to interact with execution environments, process extremely long contexts and perform complex reasoning that goes far beyond traditional code generation tasks. Our evaluations show that both state-of-the-art proprietary models and our fine-tuned model SWE-Llama can resolve only the simplest issues. The best-performing model, Claude 2, is able to solve a mere 1.96% of the issues. Advances on SWE-bench represent steps towards LMs that are more practical, intelligent, and autonomous.",
+      "venue": "ICLR",
+      "year": 2024,
+      "official_url": "https://openreview.net/forum?id=VTF8yNQM66",
+      "source_url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 5337,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "A.02.01"
+      ],
+      "category_ids_l2_json": [
+        "A.02"
+      ],
+      "category_ids_l1_json": [
+        "A"
+      ],
+      "category_paths_json": [
+        [
+          "A",
+          "A.02",
+          "A.02.01"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "A.02.01",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://iclr.cc/static/virtual/data/iclr-2024-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 5337
+          },
+          "span_start": 387,
+          "span_end": 452,
+          "quote": "2,294 software engineering problems drawn from real GitHub issues",
+          "rationale_zh": "软件工程应用任务及评测是核心对象。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "task": [
+          "software_issue_resolution"
+        ],
+        "evaluation": [
+          "benchmark_construction",
+          "task_success"
+        ],
+        "domain": [
+          "software"
+        ],
+        "contribution_type": [
+          "benchmark"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "M.01.01",
+        "M.04.02"
+      ],
+      "boundary_reason_zh": "难题需要 reasoning 不等于提出推理算法；测量应用级代码修复，不自动等于通用模型基准。",
+      "text_sha256": "71f9720ff4c069718bacfda99c83f5d88944b21e7f6d1086c4f8777d31432328",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX15",
+      "paper_id": "neurips:2020:4c5bcfec8584af0d967f1ab10179ca4b",
+      "title": "Denoising Diffusion Probabilistic Models",
+      "abstract": "We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted variational bound designed according to a novel connection between diffusion probabilistic models and denoising score matching with Langevin dynamics, and our models naturally admit a progressive lossy decompression scheme that can be interpreted as a generalization of autoregressive decoding. On the unconditional CIFAR10 dataset, we obtain an Inception score of 9.46 and a state-of-the-art FID score of 3.17. On 256x256 LSUN, we obtain sample quality similar to ProgressiveGAN.",
+      "venue": "NeurIPS",
+      "year": 2020,
+      "official_url": "https://papers.nips.cc/paper_files/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html",
+      "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 33568,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.01.03",
+        "M.02.03"
+      ],
+      "category_ids_l2_json": [
+        "M.01",
+        "M.02"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.01",
+          "M.01.03"
+        ],
+        [
+          "M",
+          "M.02",
+          "M.02.03"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.01.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 33568
+          },
+          "span_start": 24,
+          "span_end": 84,
+          "quote": "image synthesis results using diffusion probabilistic models",
+          "rationale_zh": "图像生成模型为主要研究对象。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        },
+        {
+          "category_id": "M.02.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://neurips.cc/static/virtual/data/neurips-2020-orals-posters.json",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 33568
+          },
+          "span_start": 216,
+          "span_end": 256,
+          "quote": "training on a weighted variational bound",
+          "rationale_zh": "提出模型学习目标；摘要没有证明这是可复用模型的预训练。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "diffusion"
+        ],
+        "task": [
+          "image_video_generation"
+        ],
+        "model_scope": [
+          "task_specialized"
+        ],
+        "contribution_type": [
+          "model_artifact",
+          "algorithm"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "E",
+        "A.02.04"
+      ],
+      "boundary_reason_zh": "热力学启发或 energy 词不属于 Energy；图像生成模型不是创作界面/工作流。",
+      "text_sha256": "4c005d1cb0f351a430dcc59c19a920885a20768ce960a242e5e81258d3076492",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX16",
+      "paper_id": "pmlr:v235:zhang24i",
+      "title": "Reshape and Adapt for Output Quantization (RAOQ): Quantization-aware Training for In-memory Computing Systems",
+      "abstract": "In-memory computing (IMC) has emerged as a promising solution to address both computation and data-movement challenges, by performing computation on data in-place directly in the memory array. IMC typically relies on analog operation, which makes analog-to-digital converters (ADCs) necessary, for converting results back to the digital domain. However, ADCs maintain computational efficiency by having limited precision, leading to substantial quantization errors in compute outputs. This work proposes RAOQ (Reshape and Adapt for Output Quantization) to overcome this issue, which comprises two classes of mechanisms including: 1) mitigating ADC quantization error by adjusting the statistics of activations and weights, through an activation-shifting approach (A-shift) and a weight reshaping technique (W-reshape); 2) adapting AI models to better tolerate ADC quantization through a bit augmentation method (BitAug), complemented by the introduction of ADC-LoRA, a low-rank approximation technique, to reduce the training overhead. RAOQ demonstrates consistently high performance across different scales and domains of neural network models for computer vision and natural language processing (NLP) tasks at various bit precisions, achieving state-of-the-art results with practical IMC implementations.",
+      "venue": "ICML",
+      "year": 2024,
+      "official_url": "https://proceedings.mlr.press/v235/zhang24i.html",
+      "source_url": "https://proceedings.mlr.press/v235/assets/bib/citeproc.yaml",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 23279,
+      "classification_status": "classified",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [
+        "M.03.03"
+      ],
+      "category_ids_l2_json": [
+        "M.03"
+      ],
+      "category_ids_l1_json": [
+        "M"
+      ],
+      "category_paths_json": [
+        [
+          "M",
+          "M.03",
+          "M.03.03"
+        ]
+      ],
+      "category_evidence_json": [
+        {
+          "category_id": "M.03.03",
+          "assignment_role": "central_contribution",
+          "source_field": "abstract",
+          "source_url": "https://proceedings.mlr.press/v235/assets/bib/citeproc.yaml",
+          "source_locator": {
+            "local_file": "conferences/ml/metadata_main.jsonl",
+            "line": 23279
+          },
+          "span_start": 822,
+          "span_end": 876,
+          "quote": "adapting AI models to better tolerate ADC quantization",
+          "rationale_zh": "改变训练/模型以适配硬件量化误差。",
+          "evidence_strength": "explicit",
+          "basis": "title_abstract_semantic_review",
+          "rule_ids": [
+            "R01",
+            "R02"
+          ],
+          "review_status": "ai_adjudicated"
+        }
+      ],
+      "facets_json": {
+        "method": [
+          "quantization",
+          "parameter_efficient_adaptation"
+        ],
+        "contribution_type": [
+          "algorithm"
+        ],
+        "model_scope": [
+          "general_method"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "C.01.03"
+      ],
+      "boundary_reason_zh": "研究受硬件约束，但摘要中的产物是量化适配、权重/激活重塑；没有新的 IMC 器件/阵列。",
+      "text_sha256": "79d5e2e19f8efdd74887524ddaaa780382c1d8811b86776a90cccc62ae1f84a4",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX17",
+      "paper_id": "10.1145/3580305.3599314",
+      "title": "DotHash: Estimating Set Similarity Metrics for Link Prediction and Document Deduplication",
+      "abstract": "Metrics for set similarity are a core aspect of several data mining tasks. To remove duplicate results in a Web search, for example, a common approach looks at the Jaccard index between all pairs of pages. In social network analysis, a much-celebrated metric is the Adamic-Adar index, widely used to compare node neighborhood sets in the important problem of predicting links. However, with the increasing amount of data to be processed, calculating the exact similarity between all pairs can be intractable. The challenge of working at this scale has motivated research into efficient estimators for set similarity metrics. The two most popular estimators, MinHash and SimHash, are indeed used in applications such as document deduplication and recommender systems where large volumes of data need to be processed. Given the importance of these tasks, the demand for advancing estimators is evident. We propose DotHash, an unbiased estimator for the intersection size of two sets. DotHash can be used to estimate the Jaccard index and, to the best of our knowledge, is the first method that can also estimate the Adamic-Adar index and a family of related metrics. We formally define this family of metrics, provide theoretical bounds on the probability of estimate errors, and analyze its empirical performance. Our experimental results indicate that DotHash is more accurate than the other estimators in link prediction and detecting duplicate documents with the same complexity and similar comparison time.",
+      "venue": "KDD",
+      "year": 2023,
+      "official_url": "https://dl.acm.org/doi/10.1145/3580305.3599314",
+      "source_url": "https://dl.acm.org/doi/10.1145/3580305.3599314",
+      "local_source_file": "conferences/systems_ir/combined_papers.jsonl",
+      "local_source_line": 3586,
+      "classification_status": "outside_scope",
+      "classification_label_status": "candidate",
+      "review_status": "ai_adjudicated",
+      "adjudication_note_zh": "AI 阅读已有标题和摘要后的示范判定，未经独立人工审核；不是金标准。",
+      "category_ids_l3_json": [],
+      "category_ids_l2_json": [],
+      "category_ids_l1_json": [],
+      "category_paths_json": [],
+      "category_evidence_json": [],
+      "facets_json": {
+        "contribution_type": [
+          "algorithm",
+          "theory"
+        ],
+        "model_scope": [
+          "not_applicable"
+        ]
+      },
+      "do_not_assign_ids_or_prefixes": [
+        "E",
+        "C",
+        "I",
+        "M",
+        "A"
+      ],
+      "boundary_reason_zh": "现有摘要的中心产物是集合交集/相似度无偏估计器，没有 AI 学习/推理或 AI 专用系统贡献。基于这份摘要判为 outside_scope；全文如揭示新的 AI 中心贡献可复核。",
+      "text_sha256": "3264ad8e55a1f260ecdd77c49cdf9f0236cd8a51d79211a3ae6eba1f25eaa5ae",
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    },
+    {
+      "example_id": "EX18",
+      "paper_id": "openreview:B1lPaCNtPB",
+      "title": "Real or Not Real, that is the Question",
+      "abstract": "",
+      "venue": "ICLR",
+      "year": 2020,
+      "official_url": "https://openreview.net/forum?id=B1lPaCNtPB",
+      "source_url": "https://iclr.cc/virtual_2020/papers.json",
+      "local_source_file": "conferences/ml/metadata_main.jsonl",
+      "local_source_line": 30,
+      "classification_status": "insufficient_evidence",
+      "classification_label_status": "unassigned",
+      "review_status": "ai_adjudicated",
+      "category_ids_l3_json": [],
+      "category_ids_l2_json": [],
+      "category_ids_l1_json": [],
+      "category_paths_json": [],
+      "category_evidence_json": [],
+      "facets_json": null,
+      "do_not_assign_ids_or_prefixes": [
+        "E",
+        "C",
+        "I",
+        "M",
+        "A"
+      ],
+      "boundary_reason_zh": "本地记录缺摘要，标题没有足够具体的方法/对象。ICLR venue 不能替代内容证据。",
+      "coverage_flags_json": [
+        "abstract_missing",
+        "ambiguous_title"
+      ],
+      "taxonomy_version": "ai-cake-research-v1.0.0-proposed"
+    }
+  ]
+}
