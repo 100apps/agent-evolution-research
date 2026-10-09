@@ -66,7 +66,12 @@ def main() -> None:
         if not file.is_file():
             continue
         relative = file.relative_to(ROOT).as_posix()
-        if relative in EXCLUDED or any(part.startswith("_") and part.endswith("helper") for part in file.relative_to(ROOT).parts):
+        if (
+            relative in EXCLUDED
+            or file.suffix in {".pyc", ".pyo"}
+            or "__pycache__" in file.parts
+            or any(part.startswith("_") and part.endswith("helper") for part in file.relative_to(ROOT).parts)
+        ):
             continue
         groups.setdefault(group_for(relative), []).append(file)
 
