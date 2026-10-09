@@ -171,6 +171,36 @@ def verify_local_links() -> int:
     return checked
 
 
+def verify_sensitivity_samples() -> dict[str, object]:
+    monthly = {row["month"]: int(row["ai_primary_1702_works"])
+               for row in csv_rows(ROOT / "data/processed/openalex_monthly_wide.csv")}
+    topics = csv_rows(ROOT / "data/openalex_ai_topics.csv")
+    grouped: dict[str, list[dict[str, str]]] = {}
+    for row in topics:
+        grouped.setdefault(row["month"], []).append(row)
+    if len(grouped) != 45 or min(grouped) != "2023-01" or max(grouped) != "2026-09":
+        raise ValueError("OpenAlex AI topic monthly window changed")
+    for month, rows in grouped.items():
+        expected = monthly[month]
+        if sum(int(row["works"]) for row in rows) != expected or any(
+                int(row["ai_primary_total"]) != expected for row in rows):
+            raise ValueError(f"AI topic sum differs from main monthly total: {month}")
+    metadata = csv_rows(ROOT / "data/openalex_metadata_sample.csv")
+    screen = csv_rows(ROOT / "data/openalex_ai_sample_screen.csv")
+    if len(metadata) != 180 or len(screen) != 60 or any(row["sample_seed"] != "20261009" for row in screen):
+        raise ValueError("OpenAlex fixed-seed sample frame changed")
+    screen_counts = Counter(row["screen"] for row in screen)
+    if screen_counts["obvious_non_ai"] != 13:
+        raise ValueError(f"OpenAlex conservative screen changed: {screen_counts}")
+    acl = csv_rows(ROOT / "conferences/processed/acl_agent_abstract_reviewed.csv")
+    acl_groups = Counter(row["candidate_group"] for row in acl)
+    if len(acl) != 16 or sorted(acl_groups.values()) != [8, 8]:
+        raise ValueError(f"ACL Agent directed abstract sample changed: {acl_groups}")
+    return {"ai_topic_months_reconciled": len(grouped), "openalex_metadata_sample": len(metadata),
+            "openalex_ai_screen": dict(screen_counts), "acl_agent_directed_review": dict(acl_groups),
+            "label_provenance": "assistant title and available abstract review; not expert ground truth"}
+
+
 def validate() -> dict[str, object]:
     result = {
         "status": "ok",
@@ -185,6 +215,7 @@ def validate() -> dict[str, object]:
         "conference_raw_manifests": verify_conference_manifests(),
         "monthly": verify_monthly(),
         "conference_titles": verify_titles(),
+        "sensitivity_samples": verify_sensitivity_samples(),
         "local_markdown_links_checked": verify_local_links(),
         "published_outputs_sha256": {name: sha256(ROOT / name) for name in DETERMINISTIC_OUTPUTS},
     }
