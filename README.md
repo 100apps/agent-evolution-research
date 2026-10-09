@@ -38,27 +38,29 @@
 ```bash
 git clone https://github.com/100apps/agent-evolution-research.git
 cd agent-evolution-research
-python tools/research.py validate
 ```
 
-安装报告和主题图的锁定依赖：
+Windows PowerShell（以下命令始终使用刚创建的虚拟环境解释器）：
 
-```bash
+```powershell
 python -m venv .venv
-# Windows: .venv\Scripts\python -m pip install -r requirements.txt
-# Linux/macOS:
-.venv/bin/python -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe tools\research.py validate
+.\.venv\Scripts\python.exe tools\research.py all --output-dir run_outputs\clean-run
 ```
 
-在新目录中运行验证、三个实验和报告构建：
+Linux/macOS：
 
 ```bash
-python tools/research.py all --output-dir run_outputs/clean-run
+python3 -m venv .venv
+./.venv/bin/python -m pip install -r requirements.txt
+./.venv/bin/python tools/research.py validate
+./.venv/bin/python tools/research.py all --output-dir run_outputs/clean-run
 ```
 
 该命令不会覆盖已提交实验记录；它把新运行结果写入指定目录。验证和三个实验本身只使用 Python 标准库；报告/全景图构建使用 `requirements.txt`。
 
-可选的真实浏览器验收使用 `requirements-qa.txt`，并运行 `python tools/visual_qa.py`；脚本默认调用本机 Edge，不下载浏览器。
+可选的真实浏览器验收使用 `requirements-qa.txt`，并用同一个虚拟环境解释器运行 `tools/visual_qa.py`；脚本默认调用本机 Edge，不下载浏览器。
 
 ## 如何继续研究
 
@@ -67,9 +69,9 @@ python tools/research.py all --output-dir run_outputs/clean-run
 3. 用 [templates/experiment_record.md](templates/experiment_record.md) 写预注册式计划。
 4. 核对输入哈希，在离线 baseline 上先产生 expected/actual。
 5. 只在得到额外授权后接入模型、外部代码或有费用的服务。
-6. 更新 registry、状态、研究笔记和 HTML，并运行 `python tools/research.py all ...`。
+6. 更新 registry、状态、研究笔记和 HTML，并用快速开始中对应平台的虚拟环境解释器运行 `tools/research.py all ...`。
 
-可用 `python tools/handoff_check.py` 模拟“只看到仓库的新 Agent”是否能定位目的、范围、证据状态、下一步和复跑方式。
+可用同一个虚拟环境解释器运行 `tools/handoff_check.py`，模拟“只看到仓库的新 Agent”是否能定位目的、范围、证据状态、下一步和复跑方式。
 
 ## 研究边界与版权
 

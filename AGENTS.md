@@ -9,17 +9,15 @@
 3. 阅读 `EVIDENCE_LEVELS.md` 与 `RESEARCH_STATUS.md`，不要把作者报告、公开工件回放和机制示例混为一谈。
 4. 阅读 `BACKLOG.md`，只选择有明确假设、验收条件和费用边界的问题。
 5. 运行 `git status --short`，保护已有用户修改；不要重置、覆盖或删除不属于当前任务的内容。
-6. 先运行 `python tools/research.py validate` 核验输入哈希和结构。
+6. 先使用仓库虚拟环境解释器运行验证，核验输入哈希和结构：Windows 为 `.\.venv\Scripts\python.exe tools\research.py validate`，Linux/macOS 为 `./.venv/bin/python tools/research.py validate`。
 7. 在无外部写入、无付费 API 的前提下运行离线 baseline；对照已保存的 expected 与 actual。
 8. 开始新问题前写明假设、验收条件、证据等级、预算和限制；完成后保留完整命令、输入 SHA、环境、seed、代码提交、expected、actual、容差、输出与失败。
 
 ## 可信入口
 
-- 一键入口：`python tools/research.py all --output-dir run_outputs/<name>`
-- 仅验证：`python tools/research.py validate`
-- 重建主题图：`python tools/draw_map.py`
-- 报告构建：`python tools/build_report.py`
-- 论文索引生成：`python tools/build_registry.py`
+- Windows 一键入口：`.\.venv\Scripts\python.exe tools\research.py all --output-dir run_outputs\agent-run`
+- Linux/macOS 一键入口：`./.venv/bin/python tools/research.py all --output-dir run_outputs/agent-run`
+- 其他脚本也必须使用同一个虚拟环境解释器，例如 `tools/draw_map.py`、`tools/build_report.py` 与 `tools/build_registry.py`。
 
 ## 证据纪律
 
