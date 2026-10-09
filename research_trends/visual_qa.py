@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Optional local Edge check for the standalone public trend page."""
+"""Optional Edge check for a built trend page or its deployed URL."""
 
 from __future__ import annotations
 
@@ -24,23 +24,27 @@ def inspect(page) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--report", type=Path, required=True)
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--report", type=Path)
+    source.add_argument("--url")
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
-    report = args.report.resolve()
+    destination = args.report.resolve().as_uri() if args.report else args.url
+    if args.url and not args.url.startswith("https://"):
+        parser.error("--url must be HTTPS")
     output = args.output_dir.resolve()
     output.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as pw:
         browser = pw.chromium.launch(channel="msedge", headless=True)
         desktop = browser.new_page(viewport={"width": 1440, "height": 1000})
-        desktop.goto(report.as_uri(), wait_until="load")
+        desktop.goto(destination, wait_until="load")
         desktop_before = inspect(desktop)
         desktop.locator("#metric").select_option("ax:core_ai_5_share_all_pct")
         desktop.locator("#cohort").select_option("ACL")
         desktop_after = inspect(desktop)
         desktop.screenshot(path=output / "trends_desktop.png", full_page=True)
         mobile = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=1)
-        mobile.goto(report.as_uri(), wait_until="load")
+        mobile.goto(destination, wait_until="load")
         mobile_state = inspect(mobile)
         mobile.screenshot(path=output / "trends_mobile.png", full_page=True)
         browser.close()
@@ -51,7 +55,7 @@ def main() -> None:
         "conference_table": desktop_after["tableRows"] >= 18,
         "disclaimer_and_source": mobile_state["trendDisclaimer"] and mobile_state["repositoryLink"],
     }
-    result = {"report": str(report), "desktop_before": desktop_before,
+    result = {"report": destination, "desktop_before": desktop_before,
               "desktop_after": desktop_after, "mobile": mobile_state, "checks": checks}
     (output / "visual_qa.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False, indent=2))
