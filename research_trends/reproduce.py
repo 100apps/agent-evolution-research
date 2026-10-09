@@ -15,6 +15,7 @@ import sys
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import parse_qsl, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent
@@ -55,6 +56,15 @@ def csv_rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
+def check_public_source_url(url: str) -> None:
+    parsed = urlsplit(url)
+    if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError(f"source URL is not a public HTTPS URL: {parsed.hostname}")
+    restricted = {"api_key", "apikey", "access_token", "token", "email", "password", "secret", "authorization"}
+    if any(key.casefold() in restricted for key, _ in parse_qsl(parsed.query, keep_blank_values=True)):
+        raise ValueError(f"source URL contains a credential-like query parameter: {parsed.hostname}")
+
+
 def verify_api_audit(audit: Path, raw_dir: Path, suffix: str) -> dict[str, int]:
     referenced: set[Path] = set()
     successful = 0
@@ -65,6 +75,7 @@ def verify_api_audit(audit: Path, raw_dir: Path, suffix: str) -> dict[str, int]:
         url = event.get("url")
         if not url:
             continue
+        check_public_source_url(url)
         key = hashlib.sha256(url.encode("utf-8")).hexdigest()
         if event.get("query_sha256") != key:
             raise ValueError(f"query hash mismatch in {audit}: {key}")
@@ -100,6 +111,7 @@ def verify_conference_manifests() -> dict[str, int]:
                 raise ValueError(f"conference raw byte count mismatch: {target}")
             if not item.get("source_url") or not item.get("fetched_at_utc"):
                 raise ValueError(f"conference source provenance missing: {manifest}")
+            check_public_source_url(item["source_url"])
         results[source] = len(manifests)
     return results
 
